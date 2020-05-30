@@ -108,11 +108,6 @@
         "url": "/docs/guides/push-notifications-firebase"
       },
       {
-        "text": "Deep Links",
-        "filePath": "/assets/docs-content/guides/deep-links.json",
-        "url": "/docs/guides/deep-links"
-      },
-      {
         "text": "Community Guides",
         "filePath": "/assets/docs-content/guides/community.json",
         "url": "/docs/guides/community"
@@ -323,7 +318,7 @@
       {
         "text": "Local Notifications",
         "filePath": "/assets/docs-content/apis/local-notifications/index.json",
-        "url": "/docs/apis/local-notifications"
+        "url": "/docs/apis/local-Notifications"
       },
       {
         "text": "Modals",
@@ -339,11 +334,6 @@
         "text": "Network",
         "filePath": "/assets/docs-content/apis/network/index.json",
         "url": "/docs/apis/network"
-      },
-      {
-        "text": "Permissions",
-        "filePath": "/assets/docs-content/apis/permissions/index.json",
-        "url": "/docs/apis/permissions"
       },
       {
         "text": "Push Notifications",
