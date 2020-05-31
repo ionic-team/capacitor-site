@@ -31,12 +31,13 @@ const { Filesystem } = Plugins;
 
 async fileWrite() {
   try {
-    await Filesystem.writeFile({
+    const result = await Filesystem.writeFile({
       path: 'secrets/text.txt',
       data: "This is a test",
       directory: FilesystemDirectory.Documents,
       encoding: FilesystemEncoding.UTF8
     })
+    console.log('Wrote file', result);
   } catch(e) {
     console.error('Unable to write file', e);
   }
@@ -134,20 +135,6 @@ async rename() {
     });
   } catch(e) {
     console.error('Unable to rename file', e);
-  }
-}
-
-async copy() {
-  try {
-    // This example copies a file from the app directory to the documents directory
-    let ret = await Filesystem.copy({
-      from: 'assets/icon.png',
-      to: 'icon.png',
-      directory: FilesystemDirectory.Application,
-      toDirectory: FilesystemDirectory.Documents
-    });
-  } catch(e) {
-    console.error('Unable to copy file', e);
   }
 }
 
