@@ -11,7 +11,7 @@ export class SiteHeader {
   @State() isDropdownShown: boolean;
   @State() isScrolled = false;
 
-  @Listen('window:resize')
+  @Listen('resize', { target: 'window' })
   handleResize() {
     requestAnimationFrame(() => {
       if (window.innerWidth > 768) {
@@ -24,7 +24,7 @@ export class SiteHeader {
     });
   }
 
-  @Listen('window:scroll')
+  @Listen('scroll', { target: 'window' })
   handleScroll(event) {
     requestAnimationFrame(() => {
       if (event.target.documentElement.scrollTop !== 0 && !this.isScrolled) {

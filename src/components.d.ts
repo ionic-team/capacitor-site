@@ -18,7 +18,7 @@ export namespace Components {
     }
     interface AppMarked {
         "fetchPath"?: string;
-        "renderer"?: (doc: MarkdownContent) => JSX.Element;
+        "renderer"?: (doc: MarkdownContent) => any;
     }
     interface AvcCodeType {
         "typeId": string;
@@ -73,10 +73,6 @@ export namespace Components {
     }
 }
 declare global {
-  // Adding a global JSX for backcompatibility with legacy dependencies
-  export namespace JSX {
-    export interface Element {}
-  }
     interface HTMLAnchorLinkElement extends Components.AnchorLink, HTMLStencilElement {
     }
     var HTMLAnchorLinkElement: {
@@ -239,7 +235,7 @@ declare namespace LocalJSX {
     }
     interface AppMarked {
         "fetchPath"?: string;
-        "renderer"?: (doc: MarkdownContent) => JSX.Element;
+        "renderer"?: (doc: MarkdownContent) => any;
     }
     interface AvcCodeType {
         "typeId"?: string;

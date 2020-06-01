@@ -45,7 +45,7 @@ export class BlogPage {
 
 const getBlogPostUrl = (doc: BlogPostDocument) => `/url/${doc.data.slug}`;
 
-const BlogPost = ({ post, single = true }: { post: BlogPostDocument, single?: boolean }) => (
+const BlogPost = ({ post }: { post: BlogPostDocument, single?: boolean }) => (
   <div class="blog-post">
     <disqus-comments url={getBlogPostUrl(post)} id={post.uid} />
   </div>

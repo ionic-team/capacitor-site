@@ -8,7 +8,7 @@ import { MarkdownContent } from '../../global/definitions';
 export class AppMarked implements ComponentInterface {
 
   @Prop() fetchPath?: string;
-  @Prop() renderer?: (doc: MarkdownContent) => JSX.Element;
+  @Prop() renderer?: (doc: MarkdownContent) => any;
 
   @State() docsContent: MarkdownContent = {};
 
