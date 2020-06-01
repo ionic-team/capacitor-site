@@ -3,6 +3,8 @@ import { MatchResults } from '@stencil/router';
 import { getBlogPost, getBlogPosts } from '../../prismic';
 import { BlogPostDocument, BlogPostsResponse } from '../../models';
 
+import { PrismicRichText } from '@ionic-internal/sites-shared';
+
 @Component({
   tag: 'blog-page',
   styleUrl: 'blog-page.scss'
@@ -48,6 +50,8 @@ const getBlogPostUrl = (doc: BlogPostDocument) => `/url/${doc.data.slug}`;
 
 const BlogPost = ({ post }: { post: BlogPostDocument, single?: boolean }) => (
   <div class="blog-post">
+    <h1>{post.data.title}</h1>
+    <PrismicRichText richText={post.data.content} />
     <disqus-comments url={getBlogPostUrl(post)} id={post.uid} />
   </div>
 )

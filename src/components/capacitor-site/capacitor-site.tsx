@@ -22,7 +22,7 @@ export class App {
 
   @State() isLeftSidebarIn: boolean;
 
-  @Listen('window:resize')
+  @Listen('resize', { target: 'window' })
   handleResize() {
     requestAnimationFrame(() => {
       if (window.innerWidth > 768 && this.isLeftSidebarIn) {
