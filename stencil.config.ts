@@ -12,7 +12,10 @@ export const config:Config = {
   outputTargets: [
     {
       type: 'www',
-      serviceWorker: null
+      baseUrl: 'https://capacitorjs.com/',
+      serviceWorker: {
+        unregister: true,
+      },
       /*
       serviceWorker: {
         skipWaiting: false,
