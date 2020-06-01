@@ -50,7 +50,7 @@ export class App {
     }
   }
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.isLeftSidebarIn = false;
   }
 
@@ -111,7 +111,6 @@ export class App {
                 <stencil-route
                   url="/blog/:slug"
                   component="blog-page"
-                  exact={true}
                 />
 
                 {/* <stencil-route

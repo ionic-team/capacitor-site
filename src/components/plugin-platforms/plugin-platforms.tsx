@@ -6,9 +6,6 @@ import { Component, Prop, h } from '@stencil/core';
 export class PluginPlatforms {
   @Prop() platforms: string = "";
 
-  componentDidLoad() {
-  }
-
   render() {
     const platforms = this.platforms.split(',');
     return (

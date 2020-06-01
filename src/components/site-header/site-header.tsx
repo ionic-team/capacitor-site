@@ -37,7 +37,7 @@ export class SiteHeader {
     });
   }
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.isMobileMenuShown = false;
   }
 

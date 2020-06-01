@@ -21,6 +21,7 @@ export class BlogPage {
     if (slug) {
       this.slug = slug;
       this.post = await getBlogPost(slug);
+      console.log('Fetching blog post', slug, this.post);
     } else {
       this.posts = await getBlogPosts();
     }
@@ -51,4 +52,5 @@ const BlogPost = ({ post }: { post: BlogPostDocument, single?: boolean }) => (
   </div>
 )
 
-const AllPosts = ({ posts }: { posts: BlogPostsResponse }) => posts.docs.map(p => <BlogPost post={p} single={false} />);
+const AllPosts = ({ posts }: { posts: BlogPostsResponse }) =>
+  posts.docs.map(p => <BlogPost post={p} single={false} />);
