@@ -65,7 +65,7 @@ const SITE_STRUCTURE_FILE= './src/assets/docs-structure.json';
       ));
 
       await writeFile(destinationFileName, JSON.stringify({
-        ...parsedMarkdown.attributes,
+        ...parsedMarkdown.attributes as any,
         ...markdownMetadata,
         srcPath: filePath,
         content: htmlContents

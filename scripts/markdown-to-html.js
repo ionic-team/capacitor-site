@@ -48,7 +48,7 @@ const SITE_STRUCTURE_FILE = './src/assets/docs-structure.json';
                 headerIds: true
             });
             await utils_1.mkdirp(path_1.default.join(DESTINATION_DIR, path_1.default.dirname(jsonFileName)));
-            await writeFile(destinationFileName, JSON.stringify(Object.assign({}, parsedMarkdown.attributes, markdownMetadata, { srcPath: filePath, content: htmlContents })), {
+            await writeFile(destinationFileName, JSON.stringify(Object.assign(Object.assign(Object.assign({}, parsedMarkdown.attributes), markdownMetadata), { srcPath: filePath, content: htmlContents })), {
                 encoding: 'utf8'
             });
         }

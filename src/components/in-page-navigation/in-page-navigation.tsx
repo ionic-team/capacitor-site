@@ -1,4 +1,4 @@
-import { Component, Prop, ComponentInterface, Listen, State, Watch } from '@stencil/core';
+import { Component, Prop, ComponentInterface, Listen, State, Watch, h } from '@stencil/core';
 import { MarkdownHeading } from '../../global/definitions';
 
 interface ItemOffset {
