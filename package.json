@@ -6,8 +6,7 @@
   "scripts": {
     "docs-typedoc": "typedoc --exclude **/__test__/*.ts --json dist/docs.json --mode modules --includeDeclarations node_modules/@capacitor/core/dist/esm/core-plugin-definitions.d.ts",
     "docs-genhtml": "node scripts/docs.js",
-    "docs-typedoc": "npm run docs-typedoc && npm run docs-genhtml",
-    "docs": "npm run docs-typedoc",
+    "docs": "npm run docs-typedoc && npm run docs-genhtml",
     "docs-old": "tsc --p ./scripts && node ./scripts/markdown-to-html && cd ../core && npm run docs",
     "site-structure": "tsc --p ./scripts && node ./scripts/site-structure",
     "build": "npm run site-structure && npm run docs && stencil build --prerender",
