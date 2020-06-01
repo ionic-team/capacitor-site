@@ -4,7 +4,10 @@
   "version": "0.0.1",
   "description": "Capacitor Site",
   "scripts": {
-    "docs": "",
+    "docs-typedoc": "typedoc --exclude **/__test__/*.ts --json dist/docs.json --mode modules --includeDeclarations node_modules/@capacitor/core/dist/esm/core-plugin-definitions.d.ts",
+    "docs-genhtml": "node scripts/docs.js",
+    "docs-typedoc": "npm run docs-typedoc && npm run docs-genhtml",
+    "docs": "npm run docs-typedoc",
     "docs-old": "tsc --p ./scripts && node ./scripts/markdown-to-html && cd ../core && npm run docs",
     "site-structure": "tsc --p ./scripts && node ./scripts/site-structure",
     "build": "npm run site-structure && npm run docs && stencil build --prerender",
@@ -12,6 +15,7 @@
     "serve": "stencil build --dev --watch"
   },
   "devDependencies": {
+    "@capacitor/core": "^2.1.2",
     "@ionic-internal/sites-shared": "0.0.7",
     "@stencil/core": "^1.14.0",
     "@stencil/helmet": "^0.3.2",
@@ -30,6 +34,7 @@
     "node-fetch": "^2.6.0",
     "prismic-javascript": "^2.7.1",
     "prismjs": "1.16.0",
+    "typedoc": "^0.17.7",
     "workbox-build": "3.4.1"
   },
   "author": "Ionic Team",
