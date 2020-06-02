@@ -1,10 +1,6 @@
 @import '../../global/variables';
 
-site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+capacitor-site-header {
   background-color: #fff;
   z-index: 99;
   transition: .2s box-shadow ease-out;
@@ -150,7 +146,7 @@ site-header {
   }
 }
 
-.landing-page site-header .version{
+.landing-page capacitor-site-header .version{
   background: rgba(255, 255, 255, 0.14);
 }
 
@@ -183,7 +179,7 @@ site-header {
     color: rgba(#000, 1);
   }
 
-  a.link-active,{
+  a.link-active {
     color: #000;
   }
 
@@ -247,7 +243,7 @@ site-header {
     letter-spacing: 1px;
     font-weight: 600;
   }
-  site-header {
+  capacitor-site-header {
     position: static;
   }
   .header-menu {
@@ -259,7 +255,7 @@ site-header {
     }
 
     a:not(.link--external):hover,
-    a.link-active,
+    a.link-active
      {
       color: rgba($color-white, 1);
       border-bottom-color: rgba($color-white, 0.2);

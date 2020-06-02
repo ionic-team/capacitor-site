@@ -1,8 +1,9 @@
 import { Component, Element, Listen, State, h } from '@stencil/core';
+import { ResponsiveContainer } from '@ionic-internal/sites-shared';
 
 @Component({
-  tag: 'site-header',
-  styleUrl: 'site-header.scss'
+  tag: 'capacitor-site-header',
+  styleUrl: 'capacitor-site-header.scss'
 })
 export class SiteHeader {
   @Element() el: Element;
@@ -77,8 +78,7 @@ export class SiteHeader {
 
   render() {
     return (
-      <div class="site-header container">
-
+      <ResponsiveContainer class="site-header">
         <stencil-route-link url="/" class="logo-link">
           <div class="logo"></div>
         </stencil-route-link>
@@ -144,7 +144,7 @@ export class SiteHeader {
         <div class="header-overflow" onClick={() => { this.showNav() }}>
           <app-icon name="more"></app-icon>
         </div>
-      </div>
+      </ResponsiveContainer>
     );
   }
 }

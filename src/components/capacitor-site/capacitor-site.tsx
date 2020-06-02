@@ -85,201 +85,51 @@ export class App {
       isLeftSidebarIn: this.isLeftSidebarIn,
       toggleLeftSidebar: this.toggleLeftSidebar
     }
-    const footerClass = this.isLandingPage ? 'footer-landing' : '';
 
     return (
       <SiteProviderConsumer.Provider state={siteState}>
-        <div id="main-div">
-          <site-header />
-          <div class="app root">
-            <stencil-router scrollTopOffset={0}>
-              <stencil-route style={{ display: 'none' }} routeRender={this.setHistory}/>
-              <stencil-route-switch scrollTopOffset={0}>
+        <site-root>
+          <div id="main-div">
+            <site-platform-bar productName="Capacitor" />
+            <capacitor-site-header />
+            <div class="app root">
+              <stencil-router scrollTopOffset={0}>
+                <stencil-route style={{ display: 'none' }} routeRender={this.setHistory}/>
+                <stencil-route-switch scrollTopOffset={0}>
 
-                <stencil-route
-                  url="/"
-                  component="landing-page"
-                  exact={true}
-                />
+                  <stencil-route
+                    url="/"
+                    component="landing-page"
+                    exact={true}
+                  />
 
-                <stencil-route
-                  url="/blog"
-                  component="blog-page"
-                  exact={true}
-                />
+                  <stencil-route
+                    url="/blog"
+                    component="blog-page"
+                    exact={true}
+                  />
 
-                <stencil-route
-                  url="/blog/:slug"
-                  component="blog-page"
-                />
+                  <stencil-route
+                    url="/blog/:slug"
+                    component="blog-page"
+                  />
 
-                {/* <stencil-route
-                  url="/docs/getting-started/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`getting-started/${page}.html`]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/basics/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`basics/${page}.html`]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/cordova/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`cordova/${page}.html`]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/guides/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`guides/${page}.html`]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/ios/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`ios/${page}.html`]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/android/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`android/${page}.html`]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/electron/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`electron/${page}.html`]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/web/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`web/${page}.html`]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/plugins/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`plugins/${page}.html`]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/apis/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    let page = 'apis/index.html';
-                    const pageName = props.match.params.pageName;
-                    if(pageName) {
-                      page = `apis/${pageName}/index.html`
-                    }
-                    return (
-                      <document-component pages={[page]} />
-                    );
-                  }}
-                />
-  
-                <stencil-route
-                  url="/docs/community/:pageName?"
-                  routeRender={(props: { [key: string]: any }) => {
-                    const page = props.match.params.pageName || 'index';
-                    return (
-                      <document-component pages={[`community/${page}.html`]} />
-                    );
-                  }}
-                /> */}
+                  <stencil-route url="/docs/" exact={true} routeRender={() => (
+                    <document-component page='/docs/'></document-component>
+                  )}/>
 
-                <stencil-route url="/docs/" exact={true} routeRender={() => (
-                  <document-component page='/docs/'></document-component>
-                )}/>
+                  <stencil-route url="/enterprise/" exact={true} routeRender={() => (
+                    <capacitor-enterprise />
+                  )}/>
 
-                <stencil-route url="/enterprise/" exact={true} routeRender={() => (
-                  <capacitor-enterprise />
-                )}/>
-
-                <stencil-route url="/docs/:pageName*" routeRender={({ match }) => (
-                  <document-component page={match.url}></document-component>
-                )}/>
-              </stencil-route-switch>
-            </stencil-router>
-          </div>
-        </div>
-
-        <footer class={footerClass}>
-          <div class="container">
-            <div id="open-source">
-              <a href="http://ionicframework.com/" title="IonicFramework.com" rel="noopener">
-                <div class="ionic-oss-logo"></div>
-              </a>
-              <p>Released under <span id="mit">MIT License</span> | Copyright @ {(new Date()).getFullYear()} Drifty Co.</p>
-            </div>
-
-            <div id="footer-icons">
-              <iframe
-                title="Github Star Count" 
-                class="star-button"
-                src="https://ghbtns.com/github-btn.html?user=ionic-team&repo=capacitor&type=star&count=true"
-                frameBorder="0"
-                scrolling="0"
-                width="100px"
-                height="20px"
-              ></iframe>
-
-              <a class="svg-button"
-                id="capacitor-twitter"
-                href="https://twitter.com/getcapacitor"
-                target="_blank"
-                rel="noopener"
-                title="Open the Capacitor account on twitter"
-                style={{fill: 'white'}}
-                >
-                <app-icon name="twitter"></app-icon>
-              </a>
-              <a class="svg-button" id="cap-forum" href="https://getcapacitor.herokuapp.com/" target="_blank" rel="noopener"
-                title="Join the Capacitor slack">
-                <app-icon name="slack"></app-icon>
-              </a>
+                  <stencil-route url="/docs/:pageName*" routeRender={({ match }) => (
+                    <document-component page={match.url}></document-component>
+                  )}/>
+                </stencil-route-switch>
+              </stencil-router>
             </div>
           </div>
-        </footer>
+        </site-root>
       </SiteProviderConsumer.Provider>
     );
   }

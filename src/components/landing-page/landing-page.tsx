@@ -1,28 +1,17 @@
-import { Component, Element, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
+import Helmet from '@stencil/helmet';
+import { ResponsiveContainer } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'landing-page',
   styleUrl: 'landing-page.scss'
 })
 export class LandingPage {
-
-  @Element() el: Element;
-
-  constructor() {
-    let root: any = document.querySelector('capacitor-site');
-    root.isLandingPage = true;
-    document.title = `Capacitor: Universal Web Applications`;
-  }
-
-  componentDidUnload() {
-    let root: any = document.querySelector('capacitor-site');
-    root.isLandingPage = false;
-  }
-
   render() {
     return [
-      <div class="container">
+      <MetaHead />,
+      <ResponsiveContainer>
         <section class="hero">
           <hgroup>
             <h1 id="action-call">The Native Bridge for Cross-Platform Web Apps</h1>
@@ -90,8 +79,44 @@ export class LandingPage {
             </p>
           </div>
       </section>
-    </div>,
-    <newsletter-signup></newsletter-signup>
+    </ResponsiveContainer>,
+    <newsletter-signup />,
+    <capacitor-site-footer />
     ];
   }
 }
+
+const MetaHead = () => (
+  <Helmet>
+    <title>Capacitor: Universal Web Applications</title>
+    <meta
+      name="description"
+      content={'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript'}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@getcapacitor" />
+    <meta name="twitter:creator" content="getcapacitor" />
+    <meta name="twitter:title" content="Build cross-platform apps with web technologies" />
+    <meta
+      name="twitter:description"
+      content="Build cross-platform apps with web technologies"
+    />
+    {/*
+    <meta name="twitter:image" content="https://ionicframework.com/img/meta/ionic-framework-og.png" />
+
+    <meta property="fb:page_id" content="1321836767955949" />
+    <meta property="og:url" content="https://ionicframework.com/resources" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="App Development Trends from the Ionic Framework team" />
+
+    <meta property="og:image" content="https://ionicframework.com/img/meta/ionic-framework-og.png" />
+    <meta
+      property="og:description"
+      content="Expert app development advice, trends, and research from the Ionic Framework team"
+    />
+    <meta property="og:site_name" content="Ionic Framework" />
+    <meta property="article:publisher" content="https://www.facebook.com/ionicframework" />
+    <meta property="og:locale" content="en_US" />
+    */}
+  </Helmet>
+)
