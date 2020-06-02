@@ -23,6 +23,7 @@ export class DocumentComponent implements ComponentInterface {
 
   @Watch('page')
   fetchNewContent(page: string, oldPage?: string) {
+    console.log('Fetching new page', page);
     if (page == null || page === oldPage) {
       return;
     }

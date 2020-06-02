@@ -111,7 +111,7 @@ export class App {
                 <document-component page="/docs/" />
               </Route>
 
-              <Route path={match('/docs/:pageName')} render={({ pageName }) => (
+              <Route path={match('/docs/:pageName*')} render={({ pageName }) => (
                 <document-component page={`/docs/${pageName}`} />
               )} />
             </Router.Switch>
