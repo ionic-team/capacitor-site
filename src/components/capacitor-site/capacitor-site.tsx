@@ -1,5 +1,4 @@
 import { Component, Prop, Element, Listen, State, h } from '@stencil/core';
-import SiteProviderConsumer, { SiteState } from '../../global/site-provider-consumer';
 
 import { createRouter, Route, match } from 'stencil-router-v2';
 
@@ -85,47 +84,40 @@ export class App {
   }
 
   render() {
-    const siteState: SiteState = {
-      isLeftSidebarIn: this.isLeftSidebarIn,
-      toggleLeftSidebar: this.toggleLeftSidebar
-    }
-
     return (
-      <SiteProviderConsumer.Provider state={siteState}>
-        <site-root>
-          <div id="main-div">
-            <site-platform-bar productName="Capacitor" />
-            <capacitor-site-header />
-            <div class="app root">
-              <Router.Switch>
-                <Route path="/">
-                  <landing-page />
-                </Route>
+      <site-root>
+        <div id="main-div">
+          <site-platform-bar productName="Capacitor" />
+          <capacitor-site-header />
+          <div class="app root">
+            <Router.Switch>
+              <Route path="/">
+                <landing-page />
+              </Route>
 
-                <Route path="/blog">
-                  <blog-page />
-                </Route>
+              <Route path="/blog">
+                <blog-page />
+              </Route>
 
-                <Route path={match('/blog/:slug')} render={({ slug }) => (
-                  <blog-page slug={slug} />
-                )} />
+              <Route path={match('/blog/:slug')} render={({ slug }) => (
+                <blog-page slug={slug} />
+              )} />
 
-                <Route path="/enterprise">
-                  <capacitor-enterprise />
-                </Route>
+              <Route path="/enterprise">
+                <capacitor-enterprise />
+              </Route>
 
-                <Route path="/docs">
-                  <document-component page="/docs/" />
-                </Route>
+              <Route path="/docs">
+                <document-component page="/docs/" />
+              </Route>
 
-                <Route path={match('/docs/:pageName')} render={({ pageName }) => (
-                  <document-component page={`/docs/${pageName}`} />
-                )} />
-              </Router.Switch>
-            </div>
+              <Route path={match('/docs/:pageName')} render={({ pageName }) => (
+                <document-component page={`/docs/${pageName}`} />
+              )} />
+            </Router.Switch>
           </div>
-        </site-root>
-      </SiteProviderConsumer.Provider>
+        </div>
+      </site-root>
     );
   }
 }

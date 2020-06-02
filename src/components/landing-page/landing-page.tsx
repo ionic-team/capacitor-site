@@ -1,7 +1,7 @@
 import { Component, h } from '@stencil/core';
 
 import Helmet from '@stencil/helmet';
-import { ResponsiveContainer } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col, AnchorButton, Heading } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'landing-page',
@@ -14,75 +14,97 @@ export class LandingPage {
       <MetaHead />,
       <ResponsiveContainer>
         <section class="hero">
-          <hgroup>
-            <h1 id="action-call">The Native Bridge for Cross-Platform Web Apps</h1>
-            <h3>
-              Invoke Native SDKs on iOS, Android, and the Web with one code base.
-              Optimized for Ionic Framework apps, or use with any web app framework.
-            </h3>
-            <a href="/docs/getting-started/">
-              <button id="get-started">
-                Get Started
-              </button>
-            </a>
-            <h5>Supports</h5>
-            <img alt="Apple, Android, PWA" src="/assets/img/supported-env.png"></img>
-          </hgroup>
-          <div class="hero-illustration">
-            <img src="/assets/img/capacitor-hero.jpg"></img>
-          </div>
+          <Grid>
+            <Col md={6} sm={6} xs={6} cols={12}>
+              <hgroup>
+                <h1>
+                  A cross-platform native runtime for web apps.
+                </h1>
+                <h3>
+                  Capacitor turns any web app into a native app so you can run
+                  one app across iOS, Android, and the Web with the same code.
+                </h3>
+                <AnchorButton href="/docs/getting-started/" id="get-started">
+                  Get Started
+                </AnchorButton>
+                <AnchorButton href="/docs/" id="explore-docs">
+                  Explore Docs
+                </AnchorButton>
+                <h5>Supports</h5>
+                <img alt="Apple, Android, PWA" src="/assets/img/supported-env.png"></img>
+              </hgroup>
+            </Col>
+            <Col md={6} sm={6} xs={6} cols={12}>
+              <img src="/assets/img/capacitor-hero.jpg"></img>
+            </Col>
+          </Grid>
         </section>
 
         <section class="points">
-            <div class="points__item points__item--crossplatform">
-              <h2>Cross Platform</h2>
+          <Heading level={2}>Why Capacitor?</Heading>
+          <Grid>
+            <Col md={4} sm={4} xs={4} cols={6}>
+              <div>
+                <h2>Cross Platform</h2>
 
-              <p>
-                Build web apps that run equally well on iOS, Android, and as Progressive Web Apps
-            </p>
-          </div>
-          <div class="points__item points__item--nativeaccess">
-            <h2>Native Access</h2>
+                <p>
+                  Build web apps that run equally well on iOS, Android, and as Progressive Web Apps
+                </p>
+              </div>
+            </Col>
+            <Col md={4} sm={4} xs={4} cols={6}>
+              <div class="points__item points__item--nativeaccess">
+                <h2>Native Access</h2>
 
-            <p>
-              Access the full Native SDK on each platform, and
-              easily deploy to App Stores (and the web!)
-            </p>
-          </div>
-          <div class="points__item points__item--simple">
-            <h2>Use with Ionic</h2>
-            <p>
-              Capacitor provides native functionality for web apps, and is optimized
-              for Ionic Framework
-            </p>
-          </div>
-          <div class="points__item points__item--webnative">
-            <h2>Web Native</h2>
-            <p>
-              Build apps with standardized web technologies that will work for decades, and
-              easily reach users on the app stores <i>and</i> the mobile web.
-            </p>
-          </div>
-          <div class="points__item points__item--extensible">
-            <h2>Extensible</h2>
+                <p>
+                  Access the full Native SDK on each platform, and
+                  easily deploy to App Stores (and the web!)
+                </p>
+              </div>
+            </Col>
+            <Col md={4} sm={4} xs={4} cols={6}>
+              <div class="points__item points__item--simple">
+                <h2>Use with Ionic</h2>
+                <p>
+                  Capacitor provides native functionality for web apps, and is optimized
+                  for Ionic Framework
+                </p>
+              </div>
+            </Col>
+            <Col md={4} sm={4} xs={4} cols={6}>
+              <div class="points__item points__item--webnative">
+                <h2>Web Native</h2>
+                <p>
+                  Build apps with standardized web technologies that will work for decades, and
+                  easily reach users on the app stores <i>and</i> the mobile web.
+                </p>
+              </div>
+            </Col>
+            <Col md={4} sm={4} xs={4} cols={6}>
+              <div class="points__item points__item--extensible">
+                <h2>Extensible</h2>
 
-            <p>
-              Easily add custom native functionality with a simple Plugin API, or
-              use existing Cordova plugins with our compatibility layer.
-            </p>
-          </div>
-          <div class="points__item points__item--opensource">
-            <h2>Open Source</h2>
+                <p>
+                  Easily add custom native functionality with a simple Plugin API, or
+                  use existing Cordova plugins with our compatibility layer.
+                </p>
+              </div>
+            </Col>
+            <Col md={4} sm={4} xs={4} cols={6}>
+              <div class="points__item points__item--opensource">
+                <h2>Open Source</h2>
 
-            <p>
-              Capacitor is completely open source (MIT) and maintained
-              by <a href="http://ionicframework.com/">Ionic</a> and its community.
-            </p>
-          </div>
-      </section>
-    </ResponsiveContainer>,
-    <newsletter-signup />,
-    <capacitor-site-footer />
+                <p>
+                  Capacitor is completely open source (MIT) and maintained
+                  by <a href="http://ionicframework.com/">Ionic</a> and its community.
+                </p>
+              </div>
+            </Col>
+          </Grid>
+        </section>
+      </ResponsiveContainer>,
+      <newsletter-signup />,
+      <capacitor-site-footer />
     ];
   }
 }

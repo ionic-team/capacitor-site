@@ -1,6 +1,6 @@
 import { Component, Prop, ComponentInterface, State, h } from '@stencil/core';
-import SiteProviderConsumer, { SiteState } from '../../global/site-provider-consumer';
 import { SiteStructureItem } from '../../global/definitions';
+import state from '../../store';
 
 @Component({
   tag: 'site-menu',
@@ -29,36 +29,32 @@ export class SiteMenu implements ComponentInterface{
   render() {
     return (
       <div class="sticky">
-        <SiteProviderConsumer.Consumer>
-        {({ toggleLeftSidebar }: SiteState) => (
-          <div>
-            <ul class='menu-list'>
-              { this.siteStructureList.map((item, i) => (
-                <li>
-                  <a href="#" onClick={this.toggleParent(i)}>
-                    <span class="section-label">
-                      {item.text}
-                    </span>
-                  </a>
-                  <ul class={{ 'collapsed': this.closeList.indexOf(i) !== -1 }}>
-                  { item.children.map((childItem) => (
-                    <li>
-                      { (childItem.url) ?
-                      <a href={childItem.url} onClick={toggleLeftSidebar}>
-                        {childItem.text}
-                      </a> :
-                      <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
-                        {childItem.text}
-                      </a> }
-                    </li>
-                  )) }
-                  </ul>
-                </li>
-              )) }
-            </ul>
-          </div>
-        )}
-        </SiteProviderConsumer.Consumer>
+        <div>
+          <ul class='menu-list'>
+            { this.siteStructureList.map((item, i) => (
+              <li>
+                <a href="#" onClick={this.toggleParent(i)}>
+                  <span class="section-label">
+                    {item.text}
+                  </span>
+                </a>
+                <ul class={{ 'collapsed': this.closeList.indexOf(i) !== -1 }}>
+                { item.children.map((childItem) => (
+                  <li>
+                    { (childItem.url) ?
+                    <a href={childItem.url} onClick={() => state.isLeftSidebarIn = !state.isLeftSidebarIn}>
+                      {childItem.text}
+                    </a> :
+                    <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
+                      {childItem.text}
+                    </a> }
+                  </li>
+                )) }
+                </ul>
+              </li>
+            )) }
+          </ul>
+        </div>
       </div>
     );
   }

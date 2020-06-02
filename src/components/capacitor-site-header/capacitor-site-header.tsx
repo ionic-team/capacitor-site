@@ -1,5 +1,13 @@
 import { Component, Element, State, h } from '@stencil/core';
-import { ResponsiveContainer } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Button, AnchorButton } from '@ionic-internal/sites-shared';
+
+const formatNumber = (n) => {
+  if (n > 1000) {
+    return (n / 1000).toFixed(1) + 'K';
+  }
+
+  return n;
+}
 
 @Component({
   tag: 'capacitor-site-header',
@@ -13,62 +21,14 @@ export class SiteHeader {
   @State() isDropdownShown: boolean;
   @State() isScrolled = false;
 
-  /*
-  @Listen('resize', { target: 'window' })
-  handleResize() {
-    requestAnimationFrame(() => {
-      if (window.innerWidth > 768) {
-        const menu = (this.el.querySelector('.header-menu') as HTMLElement);
-        menu.style.display = "";
-        this.el.classList.remove('show-mobile-menu');
-        document.body.classList.remove('no-scroll');
-        this.isMobileMenuShown = false;
-      }
-    });
-  }
+  @State() starCount?: number;
 
-  @Listen('scroll', { target: 'window' })
-  handleScroll(event) {
-    requestAnimationFrame(() => {
-      if (event.target.documentElement.scrollTop !== 0 && !this.isScrolled) {
-        this.el.classList.add('scrolled');
-        this.isScrolled = true;
-      } else if (event.target.documentElement.scrollTop === 0 && this.isScrolled) {
-        this.el.classList.remove('scrolled');
-        this.isScrolled = false;
-      }
-    });
-  }
-  */
+  async componentWillLoad() {
+    const ret = await fetch("https://api.github.com/repos/ionic-team/capacitor")
 
-  componentWillLoad() {
-    this.isMobileMenuShown = false;
-  }
+    const json = await ret.json();
 
-  showNav () {
-    if (this.isMobileMenuShown) return;
-    this.isMobileMenuShown = true;
-
-    const menu = (this.el.querySelector('.header-menu') as HTMLElement);
-
-    menu.style.display = "flex";
-    setTimeout(() => {
-      this.el.classList.add('show-mobile-menu');
-      document.body.classList.add('no-scroll');
-    }, 1)
-  }
-
-  hideNav () {
-    if (!this.isMobileMenuShown) return;
-    this.isMobileMenuShown = false;
-
-    const menu = (this.el.querySelector('.header-menu') as HTMLElement);
-
-    this.el.classList.remove('show-mobile-menu');
-    setTimeout(() => {
-      menu.style.display = "none";
-      document.body.classList.remove('no-scroll');
-    }, 300)
+    this.starCount = formatNumber(json.stargazers_count);
   }
 
   handleDropdownEnter () {
@@ -92,6 +52,16 @@ export class SiteHeader {
           <a href="/community">Community</a>
           <a href="/blog">Community</a>
           <a href="/enterprise">Enterprise</a>
+        </div>
+
+        <div class="site-header__buttons">
+          <AnchorButton href="https://github.com/ionic-team/capacitor" class="site-header__buttons__github">
+            <ion-icon name="logo-github" />
+            {this.starCount ? this.starCount : 'GitHub'}
+          </AnchorButton>
+          <Button class="site-header__buttons__install">
+            Install
+          </Button>
         </div>
       </ResponsiveContainer>
     );

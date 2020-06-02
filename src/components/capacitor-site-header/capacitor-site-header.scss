@@ -2,9 +2,10 @@
 
 :host {
   background-color: #fff;
-  z-index: 99;
-  transition: .2s box-shadow ease-out;
+  display: block;
+  padding: 6px 0;
 }
+
 .site-header {
   display: flex;
   &--scrolled {
@@ -32,10 +33,14 @@
   }
   &__menu {
     display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
     a {
+      margin: 0 5px;
       transition: border .3s, color .3s;
       font-size: 14px;
-      padding-bottom: 4px;
       border-bottom: 3px solid transparent;
       vertical-align: top;
       color: rgba(#000, 0.6);
@@ -68,6 +73,30 @@
         left: 1px;
         top: -1px;
       }
+    }
+  }
+
+  &__buttons {
+    .ui-button {
+      font-size: var(--f-size-4);
+      letter-spacing: var(--f-tracking-tight);
+      line-height: 18px;
+      padding: 6px 6px;
+      margin-left: 5px;
+    }
+
+    &__github {
+      background: #fff;
+      border: 1px solid #EBEFF4;
+      color: var(--c-indigo-80);
+      line-height: 0;
+
+      ion-icon {
+        vertical-align: middle;
+      }
+    }
+    &__install {
+      background: var(--color-capacitor-blue);
     }
   }
 }

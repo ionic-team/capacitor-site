@@ -248,29 +248,6 @@ blockquote {
   padding: 16px 20px;
 }
 
-stencil-route-link:hover {
-  cursor: pointer;
-}
-
-
-button {
-  transition: all .15s ease;
-  font-size: 17px;
-  font-weight: 600;
-  color: #FFFFFF;
-  letter-spacing: -0.5px;
-  text-align: center;
-  border: none;
-  padding: 16px 20px;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
-}
-
-button:hover {
-  transform: translateY(-1px);
-}
-
 .wrapper {
   line-height: 32px;
   min-height: 100%;
