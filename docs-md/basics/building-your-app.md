@@ -31,7 +31,7 @@ build command:
 npm run build
 ```
 
-This builds your Progressive Web App if you've configured <stencil-route-link url="/docs/basics/progressive-web-app">Progressive Web App</stencil-route-link> support already.
+This builds your Progressive Web App if you've configured <a href="/docs/basics/progressive-web-app">Progressive Web App</a>> support already.
 
 ## 2. Copying Web Code
 

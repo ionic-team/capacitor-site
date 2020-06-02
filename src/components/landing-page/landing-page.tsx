@@ -5,7 +5,8 @@ import { ResponsiveContainer } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'landing-page',
-  styleUrl: 'landing-page.scss'
+  styleUrl: 'landing-page.scss',
+  scoped: true
 })
 export class LandingPage {
   render() {
@@ -19,11 +20,11 @@ export class LandingPage {
               Invoke Native SDKs on iOS, Android, and the Web with one code base.
               Optimized for Ionic Framework apps, or use with any web app framework.
             </h3>
-            <stencil-route-link url="/docs/getting-started/">
+            <a href="/docs/getting-started/">
               <button id="get-started">
                 Get Started
               </button>
-            </stencil-route-link>
+            </a>
             <h5>Supports</h5>
             <img alt="Apple, Android, PWA" src="/assets/img/supported-env.png"></img>
           </hgroup>

@@ -103,7 +103,7 @@ export function localizeMarkdownLink(renderer: marked.Renderer, filePath: string
       const newPath = path.resolve(path.dirname(filePath), pathname) + '.json';
       const item = findItem(metadataList, newPath);
       if (item && item.url != null) {
-        return `<stencil-route-link ${title ? `anchorTitle=${title}` : ''} url=${item.url}${fragment}>${text}</stencil-route-link>`;
+        return `<a ${title ? `title=${title}` : ''} href=${item.url}${fragment}>${text}</a>>`;
       }
     }
     return prevLink.call(this, href, title, text);

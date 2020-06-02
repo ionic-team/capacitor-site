@@ -1,14 +1,15 @@
-import '@stencil/router';
 import { Component, Prop, Element, Listen, State, h } from '@stencil/core';
-import { LocationSegments, RouterHistory } from '@stencil/router';
 import SiteProviderConsumer, { SiteState } from '../../global/site-provider-consumer';
+
+import { createRouter, Route, match } from 'stencil-router-v2';
+
+const Router = createRouter();
 
 @Component({
   tag: 'capacitor-site',
   styleUrl: 'capacitor-site.scss'
 })
 export class App {
-  history: RouterHistory = null;
   elements = [
     'site-header',
     'site-menu',
@@ -41,6 +42,7 @@ export class App {
     if (window.innerWidth <= 768) this.toggleLeftSidebar();
   }
 
+  /*
   setHistory = ({ history }: { history: RouterHistory }) => {
     if (!this.history) {
       this.history = history;
@@ -49,9 +51,11 @@ export class App {
       });
     }
   }
+  */
 
   componentWillLoad() {
     this.isLeftSidebarIn = false;
+
   }
 
   toggleLeftSidebar() {
@@ -93,40 +97,31 @@ export class App {
             <site-platform-bar productName="Capacitor" />
             <capacitor-site-header />
             <div class="app root">
-              <stencil-router scrollTopOffset={0}>
-                <stencil-route style={{ display: 'none' }} routeRender={this.setHistory}/>
-                <stencil-route-switch scrollTopOffset={0}>
+              <Router.Switch>
+                <Route path="/">
+                  <landing-page />
+                </Route>
 
-                  <stencil-route
-                    url="/"
-                    component="landing-page"
-                    exact={true}
-                  />
+                <Route path="/blog">
+                  <blog-page />
+                </Route>
 
-                  <stencil-route
-                    url="/blog"
-                    component="blog-page"
-                    exact={true}
-                  />
+                <Route path={match('/blog/:slug')} render={({ slug }) => (
+                  <blog-page slug={slug} />
+                )} />
 
-                  <stencil-route
-                    url="/blog/:slug"
-                    component="blog-page"
-                  />
+                <Route path="/enterprise">
+                  <capacitor-enterprise />
+                </Route>
 
-                  <stencil-route url="/docs/" exact={true} routeRender={() => (
-                    <document-component page='/docs/'></document-component>
-                  )}/>
+                <Route path="/docs">
+                  <document-component page="/docs/" />
+                </Route>
 
-                  <stencil-route url="/enterprise/" exact={true} routeRender={() => (
-                    <capacitor-enterprise />
-                  )}/>
-
-                  <stencil-route url="/docs/:pageName*" routeRender={({ match }) => (
-                    <document-component page={match.url}></document-component>
-                  )}/>
-                </stencil-route-switch>
-              </stencil-router>
+                <Route path={match('/docs/:pageName')} render={({ pageName }) => (
+                  <document-component page={`/docs/${pageName}`} />
+                )} />
+              </Router.Switch>
             </div>
           </div>
         </site-root>

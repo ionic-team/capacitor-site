@@ -1,5 +1,4 @@
 import { Component, Prop, State, h } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
 import { getBlogPost, getBlogPosts } from '../../prismic';
 import { BlogPostDocument, BlogPostsResponse } from '../../models';
 
@@ -10,15 +9,13 @@ import { PrismicRichText } from '@ionic-internal/sites-shared';
   styleUrl: 'blog-page.scss'
 })
 export class BlogPage {
-  @Prop() match?: MatchResults;
+  @Prop() slug: string;
 
   @State() posts?: BlogPostsResponse;
   @State() post?: BlogPostDocument;
 
-  @State() slug: string;
-
   async componentWillLoad() {
-    const slug = this.match?.params.slug;
+    const { slug } = this;
 
     if (slug) {
       this.slug = slug;

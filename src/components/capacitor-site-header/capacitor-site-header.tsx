@@ -1,9 +1,10 @@
-import { Component, Element, Listen, State, h } from '@stencil/core';
+import { Component, Element, State, h } from '@stencil/core';
 import { ResponsiveContainer } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'capacitor-site-header',
-  styleUrl: 'capacitor-site-header.scss'
+  styleUrl: 'capacitor-site-header.scss',
+  scoped: true
 })
 export class SiteHeader {
   @Element() el: Element;
@@ -12,6 +13,7 @@ export class SiteHeader {
   @State() isDropdownShown: boolean;
   @State() isScrolled = false;
 
+  /*
   @Listen('resize', { target: 'window' })
   handleResize() {
     requestAnimationFrame(() => {
@@ -37,6 +39,7 @@ export class SiteHeader {
       }
     });
   }
+  */
 
   componentWillLoad() {
     this.isMobileMenuShown = false;
@@ -79,70 +82,16 @@ export class SiteHeader {
   render() {
     return (
       <ResponsiveContainer class="site-header">
-        <stencil-route-link url="/" class="logo-link">
-          <div class="logo"></div>
-        </stencil-route-link>
+        <a href="/" class="site-header__logo-link">
+          <img src="/assets/img/logo-light.png" alt="Capacitor Logo" />
+        </a>
 
-        <div class="announcement">
-          <a href="https://ionicframework.com/ioniconf" target="_blank">
-            <span class="pill">Ioniconf</span>
-            <span class="message">
-              A one day online event celebrating cross-platform app development
-            </span>
-            <span class="cta">
-              Register Now
-              <app-icon name="caret-right"></app-icon>
-            </span>
-          </a>
-        </div>
-
-        <div class="header-menu">
-          <stencil-route-link urlMatch="/docs" url="/docs/" onClick={() => { this.hideNav() }}>
-            Docs
-          </stencil-route-link>
-
-          <span
-            class={{
-              'link': true,
-              'dropdown': true,
-              'dropdown--visible': this.isDropdownShown
-            }}
-            onMouseEnter={this.handleDropdownEnter.bind(this)}
-            onMouseLeave={this.handleDropdownLeave.bind(this)}>
-            <span class="dropdown__label">Community</span>
-            <ul class="dropdown__menu">
-              <div class="dropdown__arrow"></div>
-              <li class="dropdown__item">
-                <a href="/docs/community/plugins/">Plugins</a>
-              </li>
-              <li class="dropdown__item">
-                <a href="https://forum.ionicframework.com/" target="_blank">Forum</a>
-              </li>
-              <li class="dropdown__item">
-                <a href="https://getcapacitor.herokuapp.com/" target="_blank">Slack</a>
-              </li>
-              <li class="dropdown__item">
-                <a href="https://twitter.com/getcapacitor" target="_blank">Twitter</a>
-              </li>
-            </ul>
-          </span>
-
-          <stencil-route-link urlMatch="/enterprise" url="/enterprise/" class="link">
-            Enterprise
-          </stencil-route-link>
-
-          <a class="link link--external" href="https://github.com/ionic-team/capacitor" target="_blank">
-            GitHub
-            <app-icon name="targetblank"></app-icon>
-          </a>
-
-          <div class="header-close" onClick={() => { this.hideNav() }}>
-            <app-icon name="close"></app-icon>
-          </div>
-        </div>
-
-        <div class="header-overflow" onClick={() => { this.showNav() }}>
-          <app-icon name="more"></app-icon>
+        <div class="site-header__menu">
+          <a href="#features">Features</a>
+          <a href="/docs/">Docs</a>
+          <a href="/community">Community</a>
+          <a href="/blog">Community</a>
+          <a href="/enterprise">Enterprise</a>
         </div>
       </ResponsiveContainer>
     );

@@ -90,7 +90,7 @@ export class InPageNavigtion implements ComponentInterface {
               [`size-h${pl.level}`]: true,
               'selected': this.selectedId === pl.id
             }}>
-            <stencil-route-link url={`${this.currentPageUrl}#${pl.id}`}>{this.stripTags(pl.text)}</stencil-route-link>
+            <a href={`${this.currentPageUrl}#${pl.id}`}>{this.stripTags(pl.text)}</a>
           </li>
           )) }
         </ul>

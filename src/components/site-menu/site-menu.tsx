@@ -44,9 +44,9 @@ export class SiteMenu implements ComponentInterface{
                   { item.children.map((childItem) => (
                     <li>
                       { (childItem.url) ?
-                      <stencil-route-link url={childItem.url} exact={true} onClick={toggleLeftSidebar}>
+                      <a href={childItem.url} onClick={toggleLeftSidebar}>
                         {childItem.text}
-                      </stencil-route-link> :
+                      </a> :
                       <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
                         {childItem.text}
                       </a> }

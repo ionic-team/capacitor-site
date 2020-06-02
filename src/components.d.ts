@@ -6,7 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MarkdownContent, MarkdownHeading, SiteStructureItem } from "./global/definitions";
-import { MatchResults } from "@stencil/router";
 export namespace Components {
     interface AnchorLink {
         "to": string;
@@ -24,7 +23,7 @@ export namespace Components {
         "typeId": string;
     }
     interface BlogPage {
-        "match"?: MatchResults;
+        "slug": string;
     }
     interface CapacitorEnterprise {
     }
@@ -66,8 +65,6 @@ export namespace Components {
     }
     interface PluginPlatforms {
         "platforms": string;
-    }
-    interface SiteBar {
     }
     interface SiteMenu {
         "selectedParent": SiteStructureItem;
@@ -195,12 +192,6 @@ declare global {
         prototype: HTMLPluginPlatformsElement;
         new (): HTMLPluginPlatformsElement;
     };
-    interface HTMLSiteBarElement extends Components.SiteBar, HTMLStencilElement {
-    }
-    var HTMLSiteBarElement: {
-        prototype: HTMLSiteBarElement;
-        new (): HTMLSiteBarElement;
-    };
     interface HTMLSiteMenuElement extends Components.SiteMenu, HTMLStencilElement {
     }
     var HTMLSiteMenuElement: {
@@ -228,7 +219,6 @@ declare global {
         "newsletter-signup": HTMLNewsletterSignupElement;
         "plugin-api": HTMLPluginApiElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
-        "site-bar": HTMLSiteBarElement;
         "site-menu": HTMLSiteMenuElement;
     }
 }
@@ -250,7 +240,7 @@ declare namespace LocalJSX {
         "typeId"?: string;
     }
     interface BlogPage {
-        "match"?: MatchResults;
+        "slug"?: string;
     }
     interface CapacitorEnterprise {
     }
@@ -293,8 +283,6 @@ declare namespace LocalJSX {
     interface PluginPlatforms {
         "platforms"?: string;
     }
-    interface SiteBar {
-    }
     interface SiteMenu {
         "selectedParent"?: SiteStructureItem;
         "siteStructureList"?: SiteStructureItem[];
@@ -320,7 +308,6 @@ declare namespace LocalJSX {
         "newsletter-signup": NewsletterSignup;
         "plugin-api": PluginApi;
         "plugin-platforms": PluginPlatforms;
-        "site-bar": SiteBar;
         "site-menu": SiteMenu;
     }
 }
@@ -348,7 +335,6 @@ declare module "@stencil/core" {
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "plugin-api": LocalJSX.PluginApi & JSXBase.HTMLAttributes<HTMLPluginApiElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
-            "site-bar": LocalJSX.SiteBar & JSXBase.HTMLAttributes<HTMLSiteBarElement>;
             "site-menu": LocalJSX.SiteMenu & JSXBase.HTMLAttributes<HTMLSiteMenuElement>;
         }
     }
