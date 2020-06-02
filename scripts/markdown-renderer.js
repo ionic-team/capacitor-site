@@ -105,7 +105,7 @@ function localizeMarkdownLink(renderer, filePath, metadataList) {
             const newPath = path_1.default.resolve(path_1.default.dirname(filePath), pathname) + '.json';
             const item = findItem(metadataList, newPath);
             if (item && item.url != null) {
-                return `<a ${title ? `anchorTitle=${title}` : ''} url=${item.url}${fragment}>${text}</a>>`;
+                return `<a ${title ? `title=${title}` : ''} href=${item.url}${fragment}>${text}</a>>`;
             }
         }
         return prevLink.call(this, href, title, text);

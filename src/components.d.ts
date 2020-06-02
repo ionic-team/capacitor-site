@@ -38,8 +38,6 @@ export namespace Components {
         "contributors": string[];
         "link": (contributor: string) => string;
     }
-    interface DemosPage {
-    }
     interface DocSnippet {
     }
     interface DocumentComponent {
@@ -138,12 +136,6 @@ declare global {
         prototype: HTMLContributorListElement;
         new (): HTMLContributorListElement;
     };
-    interface HTMLDemosPageElement extends Components.DemosPage, HTMLStencilElement {
-    }
-    var HTMLDemosPageElement: {
-        prototype: HTMLDemosPageElement;
-        new (): HTMLDemosPageElement;
-    };
     interface HTMLDocSnippetElement extends Components.DocSnippet, HTMLStencilElement {
     }
     var HTMLDocSnippetElement: {
@@ -210,7 +202,6 @@ declare global {
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
         "capacitor-site-header": HTMLCapacitorSiteHeaderElement;
         "contributor-list": HTMLContributorListElement;
-        "demos-page": HTMLDemosPageElement;
         "doc-snippet": HTMLDocSnippetElement;
         "document-component": HTMLDocumentComponentElement;
         "in-page-navigation": HTMLInPageNavigationElement;
@@ -255,8 +246,6 @@ declare namespace LocalJSX {
         "contributors"?: string[];
         "link"?: (contributor: string) => string;
     }
-    interface DemosPage {
-    }
     interface DocSnippet {
     }
     interface DocumentComponent {
@@ -299,7 +288,6 @@ declare namespace LocalJSX {
         "capacitor-site-footer": CapacitorSiteFooter;
         "capacitor-site-header": CapacitorSiteHeader;
         "contributor-list": ContributorList;
-        "demos-page": DemosPage;
         "doc-snippet": DocSnippet;
         "document-component": DocumentComponent;
         "in-page-navigation": InPageNavigation;
@@ -326,7 +314,6 @@ declare module "@stencil/core" {
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
             "capacitor-site-header": LocalJSX.CapacitorSiteHeader & JSXBase.HTMLAttributes<HTMLCapacitorSiteHeaderElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
-            "demos-page": LocalJSX.DemosPage & JSXBase.HTMLAttributes<HTMLDemosPageElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
             "document-component": LocalJSX.DocumentComponent & JSXBase.HTMLAttributes<HTMLDocumentComponentElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
