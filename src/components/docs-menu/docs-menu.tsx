@@ -1,6 +1,7 @@
 import { Component, Prop, ComponentInterface, State, h } from '@stencil/core';
 import { SiteStructureItem } from '../../global/definitions';
 import state from '../../store';
+import { href } from 'stencil-router-v2';
 
 @Component({
   tag: 'docs-menu',
@@ -13,7 +14,7 @@ export class SiteMenu implements ComponentInterface{
 
   @State() closeList = [];
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.closeList = this.siteStructureList.map((_item, i) => i);
     this.closeList.shift();
   }
@@ -49,17 +50,20 @@ export class SiteMenu implements ComponentInterface{
                     </span>
                   </a>
                   <ul class={{ collapsed }}>
-                  { item.children.map((childItem) => (
+                  { item.children.map((childItem) => {
+                    console.log('Rendering child item', childItem);
+                    return (
                     <li>
                       { (childItem.url) ?
-                      <a href={childItem.url} onClick={() => state.isLeftSidebarIn = !state.isLeftSidebarIn}>
+                      <a {...href(childItem.url)}>
                         {childItem.text}
                       </a> :
                       <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
                         {childItem.text}
                       </a> }
                     </li>
-                  )) }
+                    )
+                  }) }
                   </ul>
                 </li>
               )
