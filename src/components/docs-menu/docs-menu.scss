@@ -75,6 +75,7 @@
   color: #6c6c8b;
   text-decoration: none;
   border: 0;
+  cursor: pointer;
 }
 
 .menu-list a:not(.link-active) {
@@ -86,6 +87,7 @@
 }
 
 .menu-list > li > a {
+  cursor: pointer;
   ion-icon {
     color: var(--c-carbon-90);
     font-weight: bold;

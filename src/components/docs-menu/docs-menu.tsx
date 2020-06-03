@@ -1,6 +1,5 @@
 import { Component, Prop, ComponentInterface, State, h } from '@stencil/core';
 import { SiteStructureItem } from '../../global/definitions';
-import state from '../../store';
 import { href } from 'stencil-router-v2';
 
 @Component({
