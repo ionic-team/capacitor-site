@@ -1,5 +1,6 @@
 import { Component, Element, State, h } from '@stencil/core';
 import { ResponsiveContainer, Button, AnchorButton } from '@ionic-internal/sites-shared';
+import { href } from 'stencil-router-v2';
 
 const formatNumber = (n) => {
   if (n > 1000) {
@@ -42,16 +43,16 @@ export class SiteHeader {
   render() {
     return (
       <ResponsiveContainer class="site-header">
-        <a href="/" class="site-header__logo-link">
+        <a {...href('/')} class="site-header__logo-link">
           <img src="/assets/img/logo-light.png" alt="Capacitor Logo" />
         </a>
 
         <div class="site-header__menu">
-          <a href="/#features">Features</a>
-          <a href="/docs">Docs</a>
-          <a href="/community">Community</a>
-          <a href="/blog">Blog</a>
-          <a href="/enterprise">Enterprise</a>
+          <a {...href('/#features')}>Features</a>
+          <a {...href('/docs')}>Docs</a>
+          <a {...href('/community')}>Community</a>
+          <a {...href('/blog')}>Blog</a>
+          <a {...href('/enterprise')}>Enterprise</a>
         </div>
 
         <div class="site-header__buttons">

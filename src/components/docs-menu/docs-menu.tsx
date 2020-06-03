@@ -3,8 +3,8 @@ import { SiteStructureItem } from '../../global/definitions';
 import state from '../../store';
 
 @Component({
-  tag: 'site-menu',
-  styleUrl: 'site-menu.scss'
+  tag: 'docs-menu',
+  styleUrl: 'docs-menu.scss'
 })
 export class SiteMenu implements ComponentInterface{
   @Prop() siteStructureList: SiteStructureItem[] = [];

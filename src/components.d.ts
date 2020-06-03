@@ -28,7 +28,6 @@ export namespace Components {
     interface CapacitorEnterprise {
     }
     interface CapacitorSite {
-        "isLandingPage": boolean;
     }
     interface CapacitorSiteFooter {
     }
@@ -39,6 +38,10 @@ export namespace Components {
         "link": (contributor: string) => string;
     }
     interface DocSnippet {
+    }
+    interface DocsMenu {
+        "selectedParent": SiteStructureItem;
+        "siteStructureList": SiteStructureItem[];
     }
     interface DocumentComponent {
         "page": string;
@@ -63,10 +66,6 @@ export namespace Components {
     }
     interface PluginPlatforms {
         "platforms": string;
-    }
-    interface SiteMenu {
-        "selectedParent": SiteStructureItem;
-        "siteStructureList": SiteStructureItem[];
     }
 }
 declare global {
@@ -142,6 +141,12 @@ declare global {
         prototype: HTMLDocSnippetElement;
         new (): HTMLDocSnippetElement;
     };
+    interface HTMLDocsMenuElement extends Components.DocsMenu, HTMLStencilElement {
+    }
+    var HTMLDocsMenuElement: {
+        prototype: HTMLDocsMenuElement;
+        new (): HTMLDocsMenuElement;
+    };
     interface HTMLDocumentComponentElement extends Components.DocumentComponent, HTMLStencilElement {
     }
     var HTMLDocumentComponentElement: {
@@ -184,12 +189,6 @@ declare global {
         prototype: HTMLPluginPlatformsElement;
         new (): HTMLPluginPlatformsElement;
     };
-    interface HTMLSiteMenuElement extends Components.SiteMenu, HTMLStencilElement {
-    }
-    var HTMLSiteMenuElement: {
-        prototype: HTMLSiteMenuElement;
-        new (): HTMLSiteMenuElement;
-    };
     interface HTMLElementTagNameMap {
         "anchor-link": HTMLAnchorLinkElement;
         "app-burger": HTMLAppBurgerElement;
@@ -203,6 +202,7 @@ declare global {
         "capacitor-site-header": HTMLCapacitorSiteHeaderElement;
         "contributor-list": HTMLContributorListElement;
         "doc-snippet": HTMLDocSnippetElement;
+        "docs-menu": HTMLDocsMenuElement;
         "document-component": HTMLDocumentComponentElement;
         "in-page-navigation": HTMLInPageNavigationElement;
         "landing-page": HTMLLandingPageElement;
@@ -210,7 +210,6 @@ declare global {
         "newsletter-signup": HTMLNewsletterSignupElement;
         "plugin-api": HTMLPluginApiElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
-        "site-menu": HTMLSiteMenuElement;
     }
 }
 declare namespace LocalJSX {
@@ -236,7 +235,6 @@ declare namespace LocalJSX {
     interface CapacitorEnterprise {
     }
     interface CapacitorSite {
-        "isLandingPage"?: boolean;
     }
     interface CapacitorSiteFooter {
     }
@@ -247,6 +245,10 @@ declare namespace LocalJSX {
         "link"?: (contributor: string) => string;
     }
     interface DocSnippet {
+    }
+    interface DocsMenu {
+        "selectedParent"?: SiteStructureItem;
+        "siteStructureList"?: SiteStructureItem[];
     }
     interface DocumentComponent {
         "page"?: string;
@@ -272,10 +274,6 @@ declare namespace LocalJSX {
     interface PluginPlatforms {
         "platforms"?: string;
     }
-    interface SiteMenu {
-        "selectedParent"?: SiteStructureItem;
-        "siteStructureList"?: SiteStructureItem[];
-    }
     interface IntrinsicElements {
         "anchor-link": AnchorLink;
         "app-burger": AppBurger;
@@ -289,6 +287,7 @@ declare namespace LocalJSX {
         "capacitor-site-header": CapacitorSiteHeader;
         "contributor-list": ContributorList;
         "doc-snippet": DocSnippet;
+        "docs-menu": DocsMenu;
         "document-component": DocumentComponent;
         "in-page-navigation": InPageNavigation;
         "landing-page": LandingPage;
@@ -296,7 +295,6 @@ declare namespace LocalJSX {
         "newsletter-signup": NewsletterSignup;
         "plugin-api": PluginApi;
         "plugin-platforms": PluginPlatforms;
-        "site-menu": SiteMenu;
     }
 }
 export { LocalJSX as JSX };
@@ -315,6 +313,7 @@ declare module "@stencil/core" {
             "capacitor-site-header": LocalJSX.CapacitorSiteHeader & JSXBase.HTMLAttributes<HTMLCapacitorSiteHeaderElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
+            "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
             "document-component": LocalJSX.DocumentComponent & JSXBase.HTMLAttributes<HTMLDocumentComponentElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
@@ -322,7 +321,6 @@ declare module "@stencil/core" {
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "plugin-api": LocalJSX.PluginApi & JSXBase.HTMLAttributes<HTMLPluginApiElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
-            "site-menu": LocalJSX.SiteMenu & JSXBase.HTMLAttributes<HTMLSiteMenuElement>;
         }
     }
 }

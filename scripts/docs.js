@@ -5,7 +5,7 @@
  * 
  * This got a little out of hand, I fully admit
  */
-var fs = require('fs');
+var fs = require('fs-extra');
 var os = require('os');
 var path = require('path');
 var util = require('util');
@@ -24,6 +24,7 @@ const writeIndexHtmlOutput = (plugin, string) => {
   const targetDirName = pluginNameSplitCapitalized.slice(0, pluginNameSplitCapitalized.length-1).join('-').toLowerCase();
   const p = path.join(SITE_DIR, SITE_OUTPUT_DIR, targetDirName, 'api-index.html');
   try {
+    fs.ensureDirSync(path.dirname(p));
     fs.writeFileSync(p, string, { encoding: 'utf8' });
   } catch(e) {
     console.error('Unable to write docs for plugin ', targetDirName);
@@ -37,6 +38,7 @@ const writeDocumentationHtmlOutput = (plugin, string) => {
   const p = path.join(SITE_DIR, SITE_OUTPUT_DIR, targetDirName, 'api.html');
   console.log('WRITING', p);
   try {
+    fs.ensureDirSync(path.dirname(p));
     fs.writeFileSync(p, string, { encoding: 'utf8' });
   } catch(e) {
     console.error('Unable to write docs for plugin ', targetDirName);
