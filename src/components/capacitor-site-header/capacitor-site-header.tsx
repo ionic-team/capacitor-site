@@ -50,7 +50,7 @@ export class SiteHeader {
           <a href="#features">Features</a>
           <a href="/docs">Docs</a>
           <a href="/community">Community</a>
-          <a href="/blog">Community</a>
+          <a href="/blog">Blog</a>
           <a href="/enterprise">Enterprise</a>
         </div>
 

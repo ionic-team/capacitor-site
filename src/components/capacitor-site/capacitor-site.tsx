@@ -86,37 +86,33 @@ export class App {
   render() {
     return (
       <site-root>
-        <div id="main-div">
-          <site-platform-bar productName="Capacitor" />
-          <capacitor-site-header />
-          <div class="app root">
-            <Router.Switch>
-              <Route path="/">
-                <landing-page />
-              </Route>
+        <site-platform-bar productName="Capacitor" />
+        <capacitor-site-header />
+        <Router.Switch>
+          <Route path="/">
+            <landing-page />
+          </Route>
 
-              <Route path="/blog">
-                <blog-page />
-              </Route>
+          <Route path="/blog">
+            <blog-page />
+          </Route>
 
-              <Route path={match('/blog/:slug')} render={({ slug }) => (
-                <blog-page slug={slug} />
-              )} />
+          <Route path={match('/blog/:slug')} render={({ slug }) => (
+            <blog-page slug={slug} />
+          )} />
 
-              <Route path="/enterprise">
-                <capacitor-enterprise />
-              </Route>
+          <Route path="/enterprise">
+            <capacitor-enterprise />
+          </Route>
 
-              <Route path="/docs">
-                <document-component page="/docs/" />
-              </Route>
+          <Route path="/docs">
+            <document-component page="/docs/" />
+          </Route>
 
-              <Route path={match('/docs/:pageName*')} render={({ pageName }) => (
-                <document-component page={`/docs/${pageName}`} />
-              )} />
-            </Router.Switch>
-          </div>
-        </div>
+          <Route path={match('/docs/:pageName*')} render={({ pageName }) => (
+            <document-component page={`/docs/${pageName}`} />
+          )} />
+        </Router.Switch>
       </site-root>
     );
   }

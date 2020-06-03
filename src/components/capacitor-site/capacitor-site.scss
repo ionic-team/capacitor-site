@@ -10,9 +10,10 @@
 
 capacitor-site {
   min-height: 100%;
-  display: flex;
-  flex-flow: column;
-  // overflow: hidden;
+}
+
+site-root {
+  flex: 1;
 }
 
 .no-scroll {
@@ -112,11 +113,6 @@ doc-content
   height: 100%;
   //max-width: 1080px;
   //margin: auto;
-}
-
-#main-div {
-  flex-grow: 1;
-  flex-shrink: 0;
 }
 
 ::selection {
