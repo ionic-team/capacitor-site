@@ -47,7 +47,7 @@ export class SiteHeader {
         </a>
 
         <div class="site-header__menu">
-          <a href="#features">Features</a>
+          <a href="/#features">Features</a>
           <a href="/docs">Docs</a>
           <a href="/community">Community</a>
           <a href="/blog">Blog</a>
