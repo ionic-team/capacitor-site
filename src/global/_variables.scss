@@ -16,6 +16,7 @@ $easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
 // TODO convert these and their use to SCSS
 :root {
   --color-capacitor-blue: #119EFF;
+  --button-background: var(--color-capacitor-blue);
 
   --color-woodsmoke: #16161D;
   --color-dolphin: #626177;

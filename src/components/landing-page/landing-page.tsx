@@ -16,7 +16,7 @@ export class LandingPage {
         <section class="hero">
           <Grid>
             <Col md={6} sm={6} xs={6} cols={12}>
-              <hgroup>
+              <hgroup class="hero__heading">
                 <h1>
                   A cross-platform native runtime for web apps.
                 </h1>
@@ -24,18 +24,18 @@ export class LandingPage {
                   Capacitor turns any web app into a native app so you can run
                   one app across iOS, Android, and the Web with the same code.
                 </h3>
-                <AnchorButton href="/docs/getting-started/" id="get-started">
-                  Get Started
-                </AnchorButton>
-                <AnchorButton href="/docs/" id="explore-docs">
-                  Explore Docs
-                </AnchorButton>
-                <h5>Supports</h5>
-                <img alt="Apple, Android, PWA" src="/assets/img/supported-env.png"></img>
+                <div class="hero__buttons">
+                  <AnchorButton href="/docs/getting-started/" id="get-started">
+                    Get Started
+                  </AnchorButton>
+                  <AnchorButton href="/docs/" id="explore-docs" class="btn-white">
+                    Explore Docs
+                  </AnchorButton>
+                </div>
               </hgroup>
             </Col>
             <Col md={6} sm={6} xs={6} cols={12}>
-              <img src="/assets/img/capacitor-hero.jpg"></img>
+              <img src="/assets/img/landing-graphic.png" alt="Capacitor Architecture Diagram" />
             </Col>
           </Grid>
         </section>
