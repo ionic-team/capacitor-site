@@ -63,7 +63,7 @@ export class DocumentComponent implements ComponentInterface {
       <div class="container">
         <app-burger />
 
-        <site-menu selectedParent={this.parent} siteStructureList={siteStructure as SiteStructureItem[]} />
+        <docs-menu selectedParent={this.parent} siteStructureList={siteStructure as SiteStructureItem[]} />
 
         <app-marked fetchPath={this.item.filePath} renderer={(docsContent) => [
           <Helmet>
