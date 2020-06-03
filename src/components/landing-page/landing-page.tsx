@@ -1,7 +1,7 @@
 import { Component, h } from '@stencil/core';
 
 import Helmet from '@stencil/helmet';
-import { ResponsiveContainer, Grid, Col, AnchorButton, Heading } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'landing-page',
@@ -38,13 +38,18 @@ export class LandingPage {
               <img src="/assets/img/landing-graphic.png" alt="Capacitor Architecture Diagram" />
             </Col>
           </Grid>
+          <img src="/assets/img/supported-icons.png" alt="Supported platforms" style={{height: '16px'}}/>
         </section>
 
         <section class="points">
           <Heading level={2}>Why Capacitor?</Heading>
+          <Paragraph>
+            Leverage Capacitor’s native runtime for connecting web apps to native functionality across iOS, Android, and the mobile web (PWA) — all from a single shared codebase.
+          </Paragraph>
           <Grid>
             <Col md={4} sm={4} xs={4} cols={6}>
               <div>
+                <img class="points__img" src="/assets/img/capacitor-why-cross-platform.png" alt="Cross Platform" />
                 <h2>Cross Platform</h2>
 
                 <p>
@@ -54,6 +59,7 @@ export class LandingPage {
             </Col>
             <Col md={4} sm={4} xs={4} cols={6}>
               <div class="points__item points__item--nativeaccess">
+                <img class="points__img" src="/assets/img/capacitor-why-native.png" alt="Native" />
                 <h2>Native Access</h2>
 
                 <p>
@@ -63,25 +69,8 @@ export class LandingPage {
               </div>
             </Col>
             <Col md={4} sm={4} xs={4} cols={6}>
-              <div class="points__item points__item--simple">
-                <h2>Use with Ionic</h2>
-                <p>
-                  Capacitor provides native functionality for web apps, and is optimized
-                  for Ionic Framework
-                </p>
-              </div>
-            </Col>
-            <Col md={4} sm={4} xs={4} cols={6}>
-              <div class="points__item points__item--webnative">
-                <h2>Web Native</h2>
-                <p>
-                  Build apps with standardized web technologies that will work for decades, and
-                  easily reach users on the app stores <i>and</i> the mobile web.
-                </p>
-              </div>
-            </Col>
-            <Col md={4} sm={4} xs={4} cols={6}>
               <div class="points__item points__item--extensible">
+                <img class="points__img" src="/assets/img/capacitor-why-extensible.png" alt="Extensible" />
                 <h2>Extensible</h2>
 
                 <p>
@@ -91,7 +80,29 @@ export class LandingPage {
               </div>
             </Col>
             <Col md={4} sm={4} xs={4} cols={6}>
+              <div class="points__item points__item--webnative">
+                <img class="points__img" src="/assets/img/capacitor-why-web-to-native.png" alt="Web To Native" />
+                <h2>Web Native</h2>
+                <p>
+                  Build apps with standardized web technologies that will work for decades, and
+                  easily reach users on the app stores <i>and</i> the mobile web.
+                </p>
+              </div>
+            </Col>
+            <Col md={4} sm={4} xs={4} cols={6}>
+              <div class="points__item points__item--extensible">
+                <img class="points__img" src="/assets/img/capacitor-why-production-ready.png" alt="Production Ready" />
+                <h2>Production Ready</h2>
+
+                <p>
+                  Powering apps with millions of users and backed by a company dedicated
+                  to app development, Capacitor is ready for serious production apps, today.
+                </p>
+              </div>
+            </Col>
+            <Col md={4} sm={4} xs={4} cols={6}>
               <div class="points__item points__item--opensource">
+                <img class="points__img" src="/assets/img/capacitor-why-oss.png" alt="Open Source" />
                 <h2>Open Source</h2>
 
                 <p>
