@@ -4,13 +4,19 @@ import state from '../../store';
 
 @Component({
   tag: 'docs-menu',
-  styleUrl: 'docs-menu.scss'
+  styleUrl: 'docs-menu.scss',
+  scoped: true
 })
 export class SiteMenu implements ComponentInterface{
   @Prop() siteStructureList: SiteStructureItem[] = [];
   @Prop({ mutable: true }) selectedParent: SiteStructureItem = null;
 
   @State() closeList = [];
+
+  componentDidLoad() {
+    this.closeList = this.siteStructureList.map((_item, i) => i);
+    this.closeList.shift();
+  }
 
   toggleParent = (itemNumber) => {
     return (e: MouseEvent) => {
@@ -30,29 +36,34 @@ export class SiteMenu implements ComponentInterface{
     return (
       <div class="sticky">
         <div>
-          <ul class='menu-list'>
-            { this.siteStructureList.map((item, i) => (
-              <li>
-                <a href="#" onClick={this.toggleParent(i)}>
-                  <span class="section-label">
-                    {item.text}
-                  </span>
-                </a>
-                <ul class={{ 'collapsed': this.closeList.indexOf(i) !== -1 }}>
-                { item.children.map((childItem) => (
-                  <li>
-                    { (childItem.url) ?
-                    <a href={childItem.url} onClick={() => state.isLeftSidebarIn = !state.isLeftSidebarIn}>
-                      {childItem.text}
-                    </a> :
-                    <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
-                      {childItem.text}
-                    </a> }
-                  </li>
-                )) }
-                </ul>
-              </li>
-            )) }
+          <ul class="menu-list">
+            { this.siteStructureList.map((item, i) => {
+              const collapsed = this.closeList.indexOf(i) !== -1;
+
+              return (
+                <li>
+                  <a href="#" onClick={this.toggleParent(i)} class={{ collapsed }}>
+                    { collapsed ? <ion-icon name="chevron-forward" /> : <ion-icon name="chevron-down" /> }
+                    <span class="section-label">
+                      {item.text}
+                    </span>
+                  </a>
+                  <ul class={{ collapsed }}>
+                  { item.children.map((childItem) => (
+                    <li>
+                      { (childItem.url) ?
+                      <a href={childItem.url} onClick={() => state.isLeftSidebarIn = !state.isLeftSidebarIn}>
+                        {childItem.text}
+                      </a> :
+                      <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
+                        {childItem.text}
+                      </a> }
+                    </li>
+                  )) }
+                  </ul>
+                </li>
+              )
+            }) }
           </ul>
         </div>
       </div>

@@ -1,101 +1,11 @@
 @import '../../global/variables';
 
-docs-menu {
+:host {
   display: block;
   flex: 0 0 auto;
   margin-top: 100px;
-}
 
-docs-menu .sticky {
-  // top: 100px;
-}
-
-docs-menu .section-label {
-  color: var(--color-woodsmoke);
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-docs-menu .menu-list li,
-docs-menu .menu-list ul li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-docs-menu .menu-list {
-  margin-top: 0;
-  padding: 0;
-}
-
-docs-menu .menu-list .section-label:first-of-type {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-docs-menu .menu-list ul {
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-docs-menu .menu-list li {
-  font-size: 14px;
-}
-
-docs-menu .menu-list > li + li {
-  margin-top: 8px;
-}
-
-docs-menu .menu-list a {
-  font-weight: 400;
-  color: #6c6c8b;
-  text-decoration: none;
-  border: 0;
-}
-
-docs-menu .menu-list a:not(.link-active) {
-  // transition: color 0.2s;
-}
-
-docs-menu .menu-list a:hover {
-  border: 0;
-}
-
-docs-menu .menu-list .link-active {
-  font-weight: 500;
-  color: var(--color-dodger-blue);
-}
-
-docs-menu .menu-list a:hover:not(.link-active) {
-  color: var(--color-woodsmoke);
-}
-
-docs-menu .menu-list ul li {
-  padding-left: 8px;
-  transition: 80ms height;
-  height: 26px;
-  display: block;
-  overflow: hidden;
-}
-
-docs-menu .menu-list ul li a {
-  display: block;
-  transition: .2s transform ease, .2s color ease;
-}
-
-docs-menu .menu-list ul li:hover a,
-docs-menu .menu-list ul li a.link-active {
-  transform: translateX(2px);
-}
-
-docs-menu .menu-list ul.collapsed li {
-  height: 0;
-}
-
-@media screen and (max-width: 768px) {
-  docs-menu {
+  @media screen and (max-width: 768px) {
     position: fixed;
     top: 0;
     left: 0;
@@ -106,15 +16,114 @@ docs-menu .menu-list ul.collapsed li {
     transform: translateX(calc(-100vw + 56px));
     height: 100%;
     overflow-y: scroll;
-  }
-  docs-menu .menu-list .section-label {
-    color: white;
-  }
-  docs-menu .menu-list a {
-    color: rgba(255, 255, 255, 0.6);
-  }
-  docs-menu .menu-list a:hover:not(.link-active) {
-    color: white;
+    .menu-list .section-label {
+      color: white;
+    }
+    .menu-list a {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .menu-list a:hover:not(.link-active) {
+      color: white;
+    }
   }
 }
 
+.sticky {
+  // top: 100px;
+}
+
+.section-label {
+  color: var(--color-woodsmoke);
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menu-list li,
+.menu-list ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list {
+  margin-top: 0;
+  padding: 0;
+}
+
+.menu-list .section-label:first-of-type {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.menu-list ul {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.menu-list li {
+  font-size: 14px;
+}
+
+.menu-list > li + li {
+  margin-top: 8px;
+}
+
+.menu-list a {
+  font-weight: 400;
+  color: #6c6c8b;
+  text-decoration: none;
+  border: 0;
+}
+
+.menu-list a:not(.link-active) {
+  // transition: color 0.2s;
+}
+
+.menu-list a:hover {
+  border: 0;
+}
+
+.menu-list > li > a {
+  ion-icon {
+    color: var(--c-carbon-90);
+    font-weight: bold;
+    font-size: 14px;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  &.collapsed {
+  }
+}
+
+.menu-list .link-active {
+  font-weight: 500;
+  color: var(--color-dodger-blue);
+}
+
+.menu-list a:hover:not(.link-active) {
+  color: var(--color-woodsmoke);
+}
+
+.menu-list ul li {
+  padding-left: 22px;
+  transition: 80ms height;
+  height: 26px;
+  display: block;
+  overflow: hidden;
+}
+
+.menu-list ul li a {
+  display: block;
+  transition: .2s transform ease, .2s color ease;
+}
+
+.menu-list ul li:hover a,
+.menu-list ul li a.link-active {
+  transform: translateX(2px);
+}
+
+.menu-list ul.collapsed li {
+  height: 0;
+}
