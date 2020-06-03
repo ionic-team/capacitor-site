@@ -44,11 +44,11 @@ export class DocumentComponent implements ComponentInterface {
     }
 
     if ((e.target as HTMLElement).tagName === 'A') {
-      e.stopPropagation();
-      e.preventDefault();
       const href = (e.target as HTMLAnchorElement).href;
       const u = new URL(href);
       if (u.origin === window.location.origin) {
+        e.stopPropagation();
+        e.preventDefault();
         Router.push(u.pathname);
       }
     }
