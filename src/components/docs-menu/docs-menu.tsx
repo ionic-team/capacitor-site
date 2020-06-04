@@ -50,7 +50,6 @@ export class SiteMenu implements ComponentInterface{
                   </a>
                   <ul class={{ collapsed }}>
                   { item.children.map((childItem) => {
-                    console.log('Rendering child item', childItem);
                     return (
                     <li>
                       { (childItem.url) ?
