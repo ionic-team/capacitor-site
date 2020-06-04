@@ -13,9 +13,7 @@ export const config: Config = {
       type: 'www',
       // prerenderConfig: './prerender.config.ts',
       baseUrl: 'https://capacitorjs.com/',
-      serviceWorker: {
-        unregister: true,
-      },
+      serviceWorker: null
     },
   ],
   plugins: [
