@@ -3,7 +3,7 @@ import { Component, Element, State, h } from '@stencil/core';
 import { Route, match } from 'stencil-router-v2';
 import { InternalRouterState } from 'stencil-router-v2/dist/types';
 
-import state from '../../store';
+// import state from '../../store';
 import Router from '../../router';
 
 @Component({
