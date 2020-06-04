@@ -33,6 +33,8 @@ export namespace Components {
     }
     interface CapacitorSiteHeader {
     }
+    interface CapacitorSiteRoutes {
+    }
     interface ContributorList {
         "contributors": string[];
         "link": (contributor: string) => string;
@@ -129,6 +131,12 @@ declare global {
         prototype: HTMLCapacitorSiteHeaderElement;
         new (): HTMLCapacitorSiteHeaderElement;
     };
+    interface HTMLCapacitorSiteRoutesElement extends Components.CapacitorSiteRoutes, HTMLStencilElement {
+    }
+    var HTMLCapacitorSiteRoutesElement: {
+        prototype: HTMLCapacitorSiteRoutesElement;
+        new (): HTMLCapacitorSiteRoutesElement;
+    };
     interface HTMLContributorListElement extends Components.ContributorList, HTMLStencilElement {
     }
     var HTMLContributorListElement: {
@@ -200,6 +208,7 @@ declare global {
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
         "capacitor-site-header": HTMLCapacitorSiteHeaderElement;
+        "capacitor-site-routes": HTMLCapacitorSiteRoutesElement;
         "contributor-list": HTMLContributorListElement;
         "doc-snippet": HTMLDocSnippetElement;
         "docs-menu": HTMLDocsMenuElement;
@@ -239,6 +248,8 @@ declare namespace LocalJSX {
     interface CapacitorSiteFooter {
     }
     interface CapacitorSiteHeader {
+    }
+    interface CapacitorSiteRoutes {
     }
     interface ContributorList {
         "contributors"?: string[];
@@ -285,6 +296,7 @@ declare namespace LocalJSX {
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
         "capacitor-site-header": CapacitorSiteHeader;
+        "capacitor-site-routes": CapacitorSiteRoutes;
         "contributor-list": ContributorList;
         "doc-snippet": DocSnippet;
         "docs-menu": DocsMenu;
@@ -311,6 +323,7 @@ declare module "@stencil/core" {
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
             "capacitor-site-header": LocalJSX.CapacitorSiteHeader & JSXBase.HTMLAttributes<HTMLCapacitorSiteHeaderElement>;
+            "capacitor-site-routes": LocalJSX.CapacitorSiteRoutes & JSXBase.HTMLAttributes<HTMLCapacitorSiteRoutesElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;

@@ -25,11 +25,15 @@ export class SiteHeader {
   @State() starCount?: number;
 
   async componentWillLoad() {
-    const ret = await fetch("https://api.github.com/repos/ionic-team/capacitor")
+    try {
+      const ret = await fetch("https://api.github.com/repos/ionic-team/capacitor")
 
-    const json = await ret.json();
+      const json = await ret.json();
 
-    this.starCount = formatNumber(json.stargazers_count);
+      this.starCount = formatNumber(json.stargazers_count);
+    } catch (e) {
+      console.error('Unable to get stars', e);
+    }
   }
 
   handleDropdownEnter () {
