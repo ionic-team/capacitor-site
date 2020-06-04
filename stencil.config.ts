@@ -12,7 +12,6 @@ export const config: Config = {
     {
       type: 'www',
       // prerenderConfig: './prerender.config.ts',
-      buildDir: 'site-new-build',
       baseUrl: 'https://capacitorjs.com/',
       serviceWorker: {
         unregister: true,
