@@ -28,13 +28,16 @@ export class CapacitorSiteRoutes {
             <landing-page />
           </Route>
 
-          <Route path="/blog">
-            <blog-page />
-          </Route>
+          <Route path={match('/blog', { exact: true })} render={() => {
+            console.log('BLOG ROUTE MATCH');
+            return <blog-page />
+          }} />
 
-          <Route path={match('/blog/:slug')} render={({ slug }) => (
-            <blog-page slug={slug} />
-          )} />
+          <Route path={match('/blog/:slug')} render={({ slug }) => {
+            console.log('BLOG SLUG ROUTE MATCH', slug);
+            return <blog-post slug={slug} />
+          }} />
+
 
           <Route path="/enterprise">
             <capacitor-enterprise />

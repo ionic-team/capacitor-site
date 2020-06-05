@@ -4,8 +4,7 @@ import Helmet from '@stencil/helmet';
 import siteStructure from '../../assets/docs-structure.json';
 import { findItem } from '../../global/site-structure-utils';
 import { SiteStructureItem } from '../../global/definitions';
-
-import Router from '../../router';
+import { handleRoutableLinkClick } from '../../utils/route-link';
 
 @Component({
   tag: 'document-component',
@@ -38,22 +37,6 @@ export class DocumentComponent implements ComponentInterface {
     this.parent = foundData.parent;
   }
 
-  handleDocLinkClick = (e: MouseEvent) => {
-    if (e.metaKey || e.ctrlKey) {
-      return;
-    }
-
-    if ((e.target as HTMLElement).tagName === 'A') {
-      const href = (e.target as HTMLAnchorElement).href;
-      const u = new URL(href);
-      if (u.origin === window.location.origin) {
-        e.stopPropagation();
-        e.preventDefault();
-        Router.push(u.pathname);
-      }
-    }
-  }
-
   render() {
     // debugger;
     if (this.item == null) {
@@ -72,7 +55,7 @@ export class DocumentComponent implements ComponentInterface {
           <div class="doc-content">
             <div class="measure-lg">
               <div
-                onClick={this.handleDocLinkClick}
+                onClick={handleRoutableLinkClick}
                 innerHTML={docsContent.content}></div>
               <h2>Contributors</h2>
               <contributor-list contributors={docsContent.contributors}></contributor-list>
