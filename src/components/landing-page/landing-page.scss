@@ -4,6 +4,10 @@
   display: block;
 }
 
+section {
+  margin-bottom: 196px;
+}
+
 .hero {
   margin-bottom: 96px;
 
@@ -55,5 +59,26 @@
   }
   h2 {
     margin: 0;
+  }
+}
+
+.section--platforms {
+  hgroup {
+    text-align: center;
+    max-width: 560px;
+    margin: auto;
+  }
+
+  &__logos {
+    text-align: center;
+    margin-top: 96px;
+    img {
+      height: 96px;
+      margin-right: 96px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 }

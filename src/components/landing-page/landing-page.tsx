@@ -113,6 +113,23 @@ export class LandingPage {
             </Col>
           </Grid>
         </section>
+        <section class="section--platforms">
+          <hgroup>
+            <Heading level={3}>
+              Target native mobile and web.<br />
+              All from a single codebase.
+            </Heading>
+            <Paragraph>
+              Build cross-platform apps that work seemlessly across iOS, Android, desktop, and the web. Reduce maintenance and development time with a powerful app foundation that lets you build once and deploy anywhere.
+            </Paragraph>
+          </hgroup>
+          <div class="section--platforms__logos">
+            <img src="/assets/img/landing/ios.png" alt="iOS" />
+            <img src="/assets/img/landing/android.png" alt="iOS" />
+            <img src="/assets/img/landing/javascript.png" alt="iOS" />
+            <img src="/assets/img/landing/pwa.png" alt="iOS" />
+          </div>
+        </section>
       </ResponsiveContainer>,
       <newsletter-signup />,
       <capacitor-site-footer />

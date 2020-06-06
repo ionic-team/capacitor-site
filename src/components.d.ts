@@ -27,6 +27,8 @@ export namespace Components {
     interface BlogPost {
         "slug": string;
     }
+    interface CapacitorCommunity {
+    }
     interface CapacitorEnterprise {
     }
     interface CapacitorSite {
@@ -114,6 +116,12 @@ declare global {
     var HTMLBlogPostElement: {
         prototype: HTMLBlogPostElement;
         new (): HTMLBlogPostElement;
+    };
+    interface HTMLCapacitorCommunityElement extends Components.CapacitorCommunity, HTMLStencilElement {
+    }
+    var HTMLCapacitorCommunityElement: {
+        prototype: HTMLCapacitorCommunityElement;
+        new (): HTMLCapacitorCommunityElement;
     };
     interface HTMLCapacitorEnterpriseElement extends Components.CapacitorEnterprise, HTMLStencilElement {
     }
@@ -213,6 +221,7 @@ declare global {
         "avc-code-type": HTMLAvcCodeTypeElement;
         "blog-page": HTMLBlogPageElement;
         "blog-post": HTMLBlogPostElement;
+        "capacitor-community": HTMLCapacitorCommunityElement;
         "capacitor-enterprise": HTMLCapacitorEnterpriseElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
@@ -251,6 +260,8 @@ declare namespace LocalJSX {
     }
     interface BlogPost {
         "slug"?: string;
+    }
+    interface CapacitorCommunity {
     }
     interface CapacitorEnterprise {
     }
@@ -304,6 +315,7 @@ declare namespace LocalJSX {
         "avc-code-type": AvcCodeType;
         "blog-page": BlogPage;
         "blog-post": BlogPost;
+        "capacitor-community": CapacitorCommunity;
         "capacitor-enterprise": CapacitorEnterprise;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
@@ -332,6 +344,7 @@ declare module "@stencil/core" {
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
+            "capacitor-community": LocalJSX.CapacitorCommunity & JSXBase.HTMLAttributes<HTMLCapacitorCommunityElement>;
             "capacitor-enterprise": LocalJSX.CapacitorEnterprise & JSXBase.HTMLAttributes<HTMLCapacitorEnterpriseElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;

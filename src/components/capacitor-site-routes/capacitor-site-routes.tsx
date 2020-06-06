@@ -43,6 +43,10 @@ export class CapacitorSiteRoutes {
             <capacitor-enterprise />
           </Route>
 
+          <Route path="/community">
+            <capacitor-community />
+          </Route>
+
           <Route path="/docs">
             <document-component page="/docs/" />
           </Route>
