@@ -29,9 +29,15 @@ exports.slugify = slugify;
 async function buildPost(postFile) {
     const contents = await fs_1.default.promises.readFile(path_1.default.join(BLOG_DIR, postFile));
     const data = front_matter_1.default(contents.toString('utf-8'));
+    const authorString = data.attributes.author;
+    const emailIndex = authorString.indexOf('<');
+    const authorName = authorString.slice(0, emailIndex);
+    const authorEmail = authorString.slice(emailIndex + 1, authorString.indexOf('>'));
     const parsedBody = marked_1.default(data.body);
     const rendered = {
         title: data.attributes.title,
+        authorName,
+        authorEmail,
         slug: slugify(data.attributes.title),
         date: data.attributes.date,
         contents: contents.toString('utf-8'),

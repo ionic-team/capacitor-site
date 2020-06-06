@@ -1,9 +1,10 @@
 import { Component, State, h } from '@stencil/core';
 import { Heading } from '@ionic-internal/sites-shared';
 
-import { getBlogPosts } from '../../prismic';
-import { BlogPostsResponse } from '../../models';
+import { RenderedBlog } from '../../models';
 import { BlogPost } from './blog-common';
+
+import posts from '../../assets/blog.json';
 
 
 @Component({
@@ -12,14 +13,15 @@ import { BlogPost } from './blog-common';
   scoped: true
 })
 export class BlogPage {
-  @State() posts?: BlogPostsResponse;
+  @State() posts?: RenderedBlog[];
 
   async componentWillLoad() {
-    this.posts = await getBlogPosts();
+    this.posts = (posts as RenderedBlog[]).slice(0, 10);
   }
 
   render() {
     if (this.posts) {
+      console.log('Rendering posts', this.posts);
       return (
         <AllPosts posts={this.posts} />
       )
@@ -30,14 +32,14 @@ export class BlogPage {
 }
 
 
-const AllPosts = ({ posts }: { posts: BlogPostsResponse }) => {
+const AllPosts = ({ posts }: { posts: RenderedBlog[] }) => {
 
   return (
     <div class="blog-posts">
       <hgroup class="blog-posts__heading">
         <Heading level={3}>Blog</Heading>
       </hgroup>
-      {posts.docs.map(p => <BlogPost post={p} single={false} />)}
+      {posts.map(p => <BlogPost post={p} single={false} />)}
     </div>
   )
 }

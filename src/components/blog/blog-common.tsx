@@ -1,44 +1,46 @@
 import { h } from '@stencil/core';
-import { BlogPostDocument } from '../../models';
 import { href } from 'stencil-router-v2';
-import { Heading, PrismicRichText, DateTime } from '@ionic-internal/sites-shared';
-
+import { Heading, DateTime } from '@ionic-internal/sites-shared';
 import parseISO from 'date-fns/parseISO';
 
 import Router from '../../router';
 
-const getBlogPostUrl = (doc: BlogPostDocument) => `/blog/${doc.uid}`;
+import { RenderedBlog } from '../../models';
+
+const getBlogPostUrl = (doc: RenderedBlog) => `/blog/${doc.slug}`;
 
 
-export const BlogPost = ({ post, single = true }: { post: BlogPostDocument, single?: boolean }) => {
-  const content = single ? post.data.content : post.data.lead;
+export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?: boolean }) => {
+  const content = single ? post.html : post.html;
 
   return (
     <div class="blog-post__wrap">
-      {single && <a {...href('/blog')}>Blog</a>}
+      {single && <a {...href('/blog', Router)}>Blog</a>}
       <div class="blog-post">
-        <Heading level={2}>{post.data.title}</Heading>
-        <PostAuthor author={post.data.author} dateString={post.first_publication_date} />
-        <PrismicRichText richText={content} routerLink={true} router={Router} />
+        <Heading level={2}>{post.title}</Heading>
+        <PostAuthor authorName={post.authorName} dateString={post.date} />
 
-        {!single && <a {...href(getBlogPostUrl(post))}>Continue reading <ion-icon name="arrow-forward" /></a>}
+        <PostContent html={content} />
 
-        {single && <disqus-comments url={getBlogPostUrl(post)} id={post.uid} />}
+        {!single && <a {...href(getBlogPostUrl(post), Router)}>Continue reading <ion-icon name="arrow-forward" /></a>}
+
+        {single && <disqus-comments url={getBlogPostUrl(post)} id={post.slug} />}
       </div>
     </div>
   )
 }
 
+const PostContent = ({ html }: { html: string }) => (
+  <div innerHTML={html} />
+);
 
-const PostAuthor = ({ author, dateString }: any) => {
-  const a = author[0];
-
+const PostAuthor = ({ authorName, dateString }: { authorName: string, dateString: string }) => {
   const date = parseISO(dateString);
 
   return (
     <div class="blog-post__author">
-      <img src={a.author_avatar.url} alt={a.author_name} />
-      <span>By {a.author_name} on <DateTime date={date} /></span>
+      {/*<img src={a.author_avatar.url} alt={a.author_name} />*/}
+      <span>By {authorName} on <DateTime date={date} /></span>
     </div>
   );
 }

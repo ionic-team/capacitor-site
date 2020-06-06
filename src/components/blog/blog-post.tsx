@@ -1,9 +1,9 @@
 import { Component, Prop, State, h } from '@stencil/core';
 
-import { getBlogPost } from '../../prismic';
-import { BlogPostDocument } from '../../models';
+import { RenderedBlog } from '../../models';
 import { BlogPost } from './blog-common';
 
+import posts from '../../assets/blog.json';
 
 @Component({
   tag: 'blog-post',
@@ -13,7 +13,7 @@ import { BlogPost } from './blog-common';
 export class BlogPage {
   @Prop() slug: string;
 
-  @State() post?: BlogPostDocument;
+  @State() post?: RenderedBlog;
 
   async componentWillLoad() {
     console.log('BLOG COMPONENT WILL LOAD');
@@ -21,7 +21,7 @@ export class BlogPage {
 
     if (slug) {
       this.slug = slug;
-      this.post = await getBlogPost(slug);
+      this.post = (posts as RenderedBlog[]).find(p => p.slug === this.slug);
       console.log('Fetching blog post', slug, this.post);
     }
   }
