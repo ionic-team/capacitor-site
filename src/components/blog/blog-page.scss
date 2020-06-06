@@ -5,6 +5,10 @@
   height: 100%;
 }
 
+.ui-heading {
+  font-family: var(--f-family-text);
+}
+
 h2 {
   margin-top: 0;
 }
@@ -15,17 +19,27 @@ a {
 .blog-posts {
   margin: 0 auto 96px;
   max-width: 830px;
+
+  &__heading {
+    .ui-heading {
+      font-size: 28px;
+      font-weight: 600;
+    }
+    margin-bottom: 32px;
+  }
 }
 
 .blog-post {
-  margin: 0 auto 96px;
-  max-width: 830px;
   padding: 96px;
 
   background: white;
 
   border-radius: 4px;
   box-shadow: var(--elevation-2);
+
+  ion-icon {
+    vertical-align: middle;
+  }
 
   .ui-heading {
     margin: 0;
@@ -34,6 +48,17 @@ a {
   p {
     color: #111;
   }
+
+  li {
+    margin-top: 6px;
+  }
+
+  &__wrap {
+    margin: 0 auto;
+    padding-bottom: 96px;
+    max-width: 830px;
+  }
+
 
   &__author {
     color: #92A0B3;

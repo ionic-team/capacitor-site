@@ -2,7 +2,7 @@ import { Component, Prop, State, h } from '@stencil/core';
 
 import { getBlogPost } from '../../prismic';
 import { BlogPostDocument } from '../../models';
-import { BlogPost } from './common';
+import { BlogPost } from './blog-common';
 
 
 @Component({

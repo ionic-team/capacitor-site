@@ -1,6 +1,6 @@
 import { h } from '@stencil/core';
 import { BlogPostDocument } from '../../models';
-import { href } from '@ionic-internal/sites-shared/node_modules/stencil-router-v2';
+import { href } from 'stencil-router-v2';
 import { Heading, PrismicRichText, DateTime } from '@ionic-internal/sites-shared';
 
 import parseISO from 'date-fns/parseISO';
@@ -21,7 +21,7 @@ export const BlogPost = ({ post, single = true }: { post: BlogPostDocument, sing
         <PostAuthor author={post.data.author} dateString={post.first_publication_date} />
         <PrismicRichText richText={content} routerLink={true} router={Router} />
 
-        {!single && <a {...href(getBlogPostUrl(post))}>Continue reading</a>}
+        {!single && <a {...href(getBlogPostUrl(post))}>Continue reading <ion-icon name="arrow-forward" /></a>}
 
         {single && <disqus-comments url={getBlogPostUrl(post)} id={post.uid} />}
       </div>

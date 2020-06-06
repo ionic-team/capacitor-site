@@ -3,7 +3,7 @@ import { Heading } from '@ionic-internal/sites-shared';
 
 import { getBlogPosts } from '../../prismic';
 import { BlogPostsResponse } from '../../models';
-import { BlogPost } from './common';
+import { BlogPost } from './blog-common';
 
 
 @Component({
@@ -34,7 +34,9 @@ const AllPosts = ({ posts }: { posts: BlogPostsResponse }) => {
 
   return (
     <div class="blog-posts">
-      <Heading level={3}>Blog</Heading>
+      <hgroup class="blog-posts__heading">
+        <Heading level={3}>Blog</Heading>
+      </hgroup>
       {posts.docs.map(p => <BlogPost post={p} single={false} />)}
     </div>
   )
