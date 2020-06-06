@@ -1,4 +1,4 @@
-@import '../../global/variables';
+@use '../../global/variables';
 
 capacitor-enterprise {
   display: block;
@@ -22,7 +22,7 @@ capacitor-enterprise {
   }
 
   .container {
-    max-width: $breakpoint-lg;
+    max-width: variables.$breakpoint-lg;
     margin: auto;
   }
 
@@ -32,7 +32,7 @@ capacitor-enterprise {
     column-gap: 16px;
     row-gap: 24px;
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: variables.$breakpoint-sm) {
       grid-template-columns: 1fr;
     }
   }
@@ -355,7 +355,7 @@ capacitor-enterprise {
       }
     }
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: variables.$breakpoint-sm) {
       fieldset.form-columns-2 .hs-form-field {
         width: 100%;
         float: none;
@@ -437,7 +437,7 @@ capacitor-enterprise {
       border-radius: 6px;
     }
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: variables.$breakpoint-sm) {
       fieldset.form-columns-2 .hs-form-field {
         padding: 0;
       }

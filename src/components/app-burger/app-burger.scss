@@ -1,4 +1,4 @@
-@import '../../global/variables';
+@use '../../global/variables';
 
 app-burger {
   display: none;
@@ -49,7 +49,7 @@ app-burger {
 
 }
 
-@media screen and (max-width: $breakpoint-md) {
+@media screen and (max-width: variables.$breakpoint-md) {
   app-burger {
     display: block;
   }

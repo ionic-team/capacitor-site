@@ -1,4 +1,4 @@
-@import '../../global/variables';
+@use '../../global/variables';
 
 document-component {
   .container {
@@ -84,7 +84,7 @@ document-component {
   }
 
   p a {
-    color: $link-color;
+    color: variables.$link-color;
     text-decoration: none;
   }
 
@@ -100,7 +100,7 @@ document-component {
   }
 
   #introButton {
-    background: $link-color;
+    background: variables.$link-color;
     color: white;
     text-decoration: none;
 

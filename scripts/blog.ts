@@ -3,6 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import frontMatter from 'front-matter';
 import marked from 'marked';
+import Prism from 'prismjs';
+
+const loadLanguages = require('prismjs/components/');
+
+loadLanguages(['javascript', 'typescript', 'bash', 'java', 'swift']);
 
 export interface RenderedBlog {
   title: string;
@@ -49,7 +54,9 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
   const authorName = authorString.slice(0, emailIndex).trim();
   const authorEmail = authorString.slice(emailIndex + 1, authorString.indexOf('>')).trim();
 
-  const parsedBody = marked(data.body);
+  const parsedBody = marked(data.body, {
+    highlight: (code, lang) => Prism.highlight(code, Prism.languages[lang], lang as any)
+  });
 
   const rendered = {
     title: data.attributes.title,

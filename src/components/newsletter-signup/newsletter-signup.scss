@@ -1,4 +1,4 @@
-@import '../../global/variables';
+@use '../../global/variables';
 
 .newsletter {
   background-color: #eeeff1;
@@ -59,7 +59,7 @@
     }
   }
 
-  @media screen and (max-width: $breakpoint-md) {
+  @media screen and (max-width: variables.$breakpoint-md) {
     .container {
       flex-direction: column;
       text-align: center;

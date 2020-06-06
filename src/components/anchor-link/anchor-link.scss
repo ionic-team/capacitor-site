@@ -1,4 +1,4 @@
-@import '../../global/variables';
+@use '../../global/variables';
 
 anchor-link {
   cursor: pointer;
@@ -18,7 +18,7 @@ anchor-link {
 }
 
 
-@media screen and (max-width: $breakpoint-md) {
+@media screen and (max-width: variables.$breakpoint-md) {
   anchor-link.hover-anchor {
     margin-left: -18px;
   }

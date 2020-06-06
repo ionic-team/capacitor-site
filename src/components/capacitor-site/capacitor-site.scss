@@ -1,8 +1,11 @@
-@import '../../global/variables';
-@import '../../global/webfont';
+@use '~prismjs/themes/prism';
 
-@import '../../global/shared/utils';
-@import '../../global/shared/buttons';
+@use '../../global/variables';
+@use '../../global/webfont';
+
+@use '../../global/shared/utils';
+@use '../../global/shared/buttons';
+
 
 * {
   box-sizing: border-box;
@@ -24,7 +27,7 @@ site-root {
 .left-sidebar-in {
   animation-name: slideIn;
   animation-duration: 0.7s;
-  animation-timing-function: $easeOutExpo;
+  animation-timing-function: variables.$easeOutExpo;
   animation-fill-mode: forwards;
 }
 @keyframes slideIn {
@@ -40,7 +43,7 @@ site-root {
 .left-sidebar-out {
   animation-name: slideOut;
   animation-duration: 0.7s;
-  animation-timing-function: $easeOutExpo;
+  animation-timing-function: variables.$easeOutExpo;
   animation-fill-mode: forwards;
 }
 @keyframes slideOut {
@@ -211,11 +214,11 @@ strong, b {
 
 a {
   transition: border 0.3s;
-  color: $link-color;
+  color: variables.$link-color;
   border-bottom: 1px solid transparent;
 
   &:hover {
-    border-bottom-color: rgba($link-color, 0.3);
+    border-bottom-color: rgba(variables.$link-color, 0.3);
   }
 }
 
@@ -450,7 +453,7 @@ footer {
     opacity: 1;
   }
 
-  @media screen and (max-width: $breakpoint-md) {
+  @media screen and (max-width: variables.$breakpoint-md) {
     .container {
       text-align: center;
       flex-direction: column;
@@ -579,7 +582,7 @@ footer {
 
 
   p a {
-    color: $link-color;
+    color: variables.$link-color;
     text-decoration: none;
   }
 
@@ -595,7 +598,7 @@ footer {
   }
 
   #introButton {
-    background: $link-color;
+    background: variables.$link-color;
     color: white;
     text-decoration: none;
 
