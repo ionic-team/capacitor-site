@@ -29,17 +29,18 @@ exports.slugify = slugify;
 async function buildPost(postFile) {
     const contents = await fs_1.default.promises.readFile(path_1.default.join(BLOG_DIR, postFile));
     const data = front_matter_1.default(contents.toString('utf-8'));
+    console.log(data);
     const authorString = data.attributes.author;
     const emailIndex = authorString.indexOf('<');
-    const authorName = authorString.slice(0, emailIndex);
-    const authorEmail = authorString.slice(emailIndex + 1, authorString.indexOf('>'));
+    const authorName = authorString.slice(0, emailIndex).trim();
+    const authorEmail = authorString.slice(emailIndex + 1, authorString.indexOf('>')).trim();
     const parsedBody = marked_1.default(data.body);
     const rendered = {
         title: data.attributes.title,
         authorName,
         authorEmail,
         slug: slugify(data.attributes.title),
-        date: data.attributes.date,
+        date: data.attributes.date.toISOString(),
         contents: contents.toString('utf-8'),
         html: parsedBody,
         meta: data.attributes
@@ -50,7 +51,7 @@ async function buildPost(postFile) {
 async function run() {
     const posts = await fs_1.default.promises.readdir(BLOG_DIR);
     const rendered = await Promise.all(posts.map(buildPost));
-    const sorted = rendered.sort((a, b) => a.date.localeCompare(b.date));
+    const sorted = rendered.sort((a, b) => b.date.localeCompare(a.date));
     await fs_1.default.promises.writeFile(OUTPUT_FILE, JSON.stringify(sorted));
 }
 run();

@@ -41,6 +41,8 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
 
   const data = frontMatter<any>(contents.toString('utf-8'));
 
+  console.log(data);
+
   const authorString = data.attributes.author as string;
 
   const emailIndex = authorString.indexOf('<');
@@ -54,7 +56,7 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
     authorName,
     authorEmail,
     slug: slugify(data.attributes.title),
-    date: data.attributes.date,
+    date: (data.attributes.date as Date).toISOString(),
     contents: contents.toString('utf-8'),
     html: parsedBody,
     meta: data.attributes
@@ -69,8 +71,8 @@ async function run() {
   const posts = await fs.promises.readdir(BLOG_DIR);
 
   const rendered = await Promise.all(posts.map(buildPost))
-  
-  const sorted = rendered.sort((a: RenderedBlog, b: RenderedBlog) => a.date.localeCompare(b.date));
+
+  const sorted = rendered.sort((a: RenderedBlog, b: RenderedBlog) => b.date.localeCompare(a.date));
 
   await fs.promises.writeFile(OUTPUT_FILE, JSON.stringify(sorted));
 }

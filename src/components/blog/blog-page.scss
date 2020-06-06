@@ -17,7 +17,8 @@ a {
 }
 
 .blog-posts {
-  margin: 0 auto 96px;
+  margin: 0 auto;
+  padding-bottom: 96px;
   max-width: 830px;
 
   &__heading {
