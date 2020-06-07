@@ -20,6 +20,10 @@ site-root {
   flex: 1;
 }
 
+.page-theme--dark {
+  background: var(--c-carbon-100);
+}
+
 .no-scroll {
   overflow: hidden;
 }

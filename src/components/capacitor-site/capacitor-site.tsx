@@ -1,5 +1,7 @@
 import { Component, Element, State, h } from '@stencil/core';
 
+import state from '../../store';
+
 @Component({
   tag: 'capacitor-site',
   styleUrl: 'capacitor-site.scss'
@@ -11,7 +13,7 @@ export class App {
 
   render() {
     return (
-      <site-root>
+      <site-root class={`page-theme--${state.pageTheme}`}>
         <site-platform-bar productName="Capacitor" />
         <capacitor-site-header />
         <capacitor-site-routes />

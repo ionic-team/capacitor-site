@@ -1,6 +1,9 @@
-import { Component, Element, State, h } from '@stencil/core';
+import { Component, Element, State, h, VNode } from '@stencil/core';
 import { ResponsiveContainer, Button, AnchorButton } from '@ionic-internal/sites-shared';
 import { href } from 'stencil-router-v2';
+
+import Router from '../../router';
+import state from '../../store';
 
 const formatNumber = (n) => {
   if (n > 1000) {
@@ -48,15 +51,29 @@ export class SiteHeader {
     return (
       <ResponsiveContainer class="site-header">
         <a {...href('/')} class="site-header__logo-link">
-          <img src="/assets/img/logo-light.png" alt="Capacitor Logo" />
+          {state.pageTheme === 'dark' ? (
+            <img src="/assets/img/heading/logo-white.png" alt="Capacitor Logo" />
+          ) : (
+            <img src="/assets/img/heading/logo-black.png" alt="Capacitor Logo" />
+          )}
         </a>
 
         <div class="site-header__menu">
-          <a {...href('/#features')}>Features</a>
-          <a {...href('/docs')}>Docs</a>
-          <a {...href('/community')}>Community</a>
-          <a {...href('/blog')}>Blog</a>
-          <a {...href('/enterprise')}>Enterprise</a>
+          <NavLink path="/#features">
+            Features
+          </NavLink>
+          <NavLink path="/docs">
+            Docs
+          </NavLink>
+          <NavLink path="/community">
+            Community
+          </NavLink>
+          <NavLink path="/blog">
+            Blog
+          </NavLink>
+          <NavLink path="/enterprise">
+            Enterprise
+          </NavLink>
         </div>
 
         <div class="site-header__buttons">
@@ -71,4 +88,18 @@ export class SiteHeader {
       </ResponsiveContainer>
     );
   }
+}
+
+const NavLink = ({ path }: { path: string }, children: VNode) => {
+  // Detect active if path equals the route path or the current active path plus
+  // the route hash equals the path, to support links like /#features
+  const active = Router.activePath === path || Router.activePath + Router.url.hash === path;
+
+  return (
+    <a {...href(path)} class={{
+      'link--active': active
+    }}>
+      {children}
+    </a>
+  )
 }

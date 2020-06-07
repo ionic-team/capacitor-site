@@ -1,5 +1,7 @@
 import { Component, h } from '@stencil/core';
 
+import state from '../../store';
+
 declare var window: any;
 
 @Component({
@@ -7,6 +9,10 @@ declare var window: any;
   styleUrl: 'enterprise.scss'
 })
 export class Enterprise {
+  componentWillLoad() {
+    state.pageTheme = 'dark';
+  }
+
   componentDidLoad() {
     const hbsScript = document.createElement('script');
     hbsScript.src = '//js.hsforms.net/forms/v2.js';
