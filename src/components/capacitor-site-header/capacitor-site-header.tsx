@@ -93,7 +93,8 @@ export class SiteHeader {
 const NavLink = ({ path }: { path: string }, children: VNode) => {
   // Detect active if path equals the route path or the current active path plus
   // the route hash equals the path, to support links like /#features
-  const active = Router.activePath === path || Router.activePath + Router.url.hash === path;
+  const active = Router.activePath === path ||
+                 Router.activePath + Router.url.hash === path;
 
   return (
     <a {...href(path)} class={{

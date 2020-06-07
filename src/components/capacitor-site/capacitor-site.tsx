@@ -13,11 +13,11 @@ export class App {
 
   render() {
     return (
-      <site-root class={`page-theme--${state.pageTheme}`}>
+      <div class={`page-theme--${state.pageTheme}`}>
         <site-platform-bar productName="Capacitor" />
         <capacitor-site-header />
         <capacitor-site-routes />
-      </site-root>
+      </div>
     );
   }
 }

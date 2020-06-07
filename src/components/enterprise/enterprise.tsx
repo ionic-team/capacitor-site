@@ -1,6 +1,7 @@
 import { Component, h } from '@stencil/core';
 
 import state from '../../store';
+import { ResponsiveContainer, Grid, Col } from '@ionic-internal/sites-shared';
 
 declare var window: any;
 
@@ -33,21 +34,23 @@ export class Enterprise {
   render() {
     return (
       <div class="enterprise">
-        <div class="cta">
-          <div class="container">
-            <h1>Capacitor for Enterprises</h1>
-            <p>
-              Powerful solution for mission-critical enterprise
-              apps
-              <br />
-              across consumer and employee-facing<br />
-              iOS, Android, and Progressive Web Apps.
-            </p>
-            <a href="#contact" class="btn">
-              Learn more
-            </a>
-          </div>
-        </div>
+        <ResponsiveContainer>
+          <Grid class="cta">
+            <Col md={6} sm={6} xs={12} cols={12}>
+              <h1>Capacitor for Enterprises</h1>
+              <p>
+                Powerful solution for mission-critical enterprise
+                apps
+                <br />
+                across consumer and employee-facing<br />
+                iOS, Android, and Progressive Web Apps.
+              </p>
+              <a href="#contact">
+                Get in touch -&gt;
+              </a>
+            </Col>
+          </Grid>
+        </ResponsiveContainer>
         <section class="section">
           <div class="container">
             <hgroup>
