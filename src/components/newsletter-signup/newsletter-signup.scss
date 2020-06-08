@@ -13,8 +13,6 @@
   form {
     display: flex;
     justify-content: flex-end;
-    margin-top: 16px;
-    margin-bottom: 16px;
 
     .form__group {
       position: relative;
@@ -34,8 +32,8 @@
   }
 
   .success__message {
+    display:flex;
     align-items: center;
-    display:none;
     align-self: center;
 
     svg {
