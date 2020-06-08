@@ -25,6 +25,16 @@
     }
   }
 
+  .success__message {
+    align-items: center;
+    display:none;
+    align-self: center;
+
+    svg {
+      margin-right: 16px;
+    }
+  }
+
   form {
     flex: 0 0 40%;
     input {
