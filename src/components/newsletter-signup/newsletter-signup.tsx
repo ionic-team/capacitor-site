@@ -44,7 +44,9 @@ export class NewsletterSignup {
     if (response.status == 200) {
       this.displaySuccess();
     }
-
+    if (response.status == 400){
+      this.displayError();      
+    }
   }
 
   displaySuccess() {
@@ -53,6 +55,13 @@ export class NewsletterSignup {
 
     const successMsg: HTMLElement = this.el.querySelector('.success__message');
     successMsg.style.display = 'flex';
+  }
+
+  displayError() {
+    const error:HTMLElement = this.el.querySelector('.error__message');
+
+    error.innerText = '';   
+    error.innerText = "invalid email address";
   }
 
   render() {
@@ -64,11 +73,13 @@ export class NewsletterSignup {
             <p>The latest Capacitor news and resources sent straight to your inbox.</p>
           </hgroup>
           <form onSubmit={this.sendToHubspot.bind(this)}>
-            <div class="input-with-button">
+            <div class="form__group">
               <input aria-label="Email address" type="email" placeholder="Email address" name="email" required />
-              <button>Subscribe</button>
+              <div class="error__message"></div>
+              <button>Subscribe</button>      
             </div>
           </form>
+          
           <div class="success__message">
             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M21 42c11.598 0 21-9.402 21-21S32.598 0 21 0 0 9.402 0 21s9.402 21 21 21z" fill="#D3F3DB"/>

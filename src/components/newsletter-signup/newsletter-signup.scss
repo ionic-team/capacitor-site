@@ -6,11 +6,19 @@
 
   .container {
     display: flex;
+    align-items:center;
+    justify-content: space-between;
   }
 
   form {
     display: flex;
     justify-content: flex-end;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    .form__group {
+      position: relative;
+    }
   }
 
   hgroup {
@@ -37,6 +45,7 @@
 
   form {
     flex: 0 0 40%;
+    height: 50px;
     input {
       padding: 5px 10px 5px 16px;
       width: 200px;
@@ -53,19 +62,32 @@
     }
 
     button {
+      height: 100%;
       background-color: #5EB6FC;
       color: white;
+      border:none;
       border-radius: 6px;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
 
       &:hover {
         background: darken(#4CAFFF, 5%);
+        cursor:pointer;
       }
 
       &:focus {
         background: darken(#4CAFFF, 9%);
       }
+    }
+
+    .error__message {
+      position:absolute;
+      top:calc(100% + 2px);
+      left:0;
+      color: #d9534f;
+      white-space:nowrap;
+      line-height:7px;
+      font-size:14px;
     }
   }
 
