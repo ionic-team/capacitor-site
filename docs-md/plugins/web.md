@@ -13,7 +13,7 @@ contributors:
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins/#getting-started) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](./#getting-started) section of the Plugin guide.
 
 Next, open `your-plugin/src/web.ts` in your editor of choice.
 
@@ -24,8 +24,9 @@ more explanation:
 
 ```typescript
 import { WebPlugin } from '@capacitor/core';
+import { MyPlugin } from './definitions';
 
-export class MyPluginWeb extends WebPlugin {
+export class MyPluginWeb extends WebPlugin implements MyPlugin {
   constructor() {
     // Call super with the name of our plugin (this should match the native name),
     // along with the platforms this plugin will activate on. For example, it's possible
@@ -47,10 +48,32 @@ const MyPlugin = new MyPluginWeb();
 
 // Export the plugin
 export { MyPlugin };
+
+// Register as a web plugin
+import { registerWebPlugin } from '@capacitor/core';
+registerWebPlugin(MyPlugin);
 ```
 
 Finally, make sure your `src/index.ts` has this line:
 
 ```typescript
+export * from './definitions';
 export * from './web';
+```
+
+## Usage
+
+Custom Capacitor plugins are merged into Capacitor Core and thus are accessed through object destructuring. To use a plugin's features in a PWA, import the plugin package in addition to importing from Capacitor Core.
+
+```typescript
+// Import plugins from Capacitor Core
+import { Plugins } from '@capacitor/core';
+// Import custom plugin package for web support too
+import 'my-plugin';
+
+// Destructure custom plugin from core plugins
+const { MyPlugin } = Plugins;
+await MyPlugin.echo({
+  value: "Hello from web!"
+});
 ```
