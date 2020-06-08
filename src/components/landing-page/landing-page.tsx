@@ -49,7 +49,7 @@ export class LandingPage {
           <Grid>
             <Col md={4} sm={4} xs={4} cols={6}>
               <div>
-                <img class="points__img" src="/assets/img/capacitor-why-cross-platform.png" alt="Cross Platform" />
+                <img class="points__img" src="/assets/img/landing/why-cross-platform.png" alt="Cross Platform" />
                 <h2>Cross Platform</h2>
 
                 <p>
@@ -59,7 +59,7 @@ export class LandingPage {
             </Col>
             <Col md={4} sm={4} xs={4} cols={6}>
               <div class="points__item points__item--nativeaccess">
-                <img class="points__img" src="/assets/img/capacitor-why-native.png" alt="Native" />
+                <img class="points__img" src="/assets/img/landing/why-native.png" alt="Native" />
                 <h2>Native Access</h2>
 
                 <p>
@@ -70,7 +70,7 @@ export class LandingPage {
             </Col>
             <Col md={4} sm={4} xs={4} cols={6}>
               <div class="points__item points__item--extensible">
-                <img class="points__img" src="/assets/img/capacitor-why-extensible.png" alt="Extensible" />
+                <img class="points__img" src="/assets/img/landing/why-extensible.png" alt="Extensible" />
                 <h2>Extensible</h2>
 
                 <p>
@@ -81,7 +81,7 @@ export class LandingPage {
             </Col>
             <Col md={4} sm={4} xs={4} cols={6}>
               <div class="points__item points__item--webnative">
-                <img class="points__img" src="/assets/img/capacitor-why-web-to-native.png" alt="Web To Native" />
+                <img class="points__img" src="/assets/img/landing/why-web-to-native.png" alt="Web To Native" />
                 <h2>Web Native</h2>
                 <p>
                   Build apps with standardized web technologies that will work for decades, and
@@ -91,7 +91,7 @@ export class LandingPage {
             </Col>
             <Col md={4} sm={4} xs={4} cols={6}>
               <div class="points__item points__item--extensible">
-                <img class="points__img" src="/assets/img/capacitor-why-production-ready.png" alt="Production Ready" />
+                <img class="points__img" src="/assets/img/landing/why-production-ready.png" alt="Production Ready" />
                 <h2>Production Ready</h2>
 
                 <p>
@@ -102,7 +102,7 @@ export class LandingPage {
             </Col>
             <Col md={4} sm={4} xs={4} cols={6}>
               <div class="points__item points__item--opensource">
-                <img class="points__img" src="/assets/img/capacitor-why-oss.png" alt="Open Source" />
+                <img class="points__img" src="/assets/img/landing/why-oss.png" alt="Open Source" />
                 <h2>Open Source</h2>
 
                 <p>
@@ -123,11 +123,8 @@ export class LandingPage {
               Build cross-platform apps that work seemlessly across iOS, Android, desktop, and the web. Reduce maintenance and development time with a powerful app foundation that lets you build once and deploy anywhere.
             </Paragraph>
           </hgroup>
-          <div class="section--platforms__logos">
-            <img src="/assets/img/landing/ios.png" alt="iOS" />
-            <img src="/assets/img/landing/android.png" alt="iOS" />
-            <img src="/assets/img/landing/javascript.png" alt="iOS" />
-            <img src="/assets/img/landing/pwa.png" alt="iOS" />
+          <div class="section--platforms__all">
+            <img src="/assets/img/landing/target-native.png" alt="Capacitor targets Native" />
           </div>
         </section>
       </ResponsiveContainer>,

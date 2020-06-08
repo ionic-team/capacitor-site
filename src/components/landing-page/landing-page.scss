@@ -69,11 +69,12 @@ section {
     margin: auto;
   }
 
-  &__logos {
+  &__all {
     text-align: center;
     margin-top: 96px;
     img {
-      height: 96px;
+      max-width: 100%;
+      max-height: 412px;
       margin-right: 96px;
 
       &:last-child {

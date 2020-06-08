@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@capacitor/core": "^2.1.2",
-    "@ionic-internal/sites-shared": "0.0.13",
+    "@ionic-internal/sites-shared": "0.0.14",
     "@stencil/core": "^1.14.0",
     "@stencil/helmet": "^0.3.2",
     "@stencil/sass": "^1.3.1",
