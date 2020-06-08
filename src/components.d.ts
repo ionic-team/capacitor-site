@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MarkdownContent, MarkdownHeading, SiteStructureItem } from "./global/definitions";
+import { MarkdownContent, MarkdownHeading, SiteStructureItem, } from "./global/definitions";
 export namespace Components {
     interface AnchorLink {
         "to": string;
