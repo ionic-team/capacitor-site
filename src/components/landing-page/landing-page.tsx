@@ -129,6 +129,7 @@ export class LandingPage {
         </section>
       </ResponsiveContainer>,
       <newsletter-signup />,
+      <pre-footer />,
       <capacitor-site-footer />
     ];
   }

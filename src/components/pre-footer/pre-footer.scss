@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+img {
+  width: 48px;
+  height: 48px;
+}
+
+.ui-col {
+  padding: 64px 0;
+}
+.ui-col:first-child {
+  border-right: 1px solid var(--c-indigo-20);
+}

@@ -73,6 +73,8 @@ export namespace Components {
     interface PluginPlatforms {
         "platforms": string;
     }
+    interface PreFooter {
+    }
 }
 declare global {
     interface HTMLAnchorLinkElement extends Components.AnchorLink, HTMLStencilElement {
@@ -213,6 +215,12 @@ declare global {
         prototype: HTMLPluginPlatformsElement;
         new (): HTMLPluginPlatformsElement;
     };
+    interface HTMLPreFooterElement extends Components.PreFooter, HTMLStencilElement {
+    }
+    var HTMLPreFooterElement: {
+        prototype: HTMLPreFooterElement;
+        new (): HTMLPreFooterElement;
+    };
     interface HTMLElementTagNameMap {
         "anchor-link": HTMLAnchorLinkElement;
         "app-burger": HTMLAppBurgerElement;
@@ -237,6 +245,7 @@ declare global {
         "newsletter-signup": HTMLNewsletterSignupElement;
         "plugin-api": HTMLPluginApiElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
+        "pre-footer": HTMLPreFooterElement;
     }
 }
 declare namespace LocalJSX {
@@ -307,6 +316,8 @@ declare namespace LocalJSX {
     interface PluginPlatforms {
         "platforms"?: string;
     }
+    interface PreFooter {
+    }
     interface IntrinsicElements {
         "anchor-link": AnchorLink;
         "app-burger": AppBurger;
@@ -331,6 +342,7 @@ declare namespace LocalJSX {
         "newsletter-signup": NewsletterSignup;
         "plugin-api": PluginApi;
         "plugin-platforms": PluginPlatforms;
+        "pre-footer": PreFooter;
     }
 }
 export { LocalJSX as JSX };
@@ -360,6 +372,7 @@ declare module "@stencil/core" {
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "plugin-api": LocalJSX.PluginApi & JSXBase.HTMLAttributes<HTMLPluginApiElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
+            "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
         }
     }
 }

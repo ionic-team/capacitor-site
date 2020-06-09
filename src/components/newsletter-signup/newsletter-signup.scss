@@ -1,21 +1,25 @@
 @use '../../global/variables';
 
 .newsletter {
-  background-color: #eeeff1;
-  padding: 80px 0;
-
-  .container {
-    display: flex;
-  }
-
-  form {
-    display: flex;
-    justify-content: flex-end;
-  }
+  padding: 48px 0;
+  border-top: 1px solid var(--c-indigo-20);
+  border-bottom: 1px solid var(--c-indigo-20);
 
   hgroup {
-    flex: 0 0 60%;
     padding-right: 40px;
+    display: flex;
+
+    img {
+      width: 64px;
+      height: 64px;
+      margin-right: 16px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    div {
+      flex: 1;
+    }
     h2 {
       margin: 0 0 6px;
     }
@@ -26,36 +30,31 @@
   }
 
   form {
-    flex: 0 0 40%;
+    display: flex;
+
     input {
+      flex: 1;
       padding: 5px 10px 5px 16px;
+      margin-right: 8px;
       width: 200px;
       min-height: calc(100% - 1px);
       background-color: #fff;
-      border: none;
+      border: 1px solid var(--c-indigo-30);
       border-radius: 6px;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
       font-size: 16px;
       font-weight: 400;
       color: #070D12;
       letter-spacing: -0.22px;
+
+      &:placeholder {
+        color: #6D6C82
+      }
     }
 
     button {
-      background-color: #5EB6FC;
+      flex: 0;
+      background-color: #119EFF;
       color: white;
-      border-radius: 6px;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-
-      &:hover {
-        background: darken(#4CAFFF, 5%);
-      }
-
-      &:focus {
-        background: darken(#4CAFFF, 9%);
-      }
     }
   }
 
