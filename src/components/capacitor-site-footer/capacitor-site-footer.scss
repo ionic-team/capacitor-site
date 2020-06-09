@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  border-top: 1px solid var(--c-indigo-20);
+  padding: 64px 0;
+}
+
+.copyright {
+  p {
+    color: var(--c-indigo-70);
+  }
+  a {
+    color: var(--c-indigo-70);
+    font-weight: normal;
+  }
+}
+
+img.logo {
+  width: 106px;
+}
+
+.ui-heading {
+  color: var(--c-carbon-80);
+}
+
+ul li {
+  margin-top: 6px;
+}
+
+ul li a {
+  color: var(--c-indigo-70);
+}
