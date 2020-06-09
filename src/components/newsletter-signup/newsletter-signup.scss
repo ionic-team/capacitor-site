@@ -5,9 +5,14 @@
   border-top: 1px solid var(--c-indigo-20);
   border-bottom: 1px solid var(--c-indigo-20);
 
+  .ui-grid {
+    align-items: center;
+  }
+
   hgroup {
     padding-right: 40px;
     display: flex;
+    justify-content: center;
 
     img {
       width: 64px;
