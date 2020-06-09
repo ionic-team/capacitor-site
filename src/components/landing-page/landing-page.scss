@@ -11,10 +11,14 @@ section {
 .hero {
   margin-bottom: 96px;
 
+  background: url('/assets/img/landing/bg.png') no-repeat transparent;
+  background-size: cover;
+
   img {
     max-width: 100%;
   }
   &__heading {
+    padding-top: 64px;
     h1 {
       font-size: 64px;
       line-height: 100%;
@@ -31,6 +35,10 @@ section {
       color: #2D4665;
       font-weight: normal;
     }
+  }
+
+  &__graphic {
+    padding-top: 64px;
   }
 
   &__buttons {
