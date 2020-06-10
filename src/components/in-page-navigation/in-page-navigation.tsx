@@ -1,4 +1,4 @@
-import { Component, Prop, ComponentInterface, Listen, State, Watch, h } from '@stencil/core';
+import { Component, Prop, Listen, State, Watch, h, Element } from '@stencil/core';
 import { MarkdownHeading } from '../../global/definitions';
 
 interface ItemOffset {
@@ -10,9 +10,9 @@ interface ItemOffset {
   tag: 'in-page-navigation',
   styleUrl: 'in-page-navigation.css'
 })
-export class InPageNavigtion implements ComponentInterface {
+export class InPageNavigtion {
 
-  @Listen('scroll', { target: 'window' })
+  @Listen('window:scroll')
   function() {
     const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
     if (itemIndex === 0 || this.itemOffsets[this.itemOffsets.length - 1] === undefined) {
@@ -24,14 +24,35 @@ export class InPageNavigtion implements ComponentInterface {
     }
   }
 
+  @Element() el: HTMLElement;
   @Prop() pageLinks: MarkdownHeading[] = [];
   @Prop() srcUrl: string = '';
   @Prop() currentPageUrl: string = '';
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
+  componentShouldUpdate() {
+    const adContent = this.el.querySelector('.internalAd__wrapper')
+    if (!adContent) return;
+
+    adContent.parentElement.style.height = '0px';
+  }
+  
+  @Listen('internalAdLoaded', { target: 'body' })
+  componentDidRender() {
+    const adContent = this.el.querySelector('.internalAd__wrapper')
+    if (!adContent) return;
+
+    if (adContent.getBoundingClientRect().bottom < window.innerHeight) {
+      adContent.parentElement.style.height = 'auto';
+    } else {
+      adContent.parentElement.style.height = '0px';
+    }
+  }
+  
+
   @Watch('pageLinks')
-  @Listen('resize', { target: 'window' })
+  @Listen('window:resize')
   updateItemOffsets() {
     requestAnimationFrame(() => {
       this.itemOffsets = this.pageLinks.map((pl) => {
@@ -43,7 +64,7 @@ export class InPageNavigtion implements ComponentInterface {
       });
     });
   }
-
+  
   componentDidLoad() {
     this.updateItemOffsets();
   }
@@ -90,7 +111,7 @@ export class InPageNavigtion implements ComponentInterface {
               [`size-h${pl.level}`]: true,
               'selected': this.selectedId === pl.id
             }}>
-            <a href={`${this.currentPageUrl}#${pl.id}`}>{this.stripTags(pl.text)}</a>
+            <stencil-route-link url={`${this.currentPageUrl}#${pl.id}`}>{this.stripTags(pl.text)}</stencil-route-link>
           </li>
           )) }
         </ul>
