@@ -85,6 +85,10 @@ section {
   &__step {
     padding-bottom: 120px;
 
+    &:last-child {
+      padding-bottom: 0;
+    }
+
     .ui-col {
       &:first-child {
         font-size: 12px;

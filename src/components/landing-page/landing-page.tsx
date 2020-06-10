@@ -175,6 +175,25 @@ npx cap add android
           <Heading level={3}>Access core Native APIs or extend with your own.</Heading>
         </Col>
         <Col md={6} sm={6} xs={6} cols={12}>
+          <code-snippet language="typescript" code={`
+import { Plugins } from '@capacitor/core';
+const { LocalNotifications } = Plugins;
+
+LocalNotifications.schedule({
+  notifications: [
+    {
+      title: "On sale",
+      body: "Widgets are 10% off. Act fast!",
+      id: 1,
+      schedule: { at: new Date(Date.now() + 1000 * 5) },
+      sound: null,
+      attachments: null,
+      actionTypeId: "",
+      extra: null
+    }
+  ]
+});
+`} />
         </Col>
       </Grid>
     </ResponsiveContainer>
