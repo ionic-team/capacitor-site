@@ -1,4 +1,4 @@
-import { Component, Listen, State, Element, h, Event, EventEmitter} from '@stencil/core';
+import { Component, Listen, State, h, Event, EventEmitter} from '@stencil/core';
 import PrismicDOM from 'prismic-dom';
 
 import { trackClick, trackView } from './tracking-service';
@@ -10,7 +10,6 @@ import { getAd } from './ad-service';
 })
 export class InternalAd {
   @State() ad: any;
-  @Element() el: HTMLElement;
   @Event() internalAdLoaded: EventEmitter;
 
   timeout: ReturnType<typeof setTimeout>;

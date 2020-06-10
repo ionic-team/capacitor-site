@@ -1,4 +1,4 @@
-import { Component, Prop, Listen, State, Watch, h, Element } from '@stencil/core';
+import { Component, Prop, Listen, State, Watch, h} from '@stencil/core';
 import { MarkdownHeading } from '../../global/definitions';
 
 interface ItemOffset {
@@ -11,8 +11,15 @@ interface ItemOffset {
   styleUrl: 'in-page-navigation.css'
 })
 export class InPageNavigtion {
+  private adEl: HTMLElement;
 
-  @Listen('window:scroll')
+  @Prop() pageLinks: MarkdownHeading[] = [];
+  @Prop() srcUrl: string = '';
+  @Prop() currentPageUrl: string = '';
+  @State() itemOffsets: ItemOffset[] = [];
+  @State() selectedId: string = null;
+
+  @Listen('scroll', { target: 'window'})
   function() {
     const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
     if (itemIndex === 0 || this.itemOffsets[this.itemOffsets.length - 1] === undefined) {
@@ -24,35 +31,26 @@ export class InPageNavigtion {
     }
   }
 
-  @Element() el: HTMLElement;
-  @Prop() pageLinks: MarkdownHeading[] = [];
-  @Prop() srcUrl: string = '';
-  @Prop() currentPageUrl: string = '';
-  @State() itemOffsets: ItemOffset[] = [];
-  @State() selectedId: string = null;
+  componentWillUpdate() {
+    if (!this.adEl.children[0]) return;
 
-  componentShouldUpdate() {
-    const adContent = this.el.querySelector('.internalAd__wrapper')
-    if (!adContent) return;
-
-    adContent.parentElement.style.height = '0px';
+    this.adEl.style.height = '0px';
   }
   
   @Listen('internalAdLoaded', { target: 'body' })
   componentDidRender() {
-    const adContent = this.el.querySelector('.internalAd__wrapper')
-    if (!adContent) return;
+    if (!this.adEl.children[0]) return;
 
-    if (adContent.getBoundingClientRect().bottom < window.innerHeight) {
-      adContent.parentElement.style.height = 'auto';
+    if (this.adEl.children[0].getBoundingClientRect().bottom < window.innerHeight) {
+      this.adEl.style.height = 'auto';
     } else {
-      adContent.parentElement.style.height = '0px';
+      this.adEl.style.height = '0px';
     }
   }
   
 
   @Watch('pageLinks')
-  @Listen('window:resize')
+  @Listen('resize', { target: 'window'})
   updateItemOffsets() {
     requestAnimationFrame(() => {
       this.itemOffsets = this.pageLinks.map((pl) => {
@@ -116,7 +114,7 @@ export class InPageNavigtion {
           )) }
         </ul>
         { submitEditLink }
-        <internal-ad></internal-ad>
+        <internal-ad ref={e => this.adEl = e}></internal-ad>
       </div>
     );
   }
