@@ -145,8 +145,9 @@ const GettingStartedSection = () => (
       <hgroup>
         <Heading level={2}>Getting started is easy.</Heading>
       </hgroup>
-      <Grid>
-        <Col md={6} sm={6} xs={6} cols={12}>
+      <Grid class="section--getting-started__step">
+        <Col cols={1}>01</Col>
+        <Col md={5} sm={5} xs={5} cols={12}>
           <Heading level={3}>Drop Capacitor into any existing web app.</Heading>
         </Col>
         <Col md={6} sm={6} xs={6} cols={12}>
@@ -156,8 +157,9 @@ npx cap init
 `}/>
         </Col>
       </Grid>
-      <Grid>
-        <Col md={6} sm={6} xs={6} cols={12}>
+      <Grid class="section--getting-started__step">
+        <Col cols={1}>02</Col>
+        <Col md={5} sm={5} xs={5} cols={12}>
           <Heading level={3}>Install the native platforms you want to target.</Heading>
         </Col>
         <Col md={6} sm={6} xs={6} cols={12}>
@@ -167,8 +169,9 @@ npx cap add android
 `} />
         </Col>
       </Grid>
-      <Grid>
-        <Col md={6} sm={6} xs={6} cols={12}>
+      <Grid class="section--getting-started__step">
+        <Col cols={1}>03</Col>
+        <Col md={5} sm={5} xs={5} cols={12}>
           <Heading level={3}>Access core Native APIs or extend with your own.</Heading>
         </Col>
         <Col md={6} sm={6} xs={6} cols={12}>

@@ -79,6 +79,32 @@ section {
       color: var(--c-carbon-100);
       letter-spacing: var(--f-tracking-dense);
     }
+    margin-bottom: 96px;
+  }
+
+  &__step {
+    padding-bottom: 120px;
+
+    .ui-col {
+      &:first-child {
+        font-size: 12px;
+        color: var(--c-carbon-40);
+        font-family: var(--f-family-monospace);
+        text-align: center;
+        height: calc(100% + 120px);
+
+        &:after {
+          content: '';
+          display: block;
+          margin-top: 35px !important;
+          height: 75%;
+          width: 1px;
+          margin: auto;
+          background: var(--c-carbon-10);
+        }
+      }
+
+    }
   }
   
   .ui-col {
