@@ -1,7 +1,8 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h, Host, State } from '@stencil/core';
 
 import Helmet from '@stencil/helmet';
 import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph } from '@ionic-internal/sites-shared';
+import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 
 @Component({
   tag: 'landing-page',
@@ -9,6 +10,7 @@ import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph } from
   scoped: true
 })
 export class LandingPage {
+  @State() selectedCodeTab: string = 'notifications' ;
   render() {
     return (
       <Host>
@@ -42,7 +44,9 @@ export class LandingPage {
             <img src="/assets/img/supported-icons.png" alt="Supported platforms" style={{height: '16px'}}/>
           </ResponsiveContainer>
         </section>
-        <GettingStartedSection />
+        <GettingStartedSection
+          selectedCodeTab={this.selectedCodeTab}
+          setSelectedCodeTab={(tab: string) => { this.selectedCodeTab = tab}}/>
         <ResponsiveContainer>
           <section class="points">
             <Heading level={2}>Why Capacitor?</Heading>
@@ -139,7 +143,7 @@ export class LandingPage {
   }
 }
 
-const GettingStartedSection = () => (
+const GettingStartedSection = ({ selectedCodeTab, setSelectedCodeTab}: { selectedCodeTab: string, setSelectedCodeTab: (tab: string) => void }) => (
   <section class="section--getting-started">
     <ResponsiveContainer>
       <hgroup>
@@ -175,7 +179,34 @@ npx cap add android
           <Heading level={3}>Access core Native APIs or extend with your own.</Heading>
         </Col>
         <Col md={6} sm={6} xs={6} cols={12}>
-          <code-snippet language="typescript" code={`
+          <Tabs>
+            <TabBar>
+              <TabBarButton
+                selected={selectedCodeTab === 'notifications'}
+                tabSelect={() => setSelectedCodeTab('notifications')}>
+                Notifications
+              </TabBarButton>
+              <TabBarButton
+                selected={selectedCodeTab === 'geolocation'}
+                tabSelect={() => setSelectedCodeTab('geolocation')}>
+                Geolocation
+              </TabBarButton>
+              <TabBarButton
+                selected={selectedCodeTab === 'camera'}
+                tabSelect={() => setSelectedCodeTab('camera')}>
+                Camera
+              </TabBarButton>
+              <TabBarButton
+                selected={selectedCodeTab === 'custom'}
+                tabSelect={() => setSelectedCodeTab('custom')}>
+                Custom
+              </TabBarButton>
+            </TabBar>
+            <Tab selected={selectedCodeTab === 'notifications'}>
+              <code-snippet
+                style={{ '--border-radius': '0 0 8px 8px' }}
+                language="typescript"
+                code={`
 import { Plugins } from '@capacitor/core';
 const { LocalNotifications } = Plugins;
 
@@ -194,6 +225,32 @@ LocalNotifications.schedule({
   ]
 });
 `} />
+            </Tab>
+            <Tab
+              selected={selectedCodeTab === 'geolocation'}>
+              <code-snippet
+                style={{ '--border-radius': '0 0 8px 8px' }}
+                language="typescript"
+                code={`
+`} />
+            </Tab>
+            <Tab
+              selected={selectedCodeTab === 'camera'}>
+              <code-snippet
+                style={{ '--border-radius': '0 0 8px 8px' }}
+                language="typescript"
+                code={`
+`} />
+            </Tab>
+            <Tab
+              selected={selectedCodeTab === 'custom'}>
+              <code-snippet
+                style={{ '--border-radius': '0 0 8px 8px' }}
+                language="typescript"
+                code={`
+`} />
+            </Tab>
+          </Tabs>
         </Col>
       </Grid>
     </ResponsiveContainer>

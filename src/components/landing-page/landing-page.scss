@@ -118,6 +118,33 @@ section {
       letter-spacing: var(--f-tracking-tight);
     }
   }
+
+  .ui-tabs {
+    .ui-tab-bar {
+      background: #2E3B4A;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      flex-direction: row;
+      padding: 16px;
+
+      &__button {
+        cursor: pointer;
+        user-select: none;
+        font-family: var(--f-family-display);
+        font-size: 13px;
+        color: var(--c-indigo-30);
+        padding: 6px 14px;
+
+        margin-right: 10px;
+
+        &--selected {
+          background: #617184;
+          color: white;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
 }
 
 .section--platforms {
