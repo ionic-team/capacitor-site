@@ -95,6 +95,7 @@ export class InPageNavigtion implements ComponentInterface {
           )) }
         </ul>
         { submitEditLink }
+        <internal-ad></internal-ad>
       </div>
     );
   }
