@@ -20,13 +20,13 @@ export class LandingPage {
             <Grid>
               <Col md={6} sm={6} xs={6} cols={12}>
                 <hgroup class="hero__heading">
-                  <h1>
+                  <Heading level={1}>
                     A cross-platform native runtime for web apps.
-                  </h1>
-                  <h3>
+                  </Heading>
+                  <Heading level={3}>
                     Capacitor turns any web app into a native app so you can run
                     one app across iOS, Android, and the Web with the same code.
-                  </h3>
+                  </Heading>
                   <div class="hero__buttons">
                     <AnchorButton href="/docs/getting-started/" id="get-started">
                       Get Started
