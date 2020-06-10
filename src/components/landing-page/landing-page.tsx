@@ -232,6 +232,14 @@ LocalNotifications.schedule({
                 style={{ '--border-radius': '0 0 8px 8px' }}
                 language="typescript"
                 code={`
+import { Plugins } from '@capacitor/core';
+const { Geolocation } = Plugins;
+// get the users current position
+const position = await Geolocation.getCurrentPosition();
+
+// grab latitude & longitude
+const latitude = position.coords.latitude;
+const longitude = position.coords.longitude;
 `} />
             </Tab>
             <Tab
@@ -240,6 +248,12 @@ LocalNotifications.schedule({
                 style={{ '--border-radius': '0 0 8px 8px' }}
                 language="typescript"
                 code={`
+import { Plugins } from '@capacitor/core';
+const { Camera } = Plugins;
+// Take a picture or video, or load from the library
+const picture = await Camera.getPicture({
+  encodingType: this.camera.EncodingType.JPEG
+});
 `} />
             </Tab>
             <Tab
