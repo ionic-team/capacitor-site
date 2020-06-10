@@ -42,6 +42,7 @@ export class LandingPage {
             <img src="/assets/img/supported-icons.png" alt="Supported platforms" style={{height: '16px'}}/>
           </ResponsiveContainer>
         </section>
+        <GettingStartedSection />
         <ResponsiveContainer>
           <section class="points">
             <Heading level={2}>Why Capacitor?</Heading>
@@ -137,6 +138,45 @@ export class LandingPage {
     );
   }
 }
+
+const GettingStartedSection = () => (
+  <section class="section--getting-started">
+    <ResponsiveContainer>
+      <hgroup>
+        <Heading level={2}>Getting started is easy.</Heading>
+      </hgroup>
+      <Grid>
+        <Col md={6} sm={6} xs={6} cols={12}>
+          <Heading level={3}>Drop Capacitor into any existing web app.</Heading>
+        </Col>
+        <Col md={6} sm={6} xs={6} cols={12}>
+          <code-snippet language="shell-session" code={`
+npm install @capacitor/cli @capacitor/core
+npx cap init
+`}/>
+        </Col>
+      </Grid>
+      <Grid>
+        <Col md={6} sm={6} xs={6} cols={12}>
+          <Heading level={3}>Install the native platforms you want to target.</Heading>
+        </Col>
+        <Col md={6} sm={6} xs={6} cols={12}>
+          <code-snippet language="shell-session" code={`
+npx cap add ios
+npx cap add android
+`} />
+        </Col>
+      </Grid>
+      <Grid>
+        <Col md={6} sm={6} xs={6} cols={12}>
+          <Heading level={3}>Access core Native APIs or extend with your own.</Heading>
+        </Col>
+        <Col md={6} sm={6} xs={6} cols={12}>
+        </Col>
+      </Grid>
+    </ResponsiveContainer>
+  </section>
+)
 
 const MetaHead = () => (
   <Helmet>

@@ -64,9 +64,29 @@ section {
   }
   &__img {
     width: 64px;
+    margin-left: -10px;
   }
   h2 {
     margin: 0;
+  }
+}
+
+.section--getting-started {
+  hgroup {
+    .ui-heading {
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--c-carbon-100);
+      letter-spacing: var(--f-tracking-dense);
+    }
+  }
+  
+  .ui-col {
+    .ui-heading {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: var(--f-tracking-tight);
+    }
   }
 }
 
