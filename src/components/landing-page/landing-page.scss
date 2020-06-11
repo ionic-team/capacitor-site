@@ -132,34 +132,27 @@ section {
     }
   }
 
-  .ui-tabs {
-    .ui-tab {
-      min-height: 300px;
-    }
-    .ui-tab-bar {
-      background: #2E3B4A;
-      border-radius: 8px 8px 0 0;
-      display: flex;
-      flex-direction: row;
-      padding: 16px;
+}
 
-      &__button {
-        cursor: pointer;
-        user-select: none;
-        font-family: var(--f-family-display);
-        font-size: 13px;
-        color: var(--c-indigo-30);
-        padding: 6px 14px;
+.section--web-apps-to-native {
+  hgroup {
+    margin-bottom: 76px;
+  }
 
-        margin-right: 10px;
+  img {
+    height: 64px;
+    margin-bottom: 24px;
+  }
+}
 
-        &--selected {
-          background: #617184;
-          color: white;
-          border-radius: 6px;
-        }
-      }
-    }
+.section--native-features {
+  hgroup {
+    margin-bottom: 76px;
+  }
+
+  img {
+    height: 32px;
+    margin-bottom: 24px;
   }
 }
 
@@ -180,6 +173,55 @@ section {
 
       &:last-child {
         margin-right: 0;
+      }
+    }
+  }
+}
+
+// TODO: Move to generic components
+.ui-fancy-underline {
+  display: inline-block;
+  position: relative;
+
+  &:before {
+    z-index: -1;
+    background: #BFE4FF;
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+  }
+
+}
+
+.ui-tabs {
+  .ui-tab {
+    min-height: 300px;
+  }
+  .ui-tab-bar {
+    background: #2E3B4A;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+
+    &__button {
+      cursor: pointer;
+      user-select: none;
+      font-family: var(--f-family-display);
+      font-size: 13px;
+      color: var(--c-indigo-30);
+      padding: 6px 14px;
+
+      margin-right: 10px;
+
+      &--selected {
+        background: #617184;
+        color: white;
+        border-radius: 6px;
       }
     }
   }
