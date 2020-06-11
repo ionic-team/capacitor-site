@@ -29,12 +29,11 @@ export class NewsletterSignup {
         }
       ],
       "context": {
-        "hutk": document.cookie.match(/(?<=hubspotutk=).*?(?=;)/g)[0],
+        "hutk": document.cookie.match(/(hubspotutk=).*?(?=;)/g)[0].split("hubspotutk=")[1],
         "pageUri": "https://capacitorjs.com/",
         "pageName": "Capacitor Home"
       }
     }
-  
     const response = await fetch(url, {
       method: 'POST',
       headers: {
