@@ -252,7 +252,7 @@ export class LandingPage {
                 </Col>
               ))}
             </Grid>
-          </section>>
+          </section>
           {/*
           <section class="section--platforms">
             <hgroup>
