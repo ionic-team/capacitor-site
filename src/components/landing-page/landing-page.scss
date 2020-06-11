@@ -156,6 +156,24 @@ section {
   }
 }
 
+.section--your-framework {
+  .ui-grid {
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+  .framework {
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 96px;
+      mix-blend-mode: multiply;
+    }
+  }
+}
+
 .section--platforms {
   hgroup {
     text-align: center;

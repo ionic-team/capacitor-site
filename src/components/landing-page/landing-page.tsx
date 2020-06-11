@@ -49,6 +49,7 @@ export class LandingPage {
           selectedCodeTab={this.selectedCodeTab}
           setSelectedCodeTab={(tab: string) => { this.selectedCodeTab = tab}}/>
         <ResponsiveContainer>
+          {/*
           <section class="points">
             <Heading level={2}>Why Capacitor?</Heading>
             <Paragraph>
@@ -121,6 +122,7 @@ export class LandingPage {
               </Col>
             </Grid>
           </section>
+          */}
           <section class="section--web-apps-to-native">
             <hgroup>
               <Heading level={3}>
@@ -220,6 +222,38 @@ export class LandingPage {
               ))}
             </Grid>
           </section>
+          <section class="section--your-framework">
+            <hgroup>
+              <Heading level={3}>
+                Bring your own web<br />
+                <FancyUnderline>framework.</FancyUnderline>
+              </Heading>
+              <Paragraph>
+                Drop Capacitor into any existing web app project, framework or library. Convert an existing React, Angular, Svelte, Vue (or your preferred Web Framework) project to native mobile and use any UI library of your choosing.
+              </Paragraph>
+            </hgroup>
+            <Grid>
+              {[
+                { color: '#EDFBFF', key: 'react', name: 'React' },
+                { color: '#FFEDF1', key: 'angular', name: 'Angular' },
+                { color: '#FFF5F2', key: 'svelte', name: 'Svelte' },
+                { color: '#EFFAF5', key: 'vue', name: 'Vue' },
+                { color: '#F6F8FB', key: 'stencil', name: 'Stencil' },
+                { color: '#F0F8FD', key: 'jquery', name: 'jQuery' },
+                { color: '#F6F1FD', key: 'bootstrap', name: 'Bootstrap' },
+                { color: '#F0F6FF', key: 'ionic', name: 'Ionic' },
+                { color: '#EDF9FF', key: 'material-ui', name: 'Material UI' },
+                { color: '#FFF5F3', key: 'framework-7', name: 'Framework7' },
+                { color: '#F0F7FC', key: 'quasar', name: 'Quasar' },
+                { color: '#FEF8EF', key: 'angular-material', name: 'Angular Material' },
+              ].map(f => (
+                <Col md={3} sm={3} xs={6} cols={12} key={f.key} style={{ background: f.color }} class="framework">
+                  <img src={`/assets/img/landing/framework-${f.key}.png`} alt={f.name} />
+                </Col>
+              ))}
+            </Grid>
+          </section>>
+          {/*
           <section class="section--platforms">
             <hgroup>
               <Heading level={3}>
@@ -234,6 +268,7 @@ export class LandingPage {
               <img src="/assets/img/landing/target-native.png" alt="Capacitor targets Native" />
             </div>
           </section>
+          */}
         </ResponsiveContainer>
         <newsletter-signup />
         <pre-footer />
