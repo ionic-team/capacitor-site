@@ -31,8 +31,8 @@ interface TabProps {
   [key:string]: any;
 }
 const Tab = ({ selected }: TabProps, children: VNode) => (
-  <div class="ui-tab">
-    {selected ? children : null}
+  <div class="ui-tab" style={{ display: selected ? 'block' : 'none' }}>
+    {children}
   </div>
 );
 

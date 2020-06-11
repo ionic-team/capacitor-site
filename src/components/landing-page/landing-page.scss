@@ -86,8 +86,20 @@ section {
   &__step {
     padding-bottom: 120px;
 
+    .apple {
+      margin-top: 8px;
+      height: 26px;
+    }
+
+    .android {
+      margin-top: 8px;
+      margin-left: 12px;
+      height: 26px;
+    }
+
     &:last-child {
       padding-bottom: 0;
+      min-height: 500px;
     }
 
     .ui-col {
@@ -121,6 +133,9 @@ section {
   }
 
   .ui-tabs {
+    .ui-tab {
+      min-height: 300px;
+    }
     .ui-tab-bar {
       background: #2E3B4A;
       border-radius: 8px 8px 0 0;

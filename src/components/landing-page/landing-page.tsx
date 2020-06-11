@@ -165,6 +165,8 @@ npx cap init
         <Col cols={1}>02</Col>
         <Col md={5} sm={5} xs={5} cols={12}>
           <Heading level={3}>Install the native platforms you want to target.</Heading>
+          <img src="/assets/img/landing/apple.png" alt="Apple" class="apple" />
+          <img src="/assets/img/landing/android.png" alt="Android" class="android" />
         </Col>
         <Col md={6} sm={6} xs={6} cols={12}>
           <code-snippet language="shell-session" code={`
@@ -176,7 +178,7 @@ npx cap add android
       <Grid class="section--getting-started__step">
         <Col cols={1}>03</Col>
         <Col md={5} sm={5} xs={5} cols={12}>
-          <Heading level={3}>Access core Native APIs or extend with your own.</Heading>
+          <Heading level={3}>Access APIs on both native and web, or extend with your own.</Heading>
         </Col>
         <Col md={6} sm={6} xs={6} cols={12}>
           <Tabs>
@@ -262,6 +264,21 @@ const picture = await Camera.getPicture({
                 style={{ '--border-radius': '0 0 8px 8px' }}
                 language="typescript"
                 code={`
+import Foundation
+import Capacitor
+
+// Custom platform code, easily exposed to your web app
+// through Capacitor plugin APIs. Build APIs that work
+// across iOS, Android, and the web!
+@objc(MyAwesomePlugin)
+public class MyAwesomePlugin: CAPPlugin {
+
+  @objc public func doNative(_ call: CAPPluginCall) {
+    let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
+
+    // ....
+  }
+}
 `} />
             </Tab>
           </Tabs>
