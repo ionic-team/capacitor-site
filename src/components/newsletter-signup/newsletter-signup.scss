@@ -61,6 +61,16 @@
       background-color: #119EFF;
       color: white;
     }
+
+  }
+
+  .success__message {
+    display: flex;
+    align-items:center;
+
+    svg {
+      margin-right: 16px;
+    }
   }
 
   @media screen and (max-width: variables.$breakpoint-md) {
