@@ -29,10 +29,10 @@ export class LandingPage {
                     one app across iOS, Android, and the Web with the same code.
                   </Heading>
                   <div class="hero__buttons">
-                    <AnchorButton href="/docs/getting-started/" id="get-started">
+                    <AnchorButton href="/docs/getting-started" id="get-started">
                       Get Started
                     </AnchorButton>
-                    <AnchorButton href="/docs/" id="explore-docs" class="btn-white">
+                    <AnchorButton href="/docs" id="explore-docs" class="btn-white">
                       Explore Docs
                     </AnchorButton>
                   </div>
