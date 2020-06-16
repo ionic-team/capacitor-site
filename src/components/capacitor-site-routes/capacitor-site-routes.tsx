@@ -18,6 +18,7 @@ export class CapacitorSiteRoutes {
       (window as any).gtag('config', 'UA-44023830-42', { 'page_path': newValue.pathname + newValue.search });
       state.isLeftSidebarIn = false;
       state.pageTheme = 'light';
+      window.scrollTo(0, 0);
     });
   }
 
