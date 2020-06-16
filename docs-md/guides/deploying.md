@@ -28,12 +28,14 @@ Live deployment works on the principle that Capacitor apps are built largely as 
 
 ## Connect to GitHub, Bitbucket, and GitLab
 
-Appflow can connect directly to a GitHub, Bitbucket, or GitLab repo for git-triggered builds and deployments. 
+Appflow can connect directly to a GitHub, Bitbucket, or GitLab repo for git-triggered builds and deployments.
 
-## Appflow is Enterprise Ready
-
-Appflow powers significant apps with hundreds of millions of users and significant business impact. The Appflow team works closely with many Fortune 500 companies to thousands of small to medium-sized companies. Appflow is fully compatible with Capacitor and works best with it, given the team behind it works closely with the Capacitor team.
+This makes it easy to connect to your existing development workflow to start adding automated app store and real time updates with zero disruption.
 
 ## Try Appflow Today
 
-Appflow is free to get started and uses the same Ionic account you may have used in the past. To get started, visit [useappflow.com](https://useappflow.com/).
+Appflow powers major consumer and enterprise apps with hundreds of millions of users and significant business impact. The Appflow team works closely with many Fortune 500 companies to thousands of small to medium-sized companies.
+
+And, because the team behind Appflow works closely with the Capacitor team, Appflow is optimized to work best with Capacitor.
+
+Appflow is free to get started and uses the same Ionic account you may have used in the past. To get started, visit [useappflow.com](https://useappflow.com/) or browse the [documentation](https://ionicframework.com/docs/appflow) to learn more about how Appflow works.
