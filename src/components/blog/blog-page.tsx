@@ -9,8 +9,8 @@ import posts from '../../assets/blog.json';
 
 @Component({
   tag: 'blog-page',
-  styleUrl: 'blog-page.scss',
-  scoped: true
+  styleUrl: 'blog-page.scss'
+  // Not scoped since blog content is rendered as HTML
 })
 export class BlogPage {
   @State() posts?: RenderedBlog[];

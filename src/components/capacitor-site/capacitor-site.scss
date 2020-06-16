@@ -1,7 +1,6 @@
 @use '~prismjs/themes/prism';
 
 @use '../../global/variables';
-@use '../../global/webfont';
 
 @use '../../global/shared/utils';
 @use '../../global/shared/buttons';
@@ -420,78 +419,6 @@ code {
 
 .hljs-link {
   text-decoration: underline;
-}
-
-.landing-page {
-  footer {
-    .ionic-oss-logo {
-      background-image: url(/assets/img/ionic-os-logo.png);
-    }
-  }
-}
-
-footer {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #f8f8fc;
-  height: 8em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 0 0 8em;
-
-  .ionic-oss-logo {
-    background: url(/assets/img/ionic-os-dark-logo.png) no-repeat transparent;
-    width: 124px;
-    height: 16px;
-    background-size: 100%;
-  }
-
-  .container {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .svg-button {
-    margin-left: 16px;
-    transition: all .15s ease;
-    opacity: 0.5;
-    border: 0;
-  }
-
-  .svg-button:hover {
-    opacity: 1;
-  }
-
-  @media screen and (max-width: variables.$breakpoint-md) {
-    .container {
-      text-align: center;
-      flex-direction: column;
-      justify-content: center;
-    }
-    #open-source {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 24px;
-    }
-  }
-}
-
-#open-source {
-  img {
-    width: 50%;
-  }
-
-  p {
-    margin-top: 0;
-    margin-bottom: 0;
-    color: #a5a4b8;
-    font-size: 10px;
-  }
 }
 
 @media screen and (max-width: 355px) {

@@ -1,4 +1,6 @@
-:host {
+@use '~prismjs/themes/prism-dark';
+
+blog-page {
   display: block;
   background: #F5F5F5;
   padding-top: 100px;
@@ -31,6 +33,7 @@ a {
 }
 
 .blog-post {
+  color: #445B78;
   padding: 96px;
 
   background: white;
@@ -44,13 +47,26 @@ a {
 
   .ui-heading {
     margin: 0;
+
+    a {
+      color: var(--c-carbon-90);
+      text-decoration: none;
+      border-bottom: none;
+      &:hover {
+        border-bottom: none;
+      }
+    }
   }
 
   p {
-    color: #111;
+    // color: #111;
   }
 
-  li {
+  ul {
+    padding-left: 16px;
+  }
+  ul li {
+    list-style: disc;
     margin-top: 6px;
   }
 

@@ -13,7 +13,10 @@ export const config: Config = {
       type: 'www',
       // prerenderConfig: './prerender.config.ts',
       baseUrl: 'https://capacitorjs.com/',
-      serviceWorker: null
+      serviceWorker: null,
+      copy: [
+        { src: '../node_modules/@ionic-internal/sites-shared/www/assets/fonts', dest: 'assets/fonts' }
+      ]
     },
   ],
   plugins: [

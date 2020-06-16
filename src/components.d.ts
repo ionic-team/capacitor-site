@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MarkdownContent, MarkdownHeading, SiteStructureItem } from "./global/definitions";
+import { MarkdownContent, MarkdownHeading, SiteStructureItem, } from "./global/definitions";
 export namespace Components {
     interface AnchorLink {
         "to": string;
@@ -38,6 +38,10 @@ export namespace Components {
     interface CapacitorSiteHeader {
     }
     interface CapacitorSiteRoutes {
+    }
+    interface CodeSnippet {
+        "code": string;
+        "language": string;
     }
     interface ContributorList {
         "contributors": string[];
@@ -72,6 +76,8 @@ export namespace Components {
     }
     interface PluginPlatforms {
         "platforms": string;
+    }
+    interface PreFooter {
     }
 }
 declare global {
@@ -153,6 +159,12 @@ declare global {
         prototype: HTMLCapacitorSiteRoutesElement;
         new (): HTMLCapacitorSiteRoutesElement;
     };
+    interface HTMLCodeSnippetElement extends Components.CodeSnippet, HTMLStencilElement {
+    }
+    var HTMLCodeSnippetElement: {
+        prototype: HTMLCodeSnippetElement;
+        new (): HTMLCodeSnippetElement;
+    };
     interface HTMLContributorListElement extends Components.ContributorList, HTMLStencilElement {
     }
     var HTMLContributorListElement: {
@@ -213,6 +225,12 @@ declare global {
         prototype: HTMLPluginPlatformsElement;
         new (): HTMLPluginPlatformsElement;
     };
+    interface HTMLPreFooterElement extends Components.PreFooter, HTMLStencilElement {
+    }
+    var HTMLPreFooterElement: {
+        prototype: HTMLPreFooterElement;
+        new (): HTMLPreFooterElement;
+    };
     interface HTMLElementTagNameMap {
         "anchor-link": HTMLAnchorLinkElement;
         "app-burger": HTMLAppBurgerElement;
@@ -227,6 +245,7 @@ declare global {
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
         "capacitor-site-header": HTMLCapacitorSiteHeaderElement;
         "capacitor-site-routes": HTMLCapacitorSiteRoutesElement;
+        "code-snippet": HTMLCodeSnippetElement;
         "contributor-list": HTMLContributorListElement;
         "doc-snippet": HTMLDocSnippetElement;
         "docs-menu": HTMLDocsMenuElement;
@@ -237,6 +256,7 @@ declare global {
         "newsletter-signup": HTMLNewsletterSignupElement;
         "plugin-api": HTMLPluginApiElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
+        "pre-footer": HTMLPreFooterElement;
     }
 }
 declare namespace LocalJSX {
@@ -273,6 +293,10 @@ declare namespace LocalJSX {
     }
     interface CapacitorSiteRoutes {
     }
+    interface CodeSnippet {
+        "code"?: string;
+        "language"?: string;
+    }
     interface ContributorList {
         "contributors"?: string[];
         "link"?: (contributor: string) => string;
@@ -307,6 +331,8 @@ declare namespace LocalJSX {
     interface PluginPlatforms {
         "platforms"?: string;
     }
+    interface PreFooter {
+    }
     interface IntrinsicElements {
         "anchor-link": AnchorLink;
         "app-burger": AppBurger;
@@ -321,6 +347,7 @@ declare namespace LocalJSX {
         "capacitor-site-footer": CapacitorSiteFooter;
         "capacitor-site-header": CapacitorSiteHeader;
         "capacitor-site-routes": CapacitorSiteRoutes;
+        "code-snippet": CodeSnippet;
         "contributor-list": ContributorList;
         "doc-snippet": DocSnippet;
         "docs-menu": DocsMenu;
@@ -331,6 +358,7 @@ declare namespace LocalJSX {
         "newsletter-signup": NewsletterSignup;
         "plugin-api": PluginApi;
         "plugin-platforms": PluginPlatforms;
+        "pre-footer": PreFooter;
     }
 }
 export { LocalJSX as JSX };
@@ -350,6 +378,7 @@ declare module "@stencil/core" {
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
             "capacitor-site-header": LocalJSX.CapacitorSiteHeader & JSXBase.HTMLAttributes<HTMLCapacitorSiteHeaderElement>;
             "capacitor-site-routes": LocalJSX.CapacitorSiteRoutes & JSXBase.HTMLAttributes<HTMLCapacitorSiteRoutesElement>;
+            "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
@@ -360,6 +389,7 @@ declare module "@stencil/core" {
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "plugin-api": LocalJSX.PluginApi & JSXBase.HTMLAttributes<HTMLPluginApiElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
+            "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
         }
     }
 }

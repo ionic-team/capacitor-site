@@ -4,12 +4,17 @@ date: 2020-04-08 08:00:00
 author: Max Lynch <max@ionic.io>
 ---
 
-Today we are excited to announce capacitor 2.0.
+Today we are excited to announce Capacitor 2.0!
 
-## This is a heading
+Capacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:
 
-Here's some content
+ * Swift 5 and Xcode 11+ support
+ * Android 10 (SDK 29) and AndroidX support
+ * Bug fixes and usability improvements to 23+ core plugins
+ * Support for generating splash screens and icons
 
-```bash
-npm install cool-thing
-```
+We documented the whole update and talked about what's next for Capacitor over on the Ionic blog.
+
+Check it out:
+
+[https://ionicframework.com/blog/announcing-capacitor-2-0/](https://ionicframework.com/blog/announcing-capacitor-2-0/)

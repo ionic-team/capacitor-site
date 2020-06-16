@@ -18,6 +18,9 @@ export class CapacitorSiteRoutes {
       (window as any).gtag('config', 'UA-44023830-42', { 'page_path': newValue.pathname + newValue.search });
       state.isLeftSidebarIn = false;
       state.pageTheme = 'light';
+
+      // Reset scroll position
+      requestAnimationFrame(() => window.scrollTo(0, 0));
     });
   }
 
@@ -30,12 +33,10 @@ export class CapacitorSiteRoutes {
           </Route>
 
           <Route path={match('/blog', { exact: true })} render={() => {
-            console.log('BLOG ROUTE MATCH');
             return <blog-page />
           }} />
 
           <Route path={match('/blog/:slug')} render={({ slug }) => {
-            console.log('BLOG SLUG ROUTE MATCH', slug);
             return <blog-post slug={slug} />
           }} />
 
