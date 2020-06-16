@@ -17,7 +17,7 @@ export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?:
     <div class="blog-post__wrap">
       {single && <a {...href('/blog', Router)}>Blog</a>}
       <div class="blog-post">
-        <Heading level={2}>{post.title}</Heading>
+        <Heading level={2}><a href={getBlogPostUrl(post)}>{post.title}</a></Heading>
         <PostAuthor authorName={post.authorName} dateString={post.date} />
 
         <PostContent html={content} />
