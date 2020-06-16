@@ -5,7 +5,7 @@
       {
         "text": "Introduction",
         "filePath": "/assets/docs-content/index.json",
-        "url": "/docs/"
+        "url": "/docs"
       },
       {
         "text": "Required Dependencies",
@@ -111,6 +111,11 @@
         "text": "Deep Links",
         "filePath": "/assets/docs-content/guides/deep-links.json",
         "url": "/docs/guides/deep-links"
+      },
+      {
+        "text": "Deploying Realtime Updates",
+        "filePath": "/assets/docs-content/guides/deploying-updates.json",
+        "url": "/docs/guides/deploying-updates"
       },
       {
         "text": "Community Guides",
