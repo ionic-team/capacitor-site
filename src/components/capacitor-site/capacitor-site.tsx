@@ -1,4 +1,4 @@
-import { Component, Element, State, h } from '@stencil/core';
+import { Component, Element, h } from '@stencil/core';
 
 import state from '../../store';
 
