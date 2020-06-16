@@ -138,7 +138,7 @@ $ npm link plugin-name
 $ npm install plugin-name
 ``` 
 
-The project's package.json file now shows the plugin package link in the dependencies list:
+The project's `package.json` file now shows the plugin package link in the dependencies list:
 
 ```json
 "my-plugin": "file:my-plugin",
