@@ -9,8 +9,6 @@ import state from '../../store';
 export class App {
   @Element() el: HTMLElement;
 
-  @State() isLeftSidebarIn: boolean;
-
   render() {
     return (
       <site-root>
