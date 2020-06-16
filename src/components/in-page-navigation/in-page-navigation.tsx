@@ -19,7 +19,7 @@ export class InPageNavigtion {
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
-  @Listen('scroll', { target: 'window'})
+  @Listen('scroll', { target: 'window' })
   function() {
     const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
     if (itemIndex === 0 || this.itemOffsets[this.itemOffsets.length - 1] === undefined) {

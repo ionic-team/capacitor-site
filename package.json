@@ -42,9 +42,7 @@
     "rollup-plugin-dotenv": "^0.3.0",
     "stencil-router-v2": "^0.5.0",
     "typedoc": "^0.17.7",
-    "workbox-build": "4.3.1"
-  },
-  "dependencies": {
+    "workbox-build": "4.3.1",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.7.1"
   },
