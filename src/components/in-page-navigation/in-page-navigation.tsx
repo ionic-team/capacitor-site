@@ -77,9 +77,9 @@ export class InPageNavigtion {
   }
 
   stripTags(html){
-    const tmp = document.createElement("DIV");
+    const tmp = document.createElement('div');
     tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || "";
+    return tmp.textContent || tmp.innerText || '';
   }
   
   render() {
