@@ -5,6 +5,7 @@ url: /docs/plugins/web
 contributors:
   - mlynch
   - jcesarmobile
+  - dotNetkow
 ---
 
 # Capacitor Web/PWA Plugin Guide
@@ -63,7 +64,9 @@ export * from './web';
 
 ## Usage
 
-Custom Capacitor plugins are merged into Capacitor Core and thus are accessed through object destructuring. To use a plugin's features in a PWA, import the plugin package in addition to importing from Capacitor Core.
+Custom Capacitor plugins are merged into Capacitor Core and thus are accessed through object destructuring. To use a plugin's features in a PWA, import the plugin package in addition to importing from Capacitor Core. 
+
+> If you don't import the plugin, `registerWebPlugin` won't get called, resulting in Capacitor not finding the web implementation. Native implementations are automatically detected by Capacitor.
 
 ```typescript
 // Import plugins from Capacitor Core
