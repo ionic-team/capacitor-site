@@ -47,6 +47,7 @@
   * [Updating](electron/updating.md)
 * Creating Plugins
   * [Introduction](plugins/index.md)
+  * [Development Workflow](plugins/workflow.md)
   * [iOS Guide](plugins/ios.md)
   * [Android Guide](plugins/android.md)
   * [Web/PWA Guide](plugins/web.md)

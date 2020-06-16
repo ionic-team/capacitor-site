@@ -5,6 +5,7 @@ url: /docs/plugins
 contributors:
   - mlynch
   - jcesarmobile
+  - dotNetkow
 ---
 
 # Capacitor Plugins
@@ -53,40 +54,8 @@ npx @capacitor/cli plugin:generate
  - `license` (optional): the license under which the plugin is bound. MIT license is the default.
  - `package.json will be created`: enter "Y" and/or hit Enter/Return to finish plugin setup.
 
-## TypeScript Interface
-
-Each plugin comes with some typescript files that simply export TypeScript interfaces. These interfaces
-can provide typing to TypeScript consumers of your plugin.
-
-Starting with the TypeScript interface can be a good way to build out the API for your plugin. For example,
-here's the default interface for our Plugin:
-
-```typescript
-declare module "@capacitor/core" {
-  interface PluginRegistry {
-    Echo: EchoPlugin;
-  }
-}
-
-export interface EchoPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
-}
-```
-
-## Publishing
-
-Whenever you are ready to publish your plugin, just use:
-
-```bash
-npm publish
-```
-
-This will build the JS portion of your plugin and publish the rest of your plugin files to NPM.
-
-Your package can now be installed using `npm install your-plugin` in any Capacitor app.
-
 ## Next steps
 
-Now it's up to you to make your plugin do something truly awesome!
+Now it's up to you to make your plugin do something truly awesome! [Read on](./plugins/workflow) to learn how to implement new functionality, test the plugin locally, and publish it on npm.
 
-Follow the [iOS](/docs/plugins/ios) guide for information on using Swift (or Obj-C) to build an iOS plugin, the [Android](/docs/plugins/android) guide for building Android plugins with Java, the [Web](/docs/plugins/web) guide for implementing web and PWA functionality for your plugin, and the [Custom JavaScript](/docs/plugins/js) guide for information on how to build a custom JavaScript plugin (i.e. in addition to Capacitor's auto-JS plugin binding).
+Afterward, check out the details covering how to build for each platform. Follow the [iOS](./plugins/ios) guide for information on using Swift (or Obj-C) to build an iOS plugin, the [Android](./plugins/android) guide for building Android plugins with Java, the [Web](./plugins/web) guide for implementing web and PWA functionality for your plugin, and the [Custom JavaScript](./plugins/js) guide for information on how to build a custom JavaScript plugin (i.e. in addition to Capacitor's auto-JS plugin binding).
