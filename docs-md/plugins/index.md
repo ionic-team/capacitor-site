@@ -56,6 +56,6 @@ npx @capacitor/cli plugin:generate
 
 ## Next steps
 
-Now it's up to you to make your plugin do something truly awesome! [Read on](./workflow) to learn how to implement new functionality, test the plugin locally, and publish it on npm.
+Now it's up to you to make your plugin do something truly awesome! [Read on](./plugins/workflow) to learn how to implement new functionality, test the plugin locally, and publish it on npm.
 
-Afterward, check out the details covering how to build for each platform. Follow the [iOS](./ios) guide for information on using Swift (or Obj-C) to build an iOS plugin, the [Android](./android) guide for building Android plugins with Java, the [Web](./web) guide for implementing web and PWA functionality for your plugin, and the [Custom JavaScript](./js) guide for information on how to build a custom JavaScript plugin (i.e. in addition to Capacitor's auto-JS plugin binding).
+Afterward, check out the details covering how to build for each platform. Follow the [iOS](./plugins/ios) guide for information on using Swift (or Obj-C) to build an iOS plugin, the [Android](./plugins/android) guide for building Android plugins with Java, the [Web](./plugins/web) guide for implementing web and PWA functionality for your plugin, and the [Custom JavaScript](./plugins/js) guide for information on how to build a custom JavaScript plugin (i.e. in addition to Capacitor's auto-JS plugin binding).
