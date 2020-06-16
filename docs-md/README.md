@@ -23,6 +23,7 @@
   * [Ionic Photo Gallery App](guides/ionic-framework-app.md)
   * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
   * [Deep Links](guides/deep-links.md)
+  * [Deploying and Updating](guides/deploying.md)
   * [Community Guides](guides/community.md)
 * iOS
   * [Getting Started](ios/index.md)
