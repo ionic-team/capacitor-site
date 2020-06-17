@@ -1,7 +1,5 @@
 # Contributing
 
-Thanks for your interest in contributing to the Capacitor Docs! :tada:
-
 The Capacitor website (`site/`) and documentation (`site/docs-md`) live alongside the code. Looking to assist? See Capacitor issues labeled "docs" [here](https://github.com/ionic-team/capacitor/issues?q=is%3Aopen+is%3Aissue+label%3Adocs).
 
 ## Setup
