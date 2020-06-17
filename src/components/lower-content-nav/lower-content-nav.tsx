@@ -1,5 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
 import { SiteStructureItem } from '../../global/definitions';
+import { href } from 'stencil-router-v2';
 
 @Component({
   tag: 'lower-content-nav',
@@ -13,12 +14,12 @@ export class LowerContentNav {
   render() {
     return [
       (this.prev != null ?
-        <a href={this.prev.url} class="pull-left btn btn--secondary">
+        <a {...href(this.prev.url)} class="pull-left btn btn--secondary">
           Back
         </a> :
         null ),
       (this.next != null ?
-        <a href={this.next.url} class="pull-right btn btn--primary">
+        <a {...href(this.next.url)} class="pull-right btn btn--primary">
           Next
         </a> :
         null )

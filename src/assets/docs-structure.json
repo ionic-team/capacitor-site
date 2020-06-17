@@ -5,7 +5,7 @@
       {
         "text": "Introduction",
         "filePath": "/assets/docs-content/index.json",
-        "url": "/docs"
+        "url": "/docs/"
       },
       {
         "text": "Required Dependencies",
@@ -98,7 +98,7 @@
     "text": "Guides",
     "children": [
       {
-        "text": "Ionic Framework Camera App",
+        "text": "Ionic Photo Gallery App",
         "filePath": "/assets/docs-content/guides/ionic-framework-app.json",
         "url": "/docs/guides/ionic-framework-app"
       },
@@ -113,8 +113,8 @@
         "url": "/docs/guides/deep-links"
       },
       {
-        "text": "Deploying Realtime Updates",
-        "filePath": "/assets/docs-content/guides/deploying-updates.json",
+        "text": "Deploying and Updating",
+        "filePath": "/assets/docs-content/guides/deploying.json",
         "url": "/docs/guides/deploying-updates"
       },
       {
