@@ -26,7 +26,6 @@ export class DocumentComponent implements ComponentInterface {
 
   @Watch('page')
   fetchNewContent(page: string, oldPage?: string) {
-    console.log('Fetching new page', page);
     if (page == null || page === oldPage) {
       return;
     }
@@ -46,7 +45,9 @@ export class DocumentComponent implements ComponentInterface {
       <div class="container">
         <app-burger />
 
-        <docs-menu selectedParent={this.parent} siteStructureList={siteStructure as SiteStructureItem[]} />
+        <docs-menu
+          selectedParent={this.parent}
+          siteStructureList={siteStructure as SiteStructureItem[]} />
 
         <app-marked fetchPath={this.item.filePath} renderer={(docsContent) => [
           <Helmet>

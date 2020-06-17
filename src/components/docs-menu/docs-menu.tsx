@@ -1,4 +1,4 @@
-import { Component, Prop, ComponentInterface, State, h } from '@stencil/core';
+import { Component, Prop, ComponentInterface, State, h, Watch } from '@stencil/core';
 import { SiteStructureItem } from '../../global/definitions';
 import { href } from 'stencil-router-v2';
 
@@ -14,8 +14,14 @@ export class SiteMenu implements ComponentInterface{
   @State() closeList = [];
 
   componentWillLoad() {
-    this.closeList = this.siteStructureList.map((_item, i) => i);
-    this.closeList.shift();
+    const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
+    this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
+  }
+
+  @Watch('selectedParent')
+  selectedParentChange() {
+    const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
+    this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
   }
 
   toggleParent = (itemNumber) => {
