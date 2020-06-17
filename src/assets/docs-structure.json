@@ -5,7 +5,7 @@
       {
         "text": "Introduction",
         "filePath": "/assets/docs-content/index.json",
-        "url": "/docs/"
+        "url": "/docs"
       },
       {
         "text": "Required Dependencies",
@@ -184,8 +184,8 @@
       },
       {
         "text": "Deploying to Google Play",
-        "filePath": "/assets/docs-content/ios/deploying-to-google-play.json",
-        "url": null
+        "filePath": "/assets/docs-content/android/deploying-to-google-play.json",
+        "url": "/docs/android/deploying-to-google-play"
       },
       {
         "text": "Troubleshooting",
