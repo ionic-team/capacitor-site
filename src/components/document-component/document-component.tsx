@@ -33,6 +33,7 @@ export class DocumentComponent implements ComponentInterface {
     if (page == null || page === oldPage) {
       return;
     }
+    state.showTopBar = false;
     const foundData = findItem(siteStructure as SiteStructureItem[], this.page);
     this.item = foundData.item;
     this.nextItem = foundData.nextItem;
