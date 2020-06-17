@@ -149,7 +149,8 @@
       },
       {
         "text": "Deploying to App Store",
-        "filePath": "https://www.joshmorony.com/deploying-capacitor-applications-to-ios-development-distribution/"
+        "filePath": "/assets/docs-content/ios/deploying-to-app-store.json",
+        "url": "/docs/ios/deploying-to-app-store"
       },
       {
         "text": "Troubleshooting",
@@ -183,7 +184,8 @@
       },
       {
         "text": "Deploying to Google Play",
-        "filePath": "https://www.joshmorony.com/deploying-capacitor-applications-to-android-development-distribution/"
+        "filePath": "/assets/docs-content/ios/deploying-to-google-play.json",
+        "url": null
       },
       {
         "text": "Troubleshooting",
@@ -229,6 +231,11 @@
         "text": "Introduction",
         "filePath": "/assets/docs-content/plugins/index.json",
         "url": "/docs/plugins"
+      },
+      {
+        "text": "Development Workflow",
+        "filePath": "/assets/docs-content/plugins/workflow.json",
+        "url": "/docs/plugins/workflow"
       },
       {
         "text": "iOS Guide",

@@ -32,6 +32,10 @@ export class InPageNavigtion {
   }
 
   componentWillUpdate() {
+    if (!this.adEl) {
+      return;
+    }
+
     if (!this.adEl.children[0]) return;
 
     this.adEl.style.height = '0px';
@@ -39,6 +43,10 @@ export class InPageNavigtion {
   
   @Listen('internalAdLoaded', { target: 'body' })
   componentDidRender() {
+    if (!this.adEl) {
+      return;
+    }
+
     if (!this.adEl.children[0]) return;
 
     if (this.adEl.children[0].getBoundingClientRect().bottom < window.innerHeight) {
