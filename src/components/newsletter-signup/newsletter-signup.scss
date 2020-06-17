@@ -35,6 +35,7 @@
   }
 
   form {
+    position:relative;
     display: flex;
 
     input {
@@ -71,6 +72,12 @@
     svg {
       margin-right: 16px;
     }
+  }
+
+  .error__message {
+    position:absolute;
+    top: 100%;
+    color:red;
   }
 
   @media screen and (max-width: variables.$breakpoint-md) {

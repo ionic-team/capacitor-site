@@ -15,6 +15,14 @@ export class NewsletterSignup {
   sendToHubspot = async (e: UIEvent) => {
     e.preventDefault();
     const url: string = "https://api.hsforms.com/submissions/v3/integration/submit/3776657/c8d355e3-a5ad-4f91-a2c0-c9dc93e10658"
+    let cookie = document.cookie.match(/(hubspotutk=).*?(?=;)/g);
+
+    const context: {pageUri: string, pageName: string, hutk?: string} = {
+      "pageUri": "https://capacitorjs.com/",
+      "pageName": "Capacitor Home"
+    }
+
+    cookie ? context['hutk'] = cookie[0].split("hubspotutk=")[1] : '';
 
     const data = {
       "submittedAt": Date.now(),
@@ -28,12 +36,9 @@ export class NewsletterSignup {
           "value": "Ionic Newsletter"
         }
       ],
-      "context": {
-        "hutk": document.cookie.match(/(hubspotutk=).*?(?=;)/g)[0].split("hubspotutk=")[1],
-        "pageUri": "https://capacitorjs.com/",
-        "pageName": "Capacitor Home"
-      }
+      "context": context
     }
+
     const response = await fetch(url, {
       method: 'POST',
       headers: {
