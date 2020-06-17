@@ -1,8 +1,8 @@
 import { Component, Listen, State, h, Event, EventEmitter} from '@stencil/core';
-import PrismicDOM from 'prismic-dom';
 
 import { trackClick, trackView } from './tracking-service';
 import { getAd } from './ad-service';
+import { PrismicRichText } from '@ionic-internal/sites-shared';
 
 @Component({
   tag: 'internal-ad',
@@ -55,7 +55,7 @@ export class InternalAd {
                 width={this.ad.ad_image['1x'].dimensions.width} />
             <p>{this.ad.ad_image.alt}</p>
           </picture>
-          <div innerHTML={PrismicDOM.RichText.asHtml(this.ad.ad_copy)}></div>
+          <PrismicRichText richText={this.ad.ad_copy} />
         </a>
       </div>
     );
