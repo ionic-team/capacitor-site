@@ -5,7 +5,7 @@
   flex: 0 0 auto;
   width: 280px;
   letter-spacing: 0;
-  padding: 0 20px;
+  padding: 0 15px 0 18px;
 
   box-shadow: 1px 0px 0px rgba(0, 21, 58, 0.06);
 
@@ -51,7 +51,7 @@
 }
 
 .menu-header__logo-link {
-
+  margin-top: 7px;
 }
 
 .menu-header__docs-link {
@@ -65,7 +65,7 @@
 
   letter-spacing: -0.02em;
 
-  margin: 0 8px;
+  margin: 6px 7px 0 8px;
 }
 
 .menu-header__version {
@@ -82,7 +82,7 @@
 
   padding: 0 8px;
 
-  margin: 0 0 4px 10px;
+  margin: 0 0 0 10px;
 
   color: var(--color-grey-blue);
 }
@@ -139,7 +139,7 @@
 
 .menu-list {
   margin-top: 0;
-  padding: 0;
+  padding: 13px 0;
 }
 
 .menu-list .section-label:first-of-type {
@@ -158,7 +158,7 @@
 }
 
 .menu-list > li + li {
-  margin-top: 8px;
+  margin-top: 18px;
 }
 
 .menu-list a {
@@ -203,7 +203,7 @@
 .menu-list ul li {
   padding-left: 22px;
   transition: 80ms height;
-  height: 26px;
+  height: 29px;
   display: block;
   overflow: hidden;
 }
@@ -211,6 +211,7 @@
 .menu-list ul li a {
   display: block;
   transition: .2s transform ease, .2s color ease;
+  margin-top: 4px;
 }
 
 .menu-list ul li:hover a,
