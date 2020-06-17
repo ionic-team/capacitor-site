@@ -1,7 +1,7 @@
 ---
 title: Capacitor - A Cross-platform App Runtime
 description: A cross-platform app runtime for building Native Progressive Web Apps for iOS, Android, and beyond
-url: /docs/
+url: /docs
 contributors:
   - mlynch
   - bensperry
