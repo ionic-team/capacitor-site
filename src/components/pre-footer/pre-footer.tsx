@@ -16,7 +16,7 @@ export class PreFooter {
             <Col md={6} sm={6} xs={12} cols={12}>
               <a href="/docs">
                 <img src="/assets/img/docs.png" alt="Read the docs" />
-                <Heading level={4}>Read the Docs -></Heading>
+                <Heading level={4}>Read the Docs -&gt;</Heading>
                 <p>
                   Install Capacitor and learn how to start building with it
                 </p>
@@ -25,7 +25,7 @@ export class PreFooter {
             <Col md={6} sm={6} xs={12} cols={12}>
               <a href="/docs/apis">
                 <img src="/assets/img/native-apis.png" alt="Explore the Native APIs" />
-                <Heading level={4}>Explore Native APIs -></Heading>
+                <Heading level={4}>Explore Native APIs -&gt;</Heading>
                 <p>
                   Explore Native APIs that are available to all Capacitor apps
                 </p>
