@@ -55,5 +55,8 @@ Here you can click on the name "App" under TARGET to rename your app.
 
 You then also have to modify the Podfile to rename the current target accordingly:
 
-The default Podfile has an `'App'` target, which needs to be replaced by your new name here:
-https://github.com/ionic-team/capacitor/blob/master/ios-template/App/Podfile#L16
+The default Podfile has an `'App'` target, which needs to be replaced with <a href="https://github.com/ionic-team/capacitor/blob/master/ios-template/App/Podfile#L16" target="_blank">your new name here.</a>
+
+## Deeplinks (aka Universal Links)
+
+For a complete Deep Links guide, [see here](/docs/guides/deep-links).

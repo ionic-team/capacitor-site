@@ -13,7 +13,7 @@ contributors:
 
 <p class="intro">However, chances are your app will need to access more native functionality than provided out of the box in Capacitor.</p>
 
-<p class="intro">If you are willing and able to write a small amount of native code, you can quickly add your own native functionality and expose it as a Capacitor plugin by following the <a href="/docs/plugins">Plugin Guide</a>.</p>
+<p class="intro">Fortunately, you can quickly add your own native functionality by writing a small amount of native code then exposing it as a Capacitor plugin by following the <a href="/docs/plugins">Plugin Guide</a>.</p>
 
 ## Finding Plugins
 

@@ -13,7 +13,7 @@ contributors:
 
 ## iOS
 
-Currently, iOS requires using Xcode to run your app.
+iOS requires using Xcode to run your app.
 
 ```bash
 npx cap open ios
@@ -31,7 +31,7 @@ Once Android Studio launches, you can build/emulate/run your app through the sta
 
 ## Progressive Web App
 
-Capacitor has a tiny development web server for simple testing, but generally you'll run your web app
+Capacitor has a tiny development web server for local testing, but it's recommended to run your web app
 using your framework of choice's server tools.
 
 ```bash

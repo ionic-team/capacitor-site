@@ -23,7 +23,7 @@ Any time you encounter an issue with iOS, or Xcode, your first step should be to
 
 Capacitor uses the standard iOS toolchain, so chances are if you run into something, many iOS developers have as well, and there's a solution out there.
 
-It could be as simple as updating a dependency, running clean, or removing Derived Data
+It could be as simple as updating a dependency, running clean, or removing Derived Data.
 
 ### Clean/Rebuild
 
@@ -57,13 +57,13 @@ The fix is simple: run `npx cap copy ios` to copy this file.
 
 This error can happen if CocoaPods hasn't been able to run to install your dependencies.
 
-Run
+Run this to update your pods:
 
 ```bash
 npx cap update ios
 ```
 
-To update your pods. Perform a new build after running this command.
+Perform a new build after running this command.
 
 ## Indexing FOREVER
 
@@ -75,7 +75,7 @@ The only solution is to Force Close Xcode (using Activity Monitor) and start it 
 
 ## CocoaPods: Failed to connect to GitHub
 
-This error can happen on Mac's with an old version of openssl and ruby installed, since GitHub
+This error can happen on Macs with an old version of openssl and ruby installed, since GitHub
 restricted the allowed cryptographic protocols when accessing repos.
 
 The solution is to update openssl and update Ruby:

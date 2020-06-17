@@ -28,14 +28,14 @@ You can install these easily by opening Android Studio, and going to Tools -> An
 ### Creating Android Project
 
 By default, an Android project is created for every Capacitor project. If you are adding Capacitor to an existing
-project, you can manually add the Android project using
+project, you can manually add the Android project using:
 
 ```bash
 npx cap add android
 npx cap sync
 ```
 
-The `sync` command updates dependencies, and copies any web assets to your project. You can also run
+The `sync` command updates dependencies, and copies any web assets to your project. You can also run:
 
 ```bash
 npx cap copy
@@ -45,7 +45,7 @@ To copy web assets only, which is faster if you know you don't need to update na
 
 ### Opening Android Project
 
-To open the project in Android Studio, run
+To open the project in Android Studio, run:
 
 ```bash
 npx cap open android
