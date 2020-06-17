@@ -54,7 +54,7 @@ CAP_PLUGIN(MyPlugin, "MyPlugin",
 
 This makes `MyPlugin`, and the `echo` method available to the Capacitor web runtime like this:
 
-```javascript
+```typescript
 import { Plugins } from "@capacitor/core"
 const { MyPlugin } = Plugins
 
