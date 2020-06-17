@@ -6,6 +6,8 @@ import { findItem } from '../../global/site-structure-utils';
 import { SiteStructureItem } from '../../global/definitions';
 import { handleRoutableLinkClick } from '../../utils/route-link';
 
+import state from '../../store';
+
 @Component({
   tag: 'document-component',
   styleUrl: 'document-component.scss'
@@ -21,6 +23,8 @@ export class DocumentComponent implements ComponentInterface {
   @State() parent: SiteStructureItem;
 
   componentWillLoad() {
+    console.log('Hiding topbar', state.showTopBar);
+    state.showTopBar = false;
     return this.fetchNewContent(this.page);
   }
 

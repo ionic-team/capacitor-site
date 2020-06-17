@@ -13,8 +13,10 @@ export class App {
     return (
       <site-root>
         <div class={`page-theme--${state.pageTheme}`}>
-          <site-platform-bar productName="Capacitor" />
+          {state.showTopBar ? ([
+          <site-platform-bar productName="Capacitor" />,
           <capacitor-site-header />
+          ]) : null}
           <capacitor-site-routes />
         </div>
       </site-root>
