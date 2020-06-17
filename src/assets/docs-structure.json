@@ -1,12 +1,12 @@
 [
   {
+    "text": "Introduction",
+    "filePath": "/assets/docs-content/index.json",
+    "url": "/docs"
+  },
+  {
     "text": "Getting Started",
     "children": [
-      {
-        "text": "Introduction",
-        "filePath": "/assets/docs-content/index.json",
-        "url": "/docs"
-      },
       {
         "text": "Required Dependencies",
         "filePath": "/assets/docs-content/getting-started/dependencies.json",

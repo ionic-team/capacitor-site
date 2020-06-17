@@ -40,7 +40,7 @@ export class InPageNavigtion {
 
     this.adEl.style.height = '0px';
   }
-  
+
   @Listen('internalAdLoaded', { target: 'body' })
   componentDidRender() {
     if (!this.adEl) {
@@ -55,7 +55,7 @@ export class InPageNavigtion {
       this.adEl.style.height = '0px';
     }
   }
-  
+
 
   @Watch('pageLinks')
   @Listen('resize', { target: 'window'})
@@ -70,7 +70,7 @@ export class InPageNavigtion {
       });
     });
   }
-  
+
   componentDidLoad() {
     this.updateItemOffsets();
   }
@@ -89,9 +89,10 @@ export class InPageNavigtion {
     tmp.innerHTML = html;
     return tmp.textContent || tmp.innerText || '';
   }
-  
+
   render() {
     const pageLinks = this.pageLinks.filter(pl => pl.level !== 1);
+
     const submitEditLink = (
        <a class="submit-edit-link" href={`https://github.com/ionic-team/capacitor/tree/master/site/${this.srcUrl}`}>
          {this.ghIcon()}
