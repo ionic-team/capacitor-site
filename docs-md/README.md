@@ -24,6 +24,7 @@
   * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying.md)
+  * [Splash Screens and Icons](guides/splash-screens-icons.md)
   * [Community Guides](guides/community.md)
 * iOS
   * [Getting Started](ios/index.md)
