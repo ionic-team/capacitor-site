@@ -5,19 +5,19 @@ import loadLanguages from 'prismjs/components/';
 import { SiteStructureItem, MarkdownContent } from '../src/global/definitions';
 
 const languages = [
-  'bash', 
-  'diff', 
-  'css', 
-  'html', 
-  'java', 
-  'json', 
-  'json5', 
+  'bash',
+  'diff',
+  'css',
+  'html',
+  'java',
+  'json',
+  'json5',
   'markup',
-  'objectivec', 
+  'objectivec',
   'shell',
-  'swift', 
-  'tsx', 
-  'typescript', 
+  'swift',
+  'tsx',
+  'typescript',
   'xml'
 ];
 loadLanguages(languages);
@@ -121,7 +121,7 @@ export function collectHeadingMetadata(renderer: marked.Renderer, metadata: Mark
 
     return `
 <h${level} id="${id}">
-  ${(level !== 1) ? `<a class="heading-link" href="#${id}"><ion-icon name="ios-link"></ion-icon>` : ''}
+  ${(level !== 1) ? `<a class="heading-link" href="#${id}"><ion-icon name="link"></ion-icon>` : ''}
   ${text}
   ${(level !== 1) ? `</a>` : ''}
 </h${level}>

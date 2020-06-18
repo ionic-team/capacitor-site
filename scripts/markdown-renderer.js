@@ -121,7 +121,7 @@ function collectHeadingMetadata(renderer, metadata) {
         });
         return `
 <h${level} id="${id}">
-  ${(level !== 1) ? `<a class="heading-link" href="#${id}"><ion-icon name="ios-link"></ion-icon>` : ''}
+  ${(level !== 1) ? `<a class="heading-link" href="#${id}"><ion-icon name="link"></ion-icon>` : ''}
   ${text}
   ${(level !== 1) ? `</a>` : ''}
 </h${level}>
