@@ -95,7 +95,11 @@ document-component {
     display: flex;
   }
 }
-doc-content
+
+.doc-content {
+  margin: 0 auto;
+}
+
 .input-with-button {
   display: flex;
   height: 50px;
