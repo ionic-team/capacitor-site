@@ -51,7 +51,7 @@ export class CapacitorSiteRoutes {
           </Route>
 
           <Route path="/docs">
-            <document-component page="/docs/" />
+            <document-component page="/docs" />
           </Route>
 
           <Route path={match('/docs/:pageName*')} render={({ pageName }) => (

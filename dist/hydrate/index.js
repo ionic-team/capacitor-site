@@ -7050,6 +7050,7 @@ const createStore = (defaultState, shouldUpdate) => {
 
 const { state } = createStore({
     isLeftSidebarIn: false,
+    showTopBar: true,
     pageTheme: 'light',
     prismLanguagesLoaded: {}
 });
@@ -7061,7 +7062,10 @@ class App {
         registerInstance(this, hostRef);
     }
     render() {
-        return (h("site-root", null, h("div", { class: `page-theme--${state.pageTheme}` }, h("site-platform-bar", { productName: "Capacitor" }), h("capacitor-site-header", null), h("capacitor-site-routes", null))));
+        return (h("site-root", null, h("div", { class: `page-theme--${state.pageTheme}` }, state.showTopBar ? ([
+            h("site-platform-bar", { productName: "Capacitor" }),
+            h("capacitor-site-header", null)
+        ]) : null, h("capacitor-site-routes", null))));
     }
     get el() { return getElement(this); }
     static get style() { return capacitorSiteCss; }
@@ -8478,6 +8482,7 @@ class CapacitorSiteRoutes {
         Router.onChange('url', (newValue, _oldValue) => {
             window.gtag('config', 'UA-44023830-42', { 'page_path': newValue.pathname + newValue.search });
             state.isLeftSidebarIn = false;
+            state.showTopBar = true;
             state.pageTheme = 'light';
             // Reset scroll position
             requestAnimationFrame(() => window.scrollTo(0, 0));
@@ -8488,7 +8493,7 @@ class CapacitorSiteRoutes {
                 return h("blog-page", null);
             } }), h(Route, { path: match('/blog/:slug'), render: ({ slug }) => {
                 return h("blog-post", { slug: slug });
-            } }), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs/" })), h(Route, { path: match('/docs/:pageName*'), render: ({ pageName }) => (h("document-component", { page: `/docs/${pageName}` })) }))));
+            } }), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs" })), h(Route, { path: match('/docs/:pageName*'), render: ({ pageName }) => (h("document-component", { page: `/docs/${pageName}` })) }))));
     }
     static get style() { return capacitorSiteRoutesCss; }
     static get cmpMeta() { return {
@@ -8907,8 +8912,8 @@ var siteStructure = [
 			},
 			{
 				text: "Deploying to Google Play",
-				filePath: "/assets/docs-content/ios/deploying-to-google-play.json",
-				url: null
+				filePath: "/assets/docs-content/android/deploying-to-google-play.json",
+				url: "/docs/android/deploying-to-google-play"
 			},
 			{
 				text: "Troubleshooting",
@@ -9165,6 +9170,8 @@ class DocumentComponent {
         this.page = null;
     }
     componentWillLoad() {
+        console.log('Hiding topbar', state.showTopBar);
+        state.showTopBar = false;
         return this.fetchNewContent(this.page);
     }
     fetchNewContent(page, oldPage) {
@@ -10244,7 +10251,7 @@ class LowerContentNav {
     }; }
 }
 
-const newsletterSignupCss = ".sc-newsletter-signup:root{--color-capacitor-blue:#119EFF;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161D;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888A2;--color-cadet-blue:#abb2bf;--color-whisper:#EBEBF7;--color-selago:#F4F4FD;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-green-haze:#00AB47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#F1E3C5;--color-pirate-gold:#9A6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.newsletter.sc-newsletter-signup{padding:48px 0;border-top:1px solid var(--c-indigo-20);border-bottom:1px solid var(--c-indigo-20)}.newsletter.sc-newsletter-signup .ui-grid.sc-newsletter-signup{-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding-right:40px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup img.sc-newsletter-signup{width:64px;height:64px;margin-right:16px;display:inline-block;vertical-align:middle}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup div.sc-newsletter-signup{-ms-flex:1;flex:1}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup h2.sc-newsletter-signup{margin:0 0 6px}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup p.sc-newsletter-signup{margin:0;line-height:23px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{display:-ms-flexbox;display:flex}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup{-ms-flex:1;flex:1;padding:5px 10px 5px 16px;margin-right:8px;width:200px;min-height:calc(100% - 1px);background-color:#fff;border:1px solid var(--c-indigo-30);border-radius:6px;font-size:16px;font-weight:400;color:#070D12;letter-spacing:-0.22px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup:placeholder{color:#6D6C82}.newsletter.sc-newsletter-signup form.sc-newsletter-signup button.sc-newsletter-signup{-ms-flex:0;flex:0;background-color:#119EFF;color:white}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup svg.sc-newsletter-signup{margin-right:16px}@media screen and (max-width: 768px){.newsletter.sc-newsletter-signup .container.sc-newsletter-signup{-ms-flex-direction:column;flex-direction:column;text-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup,.newsletter.sc-newsletter-signup form.sc-newsletter-signup{-ms-flex:0 0 100%;flex:0 0 100%}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding:0}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{margin-top:24px;width:100%;-ms-flex-pack:center;justify-content:center}}.landing-page.sc-newsletter-signup .newsletter.sc-newsletter-signup{background-color:#102331}";
+const newsletterSignupCss = ".sc-newsletter-signup:root{--color-capacitor-blue:#119EFF;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161D;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888A2;--color-cadet-blue:#abb2bf;--color-whisper:#EBEBF7;--color-selago:#F4F4FD;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-green-haze:#00AB47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#F1E3C5;--color-pirate-gold:#9A6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.newsletter.sc-newsletter-signup{padding:48px 0;border-top:1px solid var(--c-indigo-20);border-bottom:1px solid var(--c-indigo-20)}.newsletter.sc-newsletter-signup .ui-grid.sc-newsletter-signup{-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding-right:40px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup img.sc-newsletter-signup{width:64px;height:64px;margin-right:16px;display:inline-block;vertical-align:middle}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup div.sc-newsletter-signup{-ms-flex:1;flex:1}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup h2.sc-newsletter-signup{margin:0 0 6px}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup p.sc-newsletter-signup{margin:0;line-height:23px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{position:relative;display:-ms-flexbox;display:flex}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup{-ms-flex:1;flex:1;padding:5px 10px 5px 16px;margin-right:8px;width:200px;min-height:calc(100% - 1px);background-color:#fff;border:1px solid var(--c-indigo-30);border-radius:6px;font-size:16px;font-weight:400;color:#070D12;letter-spacing:-0.22px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup:placeholder{color:#6D6C82}.newsletter.sc-newsletter-signup form.sc-newsletter-signup button.sc-newsletter-signup{-ms-flex:0;flex:0;background-color:#119EFF;color:white}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup svg.sc-newsletter-signup{margin-right:16px}.newsletter.sc-newsletter-signup .error__message.sc-newsletter-signup{position:absolute;top:100%;color:red}@media screen and (max-width: 768px){.newsletter.sc-newsletter-signup .container.sc-newsletter-signup{-ms-flex-direction:column;flex-direction:column;text-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup,.newsletter.sc-newsletter-signup form.sc-newsletter-signup{-ms-flex:0 0 100%;flex:0 0 100%}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding:0}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{margin-top:24px;width:100%;-ms-flex-pack:center;justify-content:center}}.landing-page.sc-newsletter-signup .newsletter.sc-newsletter-signup{background-color:#102331}";
 
 class NewsletterSignup {
     constructor(hostRef) {
@@ -10254,6 +10261,12 @@ class NewsletterSignup {
         this.sendToHubspot = async (e) => {
             e.preventDefault();
             const url = "https://api.hsforms.com/submissions/v3/integration/submit/3776657/c8d355e3-a5ad-4f91-a2c0-c9dc93e10658";
+            let cookie = document.cookie.match(/(hubspotutk=).*?(?=;)/g);
+            const context = {
+                "pageUri": "https://capacitorjs.com/",
+                "pageName": "Capacitor Home"
+            };
+            cookie ? context['hutk'] = cookie[0].split("hubspotutk=")[1] : '';
             const data = {
                 "submittedAt": Date.now(),
                 "fields": [
@@ -10266,11 +10279,7 @@ class NewsletterSignup {
                         "value": "Ionic Newsletter"
                     }
                 ],
-                "context": {
-                    "hutk": document.cookie.match(/(hubspotutk=).*?(?=;)/g)[0].split("hubspotutk=")[1],
-                    "pageUri": "https://capacitorjs.com/",
-                    "pageName": "Capacitor Home"
-                }
+                "context": context
             };
             const response = await fetch(url, {
                 method: 'POST',
