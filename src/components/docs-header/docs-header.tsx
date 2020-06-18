@@ -21,8 +21,9 @@ export class DocsHeader implements ComponentInterface {
       <Host>
         <docs-search></docs-search>
         <div class="docs-header__links">
-          <a {...href('/docs')} class={{ 'active': this.isActive('/docs') }}>Docs</a>
-          <a {...href('/plugins')} class={{ 'active': this.isActive('/plugins') }}>API Plugins</a>
+          <a {...href('/docs')} class={{ 'active': this.isActive('/docs') }}>Guide</a>
+          {/* TODO enable this when we move the plugins */}
+          {/* <a {...href('/plugins')} class={{ 'active': this.isActive('/plugins') }}>Plugins</a> */}
           <a {...href('/blog')}>Blog</a>
           <a {...href('/community')}>Community</a>
         </div>

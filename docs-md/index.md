@@ -1,5 +1,5 @@
 ---
-title: Capacitor - A Cross-platform Native Runtime
+title: Capacitor - How the web goes native
 description: A cross-platform native runtime for building Native Progressive Web Apps for iOS, Android, and beyond
 url: /docs
 contributors:
