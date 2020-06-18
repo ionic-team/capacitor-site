@@ -11,14 +11,25 @@ import state from '../../store';
   scoped: true
 })
 export class SiteMenu implements ComponentInterface{
+  version: string;
+
   @Prop() siteStructureList: SiteStructureItem[] = [];
   @Prop({ mutable: true }) selectedParent: SiteStructureItem = null;
 
   @State() closeList = [];
 
-  componentWillLoad() {
+  async componentWillLoad() {
     const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
     this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
+
+    try {
+      const ret = await fetch("https://api.github.com/repos/ionic-team/capacitor/releases/latest")
+      const json = await ret.json();
+
+      this.version = json.tag_name;
+    } catch (e) {
+      console.error('Unable to get latest release', e);
+    }
   }
 
   @Watch('selectedParent')
@@ -42,8 +53,7 @@ export class SiteMenu implements ComponentInterface{
   }
 
   render() {
-    // TODO pull in from GH
-    const version = '2.2.0';
+    const { version } = this;
 
     return (
       <div class="sticky">
@@ -59,9 +69,12 @@ export class SiteMenu implements ComponentInterface{
             <a {...href('/docs')} class="menu-header__docs-link">
               docs
             </a>
-            <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
-              v{version}
-            </a>
+            { version ?
+              <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
+                v{version}
+              </a>
+              : null
+            }
           </div>
           <ul class="menu-list">
             { this.siteStructureList.map((item, i) => {
