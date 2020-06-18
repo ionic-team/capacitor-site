@@ -17,14 +17,14 @@ export class DocsHeader implements ComponentInterface {
     return (
       <Host>
         <docs-search></docs-search>
-        <div class="docs-header-links">
+        <div class="docs-header__links">
           <a {...href('/docs')} class={{ 'active': this.isActive('/docs') }}>Docs</a>
           <a {...href('/plugins')} class={{ 'active': this.isActive('/plugins') }}>API Plugins</a>
           <a {...href('/blog')}>Blog</a>
           <a {...href('/community')}>Community</a>
         </div>
-        <div class="docs-header-link-divider"/>
-        <div class="docs-header-external-links">
+        <div class="docs-header__link-divider"/>
+        <div class="docs-header__external-links">
           <a rel="noopener" target="_blank" href="https://twitter.com/capacitorjs" aria-label="Twitter">
             <ion-icon name="logo-twitter"></ion-icon>
           </a>

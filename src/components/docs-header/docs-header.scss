@@ -22,8 +22,8 @@
   z-index: 1;
 }
 
-.docs-header-links a,
-.docs-header-external-links a {
+.docs-header__links a,
+.docs-header__external-links a {
   color: #98a2ad;
 
   font-size: 15px;
@@ -37,15 +37,15 @@
   }
 }
 
-.docs-header-links {
+.docs-header__links {
   margin-bottom: 2px;
 }
 
-.docs-header-links a {
+.docs-header__links a {
   margin-right: 24px;
 }
 
-.docs-header-link-divider {
+.docs-header__link-divider {
   width: 1px;
   height: 18px;
 
@@ -56,14 +56,14 @@
   margin-left: 2px;
 }
 
-.docs-header-external-links {
+.docs-header__external-links {
   margin-top: 5px;
 
   margin-left: 2px;
   margin-right: 30px;
 }
 
-.docs-header-external-links a {
+.docs-header__external-links a {
   margin-left: 22px;
 
   font-size: 19px;
