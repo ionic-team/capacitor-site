@@ -14,14 +14,18 @@ import Router from '../../router';
 export class CapacitorSiteRoutes {
 
   componentWillLoad() {
+    let oldUrl: URL;
+
     Router.onChange('url', (newValue: InternalRouterState['url'], oldValue: InternalRouterState['url']) => {
       (window as any).gtag('config', 'UA-44023830-42', { 'page_path': newValue.pathname + newValue.search });
 
-      if (newValue.pathname !== oldValue.pathname) {
+      if (!oldUrl || oldUrl.pathname !== newValue.pathname) {
         state.isLeftSidebarIn = false;
         state.showTopBar = true;
         state.pageTheme = 'light';
       }
+
+      oldUrl = newValue;
 
       // Reset scroll position
       requestAnimationFrame(() => window.scrollTo(0, 0));
