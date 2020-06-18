@@ -8,7 +8,7 @@ contributors:
   - trancee
 ---
 
-<plugin-platforms platforms="pwa,ios,android,electron"></plugin-platforms>
+<plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
 # Splash Screen
 

@@ -31,34 +31,34 @@ build command:
 npm run build
 ```
 
-This builds your Progressive Web App if you've configured <a href="/docs/basics/progressive-web-app">Progressive Web App</a>> support already.
+This builds your Progressive Web App if you've configured <a href="/docs/basics/progressive-web-app">Progressive Web App</a> support already.
 
 ## 2. Copying Web Code
 
-Once your web code is built, it needs to be copied to each native project:
+Once your web code is built, it needs to be copied into each native project:
 
 ```bash
 npx cap copy
 ```
 
-This should be run each time you perform a build. Feel free to add this command to the end of your build script in `package.json`
+Run this command each time you perform a build and consider adding it to the end of your build script in `package.json`.
 
 ## 3. Building Native Project
 
 ### iOS
 
-iOS relies on Xcode to do the final app compile
+iOS relies on Xcode to do the final app compile:
 
 ```bash
 npx cap copy ios
 npx cap open ios
 ```
 
-Once Xcode launches, you can build your finally app binary through the standard Xcode workflow.
+Once Xcode launches, you can build your app binary through the standard Xcode workflow.
 
 ### Android
 
-Currently, Android relies on Android Studio (or, optionally, the Android CLI tools) to build the app:
+Android relies on Android Studio (or, optionally, the Android CLI tools) to build the app:
 
 ```bash
 npx cap copy android

@@ -10,7 +10,7 @@ contributors:
 
 Because Capacitor apps are normal native apps at the end of the day, the way they are deployed to the App Store is just like any other native app.
 
-To start, consult the official Apple documentation on [Submitting Apps to the App Store](https://developer.apple.com/app-store/submissions/).
+To start, consult the official Apple documentation on [Submitting Apps to the App Store](https://developer.apple.com/app-store/submissions/). [See here](/docs/guides/splash-screens-and-icons) for details on generating splash screens and icons for your app.
 
 For a guide with some Capacitor-specific considerations, see [Josh Morony's wonderful guide](https://www.joshmorony.com/deploying-capacitor-applications-to-ios-development-distribution/) on the topic.
 

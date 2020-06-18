@@ -425,14 +425,14 @@ public class MyAwesomePlugin: CAPPlugin {
 
 const MetaHead = () => (
   <Helmet>
-    <title>Capacitor: Universal Web Applications</title>
+    <title>Capacitor: Cross-platform native runtime for web apps</title>
     <meta
       name="description"
       content={'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript'}
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@getcapacitor" />
-    <meta name="twitter:creator" content="getcapacitor" />
+    <meta name="twitter:site" content="@capacitorjs" />
+    <meta name="twitter:creator" content="capacitorjs" />
     <meta name="twitter:title" content="Build cross-platform apps with web technologies" />
     <meta
       name="twitter:description"

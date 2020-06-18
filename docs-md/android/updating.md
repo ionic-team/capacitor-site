@@ -118,4 +118,4 @@ Recommended changes:
 
   In `android/app/src/main/res/xml/file_paths.xml` add `<cache-path name="my_cache_images" path="." />`.
 
-For API changes check the [Release Notes](https://github.com/ionic-team/capacitor/releases/tag/2.0.0)
+For API changes, check the [Release Notes](https://github.com/ionic-team/capacitor/releases/tag/2.0.0).

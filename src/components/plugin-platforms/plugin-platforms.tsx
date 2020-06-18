@@ -12,7 +12,7 @@ export class PluginPlatforms {
     <div class="platforms">
       {platforms.map(platform => {
         return (
-          <div class={`platform platform-icon-${platform}`}>{platform}</div>
+          <img src={`/assets/img/landing/${platform}.png`} alt={`${platform}`} title={`${platform}`}  />
         )
       })}
     </div>
