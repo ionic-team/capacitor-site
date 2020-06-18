@@ -1,7 +1,7 @@
-$color-blue-primary: #4CAFFF;
-$color-blue-muted: #85ADCE;
-$color-yellow: #FDBF00;
-$color-yellow-contrast: #653D00;
+$color-blue-primary: #4cafff;
+$color-blue-muted: #85adce;
+$color-yellow: #fdbf00;
+$color-yellow-contrast: #653d00;
 $color-white: #fff;
 
 $link-color: #1d9aff;
@@ -15,7 +15,7 @@ $easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
 // CSS vars for compatibility w/ stencil site components
 // TODO convert these and their use to SCSS
 :root {
-  --color-capacitor-blue: #119EFF;
+  --color-capacitor-blue: #119eff;
   --button-background: var(--color-capacitor-blue);
 
   --color-woodsmoke: #16161d;
