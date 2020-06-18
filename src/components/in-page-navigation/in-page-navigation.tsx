@@ -118,7 +118,9 @@ export class InPageNavigtion {
               [`size-h${pl.level}`]: true,
               'selected': this.selectedId === pl.id
             }}>
-            <stencil-route-link url={`${this.currentPageUrl}#${pl.id}`}>{this.stripTags(pl.text)}</stencil-route-link>
+            <stencil-route-link>
+              <a href={`#${pl.id}`}>{this.stripTags(pl.text)}</a>
+            </stencil-route-link>
           </li>
           )) }
         </ul>

@@ -6,12 +6,6 @@ import { Component, ComponentInterface, Host, h } from '@stencil/core';
   scoped: true
 })
 export class DocsSearch implements ComponentInterface {
-
-  componentWillLoad() {
-
-  }
-
-
   render() {
     return (
       <Host></Host>
