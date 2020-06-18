@@ -17,15 +17,13 @@ Capacitor turns your web app into a native binary for each platform. Thus, much 
 
 You will interact with the native platform underneath using Capacitor's APIs (such as [Camera](/docs/apis/camera)), or by using existing Cordova plugins with Capacitor's [Cordova Compatibility](/docs/cordova).
 
-As a final step you will build your application using a command similar to
+As a final step, you will build your application using a command similar to:
 
 ```bash
 npm run build
 ```
 
-If you are using a framework, follow your framework's build process. 
-
-If for example you are using [Ionic](https://ionicframework.com/), this would be
+If you are using a framework, follow your framework's build process. If, for example, you are using [Ionic](https://ionicframework.com/), this would be:
 
 ```bash
 ionic build
@@ -33,7 +31,7 @@ ionic build
 
 ## 2. Copy your Web Assets
 
-When you are ready to run your app natively on a device or in a simulator, copy your built web assets using
+When you are ready to run your app natively on a device or in a simulator, copy your built web assets using:
 
 ```bash
 npx cap copy
@@ -41,7 +39,7 @@ npx cap copy
 
 ## 3. Open your Native IDE
 
-Capacitor uses the Native IDEs to build, simulate, and run your app. To open it run
+Capacitor uses the Native IDEs to build, simulate, and run your app. To open one, run:
 
 ```bash
 npx cap open
@@ -51,7 +49,7 @@ npx cap open
 
 In some cases, the Capacitor app needs to be updated, such as when installing new plugins.
 
-To install new plugins (including Cordova ones), run
+To install new plugins (including Cordova ones), run:
 
 ```bash
 npm install really-cool-plugin
@@ -76,4 +74,4 @@ npm install @capacitor/ios@latest
 npm install @capacitor/android@latest
 ```
 
-Note: If you don't want to risk to introduce breaking changes, use `npm update @capacitor/package-name` instead of `@latest` as `update` respects semver.
+Note: If you don't want to risk introducing breaking changes, use `npm update @capacitor/package-name` instead of `@latest` as `update` respects semantic versioning.

@@ -21,7 +21,7 @@ A Progressive Web App is, for all practical purposes, just another term for a we
 
 Capacitor has first-class support for Progressive Web Apps *and* native apps. That means that Capacitor's plugin bridge supports running in either a native context or in the web, with many core plugins available *in both contexts* with the exact same API and calling conventions.
 
-This means you'll use `@capacitor/core` as a dependency for both your native app *and* your Progressive Web App, and Capacitor will seamlessly call web code when required and native code when available.
+This means you use `@capacitor/core` as a dependency for both your native app *and* your Progressive Web App, and Capacitor seamlessly calls web code when required and native code when available.
 
 Additionally, Capacitor offers a number of utilities for querying the current platform to provide customized experiences when running natively or on the web.
 

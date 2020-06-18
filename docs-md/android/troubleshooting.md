@@ -44,7 +44,7 @@ That can be done easily from the File menu:
 This error occurs when some Cordova or Capacitor plugin has old android support dependencies instead of using the new AndroidX equivalent.
 You should report the issue in the plugin repository so the maintainers can update the plugin to use AndroidX dependencies.
 
-As workaround you can also patch the plugin using jetifier
+As a workaround, you can also patch the plugin using jetifier:
 
 ```bash
 npm install jetifier

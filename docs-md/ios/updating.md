@@ -18,7 +18,7 @@ To update the version of @capacitor/ios used in your app, just npm install lates
 npm install @capacitor/ios@latest
 ```
 
-Then sync the native project
+Then sync the native project:
 
 ```bash
 npx cap sync ios
@@ -51,4 +51,4 @@ Recommended change:
 
   Finally, click the `Update` button.
 
-For API changes check the [Release Notes](https://github.com/ionic-team/capacitor/releases/tag/2.0.0)
+For API changes, check the [Release Notes](https://github.com/ionic-team/capacitor/releases/tag/2.0.0).
