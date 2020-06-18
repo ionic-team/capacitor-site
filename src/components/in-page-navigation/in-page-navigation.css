@@ -1,8 +1,9 @@
 in-page-navigation {
-  flex: 0 0 180px;
+  flex: 0 0 240px;
   padding-top: 26px;
   padding-left: 16px;
-  overflow:visible;
+  overflow: visible;
+  letter-spacing: 0;
 }
 
 in-page-navigation h5 {
