@@ -9,6 +9,12 @@ document-component {
     padding: 0;
   }
 
+  .content-container {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+  }
+
   plugin-platforms {
     display: block;
     float: right;

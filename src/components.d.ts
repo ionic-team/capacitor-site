@@ -49,9 +49,13 @@ export namespace Components {
     }
     interface DocSnippet {
     }
+    interface DocsHeader {
+    }
     interface DocsMenu {
         "selectedParent": SiteStructureItem;
         "siteStructureList": SiteStructureItem[];
+    }
+    interface DocsSearch {
     }
     interface DocumentComponent {
         "page": string;
@@ -179,11 +183,23 @@ declare global {
         prototype: HTMLDocSnippetElement;
         new (): HTMLDocSnippetElement;
     };
+    interface HTMLDocsHeaderElement extends Components.DocsHeader, HTMLStencilElement {
+    }
+    var HTMLDocsHeaderElement: {
+        prototype: HTMLDocsHeaderElement;
+        new (): HTMLDocsHeaderElement;
+    };
     interface HTMLDocsMenuElement extends Components.DocsMenu, HTMLStencilElement {
     }
     var HTMLDocsMenuElement: {
         prototype: HTMLDocsMenuElement;
         new (): HTMLDocsMenuElement;
+    };
+    interface HTMLDocsSearchElement extends Components.DocsSearch, HTMLStencilElement {
+    }
+    var HTMLDocsSearchElement: {
+        prototype: HTMLDocsSearchElement;
+        new (): HTMLDocsSearchElement;
     };
     interface HTMLDocumentComponentElement extends Components.DocumentComponent, HTMLStencilElement {
     }
@@ -256,7 +272,9 @@ declare global {
         "code-snippet": HTMLCodeSnippetElement;
         "contributor-list": HTMLContributorListElement;
         "doc-snippet": HTMLDocSnippetElement;
+        "docs-header": HTMLDocsHeaderElement;
         "docs-menu": HTMLDocsMenuElement;
+        "docs-search": HTMLDocsSearchElement;
         "document-component": HTMLDocumentComponentElement;
         "in-page-navigation": HTMLInPageNavigationElement;
         "internal-ad": HTMLInternalAdElement;
@@ -312,9 +330,13 @@ declare namespace LocalJSX {
     }
     interface DocSnippet {
     }
+    interface DocsHeader {
+    }
     interface DocsMenu {
         "selectedParent"?: SiteStructureItem;
         "siteStructureList"?: SiteStructureItem[];
+    }
+    interface DocsSearch {
     }
     interface DocumentComponent {
         "page"?: string;
@@ -362,7 +384,9 @@ declare namespace LocalJSX {
         "code-snippet": CodeSnippet;
         "contributor-list": ContributorList;
         "doc-snippet": DocSnippet;
+        "docs-header": DocsHeader;
         "docs-menu": DocsMenu;
+        "docs-search": DocsSearch;
         "document-component": DocumentComponent;
         "in-page-navigation": InPageNavigation;
         "internal-ad": InternalAd;
@@ -394,7 +418,9 @@ declare module "@stencil/core" {
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
+            "docs-header": LocalJSX.DocsHeader & JSXBase.HTMLAttributes<HTMLDocsHeaderElement>;
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
+            "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
             "document-component": LocalJSX.DocumentComponent & JSXBase.HTMLAttributes<HTMLDocumentComponentElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "internal-ad": LocalJSX.InternalAd & JSXBase.HTMLAttributes<HTMLInternalAdElement>;

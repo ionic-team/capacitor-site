@@ -54,26 +54,30 @@ export class DocumentComponent implements ComponentInterface {
           selectedParent={this.parent}
           siteStructureList={siteStructure as SiteStructureItem[]} />
 
-        <app-marked fetchPath={this.item.filePath} renderer={(docsContent) => [
-          <Helmet>
-            <title>{docsContent.title ? `${docsContent.title} - Capacitor` : 'Capacitor'}</title>
-          </Helmet>,
-          <div class="doc-content">
-            <div class="measure-lg">
-              <div
-                onClick={handleRoutableLinkClick}
-                innerHTML={docsContent.content}></div>
-              <h2>Contributors</h2>
-              <contributor-list contributors={docsContent.contributors}></contributor-list>
-              <lower-content-nav next={this.nextItem} prev={this.prevItem}></lower-content-nav>
-            </div>
-          </div>,
-          <in-page-navigation
-            pageLinks={docsContent.headings}
-            srcUrl={docsContent.srcPath}
-            currentPageUrl={docsContent.url}
-          ></in-page-navigation>
-        ]}/>
+        <div class="content-container">
+          <docs-header/>
+
+          <app-marked fetchPath={this.item.filePath} renderer={(docsContent) => [
+            <Helmet>
+              <title>{docsContent.title ? `${docsContent.title} - Capacitor` : 'Capacitor'}</title>
+            </Helmet>,
+            <div class="doc-content">
+              <div class="measure-lg">
+                <div
+                  onClick={handleRoutableLinkClick}
+                  innerHTML={docsContent.content}></div>
+                <h2>Contributors</h2>
+                <contributor-list contributors={docsContent.contributors}></contributor-list>
+                <lower-content-nav next={this.nextItem} prev={this.prevItem}></lower-content-nav>
+              </div>
+            </div>,
+            <in-page-navigation
+              pageLinks={docsContent.headings}
+              srcUrl={docsContent.srcPath}
+              currentPageUrl={docsContent.url}
+            ></in-page-navigation>
+          ]}/>
+        </div>
       </div>
     );
   }

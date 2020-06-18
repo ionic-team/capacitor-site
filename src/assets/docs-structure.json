@@ -13,19 +13,19 @@
         "url": "/docs/getting-started/dependencies"
       },
       {
-        "text": "Installation",
+        "text": "Installation Guide",
         "filePath": "/assets/docs-content/getting-started/index.json",
         "url": "/docs/getting-started"
       },
       {
-        "text": "Using with Ionic",
+        "text": "Using with UI Frameworks",
         "filePath": "/assets/docs-content/getting-started/with-ionic.json",
         "url": "/docs/getting-started/with-ionic"
       }
     ]
   },
   {
-    "text": "Basics",
+    "text": "Developing",
     "children": [
       {
         "text": "Development Workflow",
