@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, h } from '@stencil/core';
+import { Component, ComponentInterface, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'docs-search',
@@ -13,8 +13,8 @@ export class DocsSearch implements ComponentInterface {
 
 
   render() {
-    return [
-
-    ];
+    return (
+      <Host></Host>
+    );
   }
 }
