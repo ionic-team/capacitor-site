@@ -42,6 +42,9 @@ export class SiteMenu implements ComponentInterface{
   }
 
   render() {
+    // TODO pull in from GH
+    const version = '2.2.0';
+
     return (
       <div class="sticky">
         <div>
@@ -56,10 +59,9 @@ export class SiteMenu implements ComponentInterface{
             <a {...href('/docs')} class="menu-header__docs-link">
               docs
             </a>
-            <div class="menu-header__version">
-              {/* TODO hardcoded */}
-              v2.1.3
-            </div>
+            <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
+              v{version}
+            </a>
           </div>
           <ul class="menu-list">
             { this.siteStructureList.map((item, i) => {

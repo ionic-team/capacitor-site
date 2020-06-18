@@ -70,7 +70,7 @@
   margin: 6px 7px 0 8px;
 }
 
-.menu-header__version {
+.menu-header__version-link {
   display: flex;
   align-items: center;
 
@@ -86,7 +86,14 @@
 
   margin: 0 0 0 10px;
 
+  border-bottom: none;
+  cursor: pointer;
+
   color: var(--color-grey-blue);
+}
+
+.menu-header__version-link:hover {
+  background: #e9ebee;
 }
 
 .section-label {
