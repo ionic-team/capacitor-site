@@ -1,5 +1,6 @@
 import { Component, Prop, Listen, State, Watch, h} from '@stencil/core';
 import { MarkdownHeading } from '../../global/definitions';
+import { href } from 'stencil-router-v2';
 
 interface ItemOffset {
   id: string,
@@ -119,7 +120,7 @@ export class InPageNavigtion {
               'selected': this.selectedId === pl.id
             }}>
             <stencil-route-link>
-              <a href={`#${pl.id}`}>{this.stripTags(pl.text)}</a>
+              <a {...href(`#${pl.id}`)}>{this.stripTags(pl.text)}</a>
             </stencil-route-link>
           </li>
           )) }
