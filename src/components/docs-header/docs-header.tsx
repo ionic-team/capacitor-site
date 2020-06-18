@@ -10,7 +10,10 @@ import Router from '../../router';
 export class DocsHeader implements ComponentInterface {
 
   isActive(path: string): boolean {
-    return path === Router.activePath;
+    const prefix = new RegExp("^" + path, "gm");
+    const regexRes = prefix.test(Router.activePath);
+
+    return regexRes;
   }
 
   render() {
