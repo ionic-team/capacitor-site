@@ -223,9 +223,12 @@
   margin-top: 4px;
 }
 
-.menu-list ul li:hover a,
+.menu-list ul li:hover a {
+  color: #2d4665;
+}
+
 .menu-list ul li a.link-active {
-  transform: translateX(2px);
+  color: #0091fa;
 }
 
 .menu-list ul.collapsed li {

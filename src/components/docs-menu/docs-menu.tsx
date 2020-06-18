@@ -82,7 +82,7 @@ export class SiteMenu implements ComponentInterface{
                       return (
                       <li>
                         { (childItem.url) ?
-                        <a {...href(childItem.url)}>
+                        <a {...href(childItem.url)} class={{'link-active': childItem.url === Router.activePath}}>
                           {childItem.text}
                         </a> :
                         <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
