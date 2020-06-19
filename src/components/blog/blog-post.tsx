@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, State, h, Host } from '@stencil/core';
 
 import { RenderedBlog } from '../../models';
 import { BlogPost } from './blog-common';
@@ -8,7 +8,6 @@ import posts from '../../assets/blog.json';
 @Component({
   tag: 'blog-post',
   styleUrl: 'blog-page.scss',
-  scoped: true
 })
 export class BlogPage {
   @Prop() slug: string;
@@ -29,7 +28,9 @@ export class BlogPage {
   render() {
     if (this.slug && this.post) {
       return (
-        <BlogPost post={this.post} />
+        <Host>
+          <BlogPost post={this.post} />
+        </Host>
       )
     }
     return null;
