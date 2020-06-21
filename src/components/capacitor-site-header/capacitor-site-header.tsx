@@ -1,4 +1,4 @@
-import { Component, Element, State, h, VNode } from '@stencil/core';
+import { Build, Component, Element, State, h, VNode } from '@stencil/core';
 import { ResponsiveContainer, Button, AnchorButton } from '@ionic-internal/sites-shared';
 import { href } from 'stencil-router-v2';
 
@@ -28,14 +28,16 @@ export class SiteHeader {
   @State() starCount?: number;
 
   async componentWillLoad() {
-    try {
-      const ret = await fetch("https://api.github.com/repos/ionic-team/capacitor")
+    if (Build.isServer) {
+      try {
+        const ret = await fetch("https://api.github.com/repos/ionic-team/capacitor")
 
-      const json = await ret.json();
+        const json = await ret.json();
 
-      this.starCount = formatNumber(json.stargazers_count);
-    } catch (e) {
-      console.error('Unable to get stars', e);
+        this.starCount = formatNumber(json.stargazers_count);
+      } catch (e) {
+        console.error('Unable to get stars', e);
+      }
     }
   }
 
