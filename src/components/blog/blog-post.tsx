@@ -4,6 +4,8 @@ import { RenderedBlog } from '../../models';
 import { BlogPost } from './blog-common';
 
 import posts from '../../assets/blog.json';
+import { Heading } from '@ionic-internal/sites-shared';
+import { href } from 'stencil-router-v2';
 
 @Component({
   tag: 'blog-post',
@@ -29,7 +31,12 @@ export class BlogPage {
     if (this.slug && this.post) {
       return (
         <Host>
-          <BlogPost post={this.post} />
+          <div class="blog-posts">
+            <hgroup class="blog-posts__heading">
+              <Heading level={3}><a {...href('/blog')}>Blog</a></Heading>
+            </hgroup>
+            <BlogPost post={this.post} />
+          </div>
         </Host>
       )
     }
