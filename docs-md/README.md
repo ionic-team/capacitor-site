@@ -53,7 +53,7 @@
   * [Android Guide](plugins/android.md)
   * [Web/PWA Guide](plugins/web.md)
   * [JavaScript Guide](plugins/js.md)
-* APIs
+* Plugins
   * [Introduction](apis/index.md)
   * [Community Plugins](community/plugins.md)
   * [Accessibility](apis/accessibility/index.md)
