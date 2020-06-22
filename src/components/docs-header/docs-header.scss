@@ -30,6 +30,10 @@
 
   border-bottom: none;
 
+  &:hover {
+    color: #858e97;
+  }
+
   &.active {
     font-weight: 500;
 

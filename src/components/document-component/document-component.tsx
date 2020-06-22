@@ -42,13 +42,12 @@ export class DocumentComponent implements ComponentInterface {
   }
 
   render() {
-    // debugger;
     if (this.item == null) {
       return <h1>Page not found</h1>;
     }
     return (
       <div class="container">
-        <app-burger />
+        <app-menu-toggle />
 
         <docs-menu
           selectedParent={this.parent}

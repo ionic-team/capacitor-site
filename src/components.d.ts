@@ -10,14 +10,11 @@ export namespace Components {
     interface AnchorLink {
         "to": string;
     }
-    interface AppBurger {
-    }
-    interface AppIcon {
-        "name": string;
-    }
     interface AppMarked {
         "fetchPath"?: string;
         "renderer"?: (doc: MarkdownContent) => any;
+    }
+    interface AppMenuToggle {
     }
     interface AvcCodeType {
         "typeId": string;
@@ -93,23 +90,17 @@ declare global {
         prototype: HTMLAnchorLinkElement;
         new (): HTMLAnchorLinkElement;
     };
-    interface HTMLAppBurgerElement extends Components.AppBurger, HTMLStencilElement {
-    }
-    var HTMLAppBurgerElement: {
-        prototype: HTMLAppBurgerElement;
-        new (): HTMLAppBurgerElement;
-    };
-    interface HTMLAppIconElement extends Components.AppIcon, HTMLStencilElement {
-    }
-    var HTMLAppIconElement: {
-        prototype: HTMLAppIconElement;
-        new (): HTMLAppIconElement;
-    };
     interface HTMLAppMarkedElement extends Components.AppMarked, HTMLStencilElement {
     }
     var HTMLAppMarkedElement: {
         prototype: HTMLAppMarkedElement;
         new (): HTMLAppMarkedElement;
+    };
+    interface HTMLAppMenuToggleElement extends Components.AppMenuToggle, HTMLStencilElement {
+    }
+    var HTMLAppMenuToggleElement: {
+        prototype: HTMLAppMenuToggleElement;
+        new (): HTMLAppMenuToggleElement;
     };
     interface HTMLAvcCodeTypeElement extends Components.AvcCodeType, HTMLStencilElement {
     }
@@ -257,9 +248,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "anchor-link": HTMLAnchorLinkElement;
-        "app-burger": HTMLAppBurgerElement;
-        "app-icon": HTMLAppIconElement;
         "app-marked": HTMLAppMarkedElement;
+        "app-menu-toggle": HTMLAppMenuToggleElement;
         "avc-code-type": HTMLAvcCodeTypeElement;
         "blog-page": HTMLBlogPageElement;
         "blog-post": HTMLBlogPostElement;
@@ -290,15 +280,12 @@ declare namespace LocalJSX {
     interface AnchorLink {
         "to"?: string;
     }
-    interface AppBurger {
-        "onBurgerClick"?: (event: CustomEvent<any>) => void;
-    }
-    interface AppIcon {
-        "name"?: string;
-    }
     interface AppMarked {
         "fetchPath"?: string;
         "renderer"?: (doc: MarkdownContent) => any;
+    }
+    interface AppMenuToggle {
+        "onMenuToggleClick"?: (event: CustomEvent<any>) => void;
     }
     interface AvcCodeType {
         "typeId"?: string;
@@ -369,9 +356,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "anchor-link": AnchorLink;
-        "app-burger": AppBurger;
-        "app-icon": AppIcon;
         "app-marked": AppMarked;
+        "app-menu-toggle": AppMenuToggle;
         "avc-code-type": AvcCodeType;
         "blog-page": BlogPage;
         "blog-post": BlogPost;
@@ -403,9 +389,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "anchor-link": LocalJSX.AnchorLink & JSXBase.HTMLAttributes<HTMLAnchorLinkElement>;
-            "app-burger": LocalJSX.AppBurger & JSXBase.HTMLAttributes<HTMLAppBurgerElement>;
-            "app-icon": LocalJSX.AppIcon & JSXBase.HTMLAttributes<HTMLAppIconElement>;
             "app-marked": LocalJSX.AppMarked & JSXBase.HTMLAttributes<HTMLAppMarkedElement>;
+            "app-menu-toggle": LocalJSX.AppMenuToggle & JSXBase.HTMLAttributes<HTMLAppMenuToggleElement>;
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
