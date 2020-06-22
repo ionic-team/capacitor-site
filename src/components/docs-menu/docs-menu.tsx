@@ -24,14 +24,8 @@ export class SiteMenu implements ComponentInterface{
     const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
     this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
 
-    try {
-      const ret = await fetch("https://api.github.com/repos/ionic-team/capacitor/releases/latest")
-      const json = await ret.json();
-
-      this.version = json.tag_name;
-    } catch (e) {
-      console.error('Unable to get latest release', e);
-    }
+    // TODO pull this in from GitHub at build
+    this.version = '2.2.0';
   }
 
   @Method()
@@ -86,10 +80,7 @@ export class SiteMenu implements ComponentInterface{
                 <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
                   v{version}
                 </a>
-                :
-                <a href={`https://github.com/ionic-team/capacitor/releases/tag/2.2.0`} rel="noopener" target="_blank" class="menu-header__version-link">
-                  v2.2.0
-                </a>
+                : null
               }
             </div>
             <ul class="menu-list">
