@@ -56,7 +56,7 @@ Current configuration options include:
   // Default is false
   "hideLogs": true
 
-  // Server object contains port and url configurations 
+  // Server object contains port and url configurations
   "server": {
     // You can make the app to load an external url (i.e. to live reload)
     "url": "http://192.168.1.33:8100",
@@ -76,10 +76,10 @@ Current configuration options include:
       "192.0.2.1"
     ]
   },
-  // User agent of Capacitor WebView for iOS, Android and Electron, unless also declared inside ios, android or electron objects
+  // User agent of Capacitor WebView for iOS and Android, unless also declared inside ios or android objects
   "overrideUserAgent": "my custom user agent",
-  // String to append to the original user agent of Capacitor WebView for iOS, Android and Electron,
-  // unless also declared inside ios, android or electron objects. Only if overrideUserAgent is not set.
+  // String to append to the original user agent of Capacitor WebView for iOS and Android,
+  // unless also declared inside ios or android objects. Only if overrideUserAgent is not set.
   "appendUserAgent": "string to append",
   // Background color of Capacitor WebView for both iOS and Android unless also declared inside ios or android objects
   "backgroundColor": "#ffffffff",
@@ -135,12 +135,6 @@ Current configuration options include:
     // A Boolean value that determines whether to hide native iOS logs or not
     // Default is false
     "hideLogs": true
-  },
-  "electron": {
-    // User agent of Capacitor WebView for Electron
-    "overrideUserAgent": "my custom user agent for Electron",
-    // String to append to the original user agent of Capacitor WebView for Electron.
-    "appendUserAgent": "string to append for Electron",
   }
 }
 ```

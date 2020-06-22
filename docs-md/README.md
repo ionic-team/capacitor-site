@@ -43,9 +43,6 @@
 * Web/PWA
   * [Getting Started](web/index.md)
   * [PWA Elements](web/pwa-elements.md)
-* Electron
-  * [Getting Started](electron/index.md)
-  * [Updating](electron/updating.md)
 * Creating Plugins
   * [Introduction](plugins/index.md)
   * [Development Workflow](plugins/workflow.md)
