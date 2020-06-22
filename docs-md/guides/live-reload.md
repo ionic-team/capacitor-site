@@ -16,7 +16,9 @@ Live Reload is useful for debugging both the web portion of an app as well as na
 
 The Ionic CLI includes a complete Live Reload experience, automating all of the steps that are detailed manually below. Install it along with `native-run` (a cross-platform command-line utility for running native binaries on devices and simulators/emulators): 
 
+```bash
 npm install -g @ionic/cli native-run
+```
 
 Next, use the `cap run` command to start the Live Reload process:
 
