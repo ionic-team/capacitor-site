@@ -10,7 +10,7 @@ in-page-navigation h5 {
   text-transform: uppercase;
   font-size: 11px;
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   font-weight: 600;
   color: #a0aec0;
   letter-spacing: .05em;
@@ -31,10 +31,6 @@ in-page-navigation .heading-links li {
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
-}
-
-in-page-navigation .heading-links li + li {
-  margin-top: 8px;
 }
 
 in-page-navigation .heading-links a {
@@ -65,7 +61,8 @@ in-page-navigation .heading-links .heading-link.selected {
 }
 
 in-page-navigation li.heading-link {
-  padding: 3px 11px;
+  height: 29px;
+  padding: 0 11px;
   margin-top: 0;
   margin-left: 0;
   border-left: 2px solid transparent;
@@ -112,6 +109,10 @@ in-page-navigation li.heading-link.size-h3.selected {
 in-page-navigation li.heading-link.size-h4:hover,
 in-page-navigation li.heading-link.size-h4.selected {
   transform: translateX(calc(var(--indent-size) * 3 + 2px));
+}
+
+in-page-navigation li.heading-link stencil-route-link {
+  margin-top: 4px;
 }
 
 in-page-navigation .submit-edit-link {
