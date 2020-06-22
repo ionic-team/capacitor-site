@@ -52,21 +52,23 @@ export class SiteHeader {
         </a>
 
         <div class="site-header__menu">
-          <NavLink path="/#features">
-            Features
-          </NavLink>
-          <NavLink path="/docs">
-            Docs
-          </NavLink>
-          <NavLink path="/community">
-            Community
-          </NavLink>
-          <NavLink path="/blog">
-            Blog
-          </NavLink>
-          <a href="https://ionicframework.com/native" target="_blank">
-            Enterprise
-          </a>
+          <nav>
+            <NavLink path="/#features">
+              Features
+            </NavLink>
+            <NavLink path="/docs">
+              Docs
+            </NavLink>
+            <NavLink path="/community">
+              Community
+            </NavLink>
+            <NavLink path="/blog">
+              Blog
+            </NavLink>
+            <a href="https://ionicframework.com/native" target="_blank">
+              Enterprise
+            </a>
+          </nav>
         </div>
 
         <div class="site-header__buttons">

@@ -46,10 +46,18 @@
     }
   }
   &__menu {
-    display: flex;
     flex: 1;
+    display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+
+    nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      max-width: 550px;
+    }
 
     a {
       border-bottom: 0;
