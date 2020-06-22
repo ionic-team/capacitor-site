@@ -30,6 +30,13 @@
       transform: none;
       transition: transform 200ms cubic-bezier(.4, 0, .6, 1);
 
+      .menu-header {
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+
       .menu-header__logo-link {
         margin-left: 60px;
       }
