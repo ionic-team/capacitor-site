@@ -43,19 +43,22 @@
     display: flex;
     flex: 1;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 
     a {
-      margin: 0 24px;
-      transition: border .3s, color .3s;
+      border-bottom: 0;
+      transition: color .3s;
       font-size: 14px;
-      border-bottom: 3px solid transparent;
-      vertical-align: top;
       color: var(--link-color);
       opacity: 0.4;
       text-decoration: none;
       font-weight: 500;
       letter-spacing: -0.02em;
+
+      &:hover {
+        opacity: 1;
+        border: 0;
+      }
     }
 
     a.link--active {
@@ -86,6 +89,8 @@
   }
 
   &__buttons {
+    min-width: 130px;
+  
     .ui-button {
       font-size: var(--f-size-4);
       letter-spacing: var(--f-tracking-tight);
