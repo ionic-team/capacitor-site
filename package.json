@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "Capacitor Site",
   "scripts": {
-    "api-genhtml": "node scripts/docs.js",
+    "api-genhtml": "node scripts/docs.ts",
     "api-typedoc": "typedoc --exclude **/__test__/*.ts --json dist/docs.json --mode modules --includeDeclarations node_modules/@capacitor/core/dist/esm/core-plugin-definitions.d.ts",
     "api-docs": "npm run api-typedoc && npm run api-genhtml",
     "blog": "tsc --p ./scripts && node ./scripts/blog",
