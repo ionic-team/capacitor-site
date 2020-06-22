@@ -29,9 +29,11 @@ app-menu-toggle {
     }
 
     &:hover ion-icon {
-      background: rgba(0, 0, 0, 0.03);
+      opacity: 0.4;
+    }
 
-      border-radius: 50%;
+    &:active ion-icon {
+      color: initial;
     }
   }
 
