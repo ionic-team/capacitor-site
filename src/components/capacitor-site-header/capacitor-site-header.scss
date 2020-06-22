@@ -6,6 +6,12 @@
   padding: 6px 0;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
   --link-color: var(--c-carbon-90);
+
+  @media (max-width: 550px) {
+    .ui-container {
+      flex-direction: column;
+    }
+  }
 }
 
 .page-theme--dark {
@@ -115,4 +121,5 @@
       background: var(--color-capacitor-blue);
     }
   }
+
 }
