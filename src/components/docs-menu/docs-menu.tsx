@@ -1,4 +1,4 @@
-import { Component, Prop, ComponentInterface, State, h, Watch } from '@stencil/core';
+import { Component, ComponentInterface, Host, Method, Prop, State, Watch, h } from '@stencil/core';
 import { SiteStructureItem } from '../../global/definitions';
 import { href } from 'stencil-router-v2';
 
@@ -18,6 +18,8 @@ export class SiteMenu implements ComponentInterface{
 
   @State() closeList = [];
 
+  @State() showOverlay = false;
+
   async componentWillLoad() {
     const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
     this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
@@ -30,6 +32,11 @@ export class SiteMenu implements ComponentInterface{
     } catch (e) {
       console.error('Unable to get latest release', e);
     }
+  }
+
+  @Method()
+  async toggleOverlayMenu() {
+    this.showOverlay = !this.showOverlay;
   }
 
   @Watch('selectedParent')
@@ -56,79 +63,89 @@ export class SiteMenu implements ComponentInterface{
     const { version } = this;
 
     return (
-      <div class="sticky">
-        <div>
-          <div class="menu-header">
-            <a {...href('/')} class="menu-header__logo-link">
-              {state.pageTheme === 'dark' ? (
-                <img src="/assets/img/heading/logo-white.png" alt="Capacitor Logo" />
-              ) : (
-                <img src="/assets/img/heading/logo-black.png" alt="Capacitor Logo" />
-              )}
-            </a>
-            <a {...href('/docs')} class="menu-header__docs-link">
-              docs
-            </a>
-            { version ?
-              <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
-                v{version}
+      <Host
+        class={{
+          'menu-overlay-visible': this.showOverlay
+        }}
+      >
+        <div class="sticky">
+          <div>
+            <div class="menu-header">
+              <app-menu-toggle icon="close" />
+              <a {...href('/')} class="menu-header__logo-link">
+                {state.pageTheme === 'dark' ? (
+                  <img src="/assets/img/heading/logo-white.png" alt="Capacitor Logo" />
+                ) : (
+                  <img src="/assets/img/heading/logo-black.png" alt="Capacitor Logo" />
+                )}
               </a>
-              : null
-            }
-          </div>
-          <ul class="menu-list">
-            { this.siteStructureList.map((item, i) => {
-              const active = item.url === Router.activePath;
-              const collapsed = this.closeList.indexOf(i) !== -1;
+              <a {...href('/docs')} class="menu-header__docs-link">
+                docs
+              </a>
+              { version ?
+                <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
+                  v{version}
+                </a>
+                :
+                <a href={`https://github.com/ionic-team/capacitor/releases/tag/2.2.0`} rel="noopener" target="_blank" class="menu-header__version-link">
+                  v2.2.0
+                </a>
+              }
+            </div>
+            <ul class="menu-list">
+              { this.siteStructureList.map((item, i) => {
+                const active = item.url === Router.activePath;
+                const collapsed = this.closeList.indexOf(i) !== -1;
 
-              if (item.children) {
+                if (item.children) {
+                  return (
+                    <li>
+                      <a href="#" onClick={this.toggleParent(i)} class={{ collapsed }}>
+                        { collapsed ? <ion-icon name="chevron-forward" /> : <ion-icon name="chevron-down" /> }
+                        <span class="section-label">
+                          {item.text}
+                        </span>
+                      </a>
+                      <ul class={{ collapsed }}>
+                      { item.children.map((childItem) => {
+                        return (
+                        <li>
+                          { (childItem.url) ?
+                          <a {...href(childItem.url)} class={{'link-active': childItem.url === Router.activePath}}>
+                            {childItem.text}
+                          </a> :
+                          <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
+                            {childItem.text}
+                          </a> }
+                        </li>
+                        )
+                      }) }
+                      </ul>
+                    </li>
+                  )
+                }
+
                 return (
                   <li>
-                    <a href="#" onClick={this.toggleParent(i)} class={{ collapsed }}>
-                      { collapsed ? <ion-icon name="chevron-forward" /> : <ion-icon name="chevron-down" /> }
+                    { (item.url) ?
+                    <a {...href(item.url)} class={{
+                      "section-active": active
+                    }}>
+                      <span class="section-active-indicator" />
                       <span class="section-label">
                         {item.text}
                       </span>
-                    </a>
-                    <ul class={{ collapsed }}>
-                    { item.children.map((childItem) => {
-                      return (
-                      <li>
-                        { (childItem.url) ?
-                        <a {...href(childItem.url)} class={{'link-active': childItem.url === Router.activePath}}>
-                          {childItem.text}
-                        </a> :
-                        <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
-                          {childItem.text}
-                        </a> }
-                      </li>
-                      )
-                    }) }
-                    </ul>
+                    </a>:
+                    <a rel="noopener" class="link--external" target="_blank" href={item.filePath}>
+                      {item.text}
+                    </a> }
                   </li>
                 )
-              }
-
-              return (
-                <li>
-                  { (item.url) ?
-                  <a {...href(item.url)} class={{
-                    "section-active": active
-                  }}>
-                    <span class="section-active-indicator" />
-                    <span class="section-label">
-                      {item.text}
-                    </span>
-                  </a>:
-                  <a rel="noopener" class="link--external" target="_blank" href={item.filePath}>
-                    {item.text}
-                  </a> }
-                </li>
-              )
-            }) }
-          </ul>
+              }) }
+            </ul>
+          </div>
         </div>
-      </div>
+      </Host>
     );
   }
 }

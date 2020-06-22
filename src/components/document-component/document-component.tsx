@@ -1,4 +1,4 @@
-import { Component, Prop, Watch, ComponentInterface, State, h } from '@stencil/core';
+import { Component, Listen, Prop, Watch, ComponentInterface, State, h } from '@stencil/core';
 import Helmet from '@stencil/helmet';
 
 import siteStructure from '../../assets/docs-structure.json';
@@ -13,6 +13,8 @@ import state from '../../store';
   styleUrl: 'document-component.scss'
 })
 export class DocumentComponent implements ComponentInterface {
+  menuEl!: HTMLDocsMenuElement;
+
   @Prop() pages: string[] = [];
 
   @Prop() page: string = null;
@@ -21,6 +23,11 @@ export class DocumentComponent implements ComponentInterface {
   @State() nextItem: SiteStructureItem;
   @State() prevItem: SiteStructureItem;
   @State() parent: SiteStructureItem;
+
+  @Listen('menuToggleClick')
+  toggleMenu() {
+    this.menuEl.toggleOverlayMenu();
+  }
 
   componentWillLoad() {
     console.log('Hiding topbar', state.showTopBar);
@@ -50,6 +57,7 @@ export class DocumentComponent implements ComponentInterface {
         <app-menu-toggle />
 
         <docs-menu
+          ref={ el => this.menuEl = el }
           selectedParent={this.parent}
           siteStructureList={siteStructure as SiteStructureItem[]} />
 

@@ -1,10 +1,12 @@
-import { Component, Event, EventEmitter, Host, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'app-menu-toggle',
   styleUrl: 'app-menu-toggle.scss'
 })
 export class AppBurger {
+
+  @Prop() icon = 'menu-outline';
 
   @Event() menuToggleClick: EventEmitter;
 
@@ -15,9 +17,8 @@ export class AppBurger {
   render() {
     return (
       <Host>
-        <button class="menu-toggle-button" onClick={() => this.handleButtonClick() }>
-          <ion-icon name="menu-outline" class="icon-menu"></ion-icon>
-          <ion-icon name="close" class="icon-close"></ion-icon>
+        <button class="menu-toggle-button" onClick={() => this.handleButtonClick()}>
+          <ion-icon icon={this.icon}></ion-icon>
         </button>
       </Host>
     )

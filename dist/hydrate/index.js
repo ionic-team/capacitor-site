@@ -7091,24 +7091,27 @@ class App {
     }; }
 }
 
-const appMenuToggleCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}app-menu-toggle{display:none;position:fixed;top:0px;left:0px;z-index:999}app-menu-toggle .menu-toggle-button{display:-ms-flexbox;display:flex;-ms-flex-align:start;align-items:flex-start;-ms-flex-pack:center;justify-content:center;padding:10px;border:none;background:transparent;font-size:28px;outline:none}app-menu-toggle .menu-toggle-button ion-icon{padding:8px}app-menu-toggle .menu-toggle-button:hover ion-icon{background:rgba(0, 0, 0, 0.03);border-radius:50%}app-menu-toggle .icon-menu{display:block}app-menu-toggle .icon-close{display:none}app-menu-toggle ion-icon{-webkit-transition:opacity 0.3s;transition:opacity 0.3s;opacity:0.7;cursor:pointer}app-menu-toggle.left-sidebar-in>div{height:100vh;padding-right:50px}app-menu-toggle.left-sidebar-in .icon-menu{display:none}app-menu-toggle.left-sidebar-in .icon-close{display:block}@media screen and (max-width: 768px){app-menu-toggle{display:-ms-flexbox;display:flex}}";
+const appMenuToggleCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}app-menu-toggle{display:none;position:fixed;top:0px;left:0px;z-index:999}app-menu-toggle .menu-toggle-button{display:-ms-flexbox;display:flex;-ms-flex-align:start;align-items:flex-start;-ms-flex-pack:center;justify-content:center;padding:10px;border:none;background:transparent;font-size:28px;outline:none}app-menu-toggle .menu-toggle-button ion-icon{padding:8px}app-menu-toggle .menu-toggle-button:hover ion-icon{background:rgba(0, 0, 0, 0.03);border-radius:50%}app-menu-toggle ion-icon{-webkit-transition:opacity 0.3s;transition:opacity 0.3s;opacity:0.7;cursor:pointer}app-menu-toggle.left-sidebar-in>div{height:100vh;padding-right:50px}@media screen and (max-width: 768px){app-menu-toggle{display:-ms-flexbox;display:flex}}";
 
 class AppBurger {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.icon = 'menu-outline';
         this.menuToggleClick = createEvent(this, "menuToggleClick", 7);
     }
     handleButtonClick() {
         this.menuToggleClick.emit();
     }
     render() {
-        return (h(Host, null, h("button", { class: "menu-toggle-button", onClick: () => this.handleButtonClick() }, h("ion-icon", { name: "menu-outline", class: "icon-menu" }), h("ion-icon", { name: "close", class: "icon-close" }))));
+        return (h(Host, null, h("button", { class: "menu-toggle-button", onClick: () => this.handleButtonClick() }, h("ion-icon", { icon: this.icon }))));
     }
     static get style() { return appMenuToggleCss; }
     static get cmpMeta() { return {
         "$flags$": 0,
         "$tagName$": "app-menu-toggle",
-        "$members$": undefined,
+        "$members$": {
+            "icon": [1]
+        },
         "$listeners$": undefined,
         "$lazyBundleIds$": "-",
         "$attrsToReflect$": []
@@ -9214,8 +9217,7 @@ class DocumentComponent {
         this.page = null;
     }
     toggleMenu() {
-        console.log('toggle menu clicked');
-        this.menuEl.presentOverlay();
+        this.menuEl.toggleOverlayMenu();
     }
     componentWillLoad() {
         console.log('Hiding topbar', state.showTopBar);
@@ -10546,7 +10548,7 @@ const NavLink = ({ path }, children) => {
         } }), children));
 };
 
-const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{display:block;-ms-flex:0 0 auto;flex:0 0 auto;width:280px;letter-spacing:0;padding:0 15px 0 18px;-webkit-box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-woodsmoke);z-index:999;padding:20px;width:calc(100vw - 56px);-webkit-transform:translateX(calc(-100vw + 56px));transform:translateX(calc(-100vw + 56px));height:100%;overflow-y:scroll}.sc-docs-menu-h .menu-list.sc-docs-menu .section-label.sc-docs-menu{color:white}.sc-docs-menu-h .menu-list.sc-docs-menu a.sc-docs-menu{color:rgba(255, 255, 255, 0.6)}.sc-docs-menu-h .menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:white}}.sticky.sc-docs-menu{top:0;max-height:100%}.menu-header.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;-webkit-transition:80ms height;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;-webkit-transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s transform ease, 0.2s color ease;transition:0.2s transform ease, 0.2s color ease, 0.2s -webkit-transform ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}";
+const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{display:block;-ms-flex:0 0 auto;flex:0 0 auto;width:280px;letter-spacing:0;padding:0 15px 0 18px;-webkit-box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-white);z-index:999;-webkit-transform:translateX(calc(-100vw + 56px));transform:translateX(calc(-100vw + 56px));height:100%;overflow-y:scroll}.menu-overlay-visible.sc-docs-menu-h{-webkit-transform:none;transform:none}.menu-overlay-visible.sc-docs-menu-h .menu-header__logo-link.sc-docs-menu{margin-left:60px}.menu-overlay-visible.sc-docs-menu-h .menu-header__version-link.sc-docs-menu{display:none}}.sticky.sc-docs-menu{top:0;max-height:100%}.menu-header.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;-webkit-transition:80ms height;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;-webkit-transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s transform ease, 0.2s color ease;transition:0.2s transform ease, 0.2s color ease, 0.2s -webkit-transform ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}";
 
 class SiteMenu {
     constructor(hostRef) {
@@ -10554,6 +10556,7 @@ class SiteMenu {
         this.siteStructureList = [];
         this.selectedParent = null;
         this.closeList = [];
+        this.showOverlay = false;
         this.toggleParent = (itemNumber) => {
             return (e) => {
                 e.preventDefault();
@@ -10580,8 +10583,8 @@ class SiteMenu {
             console.error('Unable to get latest release', e);
         }
     }
-    async presentOverlay() {
-        console.log('call overlay present');
+    async toggleOverlayMenu() {
+        this.showOverlay = !this.showOverlay;
     }
     selectedParentChange() {
         const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
@@ -10589,9 +10592,12 @@ class SiteMenu {
     }
     render() {
         const { version } = this;
-        return (h("div", { class: "sticky" }, h("div", null, h("div", { class: "menu-header" }, h("a", Object.assign({}, href('/'), { class: "menu-header__logo-link" }), state.pageTheme === 'dark' ? (h("img", { src: "/assets/img/heading/logo-white.png", alt: "Capacitor Logo" })) : (h("img", { src: "/assets/img/heading/logo-black.png", alt: "Capacitor Logo" }))), h("a", Object.assign({}, href('/docs'), { class: "menu-header__docs-link" }), "docs"), version ?
+        return (h(Host, { class: {
+                'menu-overlay-visible': this.showOverlay
+            } }, h("div", { class: "sticky" }, h("div", null, h("div", { class: "menu-header" }, h("app-menu-toggle", { icon: "close" }), h("a", Object.assign({}, href('/'), { class: "menu-header__logo-link" }), state.pageTheme === 'dark' ? (h("img", { src: "/assets/img/heading/logo-white.png", alt: "Capacitor Logo" })) : (h("img", { src: "/assets/img/heading/logo-black.png", alt: "Capacitor Logo" }))), h("a", Object.assign({}, href('/docs'), { class: "menu-header__docs-link" }), "docs"), version ?
             h("a", { href: `https://github.com/ionic-team/capacitor/releases/tag/${version}`, rel: "noopener", target: "_blank", class: "menu-header__version-link" }, "v", version)
-            : null), h("ul", { class: "menu-list" }, this.siteStructureList.map((item, i) => {
+            :
+                h("a", { href: `https://github.com/ionic-team/capacitor/releases/tag/2.2.1`, rel: "noopener", target: "_blank", class: "menu-header__version-link" }, "v2.2.1")), h("ul", { class: "menu-list" }, this.siteStructureList.map((item, i) => {
             const active = item.url === Router.activePath;
             const collapsed = this.closeList.indexOf(i) !== -1;
             if (item.children) {
@@ -10606,7 +10612,7 @@ class SiteMenu {
                         "section-active": active
                     } }), h("span", { class: "section-active-indicator" }), h("span", { class: "section-label" }, item.text)) :
                 h("a", { rel: "noopener", class: "link--external", target: "_blank", href: item.filePath }, item.text)));
-        })))));
+        }))))));
     }
     static get watchers() { return {
         "selectedParent": ["selectedParentChange"]
@@ -10619,7 +10625,8 @@ class SiteMenu {
             "siteStructureList": [16],
             "selectedParent": [1040],
             "closeList": [32],
-            "presentOverlay": [64]
+            "showOverlay": [32],
+            "toggleOverlayMenu": [64]
         },
         "$listeners$": undefined,
         "$lazyBundleIds$": "-",

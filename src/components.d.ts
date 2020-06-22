@@ -15,6 +15,7 @@ export namespace Components {
         "renderer"?: (doc: MarkdownContent) => any;
     }
     interface AppMenuToggle {
+        "icon": string;
     }
     interface AvcCodeType {
         "typeId": string;
@@ -51,6 +52,7 @@ export namespace Components {
     interface DocsMenu {
         "selectedParent": SiteStructureItem;
         "siteStructureList": SiteStructureItem[];
+        "toggleOverlayMenu": () => Promise<void>;
     }
     interface DocsSearch {
     }
@@ -285,6 +287,7 @@ declare namespace LocalJSX {
         "renderer"?: (doc: MarkdownContent) => any;
     }
     interface AppMenuToggle {
+        "icon"?: string;
         "onMenuToggleClick"?: (event: CustomEvent<any>) => void;
     }
     interface AvcCodeType {

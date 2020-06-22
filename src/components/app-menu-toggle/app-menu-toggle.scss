@@ -35,14 +35,6 @@ app-menu-toggle {
     }
   }
 
-  .icon-menu {
-    display: block;
-  }
-
-  .icon-close {
-    display: none;
-  }
-
   ion-icon {
     transition: opacity 0.3s;
     opacity: 0.7;
@@ -55,13 +47,6 @@ app-menu-toggle {
       padding-right: 50px;
     }
 
-    .icon-menu {
-      display: none;
-    }
-
-    .icon-close {
-      display: block;
-    }
   }
 
 }
