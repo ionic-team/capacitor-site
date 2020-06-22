@@ -1,4 +1,4 @@
-import { Build, Component, Element, State, h, VNode } from '@stencil/core';
+import { Component, Element, State, h, VNode } from '@stencil/core';
 import { ResponsiveContainer, Button, AnchorButton } from '@ionic-internal/sites-shared';
 import { href } from 'stencil-router-v2';
 
