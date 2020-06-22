@@ -1,4 +1,5 @@
 @use '~prismjs/themes/prism-dark';
+@use '../../global/variables';
 
 blog-page, blog-post {
   display: block;
@@ -91,5 +92,9 @@ a {
       border-radius: 50%;
       margin-right: 8px;
     }
+  }
+
+  @media (max-width: variables.$breakpoint-sm) {
+    padding: 64px 24px;
   }
 }

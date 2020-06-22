@@ -64,9 +64,9 @@ export class SiteHeader {
           <NavLink path="/blog">
             Blog
           </NavLink>
-          <NavLink path="/enterprise">
+          <a href="https://ionicframework.com/native" target="_blank">
             Enterprise
-          </NavLink>
+          </a>
         </div>
 
         <div class="site-header__buttons">

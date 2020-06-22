@@ -1,5 +1,4 @@
 import { Component, State, h } from '@stencil/core';
-import { Heading } from '@ionic-internal/sites-shared';
 
 import { RenderedBlog } from '../../models';
 import { BlogPost } from './blog-common';
@@ -21,7 +20,6 @@ export class BlogPage {
 
   render() {
     if (this.posts) {
-      console.log('Rendering posts', this.posts);
       return (
         <AllPosts posts={this.posts} />
       )
@@ -36,9 +34,6 @@ const AllPosts = ({ posts }: { posts: RenderedBlog[] }) => {
 
   return (
     <div class="blog-posts">
-      <hgroup class="blog-posts__heading">
-        <Heading level={3}>Blog</Heading>
-      </hgroup>
       {posts.map(p => <BlogPost post={p} single={false} />)}
     </div>
   )
