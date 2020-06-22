@@ -1,10 +1,9 @@
-import marked from 'marked';
+import remark from 'remark';
 import { promisify } from 'util';
 import fs from 'fs';
 import path, { dirname, basename } from 'path';
 import frontMatter from 'front-matter';
-import { listFactory } from './markdown-renderer';
-import { SiteStructureItem } from '../src/global/definitions';
+import { generateSiteStructure } from './markdown-renderer';
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
@@ -13,20 +12,12 @@ const DESTINATION_FILE = './src/assets/docs-structure.json';
 const SOURCE_FILE = './docs-md/README.md';
 const ASSETS_DIR = '/assets/docs-content';
 
-const renderer = new marked.Renderer();
-
 (async function() {
-  const metadataList: SiteStructureItem[] = [];
   const markdownContents = await readFile(SOURCE_FILE, { encoding: 'utf8' });
 
-  try {
-    listFactory(renderer, metadataList)
-    marked(markdownContents, {
-      renderer,
-    });
-  } catch (e) {
-    throw e;
-  }
+  const lexer = remark();
+  const nodes: any = lexer.parse(markdownContents);
+  const metadataList = generateSiteStructure(nodes);
 
   await walkUpdateChildren(metadataList, SOURCE_FILE);
   await writeFile(DESTINATION_FILE, JSON.stringify(metadataList, null, 2), {
@@ -66,6 +57,6 @@ async function getMarkdownFileSitePath(filePath) {
     return null;
   }
   const metadata: any = frontMatter(markdownContents);
- 
+
   return (metadata && metadata.attributes ? metadata.attributes.url : null);
 }

@@ -1,6 +1,9 @@
-import { Component, Prop, ComponentInterface, State, h, Watch } from '@stencil/core';
+import { Component, ComponentInterface, Host, Method, Prop, State, Watch, h } from '@stencil/core';
 import { SiteStructureItem } from '../../global/definitions';
 import { href } from 'stencil-router-v2';
+
+import Router from '../../router';
+import state from '../../store';
 
 @Component({
   tag: 'docs-menu',
@@ -8,14 +11,26 @@ import { href } from 'stencil-router-v2';
   scoped: true
 })
 export class SiteMenu implements ComponentInterface{
+  version: string;
+
   @Prop() siteStructureList: SiteStructureItem[] = [];
   @Prop({ mutable: true }) selectedParent: SiteStructureItem = null;
 
   @State() closeList = [];
 
-  componentWillLoad() {
+  @State() showOverlay = false;
+
+  async componentWillLoad() {
     const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
     this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
+
+    // TODO pull this in from GitHub at build
+    this.version = '2.2.0';
+  }
+
+  @Method()
+  async toggleOverlayMenu() {
+    this.showOverlay = !this.showOverlay;
   }
 
   @Watch('selectedParent')
@@ -39,42 +54,89 @@ export class SiteMenu implements ComponentInterface{
   }
 
   render() {
-    return (
-      <div class="sticky">
-        <div>
-          <ul class="menu-list">
-            { this.siteStructureList.map((item, i) => {
-              const collapsed = this.closeList.indexOf(i) !== -1;
+    const { version } = this;
 
-              return (
-                <li>
-                  <a href="#" onClick={this.toggleParent(i)} class={{ collapsed }}>
-                    { collapsed ? <ion-icon name="chevron-forward" /> : <ion-icon name="chevron-down" /> }
-                    <span class="section-label">
-                      {item.text}
-                    </span>
-                  </a>
-                  <ul class={{ collapsed }}>
-                  { item.children.map((childItem) => {
-                    return (
+    return (
+      <Host
+        class={{
+          'menu-overlay-visible': this.showOverlay
+        }}
+      >
+        <div class="sticky">
+          <div>
+            <div class="menu-header">
+              <app-menu-toggle icon="close" />
+              <a {...href('/')} class="menu-header__logo-link">
+                {state.pageTheme === 'dark' ? (
+                  <img src="/assets/img/heading/logo-white.png" alt="Capacitor Logo" />
+                ) : (
+                  <img src="/assets/img/heading/logo-black.png" alt="Capacitor Logo" />
+                )}
+              </a>
+              <a {...href('/docs')} class="menu-header__docs-link">
+                docs
+              </a>
+              { version ?
+                <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
+                  v{version}
+                </a>
+                : null
+              }
+            </div>
+            <ul class="menu-list">
+              { this.siteStructureList.map((item, i) => {
+                const active = item.url === Router.activePath;
+                const collapsed = this.closeList.indexOf(i) !== -1;
+
+                if (item.children) {
+                  return (
                     <li>
-                      { (childItem.url) ?
-                      <a {...href(childItem.url)}>
-                        {childItem.text}
-                      </a> :
-                      <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
-                        {childItem.text}
-                      </a> }
+                      <a href="#" onClick={this.toggleParent(i)} class={{ collapsed }}>
+                        { collapsed ? <ion-icon name="chevron-forward" /> : <ion-icon name="chevron-down" /> }
+                        <span class="section-label">
+                          {item.text}
+                        </span>
+                      </a>
+                      <ul class={{ collapsed }}>
+                      { item.children.map((childItem) => {
+                        return (
+                        <li>
+                          { (childItem.url) ?
+                          <a {...href(childItem.url)} class={{'link-active': childItem.url === Router.activePath}}>
+                            {childItem.text}
+                          </a> :
+                          <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
+                            {childItem.text}
+                          </a> }
+                        </li>
+                        )
+                      }) }
+                      </ul>
                     </li>
-                    )
-                  }) }
-                  </ul>
-                </li>
-              )
-            }) }
-          </ul>
+                  )
+                }
+
+                return (
+                  <li>
+                    { (item.url) ?
+                    <a {...href(item.url)} class={{
+                      "section-active": active
+                    }}>
+                      <span class="section-active-indicator" />
+                      <span class="section-label">
+                        {item.text}
+                      </span>
+                    </a>:
+                    <a rel="noopener" class="link--external" target="_blank" href={item.filePath}>
+                      {item.text}
+                    </a> }
+                  </li>
+                )
+              }) }
+            </ul>
+          </div>
         </div>
-      </div>
+      </Host>
     );
   }
 }

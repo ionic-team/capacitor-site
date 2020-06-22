@@ -95,7 +95,11 @@ document-component {
     display: flex;
   }
 }
-doc-content
+
+.doc-content {
+  margin: 0 auto;
+}
+
 .input-with-button {
   display: flex;
   height: 50px;
@@ -170,9 +174,9 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 32px;
-  letter-spacing: -0.02em;
-  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  font-weight: 600;
 }
 
 h2 {

@@ -5,13 +5,12 @@ The Capacitor website (`site/`) and documentation (`site/docs-md`) live alongsid
 ## Setup
 
 1. Fork this repo.
-2. Clone your fork.
-3. Make a branch for your change.
-4. Run `npm install` in the `core` folder.
-5. Run `npm install` in the `site` folder.
-6. Run `npm run start` to build and deploy the website/docs to localhost.
+1. Clone your fork.
+1. Make a branch for your change.
+1. Run `npm install`.
+1. Run `npm start` to build and deploy the website/docs to localhost.
 
-> Note: Content updated while the dev server is running won't be reflected locally. Stop the process, then re-run `npm run start`.
+> Note: Content updated while the dev server is running won't be reflected locally. Stop the process, run `npm run site-structure`, then re-run `npm start`.
 
 ## Adding a new docs page to the sidebar
 Open `site/docs-md/README.md` to add the new entry to the side bar.
@@ -21,5 +20,6 @@ Open `site/docs-md/README.md` to add the new entry to the side bar.
 For smaller edits, navigate to the desired page in the [Capacitor docs](https://capacitor.ionicframework.com/docs/) then click the "Submit an edit" button.
 
 1. Locate the doc you want to modify in `site/docs-md/`.
-2. Modify the documentation, making sure to keep the format the same as the rest of the doc.
-3. Run `npm run start` to make sure your changes look correct.
+1. Modify the documentation, making sure to keep the format the same as the rest of the doc.
+1. Run `npm run site-structure` to rebild the content.
+1. Run `npm start` to make sure your changes look correct.

@@ -4,6 +4,15 @@ document-component {
   .container {
     display: flex;
     justify-content: space-between;
+
+    max-width: none;
+    padding: 0;
+  }
+
+  .content-container {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
   }
 
   plugin-platforms {
@@ -49,7 +58,7 @@ document-component {
     &:hover {
       border-bottom: 1px solid transparent;
     }
-  
+
     ion-icon {
       transition: opacity 0.2s;
       position: absolute;
@@ -58,7 +67,7 @@ document-component {
       align-items: center;
       opacity: 0;
     }
-  
+
     &:hover ion-icon {
       opacity: 0.8;
     }

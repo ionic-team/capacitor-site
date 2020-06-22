@@ -5,19 +5,19 @@ import loadLanguages from 'prismjs/components/';
 import { SiteStructureItem, MarkdownContent } from '../src/global/definitions';
 
 const languages = [
-  'bash', 
-  'diff', 
-  'css', 
-  'html', 
-  'java', 
-  'json', 
-  'json5', 
+  'bash',
+  'diff',
+  'css',
+  'html',
+  'java',
+  'json',
+  'json5',
   'markup',
-  'objectivec', 
+  'objectivec',
   'shell',
-  'swift', 
-  'tsx', 
-  'typescript', 
+  'swift',
+  'tsx',
+  'typescript',
   'xml'
 ];
 loadLanguages(languages);
@@ -35,62 +35,39 @@ export function findItem(siteStructureList: SiteStructureItem[], filePath: strin
   }
 }
 
-export function listFactory(renderer: marked.Renderer, metadataList: SiteStructureItem[]) {
-  let lastItem: any = null;
-  let activeList = [];
-  const prevList = renderer.list;
-  const prevListitem = renderer.listitem;
-  const prevLink = renderer.link;
-
-  renderer.list = function(body, ordered) {
-    lastItem = {
-      type: 'list'
+export function generateSiteStructure(nodes: any): SiteStructureItem[] {
+  const metadataList: SiteStructureItem[] = [];
+  const listItems = nodes.children.find(child => child.type === 'list').children;
+  for (const listItem of listItems) {
+    const [title, ...items] = listItem.children;
+    let heading = title.children[0];
+    let headingItem: any = {
+      text: heading.value
     };
-    return prevList.call(this, body, ordered);
-  };
-  renderer.listitem = function(text) {
-    if (lastItem.type === 'list') {
-      const [ itemText ] = text.split('<ul');
-      lastItem = {
-        type: 'listitem',
-        text: itemText,
-        children: activeList
-      }
-      metadataList.push({
-        text: itemText,
-        children: activeList
-      });
-      activeList = [];
-
-    } else if (lastItem.type === 'link') {
-      lastItem = {
-        type: 'listitem',
-        text: lastItem.text,
-        filePath: lastItem.filePath
-      }
-      activeList.push({
-        text: lastItem.text,
-        filePath: lastItem.filePath
-      });
-    } else {
-      lastItem = {
-        type: 'listitem',
-        text: text
-      }
-      activeList.push({
-        text
-      });
+    if (heading.type === 'link') {
+      const filePath = heading.url;
+      heading = title.children[0].children[0];
+      headingItem = {
+        text: heading.value,
+        filePath
+      };
     }
-    return prevListitem.call(this, text);
-  };
-  renderer.link = function(href: string, title: string, text: string) {
-    lastItem = {
-      type: 'link',
-      text,
-      filePath: href
-    };
-    return prevLink.call(this, href, title, text);
-  };
+    let listChildren = [];
+    if (items.length > 0) {
+      for (const child of items[0].children) {
+        const link = child.children[0].children[0];
+        const text = link.children[0].value;
+        const filePath = link.url;
+        listChildren.push({
+          text,
+          filePath
+        });
+      }
+      headingItem.children = listChildren;
+    }
+    metadataList.push(headingItem);
+  }
+  return metadataList;
 }
 
 export function localizeMarkdownLink(renderer: marked.Renderer, filePath: string, metadataList: SiteStructureItem[]) {
@@ -121,7 +98,7 @@ export function collectHeadingMetadata(renderer: marked.Renderer, metadata: Mark
 
     return `
 <h${level} id="${id}">
-  ${(level !== 1) ? `<a class="heading-link" href="#${id}"><ion-icon name="ios-link"></ion-icon>` : ''}
+  ${(level !== 1) ? `<a class="heading-link" href="#${id}"><ion-icon name="link"></ion-icon>` : ''}
   ${text}
   ${(level !== 1) ? `</a>` : ''}
 </h${level}>

@@ -1,7 +1,7 @@
 # Table of Contents
 
+* [Introduction](index.md)
 * Getting Started
-  * [Introduction](index.md)
   * [Required Dependencies](getting-started/dependencies.md)
   * [Installation](getting-started/index.md)
   * [Using with Ionic](getting-started/with-ionic.md)

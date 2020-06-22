@@ -1,32 +1,43 @@
 @use '../../global/variables';
 
-app-burger {
+app-menu-toggle {
   display: none;
+
   position: fixed;
+
   top: 0px;
   left: 0px;
+
   z-index: 999;
 
-  & > div {
-    padding: 18px;
+  .menu-toggle-button {
     display: flex;
     align-items: flex-start;
     justify-content: center;
 
-    &:hover app-icon{
-      opacity: 1;
+    padding: 10px;
+    border: none;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    outline: none;
+
+    ion-icon {
+      padding: 8px;
+    }
+
+    &:hover ion-icon {
+      opacity: 0.4;
+    }
+
+    &:active ion-icon {
+      color: initial;
     }
   }
 
-  .icon-menu {
-    display: block;
-  }
-
-  .icon-close {
-    display: none;
-  }
-
-  app-icon {
+  ion-icon {
     transition: opacity 0.3s;
     opacity: 0.7;
     cursor: pointer;
@@ -38,19 +49,12 @@ app-burger {
       padding-right: 50px;
     }
 
-    .icon-menu {
-      display: none;
-    }
-
-    .icon-close {
-      display: block;
-    }
   }
 
 }
 
 @media screen and (max-width: variables.$breakpoint-md) {
-  app-burger {
-    display: block;
+  app-menu-toggle {
+    display: flex;
   }
 }

@@ -2,7 +2,7 @@
  * Generate HTML documentation for each plugin, complete with
  * documentation on each interface/type used, and inline
  * comments with any code snippets or examples.
- * 
+ *
  * This got a little out of hand, I fully admit
  */
 var fs = require('fs-extra');
@@ -56,7 +56,7 @@ const generateIndexForPlugin = (plugin) => {
     if(!method.signatures) {
       return;
     }
-    method.signatures.forEach((signature, index) => {
+    method.signatures.forEach((_signature, index) => {
       html.push(`<li><div class="avc-code-method-name"><anchor-link to="method-${method.name}-${index}">${method.name}()</anchor-link></div></li>`);
     })
   })
@@ -196,8 +196,6 @@ const generateDocumentationForPlugin = (plugin) => {
 };
 
 const getInterfacesUsedByMethod = (method) => {
-  const interfaceTypes = [];
-
   const interfaces = method.signatures.map(signature => {
     // Build the params portion of the method
     const params = signature.parameters || [];
@@ -220,7 +218,7 @@ const getInterfacesUsedByMethod = (method) => {
       }
     }).filter(n => n));
   });
-  
+
   const ret = [];
   interfaces.forEach(iset => {
     iset.forEach(i => ret.push(i));
@@ -242,7 +240,7 @@ const generateMethodParamDocs = (signature) => {
 
   // Build the params portion of the method
   const params = signature.parameters;
-  params && params.forEach((param, i) => {
+  params && params.forEach(param => {
     html.push(`<div class="avc-code-method-param-info">
                 <span class="avc-code-method-param-info-name">${param.name}</span>
                 `)

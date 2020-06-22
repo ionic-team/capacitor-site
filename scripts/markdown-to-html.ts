@@ -92,7 +92,7 @@ async function getGithubData(filePath: string, parsedMarkdown: any) {
     const request = await fetch(url.format({
       protocol: 'https',
       hostname: 'api.github.com',
-      pathname: 'repos/ionic-team/stencil-site/commits',
+      pathname: 'repos/ionic-team/capacitor-site/commits',
       query: {
         access_token: process.env.GITHUB_TOKEN,
         since: since,
@@ -119,9 +119,6 @@ async function getGithubData(filePath: string, parsedMarkdown: any) {
         attributes.contributors.push(contributor);
       }
     });
-
-    console.log('filePath:', filePath, 'contributors:', attributes.contributors.length, 'lastUpdated:', lastUpdated);
-
   } catch (e) {
     console.log(e);
   }

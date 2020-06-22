@@ -1,4 +1,4 @@
-import { Component, Prop, Watch, ComponentInterface, State, h } from '@stencil/core';
+import { Component, Listen, Prop, Watch, ComponentInterface, State, h } from '@stencil/core';
 import Helmet from '@stencil/helmet';
 
 import siteStructure from '../../assets/docs-structure.json';
@@ -13,6 +13,8 @@ import state from '../../store';
   styleUrl: 'document-component.scss'
 })
 export class DocumentComponent implements ComponentInterface {
+  menuEl!: HTMLDocsMenuElement;
+
   @Prop() pages: string[] = [];
 
   @Prop() page: string = null;
@@ -21,6 +23,11 @@ export class DocumentComponent implements ComponentInterface {
   @State() nextItem: SiteStructureItem;
   @State() prevItem: SiteStructureItem;
   @State() parent: SiteStructureItem;
+
+  @Listen('menuToggleClick')
+  toggleMenu() {
+    this.menuEl.toggleOverlayMenu();
+  }
 
   componentWillLoad() {
     console.log('Hiding topbar', state.showTopBar);
@@ -42,38 +49,42 @@ export class DocumentComponent implements ComponentInterface {
   }
 
   render() {
-    // debugger;
     if (this.item == null) {
       return <h1>Page not found</h1>;
     }
     return (
       <div class="container">
-        <app-burger />
+        <app-menu-toggle />
 
         <docs-menu
+          ref={ el => this.menuEl = el }
           selectedParent={this.parent}
           siteStructureList={siteStructure as SiteStructureItem[]} />
 
-        <app-marked fetchPath={this.item.filePath} renderer={(docsContent) => [
-          <Helmet>
-            <title>{docsContent.title ? `${docsContent.title} - Capacitor` : 'Capacitor'}</title>
-          </Helmet>,
-          <div class="doc-content">
-            <div class="measure-lg">
-              <div
-                onClick={handleRoutableLinkClick}
-                innerHTML={docsContent.content}></div>
-              <h2>Contributors</h2>
-              <contributor-list contributors={docsContent.contributors}></contributor-list>
-              <lower-content-nav next={this.nextItem} prev={this.prevItem}></lower-content-nav>
-            </div>
-          </div>,
-          <in-page-navigation
-            pageLinks={docsContent.headings}
-            srcUrl={docsContent.srcPath}
-            currentPageUrl={docsContent.url}
-          ></in-page-navigation>
-        ]}/>
+        <div class="content-container">
+          <docs-header/>
+
+          <app-marked fetchPath={this.item.filePath} renderer={(docsContent) => [
+            <Helmet>
+              <title>{docsContent.title ? `${docsContent.title} - Capacitor` : 'Capacitor'}</title>
+            </Helmet>,
+            <div class="doc-content">
+              <div class="measure-lg">
+                <div
+                  onClick={handleRoutableLinkClick}
+                  innerHTML={docsContent.content}></div>
+                <h2>Contributors</h2>
+                <contributor-list contributors={docsContent.contributors}></contributor-list>
+                <lower-content-nav next={this.nextItem} prev={this.prevItem}></lower-content-nav>
+              </div>
+            </div>,
+            <in-page-navigation
+              pageLinks={docsContent.headings}
+              srcUrl={docsContent.srcPath}
+              currentPageUrl={docsContent.url}
+            ></in-page-navigation>
+          ]}/>
+        </div>
       </div>
     );
   }

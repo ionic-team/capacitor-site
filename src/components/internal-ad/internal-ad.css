@@ -7,13 +7,13 @@ internal-ad {
 }
 
 internal-ad a {
-  display:inline-block;
+  display: inline-block;
   text-decoration: none;
+  color: #000;
 }
 
 internal-ad a:hover {
   border-bottom-color: transparent;
-  text-decoration:underline;
 }
 
 internal-ad p {
