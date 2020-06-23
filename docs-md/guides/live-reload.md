@@ -32,16 +32,16 @@ This performs an `ionic build`, copies web assets into the specified native plat
 The `server` entry automatically created in `capacitor.config.json` is removed after the command terminates. For complete details on the `ionic cap run` command, [see here](https://ionicframework.com/docs/cli/commands/capacitor-run).
 
 
-## Using with Any CLI
+## Using with Framework CLIs
 
-Live Reload with Capacitor is possible with any web app's tooling.
+Capacitor supports CLIs with live reload capability.
 
 First, determine your computer's IP address on your LAN.
 
 - On macOS, run `ifconfig`. The IP address is listed under `en0` entry, after `inet`. Alternatively, open System Preferences -> Network -> (select active network) then find the IP listed under Status.
 - On Windows, run `ipconfig`. Look for the `IPv4` address.
 
-Next, start your local web server. The server must be bound to 0.0.0.0 in order to be accessible from the LAN. The command to run will vary, but is typically:
+Next, start your local web server. The server must be bound to `0.0.0.0` in order to be accessible from the LAN. The command to run will vary, but is typically:
 
 ```bash
 npm run start
