@@ -20,7 +20,7 @@ The Ionic CLI includes a complete Live Reload experience, automating all of the 
 npm install -g @ionic/cli native-run
 ```
 
-Next, use the `cap run` command to start the Live Reload process:
+Next, use the `ionic cap run` command to start the Live Reload process:
 
 ```bash
 ionic cap run android -l --external
