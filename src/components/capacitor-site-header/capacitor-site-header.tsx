@@ -128,13 +128,13 @@ export class SiteHeader {
               <ion-icon name="logo-github" />
               {this.starCount ? this.starCount : 'GitHub'}
             </AnchorButton>
-            <Button class="site-header__buttons__install">
+            <AnchorButton class="site-header__buttons__install" href="/docs/getting-started">
               <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 12H10M8.75 5.99986L5 9.59995M5 9.59995L1.25 5.99986M5 9.59995L4.99998 0" stroke="white"/>
               </svg>
 
               Install
-            </Button>
+            </AnchorButton>
           </div>
         </ResponsiveContainer>
       </Host>
