@@ -38,14 +38,16 @@ Live Reload with Capacitor is possible with any web app's tooling.
 
 First, determine your computer's IP address on your LAN.
 
-- On macOS, run `ifconfig`. The IP address is listed under `en0` entry, after `inet`.
+- On macOS, run `ifconfig`. The IP address is listed under `en0` entry, after `inet`. Alternatively, open System Preferences -> Network -> (select active network) then find the IP listed under Status.
 - On Windows, run `ipconfig`. Look for the `IPv4` address.
 
-Next, start your local web server. The command will vary, but is typically:
+Next, start your local web server. The server must be bound to 0.0.0.0 in order to be accessible from the LAN. The command to run will vary, but is typically:
 
 ```bash
-npm run serve
+npm run start
 ```
+
+> With react-scripts, use `npm run start HOST=0.0.0.0`
 
 Within `capacitor.config.json`, create a `server` entry then configure the `url` field using the local web server's IP address and port:
 
