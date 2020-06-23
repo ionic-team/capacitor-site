@@ -78,7 +78,7 @@
       color: #222D3A;
       // opacity: 0.4;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: normal;
       letter-spacing: -0.02em;
 
       &:hover {
@@ -121,7 +121,7 @@
       font-size: var(--f-size-4);
       letter-spacing: var(--f-tracking-tight);
       line-height: 18px;
-      padding: 6px 6px;
+      padding: 6px 10px;
       margin-left: 5px;
     }
 
@@ -133,12 +133,16 @@
 
       ion-icon {
         vertical-align: middle;
-        margin-right: 3px;
+        margin-right: 6px;
         margin-top: -2px;
       }
     }
     &__install {
       background: var(--color-capacitor-blue);
+      svg {
+        margin-right: 6px;
+        margin-bottom: -2px;
+      }
     }
   }
 
