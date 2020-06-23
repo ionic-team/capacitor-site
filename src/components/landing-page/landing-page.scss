@@ -25,13 +25,14 @@ section {
       letter-spacing: var(--f-tracking-dense);
       color: var(--c-carbon-100);
       margin-bottom: 16px;
-      font-family: var(--f-family-text);
+      font-family: var(--f-family-display);
     }
     h3 {
       margin-top: 12px;
       margin-bottom: 16px;
       font-size: 22px;
       line-height: 160%;
+      font-family: var(--f-family-text);
       letter-spacing: var(--f-tracking-tight);
       color: #2D4665;
       font-weight: normal;
