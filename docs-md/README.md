@@ -53,6 +53,7 @@
 * Plugins
   * [Introduction](apis/index.md)
   * [Community Plugins](community/plugins.md)
+  * [Enterprise Plugins](enterprise/index.md)
   * [Accessibility](apis/accessibility/index.md)
   * [App](apis/app/index.md)
   * [Background Task](apis/background-task/index.md)
