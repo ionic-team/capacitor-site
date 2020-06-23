@@ -103,6 +103,13 @@ section {
       height: 26px;
     }
 
+    @media (max-width: variables.$breakpoint-md) {
+      // Hide the numbers and lines on small screens
+      .ui-col:first-child:after {
+        display: none !important;
+      }
+    }
+
     &:last-child {
       padding-bottom: 0;
       min-height: 500px;
