@@ -106,6 +106,10 @@ section {
     &:last-child {
       padding-bottom: 0;
       min-height: 500px;
+
+      .ui-col:first-child:after {
+        display: none;
+      }
     }
 
     .ui-col {
@@ -119,14 +123,13 @@ section {
         &:after {
           content: '';
           display: block;
-          margin-top: 35px !important;
-          height: 75%;
+          margin-top: 12px !important;
+          height: calc(100% - 42px);
           width: 1px;
           margin: auto;
           background: var(--c-carbon-10);
         }
       }
-
     }
   }
   

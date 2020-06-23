@@ -43,7 +43,7 @@ export class CapacitorCommunity {
               </a>
               <Heading level={2}>Twitter</Heading>
               <Paragraph>
-                Found a potential bug in Capacitor? Let us know on Github and consider sending a Pull Request to become a contributor
+                Get the latest news and join the community by following <a href="https://twitter.com/capacitorjs">@capacitorjs</a> on Twitter.
               </Paragraph>
             </Col>
           </Grid>
