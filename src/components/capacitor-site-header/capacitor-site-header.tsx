@@ -24,6 +24,8 @@ export class SiteHeader {
   @State() isMobileMenuShown: boolean;
   @State() isDropdownShown: boolean;
   @State() isScrolled = false;
+
+  @State() forceHovered: string | null = null;
   @State() hovered: string | null = null;
 
   @State() starCount?: number;
@@ -31,14 +33,14 @@ export class SiteHeader {
   async componentWillLoad() {
     // TODO pull this in from GitHub at build
     this.starCount = formatNumber('4.1k');
-  }
 
-  handleDropdownEnter () {
-    this.isDropdownShown = true;
-  }
+    this.forceHovered = Router.activePath.replace('/', '').replace('#', '');
 
-  handleDropdownLeave () {
-    this.isDropdownShown = false;
+    Router.onChange('activePath', (v: any) => {
+      if (['/#features', '/docs', '/blog', '/enterprise', '/community'].findIndex(x => x === v) >= 0) {
+        this.forceHovered = v.replace('/', '').replace('#', '');
+      }
+    });
   }
 
   setHovered = (h: string) => () => this.hovered = h;
@@ -59,12 +61,12 @@ export class SiteHeader {
 
         <div class={{
           'site-header__menu': true,
-          'site-header__menu--hovered': !!this.hovered
+          'site-header__menu--hovered': !!this.hovered || !!this.forceHovered
         }}>
           <nav>
             <NavLink
               path="/#features"
-              hovered={this.hovered === 'features'}
+              hovered={(this.hovered || this.forceHovered) === 'features'}
               onHover={this.setHovered('features')}
               onExit={this.clearHover}>
               Features
@@ -78,7 +80,7 @@ export class SiteHeader {
             </NavLink>
             <NavLink
               path="/community"
-              hovered={this.hovered === 'community'}
+              hovered={this.hovered === 'community' || this.forceHovered === 'community'}
               onHover={this.setHovered('community')}
               onExit={this.clearHover}>
               Community
