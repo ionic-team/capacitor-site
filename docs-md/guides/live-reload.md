@@ -47,7 +47,7 @@ Next, start your local web server. The server must be bound to `0.0.0.0` in orde
 npm run start
 ```
 
-> With react-scripts, use `npm run start HOST=0.0.0.0`
+> With react-scripts, use `HOST=0.0.0.0 npm run start`
 
 Within `capacitor.config.json`, create a `server` entry then configure the `url` field using the local web server's IP address and port:
 
