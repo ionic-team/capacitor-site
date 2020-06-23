@@ -1,23 +1,23 @@
 ---
-title: Capacitor APIs
-description: Capacitor APIs
+title: Capacitor Plugins
+description: Capacitor Plugins
 url: /docs/apis
 contributors:
   - mlynch
   - jcesarmobile
 ---
 
-# Capacitor APIs
+# Capacitor Plugins
 
-Capacitor includes a number of Native APIs that are available to all Capacitor apps. These can be thought of as Capacitor "core plugins," and they make it easy to access commonly needed functionality on each platform.
+Capacitor includes a number of native plugin APIs that are available to all Capacitor apps. These can be thought of as Capacitor "core plugins," and they make it easy to access commonly needed functionality on each platform.
 
-For those coming from Cordova, the core Capacitor APIs cover much of the core Cordova plugins, and also include some new ones.
+For those coming from Cordova, the core Capacitor plugins cover much of the core Cordova plugins, and also include some new ones.
 
-See the APIs list on the left menu for the full list of available APIs.
+See the Plugins list on the left menu for the full list of available plugins.
 
 ## API Usage
 
-To use a Capacitor API, follow these steps:
+To use a Capacitor plugin, follow these steps:
 
 1) Import the `Plugins` object. It represents the registry of all Capacitor plugins.
 ```typescript
@@ -42,7 +42,7 @@ A common mistake is to import a plugin directly, then use the plugin API immedia
 import { Browser } from '@capacitor/core';
 
 async openBrowser() {
-  // On iOS, for example, this will open the URL in Safari instead of 
+  // On iOS, for example, this will open the URL in Safari instead of
   // the SFSafariViewController (in-app browser)
   await Browser.open({ url: "https://ionicframework.com" });
 }

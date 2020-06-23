@@ -8450,7 +8450,7 @@ class CapacitorSiteFooter {
         registerInstance(this, hostRef);
     }
     render() {
-        return (h(Host, null, h("footer", null, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 12, cols: 12, class: "copyright" }, h("img", { src: "/assets/img/logo-white2.png", alt: "Capacitor Logo", class: "logo" }), h("p", null, "Copyright @ ", (new Date()).getFullYear(), " Drifty Co."), h("p", null, h("a", { href: "https://ionic.io" }, "Ionic Open Source"), " | Released under ", h("span", { id: "mit" }, "MIT License"))), h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h(Grid, null, h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Developers"), h("ul", null, h("li", null, h("a", { href: "/docs/getting-started" }, "Install")), h("li", null, h("a", { href: "/docs" }, "Docs")), h("li", null, h("a", { href: "/docs/apis" }, "APIs")))), h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Resources"), h("ul", null, h("li", null, h("a", { href: "/community" }, "Community")), h("li", null, h("a", { href: "/blog" }, "Blog")), h("li", null, h("a", { href: "https://github.com/ionic-team/capacitor/discussions" }, "Discussions")))), h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Connect"), h("ul", null, h("li", null, h("a", { href: "https://github.com/ionic-team/capacitor" }, "GitHub")), h("li", null, h("a", { href: "https://twitter.com/capacitorjs" }, "Twitter")), h("li", null, h("a", { href: "https://ionic.io" }, "Ionic")))))))))));
+        return (h(Host, null, h("footer", null, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 12, cols: 12, class: "copyright" }, h("img", { src: "/assets/img/logo-white2.png", alt: "Capacitor Logo", class: "logo" }), h("p", null, "Copyright @ ", (new Date()).getFullYear(), " Drifty Co."), h("p", null, h("a", { href: "https://ionic.io" }, "Ionic Open Source"), " | Released under ", h("span", { id: "mit" }, "MIT License"))), h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h(Grid, null, h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Developers"), h("ul", null, h("li", null, h("a", { href: "/docs/getting-started" }, "Install")), h("li", null, h("a", { href: "/docs" }, "Docs")), h("li", null, h("a", { href: "/docs/apis" }, "Plugins")))), h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Resources"), h("ul", null, h("li", null, h("a", { href: "/community" }, "Community")), h("li", null, h("a", { href: "/blog" }, "Blog")), h("li", null, h("a", { href: "https://github.com/ionic-team/capacitor/discussions" }, "Discussions")))), h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Connect"), h("ul", null, h("li", null, h("a", { href: "https://github.com/ionic-team/capacitor" }, "GitHub")), h("li", null, h("a", { href: "https://twitter.com/capacitorjs" }, "Twitter")), h("li", null, h("a", { href: "https://ionic.io" }, "Ionic")))))))))));
     }
     static get style() { return capacitorSiteFooterCss; }
     static get cmpMeta() { return {
@@ -9018,7 +9018,7 @@ var siteStructure = [
 		]
 	},
 	{
-		text: "APIs",
+		text: "Plugins",
 		children: [
 			{
 				text: "Introduction",

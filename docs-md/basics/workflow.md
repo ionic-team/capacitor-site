@@ -1,5 +1,5 @@
 ---
-title: Development Workflow 
+title: Development Workflow
 description: Capacitor Workflow
 url: /docs/basics/workflow
 contributors:
@@ -15,7 +15,7 @@ contributors:
 
 Capacitor turns your web app into a native binary for each platform. Thus, much of your work will consist of developing and then building a mobile-focused web app.
 
-You will interact with the native platform underneath using Capacitor's APIs (such as [Camera](/docs/apis/camera)), or by using existing Cordova plugins with Capacitor's [Cordova Compatibility](/docs/cordova).
+You will interact with the native platform underneath using Capacitor's plugins (such as [Camera](/docs/apis/camera)), or by using existing Cordova plugins with Capacitor's [Cordova Compatibility](/docs/cordova).
 
 As a final step, you will build your application using a command similar to:
 
