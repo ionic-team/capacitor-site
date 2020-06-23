@@ -36,7 +36,7 @@ The `server` entry automatically created in `capacitor.config.json` is removed a
 
 Live Reload with Capacitor is possible with any web app's tooling.
 
-First, determine your computer's IP address.
+First, determine your computer's IP address on your LAN.
 
 - On a Mac, run `ifconfig`. The IP address is listed under `en0` entry, after `inet`.
 - On a PC, run `ipconfig`. Look for the `IPv4` address.
