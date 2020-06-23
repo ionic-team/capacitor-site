@@ -24,6 +24,7 @@ export class SiteHeader {
   @State() isMobileMenuShown: boolean;
   @State() isDropdownShown: boolean;
   @State() isScrolled = false;
+  @State() hovered: string | null = null;
 
   @State() starCount?: number;
 
@@ -40,6 +41,11 @@ export class SiteHeader {
     this.isDropdownShown = false;
   }
 
+  setHovered = (h: string) => () => this.hovered = h;
+
+  clearHover = () => this.hovered = null;
+
+
   render() {
     return (
       <ResponsiveContainer class="site-header">
@@ -51,21 +57,47 @@ export class SiteHeader {
           )}
         </a>
 
-        <div class="site-header__menu">
+        <div class={{
+          'site-header__menu': true,
+          'site-header__menu--hovered': !!this.hovered
+        }}>
           <nav>
-            <NavLink path="/#features">
+            <NavLink
+              path="/#features"
+              hovered={this.hovered === 'features'}
+              onHover={this.setHovered('features')}
+              onExit={this.clearHover}>
               Features
             </NavLink>
-            <NavLink path="/docs">
+            <NavLink
+              path="/docs"
+              hovered={this.hovered === 'docs'}
+              onHover={this.setHovered('docs')}
+              onExit={this.clearHover}>
               Docs
             </NavLink>
-            <NavLink path="/community">
+            <NavLink
+              path="/community"
+              hovered={this.hovered === 'community'}
+              onHover={this.setHovered('community')}
+              onExit={this.clearHover}>
               Community
             </NavLink>
-            <NavLink path="/blog">
+            <NavLink
+              path="/blog"
+              hovered={this.hovered === 'blog'}
+              onHover={this.setHovered('blog')}
+              onExit={this.clearHover}>
               Blog
             </NavLink>
-            <a href="https://ionicframework.com/native" target="_blank">
+            <a
+              href="https://ionicframework.com/native"
+              target="_blank"
+              onMouseOver={this.setHovered('enterprise')}
+              onMouseOut={this.clearHover}
+              class={{
+                'link--hovered': this.hovered === 'enterprise'
+              }}>
               Enterprise
             </a>
           </nav>
@@ -85,15 +117,27 @@ export class SiteHeader {
   }
 }
 
-const NavLink = ({ path }: { path: string }, children: VNode) => {
+interface NavLinkProps {
+  hovered: boolean;
+  path: string;
+  onHover: () => void;
+  onExit: () => void;
+}
+
+const NavLink = ({ path, hovered, onHover, onExit }: NavLinkProps, children: VNode) => {
   // Detect active if path equals the route path or the current active path plus
   // the route hash equals the path, to support links like /#features
   const active = Router.activePath === path ||
                  Router.activePath + Router.url.hash === path;
 
   return (
-    <a {...href(path)} class={{
-      'link--active': active
+    <a
+      {...href(path)}
+      onMouseOver={onHover}
+      onMouseOut={onExit}
+      class={{
+      'link--active': active,
+      'link--hovered': hovered
     }}>
       {children}
     </a>

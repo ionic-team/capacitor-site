@@ -45,11 +45,18 @@
       height: 24px;
     }
   }
+
   &__menu {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &--hovered {
+      a {
+        opacity: 0.4;
+      }
+    }
 
     nav {
       flex: 1;
@@ -61,11 +68,12 @@
 
     a {
       border-bottom: 0;
-      transition: color .3s;
+      transition: color, opacity .4s;
       font-size: 15px;
       font-family: var(--f-family-text);
-      color: var(--c-carbon-90);
-      opacity: 0.4;
+      // color: var(--c-carbon-90);
+      color: #222D3A;
+      // opacity: 0.4;
       text-decoration: none;
       font-weight: 500;
       letter-spacing: -0.02em;
