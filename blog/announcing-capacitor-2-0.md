@@ -1,5 +1,5 @@
 ---
-title: Capacitor announcements at Ioniconf 2020
+title: Announcing Capacitor 2.0
 date: 2020-04-08 08:00:00
 author: Max Lynch <max@ionic.io>
 ---
