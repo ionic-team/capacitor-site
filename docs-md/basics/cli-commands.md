@@ -24,7 +24,7 @@ npm install @capacitor/core @capacitor/cli
 Add a native platform project to your project.
 
 ```bash
-npx cap add [platform]
+npx cap add <platform>
 ```
 
 <strong>Inputs:</strong>
@@ -214,5 +214,4 @@ npx cap update
 
 <strong>Options:</strong>
 - `--deployment`: Podfile.lock won't be deleted and pod install will use `--deployment` option.
-
 
