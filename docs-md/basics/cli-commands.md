@@ -77,7 +77,7 @@ npx @capacitor/cli create [options] [directory] [name] [id]
 - `id` (optional): App Package Id (in Java package format, no dashes), such as `com.example.app`
 
 <strong>Options:</strong>
-- `--npm-client [npmClient]`: npm client to use for dependency installation
+- `--npm-client <npmClient>`: npm client to use for dependency installation
 
 ## Doctor
 
@@ -214,4 +214,3 @@ npx cap update
 
 <strong>Options:</strong>
 - `--deployment`: Podfile.lock won't be deleted and pod install will use `--deployment` option.
-
