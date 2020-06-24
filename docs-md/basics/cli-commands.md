@@ -8,16 +8,7 @@ contributors:
 
 # Capacitor CLI Reference
 
-<p class="intro">The Capacitor command-line interface (CLI) tool is used to develop Capacitor apps.</p>
-
-## Installation
-
-Capacitor does not use a global CLI. Instead, CLI is installed locally into each project as an npm script. This makes it easier to manage versions of Capacitor across many different apps.
-
-```bash
-cd my-app
-npm install @capacitor/core @capacitor/cli
-```
+<p class="intro">The Capacitor command-line interface (CLI) tool is used to develop Capacitor apps. View installation details <a href="/docs/getting-started">here</a>.</p>
 
 ## Add
 
