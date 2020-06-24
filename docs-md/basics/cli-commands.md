@@ -118,8 +118,8 @@ npx cap init [options] [appName] [appId]
 - `appId` (optional): App Package Id (in Java package format, no dashes), such as `com.example.app`
 
 <strong>Options:</strong>
- - `--web-dir [value]`: Directory of your project's built web assets (default: `www`)
- - `--npm-client [npmClient]`: npm client to use for dependency installation
+ - `--web-dir <value>`: Directory of your project's built web assets (default: `www`)
+ - `--npm-client <npmClient>`: npm client to use for dependency installation
 
 ## List
 
