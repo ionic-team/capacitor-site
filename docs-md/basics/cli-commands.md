@@ -146,7 +146,7 @@ Found 2 Cordova plugins for android:
 Opens the native project workspace in the specified native IDE (Xcode for iOS, Android Studio for Android). Once open, use the native IDEs to build, simulate, and run your app on a device.
 
 ```bash
-npx cap open [platform]
+npx cap open <platform>
 ```
 
 <strong>Inputs:</strong>
