@@ -11,7 +11,9 @@ const getBlogPostUrl = (doc: RenderedBlog) => `/blog/${doc.slug}`;
 
 
 export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?: boolean }) => {
-  const content = single ? post.html : post.html;
+  const content = single ?
+                    post.html :
+                    post.preview || post.html;
 
   return (
     <div class="blog-post__wrap">
