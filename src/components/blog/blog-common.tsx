@@ -1,9 +1,9 @@
 import { h } from '@stencil/core';
-// import { href } from 'stencil-router-v2';
+import { href } from 'stencil-router-v2';
 import { Heading, DateTime } from '@ionic-internal/sites-shared';
 import parseISO from 'date-fns/parseISO';
 
-// import Router from '../../router';
+import Router from '../../router';
 
 import { RenderedBlog } from '../../models';
 
@@ -23,6 +23,8 @@ export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?:
 
         <PostContent html={content} />
 
+        {!single && post.preview ? <PostContinueReading post={post} /> : null}
+
         {single && <disqus-comments url={getBlogPostUrl(post)} id={post.slug} />}
       </div>
     </div>
@@ -33,10 +35,8 @@ const PostContent = ({ html }: { html: string }) => (
   <div innerHTML={html} />
 );
 
-/*
 const PostContinueReading = ({ post }: { post: RenderedBlog }) => 
-  <a {...href(getBlogPostUrl(post), Router)}>Continue reading <ion-icon name="arrow-forward" /></a>
-*/
+  <a class="blog-post__continue-reading" {...href(getBlogPostUrl(post), Router)}>Continue reading <ion-icon name="arrow-forward" /></a>
 
 const PostAuthor = ({ authorName, dateString }: { authorName: string, dateString: string }) => {
   const date = parseISO(dateString);
