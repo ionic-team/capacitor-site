@@ -8845,6 +8845,11 @@ var siteStructure = [
 				text: "Progressive Web Apps",
 				filePath: "/assets/docs-content/basics/progressive-web-app.json",
 				url: "/docs/basics/progressive-web-app"
+			},
+			{
+				text: "CLI Reference",
+				filePath: "/assets/docs-content/basics/cli-commands.json",
+				url: "/docs/basics/cli-commands"
 			}
 		]
 	},
@@ -8908,8 +8913,8 @@ var siteStructure = [
 			},
 			{
 				text: "Splash Screens and Icons",
-				filePath: "/assets/docs-content/guides/splash-screens-icons.json",
-				url: null
+				filePath: "/assets/docs-content/guides/splash-screens-and-icons.json",
+				url: "/docs/guides/splash-screens-and-icons"
 			},
 			{
 				text: "Community Guides",
@@ -9507,7 +9512,7 @@ class InPageNavigtion {
     }
     render() {
         const pageLinks = this.pageLinks.filter(pl => pl.level !== 1);
-        const submitEditLink = (h("a", { class: "submit-edit-link", href: `https://github.com/ionic-team/capacitor/tree/master/site/${this.srcUrl}` }, this.ghIcon(), h("span", null, "Submit an edit")));
+        const submitEditLink = (h("a", { class: "submit-edit-link", target: "_blank", href: `https://github.com/ionic-team/capacitor-site/blob/master/${this.srcUrl}` }, this.ghIcon(), h("span", null, "Submit an edit")));
         if (pageLinks.length === 0) {
             return (h("div", { class: "sticky" }, submitEditLink));
         }
@@ -10083,6 +10088,7 @@ const getAd = async () => {
     return chooseAdByWeight();
 };
 const chooseAdByWeight = () => {
+    var _a;
     const weightList = []; // Just Checking...
     for (const ad of ads) {
         if (ad['data']) { // Safety
@@ -10094,7 +10100,7 @@ const chooseAdByWeight = () => {
         }
     }
     // Probability Fun
-    return weightList[Math.floor(Math.random() * weightList.length)]['data'];
+    return ((_a = weightList[Math.floor(Math.random() * weightList.length)]) === null || _a === void 0 ? void 0 : _a.data) || null;
 };
 
 const internalAdCss = "internal-ad{max-width:148px;display:block;margin:48px 0 0;height:0px;overflow:hidden}internal-ad a{display:inline-block;text-decoration:none;color:#000}internal-ad a:hover{border-bottom-color:transparent}internal-ad p{font-size:13px;line-height:19px;font-weight:400;letter-spacing:0.02em;color:var(--text-color--dark);-webkit-transition:.2s color;transition:.2s color}internal-ad a:hover p{color:var(--text-color)}";
@@ -10108,6 +10114,8 @@ class InternalAd {
     // force an update on page change in case the component is reused
     async update() {
         this.ad = await getAd();
+        if (!this.ad)
+            return;
         // give the page a chance to reflow
         this.timeout = setTimeout(() => {
             trackView(this.ad.ad_id);

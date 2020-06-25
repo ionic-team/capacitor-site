@@ -66,7 +66,7 @@ export class CapacitorSiteRoutes {
           )} />
 
           <Route path={match('/solution/:solutionId*')} render={({ solutionId }) => (
-            <solution-page solutionId={`/solution/${solutionId}`} />
+            <solution-page solutionId={solutionId} />
           )} />
         </Router.Switch>
       </Host>
