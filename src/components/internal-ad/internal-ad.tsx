@@ -22,6 +22,7 @@ export class InternalAd {
   @Listen('leftSidebarClick', { target: 'body' })
   async update() {
     this.ad = await getAd();
+    if (!this.ad) return;
     // give the page a chance to reflow
     this.timeout = setTimeout(() => {
       trackView(this.ad.ad_id);
