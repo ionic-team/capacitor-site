@@ -1,16 +1,26 @@
 @use '../../global/variables';
 
 :host {
-  background-color: #fff;
+  position: sticky;
+  z-index: 1000;
+  top: -1px;
+  background: transparent;
   display: block;
   padding: 6px 0;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+
   --link-color: var(--c-carbon-90);
+
 
   @media (max-width: 550px) {
     .ui-container {
       flex-direction: column;
     }
+  }
+
+  &.site-header--sticky {
+    background: #fff;
   }
 }
 
@@ -23,13 +33,9 @@
 
 .site-header {
   display: flex;
-  &--scrolled {
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.06), 0px 1px 0px rgba(0,0,0,0.02);
-  }
 
   &__container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    height: 64px;
     display: flex;
     justify-content: space-between;
   }
@@ -42,14 +48,24 @@
     border: 0;
 
     img {
-      height: 22px;
+      height: 24px;
     }
   }
+
   &__menu {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &--hovered {
+      a {
+        opacity: 0.4;
+      }
+      a.link--active {
+        opacity: 0.4;
+      }
+    }
 
     nav {
       flex: 1;
@@ -61,12 +77,14 @@
 
     a {
       border-bottom: 0;
-      transition: color .3s;
-      font-size: 14px;
-      color: var(--link-color);
-      opacity: 0.4;
+      transition: color, opacity .4s;
+      font-size: 15px;
+      font-family: var(--f-family-text);
+      // color: var(--c-carbon-90);
+      color: #222D3A;
+      // opacity: 0.4;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: normal;
       letter-spacing: -0.02em;
 
       &:hover {
@@ -109,7 +127,7 @@
       font-size: var(--f-size-4);
       letter-spacing: var(--f-tracking-tight);
       line-height: 18px;
-      padding: 6px 6px;
+      padding: 6px 10px;
       margin-left: 5px;
     }
 
@@ -121,12 +139,16 @@
 
       ion-icon {
         vertical-align: middle;
-        margin-right: 3px;
+        margin-right: 6px;
         margin-top: -2px;
       }
     }
     &__install {
       background: var(--color-capacitor-blue);
+      svg {
+        margin-right: 6px;
+        margin-bottom: -2px;
+      }
     }
   }
 

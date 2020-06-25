@@ -8,9 +8,6 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="theme-color" content="#16161d">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
   <script>
     navigator.serviceWorker.getRegistrations().then(function(registrations) {
@@ -21,6 +18,14 @@
   </script>
   <script type="module" src="/build/app.esm.js"></script>
   <script nomodule src="/build/app.js"></script>
+
+  <link rel="preload" href="/assets/fonts/inter/Inter-variable-ASCII-subset.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="/assets/fonts/eina/eina-01-bold.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="/assets/fonts/eina/eina-01-semibold.woff2" as="font" type="font/woff2">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 </head>
 <body>
 
