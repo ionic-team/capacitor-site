@@ -3,7 +3,7 @@ title: Live Reload
 description: Use Live Reload to easily debug the web and native portions of an app on a device or simulator.
 url: /docs/guides/live-reload
 contributors:
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Live Reload

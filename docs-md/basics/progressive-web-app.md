@@ -4,7 +4,7 @@ description: How to build Progressive Web Apps with Capacitor
 url: /docs/basics/progressive-web-app
 contributors:
   - jcesarmobile
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Building Progressive Web Apps

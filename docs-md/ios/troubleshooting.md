@@ -3,7 +3,7 @@ title: iOS Troubleshooting Guide
 description: iOS Troubleshooting Guide
 url: /docs/ios/troubleshooting
 contributors:
-  - dotnetkow
+  - dotNetkow
   - mlynch
 ---
 

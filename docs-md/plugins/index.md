@@ -5,7 +5,7 @@ url: /docs/plugins
 contributors:
   - mlynch
   - jcesarmobile
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Capacitor Plugins

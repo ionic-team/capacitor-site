@@ -4,7 +4,7 @@ description: How to use Capacitor Plugins
 url: /docs/basics/using-plugins
 contributors:
   - jcesarmobile
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Using Capacitor Plugins

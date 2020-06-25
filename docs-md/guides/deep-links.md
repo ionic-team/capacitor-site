@@ -3,7 +3,7 @@ title: Deep Links
 description: Implement deep linking functionality in an iOS and Android app
 url: /docs/guides/deep-links
 contributors:
-  - dotnetkow
+  - dotNetkow
   - jaydrogers
 ---
 

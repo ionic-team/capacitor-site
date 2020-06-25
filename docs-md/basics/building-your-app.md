@@ -3,7 +3,7 @@ title: Building your App
 description: Building your App
 url: /docs/basics/building-your-app
 contributors:
-  - dotnetkow
+  - dotNetkow
   - mlynch
 ---
 

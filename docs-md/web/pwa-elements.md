@@ -3,7 +3,7 @@ title: PWA Elements
 description: Using PWA Elements
 url: /docs/pwa-elements
 contributors:
-  - dotnetkow
+  - dotNetkow
   - mlynch
 ---
 

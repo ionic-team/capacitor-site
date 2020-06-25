@@ -3,7 +3,7 @@ title: CLI Commands
 description: Capacitor CLI command reference list
 url: /docs/basics/cli-commands
 contributors:
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Capacitor CLI Reference

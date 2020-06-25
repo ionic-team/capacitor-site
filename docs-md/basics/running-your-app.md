@@ -3,7 +3,7 @@ title: Running your App
 description: Running your App
 url: /docs/basics/running-your-app
 contributors:
-  - dotnetkow
+  - dotNetkow
   - mlynch
 ---
 

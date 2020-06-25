@@ -4,7 +4,7 @@ description: Native Project Configuration
 url: /docs/basics/configuring-your-app
 contributors:
   - jcesarmobile
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Configuring Your App
