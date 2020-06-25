@@ -5,7 +5,7 @@ url: /docs/plugins/web
 contributors:
   - mlynch
   - jcesarmobile
-  - dotNetkow
+  - dotnetkow
 ---
 
 # Capacitor Web/PWA Plugin Guide
