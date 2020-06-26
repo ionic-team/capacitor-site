@@ -18,28 +18,34 @@ section {
     max-width: 100%;
   }
   &__heading {
-    padding-top: 64px;
+    padding-top: 120px;
     h1 {
       font-size: 64px;
       line-height: 100%;
       letter-spacing: var(--f-tracking-dense);
       color: var(--c-carbon-100);
       margin-bottom: 16px;
-      font-family: var(--f-family-text);
+      font-family: var(--f-family-display);
     }
     h3 {
       margin-top: 12px;
       margin-bottom: 16px;
       font-size: 22px;
       line-height: 160%;
+      font-family: var(--f-family-text);
       letter-spacing: var(--f-tracking-tight);
       color: #2D4665;
       font-weight: normal;
     }
   }
 
+  &__platforms {
+    height: 16px;
+    margin-top: 16px;
+  }
+
   &__graphic {
-    padding-top: 64px;
+    padding-top: 96px;
   }
 
   &__buttons {
@@ -97,9 +103,20 @@ section {
       height: 26px;
     }
 
+    @media (max-width: variables.$breakpoint-md) {
+      // Hide the numbers and lines on small screens
+      .ui-col:first-child:after {
+        display: none !important;
+      }
+    }
+
     &:last-child {
       padding-bottom: 0;
       min-height: 500px;
+
+      .ui-col:first-child:after {
+        display: none;
+      }
     }
 
     .ui-col {
@@ -113,14 +130,13 @@ section {
         &:after {
           content: '';
           display: block;
-          margin-top: 35px !important;
-          height: 75%;
+          margin-top: 12px !important;
+          height: calc(100% - 42px);
           width: 1px;
           margin: auto;
           background: var(--c-carbon-10);
         }
       }
-
     }
   }
   

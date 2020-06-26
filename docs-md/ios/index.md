@@ -3,7 +3,7 @@ title: Capacitor iOS Documentation
 description: Communicate between JavaScript and Native Swift or Objective-C code
 url: /docs/ios
 contributors:
-  - dotnetkow
+  - dotNetkow
   - mlynch
 ---
 

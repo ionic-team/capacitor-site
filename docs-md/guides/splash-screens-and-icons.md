@@ -3,7 +3,7 @@ title: Creating Splash Screens and Icons
 description: Use cordova-res to generate resource images for native projects
 url: /docs/guides/splash-screens-and-icons
 contributors:
-  - dotnetkow
+  - dotNetkow
 ---
 
 #  Creating Splash Screens and Icons

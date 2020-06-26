@@ -3,7 +3,7 @@ title: Opening Native Projects
 description: Opening Native Projects via Native IDEs
 url: /docs/basics/opening-native-projects
 contributors:
-  - dotnetkow
+  - dotNetkow
   - mlynch
 ---
 

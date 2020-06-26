@@ -33,5 +33,5 @@ const chooseAdByWeight = () => {
     }
   }
   // Probability Fun
-  return weightList[Math.floor(Math.random() * weightList.length)]['data'];
+  return weightList[Math.floor(Math.random() * weightList.length)]?.data || null;
 };

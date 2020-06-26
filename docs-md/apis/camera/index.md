@@ -20,13 +20,13 @@ API sends an intent which will be handled by the core Camera app by default.
 
 iOS requires the following usage description be added and filled out for your app in `Info.plist`:
 
-Name: `Privacy - Camera Usage Description`  
+Name: `Privacy - Camera Usage Description`
 Key: 	`NSCameraUsageDescription`
 
-Name: `Privacy - Photo Library Additions Usage Description`  
+Name: `Privacy - Photo Library Additions Usage Description`
 Key: 	`NSPhotoLibraryAddUsageDescription`
 
-Name: `Privacy - Photo Library Usage Description`  
+Name: `Privacy - Photo Library Usage Description`
 Key: 	`NSPhotoLibraryUsageDescription`
 
 Read about [Setting iOS Permissions](/docs/ios/configuration/) in the [iOS Guide](/docs/ios/) for more information on setting iOS permissions in Xcode
@@ -47,7 +47,7 @@ Read about [Setting Android Permissions](/docs/android/configuration/) in the [A
 Additionally, because the Camera API launches a separate Activity to handle taking the photo, you should listen for `appRestoredResult` in the `App` plugin
 to handle any camera data that was sent in the case your app was terminated by the operating system while the Activity was running.
 
-## PWA/Electron Notes
+## PWA Notes
 
 [PWA Elements](/docs/pwa-elements) are required for Camera plugin to work.
 
@@ -64,9 +64,9 @@ async takePicture() {
     allowEditing: true,
     resultType: CameraResultType.Uri
   });
-  // image.webPath will contain a path that can be set as an image src. 
-  // You can access the original file using image.path, which can be 
-  // passed to the Filesystem API to read the raw data of the image, 
+  // image.webPath will contain a path that can be set as an image src.
+  // You can access the original file using image.path, which can be
+  // passed to the Filesystem API to read the raw data of the image,
   // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
   var imageUrl = image.webPath;
   // Can be set to the src of an image now

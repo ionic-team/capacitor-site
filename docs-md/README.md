@@ -13,6 +13,7 @@
   * [Using Plugins](basics/using-plugins.md)
   * [Native Project Configuration](basics/configuring-your-app.md)
   * [Progressive Web Apps](basics/progressive-web-app.md)
+  * [CLI Reference](basics/cli-commands.md)
 * Cordova/PhoneGap
   * [Introduction](cordova/index.md)
   * [Migration Strategy](cordova/migration-strategy.md)
@@ -20,11 +21,12 @@
   * [Cordova/Ionic Native Plugins](cordova/using-cordova-plugins.md)
   * [Known Incompatible Plugins](cordova/known-incompatible-plugins.md)
 * Guides
+  * [Live Reload](guides/live-reload.md)
   * [Ionic Photo Gallery App](guides/ionic-framework-app.md)
   * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying.md)
-  * [Splash Screens and Icons](guides/splash-screens-icons.md)
+  * [Splash Screens and Icons](guides/splash-screens-and-icons.md)
   * [Community Guides](guides/community.md)
 * iOS
   * [Getting Started](ios/index.md)
@@ -43,9 +45,6 @@
 * Web/PWA
   * [Getting Started](web/index.md)
   * [PWA Elements](web/pwa-elements.md)
-* Electron
-  * [Getting Started](electron/index.md)
-  * [Updating](electron/updating.md)
 * Creating Plugins
   * [Introduction](plugins/index.md)
   * [Development Workflow](plugins/workflow.md)
@@ -53,9 +52,10 @@
   * [Android Guide](plugins/android.md)
   * [Web/PWA Guide](plugins/web.md)
   * [JavaScript Guide](plugins/js.md)
-* APIs
+* Plugins
   * [Introduction](apis/index.md)
   * [Community Plugins](community/plugins.md)
+  * [Enterprise Plugins](enterprise/index.md)
   * [Accessibility](apis/accessibility/index.md)
   * [App](apis/app/index.md)
   * [Background Task](apis/background-task/index.md)

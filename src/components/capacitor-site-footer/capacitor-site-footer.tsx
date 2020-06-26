@@ -27,7 +27,7 @@ export class CapacitorSiteFooter {
                     <ul>
                       <li><a href="/docs/getting-started">Install</a></li>
                       <li><a href="/docs">Docs</a></li>
-                      <li><a href="/docs/apis">APIs</a></li>
+                      <li><a href="/docs/apis">Plugins</a></li>
                     </ul>
                   </Col>
                   <Col md={4} sm={4} xs={4} cols={4}>

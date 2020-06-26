@@ -3,7 +3,7 @@ title: Deep Links
 description: Implement deep linking functionality in an iOS and Android app
 url: /docs/guides/deep-links
 contributors:
-  - dotnetkow
+  - dotNetkow
   - jaydrogers
 ---
 
@@ -286,6 +286,10 @@ Place the association files under `src/.well-known`. Next, configure the build p
 ```
 
 Build then deploy the site.
+
+### NuxtJS
+
+Place the association files under `static/.well-known`. No additional steps are necessary; simply build then deploy the site.
 
 ### React
 

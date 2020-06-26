@@ -64,6 +64,10 @@ export class CapacitorSiteRoutes {
           <Route path={match('/docs/:pageName*')} render={({ pageName }) => (
             <document-component page={`/docs/${pageName}`} />
           )} />
+
+          <Route path={match('/solution/:solutionId*')} render={({ solutionId }) => (
+            <solution-page solutionId={`/solution/${solutionId}`} />
+          )} />
         </Router.Switch>
       </Host>
     );
