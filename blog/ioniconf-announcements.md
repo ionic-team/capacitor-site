@@ -20,6 +20,8 @@ Today at the first ever official [Ioniconf](https://ioniconf.com/), we unveiled 
 
 The conference kicks off a new era for Capacitor and for [Ionic](https://ionic.io/), the company behind Capacitor.
 
+If you'd like to see the announcements live, the [keynote](https://ioniconf.com/) (along with the rest of the conference) is now [up](https://ioniconf.com/).
+
 ## Capacitor opening up
 
 One of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.
