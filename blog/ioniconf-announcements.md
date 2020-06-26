@@ -54,7 +54,7 @@ Stay tuned for more updates soon!
 
 ## Deploy to App Store for Capacitor
 
-We announced that [Deploy to App Store](https://ionicframework.com/docs/appflow/destinations/intro), a powerful new feature available in Ionic's DevOps service [Appflow] that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.
+We announced that [Deploy to App Store](https://ionicframework.com/docs/appflow/destinations/intro), a powerful new feature available in Ionic's DevOps service [Appflow](https://useappflow.com/) that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.
 
 This feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.
 
