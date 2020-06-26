@@ -55,14 +55,17 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
   const authorName = authorString.slice(0, emailIndex).trim();
   const authorEmail = authorString.slice(emailIndex + 1, authorString.indexOf('>')).trim();
 
+  // Use the "more" token system to generate a preview on the index page
   const MORE_TOKEN = '<!--more-->';
   const moreIndex = data.body.indexOf(MORE_TOKEN);
-  const postPreview = moreIndex >= 0 ? data.body.slice(0, moreIndex) : null;
+  const postPreview = moreIndex >= 0 ? data.body.slice(0, moreIndex) : '';
   const postBody = moreIndex >= 0 ? data.body.slice(moreIndex + MORE_TOKEN.length) : data.body;
 
-  const parsedPreview = marked(postPreview || '', {
+  const parsedPreview = marked(postPreview, {
     highlight: (code, lang) => Prism.highlight(code, Prism.languages[lang], lang as any)
   })
+  // TODO: could support over vars but for now just replace $POST with the
+  // final URL of the post
   .replace(/\$POST/g, `/blog/${slug}`);
 
   const parsedBody = marked(postBody, {
@@ -92,6 +95,7 @@ async function run() {
     rendered = await Promise.all(posts.map(buildPost))
   } catch (e) {
     console.error('Unable to build blog', e);
+    process.exit(1);
   }
 
   rendered.forEach(r => console.log(chalk.bold.green(`POST`), r.slug));
