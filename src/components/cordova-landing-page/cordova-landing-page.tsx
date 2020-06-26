@@ -11,6 +11,7 @@ import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 })
 export class CordovaLandingPage {
   @State() selectedCodeTab: string = 'before' ;
+  
   render() {
     return (
       <Host>
@@ -34,6 +35,8 @@ export class CordovaLandingPage {
         <GettingStartedSection
           selectedCodeTab={this.selectedCodeTab}
           setSelectedCodeTab={(tab: string) => { this.selectedCodeTab = tab}} />
+
+        <MoreResourcesSection />
         <newsletter-signup />
         <pre-footer />
         <capacitor-site-footer />
@@ -239,6 +242,24 @@ npx @capacitor/cli plugin:generate
       </Grid>
       </ResponsiveContainer>
       </section>
+)
+
+const MoreResourcesSection = () => (
+  <ResponsiveContainer class="section--more-resources">
+    <hgroup>
+      <Heading level={3}>More Resources</Heading>
+      <Paragraph>
+        Explore these resources to learn more about Capacitor
+        <br />
+        and make the Cordova migration easier
+      </Paragraph>
+    </hgroup>
+    <more-resources resources={[
+      { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+      { uid: 'capacitor-2-launch', type: 'webinar' },
+      { uid: 'migrating-from-phonegap-build-to-ionic-appflow', type: 'blog' },
+    ]} />
+  </ResponsiveContainer>
 )
 
 const MetaHead = () => (

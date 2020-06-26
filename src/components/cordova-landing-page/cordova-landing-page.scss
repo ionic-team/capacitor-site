@@ -196,6 +196,15 @@ section {
   }
 }
 
+.section--more-resources {
+  margin-top: 96px;
+  margin-bottom: 96px;
+
+  hgroup {
+    margin-bottom: 24px;
+  }
+}
+
 // TODO: Move to generic components
 .ui-fancy-underline {
   display: inline-block;
