@@ -11,6 +11,7 @@ In no particular order, we announced:
 * [Capacitor opening up to all modern web technologies]($POST#capacitor-opening-up)
 * [The Capacitor Community project]($POST#capacitor-community)
 * [Capacitor Elements]($POST#capacitor-elements)
+* [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)
 * [Updated site and domain]($POST#updated-site-domain-and-docs)
 
 <!--more-->
@@ -50,6 +51,14 @@ The goal is to provide the same types of utility APIs that the operating system 
 This makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.
 
 Stay tuned for more updates soon!
+
+## Deploy to App Store for Capacitor
+
+We announced that [Deploy to App Store](https://ionicframework.com/docs/appflow/destinations/intro), a powerful new feature available in Ionic's DevOps service [Appflow] that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.
+
+This feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.
+
+Appflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.
 
 ## Updated Site, Domain, and Docs
 

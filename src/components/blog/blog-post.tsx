@@ -17,7 +17,6 @@ export class BlogPage {
   @State() post?: RenderedBlog;
 
   async componentWillLoad() {
-    console.log('BLOG COMPONENT WILL LOAD');
     const { slug } = this;
 
     if (slug) {
