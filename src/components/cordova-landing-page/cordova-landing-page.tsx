@@ -25,7 +25,7 @@ export class CordovaLandingPage {
                     Cordova to Capacitor Migration
                   </Heading>
                   <Heading level={3}>
-                  Why migrate? 99% backward-compatibility with Cordova, a better developer experience, <a href="/docs/cordova" target="_blank">and more.</a>
+                  99% backward-compatibility with Cordova and a modern development experience. <a href="/docs/cordova" target="_blank">Learn more.</a>
                   </Heading>
                 </hgroup>
               </Col>
@@ -251,13 +251,15 @@ const MoreResourcesSection = () => (
       <Paragraph>
         Explore these resources to learn more about Capacitor
         <br />
-        and make the Cordova migration easier
+        and make your Cordova migration easier.
       </Paragraph>
     </hgroup>
     <more-resources resources={[
       { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
       { uid: 'capacitor-2-launch', type: 'webinar' },
       { uid: 'migrating-from-phonegap-build-to-ionic-appflow', type: 'blog' },
+      { uid: 'thanks-to-capacitor-ive-fallen-in-love-with-mobile-again', type: 'blog' },
+      { uid: 'the-modern-hybrid-app-developer', type: 'blog' },
     ]} />
   </ResponsiveContainer>
 )

@@ -4,10 +4,6 @@
   display: block;
 }
 
-section {
-  margin-bottom: 196px;
-}
-
 .hero {
   margin-bottom: 96px;
 
@@ -114,7 +110,7 @@ section {
           content: '';
           display: block;
           margin-top: 35px !important;
-          height: 75%;
+          height: 60%;
           width: 1px;
           margin: auto;
           background: var(--c-carbon-10);
@@ -197,7 +193,6 @@ section {
 }
 
 .section--more-resources {
-  margin-top: 96px;
   margin-bottom: 96px;
 
   hgroup {
