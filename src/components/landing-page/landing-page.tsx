@@ -38,7 +38,7 @@ export class LandingPage {
                   </div>
                 </hgroup>
                 <div class="cordova-cta">
-                  <a href="/cordova">Migrate from Cordova {"->"}</a>
+                  <a href="/cordova">Migrating from Cordova {"->"}</a>
                 </div>
                 <img class="hero__platforms" src="/assets/img/supported-icons.png" alt="Supported platforms" />
               </Col>
