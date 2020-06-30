@@ -3,7 +3,7 @@ title: Plugin Development Workflow
 description: Capacitor Plugin Development Workflow
 url: /docs/plugins/workflow
 contributors:
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Plugin Development Workflow

@@ -3,7 +3,7 @@ title: Configuring iOS
 description: Configuring iOS
 url: /docs/ios/configuration
 contributors:
-  - dotnetkow
+  - dotNetkow
   - mlynch
 ---
 

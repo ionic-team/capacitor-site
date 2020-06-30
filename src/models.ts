@@ -17,6 +17,9 @@ export interface RenderedBlog {
   slug: string;
   date: string;
   contents: string;
+
+  // The actual rendered HTML (preview and body)
+  preview: string;
   html: string;
 
   // All frontmatter attrs just in casesies

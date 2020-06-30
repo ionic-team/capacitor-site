@@ -1,0 +1,7 @@
+{
+  "all": [
+    { "id": "react", "name": "React", "theme": "#3DD3FF" },
+    { "id": "angular", "name": "Angular", "theme": "#DD002E" },
+    { "id": "svelte", "name": "Svelte", "theme": "#FF3D00" }
+  ]
+}

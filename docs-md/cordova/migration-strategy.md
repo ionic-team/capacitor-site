@@ -3,7 +3,7 @@ title: Migrating Strategy
 description: Migration Strategy
 url: /docs/cordova/migration-strategy
 contributors:
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Migration Strategy

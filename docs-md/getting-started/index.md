@@ -3,7 +3,7 @@ title: Installing Capacitor
 description: Installing Capacitor
 url: /docs/getting-started
 contributors:
-  - dotnetkow
+  - dotNetkow
   - jcesarmobile
 ---
 

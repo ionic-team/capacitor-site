@@ -109,6 +109,11 @@ blog-page, blog-post {
     }
   }
 
+  &__continue-reading {
+    display: block;
+    margin-top: 24px;
+  }
+
   @media (max-width: variables.$breakpoint-sm) {
     padding: 64px 24px;
   }

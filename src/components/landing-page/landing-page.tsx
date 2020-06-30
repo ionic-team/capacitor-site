@@ -343,30 +343,18 @@ const MetaHead = () => (
       name="description"
       content={'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript'}
     />
+    <meta
+      property="og:description"
+      content="Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript"
+    />
+    <meta property="og:site_name" content="Capacitor" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@capacitorjs" />
     <meta name="twitter:creator" content="capacitorjs" />
     <meta name="twitter:title" content="Build cross-platform apps with web technologies" />
-    <meta
-      name="twitter:description"
-      content="Build cross-platform apps with web technologies"
-    />
-    {/*
-    <meta name="twitter:image" content="https://ionicframework.com/img/meta/ionic-framework-og.png" />
-
-    <meta property="fb:page_id" content="1321836767955949" />
-    <meta property="og:url" content="https://ionicframework.com/resources" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="App Development Trends from the Ionic Framework team" />
-
-    <meta property="og:image" content="https://ionicframework.com/img/meta/ionic-framework-og.png" />
-    <meta
-      property="og:description"
-      content="Expert app development advice, trends, and research from the Ionic Framework team"
-    />
-    <meta property="og:site_name" content="Ionic Framework" />
-    <meta property="article:publisher" content="https://www.facebook.com/ionicframework" />
-    <meta property="og:locale" content="en_US" />
-    */}
+    <meta name="twitter:description" content="Build cross-platform apps with web technologies" />
+    <meta name="twitter:image" content="https://capacitorjs.com/assets/img/og.png" />
+    <meta property="og:image" content="https://capacitorjs.com/assets/img/og.png" />
+    <meta property="og:url" content="https://capacitorjs.com/" />
   </Helmet>
 )

@@ -86,6 +86,9 @@ export namespace Components {
     }
     interface PreFooter {
     }
+    interface SolutionPage {
+        "solutionId": string;
+    }
 }
 declare global {
     interface HTMLAnchorLinkElement extends Components.AnchorLink, HTMLStencilElement {
@@ -256,6 +259,12 @@ declare global {
         prototype: HTMLPreFooterElement;
         new (): HTMLPreFooterElement;
     };
+    interface HTMLSolutionPageElement extends Components.SolutionPage, HTMLStencilElement {
+    }
+    var HTMLSolutionPageElement: {
+        prototype: HTMLSolutionPageElement;
+        new (): HTMLSolutionPageElement;
+    };
     interface HTMLElementTagNameMap {
         "anchor-link": HTMLAnchorLinkElement;
         "app-marked": HTMLAppMarkedElement;
@@ -285,6 +294,7 @@ declare global {
         "plugin-api": HTMLPluginApiElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
         "pre-footer": HTMLPreFooterElement;
+        "solution-page": HTMLSolutionPageElement;
     }
 }
 declare namespace LocalJSX {
@@ -368,6 +378,9 @@ declare namespace LocalJSX {
     }
     interface PreFooter {
     }
+    interface SolutionPage {
+        "solutionId"?: string;
+    }
     interface IntrinsicElements {
         "anchor-link": AnchorLink;
         "app-marked": AppMarked;
@@ -397,6 +410,7 @@ declare namespace LocalJSX {
         "plugin-api": PluginApi;
         "plugin-platforms": PluginPlatforms;
         "pre-footer": PreFooter;
+        "solution-page": SolutionPage;
     }
 }
 export { LocalJSX as JSX };
@@ -431,6 +445,7 @@ declare module "@stencil/core" {
             "plugin-api": LocalJSX.PluginApi & JSXBase.HTMLAttributes<HTMLPluginApiElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
+            "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
         }
     }
 }

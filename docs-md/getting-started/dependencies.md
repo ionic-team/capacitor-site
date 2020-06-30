@@ -4,7 +4,7 @@ description: Required Dependencies for different platforms
 url: /docs/getting-started/dependencies
 contributors:
   - mlynch
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Capacitor Required Dependencies

@@ -3,7 +3,7 @@ title: Custom Native iOS Code
 description: Custom Native iOS Code
 url: /docs/ios/custom-code
 contributors:
-  - dotnetkow
+  - dotNetkow
   - mlynch
 ---
 

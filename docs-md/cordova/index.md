@@ -3,7 +3,7 @@ title: Cordova and PhoneGap
 description: Cordova and PhoneGap
 url: /docs/cordova
 contributors:
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Cordova and PhoneGap

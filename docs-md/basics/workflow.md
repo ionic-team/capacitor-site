@@ -3,7 +3,7 @@ title: Development Workflow
 description: Capacitor Workflow
 url: /docs/basics/workflow
 contributors:
-  - dotnetkow
+  - dotNetkow
   - mlynch
 ---
 

@@ -6,7 +6,7 @@ contributors:
   - mlynch
   - bensperry
   - jcesarmobile
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Capacitor: Cross-platform Native Runtime for Web Apps

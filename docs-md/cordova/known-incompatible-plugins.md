@@ -3,7 +3,7 @@ title: Known Incompatible Cordova Plugins
 description: Known Incompatible Cordova Plugins
 url: /docs/cordova/known-incompatible-plugins
 contributors:
-  - dotnetkow
+  - dotNetkow
 ---
 
 # Known Incompatible Cordova Plugins
