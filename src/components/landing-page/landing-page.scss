@@ -275,7 +275,9 @@ section {
   align-items: center;
   letter-spacing: 0px;
   
-  color: #33ACFF;
+  a {
+    color: #33ACFF;
+  }
 }
 
 div.cordova-cta a:hover {
