@@ -38,6 +38,9 @@ export class LandingPage {
                   </div>
                 </hgroup>
                 <img class="hero__platforms" src="/assets/img/supported-icons.png" alt="Supported platforms" />
+                <p class="cordova-cta">
+                  Migrate from <FancyUnderline>Cordova</FancyUnderline>
+                </p>
               </Col>
               <Col md={6} sm={6} xs={6} cols={12} class="hero__graphic">
                 <img src="/assets/img/landing/hero-graphic.png" alt="Capacitor Architecture Diagram" />

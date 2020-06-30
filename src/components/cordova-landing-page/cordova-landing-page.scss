@@ -2,13 +2,12 @@
 
 :host {
   display: block;
+  scroll-behavior: smooth;
 }
 
 .hero {
   margin-bottom: 96px;
-
-  background: url('/assets/img/landing/bg.png') no-repeat transparent;
-  background-size: cover;
+  text-align: center;
 
   img {
     max-width: 100%;

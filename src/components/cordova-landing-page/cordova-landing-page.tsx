@@ -1,7 +1,7 @@
 import { Component, h, Host, State } from '@stencil/core';
 
 import Helmet from '@stencil/helmet';
-import { ResponsiveContainer, Grid, Col, Paragraph, Heading } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col, Paragraph, Heading, AnchorButton } from '@ionic-internal/sites-shared';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 
 @Component({
@@ -19,14 +19,17 @@ export class CordovaLandingPage {
         <section class="hero">
           <ResponsiveContainer>
             <Grid>
-              <Col md={8} sm={8} xs={8} cols={12}>
+              <Col md={12} sm={12} xs={12} cols={12}>
                 <hgroup class="hero__heading">
                   <Heading level={2}>
                     Cordova to Capacitor Migration
                   </Heading>
                   <Heading level={3}>
-                  99% backward-compatibility with Cordova and a modern development experience. <a href="/docs/cordova" target="_blank">Learn more.</a>
+                  A modern development experience and 99% backward-compatibility with Cordova.
                   </Heading>
+                  <AnchorButton href="#code-branch" id="get-started">
+                      Get Started
+                  </AnchorButton>
                 </hgroup>
               </Col>
             </Grid>
@@ -51,7 +54,7 @@ const GettingStartedSection = ({ selectedCodeTab, setSelectedCodeTab}: { selecte
       <Grid class="section--getting-started__step">
         <Col cols={1}>01</Col>
         <Col md={5} sm={5} xs={5} cols={12}>
-          <Heading level={3}>Create a new code branch.</Heading>
+          <Heading level={3} id="code-branch">Create a new code branch.</Heading>
           <Paragraph>
             Recommended, but not required.
           </Paragraph>
