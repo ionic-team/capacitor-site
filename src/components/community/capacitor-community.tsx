@@ -48,6 +48,9 @@ export class CapacitorCommunity {
             </Col>
           </Grid>
         </ResponsiveContainer>
+        <pre-footer />
+        <newsletter-signup />
+        <capacitor-site-footer />
       </Host>
     );
   }
