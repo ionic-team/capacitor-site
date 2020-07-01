@@ -30,18 +30,18 @@ export class CapacitorCommunity {
             </Col>
             <Col md={4} sm={4} xs={4} cols={12}>
               <a href="https://github.com/capacitor-community">
-                <img src="/assets/img/community/support-community.png" alt="GitHub Discussions" />
+                <img src="/assets/img/community/support-community.png" alt="Community Organization" />
               </a>
-              <Heading level={2}>Capacitor Community</Heading>
+              <Heading level={2}>Community Organization</Heading>
               <Paragraph>
                 View a list of curated community plugins to enhance your app even more. From music controls, advanced native HTTP, and more
               </Paragraph>
             </Col>
             <Col md={4} sm={4} xs={4} cols={12}>
               <a href="https://twitter.com/capacitorjs">
-                <img src="/assets/img/community/support-twitter.png" alt="GitHub Discussions" />
+                <img src="/assets/img/community/support-twitter.png" alt="Capacitor Twitter" />
               </a>
-              <Heading level={2}>Twitter</Heading>
+              <Heading level={2}>Capacitor Twitter</Heading>
               <Paragraph>
                 Get the latest news and join the community by following us on Twitter
               </Paragraph>
