@@ -1,11 +1,16 @@
 :host {
   display: block;
-  padding: 80px 0 80px;
+  padding: 0 0 80px;
 }
 
 .copyright {
   p {
+    font-family: 'Inter';
     color: var(--c-indigo-70);
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    line-height: 1.6em;
+    margin: 0;
   }
   a {
     color: var(--c-indigo-70);
@@ -15,14 +20,17 @@
 
 img.logo {
   width: 106px;
+  margin-bottom: 7px;
 }
 
 .ui-heading {
   color: var(--c-carbon-80);
+  margin-bottom: 11px;
 }
 
 ul li {
-  margin-top: 6px;
+  margin-top: 7px;
+  letter-spacing: 0;
 }
 
 ul li a {

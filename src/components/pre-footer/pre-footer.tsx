@@ -27,7 +27,7 @@ export class PreFooter {
                 <img src="/assets/img/native-apis.png" alt="Explore the Native Plugins" />
                 <Heading level={4}>Explore Native Plugins <span class="arrow">-&gt;</span></Heading>
                 <p>
-                  Explore Native APIs that are available to all Capacitor apps
+                  Explore Native Plugins that are available to all Capacitor apps
                 </p>
               </a>
             </Col>
