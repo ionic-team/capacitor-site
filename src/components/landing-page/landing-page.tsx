@@ -37,6 +37,9 @@ export class LandingPage {
                     </AnchorButton>
                   </div>
                 </hgroup>
+                <div class="cordova-cta">
+                  <a href="/cordova">Migrating from Cordova {"->"}</a>
+                </div>
                 <img class="hero__platforms" src="/assets/img/supported-icons.png" alt="Supported platforms" />
               </Col>
               <Col md={6} sm={6} xs={6} cols={12} class="hero__graphic">
