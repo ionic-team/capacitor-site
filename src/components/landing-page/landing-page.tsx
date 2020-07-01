@@ -98,7 +98,7 @@ export class LandingPage {
             </hgroup>
             <Grid>
               {[
-                { 
+                {
                   key: 'camera',
                   name: 'Camera',
                   desc: 'Capture, save photos, and configure hardware parameters like focus and white balance.'
@@ -183,8 +183,8 @@ export class LandingPage {
             </Grid>
           </section>
         </ResponsiveContainer>
-        <newsletter-signup />
         <pre-footer />
+        <newsletter-signup />
         <capacitor-site-footer />
       </Host>
     );

@@ -1,9 +1,13 @@
 @use '../../global/variables';
 
 .newsletter {
-  padding: 48px 0;
+  padding: 62px 0;
   border-top: 1px solid var(--c-indigo-20);
-  border-bottom: 1px solid var(--c-indigo-20);
+
+  .ui-heading {
+    font-weight: 500;
+    margin: 2px 0 6px;
+  }
 
   .ui-grid {
     align-items: center;
@@ -30,17 +34,23 @@
     }
     p {
       margin: 0;
+      letter-spacing: 0;
       line-height: 23px;
+      font-size: 14px;
     }
   }
 
   form {
     position:relative;
     display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2px;
 
     input {
-      flex: 1;
-      padding: 5px 10px 5px 16px;
+      font-family: 'Inter';
+      flex: 0 0 359px;
+      padding: 5px 10px 5px 15px;
+      letter-spacing: -0.02em;
       margin-right: 8px;
       width: 200px;
       min-height: calc(100% - 1px);
@@ -58,9 +68,15 @@
     }
 
     button {
+      font-family: 'Inter';
       flex: 0;
       background-color: #119EFF;
       color: white;
+      line-height: 20px;
+      letter-spacing: -0.02em;
+      border-radius: 8px;
+      padding: 15px 16px 13px 16px;
+      margin-left: 5px;
     }
 
   }

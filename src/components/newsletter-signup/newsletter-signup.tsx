@@ -45,8 +45,8 @@ export class NewsletterSignup {
         'Content-Type': 'application/json'
       },
       redirect: 'follow',
-      referrerPolicy: 'no-referrer', 
-      body: JSON.stringify(data) 
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data)
     });
 
     response.status == 200 ? this.emailSuccess = true : this.emailInvalid = true;
@@ -59,10 +59,9 @@ export class NewsletterSignup {
           <Grid>
             <Col md={6} sm={6} xs={6} cols={12}>
               <hgroup>
-                <img src="/assets/img/newsletter-icon.png" alt="newsletter" />
                 <div>
-                  <Heading level={4}>The Capacitor Newsletter</Heading>
-                  <p>Keep up to date with the latest Capacitor news and updates</p>
+                  <Heading level={4}>Join our Newsletter</Heading>
+                  <p>Keep up to date with all the latest Capacitor news and updates</p>
                 </div>
               </hgroup>
             </Col>
@@ -71,11 +70,11 @@ export class NewsletterSignup {
             <form onSubmit={this.sendToHubspot}
                   ref={e => this.emailForm = e}
                   class="sc-newsletter-signup">
-                <input class="sc-newsletter-signup" aria-label="Email address" type="email" placeholder="Email address" name="email" required />
+                <input class="sc-newsletter-signup" aria-label="Email address" type="email" placeholder="Your email address" name="email" required />
                 { this.emailInvalid && <div class="error__message">invalid email address</div> }
-                <Button>Subscribe</Button>      
+                <Button>Subscribe</Button>
             </form> }
-            
+
             { this.emailSuccess &&
             <div class="success__message">
               <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
