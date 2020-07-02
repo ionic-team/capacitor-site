@@ -56,7 +56,6 @@
 .menu-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   height: 64px;
 }
@@ -68,6 +67,7 @@
 
 .menu-header__logo-link {
   margin-top: 7px;
+  max-width: 125px;
 }
 
 .menu-header__docs-link {

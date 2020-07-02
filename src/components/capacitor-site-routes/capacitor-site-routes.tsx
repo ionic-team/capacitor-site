@@ -68,6 +68,18 @@ export class CapacitorSiteRoutes {
             <document-component page={`/docs/${pageName}`} />
           )} />
 
+          <Route path="/docs/plugins">
+            <document-component page="/docs/plugins" template="plugins" />
+          </Route>
+
+          <Route path={match('/docs/plugins/:pageName*')} render={({ pageName }) => (
+            <document-component page={`/docs/plugins/${pageName}`} template="plugins" />
+          )} />
+
+          <Route path={match('/docs/apis/:pageName*')} render={({ pageName }) => (
+            <document-component page={`/docs/apis/${pageName}`} template="plugins" />
+          )} />
+
           <Route path={match('/solution/:solutionId*')} render={({ solutionId }) => (
             <solution-page solutionId={`/solution/${solutionId}`} />
           )} />

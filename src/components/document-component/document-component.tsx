@@ -1,7 +1,8 @@
 import { Component, Listen, Prop, Watch, ComponentInterface, State, h } from '@stencil/core';
 import Helmet from '@stencil/helmet';
 
-import siteStructure from '../../assets/docs-structure.json';
+import docsStructure from '../../assets/docs-structure.json';
+import pluginsStructure from '../../assets/plugins-structure.json';
 import { findItem } from '../../global/site-structure-utils';
 import { SiteStructureItem } from '../../global/definitions';
 import { handleRoutableLinkClick } from '../../utils/route-link';
@@ -13,11 +14,15 @@ import state from '../../store';
   styleUrl: 'document-component.scss'
 })
 export class DocumentComponent implements ComponentInterface {
+  menuStructure;
+
   menuEl!: HTMLDocsMenuElement;
 
   @Prop() pages: string[] = [];
 
   @Prop() page: string = null;
+
+  @Prop() template: 'docs' | 'plugins' = 'docs';
 
   @State() item: SiteStructureItem;
   @State() nextItem: SiteStructureItem;
@@ -30,8 +35,14 @@ export class DocumentComponent implements ComponentInterface {
   }
 
   componentWillLoad() {
-    console.log('Hiding topbar', state.showTopBar);
+    console.log(pluginsStructure);
     state.showTopBar = false;
+    this.menuStructure = docsStructure;
+
+    if (this.template === 'plugins') {
+      this.menuStructure = pluginsStructure;
+    }
+
     return this.fetchNewContent(this.page);
   }
 
@@ -41,7 +52,7 @@ export class DocumentComponent implements ComponentInterface {
       return;
     }
     state.showTopBar = false;
-    const foundData = findItem(siteStructure as SiteStructureItem[], this.page);
+    const foundData = findItem(this.menuStructure as SiteStructureItem[], this.page);
     this.item = foundData.item;
     this.nextItem = foundData.nextItem;
     this.prevItem = foundData.prevItem;
@@ -58,11 +69,12 @@ export class DocumentComponent implements ComponentInterface {
 
         <docs-menu
           ref={ el => this.menuEl = el }
+          template={this.template}
           selectedParent={this.parent}
-          siteStructureList={siteStructure as SiteStructureItem[]} />
+          siteStructureList={this.menuStructure as SiteStructureItem[]} />
 
         <div class="content-container">
-          <docs-header/>
+          <docs-header template={this.template} />
 
           <app-marked fetchPath={this.item.filePath} renderer={(docsContent) => [
             <Helmet>

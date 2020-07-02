@@ -7191,28 +7191,6 @@ class AvcCodeType {
     }; }
 }
 
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function unwrapExports (x) {
-	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-}
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var prismicRichtext_min = createCommonjsModule(function (module, exports) {
-!function(e,t){module.exports=t();}("undefined"!=typeof self?self:commonjsGlobal,function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=9)}([function(e,t,n){var r=n(3);e.exports=function(e){return function t(n){return 0===arguments.length||r(n)?t:e.apply(this,arguments)}};},function(e,t,n){var r=n(0),o=n(3);e.exports=function(e){return function t(n,i){switch(arguments.length){case 0:return t;case 1:return o(n)?t:r(function(t){return e(n,t)});default:return o(n)&&o(i)?t:o(n)?r(function(t){return e(t,i)}):o(i)?r(function(t){return e(n,t)}):e(n,i)}}};},function(e,t,n){var r;function o(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(t,"__esModule",{value:!0}),t.PRIORITIES=t.NODE_TYPES=void 0;var i={heading1:"heading1",heading2:"heading2",heading3:"heading3",heading4:"heading4",heading5:"heading5",heading6:"heading6",paragraph:"paragraph",preformatted:"preformatted",strong:"strong",em:"em",listItem:"list-item",oListItem:"o-list-item",list:"group-list-item",oList:"group-o-list-item",image:"image",embed:"embed",hyperlink:"hyperlink",label:"label",span:"span"};t.NODE_TYPES=i;var u=(o(r={},i.heading1,4),o(r,i.heading2,4),o(r,i.heading3,4),o(r,i.heading4,4),o(r,i.heading5,4),o(r,i.heading6,4),o(r,i.paragraph,3),o(r,i.preformatted,5),o(r,i.strong,6),o(r,i.em,6),o(r,i.oList,1),o(r,i.list,1),o(r,i.listItem,1),o(r,i.oListItem,1),o(r,i.image,1),o(r,i.embed,1),o(r,i.hyperlink,3),o(r,i.label,4),o(r,i.span,7),r);t.PRIORITIES=u;},function(e,t){e.exports=function(e){return null!=e&&"object"==typeof e&&!0===e["@@functional/placeholder"]};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r=d(n(12)),o=d(n(15)),i=d(n(16)),u=d(n(17)),c=d(n(21)),a=d(n(7)),l=n(23),f=n(2),s=n(8);function d(e){return e&&e.__esModule?e:{default:e}}function p(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function h(e){return function(e){if(Array.isArray(e))return e}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}function y(e,t){var n=t.others.reduce(function(n,r){var o=n.inner,i=n.outer,u=function(e,t,n){return n.start<t.start?{inner:s.SpanNode.slice(n,t.start,n.end,e),outer:s.SpanNode.slice(n,n.start,t.start,e)}:n.end>t.end?{inner:s.SpanNode.slice(n,n.start,t.end,e),outer:s.SpanNode.slice(n,t.end,n.end,e)}:{inner:n}}(e,t.elected,r);return {inner:o.concat(u.inner),outer:u.outer?i.concat(u.outer):i}},{inner:[],outer:[]}),r=n.inner,o=n.outer;return [t.elected.setChildren(x(e,r,t.elected.boundaries()))].concat(b(e,o))}function v(e){return function(e,t){return t.reduce(function(t,n){var r=(0, c.default)(t);if(r){if(r.some(function(e){return e.isParentOf(n)}))return (0, u.default)(t).concat([r.concat(n)]);var o=(0, c.default)(r);return o&&e(o,n)?(0, u.default)(t).concat([r.concat(n)]):t.concat([[n]])}return [[n]]},[])}(function(e,t){return e.end>=t.start},(0, i.default)([function(e,t){return e.start-t.start},function(e,t){return e.end-t.end}],e))}function m(e){if(0===e.length)throw new Error("Unable to elect node on empty list");var t=h(e.sort(function(e,t){if(e.isParentOf(t))return -1;if(t.isParentOf(e))return 1;var n=f.PRIORITIES[e.type]-f.PRIORITIES[t.type];return 0===n?e.text.length-t.text.length:n}));return {elected:t[0],others:t.slice(1)}}function x(e,t,n){if(t.length>0)return function(e,t,n){return t.reduce(function(r,o,i){var u=[],c=0===i&&o.start>n.lower,a=i===t.length-1&&n.upper>o.end;if(c){var l=new s.TextNode(n.lower,o.start,e.slice(n.lower,o.start));u=u.concat(l);}else{var f=t[i-1];if(f&&o.start>f.end){var d=e.slice(f.end,o.start),p=new s.TextNode(f.end,o.start,d);u=u.concat(p);}}if(u=u.concat(o),a){var h=new s.TextNode(o.end,n.upper,e.slice(o.end,n.upper));u=u.concat(h);}return r.concat(u)},[])}(e,b(e,t),n);var r=e.slice(n.lower,n.upper);return [new s.TextNode(n.lower,n.upper,r)]}function b(e,t){var n=v((0, o.default)(function(e){return e.start},t)).map(m),i=(0, r.default)(n.map(function(t){return y(e,t)}));return (0, o.default)(function(e){return e.start},i)}var g=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e);}var t,n,r;return t=e,r=[{key:"fromRichText",value:function(e){return {key:(0, a.default)(),children:e.reduce(function(e,t,n){if(l.RichTextBlock.isEmbedBlock(t.type)||l.RichTextBlock.isImageBlock(t.type))return e.concat(new s.BlockNode(t.type,t));var r=function(e){var t=e.spans.map(function(t){var n=e.text.slice(t.start,t.end);return new s.SpanNode(t.start,t.end,t.type,n,[],t)}),n={lower:0,upper:e.text.length};return x(e.text,t,n)}(t),o=e[e.length-1];if(l.RichTextBlock.isListItem(t.type)&&o&&o instanceof s.ListBlockNode){var i=new s.ListItemBlockNode(t,r),c=o.addChild(i);return (0, u.default)(e).concat(c)}if(l.RichTextBlock.isOrderedListItem(t.type)&&o&&o instanceof s.OrderedListBlockNode){var a=new s.OrderedListItemBlockNode(t,r),f=o.addChild(a);return (0, u.default)(e).concat(f)}if(l.RichTextBlock.isListItem(t.type)){var d=new s.ListItemBlockNode(t,r),p=new s.ListBlockNode(l.RichTextBlock.emptyList(),[d]);return e.concat(p)}if(l.RichTextBlock.isOrderedListItem(t.type)){var h=new s.OrderedListItemBlockNode(t,r),y=new s.OrderedListBlockNode(l.RichTextBlock.emptyOrderedList(),[h]);return e.concat(y)}return e.concat(new s.BlockNode(t.type,t,r))},[])}}}],(n=null)&&p(t.prototype,n),r&&p(t,r),e}();t.default=g;},function(e,t){e.exports=Array.isArray||function(e){return null!=e&&e.length>=0&&"[object Array]"===Object.prototype.toString.call(e)};},function(e,t){e.exports=function(e){return "[object String]"===Object.prototype.toString.call(e)};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(){var e=(new Date).getTime();return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(t){var n=(e+16*Math.random())%16|0;return e=Math.floor(e/16),("x"==t?n:3&n|8).toString(16)})};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.ListBlockNode=t.OrderedListBlockNode=t.OrderedListItemBlockNode=t.ListItemBlockNode=t.BlockNode=t.TextNode=t.SpanNode=t.Node=void 0;var r,o=(r=n(7))&&r.__esModule?r:{default:r},i=n(2);function u(e){return (u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function c(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function a(e,t,n){return t&&c(e.prototype,t),n&&c(e,n),e}function l(e,t){return !t||"object"!==u(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}(e):t}function f(e){return (f=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&d(e,t);}function d(e,t){return (d=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function p(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var h=function e(t,n,r){p(this,e),this.key=(0, o.default)(),this.type=t,this.element=n,this.children=r;};t.Node=h;var y=function(e){function t(e,n,r,o,i,u){var c;return p(this,t),(c=l(this,f(t).call(this,r,u,i))).start=e,c.end=n,c.text=o,c.children=i,c}return s(t,h),a(t,[{key:"boundaries",value:function(){return {lower:this.start,upper:this.end}}},{key:"isParentOf",value:function(e){return this.start<=e.start&&this.end>=e.end}},{key:"setChildren",value:function(e){return new t(this.start,this.end,this.type,this.text,e,this.element)}}],[{key:"slice",value:function(e,n,r,o){return new t(n,r,e.type,o.slice(n,r),e.children,e.element)}}]),t}();t.SpanNode=y;var v=function(e){function t(e,n,r){p(this,t);var o={type:i.NODE_TYPES.span,start:e,end:n,text:r};return l(this,f(t).call(this,e,n,i.NODE_TYPES.span,r,[],o))}return s(t,y),t}();t.TextNode=v;var m=function(e){function t(e,n){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:[];return p(this,t),l(this,f(t).call(this,e,n,r))}return s(t,h),t}();t.BlockNode=m;var x=function(e){function t(e,n){return p(this,t),l(this,f(t).call(this,i.NODE_TYPES.listItem,e,n))}return s(t,m),t}();t.ListItemBlockNode=x;var b=function(e){function t(e,n){return p(this,t),l(this,f(t).call(this,i.NODE_TYPES.oListItem,e,n))}return s(t,m),t}();t.OrderedListItemBlockNode=b;var g=function(e){function t(e,n){return p(this,t),l(this,f(t).call(this,i.NODE_TYPES.oList,e,n))}return s(t,m),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.OrderedListBlockNode=g;var O=function(e){function t(e,n){return p(this,t),l(this,f(t).call(this,i.NODE_TYPES.list,e,n))}return s(t,m),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.ListBlockNode=O;},function(e,t,n){e.exports=n(10);},function(e,t,n){var r=c(n(11)),o=c(n(4)),i=c(n(24)),u=n(2);function c(e){return e&&e.__esModule?e:{default:e}}e.exports={asText:r.default,asTree:o.default.fromRichText,serialize:i.default,Elements:u.NODE_TYPES};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r=function(e,t){var n="string"==typeof t?t:" ";return e.map(function(e){return e.text}).join(n)};t.default=r;},function(e,t,n){var r=n(0)(n(13)(!0));e.exports=r;},function(e,t,n){var r=n(14);e.exports=function(e){return function t(n){for(var o,i,u,c=[],a=0,l=n.length;a<l;){if(r(n[a]))for(u=0,i=(o=e?t(n[a]):n[a]).length;u<i;)c[c.length]=o[u],u+=1;else c[c.length]=n[a];a+=1;}return c}};},function(e,t,n){var r=n(0),o=n(5),i=n(6),u=r(function(e){return !!o(e)||!!e&&("object"==typeof e&&(!i(e)&&(1===e.nodeType?!!e.length:0===e.length||e.length>0&&(e.hasOwnProperty(0)&&e.hasOwnProperty(e.length-1)))))});e.exports=u;},function(e,t,n){var r=n(1)(function(e,t){return Array.prototype.slice.call(t,0).sort(function(t,n){var r=e(t),o=e(n);return r<o?-1:r>o?1:0})});e.exports=r;},function(e,t,n){var r=n(1)(function(e,t){return Array.prototype.slice.call(t,0).sort(function(t,n){for(var r=0,o=0;0===r&&o<e.length;)r=e[o](t,n),o+=1;return r})});e.exports=r;},function(e,t,n){var r=n(18)(0,-1);e.exports=r;},function(e,t,n){var r=n(19),o=n(20)(r("slice",function(e,t,n){return Array.prototype.slice.call(n,e,t)}));e.exports=o;},function(e,t,n){var r=n(5);e.exports=function(e,t){return function(){var n=arguments.length;if(0===n)return t();var o=arguments[n-1];return r(o)||"function"!=typeof o[e]?t.apply(this,arguments):o[e].apply(o,Array.prototype.slice.call(arguments,0,n-1))}};},function(e,t,n){var r=n(0),o=n(1),i=n(3);e.exports=function(e){return function t(n,u,c){switch(arguments.length){case 0:return t;case 1:return i(n)?t:o(function(t,r){return e(n,t,r)});case 2:return i(n)&&i(u)?t:i(n)?o(function(t,n){return e(t,u,n)}):i(u)?o(function(t,r){return e(n,t,r)}):r(function(t){return e(n,u,t)});default:return i(n)&&i(u)&&i(c)?t:i(n)&&i(u)?o(function(t,n){return e(t,n,c)}):i(n)&&i(c)?o(function(t,n){return e(t,u,n)}):i(u)&&i(c)?o(function(t,r){return e(n,t,r)}):i(n)?r(function(t){return e(t,u,c)}):i(u)?r(function(t){return e(n,t,c)}):i(c)?r(function(t){return e(n,u,t)}):e(n,u,c)}}};},function(e,t,n){var r=n(22)(-1);e.exports=r;},function(e,t,n){var r=n(1),o=n(6),i=r(function(e,t){var n=e<0?t.length+e:e;return o(t)?t.charAt(n):t[n]});e.exports=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.RichTextBlock=void 0;var r=n(2);function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}var i=function(){function e(t,n,r){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.type=t,this.text=n,this.spans=r;}var t,n,i;return t=e,i=[{key:"isEmbedBlock",value:function(e){return e===r.NODE_TYPES.embed}},{key:"isImageBlock",value:function(e){return e===r.NODE_TYPES.image}},{key:"isList",value:function(e){return e===r.NODE_TYPES.list}},{key:"isOrderedList",value:function(e){return e===r.NODE_TYPES.oList}},{key:"isListItem",value:function(e){return e===r.NODE_TYPES.listItem}},{key:"isOrderedListItem",value:function(e){return e===r.NODE_TYPES.oListItem}},{key:"emptyList",value:function(){return {type:r.NODE_TYPES.list,spans:[],text:""}}},{key:"emptyOrderedList",value:function(){return {type:r.NODE_TYPES.oList,spans:[],text:""}}}],(n=null)&&o(t.prototype,n),i&&o(t,i),e}();t.RichTextBlock=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r,o=(r=n(4))&&r.__esModule?r:{default:r},i=n(8);var u=function(e,t,n){return o.default.fromRichText(e).children.map(function(e,r){return function(e,t,n,r){return function e(n,o){var u=n instanceof i.SpanNode?n.text:null,c=n.children.reduce(function(t,n,r){return t.concat([e(n,r)])},[]),a=r&&r(n.type,n.element,u,c,o);return a||t(n.type,n.element,u,c,o)}(e,n)}(e,t,r,n)})};t.default=u;}])});
-});
-
-var PrismicRichTextLib = unwrapExports(prismicRichtext_min);
-
-var prismicHelpers_min = createCommonjsModule(function (module, exports) {
-!function(e,t){module.exports=t();}("undefined"!=typeof self?self:commonjsGlobal,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){e.exports=n(1);},function(e,t,n){var r=n(2),o=n(3);e.exports={Link:r,Date:o};},function(e,t,n){e.exports={url:function(e,t){if(e&&[e.link_type,e._linkType,e.linkType].some((function(e){return e&&["Document","Link.Document","Link.document"].includes(e)}))&&t&&"function"==typeof t){var n=t(e);if(n)return n}return e&&e.url?e.url:""}};},function(e,t){e.exports=function(e){if(!e)return null;var t=24==e.length?"".concat(e.substring(0,22),":").concat(e.substring(22,24)):e;return new Date(t)};}])}));
-});
-
-var PrismicHelpers = unwrapExports(prismicHelpers_min);
-
 let defaultRouter;
 const createRouter = (opts) => {
     var _a;
@@ -7591,6 +7569,43 @@ const match = (pathname, options = {}) => {
     };
 };
 
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function unwrapExports (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+function getCjsExportFromNamespace (n) {
+	return n && n['default'] || n;
+}
+
+var prismicRichtext_min = createCommonjsModule(function (module, exports) {
+!function(e,t){module.exports=t();}("undefined"!=typeof self?self:commonjsGlobal,function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=9)}([function(e,t,n){var r=n(3);e.exports=function(e){return function t(n){return 0===arguments.length||r(n)?t:e.apply(this,arguments)}};},function(e,t,n){var r=n(0),o=n(3);e.exports=function(e){return function t(n,i){switch(arguments.length){case 0:return t;case 1:return o(n)?t:r(function(t){return e(n,t)});default:return o(n)&&o(i)?t:o(n)?r(function(t){return e(t,i)}):o(i)?r(function(t){return e(n,t)}):e(n,i)}}};},function(e,t,n){var r;function o(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(t,"__esModule",{value:!0}),t.PRIORITIES=t.NODE_TYPES=void 0;var i={heading1:"heading1",heading2:"heading2",heading3:"heading3",heading4:"heading4",heading5:"heading5",heading6:"heading6",paragraph:"paragraph",preformatted:"preformatted",strong:"strong",em:"em",listItem:"list-item",oListItem:"o-list-item",list:"group-list-item",oList:"group-o-list-item",image:"image",embed:"embed",hyperlink:"hyperlink",label:"label",span:"span"};t.NODE_TYPES=i;var u=(o(r={},i.heading1,4),o(r,i.heading2,4),o(r,i.heading3,4),o(r,i.heading4,4),o(r,i.heading5,4),o(r,i.heading6,4),o(r,i.paragraph,3),o(r,i.preformatted,5),o(r,i.strong,6),o(r,i.em,6),o(r,i.oList,1),o(r,i.list,1),o(r,i.listItem,1),o(r,i.oListItem,1),o(r,i.image,1),o(r,i.embed,1),o(r,i.hyperlink,3),o(r,i.label,4),o(r,i.span,7),r);t.PRIORITIES=u;},function(e,t){e.exports=function(e){return null!=e&&"object"==typeof e&&!0===e["@@functional/placeholder"]};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r=d(n(12)),o=d(n(15)),i=d(n(16)),u=d(n(17)),c=d(n(21)),a=d(n(7)),l=n(23),f=n(2),s=n(8);function d(e){return e&&e.__esModule?e:{default:e}}function p(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function h(e){return function(e){if(Array.isArray(e))return e}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}function y(e,t){var n=t.others.reduce(function(n,r){var o=n.inner,i=n.outer,u=function(e,t,n){return n.start<t.start?{inner:s.SpanNode.slice(n,t.start,n.end,e),outer:s.SpanNode.slice(n,n.start,t.start,e)}:n.end>t.end?{inner:s.SpanNode.slice(n,n.start,t.end,e),outer:s.SpanNode.slice(n,t.end,n.end,e)}:{inner:n}}(e,t.elected,r);return {inner:o.concat(u.inner),outer:u.outer?i.concat(u.outer):i}},{inner:[],outer:[]}),r=n.inner,o=n.outer;return [t.elected.setChildren(x(e,r,t.elected.boundaries()))].concat(b(e,o))}function v(e){return function(e,t){return t.reduce(function(t,n){var r=(0, c.default)(t);if(r){if(r.some(function(e){return e.isParentOf(n)}))return (0, u.default)(t).concat([r.concat(n)]);var o=(0, c.default)(r);return o&&e(o,n)?(0, u.default)(t).concat([r.concat(n)]):t.concat([[n]])}return [[n]]},[])}(function(e,t){return e.end>=t.start},(0, i.default)([function(e,t){return e.start-t.start},function(e,t){return e.end-t.end}],e))}function m(e){if(0===e.length)throw new Error("Unable to elect node on empty list");var t=h(e.sort(function(e,t){if(e.isParentOf(t))return -1;if(t.isParentOf(e))return 1;var n=f.PRIORITIES[e.type]-f.PRIORITIES[t.type];return 0===n?e.text.length-t.text.length:n}));return {elected:t[0],others:t.slice(1)}}function x(e,t,n){if(t.length>0)return function(e,t,n){return t.reduce(function(r,o,i){var u=[],c=0===i&&o.start>n.lower,a=i===t.length-1&&n.upper>o.end;if(c){var l=new s.TextNode(n.lower,o.start,e.slice(n.lower,o.start));u=u.concat(l);}else{var f=t[i-1];if(f&&o.start>f.end){var d=e.slice(f.end,o.start),p=new s.TextNode(f.end,o.start,d);u=u.concat(p);}}if(u=u.concat(o),a){var h=new s.TextNode(o.end,n.upper,e.slice(o.end,n.upper));u=u.concat(h);}return r.concat(u)},[])}(e,b(e,t),n);var r=e.slice(n.lower,n.upper);return [new s.TextNode(n.lower,n.upper,r)]}function b(e,t){var n=v((0, o.default)(function(e){return e.start},t)).map(m),i=(0, r.default)(n.map(function(t){return y(e,t)}));return (0, o.default)(function(e){return e.start},i)}var g=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e);}var t,n,r;return t=e,r=[{key:"fromRichText",value:function(e){return {key:(0, a.default)(),children:e.reduce(function(e,t,n){if(l.RichTextBlock.isEmbedBlock(t.type)||l.RichTextBlock.isImageBlock(t.type))return e.concat(new s.BlockNode(t.type,t));var r=function(e){var t=e.spans.map(function(t){var n=e.text.slice(t.start,t.end);return new s.SpanNode(t.start,t.end,t.type,n,[],t)}),n={lower:0,upper:e.text.length};return x(e.text,t,n)}(t),o=e[e.length-1];if(l.RichTextBlock.isListItem(t.type)&&o&&o instanceof s.ListBlockNode){var i=new s.ListItemBlockNode(t,r),c=o.addChild(i);return (0, u.default)(e).concat(c)}if(l.RichTextBlock.isOrderedListItem(t.type)&&o&&o instanceof s.OrderedListBlockNode){var a=new s.OrderedListItemBlockNode(t,r),f=o.addChild(a);return (0, u.default)(e).concat(f)}if(l.RichTextBlock.isListItem(t.type)){var d=new s.ListItemBlockNode(t,r),p=new s.ListBlockNode(l.RichTextBlock.emptyList(),[d]);return e.concat(p)}if(l.RichTextBlock.isOrderedListItem(t.type)){var h=new s.OrderedListItemBlockNode(t,r),y=new s.OrderedListBlockNode(l.RichTextBlock.emptyOrderedList(),[h]);return e.concat(y)}return e.concat(new s.BlockNode(t.type,t,r))},[])}}}],(n=null)&&p(t.prototype,n),r&&p(t,r),e}();t.default=g;},function(e,t){e.exports=Array.isArray||function(e){return null!=e&&e.length>=0&&"[object Array]"===Object.prototype.toString.call(e)};},function(e,t){e.exports=function(e){return "[object String]"===Object.prototype.toString.call(e)};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(){var e=(new Date).getTime();return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(t){var n=(e+16*Math.random())%16|0;return e=Math.floor(e/16),("x"==t?n:3&n|8).toString(16)})};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.ListBlockNode=t.OrderedListBlockNode=t.OrderedListItemBlockNode=t.ListItemBlockNode=t.BlockNode=t.TextNode=t.SpanNode=t.Node=void 0;var r,o=(r=n(7))&&r.__esModule?r:{default:r},i=n(2);function u(e){return (u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function c(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function a(e,t,n){return t&&c(e.prototype,t),n&&c(e,n),e}function l(e,t){return !t||"object"!==u(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}(e):t}function f(e){return (f=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&d(e,t);}function d(e,t){return (d=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function p(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var h=function e(t,n,r){p(this,e),this.key=(0, o.default)(),this.type=t,this.element=n,this.children=r;};t.Node=h;var y=function(e){function t(e,n,r,o,i,u){var c;return p(this,t),(c=l(this,f(t).call(this,r,u,i))).start=e,c.end=n,c.text=o,c.children=i,c}return s(t,h),a(t,[{key:"boundaries",value:function(){return {lower:this.start,upper:this.end}}},{key:"isParentOf",value:function(e){return this.start<=e.start&&this.end>=e.end}},{key:"setChildren",value:function(e){return new t(this.start,this.end,this.type,this.text,e,this.element)}}],[{key:"slice",value:function(e,n,r,o){return new t(n,r,e.type,o.slice(n,r),e.children,e.element)}}]),t}();t.SpanNode=y;var v=function(e){function t(e,n,r){p(this,t);var o={type:i.NODE_TYPES.span,start:e,end:n,text:r};return l(this,f(t).call(this,e,n,i.NODE_TYPES.span,r,[],o))}return s(t,y),t}();t.TextNode=v;var m=function(e){function t(e,n){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:[];return p(this,t),l(this,f(t).call(this,e,n,r))}return s(t,h),t}();t.BlockNode=m;var x=function(e){function t(e,n){return p(this,t),l(this,f(t).call(this,i.NODE_TYPES.listItem,e,n))}return s(t,m),t}();t.ListItemBlockNode=x;var b=function(e){function t(e,n){return p(this,t),l(this,f(t).call(this,i.NODE_TYPES.oListItem,e,n))}return s(t,m),t}();t.OrderedListItemBlockNode=b;var g=function(e){function t(e,n){return p(this,t),l(this,f(t).call(this,i.NODE_TYPES.oList,e,n))}return s(t,m),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.OrderedListBlockNode=g;var O=function(e){function t(e,n){return p(this,t),l(this,f(t).call(this,i.NODE_TYPES.list,e,n))}return s(t,m),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.ListBlockNode=O;},function(e,t,n){e.exports=n(10);},function(e,t,n){var r=c(n(11)),o=c(n(4)),i=c(n(24)),u=n(2);function c(e){return e&&e.__esModule?e:{default:e}}e.exports={asText:r.default,asTree:o.default.fromRichText,serialize:i.default,Elements:u.NODE_TYPES};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r=function(e,t){var n="string"==typeof t?t:" ";return e.map(function(e){return e.text}).join(n)};t.default=r;},function(e,t,n){var r=n(0)(n(13)(!0));e.exports=r;},function(e,t,n){var r=n(14);e.exports=function(e){return function t(n){for(var o,i,u,c=[],a=0,l=n.length;a<l;){if(r(n[a]))for(u=0,i=(o=e?t(n[a]):n[a]).length;u<i;)c[c.length]=o[u],u+=1;else c[c.length]=n[a];a+=1;}return c}};},function(e,t,n){var r=n(0),o=n(5),i=n(6),u=r(function(e){return !!o(e)||!!e&&("object"==typeof e&&(!i(e)&&(1===e.nodeType?!!e.length:0===e.length||e.length>0&&(e.hasOwnProperty(0)&&e.hasOwnProperty(e.length-1)))))});e.exports=u;},function(e,t,n){var r=n(1)(function(e,t){return Array.prototype.slice.call(t,0).sort(function(t,n){var r=e(t),o=e(n);return r<o?-1:r>o?1:0})});e.exports=r;},function(e,t,n){var r=n(1)(function(e,t){return Array.prototype.slice.call(t,0).sort(function(t,n){for(var r=0,o=0;0===r&&o<e.length;)r=e[o](t,n),o+=1;return r})});e.exports=r;},function(e,t,n){var r=n(18)(0,-1);e.exports=r;},function(e,t,n){var r=n(19),o=n(20)(r("slice",function(e,t,n){return Array.prototype.slice.call(n,e,t)}));e.exports=o;},function(e,t,n){var r=n(5);e.exports=function(e,t){return function(){var n=arguments.length;if(0===n)return t();var o=arguments[n-1];return r(o)||"function"!=typeof o[e]?t.apply(this,arguments):o[e].apply(o,Array.prototype.slice.call(arguments,0,n-1))}};},function(e,t,n){var r=n(0),o=n(1),i=n(3);e.exports=function(e){return function t(n,u,c){switch(arguments.length){case 0:return t;case 1:return i(n)?t:o(function(t,r){return e(n,t,r)});case 2:return i(n)&&i(u)?t:i(n)?o(function(t,n){return e(t,u,n)}):i(u)?o(function(t,r){return e(n,t,r)}):r(function(t){return e(n,u,t)});default:return i(n)&&i(u)&&i(c)?t:i(n)&&i(u)?o(function(t,n){return e(t,n,c)}):i(n)&&i(c)?o(function(t,n){return e(t,u,n)}):i(u)&&i(c)?o(function(t,r){return e(n,t,r)}):i(n)?r(function(t){return e(t,u,c)}):i(u)?r(function(t){return e(n,t,c)}):i(c)?r(function(t){return e(n,u,t)}):e(n,u,c)}}};},function(e,t,n){var r=n(22)(-1);e.exports=r;},function(e,t,n){var r=n(1),o=n(6),i=r(function(e,t){var n=e<0?t.length+e:e;return o(t)?t.charAt(n):t[n]});e.exports=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.RichTextBlock=void 0;var r=n(2);function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}var i=function(){function e(t,n,r){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.type=t,this.text=n,this.spans=r;}var t,n,i;return t=e,i=[{key:"isEmbedBlock",value:function(e){return e===r.NODE_TYPES.embed}},{key:"isImageBlock",value:function(e){return e===r.NODE_TYPES.image}},{key:"isList",value:function(e){return e===r.NODE_TYPES.list}},{key:"isOrderedList",value:function(e){return e===r.NODE_TYPES.oList}},{key:"isListItem",value:function(e){return e===r.NODE_TYPES.listItem}},{key:"isOrderedListItem",value:function(e){return e===r.NODE_TYPES.oListItem}},{key:"emptyList",value:function(){return {type:r.NODE_TYPES.list,spans:[],text:""}}},{key:"emptyOrderedList",value:function(){return {type:r.NODE_TYPES.oList,spans:[],text:""}}}],(n=null)&&o(t.prototype,n),i&&o(t,i),e}();t.RichTextBlock=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r,o=(r=n(4))&&r.__esModule?r:{default:r},i=n(8);var u=function(e,t,n){return o.default.fromRichText(e).children.map(function(e,r){return function(e,t,n,r){return function e(n,o){var u=n instanceof i.SpanNode?n.text:null,c=n.children.reduce(function(t,n,r){return t.concat([e(n,r)])},[]),a=r&&r(n.type,n.element,u,c,o);return a||t(n.type,n.element,u,c,o)}(e,n)}(e,t,r,n)})};t.default=u;}])});
+});
+
+var PrismicRichTextLib = unwrapExports(prismicRichtext_min);
+
+var prismicHelpers_min = createCommonjsModule(function (module, exports) {
+!function(e,t){module.exports=t();}("undefined"!=typeof self?self:commonjsGlobal,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){e.exports=n(1);},function(e,t,n){var r=n(2),o=n(3);e.exports={Link:r,Date:o};},function(e,t,n){e.exports={url:function(e,t){if(e&&[e.link_type,e._linkType,e.linkType].some((function(e){return e&&["Document","Link.Document","Link.document"].includes(e)}))&&t&&"function"==typeof t){var n=t(e);if(n)return n}return e&&e.url?e.url:""}};},function(e,t){e.exports=function(e){if(!e)return null;var t=24==e.length?"".concat(e.substring(0,22),":").concat(e.substring(22,24)):e;return new Date(t)};}])}));
+});
+
+var PrismicHelpers = unwrapExports(prismicHelpers_min);
+
+let defaultRouter$1;
+const href$1 = (href, router = defaultRouter$1) => {
+    return {
+        href,
+        onClick: (ev) => {
+            ev.preventDefault();
+            router.push(href);
+        },
+    };
+};
+
 function createScript({ property, src, id }) {
     if (!window) {
         return;
@@ -7651,7 +7666,12 @@ const applyProps = (props, extra = {}) => {
     return Array.from(allKeys).reduce((v, k) => {
         if (k in extra) {
             if (k === 'class') {
-                v[k] = `${extra[k]} ${props[k] ? props[k] : ''}`;
+                if (typeof extra[k] === 'string') {
+                    v[k] = `${extra[k]} ${props[k] ? props[k] : ''}`;
+                }
+                else {
+                    v[k] = Object.assign(Object.assign({}, props[k]), extra[k]);
+                }
             }
             else {
                 v[k] = extra[k];
@@ -7922,17 +7942,17 @@ function serializeStandardTag(Tag, element, children, key, extra = {}) {
 function serializeHyperlink(linkResolver, element, children, key, routerLink = false, router = null) {
     const targetAttr = element.data.target ? { target: element.data.target } : {};
     const relAttr = element.data.target ? { rel: 'noopener' } : {};
-    let href$1 = PrismicHelpers.Link.url(element.data, linkResolver);
+    let href = PrismicHelpers.Link.url(element.data, linkResolver);
     if (element.data.url) {
         const parsed = new URL(element.data.url);
         if (parsed.hostname.indexOf('.') < 0) {
             // Allow relative links
-            href$1 = `/${parsed.hostname}${parsed.pathname + parsed.search + parsed.hash}`;
+            href = `/${parsed.hostname}${parsed.pathname + parsed.search + parsed.hash}`;
         }
     }
-    const props = Object.assign({ href: href$1 }, targetAttr, relAttr);
+    const props = Object.assign({ href }, targetAttr, relAttr);
     if (routerLink) {
-        return h("a", Object.assign({}, propsWithUniqueKey(props, key), href(props.href, router)), children);
+        return h("a", Object.assign({}, propsWithUniqueKey(props, key), href$1(props.href, router)), children);
     }
     else {
         return h("a", Object.assign({}, propsWithUniqueKey(props, key)), children);
@@ -8296,22 +8316,26 @@ function validateTimezone(_hours, minutes) {
   return minutes >= 0 && minutes <= 59;
 }
 
-const getBlogPostUrl = (doc) => `/blog/${doc.slug}`;
+const Router = createRouter();
+
+const getBlogPostUrl = (doc) => `https://capacitorjs.com/blog/${doc.slug}`;
 const BlogPost = ({ post, single = true }) => {
-    const content = single ? post.html : post.html;
+    const content = single ?
+        post.html :
+        post.preview || post.html;
     return (h("div", { class: "blog-post__wrap" },
         h("div", { class: "blog-post" },
             h(Heading, { level: 2 },
                 h("a", { href: getBlogPostUrl(post) }, post.title)),
             h(PostAuthor, { authorName: post.authorName, dateString: post.date }),
             h(PostContent, { html: content }),
-            single && h("disqus-comments", { url: getBlogPostUrl(post), id: post.slug }))));
+            !single && post.preview ? h(PostContinueReading, { post: post }) : null,
+            single && h("disqus-comments", { url: getBlogPostUrl(post), siteId: 'capacitor', id: post.slug }))));
 };
 const PostContent = ({ html }) => (h("div", { innerHTML: html }));
-/*
-const PostContinueReading = ({ post }: { post: RenderedBlog }) =>
-  <a {...href(getBlogPostUrl(post), Router)}>Continue reading <ion-icon name="arrow-forward" /></a>
-*/
+const PostContinueReading = ({ post }) => h("a", Object.assign({ class: "blog-post__continue-reading" }, href(getBlogPostUrl(post), Router)),
+    "Continue reading ",
+    h("ion-icon", { name: "arrow-forward" }));
 const PostAuthor = ({ authorName, dateString }) => {
     const date = parseISO(dateString);
     return (h("div", { class: "blog-post__author" },
@@ -8329,8 +8353,9 @@ var posts = [
 		authorEmail: "max@ionic.io",
 		slug: "capacitor-announcements-at-ioniconf-2020",
 		date: "2020-06-24T08:00:00.000Z",
-		contents: "---\ntitle: Capacitor announcements at Ioniconf 2020\ndate: 2020-06-24 08:00:00\nauthor: Max Lynch <max@ionic.io>\n---\n\nToday at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.\n\nIn no particular order, we announced:\n\n* Capacitor will be opening up to embrace every modern web app technology and ecosystem. That means expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap.\n* A new [Capacitor Community](https://github.com/capacitor-community) GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.\n* Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses (powered by Ionic Framework under the hood).\n* We've updated the Capacitor site, moved to a new domain ([capacitorjs.com](https://capacitorjs.com)) and a new Twitter handle ([@capacitorjs](https://capacitorjs)).\n\nCapacitor is quickly becoming the focal point of Ionic's open source offering, and we're investing heavily in it. Stay tuned for a ton more Capacitor updates in the coming months!\n",
-		html: "<p>Today at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.</p>\n<p>In no particular order, we announced:</p>\n<ul>\n<li>Capacitor will be opening up to embrace every modern web app technology and ecosystem. That means expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap.</li>\n<li>A new <a href=\"https://github.com/capacitor-community\">Capacitor Community</a> GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.</li>\n<li>Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses (powered by Ionic Framework under the hood).</li>\n<li>We&#39;ve updated the Capacitor site, moved to a new domain (<a href=\"https://capacitorjs.com\">capacitorjs.com</a>) and a new Twitter handle (<a href=\"https://capacitorjs\">@capacitorjs</a>).</li>\n</ul>\n<p>Capacitor is quickly becoming the focal point of Ionic&#39;s open source offering, and we&#39;re investing heavily in it. Stay tuned for a ton more Capacitor updates in the coming months!</p>\n",
+		contents: "---\ntitle: Capacitor announcements at Ioniconf 2020\ndate: 2020-06-24 08:00:00\nauthor: Max Lynch <max@ionic.io>\n---\n\nToday at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.\n\nIn no particular order, we announced:\n\n* [Capacitor opening up to all modern web technologies]($POST#capacitor-opening-up)\n* [The Capacitor Community project]($POST#capacitor-community)\n* [Capacitor Elements]($POST#capacitor-elements)\n* [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)\n* [Updated site and domain]($POST#updated-site-domain-and-docs)\n\n<!--more-->\n\nToday at the first ever official [Ioniconf](https://ioniconf.com/), we unveiled a number of exciting updates to Capacitor and the Capacitor community.\n\nThe conference kicks off a new era for Capacitor and for [Ionic](https://ionic.io/), the company behind Capacitor.\n\nIf you'd like to see the announcements live, the [keynote](https://ioniconf.com/) (along with the rest of the conference) is now [up](https://ioniconf.com/).\n\n## Capacitor opening up\n\nOne of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.\n\nWhile technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.\n\nWith this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.\n\nThe new Capacitor mission is to help _all_ web developers build cross-platform apps with their web development skills.\n\n## Capacitor Community\n\nOne of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.\n\nYesterday, web announced a new [Capacitor Community](https://github.com/capacitor-community) GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.\n\nTo start, we have a number of great plugins and many are in development. Check out the [Http](https://github.com/capacitor-community/http), [Contacts](https://github.com/capacitor-community/contacts), and [Apple Sign In](https://github.com/capacitor-community/apple-sign-in) plugins. We've also started moving the [Electron](https://github.com/capacitor-community/electron) platform to the community org.\n\nEvery project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.\n\n## Capacitor Elements\n\nWe announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.\n\nThese components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.\n\nThe goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.\n\nThis makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.\n\nStay tuned for more updates soon!\n\n## Deploy to App Store for Capacitor\n\nWe announced that [Deploy to App Store](https://ionicframework.com/docs/appflow/destinations/intro), a powerful new feature available in Ionic's DevOps service [Appflow](https://useappflow.com/) that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.\n\nThis feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.\n\nAppflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.\n\n## Updated Site, Domain, and Docs\n\nWe've updated the Capacitor site and moved to a new domain ([capacitorjs.com](https://capacitorjs.com)) and Twitter handle ([@capacitorjs](https://twitter.com/capacitorjs)).\n\nWe also rolled out [updated documentation](/docs) as we embark on a documentation overhaul.\n\n## Stay tuned\n\nCapacitor is quickly becoming the focal point of Ionic's open source offering, and we're investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.\n\nStay tuned for a ton more Capacitor updates in the coming months!",
+		preview: "<p>Today at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.</p>\n<p>In no particular order, we announced:</p>\n<ul>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#capacitor-opening-up\">Capacitor opening up to all modern web technologies</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#capacitor-community\">The Capacitor Community project</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#capacitor-elements\">Capacitor Elements</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#updated-site-domain-and-docs\">Updated site and domain</a></li>\n</ul>\n",
+		html: "<p>Today at the first ever official <a href=\"https://ioniconf.com/\">Ioniconf</a>, we unveiled a number of exciting updates to Capacitor and the Capacitor community.</p>\n<p>The conference kicks off a new era for Capacitor and for <a href=\"https://ionic.io/\">Ionic</a>, the company behind Capacitor.</p>\n<p>If you&#39;d like to see the announcements live, the <a href=\"https://ioniconf.com/\">keynote</a> (along with the rest of the conference) is now <a href=\"https://ioniconf.com/\">up</a>.</p>\n<h2 id=\"capacitor-opening-up\">Capacitor opening up</h2>\n<p>One of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.</p>\n<p>While technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.</p>\n<p>With this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.</p>\n<p>The new Capacitor mission is to help <em>all</em> web developers build cross-platform apps with their web development skills.</p>\n<h2 id=\"capacitor-community\">Capacitor Community</h2>\n<p>One of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.</p>\n<p>Yesterday, web announced a new <a href=\"https://github.com/capacitor-community\">Capacitor Community</a> GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.</p>\n<p>To start, we have a number of great plugins and many are in development. Check out the <a href=\"https://github.com/capacitor-community/http\">Http</a>, <a href=\"https://github.com/capacitor-community/contacts\">Contacts</a>, and <a href=\"https://github.com/capacitor-community/apple-sign-in\">Apple Sign In</a> plugins. We&#39;ve also started moving the <a href=\"https://github.com/capacitor-community/electron\">Electron</a> platform to the community org.</p>\n<p>Every project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.</p>\n<h2 id=\"capacitor-elements\">Capacitor Elements</h2>\n<p>We announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.</p>\n<p>These components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.</p>\n<p>The goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.</p>\n<p>This makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.</p>\n<p>Stay tuned for more updates soon!</p>\n<h2 id=\"deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</h2>\n<p>We announced that <a href=\"https://ionicframework.com/docs/appflow/destinations/intro\">Deploy to App Store</a>, a powerful new feature available in Ionic&#39;s DevOps service <a href=\"https://useappflow.com/\">Appflow</a> that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.</p>\n<p>This feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.</p>\n<p>Appflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.</p>\n<h2 id=\"updated-site-domain-and-docs\">Updated Site, Domain, and Docs</h2>\n<p>We&#39;ve updated the Capacitor site and moved to a new domain (<a href=\"https://capacitorjs.com\">capacitorjs.com</a>) and Twitter handle (<a href=\"https://twitter.com/capacitorjs\">@capacitorjs</a>).</p>\n<p>We also rolled out <a href=\"/docs\">updated documentation</a> as we embark on a documentation overhaul.</p>\n<h2 id=\"stay-tuned\">Stay tuned</h2>\n<p>Capacitor is quickly becoming the focal point of Ionic&#39;s open source offering, and we&#39;re investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.</p>\n<p>Stay tuned for a ton more Capacitor updates in the coming months!</p>\n",
 		meta: {
 			title: "Capacitor announcements at Ioniconf 2020",
 			date: "2020-06-24T08:00:00.000Z",
@@ -8344,6 +8369,7 @@ var posts = [
 		slug: "announcing-capacitor-2-0",
 		date: "2020-04-08T08:00:00.000Z",
 		contents: "---\ntitle: Announcing Capacitor 2.0\ndate: 2020-04-08 08:00:00\nauthor: Max Lynch <max@ionic.io>\n---\n\nToday we are excited to announce Capacitor 2.0!\n\nCapacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:\n\n * Swift 5 and Xcode 11+ support\n * Android 10 (SDK 29) and AndroidX support\n * Bug fixes and usability improvements to 23+ core plugins\n * Support for generating splash screens and icons\n\nWe documented the whole update and talked about what's next for Capacitor over on the Ionic blog.\n\nCheck it out:\n\n[https://ionicframework.com/blog/announcing-capacitor-2-0/](https://ionicframework.com/blog/announcing-capacitor-2-0/)",
+		preview: "",
 		html: "<p>Today we are excited to announce Capacitor 2.0!</p>\n<p>Capacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:</p>\n<ul>\n<li>Swift 5 and Xcode 11+ support</li>\n<li>Android 10 (SDK 29) and AndroidX support</li>\n<li>Bug fixes and usability improvements to 23+ core plugins</li>\n<li>Support for generating splash screens and icons</li>\n</ul>\n<p>We documented the whole update and talked about what&#39;s next for Capacitor over on the Ionic blog.</p>\n<p>Check it out:</p>\n<p><a href=\"https://ionicframework.com/blog/announcing-capacitor-2-0/\">https://ionicframework.com/blog/announcing-capacitor-2-0/</a></p>\n",
 		meta: {
 			title: "Announcing Capacitor 2.0",
@@ -8358,6 +8384,7 @@ var posts = [
 		slug: "announcing-capacitor-1-0",
 		date: "2019-05-22T08:00:00.000Z",
 		contents: "---\ntitle: Announcing Capacitor 1.0\ndate: 2019-05-22 08:00:00\nauthor: Max Lynch <max@ionic.io>\n---\n\nToday I’m thrilled to announce the 1.0 release of [Capacitor](/), Ionic’s new Native API Container that makes it easy to build web apps that run on iOS, Android, and the web as Progressive Web Apps—with full access to native functionality on each platform.\n\nWe documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.\n\nTake a look: [https://ionicframework.com/blog/announcing-capacitor-1-0/](https://ionicframework.com/blog/announcing-capacitor-1-0/).",
+		preview: "",
 		html: "<p>Today I’m thrilled to announce the 1.0 release of <a href=\"/\">Capacitor</a>, Ionic’s new Native API Container that makes it easy to build web apps that run on iOS, Android, and the web as Progressive Web Apps—with full access to native functionality on each platform.</p>\n<p>We documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.</p>\n<p>Take a look: <a href=\"https://ionicframework.com/blog/announcing-capacitor-1-0/\">https://ionicframework.com/blog/announcing-capacitor-1-0/</a>.</p>\n",
 		meta: {
 			title: "Announcing Capacitor 1.0",
@@ -8367,9 +8394,42 @@ var posts = [
 	}
 ];
 
-const blogPageCss = "@charset \"UTF-8\";code[class*=language-],pre[class*=language-]{color:white;background:none;text-shadow:0 -0.1em 0.2em black;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-],:not(pre)>code[class*=language-]{background:hsl(30, 20%, 25%)}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto;border:0.3em solid hsl(30, 20%, 40%);border-radius:0.5em;-webkit-box-shadow:1px 1px 0.5em black inset;box-shadow:1px 1px 0.5em black inset}:not(pre)>code[class*=language-]{padding:0.15em 0.2em 0.05em;border-radius:0.3em;border:0.13em solid hsl(30, 20%, 40%);-webkit-box-shadow:1px 1px 0.3em -0.1em black inset;box-shadow:1px 1px 0.3em -0.1em black inset;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:hsl(30, 20%, 50%)}.token.punctuation{opacity:0.7}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol{color:hsl(350, 40%, 70%)}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:hsl(75, 70%, 60%)}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string,.token.variable{color:hsl(40, 90%, 60%)}.token.atrule,.token.attr-value,.token.keyword{color:hsl(350, 40%, 70%)}.token.regex,.token.important{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}.token.deleted{color:red}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
+const blogPageCss = "@charset \"UTF-8\";code[class*=language-],pre[class*=language-]{color:white;background:none;text-shadow:0 -0.1em 0.2em black;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-],:not(pre)>code[class*=language-]{background:hsl(30, 20%, 25%)}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto;border:0.3em solid hsl(30, 20%, 40%);border-radius:0.5em;-webkit-box-shadow:1px 1px 0.5em black inset;box-shadow:1px 1px 0.5em black inset}:not(pre)>code[class*=language-]{padding:0.15em 0.2em 0.05em;border-radius:0.3em;border:0.13em solid hsl(30, 20%, 40%);-webkit-box-shadow:1px 1px 0.3em -0.1em black inset;box-shadow:1px 1px 0.3em -0.1em black inset;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:hsl(30, 20%, 50%)}.token.punctuation{opacity:0.7}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol{color:hsl(350, 40%, 70%)}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:hsl(75, 70%, 60%)}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string,.token.variable{color:hsl(40, 90%, 60%)}.token.atrule,.token.attr-value,.token.keyword{color:hsl(350, 40%, 70%)}.token.regex,.token.important{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}.token.deleted{color:red}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
 
 class BlogPage {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    async componentWillLoad() {
+        const { slug } = this;
+        if (slug) {
+            this.slug = slug;
+            this.post = posts.find(p => p.slug === this.slug);
+        }
+    }
+    render() {
+        if (this.slug && this.post) {
+            return (h(Host, null, h("div", { class: "blog-posts" }, h("hgroup", { class: "blog-posts__heading" }, h(Heading, { level: 3 }, h("a", Object.assign({}, href('/blog')), "Blog"))), h(BlogPost, { post: this.post })), h("pre-footer", null), h("newsletter-signup", null), h("capacitor-site-footer", null)));
+        }
+        return null;
+    }
+    static get style() { return blogPageCss; }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "blog-post",
+        "$members$": {
+            "slug": [1],
+            "post": [32]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+const blogPageCss$1 = "@charset \"UTF-8\";code[class*=language-],pre[class*=language-]{color:white;background:none;text-shadow:0 -0.1em 0.2em black;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-],:not(pre)>code[class*=language-]{background:hsl(30, 20%, 25%)}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto;border:0.3em solid hsl(30, 20%, 40%);border-radius:0.5em;-webkit-box-shadow:1px 1px 0.5em black inset;box-shadow:1px 1px 0.5em black inset}:not(pre)>code[class*=language-]{padding:0.15em 0.2em 0.05em;border-radius:0.3em;border:0.13em solid hsl(30, 20%, 40%);-webkit-box-shadow:1px 1px 0.3em -0.1em black inset;box-shadow:1px 1px 0.3em -0.1em black inset;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:hsl(30, 20%, 50%)}.token.punctuation{opacity:0.7}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol{color:hsl(350, 40%, 70%)}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:hsl(75, 70%, 60%)}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string,.token.variable{color:hsl(40, 90%, 60%)}.token.atrule,.token.attr-value,.token.keyword{color:hsl(350, 40%, 70%)}.token.regex,.token.important{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}.token.deleted{color:red}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
+
+class BlogPage$1 {
     constructor(hostRef) {
         registerInstance(this, hostRef);
     }
@@ -8378,11 +8438,16 @@ class BlogPage {
     }
     render() {
         if (this.posts) {
-            return (h(AllPosts, { posts: this.posts }));
+            return [
+                h(AllPosts, { posts: this.posts }),
+                h("pre-footer", null),
+                h("newsletter-signup", null),
+                h("capacitor-site-footer", null)
+            ];
         }
         return null;
     }
-    static get style() { return blogPageCss; }
+    static get style() { return blogPageCss$1; }
     static get cmpMeta() { return {
         "$flags$": 0,
         "$tagName$": "blog-page",
@@ -8398,49 +8463,14 @@ const AllPosts = ({ posts }) => {
     return (h("div", { class: "blog-posts" }, h("hgroup", { class: "blog-posts__heading" }, h(Heading, { level: 3 }, "Blog")), posts.map(p => h(BlogPost, { post: p, single: false }))));
 };
 
-const blogPageCss$1 = "@charset \"UTF-8\";code[class*=language-],pre[class*=language-]{color:white;background:none;text-shadow:0 -0.1em 0.2em black;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-],:not(pre)>code[class*=language-]{background:hsl(30, 20%, 25%)}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto;border:0.3em solid hsl(30, 20%, 40%);border-radius:0.5em;-webkit-box-shadow:1px 1px 0.5em black inset;box-shadow:1px 1px 0.5em black inset}:not(pre)>code[class*=language-]{padding:0.15em 0.2em 0.05em;border-radius:0.3em;border:0.13em solid hsl(30, 20%, 40%);-webkit-box-shadow:1px 1px 0.3em -0.1em black inset;box-shadow:1px 1px 0.3em -0.1em black inset;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:hsl(30, 20%, 50%)}.token.punctuation{opacity:0.7}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol{color:hsl(350, 40%, 70%)}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:hsl(75, 70%, 60%)}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string,.token.variable{color:hsl(40, 90%, 60%)}.token.atrule,.token.attr-value,.token.keyword{color:hsl(350, 40%, 70%)}.token.regex,.token.important{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}.token.deleted{color:red}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
-
-class BlogPage$1 {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-    }
-    async componentWillLoad() {
-        console.log('BLOG COMPONENT WILL LOAD');
-        const { slug } = this;
-        if (slug) {
-            this.slug = slug;
-            this.post = posts.find(p => p.slug === this.slug);
-            console.log('Fetching blog post', slug, this.post);
-        }
-    }
-    render() {
-        if (this.slug && this.post) {
-            return (h(Host, null, h("div", { class: "blog-posts" }, h("hgroup", { class: "blog-posts__heading" }, h(Heading, { level: 3 }, h("a", Object.assign({}, href('/blog')), "Blog"))), h(BlogPost, { post: this.post }))));
-        }
-        return null;
-    }
-    static get style() { return blogPageCss$1; }
-    static get cmpMeta() { return {
-        "$flags$": 0,
-        "$tagName$": "blog-post",
-        "$members$": {
-            "slug": [1],
-            "post": [32]
-        },
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
-const capacitorCommunityCss = ".sc-capacitor-community-h{display:block}hgroup.sc-capacitor-community{text-align:center;padding:var(--space-11) 0;max-width:560px;margin:auto}hgroup.sc-capacitor-community .ui-heading.sc-capacitor-community{font-family:var(--f-family-display);font-weight:600;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100)}.ui-col.sc-capacitor-community a.sc-capacitor-community{display:block}.ui-col.sc-capacitor-community img.sc-capacitor-community{display:block;max-width:100%}.ui-col.sc-capacitor-community .ui-heading.sc-capacitor-community{margin:32px 0 24px;font-size:20px;font-family:var(--f-family-text)}";
+const capacitorCommunityCss = ".sc-capacitor-community-h{display:block}hgroup.sc-capacitor-community{text-align:center;padding:var(--space-12) 0;max-width:560px;margin:auto}hgroup.sc-capacitor-community .ui-heading.sc-capacitor-community{font-family:var(--f-family-display);font-weight:700;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin:4px 0}hgroup.sc-capacitor-community .ui-paragraph.sc-capacitor-community{font-size:20px;line-height:1.6em;margin:8px 0 0 3px;letter-spacing:-0.02em}.ui-grid.sc-capacitor-community{-webkit-column-gap:56px;-moz-column-gap:56px;column-gap:56px;margin-top:-11px;padding-bottom:var(--space-12)}.ui-col.sc-capacitor-community a.sc-capacitor-community{display:block}.ui-col.sc-capacitor-community img.sc-capacitor-community{display:block;max-width:100%}.ui-col.sc-capacitor-community .ui-heading.sc-capacitor-community{margin:28px 0 16px 2px;font-size:20px;font-family:var(--f-family-text);font-weight:500;letter-spacing:-0.02em}.ui-col.sc-capacitor-community .ui-paragraph.sc-capacitor-community{margin:0 0 0 2px;font-size:16px;line-height:1.6em}";
 
 class CapacitorCommunity {
     constructor(hostRef) {
         registerInstance(this, hostRef);
     }
     render() {
-        return (h(Host, null, h(ResponsiveContainer, null, h("hgroup", null, h(Heading, { level: 1 }, "Community"), h(Paragraph, null, "Capacitor is a large and growing project with a passionate community. Engage with the Capacitor team and other helpful community members through the forum, Capacitor Community org, and Twitter.")), h(Grid, null, h(Col, { md: 4, sm: 4, xs: 4, cols: 12 }, h("a", { href: "https://github.com/ionic-team/capacitor/discussions" }, h("img", { src: "/assets/img/community/support-community-forum.png", alt: "GitHub Discussions" })), h(Heading, { level: 2 }, "GitHub Discussions"), h(Paragraph, null, "Join the community in discussing new features, asking questions, and help others get started")), h(Col, { md: 4, sm: 4, xs: 4, cols: 12 }, h("a", { href: "https://github.com/capacitor-community" }, h("img", { src: "/assets/img/community/support-community.png", alt: "GitHub Discussions" })), h(Heading, { level: 2 }, "Capacitor Community"), h(Paragraph, null, "View a list of curated community plugins to enhance your app even more. From music controls, advanced native HTTP, and more")), h(Col, { md: 4, sm: 4, xs: 4, cols: 12 }, h("a", { href: "https://twitter.com/capacitorjs" }, h("img", { src: "/assets/img/community/support-twitter.png", alt: "GitHub Discussions" })), h(Heading, { level: 2 }, "Twitter"), h(Paragraph, null, "Get the latest news and join the community by following us on Twitter"))))));
+        return (h(Host, null, h(ResponsiveContainer, null, h("hgroup", null, h(Heading, { level: 1 }, "Community"), h(Paragraph, null, "Capacitor is a large and growing project with a passionate community. Engage with the Capacitor team and other helpful community members through the forum, Capacitor Community org, and Twitter.")), h(Grid, null, h(Col, { md: 4, sm: 4, xs: 4, cols: 12 }, h("a", { href: "https://github.com/ionic-team/capacitor/discussions" }, h("img", { src: "/assets/img/community/support-community-forum.png", alt: "GitHub Discussions" })), h(Heading, { level: 2 }, "GitHub Discussions"), h(Paragraph, null, "Join the community in discussing new features, asking questions, and help others get started")), h(Col, { md: 4, sm: 4, xs: 4, cols: 12 }, h("a", { href: "https://github.com/capacitor-community" }, h("img", { src: "/assets/img/community/support-community.png", alt: "Community Organization" })), h(Heading, { level: 2 }, "Community Organization"), h(Paragraph, null, "View a list of curated community plugins to enhance your app even more. From music controls, advanced native HTTP, and more")), h(Col, { md: 4, sm: 4, xs: 4, cols: 12 }, h("a", { href: "https://twitter.com/capacitorjs" }, h("img", { src: "/assets/img/community/support-twitter.png", alt: "Capacitor Twitter" })), h(Heading, { level: 2 }, "Capacitor Twitter"), h(Paragraph, null, "Get the latest news and join the community by following us on Twitter")))), h("pre-footer", null), h("newsletter-signup", null), h("capacitor-site-footer", null)));
     }
     static get style() { return capacitorCommunityCss; }
     static get cmpMeta() { return {
@@ -8453,14 +8483,14 @@ class CapacitorCommunity {
     }; }
 }
 
-const capacitorSiteFooterCss = ".sc-capacitor-site-footer-h{display:block;border-top:1px solid var(--c-indigo-20);padding:64px 0}.copyright.sc-capacitor-site-footer p.sc-capacitor-site-footer{color:var(--c-indigo-70)}.copyright.sc-capacitor-site-footer a.sc-capacitor-site-footer{color:var(--c-indigo-70);font-weight:normal}img.logo.sc-capacitor-site-footer{width:106px}.ui-heading.sc-capacitor-site-footer{color:var(--c-carbon-80)}ul.sc-capacitor-site-footer li.sc-capacitor-site-footer{margin-top:6px}ul.sc-capacitor-site-footer li.sc-capacitor-site-footer a.sc-capacitor-site-footer{color:var(--c-indigo-70)}";
+const capacitorSiteFooterCss = ".sc-capacitor-site-footer-h{display:block;padding:0 0 80px}.copyright.sc-capacitor-site-footer p.sc-capacitor-site-footer{font-family:\"Inter\";color:var(--c-indigo-70);font-size:14px;letter-spacing:-0.02em;line-height:1.6em;margin:0}.copyright.sc-capacitor-site-footer a.sc-capacitor-site-footer{color:var(--c-indigo-70);font-weight:normal}img.logo.sc-capacitor-site-footer{width:106px;margin-bottom:7px}.ui-heading.sc-capacitor-site-footer{color:var(--c-carbon-80);margin-bottom:11px}ul.sc-capacitor-site-footer li.sc-capacitor-site-footer{margin-top:7px;letter-spacing:0}ul.sc-capacitor-site-footer li.sc-capacitor-site-footer a.sc-capacitor-site-footer{color:var(--c-indigo-70)}";
 
 class CapacitorSiteFooter {
     constructor(hostRef) {
         registerInstance(this, hostRef);
     }
     render() {
-        return (h(Host, null, h("footer", null, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 12, cols: 12, class: "copyright" }, h("img", { src: "/assets/img/logo-white2.png", alt: "Capacitor Logo", class: "logo" }), h("p", null, "Copyright @ ", (new Date()).getFullYear(), " Drifty Co."), h("p", null, h("a", { href: "https://ionic.io" }, "Ionic Open Source"), " | Released under ", h("span", { id: "mit" }, "MIT License"))), h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h(Grid, null, h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Developers"), h("ul", null, h("li", null, h("a", { href: "/docs/getting-started" }, "Install")), h("li", null, h("a", { href: "/docs" }, "Docs")), h("li", null, h("a", { href: "/docs/apis" }, "Plugins")))), h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Resources"), h("ul", null, h("li", null, h("a", { href: "/community" }, "Community")), h("li", null, h("a", { href: "/blog" }, "Blog")), h("li", null, h("a", { href: "https://github.com/ionic-team/capacitor/discussions" }, "Discussions")))), h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Connect"), h("ul", null, h("li", null, h("a", { href: "https://github.com/ionic-team/capacitor" }, "GitHub")), h("li", null, h("a", { href: "https://twitter.com/capacitorjs" }, "Twitter")), h("li", null, h("a", { href: "https://ionic.io" }, "Ionic")))))))))));
+        return (h(Host, null, h("footer", null, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 12, cols: 12, class: "copyright" }, h("img", { src: "/assets/img/logo-white2.png", alt: "Capacitor Logo", class: "logo" }), h("p", null, "\u00A9 ", (new Date()).getFullYear(), " Capacitor"), h("p", null, h("a", { href: "https://ionic.io" }, "Ionic Open Source"), " | Released under ", h("span", { id: "mit" }, "MIT License"))), h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h(Grid, null, h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Developers"), h("ul", null, h("li", null, h("a", { href: "/docs/getting-started" }, "Install")), h("li", null, h("a", { href: "/docs" }, "Docs")), h("li", null, h("a", { href: "/docs/apis" }, "Plugins")))), h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Resources"), h("ul", null, h("li", null, h("a", { href: "/community" }, "Community")), h("li", null, h("a", { href: "/blog" }, "Blog")), h("li", null, h("a", { href: "https://github.com/ionic-team/capacitor/discussions" }, "Discussions")))), h(Col, { md: 4, sm: 4, xs: 4, cols: 4 }, h(Heading, { level: 5 }, "Connect"), h("ul", null, h("li", null, h("a", { href: "https://github.com/ionic-team/capacitor" }, "GitHub")), h("li", null, h("a", { href: "https://twitter.com/capacitorjs" }, "Twitter")), h("li", null, h("a", { href: "https://ionic.io" }, "Ionic")))))))))));
     }
     static get style() { return capacitorSiteFooterCss; }
     static get cmpMeta() { return {
@@ -8472,8 +8502,6 @@ class CapacitorSiteFooter {
         "$attrsToReflect$": []
     }; }
 }
-
-const Router = createRouter();
 
 const capacitorSiteRoutesCss = ":host{display:block}";
 
@@ -8500,7 +8528,7 @@ class CapacitorSiteRoutes {
                 return h("blog-page", null);
             } }), h(Route, { path: match('/blog/:slug'), render: ({ slug }) => {
                 return h("blog-post", { slug: slug });
-            } }), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs" })), h(Route, { path: match('/docs/:pageName*'), render: ({ pageName }) => (h("document-component", { page: `/docs/${pageName}` })) }), h(Route, { path: match('/solution/:solutionId*'), render: ({ solutionId }) => (h("solution-page", { solutionId: solutionId })) }))));
+            } }), h(Route, { path: "/cordova" }, h("cordova-landing-page", null)), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs", template: "docs" })), h(Route, { path: "/docs/plugins" }, h("document-component", { page: "/docs/plugins", template: "plugins" })), h(Route, { path: match('/docs/:pageName*'), render: ({ pageName }) => (h("document-component", { page: `/docs/${pageName}` })) }), h(Route, { path: match('/solution/:solutionId*'), render: ({ solutionId }) => (h("solution-page", { solutionId: `/solution/${solutionId}` })) }))));
     }
     static get style() { return capacitorSiteRoutesCss; }
     static get cmpMeta() { return {
@@ -8573,92 +8601,6 @@ class ContributorList {
             "contributors": [16],
             "link": [16]
         },
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
-const demoCss = "@charset \"UTF-8\";:root{--c-white:#ffffff;--c-black:#000000;--c-blue-0:#f0f6ff;--c-blue-10:#e3edff;--c-blue-20:#cddfff;--c-blue-30:#b2ceff;--c-blue-40:#97bdff;--c-blue-50:#7cabff;--c-blue-60:#639bff;--c-blue-70:#4d8dff;--c-blue-80:#3880ff;--c-blue-90:#1b6dff;--c-blue-100:#0054e9;--c-ionic-brand:var(--c-blue-80);--c-gray-0:#f3f3f3;--c-gray-10:#e4e4e4;--c-gray-20:#c8c8c8;--c-gray-30:#aeaeae;--c-gray-40:#959595;--c-gray-50:#818181;--c-gray-60:#6d6d6d;--c-gray-70:#5f5f5f;--c-gray-80:#474747;--c-gray-90:#2f2f2f;--c-gray-100:#141414;--c-carbon-0:#eef1f3;--c-carbon-10:#d7dde2;--c-carbon-20:#b4bcc6;--c-carbon-30:#98a2ad;--c-carbon-40:#7d8894;--c-carbon-50:#677483;--c-carbon-60:#556170;--c-carbon-70:#434f5e;--c-carbon-80:#35404e;--c-carbon-90:#222d3a;--c-carbon-100:#03060b;--c-indigo-0:#fbfbfd;--c-indigo-10:#f6f8fb;--c-indigo-20:#e9edf3;--c-indigo-30:#dee3ea;--c-indigo-40:#ced6e0;--c-indigo-50:#b2becd;--c-indigo-60:#92a0b3;--c-indigo-70:#73849a;--c-indigo-80:#445b78;--c-indigo-90:#2d4665;--c-indigo-100:#001a3a;--c-green-0:#effff3;--c-green-10:#e7ffee;--c-green-20:#d0ffdd;--c-green-30:#b8ffcb;--c-green-40:#97ffb3;--c-green-50:#71f895;--c-green-60:#4ef27a;--c-green-70:#31e962;--c-green-80:#18dd4c;--c-green-90:#00d338;--c-green-100:#00b831;--c-lime-0:#f8fff0;--c-lime-10:#f2ffe1;--c-lime-20:#eeffd8;--c-lime-30:#e5ffc3;--c-lime-40:#d8ffa7;--c-lime-50:#c8ff83;--c-lime-60:#b7f964;--c-lime-70:#a7f544;--c-lime-80:#97ec2d;--c-lime-90:#87e017;--c-lime-100:#75d100;--c-lavender-0:#f6f8ff;--c-lavender-10:#e5ebff;--c-lavender-20:#ced9ff;--c-lavender-30:#b6c6ff;--c-lavender-40:#9fb5ff;--c-lavender-50:#8aa4ff;--c-lavender-60:#7493ff;--c-lavender-70:#597eff;--c-lavender-80:#3c67ff;--c-lavender-90:#194bfd;--c-lavender-100:#0033e8;--c-purple-0:#f4f4ff;--c-purple-10:#e9eaff;--c-purple-20:#d0d2ff;--c-purple-30:#b6b9f9;--c-purple-40:#9a99fc;--c-purple-50:#8482fb;--c-purple-60:#786df9;--c-purple-70:#6e5afd;--c-purple-80:#6030ff;--c-purple-90:#4712fb;--c-purple-100:#3400e5;--c-pink-0:#fff2fb;--c-pink-10:#ffe3f6;--c-pink-20:#ffd4f1;--c-pink-30:#ffc7ec;--c-pink-40:#ffb6e8;--c-pink-50:#ff9cdf;--c-pink-60:#fc82d5;--c-pink-70:#f567c8;--c-pink-80:#ef4cbb;--c-pink-90:#f02fb2;--c-pink-100:#e410a1;--c-red-0:#fff2f2;--c-red-10:#ffdddd;--c-red-20:#ffc8c7;--c-red-30:#ffb6b5;--c-red-40:#ff9e9c;--c-red-50:#ff8a88;--c-red-60:#ff7370;--c-red-70:#ff605b;--c-red-80:#ff4747;--c-red-90:#ff201a;--c-red-100:#e70700;--c-orange-0:#fff5f0;--c-orange-10:#ffede5;--c-orange-20:#ffdfd1;--c-orange-30:#ffd0bc;--c-orange-40:#ffc0a5;--c-orange-50:#ffaf8c;--c-orange-60:#ff9b70;--c-orange-70:#ff8753;--c-orange-80:#ff7336;--c-orange-90:#ff5b13;--c-orange-100:#eb4700;--c-yellow-0:#fffbef;--c-yellow-10:#fff8e3;--c-yellow-20:#fff6d8;--c-yellow-30:#fff3c9;--c-yellow-50:#ffedad;--c-yellow-50:#ffe78f;--c-yellow-60:#ffe072;--c-yellow-70:#ffd84d;--c-yellow-80:#ffd130;--c-yellow-90:#ffc805;--c-yellow-100:#f5bf00;--c-aqua-0:#f0fff9;--c-aqua-10:#e5fff6;--c-aqua-20:#d5ffef;--c-aqua-30:#c0ffe8;--c-aqua-40:#aaffe0;--c-aqua-50:#90fbd4;--c-aqua-60:#70f6c5;--c-aqua-70:#4deeb2;--c-aqua-80:#32e2a1;--c-aqua-90:#00db8a;--c-aqua-100:#00cc80;--c-teal-0:#eefeff;--c-teal-10:#dffdff;--c-teal-20:#d0fdff;--c-teal-30:#bbfcff;--c-teal-40:#a2fcff;--c-teal-50:#8bfbff;--c-teal-60:#73f6fb;--c-teal-70:#55ecf2;--c-teal-80:#35e2e9;--c-teal-90:#1bd2d9;--c-teal-100:#00b9c0;--c-cyan-0:#f3faff;--c-cyan-10:#e8f5ff;--c-cyan-20:#d3ecff;--c-cyan-30:#bfe4ff;--c-cyan-40:#a7daff;--c-cyan-50:#8dcfff;--c-cyan-60:#77c6ff;--c-cyan-70:#62bdff;--c-cyan-80:#46b1ff;--c-cyan-90:#24a3ff;--c-cyan-100:#0091fa}@font-face{font-family:Eina;font-display:swap;src:url(/assets/fonts/eina/eina-01-bold.woff2) format(\"woff2\"), url(/assets/fonts/eina/eina-01-bold.woff) format(\"woff\"), url(/assets/fonts/eina/eina-01-bold.ttf) format(\"ttf\"), url(/assets/fonts/eina/eina-01-bold.eot?#iefix) format(\"eot\");font-weight:700;unicode-range:U+000-5FF}@font-face{font-family:Eina;font-display:swap;src:url(/assets/fonts/eina/eina-01-semibold.woff2) format(\"woff2\"), url(/assets/fonts/eina/eina-01-semibold.woff) format(\"woff\"), url(/assets/fonts/eina/eina-01-semibold.ttf) format(\"ttf\"), url(/assets/fonts/eina/eina-01-semibold.eot?#iefix) format(\"eot\");font-weight:600;unicode-range:U+000-5FF}@font-face{font-family:Eina;font-display:swap;src:url(/assets/fonts/eina/eina-01-regular.woff2) format(\"woff2\"), url(/assets/fonts/eina/eina-01-regular.woff) format(\"woff\"), url(/assets/fonts/eina/eina-01-regular.ttf) format(\"ttf\"), url(/assets/fonts/eina/eina-01-regular.eot?#iefix) format(\"eot\");font-weight:400;unicode-range:U+000-5FF}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:400;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Regular.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Regular.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:400;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Italic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Italic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:500;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Medium.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Medium.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:500;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-MediumItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-MediumItalic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:600;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-SemiBold.woff2) format(\"woff2\"), url(/assets/fonts/Inter-SemiBold.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:600;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-SemiBoldItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-SemiBoldItalic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:700;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Bold.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Bold.woff) format(\"woff\")}@font-face{font-family:Inter;font-style:italic;font-weight:700;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-BoldItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-BoldItalic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:800;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-ExtraBold.woff2) format(\"woff2\"), url(/assets/fonts/Inter-ExtraBold.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:800;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-ExtraBoldItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-ExtraBoldItalic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:900;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Black.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Black.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:900;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-BlackItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-BlackItalic.woff) format(\"woff\")}@font-face{font-family:FreightTextPro;font-display:swap;font-weight:400;unicode-range:U+000-5FF;src:url(/assets/fonts/29D26A_0_0.eot);src:url(/assets/fonts/29D26A_0_0.eot?#iefix) format(\"embedded-opentype\"), url(/assets/fonts/29D26A_0_0.woff) format(\"woff\"), url(/assets/fonts/29D26A_0_0.ttf) format(\"truetype\")}@font-face{font-family:FreightTextPro;font-display:swap;font-weight:500;unicode-range:U+000-5FF;src:url(/assets/fonts/29D26A_1_0.eot);src:url(/assets/fonts/29D26A_1_0.eot?#iefix) format(\"embedded-opentype\"), url(/assets/fonts/29D26A_1_0.woff) format(\"woff\"), url(/assets/fonts/29D26A_1_0.ttf) format(\"truetype\")}:root{--f-family-display:\"Eina\", \"Helvetica Neue\", Helvetica, sans-serif;--f-family-text:\"Inter\", \"Inter UI\", Helvetica, Arial, sans-serif;--f-family-system:apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;--f-family-monospace:\"SF Mono\", \"Roboto Mono\", Menlo, monospace;--f-family-serif:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;--f-size-root:16px;--f-size-0:0.625rem;--f-size-1:0.6875rem;--f-size-2:0.75rem;--f-size-3:0.8125rem;--f-size-4:0.875rem;--f-size-5:1.00rem;--f-size-6:1.25rem;--f-size-7:1.50rem;--f-size-8:2.00rem;--f-size-9:2.50rem;--f-size-10:3.00rem;--f-size-11:3.50rem;--f-size-12:4.00rem;--f-size-13:4.50rem;--f-size-14:5.00rem;--f-size-15:5.50rem;--f-size-16:6.00rem;--f-leading-solid:1.0;--f-leading-title:1.12;--f-leading-body:1.6;--f-leading-prose:1.8;--f-tracking-dense:-0.04em;--f-tracking-tight:-0.02em;--f-tracking-solid:0.00em;--f-tracking-wide:0.04em;--f-tracking-super:0.08em;--f-tracking-extra:0.16em;--f-weight-light:300;--f-weight-regular:400;--f-weight-medium:500;--f-weight-semibold:600;--f-weight-bold:700}:root{--space-0:0.25rem;--space-1:0.50rem;--space-2:0.75rem;--space-3:1.00rem;--space-4:1.25rem;--space-5:1.5rem;--space-6:2.00rem;--space-7:2.50rem;--space-8:3.00rem;--space-9:4.00rem;--space-10:5.00rem;--space-11:6.00rem;--space-12:8.00rem;--space-13:10.00rem;--space-14:12.00rem;--space-15:14.00rem;--space-16:16.00rem;}:root{--radii-0:0;--radii-1:6px;--radii-2:8px;--radii-3:16px;--radii-4:100%}:root{--elevation-0:none;--elevation-1:0px 1px 2px rgba(2, 8, 20, 0.10), 0px 0px 1px rgba(2, 8, 20, 0.08);--elevation-2:0px 2px 4px rgba(2, 8, 20, 0.10), 0px 1px 2px rgba(2, 8, 20, 0.08);--elevation-3:0px 4px 8px rgba(2, 8, 20, 0.08), 0px 2px 4px rgba(2, 8, 20, 0.08);--elevation-4:0px 8px 16px rgba(2, 8, 20, 0.08), 0px 4px 8px rgba(2, 8, 20, 0.08);--elevation-5:0px 16px 32px rgba(2, 8, 20, 0.08), 0px 8px 16px rgba(2, 8, 20, 0.08);--elevation-6:0px 32px 64px rgba(2, 8, 20, 0.08), 0px 16px 32px rgba(2, 8, 20, 0.10)}:root{--z-subnav:1000;--z-header-dropdown:1005}.ui-blockquote{background:#f2f5f8;border-radius:4px;position:relative;padding:64px 80px 68px 111px;color:#5e749a;font-family:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;font-style:italic;border:none;margin:77px -16px 54px}.ui-blockquote:before{position:absolute;top:-6px;left:54px;font-size:180px;content:\"“\";color:#e3e7ec}.ui-breadcrumbs{font-size:13px;line-height:14px;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center}.ui-breadcrumbs li{display:inline-block}.ui-breadcrumbs li:first-child a{padding-left:0}.ui-breadcrumbs li:last-child a{color:var(--c-carbon-100);font-weight:500}.ui-breadcrumbs a{color:var(--c-carbon-50);font-size:13px;line-height:14px;padding:16px 2px;display:inline-block}.ui-breadcrumbs .nav-sep{display:inline-block;font-size:16px;font-weight:400;color:rgba(65, 77, 92, 0.2);margin:0 6px}.ui-breakpoint{display:none !important}@media (max-width: 480px){.ui-breakpoint-mobile{display:block !important}}@media (max-width: 480px){.ui-breakpoint-mobile.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet{display:block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 768px){.ui-breakpoint-desktop{display:block !important}}@media (min-width: 768px){.ui-breakpoint-desktop.ui-breakpoint-inline-block{display:inline-block !important}}.ui-button{cursor:pointer;display:inline-block;font-weight:500;border-radius:8px;line-height:1.4em;padding:16px 20px;-webkit-transition:all 0.3s ease;transition:all 0.3s ease;font-size:16px;border:0px solid rgba(0, 0, 0, 0);color:#fff;background:var(--button-background, var(--c-ionic-brand));letter-spacing:0.01em}.ui-card--embelish{background-color:#fff;border-radius:6px;-webkit-box-shadow:var(--elevation-4);box-shadow:var(--elevation-4);border-radius:14px}.ui-card--embelish .ui-card-content{padding:32px}.ui-container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width: 768px){.ui-container{width:750px}}@media (min-width: 992px){.ui-container{width:970px}}@media (min-width: 1104px){.ui-container{width:1054px}}.ui-grid{display:grid;-webkit-column-gap:56px;-moz-column-gap:56px;column-gap:56px;row-gap:96px;grid-template-columns:repeat(12, minmax(0, 1fr))}@media (max-width: 480px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:48px}}@media (max-width: 768px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:24px}}.ui-grid .ui-col-1{grid-column-end:span 1}.ui-grid .ui-col-2{grid-column-end:span 2}.ui-grid .ui-col-3{grid-column-end:span 3}.ui-grid .ui-col-4{grid-column-end:span 4}.ui-grid .ui-col-5{grid-column-end:span 5}.ui-grid .ui-col-6{grid-column-end:span 6}.ui-grid .ui-col-7{grid-column-end:span 7}.ui-grid .ui-col-8{grid-column-end:span 8}.ui-grid .ui-col-9{grid-column-end:span 9}.ui-grid .ui-col-10{grid-column-end:span 10}.ui-grid .ui-col-11{grid-column-end:span 11}.ui-grid .ui-col-12{grid-column-end:span 12}@media (min-width: 480px){.ui-grid .ui-col-xs-1{grid-column-end:span 1}.ui-grid .ui-col-xs-2{grid-column-end:span 2}.ui-grid .ui-col-xs-3{grid-column-end:span 3}.ui-grid .ui-col-xs-4{grid-column-end:span 4}.ui-grid .ui-col-xs-5{grid-column-end:span 5}.ui-grid .ui-col-xs-6{grid-column-end:span 6}.ui-grid .ui-col-xs-7{grid-column-end:span 7}.ui-grid .ui-col-xs-8{grid-column-end:span 8}.ui-grid .ui-col-xs-9{grid-column-end:span 9}.ui-grid .ui-col-xs-10{grid-column-end:span 10}.ui-grid .ui-col-xs-11{grid-column-end:span 11}.ui-grid .ui-col-xs-12{grid-column-end:span 12}}@media (min-width: 768px){.ui-grid .ui-col-sm-1{grid-column-end:span 1}.ui-grid .ui-col-sm-2{grid-column-end:span 2}.ui-grid .ui-col-sm-3{grid-column-end:span 3}.ui-grid .ui-col-sm-4{grid-column-end:span 4}.ui-grid .ui-col-sm-5{grid-column-end:span 5}.ui-grid .ui-col-sm-6{grid-column-end:span 6}.ui-grid .ui-col-sm-7{grid-column-end:span 7}.ui-grid .ui-col-sm-8{grid-column-end:span 8}.ui-grid .ui-col-sm-9{grid-column-end:span 9}.ui-grid .ui-col-sm-10{grid-column-end:span 10}.ui-grid .ui-col-sm-11{grid-column-end:span 11}.ui-grid .ui-col-sm-12{grid-column-end:span 12}}@media (min-width: 992px){.ui-grid .ui-col-md-1{grid-column-end:span 1}.ui-grid .ui-col-md-2{grid-column-end:span 2}.ui-grid .ui-col-md-3{grid-column-end:span 3}.ui-grid .ui-col-md-4{grid-column-end:span 4}.ui-grid .ui-col-md-5{grid-column-end:span 5}.ui-grid .ui-col-md-6{grid-column-end:span 6}.ui-grid .ui-col-md-7{grid-column-end:span 7}.ui-grid .ui-col-md-8{grid-column-end:span 8}.ui-grid .ui-col-md-9{grid-column-end:span 9}.ui-grid .ui-col-md-10{grid-column-end:span 10}.ui-grid .ui-col-md-11{grid-column-end:span 11}.ui-grid .ui-col-md-12{grid-column-end:span 12}}@media (min-width: 1200px){.ui-grid .ui-col-lg-1{grid-column-end:span 1}.ui-grid .ui-col-lg-2{grid-column-end:span 2}.ui-grid .ui-col-lg-3{grid-column-end:span 3}.ui-grid .ui-col-lg-4{grid-column-end:span 4}.ui-grid .ui-col-lg-5{grid-column-end:span 5}.ui-grid .ui-col-lg-6{grid-column-end:span 6}.ui-grid .ui-col-lg-7{grid-column-end:span 7}.ui-grid .ui-col-lg-8{grid-column-end:span 8}.ui-grid .ui-col-lg-9{grid-column-end:span 9}.ui-grid .ui-col-lg-10{grid-column-end:span 10}.ui-grid .ui-col-lg-11{grid-column-end:span 11}.ui-grid .ui-col-lg-12{grid-column-end:span 12}}.ui-heading{--title-font-family:var(--f-family-display);--subtitle-font-family:var(--f-family-text);--heading-color-dark:var(--c-carbon-90);--heading-color-light:var(--c-indigo-70);--h1-size:var(--f-size-12);--h1-leading:var(--f-leading-solid);--h1-weight:var(--f-weight-bold);--h2-size:var(--f-size-10);--h3-size:var(--f-size-8);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-2);margin:0;line-height:var(--f-leading-title)}.ui-theme--editorial .ui-heading{--title-font-family:var(--f-family-text);--h1-size:var(--f-size-9);--h1-leading:var(--f-leading-title);--h1-weight:var(--f-weight-semibold);--h2-size:var(--f-size-8);--h3-size:var(--f-size-7);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-0)}.ui-heading-1{font-family:var(--title-font-family);font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--f-tracking-dense);font-weight:var(--h1-weight);color:var(--heading-color-dark)}.ui-heading-2{font-family:var(--title-font-family);font-size:var(--h2-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-3{font-family:var(--title-font-family);font-size:var(--h3-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-4{font-family:var(--subtitle-font-family);font-size:var(--h4-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-5{font-family:var(--subtitle-font-family);font-size:var(--h5-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-6{font-family:var(--subtitle-font-family);font-size:var(--h6-size);letter-spacing:var(--f-tracking-extra);font-weight:var(--f-weight-bold);text-transform:uppercase;color:var(--heading-color-light)}.ui-heading--bordered{border-bottom:1px solid var(--c-indigo-30);margin-bottom:var(--space-5);padding-bottom:var(--space-2)}.ui-heading--strong{font-weight:var(--f-weight-bold)}.ui-heading--leading{line-height:var(--f-leading-text)}.ui-skeleton{display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:#EEEEEE;line-height:10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}.ui-skeleton--animated{position:relative;background:-webkit-gradient(linear, left top, right top, color-stop(8%, rgba(0, 0, 0, 0.065)), color-stop(18%, rgba(0, 0, 0, 0.135)), color-stop(33%, rgba(0, 0, 0, 0.065)));background:linear-gradient(to right, rgba(0, 0, 0, 0.065) 8%, rgba(0, 0, 0, 0.135) 18%, rgba(0, 0, 0, 0.065) 33%);background-size:800px 104px;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-name:shimmer;animation-name:shimmer;-webkit-animation-timing-function:linear;animation-timing-function:linear}@-webkit-keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}@keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}span{display:inline-block}.prismic-raw-html{width:100%;overflow:auto}.prismic-raw-html table{overflow-x:auto;margin-right:-15px;padding-right:15px;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:48px}.prismic-raw-html table td,.prismic-raw-html table th{text-align:left;min-width:120px;padding-right:12px;padding-top:12px;padding-bottom:12px}.prismic-raw-html table td:last-child,.prismic-raw-html table th:last-child{padding-right:0}.prismic-raw-html table th,.prismic-raw-html table b{font-weight:600}.prismic-raw-html table tbody tr td{border-top:1px solid #DEE3EA}.prismic-raw-html table tbody tr:first-child td{border-top:none}.prismic-raw-html table>thead>tr>th{border-bottom:1px solid #E9EDF3;font-weight:600}*{-webkit-box-sizing:border-box;box-sizing:border-box}html,body{padding:0;margin:0;width:100%;height:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:var(--f-family-text);font-size:var(--f-size-root);line-height:var(--f-leading-body);letter-spacing:var(--f-tracking-tight);color:var(--c-carbon-90);position:relative;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:var(--c-ionic-brand)}stencil-route-link a{color:inherit}ul{margin:0;padding:0}li{list-style:none}hr{border:none;height:1px;background:var(--c-indigo-30);margin:var(--space-6) 0}:host{display:block}.demos{padding:48px}.demo{margin-bottom:48px}";
-
-class Demo {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-    }
-    render() {
-        return (h("div", { class: "demos" }, h(ButtonDemo, null), h(HeadingDemo, null), h(GridDemo, null), h(CardDemo, null)));
-    }
-    static get style() { return demoCss; }
-    static get cmpMeta() { return {
-        "$flags$": 0,
-        "$tagName$": "shared-demo",
-        "$members$": undefined,
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-const ButtonDemo = () => (h("div", { class: "demo demo-button" }, h(Heading, { level: 3, bordered: true }, "Buttons"), h(Button, null, "Button")));
-const HeadingDemo = () => (h("div", { class: "demo demo-heading" }, h(Heading, { level: 3, bordered: true }, "Headings"), h(Heading, { level: 1 }, "Level 1"), h(Heading, { level: 2 }, "Level 2"), h(Heading, { level: 3 }, "Level 3"), h(Heading, { level: 4 }, "Level 4"), h(Heading, { level: 5 }, "Level 5")));
-const GridDemo = () => (h("div", { class: "demo demo-grid" }, h(Heading, { level: 3, bordered: true }, "Grid"), h(Grid, { class: "demo demo-grid" }, h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 1"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 2"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 3"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 4"))));
-const CardDemo = () => (h("div", { class: "demo demo-card" }, h(Heading, { level: 3, bordered: true }, "Cards"), h(Card, null, h(CardContent, null, h("hgroup", null, h(Heading, { level: 3 }, "Card"), h(Paragraph, null, "Unicorn next level roof party health goth, squid brooklyn pabst biodiesel kickstarter man bun small batch kale chips flexitarian. Edison bulb selfies mumblecore ethical, helvetica affogato palo santo. Taxidermy humblebrag hexagon, pabst stumptown PBR&B succulents. Lumbersexual fam shabby chic cardigan lomo quinoa put a bird on it salvia authentic hell of migas aesthetic truffaut gentrify tattooed. Migas direct trade polaroid distillery, ugh brunch farm-to-table fingerstache vaporware readymade occupy aesthetic four dollar toast. Freegan lyft vegan ramps vexillologist taxidermy listicle vinyl blue bottle pug."))))));
-
-class DocSnippet {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-    }
-    render() {
-        return (h("div", { class: "snippet" }));
-    }
-    static get cmpMeta() { return {
-        "$flags$": 0,
-        "$tagName$": "doc-snippet",
-        "$members$": undefined,
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
-const docsHeaderCss = ".sc-docs-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-header-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;position:-webkit-sticky;position:sticky;top:0;background-color:#fff;width:100%;height:64px;color:#98a2ad;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);letter-spacing:0;z-index:1}.docs-header__links.sc-docs-header a.sc-docs-header,.docs-header__external-links.sc-docs-header a.sc-docs-header{color:#98a2ad;font-size:15px;border-bottom:none}.docs-header__links.sc-docs-header a.sc-docs-header:hover,.docs-header__external-links.sc-docs-header a.sc-docs-header:hover{color:#858e97}.docs-header__links.sc-docs-header a.active.sc-docs-header,.docs-header__external-links.sc-docs-header a.active.sc-docs-header{font-weight:500;color:#222d3a}.docs-header__links.sc-docs-header{margin-bottom:2px}.docs-header__links.sc-docs-header a.sc-docs-header{margin-right:24px}.docs-header__link-divider.sc-docs-header{width:1px;height:18px;background:#222d3a;opacity:0.2;margin-right:2px;margin-left:2px}.docs-header__external-links.sc-docs-header{margin-top:5px;margin-left:2px;margin-right:30px}.docs-header__external-links.sc-docs-header a.sc-docs-header{margin-left:22px;font-size:19px}";
-
-class DocsHeader {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-    }
-    isActive(path) {
-        const prefix = new RegExp("^" + path, "gm");
-        const regexRes = prefix.test(Router.activePath);
-        return regexRes;
-    }
-    render() {
-        return (h(Host, null, h("docs-search", null), h("div", { class: "docs-header__links" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': this.isActive('/docs') } }), "Docs"), h("a", Object.assign({}, href('/blog')), "Blog"), h("a", Object.assign({}, href('/community')), "Community")), h("div", { class: "docs-header__link-divider" }), h("div", { class: "docs-header__external-links" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" })), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" })))));
-    }
-    static get style() { return docsHeaderCss; }
-    static get cmpMeta() { return {
-        "$flags$": 2,
-        "$tagName$": "docs-header",
-        "$members$": undefined,
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
-const docsSearchCss = ".sc-docs-search:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-search-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex:1;flex:1}";
-
-class DocsSearch {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-    }
-    render() {
-        return (h(Host, null));
-    }
-    static get style() { return docsSearchCss; }
-    static get cmpMeta() { return {
-        "$flags$": 2,
-        "$tagName$": "docs-search",
-        "$members$": undefined,
         "$listeners$": undefined,
         "$lazyBundleIds$": "-",
         "$attrsToReflect$": []
@@ -8778,7 +8720,257 @@ const Helmet = (_props, children, utils) => {
     return null;
 };
 
-var siteStructure = [
+const Tabs = (_props, children) => (h("div", { class: "ui-tabs" }, children));
+const TabBar = (_, children) => (h("div", { class: "ui-tab-bar" }, children));
+const TabBarButton = ({ tabSelect, selected }, children) => (h("div", { class: `ui-tab-bar__button${selected ? ' ui-tab-bar__button--selected' : ''}`, onClick: tabSelect }, children));
+const Tab = ({ selected }, children) => (h("div", { class: "ui-tab", style: { display: selected ? 'block' : 'none' } }, children));
+
+const cordovaLandingPageCss = ".sc-cordova-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-cordova-landing-page-h{display:block;scroll-behavior:smooth}.hero.sc-cordova-landing-page{margin-bottom:96px;text-align:center}.hero.sc-cordova-landing-page img.sc-cordova-landing-page{max-width:100%}.hero__heading.sc-cordova-landing-page{padding-top:64px}.hero__heading.sc-cordova-landing-page h1.sc-cordova-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-text)}.hero__heading.sc-cordova-landing-page h3.sc-cordova-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__graphic.sc-cordova-landing-page{padding-top:64px}.hero__buttons.sc-cordova-landing-page .ui-button.sc-cordova-landing-page{-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-cordova-landing-page .ui-button.sc-cordova-landing-page:first-child{margin-right:16px}.hero__buttons.sc-cordova-landing-page .btn-white.sc-cordova-landing-page{background:white;-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.points.sc-cordova-landing-page .ui-paragraph.sc-cordova-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-cordova-landing-page{width:64px;margin-left:-10px}.points.sc-cordova-landing-page h2.sc-cordova-landing-page{margin:0}.section--getting-started.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:96px}.section--getting-started.sc-cordova-landing-page hgroup.sc-cordova-landing-page .ui-heading.sc-cordova-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-cordova-landing-page{padding-bottom:120px}.section--getting-started__step.sc-cordova-landing-page .apple.sc-cordova-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-cordova-landing-page .android.sc-cordova-landing-page{margin-top:8px;margin-left:12px;height:26px}.section--getting-started__step.sc-cordova-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-cordova-landing-page .ui-col.sc-cordova-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-cordova-landing-page .ui-col.sc-cordova-landing-page:first-child:after{content:\"\";display:block;margin-top:35px !important;height:60%;width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-cordova-landing-page .ui-col.sc-cordova-landing-page .ui-heading.sc-cordova-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-cordova-landing-page img.sc-cordova-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:76px}.section--native-features.sc-cordova-landing-page img.sc-cordova-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-cordova-landing-page .ui-grid.sc-cordova-landing-page{-webkit-column-gap:16px;-moz-column-gap:16px;column-gap:16px;row-gap:16px}.section--your-framework.sc-cordova-landing-page .framework.sc-cordova-landing-page{height:200px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.section--your-framework.sc-cordova-landing-page .framework.sc-cordova-landing-page img.sc-cordova-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-cordova-landing-page hgroup.sc-cordova-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-cordova-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-cordova-landing-page img.sc-cordova-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-cordova-landing-page img.sc-cordova-landing-page:last-child{margin-right:0}.section--more-resources.sc-cordova-landing-page{margin-bottom:96px}.section--more-resources.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:24px}.ui-fancy-underline.sc-cordova-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-cordova-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-cordova-landing-page .ui-tab.sc-cordova-landing-page{min-height:300px}.ui-tabs.sc-cordova-landing-page .ui-tab-bar.sc-cordova-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:16px}.ui-tabs.sc-cordova-landing-page .ui-tab-bar__button.sc-cordova-landing-page{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-cordova-landing-page .ui-tab-bar__button--selected.sc-cordova-landing-page{background:#617184;color:white;border-radius:6px}";
+
+class CordovaLandingPage {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.selectedCodeTab = 'before';
+    }
+    render() {
+        return (h(Host, null, h(MetaHead, null), h("section", { class: "hero" }, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 12, sm: 12, xs: 12, cols: 12 }, h("hgroup", { class: "hero__heading" }, h(Heading, { level: 2 }, "Cordova to Capacitor Migration"), h(Heading, { level: 3 }, "A modern development experience and 99% backward-compatibility with Cordova."), h(AnchorButton, { href: "#code-branch", id: "get-started" }, "Get Started")))))), h(GettingStartedSection, { selectedCodeTab: this.selectedCodeTab, setSelectedCodeTab: (tab) => { this.selectedCodeTab = tab; } }), h(MoreResourcesSection, null), h("newsletter-signup", null), h("pre-footer", null), h("capacitor-site-footer", null)));
+    }
+    static get style() { return cordovaLandingPageCss; }
+    static get cmpMeta() { return {
+        "$flags$": 2,
+        "$tagName$": "cordova-landing-page",
+        "$members$": {
+            "selectedCodeTab": [32]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+const GettingStartedSection = ({ selectedCodeTab, setSelectedCodeTab }) => (h("section", { class: "section--getting-started" }, h(ResponsiveContainer, null, h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "01"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3, id: "code-branch" }, "Create a new code branch."), h(Paragraph, null, "Recommended, but not required.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+cd my-app
+git checkout -b cap-migration
+          ` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "02"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Install Capacitor."), h(Paragraph, null, "Create the Capacitor app using the Cordova app's name and id found in `config.xml`.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+npm install @capacitor/cli @capacitor/core
+npx cap init [name] [id]
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "03"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Build the Web App."), h(Paragraph, null, "The compiled web assets will be copied into each Capacitor native platform during the next step.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+# Most web apps
+npm run build
+
+# Ionic app
+ionic build
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "04"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Install the native platforms you want to target."), h("img", { src: "/assets/img/landing/apple.png", alt: "Apple", class: "apple" }), h("img", { src: "/assets/img/landing/android.png", alt: "Android", class: "android" }), h(Paragraph, null, "Capacitor native projects exist in their own top-level folders and should be considered part of your app (check them into source control). Any existing Cordova plugins are automatically installed into each native project. \uD83C\uDF89")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+npx cap add android
+npx cap add ios
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "05"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Recreate Splash Screens and Icons."), h(Paragraph, null, "Reuse the existing splash screen/icon images, located in the top-level `resources` folder of your Cordova project, using the `cordova-res` tool. Images are copied into each native project.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+npm install -g cordova-res
+
+cordova-res ios --skip-config --copy
+cordova-res android --skip-config --copy
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "06"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Audit existing Cordova plugins."), h(Paragraph, null, "Review all of Capacitor's ", h("a", { href: "/docs/apis", target: "_blank" }, "core"), " and ", h("a", { href: "/docs/community/plugins", target: "_blank" }, "community"), " plugins. You may be able to switch to the Capacitor-equivalent Cordova plugin, such as the Camera."), h(Paragraph, null, "Remove unneeded ones to improve performance and reduce app size.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h(Tabs, null, h(TabBar, null, h(TabBarButton, { selected: selectedCodeTab === 'before', tabSelect: () => setSelectedCodeTab('before') }, "Cordova Camera"), h(TabBarButton, { selected: selectedCodeTab === 'after', tabSelect: () => setSelectedCodeTab('after') }, "Capacitor Camera")), h(Tab, { selected: selectedCodeTab === 'before' }, h("code-snippet", { style: { '--border-radius': '0 0 8px 8px' }, language: "typescript", code: `
+import { Camera } from '@ionic-native/camera/ngx';
+
+constructor(private camera: Camera) {}
+
+const photo = await this.camera.getPicture({
+  quality: 100,
+  destinationType: this.camera.DestinationType.FILE_URI,
+  allowEdit: true,
+  saveToPhotoAlbum: true
+});
+` })), h(Tab, { selected: selectedCodeTab === 'after' }, h("code-snippet", { style: { '--border-radius': '0 0 8px 8px' }, language: "typescript", code: `
+import { Plugins } from '@capacitor/core';
+
+const { Camera } = Plugins;
+
+const photo = await Camera.getPhoto({
+  quality: 100,
+  resultType: CameraResultType.Uri,
+  allowEditing: true,
+  saveToGallery: true
+});
+` }))))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "07"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Remove Cordova from your project."), h(Paragraph, null, "After successful migration testing, Cordova can be removed from the project.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+# Remove a Cordova plugin
+npm uninstall cordova-plugin-name
+npx cap sync
+
+# Delete Cordova folders and files
+rm config.xml
+rm -R platforms/
+rm -R plugins/
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "08"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Continue your Capacitor Journey."), h(Paragraph, null, "This is only the beginning. Learn more about ", h("a", { href: "/docs/cordova/using-cordova-plugins", target: "_blank" }, "using Cordova plugins"), " in a Capacitor project, check out the Capacitor ", h("a", { href: "/docs/basics/workflow", target: "_blank" }, "development workflow"), ", or create your own ", h("a", { href: "/docs/plugins", target: "_blank" }, "native plugin"), ".")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+# Install a Cordova plugin
+npm install cordova-plugin-name
+npx cap sync
+
+# Create a custom plugin
+npx @capacitor/cli plugin:generate
+` }))))));
+const MoreResourcesSection = () => (h(ResponsiveContainer, { class: "section--more-resources" }, h("hgroup", null, h(Heading, { level: 3 }, "More Resources"), h(Paragraph, null, "Explore these resources to learn more about Capacitor", h("br", null), "and make your Cordova migration easier.")), h("more-resources", { resources: [
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-2-launch', type: 'webinar' },
+        { uid: 'migrating-from-phonegap-build-to-ionic-appflow', type: 'blog' },
+        { uid: 'thanks-to-capacitor-ive-fallen-in-love-with-mobile-again', type: 'blog' },
+        { uid: 'the-modern-hybrid-app-developer', type: 'blog' },
+    ] })));
+const MetaHead = () => (h(Helmet, null, h("title", null, "Capacitor: Cross-platform native runtime for web apps"), h("meta", { name: "description", content: 'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript' }), h("meta", { name: "twitter:card", content: "summary_large_image" }), h("meta", { name: "twitter:site", content: "@capacitorjs" }), h("meta", { name: "twitter:creator", content: "capacitorjs" }), h("meta", { name: "twitter:title", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:description", content: "Build cross-platform apps with web technologies" })));
+
+const demoCss = "@charset \"UTF-8\";:root{--c-white:#ffffff;--c-black:#000000;--c-blue-0:#f0f6ff;--c-blue-10:#e3edff;--c-blue-20:#cddfff;--c-blue-30:#b2ceff;--c-blue-40:#97bdff;--c-blue-50:#7cabff;--c-blue-60:#639bff;--c-blue-70:#4d8dff;--c-blue-80:#3880ff;--c-blue-90:#1b6dff;--c-blue-100:#0054e9;--c-ionic-brand:var(--c-blue-80);--c-gray-0:#f3f3f3;--c-gray-10:#e4e4e4;--c-gray-20:#c8c8c8;--c-gray-30:#aeaeae;--c-gray-40:#959595;--c-gray-50:#818181;--c-gray-60:#6d6d6d;--c-gray-70:#5f5f5f;--c-gray-80:#474747;--c-gray-90:#2f2f2f;--c-gray-100:#141414;--c-carbon-0:#eef1f3;--c-carbon-10:#d7dde2;--c-carbon-20:#b4bcc6;--c-carbon-30:#98a2ad;--c-carbon-40:#7d8894;--c-carbon-50:#677483;--c-carbon-60:#556170;--c-carbon-70:#434f5e;--c-carbon-80:#35404e;--c-carbon-90:#222d3a;--c-carbon-100:#03060b;--c-indigo-0:#fbfbfd;--c-indigo-10:#f6f8fb;--c-indigo-20:#e9edf3;--c-indigo-30:#dee3ea;--c-indigo-40:#ced6e0;--c-indigo-50:#b2becd;--c-indigo-60:#92a0b3;--c-indigo-70:#73849a;--c-indigo-80:#445b78;--c-indigo-90:#2d4665;--c-indigo-100:#001a3a;--c-green-0:#effff3;--c-green-10:#e7ffee;--c-green-20:#d0ffdd;--c-green-30:#b8ffcb;--c-green-40:#97ffb3;--c-green-50:#71f895;--c-green-60:#4ef27a;--c-green-70:#31e962;--c-green-80:#18dd4c;--c-green-90:#00d338;--c-green-100:#00b831;--c-lime-0:#f8fff0;--c-lime-10:#f2ffe1;--c-lime-20:#eeffd8;--c-lime-30:#e5ffc3;--c-lime-40:#d8ffa7;--c-lime-50:#c8ff83;--c-lime-60:#b7f964;--c-lime-70:#a7f544;--c-lime-80:#97ec2d;--c-lime-90:#87e017;--c-lime-100:#75d100;--c-lavender-0:#f6f8ff;--c-lavender-10:#e5ebff;--c-lavender-20:#ced9ff;--c-lavender-30:#b6c6ff;--c-lavender-40:#9fb5ff;--c-lavender-50:#8aa4ff;--c-lavender-60:#7493ff;--c-lavender-70:#597eff;--c-lavender-80:#3c67ff;--c-lavender-90:#194bfd;--c-lavender-100:#0033e8;--c-purple-0:#f4f4ff;--c-purple-10:#e9eaff;--c-purple-20:#d0d2ff;--c-purple-30:#b6b9f9;--c-purple-40:#9a99fc;--c-purple-50:#8482fb;--c-purple-60:#786df9;--c-purple-70:#6e5afd;--c-purple-80:#6030ff;--c-purple-90:#4712fb;--c-purple-100:#3400e5;--c-pink-0:#fff2fb;--c-pink-10:#ffe3f6;--c-pink-20:#ffd4f1;--c-pink-30:#ffc7ec;--c-pink-40:#ffb6e8;--c-pink-50:#ff9cdf;--c-pink-60:#fc82d5;--c-pink-70:#f567c8;--c-pink-80:#ef4cbb;--c-pink-90:#f02fb2;--c-pink-100:#e410a1;--c-red-0:#fff2f2;--c-red-10:#ffdddd;--c-red-20:#ffc8c7;--c-red-30:#ffb6b5;--c-red-40:#ff9e9c;--c-red-50:#ff8a88;--c-red-60:#ff7370;--c-red-70:#ff605b;--c-red-80:#ff4747;--c-red-90:#ff201a;--c-red-100:#e70700;--c-orange-0:#fff5f0;--c-orange-10:#ffede5;--c-orange-20:#ffdfd1;--c-orange-30:#ffd0bc;--c-orange-40:#ffc0a5;--c-orange-50:#ffaf8c;--c-orange-60:#ff9b70;--c-orange-70:#ff8753;--c-orange-80:#ff7336;--c-orange-90:#ff5b13;--c-orange-100:#eb4700;--c-yellow-0:#fffbef;--c-yellow-10:#fff8e3;--c-yellow-20:#fff6d8;--c-yellow-30:#fff3c9;--c-yellow-50:#ffedad;--c-yellow-50:#ffe78f;--c-yellow-60:#ffe072;--c-yellow-70:#ffd84d;--c-yellow-80:#ffd130;--c-yellow-90:#ffc805;--c-yellow-100:#f5bf00;--c-aqua-0:#f0fff9;--c-aqua-10:#e5fff6;--c-aqua-20:#d5ffef;--c-aqua-30:#c0ffe8;--c-aqua-40:#aaffe0;--c-aqua-50:#90fbd4;--c-aqua-60:#70f6c5;--c-aqua-70:#4deeb2;--c-aqua-80:#32e2a1;--c-aqua-90:#00db8a;--c-aqua-100:#00cc80;--c-teal-0:#eefeff;--c-teal-10:#dffdff;--c-teal-20:#d0fdff;--c-teal-30:#bbfcff;--c-teal-40:#a2fcff;--c-teal-50:#8bfbff;--c-teal-60:#73f6fb;--c-teal-70:#55ecf2;--c-teal-80:#35e2e9;--c-teal-90:#1bd2d9;--c-teal-100:#00b9c0;--c-cyan-0:#f3faff;--c-cyan-10:#e8f5ff;--c-cyan-20:#d3ecff;--c-cyan-30:#bfe4ff;--c-cyan-40:#a7daff;--c-cyan-50:#8dcfff;--c-cyan-60:#77c6ff;--c-cyan-70:#62bdff;--c-cyan-80:#46b1ff;--c-cyan-90:#24a3ff;--c-cyan-100:#0091fa}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Bold\"), url(\"/assets/fonts/eina/eina-01-bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-bold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-bold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-bold.eot?#iefix\") format(\"eot\");font-weight:700;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Semibold\"), url(\"/assets/fonts/eina/eina-01-semibold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-semibold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-semibold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-semibold.eot?#iefix\") format(\"eot\");font-weight:600;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Regular\"), url(\"/assets/fonts/eina/eina-01-regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-regular.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-regular.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-regular.eot?#iefix\") format(\"eot\");font-weight:400;unicode-range:U+000-5FF}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Regular\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Regular.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Italic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Medium.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Medium.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter Bold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Bold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter BoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter Black\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Black.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Black.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter BlackItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff\") format(\"woff\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:400;unicode-range:U+000-5FF;src:url(\"/assets/fonts//29D26A_0_0.eot\");src:url(\"/assets/fonts//29D26A_0_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts//29D26A_0_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_0_0.ttf\") format(\"truetype\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:500;unicode-range:U+000-5FF;src:url(\"/assets/fonts/29D26A_1_0.eot\");src:url(\"/assets/fonts/29D26A_1_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/29D26A_1_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_1_0.ttf\") format(\"truetype\")}:root{--f-family-display:\"Eina\", \"Helvetica Neue\", Helvetica, sans-serif;--f-family-text:\"Inter\", \"Inter UI\", Helvetica, Arial, sans-serif;--f-family-system:apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;--f-family-monospace:\"SF Mono\", \"Roboto Mono\", Menlo, monospace;--f-family-serif:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;--f-size-root:16px;--f-size-0:0.625rem;--f-size-1:0.6875rem;--f-size-2:0.75rem;--f-size-3:0.8125rem;--f-size-4:0.875rem;--f-size-5:1.00rem;--f-size-6:1.25rem;--f-size-7:1.50rem;--f-size-8:2.00rem;--f-size-9:2.50rem;--f-size-10:3.00rem;--f-size-11:3.50rem;--f-size-12:4.00rem;--f-size-13:4.50rem;--f-size-14:5.00rem;--f-size-15:5.50rem;--f-size-16:6.00rem;--f-leading-solid:1.0;--f-leading-title:1.12;--f-leading-body:1.6;--f-leading-prose:1.8;--f-tracking-dense:-0.04em;--f-tracking-tight:-0.02em;--f-tracking-solid:0.00em;--f-tracking-wide:0.04em;--f-tracking-super:0.08em;--f-tracking-extra:0.16em;--f-weight-light:300;--f-weight-regular:400;--f-weight-medium:500;--f-weight-semibold:600;--f-weight-bold:700}:root{--space-0:0.25rem;--space-1:0.50rem;--space-2:0.75rem;--space-3:1.00rem;--space-4:1.25rem;--space-5:1.5rem;--space-6:2.00rem;--space-7:2.50rem;--space-8:3.00rem;--space-9:4.00rem;--space-10:5.00rem;--space-11:6.00rem;--space-12:8.00rem;--space-13:10.00rem;--space-14:12.00rem;--space-15:14.00rem;--space-16:16.00rem;}:root{--radii-0:0;--radii-1:6px;--radii-2:8px;--radii-3:16px;--radii-4:100%}:root{--elevation-0:none;--elevation-1:0px 1px 2px rgba(2, 8, 20, 0.10), 0px 0px 1px rgba(2, 8, 20, 0.08);--elevation-2:0px 2px 4px rgba(2, 8, 20, 0.10), 0px 1px 2px rgba(2, 8, 20, 0.08);--elevation-3:0px 4px 8px rgba(2, 8, 20, 0.08), 0px 2px 4px rgba(2, 8, 20, 0.08);--elevation-4:0px 8px 16px rgba(2, 8, 20, 0.08), 0px 4px 8px rgba(2, 8, 20, 0.08);--elevation-5:0px 16px 32px rgba(2, 8, 20, 0.08), 0px 8px 16px rgba(2, 8, 20, 0.08);--elevation-6:0px 32px 64px rgba(2, 8, 20, 0.08), 0px 16px 32px rgba(2, 8, 20, 0.10)}:root{--z-subnav:1000;--z-header-dropdown:1005}.ui-blockquote{background:#f2f5f8;border-radius:4px;position:relative;padding:64px 80px 68px 111px;color:#5e749a;font-family:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;font-style:italic;border:none;margin:77px -16px 54px}.ui-blockquote:before{position:absolute;top:-6px;left:54px;font-size:180px;content:\"“\";color:#e3e7ec}.ui-breadcrumbs{font-size:13px;line-height:14px;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center}.ui-breadcrumbs li{display:inline-block}.ui-breadcrumbs li:first-child a{padding-left:0}.ui-breadcrumbs li:last-child a{color:var(--c-carbon-100);font-weight:500}.ui-breadcrumbs a{color:var(--c-carbon-50);font-size:13px;line-height:14px;padding:16px 2px;display:inline-block}.ui-breadcrumbs .nav-sep{display:inline-block;font-size:16px;font-weight:400;color:rgba(65, 77, 92, 0.2);margin:0 6px}.ui-breakpoint{display:none !important}@media (max-width: 480px){.ui-breakpoint-mobile{display:block !important}}@media (max-width: 480px){.ui-breakpoint-mobile.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet{display:block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 768px){.ui-breakpoint-desktop{display:block !important}}@media (min-width: 768px){.ui-breakpoint-desktop.ui-breakpoint-inline-block{display:inline-block !important}}.ui-button{cursor:pointer;display:inline-block;font-weight:500;border-radius:8px;line-height:1.4em;padding:16px 20px;-webkit-transition:all 0.3s ease;transition:all 0.3s ease;font-size:16px;border:0px solid rgba(0, 0, 0, 0);color:#fff;background:var(--button-background, var(--c-ionic-brand));letter-spacing:0.01em}.ui-card--embelish{background-color:#fff;border-radius:6px;-webkit-box-shadow:var(--elevation-4);box-shadow:var(--elevation-4);border-radius:14px}.ui-card--embelish .ui-card-content{padding:32px}.ui-container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width: 768px){.ui-container{width:750px}}@media (min-width: 992px){.ui-container{width:970px}}@media (min-width: 1104px){.ui-container{width:1165px}}.ui-grid{display:grid;-webkit-column-gap:56px;-moz-column-gap:56px;column-gap:56px;row-gap:96px;grid-template-columns:repeat(12, minmax(0, 1fr))}@media (max-width: 480px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:48px}}@media (max-width: 768px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:24px}}.ui-grid .ui-col-1{grid-column-end:span 1}.ui-grid .ui-col-2{grid-column-end:span 2}.ui-grid .ui-col-3{grid-column-end:span 3}.ui-grid .ui-col-4{grid-column-end:span 4}.ui-grid .ui-col-5{grid-column-end:span 5}.ui-grid .ui-col-6{grid-column-end:span 6}.ui-grid .ui-col-7{grid-column-end:span 7}.ui-grid .ui-col-8{grid-column-end:span 8}.ui-grid .ui-col-9{grid-column-end:span 9}.ui-grid .ui-col-10{grid-column-end:span 10}.ui-grid .ui-col-11{grid-column-end:span 11}.ui-grid .ui-col-12{grid-column-end:span 12}@media (min-width: 480px){.ui-grid .ui-col-xs-1{grid-column-end:span 1}.ui-grid .ui-col-xs-2{grid-column-end:span 2}.ui-grid .ui-col-xs-3{grid-column-end:span 3}.ui-grid .ui-col-xs-4{grid-column-end:span 4}.ui-grid .ui-col-xs-5{grid-column-end:span 5}.ui-grid .ui-col-xs-6{grid-column-end:span 6}.ui-grid .ui-col-xs-7{grid-column-end:span 7}.ui-grid .ui-col-xs-8{grid-column-end:span 8}.ui-grid .ui-col-xs-9{grid-column-end:span 9}.ui-grid .ui-col-xs-10{grid-column-end:span 10}.ui-grid .ui-col-xs-11{grid-column-end:span 11}.ui-grid .ui-col-xs-12{grid-column-end:span 12}}@media (min-width: 768px){.ui-grid .ui-col-sm-1{grid-column-end:span 1}.ui-grid .ui-col-sm-2{grid-column-end:span 2}.ui-grid .ui-col-sm-3{grid-column-end:span 3}.ui-grid .ui-col-sm-4{grid-column-end:span 4}.ui-grid .ui-col-sm-5{grid-column-end:span 5}.ui-grid .ui-col-sm-6{grid-column-end:span 6}.ui-grid .ui-col-sm-7{grid-column-end:span 7}.ui-grid .ui-col-sm-8{grid-column-end:span 8}.ui-grid .ui-col-sm-9{grid-column-end:span 9}.ui-grid .ui-col-sm-10{grid-column-end:span 10}.ui-grid .ui-col-sm-11{grid-column-end:span 11}.ui-grid .ui-col-sm-12{grid-column-end:span 12}}@media (min-width: 992px){.ui-grid .ui-col-md-1{grid-column-end:span 1}.ui-grid .ui-col-md-2{grid-column-end:span 2}.ui-grid .ui-col-md-3{grid-column-end:span 3}.ui-grid .ui-col-md-4{grid-column-end:span 4}.ui-grid .ui-col-md-5{grid-column-end:span 5}.ui-grid .ui-col-md-6{grid-column-end:span 6}.ui-grid .ui-col-md-7{grid-column-end:span 7}.ui-grid .ui-col-md-8{grid-column-end:span 8}.ui-grid .ui-col-md-9{grid-column-end:span 9}.ui-grid .ui-col-md-10{grid-column-end:span 10}.ui-grid .ui-col-md-11{grid-column-end:span 11}.ui-grid .ui-col-md-12{grid-column-end:span 12}}@media (min-width: 1200px){.ui-grid .ui-col-lg-1{grid-column-end:span 1}.ui-grid .ui-col-lg-2{grid-column-end:span 2}.ui-grid .ui-col-lg-3{grid-column-end:span 3}.ui-grid .ui-col-lg-4{grid-column-end:span 4}.ui-grid .ui-col-lg-5{grid-column-end:span 5}.ui-grid .ui-col-lg-6{grid-column-end:span 6}.ui-grid .ui-col-lg-7{grid-column-end:span 7}.ui-grid .ui-col-lg-8{grid-column-end:span 8}.ui-grid .ui-col-lg-9{grid-column-end:span 9}.ui-grid .ui-col-lg-10{grid-column-end:span 10}.ui-grid .ui-col-lg-11{grid-column-end:span 11}.ui-grid .ui-col-lg-12{grid-column-end:span 12}}.ui-heading{--title-font-family:var(--f-family-display);--subtitle-font-family:var(--f-family-text);--heading-color-dark:var(--c-carbon-90);--heading-color-light:var(--c-indigo-70);--h1-size:var(--f-size-12);--h1-leading:var(--f-leading-solid);--h1-weight:var(--f-weight-bold);--h2-size:var(--f-size-10);--h3-size:var(--f-size-8);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-2);margin:0;line-height:var(--f-leading-title)}.ui-theme--editorial .ui-heading{--title-font-family:var(--f-family-text);--h1-size:var(--f-size-9);--h1-leading:var(--f-leading-title);--h1-weight:var(--f-weight-semibold);--h2-size:var(--f-size-8);--h3-size:var(--f-size-7);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-0)}.ui-heading-1{font-family:var(--title-font-family);font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--f-tracking-dense);font-weight:var(--h1-weight);color:var(--heading-color-dark)}.ui-heading-2{font-family:var(--title-font-family);font-size:var(--h2-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-3{font-family:var(--title-font-family);font-size:var(--h3-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-4{font-family:var(--subtitle-font-family);font-size:var(--h4-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-5{font-family:var(--subtitle-font-family);font-size:var(--h5-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-6{font-family:var(--subtitle-font-family);font-size:var(--h6-size);letter-spacing:var(--f-tracking-extra);font-weight:var(--f-weight-bold);text-transform:uppercase;color:var(--heading-color-light)}.ui-heading--bordered{border-bottom:1px solid var(--c-indigo-30);margin-bottom:var(--space-5);padding-bottom:var(--space-2)}.ui-heading--strong{font-weight:var(--f-weight-bold)}.ui-heading--leading{line-height:var(--f-leading-text)}.ui-skeleton{display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:#EEEEEE;line-height:10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}.ui-skeleton--animated{position:relative;background:-webkit-gradient(linear, left top, right top, color-stop(8%, rgba(0, 0, 0, 0.065)), color-stop(18%, rgba(0, 0, 0, 0.135)), color-stop(33%, rgba(0, 0, 0, 0.065)));background:linear-gradient(to right, rgba(0, 0, 0, 0.065) 8%, rgba(0, 0, 0, 0.135) 18%, rgba(0, 0, 0, 0.065) 33%);background-size:800px 104px;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-name:shimmer;animation-name:shimmer;-webkit-animation-timing-function:linear;animation-timing-function:linear}@-webkit-keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}@keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}span{display:inline-block}.prismic-raw-html{width:100%;overflow:auto}.prismic-raw-html table{overflow-x:auto;margin-right:-15px;padding-right:15px;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:48px}.prismic-raw-html table td,.prismic-raw-html table th{text-align:left;min-width:120px;padding-right:12px;padding-top:12px;padding-bottom:12px}.prismic-raw-html table td:last-child,.prismic-raw-html table th:last-child{padding-right:0}.prismic-raw-html table th,.prismic-raw-html table b{font-weight:600}.prismic-raw-html table tbody tr td{border-top:1px solid #DEE3EA}.prismic-raw-html table tbody tr:first-child td{border-top:none}.prismic-raw-html table>thead>tr>th{border-bottom:1px solid #E9EDF3;font-weight:600}*{-webkit-box-sizing:border-box;box-sizing:border-box}html,body{padding:0;margin:0;width:100%;height:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:var(--f-family-text);font-size:var(--f-size-root);line-height:var(--f-leading-body);letter-spacing:var(--f-tracking-tight);color:var(--c-carbon-90);position:relative;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:var(--c-ionic-brand)}stencil-route-link a{color:inherit}ul{margin:0;padding:0}li{list-style:none}hr{border:none;height:1px;background:var(--c-indigo-30);margin:var(--space-6) 0}:host{display:block}.demos{padding:48px}.demo{margin-bottom:48px}";
+
+class Demo {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    render() {
+        return (h("div", { class: "demos" }, h(ButtonDemo, null), h(HeadingDemo, null), h(GridDemo, null), h(CardDemo, null), h(MoresResourcesDemo, null)));
+    }
+    static get style() { return demoCss; }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "shared-demo",
+        "$members$": undefined,
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+const ButtonDemo = () => (h("div", { class: "demo demo-button" }, h(Heading, { level: 3, bordered: true }, "Buttons"), h(Button, null, "Button")));
+const HeadingDemo = () => (h("div", { class: "demo demo-heading" }, h(Heading, { level: 3, bordered: true }, "Headings"), h(Heading, { level: 1 }, "Level 1"), h(Heading, { level: 2 }, "Level 2"), h(Heading, { level: 3 }, "Level 3"), h(Heading, { level: 4 }, "Level 4"), h(Heading, { level: 5 }, "Level 5")));
+const GridDemo = () => (h("div", { class: "demo demo-grid" }, h(Heading, { level: 3, bordered: true }, "Grid"), h(Grid, { class: "demo demo-grid" }, h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 1"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 2"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 3"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 4"))));
+const CardDemo = () => (h("div", { class: "demo demo-card" }, h(Heading, { level: 3, bordered: true }, "Cards"), h(Card, null, h(CardContent, null, h("hgroup", null, h(Heading, { level: 3 }, "Card"), h(Paragraph, null, "Unicorn next level roof party health goth, squid brooklyn pabst biodiesel kickstarter man bun small batch kale chips flexitarian. Edison bulb selfies mumblecore ethical, helvetica affogato palo santo. Taxidermy humblebrag hexagon, pabst stumptown PBR&B succulents. Lumbersexual fam shabby chic cardigan lomo quinoa put a bird on it salvia authentic hell of migas aesthetic truffaut gentrify tattooed. Migas direct trade polaroid distillery, ugh brunch farm-to-table fingerstache vaporware readymade occupy aesthetic four dollar toast. Freegan lyft vegan ramps vexillologist taxidermy listicle vinyl blue bottle pug."))))));
+const MoresResourcesDemo = () => (h("div", null, h("more-resources", { resources: [
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+    ] })));
+
+const disqusCommentsCss = ":host{display:block}";
+
+class DisqusComments {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.setScriptEl = (el) => {
+            this.targetEl = el;
+        };
+    }
+    componentDidLoad() {
+        var _a;
+        const script = `
+    var disqus_config = function () {
+      this.page.url = '${this.url}';  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = '${this.siteId}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://${this.siteId}.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    `;
+        this.scriptEl = document.createElement('script');
+        this.scriptEl.type = 'text/javascript';
+        this.scriptEl.innerHTML = script;
+        (_a = this.targetEl) === null || _a === void 0 ? void 0 : _a.appendChild(this.scriptEl);
+        const disqusScript = document.createElement('script');
+        disqusScript.id = 'dsq-count-scr';
+        disqusScript.async = true;
+        disqusScript.src = `//${this.siteId}.disqus.com/count.js`;
+        this.disqusScriptEl = disqusScript;
+        document.body.appendChild(disqusScript);
+    }
+    componentDidUnload() {
+        var _a, _b, _c, _d;
+        (_b = (_a = this.scriptEl) === null || _a === void 0 ? void 0 : _a.parentNode) === null || _b === void 0 ? void 0 : _b.removeChild(this.scriptEl);
+        (_d = (_c = this.disqusScriptEl) === null || _c === void 0 ? void 0 : _c.parentNode) === null || _d === void 0 ? void 0 : _d.removeChild(this.disqusScriptEl);
+    }
+    render() {
+        return (h(Host, null, h("div", { id: "disqus_thread" }), h("div", { ref: (e) => this.setScriptEl(e) }), h("noscript", null, "Please enable JavaScript to view the", ' ', h("a", { href: "https://disqus.com/?ref_noscript" }, "comments powered by Disqus."))));
+    }
+    static get style() { return disqusCommentsCss; }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "disqus-comments",
+        "$members$": {
+            "url": [1],
+            "siteId": [1, "site-id"]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+class DocSnippet {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    render() {
+        return (h("div", { class: "snippet" }));
+    }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "doc-snippet",
+        "$members$": undefined,
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+const docsHeaderCss = ".sc-docs-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-header-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;position:-webkit-sticky;position:sticky;top:0;background-color:#fff;width:100%;height:64px;color:#98a2ad;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);letter-spacing:0;z-index:1}.docs-header__links.sc-docs-header a.sc-docs-header,.docs-header__external-links.sc-docs-header a.sc-docs-header{color:#98a2ad;font-size:15px;border-bottom:none}.docs-header__links.sc-docs-header a.sc-docs-header:hover,.docs-header__external-links.sc-docs-header a.sc-docs-header:hover{color:#858e97}.docs-header__links.sc-docs-header a.active.sc-docs-header,.docs-header__external-links.sc-docs-header a.active.sc-docs-header{font-weight:500;color:#222d3a}.docs-header__links.sc-docs-header{margin-bottom:2px}.docs-header__links.sc-docs-header a.sc-docs-header{margin-right:24px}.docs-header__link-divider.sc-docs-header{width:1px;height:18px;background:#222d3a;opacity:0.2;margin-right:2px;margin-left:2px}.docs-header__external-links.sc-docs-header{margin-top:5px;margin-left:2px;margin-right:30px}.docs-header__external-links.sc-docs-header a.sc-docs-header{margin-left:22px;font-size:19px}";
+
+class DocsHeader {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.template = 'docs';
+    }
+    isActive(path) {
+        const prefix = new RegExp("^" + path, "gm");
+        const regexRes = prefix.test(Router.activePath);
+        return regexRes;
+    }
+    render() {
+        const { template } = this;
+        return (h(Host, null, h("docs-search", null), h("div", { class: "docs-header__links" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': template === 'docs' } }), "Docs"), h("a", Object.assign({}, href('/docs/plugins'), { class: { 'active': template === 'plugins' } }), "Plugins"), h("a", Object.assign({}, href('/blog')), "Blog"), h("a", Object.assign({}, href('/community')), "Community")), h("div", { class: "docs-header__link-divider" }), h("div", { class: "docs-header__external-links" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" })), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" })))));
+    }
+    static get style() { return docsHeaderCss; }
+    static get cmpMeta() { return {
+        "$flags$": 2,
+        "$tagName$": "docs-header",
+        "$members$": {
+            "template": [1]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+const docsSearchCss = ".sc-docs-search:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-search-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex:1;flex:1}";
+
+class DocsSearch {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    render() {
+        return (h(Host, null));
+    }
+    static get style() { return docsSearchCss; }
+    static get cmpMeta() { return {
+        "$flags$": 2,
+        "$tagName$": "docs-search",
+        "$members$": undefined,
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+var docsStructure = [
 	{
 		text: "Introduction",
 		filePath: "/assets/docs-content/index.json",
@@ -8841,6 +9033,11 @@ var siteStructure = [
 				text: "Progressive Web Apps",
 				filePath: "/assets/docs-content/basics/progressive-web-app.json",
 				url: "/docs/basics/progressive-web-app"
+			},
+			{
+				text: "CLI Reference",
+				filePath: "/assets/docs-content/basics/cli-commands.json",
+				url: "/docs/basics/cli-commands"
 			}
 		]
 	},
@@ -8904,8 +9101,8 @@ var siteStructure = [
 			},
 			{
 				text: "Splash Screens and Icons",
-				filePath: "/assets/docs-content/guides/splash-screens-icons.json",
-				url: null
+				filePath: "/assets/docs-content/guides/splash-screens-and-icons.json",
+				url: "/docs/guides/splash-screens-and-icons"
 			},
 			{
 				text: "Community Guides",
@@ -9005,32 +9202,32 @@ var siteStructure = [
 			{
 				text: "Introduction",
 				filePath: "/assets/docs-content/plugins/index.json",
-				url: "/docs/plugins"
+				url: null
 			},
 			{
 				text: "Development Workflow",
 				filePath: "/assets/docs-content/plugins/workflow.json",
-				url: "/docs/plugins/workflow"
+				url: null
 			},
 			{
 				text: "iOS Guide",
 				filePath: "/assets/docs-content/plugins/ios.json",
-				url: "/docs/plugins/ios"
+				url: null
 			},
 			{
 				text: "Android Guide",
 				filePath: "/assets/docs-content/plugins/android.json",
-				url: "/docs/plugins/android"
+				url: null
 			},
 			{
 				text: "Web/PWA Guide",
 				filePath: "/assets/docs-content/plugins/web.json",
-				url: "/docs/plugins/web"
+				url: null
 			},
 			{
 				text: "JavaScript Guide",
 				filePath: "/assets/docs-content/plugins/js.json",
-				url: "/docs/plugins/js"
+				url: null
 			}
 		]
 	},
@@ -9040,7 +9237,7 @@ var siteStructure = [
 			{
 				text: "Introduction",
 				filePath: "/assets/docs-content/apis/index.json",
-				url: "/docs/apis"
+				url: null
 			},
 			{
 				text: "Community Plugins",
@@ -9055,116 +9252,289 @@ var siteStructure = [
 			{
 				text: "Accessibility",
 				filePath: "/assets/docs-content/apis/accessibility/index.json",
-				url: "/docs/apis/accessibility"
+				url: null
 			},
 			{
 				text: "App",
 				filePath: "/assets/docs-content/apis/app/index.json",
-				url: "/docs/apis/app"
+				url: null
 			},
 			{
 				text: "Background Task",
 				filePath: "/assets/docs-content/apis/background-task/index.json",
-				url: "/docs/apis/background-task"
+				url: null
 			},
 			{
 				text: "Browser",
 				filePath: "/assets/docs-content/apis/browser/index.json",
-				url: "/docs/apis/browser"
+				url: null
 			},
 			{
 				text: "Camera",
 				filePath: "/assets/docs-content/apis/camera/index.json",
-				url: "/docs/apis/camera"
+				url: null
 			},
 			{
 				text: "Clipboard",
 				filePath: "/assets/docs-content/apis/clipboard/index.json",
-				url: "/docs/apis/clipboard"
+				url: null
 			},
 			{
 				text: "Console",
 				filePath: "/assets/docs-content/apis/console/index.json",
-				url: "/docs/apis/console"
+				url: null
 			},
 			{
 				text: "Device",
 				filePath: "/assets/docs-content/apis/device/index.json",
-				url: "/docs/apis/device"
+				url: null
 			},
 			{
 				text: "Filesystem",
 				filePath: "/assets/docs-content/apis/filesystem/index.json",
-				url: "/docs/apis/filesystem"
+				url: null
 			},
 			{
 				text: "Geolocation",
 				filePath: "/assets/docs-content/apis/geolocation/index.json",
-				url: "/docs/apis/geolocation"
+				url: null
 			},
 			{
 				text: "Haptics",
 				filePath: "/assets/docs-content/apis/haptics/index.json",
-				url: "/docs/apis/haptics"
+				url: null
 			},
 			{
 				text: "Keyboard",
 				filePath: "/assets/docs-content/apis/keyboard/index.json",
-				url: "/docs/apis/keyboard"
+				url: null
 			},
 			{
 				text: "Local Notifications",
 				filePath: "/assets/docs-content/apis/local-notifications/index.json",
-				url: "/docs/apis/local-notifications"
+				url: null
 			},
 			{
 				text: "Modals",
 				filePath: "/assets/docs-content/apis/modals/index.json",
-				url: "/docs/apis/modals"
+				url: null
 			},
 			{
 				text: "Motion",
 				filePath: "/assets/docs-content/apis/motion/index.json",
-				url: "/docs/apis/motion"
+				url: null
 			},
 			{
 				text: "Network",
 				filePath: "/assets/docs-content/apis/network/index.json",
-				url: "/docs/apis/network"
+				url: null
 			},
 			{
 				text: "Permissions",
 				filePath: "/assets/docs-content/apis/permissions/index.json",
-				url: "/docs/apis/permissions"
+				url: null
 			},
 			{
 				text: "Push Notifications",
 				filePath: "/assets/docs-content/apis/push-notifications/index.json",
-				url: "/docs/apis/push-notifications"
+				url: null
 			},
 			{
 				text: "Share",
 				filePath: "/assets/docs-content/apis/share/index.json",
-				url: "/docs/apis/share"
+				url: null
 			},
 			{
 				text: "Splash Screen",
 				filePath: "/assets/docs-content/apis/splash-screen/index.json",
-				url: "/docs/apis/splash-screen"
+				url: null
 			},
 			{
 				text: "Status Bar",
 				filePath: "/assets/docs-content/apis/status-bar/index.json",
-				url: "/docs/apis/status-bar"
+				url: null
 			},
 			{
 				text: "Storage",
 				filePath: "/assets/docs-content/apis/storage/index.json",
-				url: "/docs/apis/storage"
+				url: null
 			},
 			{
 				text: "Toast",
 				filePath: "/assets/docs-content/apis/toast/index.json",
+				url: null
+			}
+		]
+	}
+];
+
+var pluginsStructure = [
+	{
+		text: "Introduction",
+		filePath: "/assets/plugins-content/index.json",
+		url: "/docs/plugins"
+	},
+	{
+		text: "Creating Plugins",
+		children: [
+			{
+				text: "Development Workflow",
+				filePath: "/assets/plugins-content/plugins/workflow.json",
+				url: "/docs/plugins/workflow"
+			},
+			{
+				text: "iOS Guide",
+				filePath: "/assets/plugins-content/plugins/ios.json",
+				url: "/docs/plugins/ios"
+			},
+			{
+				text: "Android Guide",
+				filePath: "/assets/plugins-content/plugins/android.json",
+				url: "/docs/plugins/android"
+			},
+			{
+				text: "Web/PWA Guide",
+				filePath: "/assets/plugins-content/plugins/web.json",
+				url: "/docs/plugins/web"
+			},
+			{
+				text: "JavaScript Guide",
+				filePath: "/assets/plugins-content/plugins/js.json",
+				url: "/docs/plugins/js"
+			}
+		]
+	},
+	{
+		text: "Plugins",
+		children: [
+			{
+				text: "Introduction",
+				filePath: "/assets/plugins-content/apis/index.json",
+				url: "/docs/apis"
+			},
+			{
+				text: "Community Plugins",
+				filePath: "/assets/plugins-content/community/plugins.json",
+				url: null
+			},
+			{
+				text: "Enterprise Plugins",
+				filePath: "/assets/plugins-content/enterprise/index.json",
+				url: null
+			},
+			{
+				text: "Accessibility",
+				filePath: "/assets/plugins-content/apis/accessibility/index.json",
+				url: "/docs/apis/accessibility"
+			},
+			{
+				text: "App",
+				filePath: "/assets/plugins-content/apis/app/index.json",
+				url: "/docs/apis/app"
+			},
+			{
+				text: "Background Task",
+				filePath: "/assets/plugins-content/apis/background-task/index.json",
+				url: "/docs/apis/background-task"
+			},
+			{
+				text: "Browser",
+				filePath: "/assets/plugins-content/apis/browser/index.json",
+				url: "/docs/apis/browser"
+			},
+			{
+				text: "Camera",
+				filePath: "/assets/plugins-content/apis/camera/index.json",
+				url: "/docs/apis/camera"
+			},
+			{
+				text: "Clipboard",
+				filePath: "/assets/plugins-content/apis/clipboard/index.json",
+				url: "/docs/apis/clipboard"
+			},
+			{
+				text: "Console",
+				filePath: "/assets/plugins-content/apis/console/index.json",
+				url: "/docs/apis/console"
+			},
+			{
+				text: "Device",
+				filePath: "/assets/plugins-content/apis/device/index.json",
+				url: "/docs/apis/device"
+			},
+			{
+				text: "Filesystem",
+				filePath: "/assets/plugins-content/apis/filesystem/index.json",
+				url: "/docs/apis/filesystem"
+			},
+			{
+				text: "Geolocation",
+				filePath: "/assets/plugins-content/apis/geolocation/index.json",
+				url: "/docs/apis/geolocation"
+			},
+			{
+				text: "Haptics",
+				filePath: "/assets/plugins-content/apis/haptics/index.json",
+				url: "/docs/apis/haptics"
+			},
+			{
+				text: "Keyboard",
+				filePath: "/assets/plugins-content/apis/keyboard/index.json",
+				url: "/docs/apis/keyboard"
+			},
+			{
+				text: "Local Notifications",
+				filePath: "/assets/plugins-content/apis/local-notifications/index.json",
+				url: "/docs/apis/local-notifications"
+			},
+			{
+				text: "Modals",
+				filePath: "/assets/plugins-content/apis/modals/index.json",
+				url: "/docs/apis/modals"
+			},
+			{
+				text: "Motion",
+				filePath: "/assets/plugins-content/apis/motion/index.json",
+				url: "/docs/apis/motion"
+			},
+			{
+				text: "Network",
+				filePath: "/assets/plugins-content/apis/network/index.json",
+				url: "/docs/apis/network"
+			},
+			{
+				text: "Permissions",
+				filePath: "/assets/plugins-content/apis/permissions/index.json",
+				url: "/docs/apis/permissions"
+			},
+			{
+				text: "Push Notifications",
+				filePath: "/assets/plugins-content/apis/push-notifications/index.json",
+				url: "/docs/apis/push-notifications"
+			},
+			{
+				text: "Share",
+				filePath: "/assets/plugins-content/apis/share/index.json",
+				url: "/docs/apis/share"
+			},
+			{
+				text: "Splash Screen",
+				filePath: "/assets/plugins-content/apis/splash-screen/index.json",
+				url: "/docs/apis/splash-screen"
+			},
+			{
+				text: "Status Bar",
+				filePath: "/assets/plugins-content/apis/status-bar/index.json",
+				url: "/docs/apis/status-bar"
+			},
+			{
+				text: "Storage",
+				filePath: "/assets/plugins-content/apis/storage/index.json",
+				url: "/docs/apis/storage"
+			},
+			{
+				text: "Toast",
+				filePath: "/assets/plugins-content/apis/toast/index.json",
 				url: "/docs/apis/toast"
 			}
 		]
@@ -9220,13 +9590,18 @@ class DocumentComponent {
         registerInstance(this, hostRef);
         this.pages = [];
         this.page = null;
+        this.template = 'docs';
     }
     toggleMenu() {
         this.menuEl.toggleOverlayMenu();
     }
     componentWillLoad() {
-        console.log('Hiding topbar', state.showTopBar);
+        console.log(pluginsStructure);
         state.showTopBar = false;
+        this.menuStructure = docsStructure;
+        if (this.template === 'plugins') {
+            this.menuStructure = pluginsStructure;
+        }
         return this.fetchNewContent(this.page);
     }
     fetchNewContent(page, oldPage) {
@@ -9234,7 +9609,7 @@ class DocumentComponent {
             return;
         }
         state.showTopBar = false;
-        const foundData = findItem(siteStructure, this.page);
+        const foundData = findItem(this.menuStructure, this.page);
         this.item = foundData.item;
         this.nextItem = foundData.nextItem;
         this.prevItem = foundData.prevItem;
@@ -9244,7 +9619,7 @@ class DocumentComponent {
         if (this.item == null) {
             return h("h1", null, "Page not found");
         }
-        return (h("div", { class: "container" }, h("app-menu-toggle", null), h("docs-menu", { ref: el => this.menuEl = el, selectedParent: this.parent, siteStructureList: siteStructure }), h("div", { class: "content-container" }, h("docs-header", null), h("app-marked", { fetchPath: this.item.filePath, renderer: (docsContent) => [
+        return (h("div", { class: "container" }, h("app-menu-toggle", null), h("docs-menu", { ref: el => this.menuEl = el, template: this.template, selectedParent: this.parent, siteStructureList: this.menuStructure }), h("div", { class: "content-container" }, h("docs-header", { template: this.template }), h("app-marked", { fetchPath: this.item.filePath, renderer: (docsContent) => [
                 h(Helmet, null, h("title", null, docsContent.title ? `${docsContent.title} - Capacitor` : 'Capacitor')),
                 h("div", { class: "doc-content" }, h("div", { class: "measure-lg" }, h("div", { onClick: handleRoutableLinkClick, innerHTML: docsContent.content }), h("h2", null, "Contributors"), h("contributor-list", { contributors: docsContent.contributors }), h("lower-content-nav", { next: this.nextItem, prev: this.prevItem }))),
                 h("in-page-navigation", { pageLinks: docsContent.headings, srcUrl: docsContent.srcPath, currentPageUrl: docsContent.url })
@@ -9260,6 +9635,7 @@ class DocumentComponent {
         "$members$": {
             "pages": [16],
             "page": [1],
+            "template": [1],
             "item": [32],
             "nextItem": [32],
             "prevItem": [32],
@@ -9503,7 +9879,7 @@ class InPageNavigtion {
     }
     render() {
         const pageLinks = this.pageLinks.filter(pl => pl.level !== 1);
-        const submitEditLink = (h("a", { class: "submit-edit-link", href: `https://github.com/ionic-team/capacitor/tree/master/site/${this.srcUrl}` }, this.ghIcon(), h("span", null, "Submit an edit")));
+        const submitEditLink = (h("a", { class: "submit-edit-link", target: "_blank", href: `https://github.com/ionic-team/capacitor-site/blob/master/${this.srcUrl}` }, this.ghIcon(), h("span", null, "Submit an edit")));
         if (pageLinks.length === 0) {
             return (h("div", { class: "sticky" }, submitEditLink));
         }
@@ -10054,8 +10430,10 @@ var browserPolyfill = /*#__PURE__*/Object.freeze({
   __proto__: null
 });
 
+var require$$0 = getCjsExportFromNamespace(browserPolyfill);
+
 var prismicJavascript_min = createCommonjsModule(function (module, exports) {
-!function(t,e){module.exports=e(browserPolyfill);}("undefined"!=typeof self?self:commonjsGlobal,function(t){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r});},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0});},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=20)}([function(t,e,n){e.a=function(t){var e=this.constructor;return this.then(function(n){return e.resolve(t()).then(function(){return n})},function(n){return e.resolve(t()).then(function(){return e.reject(n)})})};},function(t,e,n){e.__esModule=!0,e.createPreviewResolver=function(t,e,n){return {token:t,documentId:e,resolve:function(r,o,i){return e&&n?n(e,{ref:t}).then(function(t){if(t){var e=r(t);return i&&i(null,e),e}return i&&i(null,o),o}):Promise.resolve(o)}}};},function(t,e,n){var r=this&&this.__assign||Object.assign||function(t){for(var e,n=1,r=arguments.length;n<r;n++)for(var o in e=arguments[n])Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o]);return t};e.__esModule=!0;var o=n(5),i=n(4),u=n(6),a=n(12),s=n(1);e.PREVIEW_COOKIE="io.prismic.preview",e.EXPERIMENT_COOKIE="io.prismic.experiment";var f=function(){function t(t,e,n){this.data=t,this.masterRef=t.refs.filter(function(t){return t.isMasterRef})[0],this.experiments=new o.Experiments(t.experiments),this.bookmarks=t.bookmarks,this.httpClient=e,this.options=n,this.refs=t.refs,this.tags=t.tags,this.types=t.types,this.languages=t.languages;}return t.prototype.form=function(t){var e=this.data.forms[t];return e?new i.SearchForm(e,this.httpClient):null},t.prototype.everything=function(){var t=this.form("everything");if(!t)throw new Error("Missing everything form");return t},t.prototype.master=function(){return this.masterRef.ref},t.prototype.ref=function(t){var e=this.data.refs.filter(function(e){return e.label===t})[0];return e?e.ref:null},t.prototype.currentExperiment=function(){return this.experiments.current()},t.prototype.query=function(t,n,r){void 0===r&&(r=function(){});var o="function"==typeof n?{options:{},callback:n}:{options:n||{},callback:r},i=o.options,u=o.callback,s=this.everything();for(var f in i)s=s.set(f,i[f]);if(!i.ref){var c="";this.options.req?c=this.options.req.headers.cookie||"":"undefined"!=typeof window&&window.document&&(c=window.document.cookie||"");var l=a.default.parse(c),p=l[e.PREVIEW_COOKIE],h=this.experiments.refFromCookie(l[e.EXPERIMENT_COOKIE]);s=s.ref(p||h||this.masterRef.ref);}return t&&s.query(t),s.submit(u)},t.prototype.queryFirst=function(t,e,n){var o="function"==typeof e?{options:{},callback:e}:{options:r({},e)||{},callback:n||function(){}},i=o.options,u=o.callback;return i.page=1,i.pageSize=1,this.query(t,i).then(function(t){var e=t&&t.results&&t.results[0];return u(null,e),e}).catch(function(t){throw u(t),t})},t.prototype.getByID=function(t,e,n){var o=e?r({},e):{};return o.lang||(o.lang="*"),this.queryFirst(u.default.at("document.id",t),o,n)},t.prototype.getByIDs=function(t,e,n){var o=e?r({},e):{};return o.lang||(o.lang="*"),this.query(u.default.in("document.id",t),o,n)},t.prototype.getByUID=function(t,e,n,o){var i=n?r({},n):{};if("*"===i.lang)throw new Error("FORDIDDEN. You can't use getByUID with *, use the predicates instead.");return i.page||(i.page=1),this.queryFirst(u.default.at("my."+t+".uid",e),i,o)},t.prototype.getSingle=function(t,e,n){var o=e?r({},e):{};return this.queryFirst(u.default.at("document.type",t),o,n)},t.prototype.getBookmark=function(t,e,n){var r=this.data.bookmarks[t];return r?this.getByID(r,e,n):Promise.reject("Error retrieving bookmarked id")},t.prototype.getPreviewResolver=function(t,e){return s.createPreviewResolver(t,e,this.getByID.bind(this))},t.prototype.previewSession=function(t,e,n,r){var o=this;return console.warn("previewSession function is deprecated in favor of getPreviewResolver function."),new Promise(function(i,u){o.httpClient.request(t,function(a,s){if(a)r&&r(a),u(a);else if(s){if(s.mainDocument)return o.getByID(s.mainDocument,{ref:t}).then(function(t){if(t){var o=e(t);r&&r(null,o),i(o);}else r&&r(null,n),i(n);}).catch(u);r&&r(null,n),i(n);}});})},t}();e.default=f;},function(t,e,n){e.__esModule=!0;var r=n(2),o=n(11);function i(t){return t.indexOf("?")>-1?"&":"?"}var u=function(){function t(t,e){if(this.options=e||{},this.url=t,this.options.accessToken){var n="access_token="+this.options.accessToken;this.url+=i(t)+n;}this.options.routes&&(this.url+=i(t)+"routes="+encodeURIComponent(JSON.stringify(this.options.routes))),this.apiDataTTL=this.options.apiDataTTL||5,this.httpClient=new o.default(this.options.requestHandler,this.options.apiCache,this.options.proxyAgent,this.options.timeoutInMs);}return t.prototype.get=function(t){var e=this;return this.httpClient.cachedRequest(this.url,{ttl:this.apiDataTTL}).then(function(n){var o=new r.default(n,e.httpClient,e.options);return t&&t(null,o),o}).catch(function(e){throw t&&t(e),e})},t}();e.default=u;},function(t,e,n){e.__esModule=!0;var r=function(){function t(t,e){this.id=t,this.api=e,this.fields={};}return t.prototype.set=function(t,e){return this.fields[t]=e,this},t.prototype.ref=function(t){return this.set("ref",t)},t.prototype.query=function(t){return this.set("q",t)},t.prototype.pageSize=function(t){return this.set("pageSize",t)},t.prototype.fetch=function(t){return console.warn("Warning: Using Fetch is deprecated. Use the property `graphQuery` instead."),this.set("fetch",t)},t.prototype.fetchLinks=function(t){return console.warn("Warning: Using FetchLinks is deprecated. Use the property `graphQuery` instead."),this.set("fetchLinks",t)},t.prototype.graphQuery=function(t){return this.set("graphQuery",t)},t.prototype.lang=function(t){return this.set("lang",t)},t.prototype.page=function(t){return this.set("page",t)},t.prototype.after=function(t){return this.set("after",t)},t.prototype.orderings=function(t){return this.set("orderings",t)},t.prototype.url=function(){var e=this;return this.api.get().then(function(n){return t.toSearchForm(e,n).url()})},t.prototype.submit=function(e){var n=this;return this.api.get().then(function(r){return t.toSearchForm(n,r).submit(e)})},t.toSearchForm=function(t,e){var n=e.form(t.id);if(n)return Object.keys(t.fields).reduce(function(e,n){var r=t.fields[n];return "q"===n?e.query(r):"pageSize"===n?e.pageSize(r):"fetch"===n?e.fetch(r):"fetchLinks"===n?e.fetchLinks(r):"graphQuery"===n?e.graphQuery(r):"lang"===n?e.lang(r):"page"===n?e.page(r):"after"===n?e.after(r):"orderings"===n?e.orderings(r):e.set(n,r)},n);throw new Error("Unable to access to form "+t.id)},t}();e.LazySearchForm=r;var o=function(){function t(t,e){for(var n in this.httpClient=e,this.form=t,this.data={},t.fields)t.fields[n].default&&(this.data[n]=[t.fields[n].default]);}return t.prototype.set=function(t,e){var n=this.form.fields[t];if(!n)throw new Error("Unknown field "+t);var r=""===e||void 0===e?null:e,o=this.data[t]||[];return o=n.multiple?r?o.concat([r]):o:r?[r]:o,this.data[t]=o,this},t.prototype.ref=function(t){return this.set("ref",t)},t.prototype.query=function(t){if("string"==typeof t)return this.query([t]);if(Array.isArray(t))return this.set("q","["+t.join("")+"]");throw new Error("Invalid query : "+t)},t.prototype.pageSize=function(t){return this.set("pageSize",t)},t.prototype.fetch=function(t){console.warn("Warning: Using Fetch is deprecated. Use the property `graphQuery` instead.");var e=Array.isArray(t)?t.join(","):t;return this.set("fetch",e)},t.prototype.fetchLinks=function(t){console.warn("Warning: Using FetchLinks is deprecated. Use the property `graphQuery` instead.");var e=Array.isArray(t)?t.join(","):t;return this.set("fetchLinks",e)},t.prototype.graphQuery=function(t){return this.set("graphQuery",t)},t.prototype.lang=function(t){return this.set("lang",t)},t.prototype.page=function(t){return this.set("page",t)},t.prototype.after=function(t){return this.set("after",t)},t.prototype.orderings=function(t){return t?this.set("orderings","["+t.join(",")+"]"):this},t.prototype.url=function(){var t=this.form.action;if(this.data){var e=t.indexOf("?")>-1?"&":"?";for(var n in this.data)if(this.data.hasOwnProperty(n)){var r=this.data[n];if(r)for(var o=0;o<r.length;o++)t+=e+n+"="+encodeURIComponent(r[o]),e="&";}}return t},t.prototype.submit=function(t){return this.httpClient.cachedRequest(this.url()).then(function(e){return t&&t(null,e),e}).catch(function(e){throw t&&t(e),e})},t}();e.SearchForm=o;},function(t,e,n){e.__esModule=!0;var r=function(){function t(t){this.data={},this.data=t;}return t.prototype.id=function(){return this.data.id},t.prototype.ref=function(){return this.data.ref},t.prototype.label=function(){return this.data.label},t}();e.Variation=r;var o=function(){function t(t){this.data={},this.data=t,this.variations=(t.variations||[]).map(function(t){return new r(t)});}return t.prototype.id=function(){return this.data.id},t.prototype.googleId=function(){return this.data.googleId},t.prototype.name=function(){return this.data.name},t}();e.Experiment=o;var i=function(){function t(t){t&&(this.drafts=(t.drafts||[]).map(function(t){return new o(t)}),this.running=(t.running||[]).map(function(t){return new o(t)}));}return t.prototype.current=function(){return this.running.length>0?this.running[0]:null},t.prototype.refFromCookie=function(t){if(!t||""===t.trim())return null;var e=t.trim().split(" ");if(e.length<2)return null;var n=e[0],r=parseInt(e[1],10),o=this.running.filter(function(t){return t.googleId()===n&&t.variations.length>r})[0];return o?o.variations[r].ref():null},t}();e.Experiments=i;},function(t,e,n){e.__esModule=!0;var r="at",o="not",i="missing",u="has",a="any",s="in",f="fulltext",c="similar",l="number.gt",p="number.lt",h="number.inRange",d="date.before",y="date.after",m="date.between",g="date.day-of-month",v="date.day-of-month-after",w="date.day-of-month-before",b="date.day-of-week",_="date.day-of-week-after",k="date.day-of-week-before",I="date.month",T="date.month-before",E="date.month-after",O="date.year",A="date.hour",x="date.hour-before",M="date.hour-after",P="geopoint.near";function j(t){if("string"==typeof t)return '"'+t+'"';if("number"==typeof t)return t.toString();if(t instanceof Date)return t.getTime().toString();if(Array.isArray(t))return "["+t.map(function(t){return j(t)}).join(",")+"]";if("boolean"==typeof t)return t.toString();throw new Error("Unable to encode "+t+" of type "+typeof t)}var q={near:function(t,e,n,r){return "["+P+"("+t+", "+e+", "+n+", "+r+")]"}},R={before:function(t,e){return "["+d+"("+t+", "+j(e)+")]"},after:function(t,e){return "["+y+"("+t+", "+j(e)+")]"},between:function(t,e,n){return "["+m+"("+t+", "+j(e)+", "+j(n)+")]"},dayOfMonth:function(t,e){return "["+g+"("+t+", "+e+")]"},dayOfMonthAfter:function(t,e){return "["+v+"("+t+", "+e+")]"},dayOfMonthBefore:function(t,e){return "["+w+"("+t+", "+e+")]"},dayOfWeek:function(t,e){return "["+b+"("+t+", "+j(e)+")]"},dayOfWeekAfter:function(t,e){return "["+_+"("+t+", "+j(e)+")]"},dayOfWeekBefore:function(t,e){return "["+k+"("+t+", "+j(e)+")]"},month:function(t,e){return "["+I+"("+t+", "+j(e)+")]"},monthBefore:function(t,e){return "["+T+"("+t+", "+j(e)+")]"},monthAfter:function(t,e){return "["+E+"("+t+", "+j(e)+")]"},year:function(t,e){return "["+O+"("+t+", "+e+")]"},hour:function(t,e){return "["+A+"("+t+", "+e+")]"},hourBefore:function(t,e){return "["+x+"("+t+", "+e+")]"},hourAfter:function(t,e){return "["+M+"("+t+", "+e+")]"}},S={gt:function(t,e){return "["+l+"("+t+", "+e+")]"},lt:function(t,e){return "["+p+"("+t+", "+e+")]"},inRange:function(t,e,n){return "["+h+"("+t+", "+e+", "+n+")]"}};e.default={at:function(t,e){return "["+r+"("+t+", "+j(e)+")]"},not:function(t,e){return "["+o+"("+t+", "+j(e)+")]"},missing:function(t){return "["+i+"("+t+")]"},has:function(t){return "["+u+"("+t+")]"},any:function(t,e){return "["+a+"("+t+", "+j(e)+")]"},in:function(t,e){return "["+s+"("+t+", "+j(e)+")]"},fulltext:function(t,e){return "["+f+"("+t+", "+j(e)+")]"},similar:function(t,e){return "["+c+'("'+t+'", '+e+")]"},date:R,dateBefore:R.before,dateAfter:R.after,dateBetween:R.between,dayOfMonth:R.dayOfMonth,dayOfMonthAfter:R.dayOfMonthAfter,dayOfMonthBefore:R.dayOfMonthBefore,dayOfWeek:R.dayOfWeek,dayOfWeekAfter:R.dayOfWeekAfter,dayOfWeekBefore:R.dayOfWeekBefore,month:R.month,monthBefore:R.monthBefore,monthAfter:R.monthAfter,year:R.year,hour:R.hour,hourBefore:R.hourBefore,hourAfter:R.hourAfter,number:S,gt:S.gt,lt:S.lt,inRange:S.inRange,near:q.near,geopoint:q};},function(t,e,n){(function(t){var r=n(0),o=setTimeout;function i(){}function u(t){if(!(this instanceof u))throw new TypeError("Promises must be constructed via new");if("function"!=typeof t)throw new TypeError("not a function");this._state=0,this._handled=!1,this._value=void 0,this._deferreds=[],l(t,this);}function a(t,e){for(;3===t._state;)t=t._value;0!==t._state?(t._handled=!0,u._immediateFn(function(){var n=1===t._state?e.onFulfilled:e.onRejected;if(null!==n){var r;try{r=n(t._value);}catch(t){return void f(e.promise,t)}s(e.promise,r);}else(1===t._state?s:f)(e.promise,t._value);})):t._deferreds.push(e);}function s(t,e){try{if(e===t)throw new TypeError("A promise cannot be resolved with itself.");if(e&&("object"==typeof e||"function"==typeof e)){var n=e.then;if(e instanceof u)return t._state=3,t._value=e,void c(t);if("function"==typeof n)return void l(function(t,e){return function(){t.apply(e,arguments);}}(n,e),t)}t._state=1,t._value=e,c(t);}catch(e){f(t,e);}}function f(t,e){t._state=2,t._value=e,c(t);}function c(t){2===t._state&&0===t._deferreds.length&&u._immediateFn(function(){t._handled||u._unhandledRejectionFn(t._value);});for(var e=0,n=t._deferreds.length;e<n;e++)a(t,t._deferreds[e]);t._deferreds=null;}function l(t,e){var n=!1;try{t(function(t){n||(n=!0,s(e,t));},function(t){n||(n=!0,f(e,t));});}catch(t){if(n)return;n=!0,f(e,t);}}u.prototype.catch=function(t){return this.then(null,t)},u.prototype.then=function(t,e){var n=new this.constructor(i);return a(this,new function(t,e,n){this.onFulfilled="function"==typeof t?t:null,this.onRejected="function"==typeof e?e:null,this.promise=n;}(t,e,n)),n},u.prototype.finally=r.a,u.all=function(t){return new u(function(e,n){if(!t||void 0===t.length)throw new TypeError("Promise.all accepts an array");var r=Array.prototype.slice.call(t);if(0===r.length)return e([]);var o=r.length;function i(t,u){try{if(u&&("object"==typeof u||"function"==typeof u)){var a=u.then;if("function"==typeof a)return void a.call(u,function(e){i(t,e);},n)}r[t]=u,0==--o&&e(r);}catch(t){n(t);}}for(var u=0;u<r.length;u++)i(u,r[u]);})},u.resolve=function(t){return t&&"object"==typeof t&&t.constructor===u?t:new u(function(e){e(t);})},u.reject=function(t){return new u(function(e,n){n(t);})},u.race=function(t){return new u(function(e,n){for(var r=0,o=t.length;r<o;r++)t[r].then(e,n);})},u._immediateFn="function"==typeof t&&function(e){t(e);}||function(t){o(t,0);},u._unhandledRejectionFn=function(t){"undefined"!=typeof console&&console&&console.warn("Possible Unhandled Promise Rejection:",t);},e.a=u;}).call(this,n(18).setImmediate);},function(t,e,n){e.__esModule=!0;var r=function(){function t(t){this.options=t||{};}return t.prototype.request=function(t,e){!function(t,e,n){var r,o={headers:{Accept:"application/json"}};e&&e.proxyAgent&&(o.agent=e.proxyAgent);var i=fetch(t,o);(e.timeoutInMs?Promise.race([i,new Promise(function(n,o){r=setTimeout(function(){return o(new Error(t+" response timeout"))},e.timeoutInMs);})]):i).then(function(e){return clearTimeout(r),~~(e.status/100!=2)?e.text().then(function(){var n=new Error("Unexpected status code ["+e.status+"] on URL "+t);throw n.status=e.status,n}):e.json().then(function(t){var r=e.headers.get("cache-control"),o=r?/max-age=(\d+)/.exec(r):null,i=o?parseInt(o[1],10):void 0;n(null,t,e,i);})}).catch(function(t){clearTimeout(r),n(t);});}(t,this.options,e);},t}();e.DefaultRequestHandler=r;},function(t,e,n){function r(t){this.size=0,this.limit=t,this._keymap={};}e.__esModule=!0,e.MakeLRUCache=function(t){return new r(t)},r.prototype.put=function(t,e){var n={key:t,value:e};if(this._keymap[t]=n,this.tail?(this.tail.newer=n,n.older=this.tail):this.head=n,this.tail=n,this.size===this.limit)return this.shift();this.size++;},r.prototype.shift=function(){var t=this.head;return t&&(this.head.newer?(this.head=this.head.newer,this.head.older=void 0):this.head=void 0,t.newer=t.older=void 0,delete this._keymap[t.key]),console.log("purging ",t.key),t},r.prototype.get=function(t,e){var n=this._keymap[t];if(void 0!==n)return n===this.tail?e?n:n.value:(n.newer&&(n===this.head&&(this.head=n.newer),n.newer.older=n.older),n.older&&(n.older.newer=n.newer),n.newer=void 0,n.older=this.tail,this.tail&&(this.tail.newer=n),this.tail=n,e?n:n.value)},r.prototype.find=function(t){return this._keymap[t]},r.prototype.set=function(t,e){var n,r=this.get(t,!0);return r?(n=r.value,r.value=e):(n=this.put(t,e))&&(n=n.value),n},r.prototype.remove=function(t){var e=this._keymap[t];if(e)return delete this._keymap[e.key],e.newer&&e.older?(e.older.newer=e.newer,e.newer.older=e.older):e.newer?(e.newer.older=void 0,this.head=e.newer):e.older?(e.older.newer=void 0,this.tail=e.older):this.head=this.tail=void 0,this.size--,e.value},r.prototype.removeAll=function(){this.head=this.tail=void 0,this.size=0,this._keymap={};},"function"==typeof Object.keys?r.prototype.keys=function(){return Object.keys(this._keymap)}:r.prototype.keys=function(){var t=[];for(var e in this._keymap)t.push(e);return t},r.prototype.forEach=function(t,e,n){var r;if(!0===e?(n=!0,e=void 0):"object"!=typeof e&&(e=this),n)for(r=this.tail;r;)t.call(e,r.key,r.value,this),r=r.older;else for(r=this.head;r;)t.call(e,r.key,r.value,this),r=r.newer;},r.prototype.toString=function(){for(var t="",e=this.head;e;)t+=String(e.key)+":"+e.value,(e=e.newer)&&(t+=" < ");return t};},function(t,e,n){e.__esModule=!0;var r=n(9),o=function(){function t(t){void 0===t&&(t=1e3),this.lru=r.MakeLRUCache(t);}return t.prototype.isExpired=function(t){var e=this.lru.get(t,!1);return !!e&&(0!==e.expiredIn&&e.expiredIn<Date.now())},t.prototype.get=function(t,e){var n=this.lru.get(t,!1);n&&!this.isExpired(t)?e(null,n.data):e&&e(null);},t.prototype.set=function(t,e,n,r){this.lru.remove(t),this.lru.put(t,{data:e,expiredIn:n?Date.now()+1e3*n:0}),r&&r(null);},t.prototype.remove=function(t,e){this.lru.remove(t),e&&e(null);},t.prototype.clear=function(t){this.lru.removeAll(),t&&t(null);},t}();e.DefaultApiCache=o;},function(t,e,n){e.__esModule=!0;var r=n(10),o=n(8),i=function(){function t(t,e,n,i){this.requestHandler=t||new o.DefaultRequestHandler({proxyAgent:n,timeoutInMs:i}),this.cache=e||new r.DefaultApiCache;}return t.prototype.request=function(t,e){this.requestHandler.request(t,function(t,n,r,o){t?e&&e(t,null,r,o):n&&e&&e(null,n,r,o);});},t.prototype.cachedRequest=function(t,e){var n=this,r=e||{};return new Promise(function(e,o){!function(e){var o=r.cacheKey||t;n.cache.get(o,function(i,u){i||u?e(i,u):n.request(t,function(t,i,u,a){if(t)e(t,null);else{var s=a||r.ttl;s&&n.cache.set(o,i,s,e),e(null,i);}});});}(function(t,n){t&&o(t),n&&e(n);});})},t}();e.default=i;},function(t,e,n){e.__esModule=!0;var r=decodeURIComponent;e.default={parse:function(t,e){if("string"!=typeof t)throw new TypeError("argument str must be a string");var n={},o=e||{},i=t.split(/; */),u=o.decode||r;return i.forEach(function(t){var e=t.indexOf("=");if(!(e<0)){var r=t.substr(0,e).trim(),o=t.substr(++e,t.length).trim();'"'==o[0]&&(o=o.slice(1,-1)),void 0==n[r]&&(n[r]=function(t,e){try{return e(t)}catch(e){return t}}(o,u));}}),n}};},function(t,e,n){e.__esModule=!0;var r=n(4),o=n(3),i=n(1),u=function(){function t(t,e){this.api=new o.default(t,e);}return t.prototype.getApi=function(){return this.api.get()},t.prototype.everything=function(){return this.form("everything")},t.prototype.form=function(t){return new r.LazySearchForm(t,this.api)},t.prototype.query=function(t,e,n){return this.getApi().then(function(r){return r.query(t,e,n)})},t.prototype.queryFirst=function(t,e,n){return this.getApi().then(function(r){return r.queryFirst(t,e,n)})},t.prototype.getByID=function(t,e,n){return this.getApi().then(function(r){return r.getByID(t,e,n)})},t.prototype.getByIDs=function(t,e,n){return this.getApi().then(function(r){return r.getByIDs(t,e,n)})},t.prototype.getByUID=function(t,e,n,r){return this.getApi().then(function(o){return o.getByUID(t,e,n,r)})},t.prototype.getSingle=function(t,e,n){return this.getApi().then(function(r){return r.getSingle(t,e,n)})},t.prototype.getBookmark=function(t,e,n){return this.getApi().then(function(r){return r.getBookmark(t,e,n)})},t.prototype.previewSession=function(t,e,n,r){return this.getApi().then(function(o){return o.previewSession(t,e,n,r)})},t.prototype.getPreviewResolver=function(t,e){var n=this;return i.createPreviewResolver(t,e,function(t){return n.getApi().then(function(e){return e.getByID(t)})})},t.getApi=function(t,e){return new o.default(t,e).get()},t}();e.DefaultClient=u;},function(t,e,n){var r,o=n(6),i=n(5),u=n(13),a=n(3),s=n(2);!function(t){function e(t,e){return u.DefaultClient.getApi(t,e)}t.experimentCookie=s.EXPERIMENT_COOKIE,t.previewCookie=s.PREVIEW_COOKIE,t.Predicates=o.default,t.Experiments=i.Experiments,t.Api=a.default,t.client=function(t,e){return new u.DefaultClient(t,e)},t.getApi=e,t.api=function(t,n){return e(t,n)};}(r||(r={})),t.exports=r;},function(e,n){e.exports=t;},function(t,e){var n,r,o=t.exports={};function i(){throw new Error("setTimeout has not been defined")}function u(){throw new Error("clearTimeout has not been defined")}function a(t){if(n===setTimeout)return setTimeout(t,0);if((n===i||!n)&&setTimeout)return n=setTimeout,setTimeout(t,0);try{return n(t,0)}catch(e){try{return n.call(null,t,0)}catch(e){return n.call(this,t,0)}}}!function(){try{n="function"==typeof setTimeout?setTimeout:i;}catch(t){n=i;}try{r="function"==typeof clearTimeout?clearTimeout:u;}catch(t){r=u;}}();var s,f=[],c=!1,l=-1;function p(){c&&s&&(c=!1,s.length?f=s.concat(f):l=-1,f.length&&h());}function h(){if(!c){var t=a(p);c=!0;for(var e=f.length;e;){for(s=f,f=[];++l<e;)s&&s[l].run();l=-1,e=f.length;}s=null,c=!1,function(t){if(r===clearTimeout)return clearTimeout(t);if((r===u||!r)&&clearTimeout)return r=clearTimeout,clearTimeout(t);try{r(t);}catch(e){try{return r.call(null,t)}catch(e){return r.call(this,t)}}}(t);}}function d(t,e){this.fun=t,this.array=e;}function y(){}o.nextTick=function(t){var e=new Array(arguments.length-1);if(arguments.length>1)for(var n=1;n<arguments.length;n++)e[n-1]=arguments[n];f.push(new d(t,e)),1!==f.length||c||a(h);},d.prototype.run=function(){this.fun.apply(null,this.array);},o.title="browser",o.browser=!0,o.env={},o.argv=[],o.version="",o.versions={},o.on=y,o.addListener=y,o.once=y,o.off=y,o.removeListener=y,o.removeAllListeners=y,o.emit=y,o.prependListener=y,o.prependOnceListener=y,o.listeners=function(t){return []},o.binding=function(t){throw new Error("process.binding is not supported")},o.cwd=function(){return "/"},o.chdir=function(t){throw new Error("process.chdir is not supported")},o.umask=function(){return 0};},function(t,e,n){(function(t){!function(e,n){if(!e.setImmediate){var r,o=1,i={},u=!1,a=e.document,s=Object.getPrototypeOf&&Object.getPrototypeOf(e);s=s&&s.setTimeout?s:e,"[object process]"==={}.toString.call(e.process)?r=function(e){t.nextTick(function(){c(e);});}:function(){if(e.postMessage&&!e.importScripts){var t=!0,n=e.onmessage;return e.onmessage=function(){t=!1;},e.postMessage("","*"),e.onmessage=n,t}}()?function(){var t="setImmediate$"+Math.random()+"$",n=function(n){n.source===e&&"string"==typeof n.data&&0===n.data.indexOf(t)&&c(+n.data.slice(t.length));};e.addEventListener?e.addEventListener("message",n,!1):e.attachEvent("onmessage",n),r=function(n){e.postMessage(t+n,"*");};}():e.MessageChannel?function(){var t=new MessageChannel;t.port1.onmessage=function(t){c(t.data);},r=function(e){t.port2.postMessage(e);};}():a&&"onreadystatechange"in a.createElement("script")?function(){var t=a.documentElement;r=function(e){var n=a.createElement("script");n.onreadystatechange=function(){c(e),n.onreadystatechange=null,t.removeChild(n),n=null;},t.appendChild(n);};}():r=function(t){setTimeout(c,0,t);},s.setImmediate=function(t){"function"!=typeof t&&(t=new Function(""+t));for(var e=new Array(arguments.length-1),n=0;n<e.length;n++)e[n]=arguments[n+1];var u={callback:t,args:e};return i[o]=u,r(o),o++},s.clearImmediate=f;}function f(t){delete i[t];}function c(t){if(u)setTimeout(c,0,t);else{var e=i[t];if(e){u=!0;try{!function(t){var e=t.callback,r=t.args;switch(r.length){case 0:e();break;case 1:e(r[0]);break;case 2:e(r[0],r[1]);break;case 3:e(r[0],r[1],r[2]);break;default:e.apply(n,r);}}(e);}finally{f(t),u=!1;}}}}}("undefined"==typeof self?"undefined"==typeof commonjsGlobal?this:commonjsGlobal:self);}).call(this,n(16));},function(t,e,n){var r="undefined"!=typeof commonjsGlobal&&commonjsGlobal||"undefined"!=typeof self&&self||window,o=Function.prototype.apply;function i(t,e){this._id=t,this._clearFn=e;}e.setTimeout=function(){return new i(o.call(setTimeout,r,arguments),clearTimeout)},e.setInterval=function(){return new i(o.call(setInterval,r,arguments),clearInterval)},e.clearTimeout=e.clearInterval=function(t){t&&t.close();},i.prototype.unref=i.prototype.ref=function(){},i.prototype.close=function(){this._clearFn.call(r,this._id);},e.enroll=function(t,e){clearTimeout(t._idleTimeoutId),t._idleTimeout=e;},e.unenroll=function(t){clearTimeout(t._idleTimeoutId),t._idleTimeout=-1;},e._unrefActive=e.active=function(t){clearTimeout(t._idleTimeoutId);var e=t._idleTimeout;e>=0&&(t._idleTimeoutId=setTimeout(function(){t._onTimeout&&t._onTimeout();},e));},n(17),e.setImmediate="undefined"!=typeof self&&self.setImmediate||"undefined"!=typeof commonjsGlobal&&commonjsGlobal.setImmediate||this&&this.setImmediate,e.clearImmediate="undefined"!=typeof self&&self.clearImmediate||"undefined"!=typeof commonjsGlobal&&commonjsGlobal.clearImmediate||this&&this.clearImmediate;},function(t,e,n){n.r(e);var r=n(7),o=n(0),i=function(){if("undefined"!=typeof self)return self;if("undefined"!=typeof window)return window;if("undefined"!=typeof commonjsGlobal)return commonjsGlobal;throw new Error("unable to locate global object")}();i.Promise?i.Promise.prototype.finally||(i.Promise.prototype.finally=o.a):i.Promise=r.a;},function(t,e,n){n(19),n(15),t.exports=n(14);}])});
+!function(t,e){module.exports=e(require$$0);}("undefined"!=typeof self?self:commonjsGlobal,function(t){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r});},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0});},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=20)}([function(t,e,n){e.a=function(t){var e=this.constructor;return this.then(function(n){return e.resolve(t()).then(function(){return n})},function(n){return e.resolve(t()).then(function(){return e.reject(n)})})};},function(t,e,n){e.__esModule=!0,e.createPreviewResolver=function(t,e,n){return {token:t,documentId:e,resolve:function(r,o,i){return e&&n?n(e,{ref:t}).then(function(t){if(t){var e=r(t);return i&&i(null,e),e}return i&&i(null,o),o}):Promise.resolve(o)}}};},function(t,e,n){var r=this&&this.__assign||Object.assign||function(t){for(var e,n=1,r=arguments.length;n<r;n++)for(var o in e=arguments[n])Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o]);return t};e.__esModule=!0;var o=n(5),i=n(4),u=n(6),a=n(12),s=n(1);e.PREVIEW_COOKIE="io.prismic.preview",e.EXPERIMENT_COOKIE="io.prismic.experiment";var f=function(){function t(t,e,n){this.data=t,this.masterRef=t.refs.filter(function(t){return t.isMasterRef})[0],this.experiments=new o.Experiments(t.experiments),this.bookmarks=t.bookmarks,this.httpClient=e,this.options=n,this.refs=t.refs,this.tags=t.tags,this.types=t.types,this.languages=t.languages;}return t.prototype.form=function(t){var e=this.data.forms[t];return e?new i.SearchForm(e,this.httpClient):null},t.prototype.everything=function(){var t=this.form("everything");if(!t)throw new Error("Missing everything form");return t},t.prototype.master=function(){return this.masterRef.ref},t.prototype.ref=function(t){var e=this.data.refs.filter(function(e){return e.label===t})[0];return e?e.ref:null},t.prototype.currentExperiment=function(){return this.experiments.current()},t.prototype.query=function(t,n,r){void 0===r&&(r=function(){});var o="function"==typeof n?{options:{},callback:n}:{options:n||{},callback:r},i=o.options,u=o.callback,s=this.everything();for(var f in i)s=s.set(f,i[f]);if(!i.ref){var c="";this.options.req?c=this.options.req.headers.cookie||"":"undefined"!=typeof window&&window.document&&(c=window.document.cookie||"");var l=a.default.parse(c),p=l[e.PREVIEW_COOKIE],h=this.experiments.refFromCookie(l[e.EXPERIMENT_COOKIE]);s=s.ref(p||h||this.masterRef.ref);}return t&&s.query(t),s.submit(u)},t.prototype.queryFirst=function(t,e,n){var o="function"==typeof e?{options:{},callback:e}:{options:r({},e)||{},callback:n||function(){}},i=o.options,u=o.callback;return i.page=1,i.pageSize=1,this.query(t,i).then(function(t){var e=t&&t.results&&t.results[0];return u(null,e),e}).catch(function(t){throw u(t),t})},t.prototype.getByID=function(t,e,n){var o=e?r({},e):{};return o.lang||(o.lang="*"),this.queryFirst(u.default.at("document.id",t),o,n)},t.prototype.getByIDs=function(t,e,n){var o=e?r({},e):{};return o.lang||(o.lang="*"),this.query(u.default.in("document.id",t),o,n)},t.prototype.getByUID=function(t,e,n,o){var i=n?r({},n):{};if("*"===i.lang)throw new Error("FORDIDDEN. You can't use getByUID with *, use the predicates instead.");return i.page||(i.page=1),this.queryFirst(u.default.at("my."+t+".uid",e),i,o)},t.prototype.getSingle=function(t,e,n){var o=e?r({},e):{};return this.queryFirst(u.default.at("document.type",t),o,n)},t.prototype.getBookmark=function(t,e,n){var r=this.data.bookmarks[t];return r?this.getByID(r,e,n):Promise.reject("Error retrieving bookmarked id")},t.prototype.getPreviewResolver=function(t,e){return s.createPreviewResolver(t,e,this.getByID.bind(this))},t.prototype.previewSession=function(t,e,n,r){var o=this;return console.warn("previewSession function is deprecated in favor of getPreviewResolver function."),new Promise(function(i,u){o.httpClient.request(t,function(a,s){if(a)r&&r(a),u(a);else if(s){if(s.mainDocument)return o.getByID(s.mainDocument,{ref:t}).then(function(t){if(t){var o=e(t);r&&r(null,o),i(o);}else r&&r(null,n),i(n);}).catch(u);r&&r(null,n),i(n);}});})},t}();e.default=f;},function(t,e,n){e.__esModule=!0;var r=n(2),o=n(11);function i(t){return t.indexOf("?")>-1?"&":"?"}var u=function(){function t(t,e){if(this.options=e||{},this.url=t,this.options.accessToken){var n="access_token="+this.options.accessToken;this.url+=i(t)+n;}this.options.routes&&(this.url+=i(t)+"routes="+encodeURIComponent(JSON.stringify(this.options.routes))),this.apiDataTTL=this.options.apiDataTTL||5,this.httpClient=new o.default(this.options.requestHandler,this.options.apiCache,this.options.proxyAgent,this.options.timeoutInMs);}return t.prototype.get=function(t){var e=this;return this.httpClient.cachedRequest(this.url,{ttl:this.apiDataTTL}).then(function(n){var o=new r.default(n,e.httpClient,e.options);return t&&t(null,o),o}).catch(function(e){throw t&&t(e),e})},t}();e.default=u;},function(t,e,n){e.__esModule=!0;var r=function(){function t(t,e){this.id=t,this.api=e,this.fields={};}return t.prototype.set=function(t,e){return this.fields[t]=e,this},t.prototype.ref=function(t){return this.set("ref",t)},t.prototype.query=function(t){return this.set("q",t)},t.prototype.pageSize=function(t){return this.set("pageSize",t)},t.prototype.fetch=function(t){return console.warn("Warning: Using Fetch is deprecated. Use the property `graphQuery` instead."),this.set("fetch",t)},t.prototype.fetchLinks=function(t){return console.warn("Warning: Using FetchLinks is deprecated. Use the property `graphQuery` instead."),this.set("fetchLinks",t)},t.prototype.graphQuery=function(t){return this.set("graphQuery",t)},t.prototype.lang=function(t){return this.set("lang",t)},t.prototype.page=function(t){return this.set("page",t)},t.prototype.after=function(t){return this.set("after",t)},t.prototype.orderings=function(t){return this.set("orderings",t)},t.prototype.url=function(){var e=this;return this.api.get().then(function(n){return t.toSearchForm(e,n).url()})},t.prototype.submit=function(e){var n=this;return this.api.get().then(function(r){return t.toSearchForm(n,r).submit(e)})},t.toSearchForm=function(t,e){var n=e.form(t.id);if(n)return Object.keys(t.fields).reduce(function(e,n){var r=t.fields[n];return "q"===n?e.query(r):"pageSize"===n?e.pageSize(r):"fetch"===n?e.fetch(r):"fetchLinks"===n?e.fetchLinks(r):"graphQuery"===n?e.graphQuery(r):"lang"===n?e.lang(r):"page"===n?e.page(r):"after"===n?e.after(r):"orderings"===n?e.orderings(r):e.set(n,r)},n);throw new Error("Unable to access to form "+t.id)},t}();e.LazySearchForm=r;var o=function(){function t(t,e){for(var n in this.httpClient=e,this.form=t,this.data={},t.fields)t.fields[n].default&&(this.data[n]=[t.fields[n].default]);}return t.prototype.set=function(t,e){var n=this.form.fields[t];if(!n)throw new Error("Unknown field "+t);var r=""===e||void 0===e?null:e,o=this.data[t]||[];return o=n.multiple?r?o.concat([r]):o:r?[r]:o,this.data[t]=o,this},t.prototype.ref=function(t){return this.set("ref",t)},t.prototype.query=function(t){if("string"==typeof t)return this.query([t]);if(Array.isArray(t))return this.set("q","["+t.join("")+"]");throw new Error("Invalid query : "+t)},t.prototype.pageSize=function(t){return this.set("pageSize",t)},t.prototype.fetch=function(t){console.warn("Warning: Using Fetch is deprecated. Use the property `graphQuery` instead.");var e=Array.isArray(t)?t.join(","):t;return this.set("fetch",e)},t.prototype.fetchLinks=function(t){console.warn("Warning: Using FetchLinks is deprecated. Use the property `graphQuery` instead.");var e=Array.isArray(t)?t.join(","):t;return this.set("fetchLinks",e)},t.prototype.graphQuery=function(t){return this.set("graphQuery",t)},t.prototype.lang=function(t){return this.set("lang",t)},t.prototype.page=function(t){return this.set("page",t)},t.prototype.after=function(t){return this.set("after",t)},t.prototype.orderings=function(t){return t?this.set("orderings","["+t.join(",")+"]"):this},t.prototype.url=function(){var t=this.form.action;if(this.data){var e=t.indexOf("?")>-1?"&":"?";for(var n in this.data)if(this.data.hasOwnProperty(n)){var r=this.data[n];if(r)for(var o=0;o<r.length;o++)t+=e+n+"="+encodeURIComponent(r[o]),e="&";}}return t},t.prototype.submit=function(t){return this.httpClient.cachedRequest(this.url()).then(function(e){return t&&t(null,e),e}).catch(function(e){throw t&&t(e),e})},t}();e.SearchForm=o;},function(t,e,n){e.__esModule=!0;var r=function(){function t(t){this.data={},this.data=t;}return t.prototype.id=function(){return this.data.id},t.prototype.ref=function(){return this.data.ref},t.prototype.label=function(){return this.data.label},t}();e.Variation=r;var o=function(){function t(t){this.data={},this.data=t,this.variations=(t.variations||[]).map(function(t){return new r(t)});}return t.prototype.id=function(){return this.data.id},t.prototype.googleId=function(){return this.data.googleId},t.prototype.name=function(){return this.data.name},t}();e.Experiment=o;var i=function(){function t(t){t&&(this.drafts=(t.drafts||[]).map(function(t){return new o(t)}),this.running=(t.running||[]).map(function(t){return new o(t)}));}return t.prototype.current=function(){return this.running.length>0?this.running[0]:null},t.prototype.refFromCookie=function(t){if(!t||""===t.trim())return null;var e=t.trim().split(" ");if(e.length<2)return null;var n=e[0],r=parseInt(e[1],10),o=this.running.filter(function(t){return t.googleId()===n&&t.variations.length>r})[0];return o?o.variations[r].ref():null},t}();e.Experiments=i;},function(t,e,n){e.__esModule=!0;var r="at",o="not",i="missing",u="has",a="any",s="in",f="fulltext",c="similar",l="number.gt",p="number.lt",h="number.inRange",d="date.before",y="date.after",m="date.between",g="date.day-of-month",v="date.day-of-month-after",w="date.day-of-month-before",b="date.day-of-week",_="date.day-of-week-after",k="date.day-of-week-before",I="date.month",T="date.month-before",E="date.month-after",O="date.year",A="date.hour",x="date.hour-before",M="date.hour-after",P="geopoint.near";function j(t){if("string"==typeof t)return '"'+t+'"';if("number"==typeof t)return t.toString();if(t instanceof Date)return t.getTime().toString();if(Array.isArray(t))return "["+t.map(function(t){return j(t)}).join(",")+"]";if("boolean"==typeof t)return t.toString();throw new Error("Unable to encode "+t+" of type "+typeof t)}var q={near:function(t,e,n,r){return "["+P+"("+t+", "+e+", "+n+", "+r+")]"}},R={before:function(t,e){return "["+d+"("+t+", "+j(e)+")]"},after:function(t,e){return "["+y+"("+t+", "+j(e)+")]"},between:function(t,e,n){return "["+m+"("+t+", "+j(e)+", "+j(n)+")]"},dayOfMonth:function(t,e){return "["+g+"("+t+", "+e+")]"},dayOfMonthAfter:function(t,e){return "["+v+"("+t+", "+e+")]"},dayOfMonthBefore:function(t,e){return "["+w+"("+t+", "+e+")]"},dayOfWeek:function(t,e){return "["+b+"("+t+", "+j(e)+")]"},dayOfWeekAfter:function(t,e){return "["+_+"("+t+", "+j(e)+")]"},dayOfWeekBefore:function(t,e){return "["+k+"("+t+", "+j(e)+")]"},month:function(t,e){return "["+I+"("+t+", "+j(e)+")]"},monthBefore:function(t,e){return "["+T+"("+t+", "+j(e)+")]"},monthAfter:function(t,e){return "["+E+"("+t+", "+j(e)+")]"},year:function(t,e){return "["+O+"("+t+", "+e+")]"},hour:function(t,e){return "["+A+"("+t+", "+e+")]"},hourBefore:function(t,e){return "["+x+"("+t+", "+e+")]"},hourAfter:function(t,e){return "["+M+"("+t+", "+e+")]"}},S={gt:function(t,e){return "["+l+"("+t+", "+e+")]"},lt:function(t,e){return "["+p+"("+t+", "+e+")]"},inRange:function(t,e,n){return "["+h+"("+t+", "+e+", "+n+")]"}};e.default={at:function(t,e){return "["+r+"("+t+", "+j(e)+")]"},not:function(t,e){return "["+o+"("+t+", "+j(e)+")]"},missing:function(t){return "["+i+"("+t+")]"},has:function(t){return "["+u+"("+t+")]"},any:function(t,e){return "["+a+"("+t+", "+j(e)+")]"},in:function(t,e){return "["+s+"("+t+", "+j(e)+")]"},fulltext:function(t,e){return "["+f+"("+t+", "+j(e)+")]"},similar:function(t,e){return "["+c+'("'+t+'", '+e+")]"},date:R,dateBefore:R.before,dateAfter:R.after,dateBetween:R.between,dayOfMonth:R.dayOfMonth,dayOfMonthAfter:R.dayOfMonthAfter,dayOfMonthBefore:R.dayOfMonthBefore,dayOfWeek:R.dayOfWeek,dayOfWeekAfter:R.dayOfWeekAfter,dayOfWeekBefore:R.dayOfWeekBefore,month:R.month,monthBefore:R.monthBefore,monthAfter:R.monthAfter,year:R.year,hour:R.hour,hourBefore:R.hourBefore,hourAfter:R.hourAfter,number:S,gt:S.gt,lt:S.lt,inRange:S.inRange,near:q.near,geopoint:q};},function(t,e,n){(function(t){var r=n(0),o=setTimeout;function i(){}function u(t){if(!(this instanceof u))throw new TypeError("Promises must be constructed via new");if("function"!=typeof t)throw new TypeError("not a function");this._state=0,this._handled=!1,this._value=void 0,this._deferreds=[],l(t,this);}function a(t,e){for(;3===t._state;)t=t._value;0!==t._state?(t._handled=!0,u._immediateFn(function(){var n=1===t._state?e.onFulfilled:e.onRejected;if(null!==n){var r;try{r=n(t._value);}catch(t){return void f(e.promise,t)}s(e.promise,r);}else(1===t._state?s:f)(e.promise,t._value);})):t._deferreds.push(e);}function s(t,e){try{if(e===t)throw new TypeError("A promise cannot be resolved with itself.");if(e&&("object"==typeof e||"function"==typeof e)){var n=e.then;if(e instanceof u)return t._state=3,t._value=e,void c(t);if("function"==typeof n)return void l(function(t,e){return function(){t.apply(e,arguments);}}(n,e),t)}t._state=1,t._value=e,c(t);}catch(e){f(t,e);}}function f(t,e){t._state=2,t._value=e,c(t);}function c(t){2===t._state&&0===t._deferreds.length&&u._immediateFn(function(){t._handled||u._unhandledRejectionFn(t._value);});for(var e=0,n=t._deferreds.length;e<n;e++)a(t,t._deferreds[e]);t._deferreds=null;}function l(t,e){var n=!1;try{t(function(t){n||(n=!0,s(e,t));},function(t){n||(n=!0,f(e,t));});}catch(t){if(n)return;n=!0,f(e,t);}}u.prototype.catch=function(t){return this.then(null,t)},u.prototype.then=function(t,e){var n=new this.constructor(i);return a(this,new function(t,e,n){this.onFulfilled="function"==typeof t?t:null,this.onRejected="function"==typeof e?e:null,this.promise=n;}(t,e,n)),n},u.prototype.finally=r.a,u.all=function(t){return new u(function(e,n){if(!t||void 0===t.length)throw new TypeError("Promise.all accepts an array");var r=Array.prototype.slice.call(t);if(0===r.length)return e([]);var o=r.length;function i(t,u){try{if(u&&("object"==typeof u||"function"==typeof u)){var a=u.then;if("function"==typeof a)return void a.call(u,function(e){i(t,e);},n)}r[t]=u,0==--o&&e(r);}catch(t){n(t);}}for(var u=0;u<r.length;u++)i(u,r[u]);})},u.resolve=function(t){return t&&"object"==typeof t&&t.constructor===u?t:new u(function(e){e(t);})},u.reject=function(t){return new u(function(e,n){n(t);})},u.race=function(t){return new u(function(e,n){for(var r=0,o=t.length;r<o;r++)t[r].then(e,n);})},u._immediateFn="function"==typeof t&&function(e){t(e);}||function(t){o(t,0);},u._unhandledRejectionFn=function(t){"undefined"!=typeof console&&console&&console.warn("Possible Unhandled Promise Rejection:",t);},e.a=u;}).call(this,n(18).setImmediate);},function(t,e,n){e.__esModule=!0;var r=function(){function t(t){this.options=t||{};}return t.prototype.request=function(t,e){!function(t,e,n){var r,o={headers:{Accept:"application/json"}};e&&e.proxyAgent&&(o.agent=e.proxyAgent);var i=fetch(t,o);(e.timeoutInMs?Promise.race([i,new Promise(function(n,o){r=setTimeout(function(){return o(new Error(t+" response timeout"))},e.timeoutInMs);})]):i).then(function(e){return clearTimeout(r),~~(e.status/100!=2)?e.text().then(function(){var n=new Error("Unexpected status code ["+e.status+"] on URL "+t);throw n.status=e.status,n}):e.json().then(function(t){var r=e.headers.get("cache-control"),o=r?/max-age=(\d+)/.exec(r):null,i=o?parseInt(o[1],10):void 0;n(null,t,e,i);})}).catch(function(t){clearTimeout(r),n(t);});}(t,this.options,e);},t}();e.DefaultRequestHandler=r;},function(t,e,n){function r(t){this.size=0,this.limit=t,this._keymap={};}e.__esModule=!0,e.MakeLRUCache=function(t){return new r(t)},r.prototype.put=function(t,e){var n={key:t,value:e};if(this._keymap[t]=n,this.tail?(this.tail.newer=n,n.older=this.tail):this.head=n,this.tail=n,this.size===this.limit)return this.shift();this.size++;},r.prototype.shift=function(){var t=this.head;return t&&(this.head.newer?(this.head=this.head.newer,this.head.older=void 0):this.head=void 0,t.newer=t.older=void 0,delete this._keymap[t.key]),console.log("purging ",t.key),t},r.prototype.get=function(t,e){var n=this._keymap[t];if(void 0!==n)return n===this.tail?e?n:n.value:(n.newer&&(n===this.head&&(this.head=n.newer),n.newer.older=n.older),n.older&&(n.older.newer=n.newer),n.newer=void 0,n.older=this.tail,this.tail&&(this.tail.newer=n),this.tail=n,e?n:n.value)},r.prototype.find=function(t){return this._keymap[t]},r.prototype.set=function(t,e){var n,r=this.get(t,!0);return r?(n=r.value,r.value=e):(n=this.put(t,e))&&(n=n.value),n},r.prototype.remove=function(t){var e=this._keymap[t];if(e)return delete this._keymap[e.key],e.newer&&e.older?(e.older.newer=e.newer,e.newer.older=e.older):e.newer?(e.newer.older=void 0,this.head=e.newer):e.older?(e.older.newer=void 0,this.tail=e.older):this.head=this.tail=void 0,this.size--,e.value},r.prototype.removeAll=function(){this.head=this.tail=void 0,this.size=0,this._keymap={};},"function"==typeof Object.keys?r.prototype.keys=function(){return Object.keys(this._keymap)}:r.prototype.keys=function(){var t=[];for(var e in this._keymap)t.push(e);return t},r.prototype.forEach=function(t,e,n){var r;if(!0===e?(n=!0,e=void 0):"object"!=typeof e&&(e=this),n)for(r=this.tail;r;)t.call(e,r.key,r.value,this),r=r.older;else for(r=this.head;r;)t.call(e,r.key,r.value,this),r=r.newer;},r.prototype.toString=function(){for(var t="",e=this.head;e;)t+=String(e.key)+":"+e.value,(e=e.newer)&&(t+=" < ");return t};},function(t,e,n){e.__esModule=!0;var r=n(9),o=function(){function t(t){void 0===t&&(t=1e3),this.lru=r.MakeLRUCache(t);}return t.prototype.isExpired=function(t){var e=this.lru.get(t,!1);return !!e&&(0!==e.expiredIn&&e.expiredIn<Date.now())},t.prototype.get=function(t,e){var n=this.lru.get(t,!1);n&&!this.isExpired(t)?e(null,n.data):e&&e(null);},t.prototype.set=function(t,e,n,r){this.lru.remove(t),this.lru.put(t,{data:e,expiredIn:n?Date.now()+1e3*n:0}),r&&r(null);},t.prototype.remove=function(t,e){this.lru.remove(t),e&&e(null);},t.prototype.clear=function(t){this.lru.removeAll(),t&&t(null);},t}();e.DefaultApiCache=o;},function(t,e,n){e.__esModule=!0;var r=n(10),o=n(8),i=function(){function t(t,e,n,i){this.requestHandler=t||new o.DefaultRequestHandler({proxyAgent:n,timeoutInMs:i}),this.cache=e||new r.DefaultApiCache;}return t.prototype.request=function(t,e){this.requestHandler.request(t,function(t,n,r,o){t?e&&e(t,null,r,o):n&&e&&e(null,n,r,o);});},t.prototype.cachedRequest=function(t,e){var n=this,r=e||{};return new Promise(function(e,o){!function(e){var o=r.cacheKey||t;n.cache.get(o,function(i,u){i||u?e(i,u):n.request(t,function(t,i,u,a){if(t)e(t,null);else{var s=a||r.ttl;s&&n.cache.set(o,i,s,e),e(null,i);}});});}(function(t,n){t&&o(t),n&&e(n);});})},t}();e.default=i;},function(t,e,n){e.__esModule=!0;var r=decodeURIComponent;e.default={parse:function(t,e){if("string"!=typeof t)throw new TypeError("argument str must be a string");var n={},o=e||{},i=t.split(/; */),u=o.decode||r;return i.forEach(function(t){var e=t.indexOf("=");if(!(e<0)){var r=t.substr(0,e).trim(),o=t.substr(++e,t.length).trim();'"'==o[0]&&(o=o.slice(1,-1)),void 0==n[r]&&(n[r]=function(t,e){try{return e(t)}catch(e){return t}}(o,u));}}),n}};},function(t,e,n){e.__esModule=!0;var r=n(4),o=n(3),i=n(1),u=function(){function t(t,e){this.api=new o.default(t,e);}return t.prototype.getApi=function(){return this.api.get()},t.prototype.everything=function(){return this.form("everything")},t.prototype.form=function(t){return new r.LazySearchForm(t,this.api)},t.prototype.query=function(t,e,n){return this.getApi().then(function(r){return r.query(t,e,n)})},t.prototype.queryFirst=function(t,e,n){return this.getApi().then(function(r){return r.queryFirst(t,e,n)})},t.prototype.getByID=function(t,e,n){return this.getApi().then(function(r){return r.getByID(t,e,n)})},t.prototype.getByIDs=function(t,e,n){return this.getApi().then(function(r){return r.getByIDs(t,e,n)})},t.prototype.getByUID=function(t,e,n,r){return this.getApi().then(function(o){return o.getByUID(t,e,n,r)})},t.prototype.getSingle=function(t,e,n){return this.getApi().then(function(r){return r.getSingle(t,e,n)})},t.prototype.getBookmark=function(t,e,n){return this.getApi().then(function(r){return r.getBookmark(t,e,n)})},t.prototype.previewSession=function(t,e,n,r){return this.getApi().then(function(o){return o.previewSession(t,e,n,r)})},t.prototype.getPreviewResolver=function(t,e){var n=this;return i.createPreviewResolver(t,e,function(t){return n.getApi().then(function(e){return e.getByID(t)})})},t.getApi=function(t,e){return new o.default(t,e).get()},t}();e.DefaultClient=u;},function(t,e,n){var r,o=n(6),i=n(5),u=n(13),a=n(3),s=n(2);!function(t){function e(t,e){return u.DefaultClient.getApi(t,e)}t.experimentCookie=s.EXPERIMENT_COOKIE,t.previewCookie=s.PREVIEW_COOKIE,t.Predicates=o.default,t.Experiments=i.Experiments,t.Api=a.default,t.client=function(t,e){return new u.DefaultClient(t,e)},t.getApi=e,t.api=function(t,n){return e(t,n)};}(r||(r={})),t.exports=r;},function(e,n){e.exports=t;},function(t,e){var n,r,o=t.exports={};function i(){throw new Error("setTimeout has not been defined")}function u(){throw new Error("clearTimeout has not been defined")}function a(t){if(n===setTimeout)return setTimeout(t,0);if((n===i||!n)&&setTimeout)return n=setTimeout,setTimeout(t,0);try{return n(t,0)}catch(e){try{return n.call(null,t,0)}catch(e){return n.call(this,t,0)}}}!function(){try{n="function"==typeof setTimeout?setTimeout:i;}catch(t){n=i;}try{r="function"==typeof clearTimeout?clearTimeout:u;}catch(t){r=u;}}();var s,f=[],c=!1,l=-1;function p(){c&&s&&(c=!1,s.length?f=s.concat(f):l=-1,f.length&&h());}function h(){if(!c){var t=a(p);c=!0;for(var e=f.length;e;){for(s=f,f=[];++l<e;)s&&s[l].run();l=-1,e=f.length;}s=null,c=!1,function(t){if(r===clearTimeout)return clearTimeout(t);if((r===u||!r)&&clearTimeout)return r=clearTimeout,clearTimeout(t);try{r(t);}catch(e){try{return r.call(null,t)}catch(e){return r.call(this,t)}}}(t);}}function d(t,e){this.fun=t,this.array=e;}function y(){}o.nextTick=function(t){var e=new Array(arguments.length-1);if(arguments.length>1)for(var n=1;n<arguments.length;n++)e[n-1]=arguments[n];f.push(new d(t,e)),1!==f.length||c||a(h);},d.prototype.run=function(){this.fun.apply(null,this.array);},o.title="browser",o.browser=!0,o.env={},o.argv=[],o.version="",o.versions={},o.on=y,o.addListener=y,o.once=y,o.off=y,o.removeListener=y,o.removeAllListeners=y,o.emit=y,o.prependListener=y,o.prependOnceListener=y,o.listeners=function(t){return []},o.binding=function(t){throw new Error("process.binding is not supported")},o.cwd=function(){return "/"},o.chdir=function(t){throw new Error("process.chdir is not supported")},o.umask=function(){return 0};},function(t,e,n){(function(t){!function(e,n){if(!e.setImmediate){var r,o=1,i={},u=!1,a=e.document,s=Object.getPrototypeOf&&Object.getPrototypeOf(e);s=s&&s.setTimeout?s:e,"[object process]"==={}.toString.call(e.process)?r=function(e){t.nextTick(function(){c(e);});}:function(){if(e.postMessage&&!e.importScripts){var t=!0,n=e.onmessage;return e.onmessage=function(){t=!1;},e.postMessage("","*"),e.onmessage=n,t}}()?function(){var t="setImmediate$"+Math.random()+"$",n=function(n){n.source===e&&"string"==typeof n.data&&0===n.data.indexOf(t)&&c(+n.data.slice(t.length));};e.addEventListener?e.addEventListener("message",n,!1):e.attachEvent("onmessage",n),r=function(n){e.postMessage(t+n,"*");};}():e.MessageChannel?function(){var t=new MessageChannel;t.port1.onmessage=function(t){c(t.data);},r=function(e){t.port2.postMessage(e);};}():a&&"onreadystatechange"in a.createElement("script")?function(){var t=a.documentElement;r=function(e){var n=a.createElement("script");n.onreadystatechange=function(){c(e),n.onreadystatechange=null,t.removeChild(n),n=null;},t.appendChild(n);};}():r=function(t){setTimeout(c,0,t);},s.setImmediate=function(t){"function"!=typeof t&&(t=new Function(""+t));for(var e=new Array(arguments.length-1),n=0;n<e.length;n++)e[n]=arguments[n+1];var u={callback:t,args:e};return i[o]=u,r(o),o++},s.clearImmediate=f;}function f(t){delete i[t];}function c(t){if(u)setTimeout(c,0,t);else{var e=i[t];if(e){u=!0;try{!function(t){var e=t.callback,r=t.args;switch(r.length){case 0:e();break;case 1:e(r[0]);break;case 2:e(r[0],r[1]);break;case 3:e(r[0],r[1],r[2]);break;default:e.apply(n,r);}}(e);}finally{f(t),u=!1;}}}}}("undefined"==typeof self?"undefined"==typeof commonjsGlobal?this:commonjsGlobal:self);}).call(this,n(16));},function(t,e,n){var r="undefined"!=typeof commonjsGlobal&&commonjsGlobal||"undefined"!=typeof self&&self||window,o=Function.prototype.apply;function i(t,e){this._id=t,this._clearFn=e;}e.setTimeout=function(){return new i(o.call(setTimeout,r,arguments),clearTimeout)},e.setInterval=function(){return new i(o.call(setInterval,r,arguments),clearInterval)},e.clearTimeout=e.clearInterval=function(t){t&&t.close();},i.prototype.unref=i.prototype.ref=function(){},i.prototype.close=function(){this._clearFn.call(r,this._id);},e.enroll=function(t,e){clearTimeout(t._idleTimeoutId),t._idleTimeout=e;},e.unenroll=function(t){clearTimeout(t._idleTimeoutId),t._idleTimeout=-1;},e._unrefActive=e.active=function(t){clearTimeout(t._idleTimeoutId);var e=t._idleTimeout;e>=0&&(t._idleTimeoutId=setTimeout(function(){t._onTimeout&&t._onTimeout();},e));},n(17),e.setImmediate="undefined"!=typeof self&&self.setImmediate||"undefined"!=typeof commonjsGlobal&&commonjsGlobal.setImmediate||this&&this.setImmediate,e.clearImmediate="undefined"!=typeof self&&self.clearImmediate||"undefined"!=typeof commonjsGlobal&&commonjsGlobal.clearImmediate||this&&this.clearImmediate;},function(t,e,n){n.r(e);var r=n(7),o=n(0),i=function(){if("undefined"!=typeof self)return self;if("undefined"!=typeof window)return window;if("undefined"!=typeof commonjsGlobal)return commonjsGlobal;throw new Error("unable to locate global object")}();i.Promise?i.Promise.prototype.finally||(i.Promise.prototype.finally=o.a):i.Promise=r.a;},function(t,e,n){n(19),n(15),t.exports=n(14);}])});
 });
 
 var Prismic = unwrapExports(prismicJavascript_min);
@@ -10077,6 +10455,7 @@ const getAd = async () => {
     return chooseAdByWeight();
 };
 const chooseAdByWeight = () => {
+    var _a;
     const weightList = []; // Just Checking...
     for (const ad of ads) {
         if (ad['data']) { // Safety
@@ -10088,7 +10467,7 @@ const chooseAdByWeight = () => {
         }
     }
     // Probability Fun
-    return weightList[Math.floor(Math.random() * weightList.length)]['data'];
+    return ((_a = weightList[Math.floor(Math.random() * weightList.length)]) === null || _a === void 0 ? void 0 : _a.data) || null;
 };
 
 const internalAdCss = "internal-ad{max-width:148px;display:block;margin:48px 0 0;height:0px;overflow:hidden}internal-ad a{display:inline-block;text-decoration:none;color:#000}internal-ad a:hover{border-bottom-color:transparent}internal-ad p{font-size:13px;line-height:19px;font-weight:400;letter-spacing:0.02em;color:var(--text-color--dark);-webkit-transition:.2s color;transition:.2s color}internal-ad a:hover p{color:var(--text-color)}";
@@ -10102,6 +10481,8 @@ class InternalAd {
     // force an update on page change in case the component is reused
     async update() {
         this.ad = await getAd();
+        if (!this.ad)
+            return;
         // give the page a chance to reflow
         this.timeout = setTimeout(() => {
             trackView(this.ad.ad_id);
@@ -10132,14 +10513,9 @@ class InternalAd {
     }; }
 }
 
-const Tabs = (_props, children) => (h("div", { class: "ui-tabs" }, children));
-const TabBar = (_, children) => (h("div", { class: "ui-tab-bar" }, children));
-const TabBarButton = ({ tabSelect, selected }, children) => (h("div", { class: `ui-tab-bar__button${selected ? ' ui-tab-bar__button--selected' : ''}`, onClick: tabSelect }, children));
-const Tab = ({ selected }, children) => (h("div", { class: "ui-tab", style: { display: selected ? 'block' : 'none' } }, children));
-
 const FancyUnderline = (_, children) => (h("span", { class: "ui-fancy-underline" }, children));
 
-const landingPageCss = ".sc-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-landing-page-h{display:block}section.sc-landing-page{margin-bottom:196px}.hero.sc-landing-page{margin-bottom:96px;background:url(\"/assets/img/landing/bg.png\") no-repeat transparent;background-size:cover}.hero.sc-landing-page img.sc-landing-page{max-width:100%}.hero__heading.sc-landing-page{padding-top:120px}.hero__heading.sc-landing-page h1.sc-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-display)}.hero__heading.sc-landing-page h3.sc-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;font-family:var(--f-family-text);letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__platforms.sc-landing-page{height:16px;margin-top:16px}.hero__graphic.sc-landing-page{padding-top:96px}.hero__buttons.sc-landing-page .ui-button.sc-landing-page{-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-landing-page .ui-button.sc-landing-page:first-child{margin-right:16px}.hero__buttons.sc-landing-page .btn-white.sc-landing-page{background:white;-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.points.sc-landing-page .ui-paragraph.sc-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-landing-page{width:64px;margin-left:-10px}.points.sc-landing-page h2.sc-landing-page{margin:0}.section--getting-started.sc-landing-page hgroup.sc-landing-page{margin-bottom:96px}.section--getting-started.sc-landing-page hgroup.sc-landing-page .ui-heading.sc-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-landing-page{padding-bottom:120px}.section--getting-started__step.sc-landing-page .apple.sc-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-landing-page .android.sc-landing-page{margin-top:8px;margin-left:12px;height:26px}@media (max-width: 768px){.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{display:none !important}}.section--getting-started__step.sc-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-landing-page:last-child .ui-col.sc-landing-page:first-child:after{display:none}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{content:\"\";display:block;margin-top:12px !important;height:calc(100% - 42px);width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-landing-page .ui-col.sc-landing-page .ui-heading.sc-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-landing-page img.sc-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--native-features.sc-landing-page img.sc-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-landing-page .ui-grid.sc-landing-page{-webkit-column-gap:16px;-moz-column-gap:16px;column-gap:16px;row-gap:16px}.section--your-framework.sc-landing-page .framework.sc-landing-page{height:200px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.section--your-framework.sc-landing-page .framework.sc-landing-page img.sc-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-landing-page hgroup.sc-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-landing-page img.sc-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-landing-page img.sc-landing-page:last-child{margin-right:0}.ui-fancy-underline.sc-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-landing-page .ui-tab.sc-landing-page{min-height:300px}.ui-tabs.sc-landing-page .ui-tab-bar.sc-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:16px}.ui-tabs.sc-landing-page .ui-tab-bar__button.sc-landing-page{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-landing-page .ui-tab-bar__button--selected.sc-landing-page{background:#617184;color:white;border-radius:6px}";
+const landingPageCss = ".sc-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-landing-page-h{display:block}section.sc-landing-page{margin-bottom:196px}.hero.sc-landing-page{margin-bottom:96px;background:url(\"/assets/img/landing/bg.png\") no-repeat transparent;background-size:cover}.hero.sc-landing-page img.sc-landing-page{max-width:100%}.hero__heading.sc-landing-page{padding-top:120px}.hero__heading.sc-landing-page h1.sc-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-display)}.hero__heading.sc-landing-page h3.sc-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;font-family:var(--f-family-text);letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__platforms.sc-landing-page{height:16px;margin-top:16px}.hero__graphic.sc-landing-page{padding-top:96px}.hero__buttons.sc-landing-page .ui-button.sc-landing-page{-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-landing-page .ui-button.sc-landing-page:first-child{margin-right:16px}.hero__buttons.sc-landing-page .btn-white.sc-landing-page{background:white;-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.points.sc-landing-page .ui-paragraph.sc-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-landing-page{width:64px;margin-left:-10px}.points.sc-landing-page h2.sc-landing-page{margin:0}.section--getting-started.sc-landing-page hgroup.sc-landing-page{margin-bottom:96px}.section--getting-started.sc-landing-page hgroup.sc-landing-page .ui-heading.sc-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-landing-page{padding-bottom:120px}.section--getting-started__step.sc-landing-page .apple.sc-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-landing-page .android.sc-landing-page{margin-top:8px;margin-left:12px;height:26px}@media (max-width: 768px){.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{display:none !important}}.section--getting-started__step.sc-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-landing-page:last-child .ui-col.sc-landing-page:first-child:after{display:none}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{content:\"\";display:block;margin-top:12px !important;height:calc(100% - 42px);width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-landing-page .ui-col.sc-landing-page .ui-heading.sc-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-landing-page img.sc-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--native-features.sc-landing-page img.sc-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-landing-page .ui-grid.sc-landing-page{-webkit-column-gap:16px;-moz-column-gap:16px;column-gap:16px;row-gap:16px}.section--your-framework.sc-landing-page .framework.sc-landing-page{height:200px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.section--your-framework.sc-landing-page .framework.sc-landing-page img.sc-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-landing-page hgroup.sc-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-landing-page img.sc-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-landing-page img.sc-landing-page:last-child{margin-right:0}.ui-fancy-underline.sc-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-landing-page .ui-tab.sc-landing-page{min-height:300px}.ui-tabs.sc-landing-page .ui-tab-bar.sc-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:16px}.ui-tabs.sc-landing-page .ui-tab-bar__button.sc-landing-page{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-landing-page .ui-tab-bar__button--selected.sc-landing-page{background:#617184;color:white;border-radius:6px}.cordova-cta.sc-landing-page{padding-top:10px;text-decoration:none;font-family:Inter;font-style:normal;font-weight:normal;font-size:14px;line-height:160%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;letter-spacing:0px}.cordova-cta.sc-landing-page a.sc-landing-page{color:#33ACFF}div.cordova-cta.sc-landing-page a.sc-landing-page:hover{text-decoration:none}";
 
 class LandingPage {
     constructor(hostRef) {
@@ -10147,7 +10523,7 @@ class LandingPage {
         this.selectedCodeTab = 'notifications';
     }
     render() {
-        return (h(Host, null, h(MetaHead, null), h("section", { class: "hero" }, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("hgroup", { class: "hero__heading" }, h(Heading, { level: 1 }, "A cross-platform native runtime for web apps."), h(Heading, { level: 3 }, "Capacitor turns any web app into a native app so you can run one app across iOS, Android, and the Web with the same code."), h("div", { class: "hero__buttons" }, h(AnchorButton, { href: "/docs/getting-started", id: "get-started" }, "Get Started"), h(AnchorButton, { href: "/docs", id: "explore-docs", class: "btn-white" }, "Explore Docs"))), h("img", { class: "hero__platforms", src: "/assets/img/supported-icons.png", alt: "Supported platforms" })), h(Col, { md: 6, sm: 6, xs: 6, cols: 12, class: "hero__graphic" }, h("img", { src: "/assets/img/landing/hero-graphic.png", alt: "Capacitor Architecture Diagram" }))))), h(GettingStartedSection, { selectedCodeTab: this.selectedCodeTab, setSelectedCodeTab: (tab) => { this.selectedCodeTab = tab; } }), h(ResponsiveContainer, null, h("section", { class: "section--web-apps-to-native" }, h("hgroup", null, h(Heading, { level: 3 }, "Connect web apps to", h("br", null), h(FancyUnderline, null, "native functionality."))), h(Grid, null, h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/universal-apps.png", alt: "Universal apps" }), h(Heading, { level: 4 }, "Universal apps"), h(Paragraph, null, "Build web-based applications that run equally well across iOS, Android, and as Progressive Web Apps.")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-access.png", alt: "Native access" }), h(Heading, { level: 4 }, "Native access"), h(Paragraph, null, "Access the full Native SDKs on each platform, and easily deploy to the App Stores (and the web).")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-pwas.png", alt: "Native PWAs" }), h(Heading, { level: 4 }, "Native PWAs"), h(Paragraph, null, "Add custom native functionality with a simple Plugin API, or use existing Cordova plugins with our compatibility layer.")))), h("section", { class: "section--native-features" }, h("hgroup", null, h(Heading, { level: 3 }, "Cross-platform core", h("br", null), h(FancyUnderline, null, "native features"))), h(Grid, null, [
+        return (h(Host, null, h(MetaHead$1, null), h("section", { class: "hero" }, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("hgroup", { class: "hero__heading" }, h(Heading, { level: 1 }, "A cross-platform native runtime for web apps."), h(Heading, { level: 3 }, "Capacitor turns any web app into a native app so you can run one app across iOS, Android, and the Web with the same code."), h("div", { class: "hero__buttons" }, h(AnchorButton, { href: "/docs/getting-started", id: "get-started" }, "Get Started"), h(AnchorButton, { href: "/docs", id: "explore-docs", class: "btn-white" }, "Explore Docs"))), h("div", { class: "cordova-cta" }, h("a", { href: "/cordova" }, "Migrating from Cordova ", "->")), h("img", { class: "hero__platforms", src: "/assets/img/supported-icons.png", alt: "Supported platforms" })), h(Col, { md: 6, sm: 6, xs: 6, cols: 12, class: "hero__graphic" }, h("img", { src: "/assets/img/landing/hero-graphic.png", alt: "Capacitor Architecture Diagram" }))))), h(GettingStartedSection$1, { selectedCodeTab: this.selectedCodeTab, setSelectedCodeTab: (tab) => { this.selectedCodeTab = tab; } }), h(ResponsiveContainer, null, h("section", { class: "section--web-apps-to-native" }, h("hgroup", null, h(Heading, { id: "features", level: 3 }, "Connect web apps to", h("br", null), h(FancyUnderline, null, "native functionality."))), h(Grid, null, h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/universal-apps.png", alt: "Universal apps" }), h(Heading, { level: 4 }, "Universal apps"), h(Paragraph, null, "Build web-based applications that run equally well across iOS, Android, and as Progressive Web Apps.")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-access.png", alt: "Native access" }), h(Heading, { level: 4 }, "Native access"), h(Paragraph, null, "Access the full Native SDKs on each platform, and easily deploy to the App Stores (and the web).")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-pwas.png", alt: "Native PWAs" }), h(Heading, { level: 4 }, "Native PWAs"), h(Paragraph, null, "Add custom native functionality with a simple Plugin API, or use existing Cordova plugins with our compatibility layer.")))), h("section", { class: "section--native-features" }, h("hgroup", null, h(Heading, { level: 3 }, "Cross-platform core", h("br", null), h(FancyUnderline, null, "native features"))), h(Grid, null, [
             {
                 key: 'camera',
                 name: 'Camera',
@@ -10201,7 +10577,7 @@ class LandingPage {
             { color: '#FFF5F3', key: 'framework-7', name: 'Framework7' },
             { color: '#F0F7FC', key: 'quasar', name: 'Quasar' },
             { color: '#FEF8EF', key: 'angular-material', name: 'Angular Material' },
-        ].map(f => (h(Col, { md: 3, sm: 3, xs: 6, cols: 12, key: f.key, style: { background: f.color }, class: "framework" }, h("img", { src: `/assets/img/landing/framework-${f.key}.png`, alt: f.name }))))))), h("newsletter-signup", null), h("pre-footer", null), h("capacitor-site-footer", null)));
+        ].map(f => (h(Col, { md: 3, sm: 3, xs: 6, cols: 12, key: f.key, style: { background: f.color }, class: "framework" }, h("img", { src: `/assets/img/landing/framework-${f.key}.png`, alt: f.name }))))))), h("pre-footer", null), h("newsletter-signup", null), h("capacitor-site-footer", null)));
     }
     static get style() { return landingPageCss; }
     static get cmpMeta() { return {
@@ -10215,7 +10591,7 @@ class LandingPage {
         "$attrsToReflect$": []
     }; }
 }
-const GettingStartedSection = ({ selectedCodeTab, setSelectedCodeTab }) => (h("section", { class: "section--getting-started" }, h(ResponsiveContainer, null, h("hgroup", null, h(Heading, { level: 2 }, "Getting started is easy.")), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "01"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Drop Capacitor into any existing web app.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+const GettingStartedSection$1 = ({ selectedCodeTab, setSelectedCodeTab }) => (h("section", { class: "section--getting-started" }, h(ResponsiveContainer, null, h("hgroup", null, h(Heading, { level: 2 }, "Getting started is easy.")), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "01"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Drop Capacitor into any existing web app.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
 npm install @capacitor/cli @capacitor/core
 npx cap init
 ` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "02"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Install the native platforms you want to target."), h("img", { src: "/assets/img/landing/apple.png", alt: "Apple", class: "apple" }), h("img", { src: "/assets/img/landing/android.png", alt: "Android", class: "android" })), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
@@ -10272,7 +10648,7 @@ public class MyAwesomePlugin: CAPPlugin {
   }
 }
 ` }))))))));
-const MetaHead = () => (h(Helmet, null, h("title", null, "Capacitor: Cross-platform native runtime for web apps"), h("meta", { name: "description", content: 'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript' }), h("meta", { name: "twitter:card", content: "summary_large_image" }), h("meta", { name: "twitter:site", content: "@capacitorjs" }), h("meta", { name: "twitter:creator", content: "capacitorjs" }), h("meta", { name: "twitter:title", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:description", content: "Build cross-platform apps with web technologies" })));
+const MetaHead$1 = () => (h(Helmet, null, h("title", null, "Capacitor: Cross-platform native runtime for web apps"), h("meta", { name: "description", content: 'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript' }), h("meta", { property: "og:description", content: "Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript" }), h("meta", { property: "og:site_name", content: "Capacitor" }), h("meta", { name: "twitter:card", content: "summary_large_image" }), h("meta", { name: "twitter:site", content: "@capacitorjs" }), h("meta", { name: "twitter:creator", content: "capacitorjs" }), h("meta", { name: "twitter:title", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:description", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:image", content: "https://capacitorjs.com/assets/img/og.png" }), h("meta", { property: "og:image", content: "https://capacitorjs.com/assets/img/og.png" }), h("meta", { property: "og:url", content: "https://capacitorjs.com/" })));
 
 const lowerContentNavCss = "lower-content-nav{display:block;overflow:hidden}";
 
@@ -10304,7 +10680,783 @@ class LowerContentNav {
     }; }
 }
 
-const newsletterSignupCss = ".sc-newsletter-signup:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.newsletter.sc-newsletter-signup{padding:48px 0;border-top:1px solid var(--c-indigo-20);border-bottom:1px solid var(--c-indigo-20)}.newsletter.sc-newsletter-signup .ui-grid.sc-newsletter-signup{-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding-right:40px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup img.sc-newsletter-signup{width:64px;height:64px;margin-right:16px;display:inline-block;vertical-align:middle}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup div.sc-newsletter-signup{-ms-flex:1;flex:1}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup h2.sc-newsletter-signup{margin:0 0 6px}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup p.sc-newsletter-signup{margin:0;line-height:23px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{position:relative;display:-ms-flexbox;display:flex}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup{-ms-flex:1;flex:1;padding:5px 10px 5px 16px;margin-right:8px;width:200px;min-height:calc(100% - 1px);background-color:#fff;border:1px solid var(--c-indigo-30);border-radius:6px;font-size:16px;font-weight:400;color:#070D12;letter-spacing:-0.22px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup:placeholder{color:#6D6C82}.newsletter.sc-newsletter-signup form.sc-newsletter-signup button.sc-newsletter-signup{-ms-flex:0;flex:0;background-color:#119EFF;color:white}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup svg.sc-newsletter-signup{margin-right:16px}.newsletter.sc-newsletter-signup .error__message.sc-newsletter-signup{position:absolute;top:100%;color:red}@media screen and (max-width: 768px){.newsletter.sc-newsletter-signup .container.sc-newsletter-signup{-ms-flex-direction:column;flex-direction:column;text-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup,.newsletter.sc-newsletter-signup form.sc-newsletter-signup{-ms-flex:0 0 100%;flex:0 0 100%}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding:0}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{margin-top:24px;width:100%;-ms-flex-pack:center;justify-content:center}}.landing-page.sc-newsletter-signup .newsletter.sc-newsletter-signup{background-color:#102331}";
+(function(self) {
+
+  if (self.fetch) {
+    return
+  }
+
+  var support = {
+    searchParams: 'URLSearchParams' in self,
+    iterable: 'Symbol' in self && 'iterator' in Symbol,
+    blob: 'FileReader' in self && 'Blob' in self && (function() {
+      try {
+        new Blob();
+        return true
+      } catch(e) {
+        return false
+      }
+    })(),
+    formData: 'FormData' in self,
+    arrayBuffer: 'ArrayBuffer' in self
+  };
+
+  if (support.arrayBuffer) {
+    var viewClasses = [
+      '[object Int8Array]',
+      '[object Uint8Array]',
+      '[object Uint8ClampedArray]',
+      '[object Int16Array]',
+      '[object Uint16Array]',
+      '[object Int32Array]',
+      '[object Uint32Array]',
+      '[object Float32Array]',
+      '[object Float64Array]'
+    ];
+
+    var isDataView = function(obj) {
+      return obj && DataView.prototype.isPrototypeOf(obj)
+    };
+
+    var isArrayBufferView = ArrayBuffer.isView || function(obj) {
+      return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) > -1
+    };
+  }
+
+  function normalizeName(name) {
+    if (typeof name !== 'string') {
+      name = String(name);
+    }
+    if (/[^a-z0-9\-#$%&'*+.\^_`|~]/i.test(name)) {
+      throw new TypeError('Invalid character in header field name')
+    }
+    return name.toLowerCase()
+  }
+
+  function normalizeValue(value) {
+    if (typeof value !== 'string') {
+      value = String(value);
+    }
+    return value
+  }
+
+  // Build a destructive iterator for the value list
+  function iteratorFor(items) {
+    var iterator = {
+      next: function() {
+        var value = items.shift();
+        return {done: value === undefined, value: value}
+      }
+    };
+
+    if (support.iterable) {
+      iterator[Symbol.iterator] = function() {
+        return iterator
+      };
+    }
+
+    return iterator
+  }
+
+  function Headers(headers) {
+    this.map = {};
+
+    if (headers instanceof Headers) {
+      headers.forEach(function(value, name) {
+        this.append(name, value);
+      }, this);
+    } else if (Array.isArray(headers)) {
+      headers.forEach(function(header) {
+        this.append(header[0], header[1]);
+      }, this);
+    } else if (headers) {
+      Object.getOwnPropertyNames(headers).forEach(function(name) {
+        this.append(name, headers[name]);
+      }, this);
+    }
+  }
+
+  Headers.prototype.append = function(name, value) {
+    name = normalizeName(name);
+    value = normalizeValue(value);
+    var oldValue = this.map[name];
+    this.map[name] = oldValue ? oldValue+','+value : value;
+  };
+
+  Headers.prototype['delete'] = function(name) {
+    delete this.map[normalizeName(name)];
+  };
+
+  Headers.prototype.get = function(name) {
+    name = normalizeName(name);
+    return this.has(name) ? this.map[name] : null
+  };
+
+  Headers.prototype.has = function(name) {
+    return this.map.hasOwnProperty(normalizeName(name))
+  };
+
+  Headers.prototype.set = function(name, value) {
+    this.map[normalizeName(name)] = normalizeValue(value);
+  };
+
+  Headers.prototype.forEach = function(callback, thisArg) {
+    for (var name in this.map) {
+      if (this.map.hasOwnProperty(name)) {
+        callback.call(thisArg, this.map[name], name, this);
+      }
+    }
+  };
+
+  Headers.prototype.keys = function() {
+    var items = [];
+    this.forEach(function(value, name) { items.push(name); });
+    return iteratorFor(items)
+  };
+
+  Headers.prototype.values = function() {
+    var items = [];
+    this.forEach(function(value) { items.push(value); });
+    return iteratorFor(items)
+  };
+
+  Headers.prototype.entries = function() {
+    var items = [];
+    this.forEach(function(value, name) { items.push([name, value]); });
+    return iteratorFor(items)
+  };
+
+  if (support.iterable) {
+    Headers.prototype[Symbol.iterator] = Headers.prototype.entries;
+  }
+
+  function consumed(body) {
+    if (body.bodyUsed) {
+      return Promise.reject(new TypeError('Already read'))
+    }
+    body.bodyUsed = true;
+  }
+
+  function fileReaderReady(reader) {
+    return new Promise(function(resolve, reject) {
+      reader.onload = function() {
+        resolve(reader.result);
+      };
+      reader.onerror = function() {
+        reject(reader.error);
+      };
+    })
+  }
+
+  function readBlobAsArrayBuffer(blob) {
+    var reader = new FileReader();
+    var promise = fileReaderReady(reader);
+    reader.readAsArrayBuffer(blob);
+    return promise
+  }
+
+  function readBlobAsText(blob) {
+    var reader = new FileReader();
+    var promise = fileReaderReady(reader);
+    reader.readAsText(blob);
+    return promise
+  }
+
+  function readArrayBufferAsText(buf) {
+    var view = new Uint8Array(buf);
+    var chars = new Array(view.length);
+
+    for (var i = 0; i < view.length; i++) {
+      chars[i] = String.fromCharCode(view[i]);
+    }
+    return chars.join('')
+  }
+
+  function bufferClone(buf) {
+    if (buf.slice) {
+      return buf.slice(0)
+    } else {
+      var view = new Uint8Array(buf.byteLength);
+      view.set(new Uint8Array(buf));
+      return view.buffer
+    }
+  }
+
+  function Body() {
+    this.bodyUsed = false;
+
+    this._initBody = function(body) {
+      this._bodyInit = body;
+      if (!body) {
+        this._bodyText = '';
+      } else if (typeof body === 'string') {
+        this._bodyText = body;
+      } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
+        this._bodyBlob = body;
+      } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
+        this._bodyFormData = body;
+      } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+        this._bodyText = body.toString();
+      } else if (support.arrayBuffer && support.blob && isDataView(body)) {
+        this._bodyArrayBuffer = bufferClone(body.buffer);
+        // IE 10-11 can't handle a DataView body.
+        this._bodyInit = new Blob([this._bodyArrayBuffer]);
+      } else if (support.arrayBuffer && (ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {
+        this._bodyArrayBuffer = bufferClone(body);
+      } else {
+        throw new Error('unsupported BodyInit type')
+      }
+
+      if (!this.headers.get('content-type')) {
+        if (typeof body === 'string') {
+          this.headers.set('content-type', 'text/plain;charset=UTF-8');
+        } else if (this._bodyBlob && this._bodyBlob.type) {
+          this.headers.set('content-type', this._bodyBlob.type);
+        } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+          this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+        }
+      }
+    };
+
+    if (support.blob) {
+      this.blob = function() {
+        var rejected = consumed(this);
+        if (rejected) {
+          return rejected
+        }
+
+        if (this._bodyBlob) {
+          return Promise.resolve(this._bodyBlob)
+        } else if (this._bodyArrayBuffer) {
+          return Promise.resolve(new Blob([this._bodyArrayBuffer]))
+        } else if (this._bodyFormData) {
+          throw new Error('could not read FormData body as blob')
+        } else {
+          return Promise.resolve(new Blob([this._bodyText]))
+        }
+      };
+
+      this.arrayBuffer = function() {
+        if (this._bodyArrayBuffer) {
+          return consumed(this) || Promise.resolve(this._bodyArrayBuffer)
+        } else {
+          return this.blob().then(readBlobAsArrayBuffer)
+        }
+      };
+    }
+
+    this.text = function() {
+      var rejected = consumed(this);
+      if (rejected) {
+        return rejected
+      }
+
+      if (this._bodyBlob) {
+        return readBlobAsText(this._bodyBlob)
+      } else if (this._bodyArrayBuffer) {
+        return Promise.resolve(readArrayBufferAsText(this._bodyArrayBuffer))
+      } else if (this._bodyFormData) {
+        throw new Error('could not read FormData body as text')
+      } else {
+        return Promise.resolve(this._bodyText)
+      }
+    };
+
+    if (support.formData) {
+      this.formData = function() {
+        return this.text().then(decode)
+      };
+    }
+
+    this.json = function() {
+      return this.text().then(JSON.parse)
+    };
+
+    return this
+  }
+
+  // HTTP methods whose capitalization should be normalized
+  var methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];
+
+  function normalizeMethod(method) {
+    var upcased = method.toUpperCase();
+    return (methods.indexOf(upcased) > -1) ? upcased : method
+  }
+
+  function Request(input, options) {
+    options = options || {};
+    var body = options.body;
+
+    if (input instanceof Request) {
+      if (input.bodyUsed) {
+        throw new TypeError('Already read')
+      }
+      this.url = input.url;
+      this.credentials = input.credentials;
+      if (!options.headers) {
+        this.headers = new Headers(input.headers);
+      }
+      this.method = input.method;
+      this.mode = input.mode;
+      if (!body && input._bodyInit != null) {
+        body = input._bodyInit;
+        input.bodyUsed = true;
+      }
+    } else {
+      this.url = String(input);
+    }
+
+    this.credentials = options.credentials || this.credentials || 'omit';
+    if (options.headers || !this.headers) {
+      this.headers = new Headers(options.headers);
+    }
+    this.method = normalizeMethod(options.method || this.method || 'GET');
+    this.mode = options.mode || this.mode || null;
+    this.referrer = null;
+
+    if ((this.method === 'GET' || this.method === 'HEAD') && body) {
+      throw new TypeError('Body not allowed for GET or HEAD requests')
+    }
+    this._initBody(body);
+  }
+
+  Request.prototype.clone = function() {
+    return new Request(this, { body: this._bodyInit })
+  };
+
+  function decode(body) {
+    var form = new FormData();
+    body.trim().split('&').forEach(function(bytes) {
+      if (bytes) {
+        var split = bytes.split('=');
+        var name = split.shift().replace(/\+/g, ' ');
+        var value = split.join('=').replace(/\+/g, ' ');
+        form.append(decodeURIComponent(name), decodeURIComponent(value));
+      }
+    });
+    return form
+  }
+
+  function parseHeaders(rawHeaders) {
+    var headers = new Headers();
+    // Replace instances of \r\n and \n followed by at least one space or horizontal tab with a space
+    // https://tools.ietf.org/html/rfc7230#section-3.2
+    var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, ' ');
+    preProcessedHeaders.split(/\r?\n/).forEach(function(line) {
+      var parts = line.split(':');
+      var key = parts.shift().trim();
+      if (key) {
+        var value = parts.join(':').trim();
+        headers.append(key, value);
+      }
+    });
+    return headers
+  }
+
+  Body.call(Request.prototype);
+
+  function Response(bodyInit, options) {
+    if (!options) {
+      options = {};
+    }
+
+    this.type = 'default';
+    this.status = options.status === undefined ? 200 : options.status;
+    this.ok = this.status >= 200 && this.status < 300;
+    this.statusText = 'statusText' in options ? options.statusText : 'OK';
+    this.headers = new Headers(options.headers);
+    this.url = options.url || '';
+    this._initBody(bodyInit);
+  }
+
+  Body.call(Response.prototype);
+
+  Response.prototype.clone = function() {
+    return new Response(this._bodyInit, {
+      status: this.status,
+      statusText: this.statusText,
+      headers: new Headers(this.headers),
+      url: this.url
+    })
+  };
+
+  Response.error = function() {
+    var response = new Response(null, {status: 0, statusText: ''});
+    response.type = 'error';
+    return response
+  };
+
+  var redirectStatuses = [301, 302, 303, 307, 308];
+
+  Response.redirect = function(url, status) {
+    if (redirectStatuses.indexOf(status) === -1) {
+      throw new RangeError('Invalid status code')
+    }
+
+    return new Response(null, {status: status, headers: {location: url}})
+  };
+
+  self.Headers = Headers;
+  self.Request = Request;
+  self.Response = Response;
+
+  self.fetch = function(input, init) {
+    return new Promise(function(resolve, reject) {
+      var request = new Request(input, init);
+      var xhr = new XMLHttpRequest();
+
+      xhr.onload = function() {
+        var options = {
+          status: xhr.status,
+          statusText: xhr.statusText,
+          headers: parseHeaders(xhr.getAllResponseHeaders() || '')
+        };
+        options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL');
+        var body = 'response' in xhr ? xhr.response : xhr.responseText;
+        resolve(new Response(body, options));
+      };
+
+      xhr.onerror = function() {
+        reject(new TypeError('Network request failed'));
+      };
+
+      xhr.ontimeout = function() {
+        reject(new TypeError('Network request failed'));
+      };
+
+      xhr.open(request.method, request.url, true);
+
+      if (request.credentials === 'include') {
+        xhr.withCredentials = true;
+      } else if (request.credentials === 'omit') {
+        xhr.withCredentials = false;
+      }
+
+      if ('responseType' in xhr && support.blob) {
+        xhr.responseType = 'blob';
+      }
+
+      request.headers.forEach(function(value, name) {
+        xhr.setRequestHeader(name, value);
+      });
+
+      xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit);
+    })
+  };
+  self.fetch.polyfill = true;
+})(typeof self !== 'undefined' ? self : undefined);
+
+var browserPolyfill$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null
+});
+
+var require$$0$1 = getCjsExportFromNamespace(browserPolyfill$1);
+
+var prismicJavascript_min$1 = createCommonjsModule(function (module, exports) {
+!function(t,e){module.exports=e(require$$0$1);}("undefined"!=typeof self?self:commonjsGlobal,function(t){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r});},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0});},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=20)}([function(t,e,n){e.a=function(t){var e=this.constructor;return this.then(function(n){return e.resolve(t()).then(function(){return n})},function(n){return e.resolve(t()).then(function(){return e.reject(n)})})};},function(t,e,n){e.__esModule=!0,e.createPreviewResolver=function(t,e,n){return {token:t,documentId:e,resolve:function(r,o,i){return e&&n?n(e,{ref:t}).then(function(t){if(t){var e=r(t);return i&&i(null,e),e}return i&&i(null,o),o}):Promise.resolve(o)}}};},function(t,e,n){var r=this&&this.__assign||Object.assign||function(t){for(var e,n=1,r=arguments.length;n<r;n++)for(var o in e=arguments[n])Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o]);return t};e.__esModule=!0;var o=n(5),i=n(4),u=n(6),a=n(12),s=n(1);e.PREVIEW_COOKIE="io.prismic.preview",e.EXPERIMENT_COOKIE="io.prismic.experiment";var f=function(){function t(t,e,n){this.data=t,this.masterRef=t.refs.filter(function(t){return t.isMasterRef})[0],this.experiments=new o.Experiments(t.experiments),this.bookmarks=t.bookmarks,this.httpClient=e,this.options=n,this.refs=t.refs,this.tags=t.tags,this.types=t.types,this.languages=t.languages;}return t.prototype.form=function(t){var e=this.data.forms[t];return e?new i.SearchForm(e,this.httpClient):null},t.prototype.everything=function(){var t=this.form("everything");if(!t)throw new Error("Missing everything form");return t},t.prototype.master=function(){return this.masterRef.ref},t.prototype.ref=function(t){var e=this.data.refs.filter(function(e){return e.label===t})[0];return e?e.ref:null},t.prototype.currentExperiment=function(){return this.experiments.current()},t.prototype.query=function(t,n,r){void 0===r&&(r=function(){});var o="function"==typeof n?{options:{},callback:n}:{options:n||{},callback:r},i=o.options,u=o.callback,s=this.everything();for(var f in i)s=s.set(f,i[f]);if(!i.ref){var c="";this.options.req?c=this.options.req.headers.cookie||"":"undefined"!=typeof window&&window.document&&(c=window.document.cookie||"");var l=a.default.parse(c),p=l[e.PREVIEW_COOKIE],h=this.experiments.refFromCookie(l[e.EXPERIMENT_COOKIE]);s=s.ref(p||h||this.masterRef.ref);}return t&&s.query(t),s.submit(u)},t.prototype.queryFirst=function(t,e,n){var o="function"==typeof e?{options:{},callback:e}:{options:r({},e)||{},callback:n||function(){}},i=o.options,u=o.callback;return i.page=1,i.pageSize=1,this.query(t,i).then(function(t){var e=t&&t.results&&t.results[0];return u(null,e),e}).catch(function(t){throw u(t),t})},t.prototype.getByID=function(t,e,n){var o=e?r({},e):{};return o.lang||(o.lang="*"),this.queryFirst(u.default.at("document.id",t),o,n)},t.prototype.getByIDs=function(t,e,n){var o=e?r({},e):{};return o.lang||(o.lang="*"),this.query(u.default.in("document.id",t),o,n)},t.prototype.getByUID=function(t,e,n,o){var i=n?r({},n):{};if("*"===i.lang)throw new Error("FORDIDDEN. You can't use getByUID with *, use the predicates instead.");return i.page||(i.page=1),this.queryFirst(u.default.at("my."+t+".uid",e),i,o)},t.prototype.getSingle=function(t,e,n){var o=e?r({},e):{};return this.queryFirst(u.default.at("document.type",t),o,n)},t.prototype.getBookmark=function(t,e,n){var r=this.data.bookmarks[t];return r?this.getByID(r,e,n):Promise.reject("Error retrieving bookmarked id")},t.prototype.getPreviewResolver=function(t,e){return s.createPreviewResolver(t,e,this.getByID.bind(this))},t.prototype.previewSession=function(t,e,n,r){var o=this;return console.warn("previewSession function is deprecated in favor of getPreviewResolver function."),new Promise(function(i,u){o.httpClient.request(t,function(a,s){if(a)r&&r(a),u(a);else if(s){if(s.mainDocument)return o.getByID(s.mainDocument,{ref:t}).then(function(t){if(t){var o=e(t);r&&r(null,o),i(o);}else r&&r(null,n),i(n);}).catch(u);r&&r(null,n),i(n);}});})},t}();e.default=f;},function(t,e,n){e.__esModule=!0;var r=n(2),o=n(11);function i(t){return t.indexOf("?")>-1?"&":"?"}var u=function(){function t(t,e){if(this.options=e||{},this.url=t,this.options.accessToken){var n="access_token="+this.options.accessToken;this.url+=i(t)+n;}this.options.routes&&(this.url+=i(t)+"routes="+encodeURIComponent(JSON.stringify(this.options.routes))),this.apiDataTTL=this.options.apiDataTTL||5,this.httpClient=new o.default(this.options.requestHandler,this.options.apiCache,this.options.proxyAgent,this.options.timeoutInMs);}return t.prototype.get=function(t){var e=this;return this.httpClient.cachedRequest(this.url,{ttl:this.apiDataTTL}).then(function(n){var o=new r.default(n,e.httpClient,e.options);return t&&t(null,o),o}).catch(function(e){throw t&&t(e),e})},t}();e.default=u;},function(t,e,n){e.__esModule=!0;var r=function(){function t(t,e){this.id=t,this.api=e,this.fields={};}return t.prototype.set=function(t,e){return this.fields[t]=e,this},t.prototype.ref=function(t){return this.set("ref",t)},t.prototype.query=function(t){return this.set("q",t)},t.prototype.pageSize=function(t){return this.set("pageSize",t)},t.prototype.fetch=function(t){return console.warn("Warning: Using Fetch is deprecated. Use the property `graphQuery` instead."),this.set("fetch",t)},t.prototype.fetchLinks=function(t){return console.warn("Warning: Using FetchLinks is deprecated. Use the property `graphQuery` instead."),this.set("fetchLinks",t)},t.prototype.graphQuery=function(t){return this.set("graphQuery",t)},t.prototype.lang=function(t){return this.set("lang",t)},t.prototype.page=function(t){return this.set("page",t)},t.prototype.after=function(t){return this.set("after",t)},t.prototype.orderings=function(t){return this.set("orderings",t)},t.prototype.url=function(){var e=this;return this.api.get().then(function(n){return t.toSearchForm(e,n).url()})},t.prototype.submit=function(e){var n=this;return this.api.get().then(function(r){return t.toSearchForm(n,r).submit(e)})},t.toSearchForm=function(t,e){var n=e.form(t.id);if(n)return Object.keys(t.fields).reduce(function(e,n){var r=t.fields[n];return "q"===n?e.query(r):"pageSize"===n?e.pageSize(r):"fetch"===n?e.fetch(r):"fetchLinks"===n?e.fetchLinks(r):"graphQuery"===n?e.graphQuery(r):"lang"===n?e.lang(r):"page"===n?e.page(r):"after"===n?e.after(r):"orderings"===n?e.orderings(r):e.set(n,r)},n);throw new Error("Unable to access to form "+t.id)},t}();e.LazySearchForm=r;var o=function(){function t(t,e){for(var n in this.httpClient=e,this.form=t,this.data={},t.fields)t.fields[n].default&&(this.data[n]=[t.fields[n].default]);}return t.prototype.set=function(t,e){var n=this.form.fields[t];if(!n)throw new Error("Unknown field "+t);var r=""===e||void 0===e?null:e,o=this.data[t]||[];return o=n.multiple?r?o.concat([r]):o:r?[r]:o,this.data[t]=o,this},t.prototype.ref=function(t){return this.set("ref",t)},t.prototype.query=function(t){if("string"==typeof t)return this.query([t]);if(Array.isArray(t))return this.set("q","["+t.join("")+"]");throw new Error("Invalid query : "+t)},t.prototype.pageSize=function(t){return this.set("pageSize",t)},t.prototype.fetch=function(t){console.warn("Warning: Using Fetch is deprecated. Use the property `graphQuery` instead.");var e=Array.isArray(t)?t.join(","):t;return this.set("fetch",e)},t.prototype.fetchLinks=function(t){console.warn("Warning: Using FetchLinks is deprecated. Use the property `graphQuery` instead.");var e=Array.isArray(t)?t.join(","):t;return this.set("fetchLinks",e)},t.prototype.graphQuery=function(t){return this.set("graphQuery",t)},t.prototype.lang=function(t){return this.set("lang",t)},t.prototype.page=function(t){return this.set("page",t)},t.prototype.after=function(t){return this.set("after",t)},t.prototype.orderings=function(t){return t?this.set("orderings","["+t.join(",")+"]"):this},t.prototype.url=function(){var t=this.form.action;if(this.data){var e=t.indexOf("?")>-1?"&":"?";for(var n in this.data)if(this.data.hasOwnProperty(n)){var r=this.data[n];if(r)for(var o=0;o<r.length;o++)t+=e+n+"="+encodeURIComponent(r[o]),e="&";}}return t},t.prototype.submit=function(t){return this.httpClient.cachedRequest(this.url()).then(function(e){return t&&t(null,e),e}).catch(function(e){throw t&&t(e),e})},t}();e.SearchForm=o;},function(t,e,n){e.__esModule=!0;var r=function(){function t(t){this.data={},this.data=t;}return t.prototype.id=function(){return this.data.id},t.prototype.ref=function(){return this.data.ref},t.prototype.label=function(){return this.data.label},t}();e.Variation=r;var o=function(){function t(t){this.data={},this.data=t,this.variations=(t.variations||[]).map(function(t){return new r(t)});}return t.prototype.id=function(){return this.data.id},t.prototype.googleId=function(){return this.data.googleId},t.prototype.name=function(){return this.data.name},t}();e.Experiment=o;var i=function(){function t(t){t&&(this.drafts=(t.drafts||[]).map(function(t){return new o(t)}),this.running=(t.running||[]).map(function(t){return new o(t)}));}return t.prototype.current=function(){return this.running.length>0?this.running[0]:null},t.prototype.refFromCookie=function(t){if(!t||""===t.trim())return null;var e=t.trim().split(" ");if(e.length<2)return null;var n=e[0],r=parseInt(e[1],10),o=this.running.filter(function(t){return t.googleId()===n&&t.variations.length>r})[0];return o?o.variations[r].ref():null},t}();e.Experiments=i;},function(t,e,n){e.__esModule=!0;var r="at",o="not",i="missing",u="has",a="any",s="in",f="fulltext",c="similar",l="number.gt",p="number.lt",h="number.inRange",d="date.before",y="date.after",m="date.between",g="date.day-of-month",v="date.day-of-month-after",w="date.day-of-month-before",b="date.day-of-week",_="date.day-of-week-after",k="date.day-of-week-before",I="date.month",T="date.month-before",E="date.month-after",O="date.year",A="date.hour",x="date.hour-before",M="date.hour-after",P="geopoint.near";function j(t){if("string"==typeof t)return '"'+t+'"';if("number"==typeof t)return t.toString();if(t instanceof Date)return t.getTime().toString();if(Array.isArray(t))return "["+t.map(function(t){return j(t)}).join(",")+"]";if("boolean"==typeof t)return t.toString();throw new Error("Unable to encode "+t+" of type "+typeof t)}var q={near:function(t,e,n,r){return "["+P+"("+t+", "+e+", "+n+", "+r+")]"}},R={before:function(t,e){return "["+d+"("+t+", "+j(e)+")]"},after:function(t,e){return "["+y+"("+t+", "+j(e)+")]"},between:function(t,e,n){return "["+m+"("+t+", "+j(e)+", "+j(n)+")]"},dayOfMonth:function(t,e){return "["+g+"("+t+", "+e+")]"},dayOfMonthAfter:function(t,e){return "["+v+"("+t+", "+e+")]"},dayOfMonthBefore:function(t,e){return "["+w+"("+t+", "+e+")]"},dayOfWeek:function(t,e){return "["+b+"("+t+", "+j(e)+")]"},dayOfWeekAfter:function(t,e){return "["+_+"("+t+", "+j(e)+")]"},dayOfWeekBefore:function(t,e){return "["+k+"("+t+", "+j(e)+")]"},month:function(t,e){return "["+I+"("+t+", "+j(e)+")]"},monthBefore:function(t,e){return "["+T+"("+t+", "+j(e)+")]"},monthAfter:function(t,e){return "["+E+"("+t+", "+j(e)+")]"},year:function(t,e){return "["+O+"("+t+", "+e+")]"},hour:function(t,e){return "["+A+"("+t+", "+e+")]"},hourBefore:function(t,e){return "["+x+"("+t+", "+e+")]"},hourAfter:function(t,e){return "["+M+"("+t+", "+e+")]"}},S={gt:function(t,e){return "["+l+"("+t+", "+e+")]"},lt:function(t,e){return "["+p+"("+t+", "+e+")]"},inRange:function(t,e,n){return "["+h+"("+t+", "+e+", "+n+")]"}};e.default={at:function(t,e){return "["+r+"("+t+", "+j(e)+")]"},not:function(t,e){return "["+o+"("+t+", "+j(e)+")]"},missing:function(t){return "["+i+"("+t+")]"},has:function(t){return "["+u+"("+t+")]"},any:function(t,e){return "["+a+"("+t+", "+j(e)+")]"},in:function(t,e){return "["+s+"("+t+", "+j(e)+")]"},fulltext:function(t,e){return "["+f+"("+t+", "+j(e)+")]"},similar:function(t,e){return "["+c+'("'+t+'", '+e+")]"},date:R,dateBefore:R.before,dateAfter:R.after,dateBetween:R.between,dayOfMonth:R.dayOfMonth,dayOfMonthAfter:R.dayOfMonthAfter,dayOfMonthBefore:R.dayOfMonthBefore,dayOfWeek:R.dayOfWeek,dayOfWeekAfter:R.dayOfWeekAfter,dayOfWeekBefore:R.dayOfWeekBefore,month:R.month,monthBefore:R.monthBefore,monthAfter:R.monthAfter,year:R.year,hour:R.hour,hourBefore:R.hourBefore,hourAfter:R.hourAfter,number:S,gt:S.gt,lt:S.lt,inRange:S.inRange,near:q.near,geopoint:q};},function(t,e,n){(function(t){var r=n(0),o=setTimeout;function i(){}function u(t){if(!(this instanceof u))throw new TypeError("Promises must be constructed via new");if("function"!=typeof t)throw new TypeError("not a function");this._state=0,this._handled=!1,this._value=void 0,this._deferreds=[],l(t,this);}function a(t,e){for(;3===t._state;)t=t._value;0!==t._state?(t._handled=!0,u._immediateFn(function(){var n=1===t._state?e.onFulfilled:e.onRejected;if(null!==n){var r;try{r=n(t._value);}catch(t){return void f(e.promise,t)}s(e.promise,r);}else(1===t._state?s:f)(e.promise,t._value);})):t._deferreds.push(e);}function s(t,e){try{if(e===t)throw new TypeError("A promise cannot be resolved with itself.");if(e&&("object"==typeof e||"function"==typeof e)){var n=e.then;if(e instanceof u)return t._state=3,t._value=e,void c(t);if("function"==typeof n)return void l(function(t,e){return function(){t.apply(e,arguments);}}(n,e),t)}t._state=1,t._value=e,c(t);}catch(e){f(t,e);}}function f(t,e){t._state=2,t._value=e,c(t);}function c(t){2===t._state&&0===t._deferreds.length&&u._immediateFn(function(){t._handled||u._unhandledRejectionFn(t._value);});for(var e=0,n=t._deferreds.length;e<n;e++)a(t,t._deferreds[e]);t._deferreds=null;}function l(t,e){var n=!1;try{t(function(t){n||(n=!0,s(e,t));},function(t){n||(n=!0,f(e,t));});}catch(t){if(n)return;n=!0,f(e,t);}}u.prototype.catch=function(t){return this.then(null,t)},u.prototype.then=function(t,e){var n=new this.constructor(i);return a(this,new function(t,e,n){this.onFulfilled="function"==typeof t?t:null,this.onRejected="function"==typeof e?e:null,this.promise=n;}(t,e,n)),n},u.prototype.finally=r.a,u.all=function(t){return new u(function(e,n){if(!t||void 0===t.length)throw new TypeError("Promise.all accepts an array");var r=Array.prototype.slice.call(t);if(0===r.length)return e([]);var o=r.length;function i(t,u){try{if(u&&("object"==typeof u||"function"==typeof u)){var a=u.then;if("function"==typeof a)return void a.call(u,function(e){i(t,e);},n)}r[t]=u,0==--o&&e(r);}catch(t){n(t);}}for(var u=0;u<r.length;u++)i(u,r[u]);})},u.resolve=function(t){return t&&"object"==typeof t&&t.constructor===u?t:new u(function(e){e(t);})},u.reject=function(t){return new u(function(e,n){n(t);})},u.race=function(t){return new u(function(e,n){for(var r=0,o=t.length;r<o;r++)t[r].then(e,n);})},u._immediateFn="function"==typeof t&&function(e){t(e);}||function(t){o(t,0);},u._unhandledRejectionFn=function(t){"undefined"!=typeof console&&console&&console.warn("Possible Unhandled Promise Rejection:",t);},e.a=u;}).call(this,n(18).setImmediate);},function(t,e,n){e.__esModule=!0;var r=function(){function t(t){this.options=t||{};}return t.prototype.request=function(t,e){!function(t,e,n){var r,o={headers:{Accept:"application/json"}};e&&e.proxyAgent&&(o.agent=e.proxyAgent);var i=fetch(t,o);(e.timeoutInMs?Promise.race([i,new Promise(function(n,o){r=setTimeout(function(){return o(new Error(t+" response timeout"))},e.timeoutInMs);})]):i).then(function(e){return clearTimeout(r),~~(e.status/100!=2)?e.text().then(function(){var n=new Error("Unexpected status code ["+e.status+"] on URL "+t);throw n.status=e.status,n}):e.json().then(function(t){var r=e.headers.get("cache-control"),o=r?/max-age=(\d+)/.exec(r):null,i=o?parseInt(o[1],10):void 0;n(null,t,e,i);})}).catch(function(t){clearTimeout(r),n(t);});}(t,this.options,e);},t}();e.DefaultRequestHandler=r;},function(t,e,n){function r(t){this.size=0,this.limit=t,this._keymap={};}e.__esModule=!0,e.MakeLRUCache=function(t){return new r(t)},r.prototype.put=function(t,e){var n={key:t,value:e};if(this._keymap[t]=n,this.tail?(this.tail.newer=n,n.older=this.tail):this.head=n,this.tail=n,this.size===this.limit)return this.shift();this.size++;},r.prototype.shift=function(){var t=this.head;return t&&(this.head.newer?(this.head=this.head.newer,this.head.older=void 0):this.head=void 0,t.newer=t.older=void 0,delete this._keymap[t.key]),console.log("purging ",t.key),t},r.prototype.get=function(t,e){var n=this._keymap[t];if(void 0!==n)return n===this.tail?e?n:n.value:(n.newer&&(n===this.head&&(this.head=n.newer),n.newer.older=n.older),n.older&&(n.older.newer=n.newer),n.newer=void 0,n.older=this.tail,this.tail&&(this.tail.newer=n),this.tail=n,e?n:n.value)},r.prototype.find=function(t){return this._keymap[t]},r.prototype.set=function(t,e){var n,r=this.get(t,!0);return r?(n=r.value,r.value=e):(n=this.put(t,e))&&(n=n.value),n},r.prototype.remove=function(t){var e=this._keymap[t];if(e)return delete this._keymap[e.key],e.newer&&e.older?(e.older.newer=e.newer,e.newer.older=e.older):e.newer?(e.newer.older=void 0,this.head=e.newer):e.older?(e.older.newer=void 0,this.tail=e.older):this.head=this.tail=void 0,this.size--,e.value},r.prototype.removeAll=function(){this.head=this.tail=void 0,this.size=0,this._keymap={};},"function"==typeof Object.keys?r.prototype.keys=function(){return Object.keys(this._keymap)}:r.prototype.keys=function(){var t=[];for(var e in this._keymap)t.push(e);return t},r.prototype.forEach=function(t,e,n){var r;if(!0===e?(n=!0,e=void 0):"object"!=typeof e&&(e=this),n)for(r=this.tail;r;)t.call(e,r.key,r.value,this),r=r.older;else for(r=this.head;r;)t.call(e,r.key,r.value,this),r=r.newer;},r.prototype.toString=function(){for(var t="",e=this.head;e;)t+=String(e.key)+":"+e.value,(e=e.newer)&&(t+=" < ");return t};},function(t,e,n){e.__esModule=!0;var r=n(9),o=function(){function t(t){void 0===t&&(t=1e3),this.lru=r.MakeLRUCache(t);}return t.prototype.isExpired=function(t){var e=this.lru.get(t,!1);return !!e&&(0!==e.expiredIn&&e.expiredIn<Date.now())},t.prototype.get=function(t,e){var n=this.lru.get(t,!1);n&&!this.isExpired(t)?e(null,n.data):e&&e(null);},t.prototype.set=function(t,e,n,r){this.lru.remove(t),this.lru.put(t,{data:e,expiredIn:n?Date.now()+1e3*n:0}),r&&r(null);},t.prototype.remove=function(t,e){this.lru.remove(t),e&&e(null);},t.prototype.clear=function(t){this.lru.removeAll(),t&&t(null);},t}();e.DefaultApiCache=o;},function(t,e,n){e.__esModule=!0;var r=n(10),o=n(8),i=function(){function t(t,e,n,i){this.requestHandler=t||new o.DefaultRequestHandler({proxyAgent:n,timeoutInMs:i}),this.cache=e||new r.DefaultApiCache;}return t.prototype.request=function(t,e){this.requestHandler.request(t,function(t,n,r,o){t?e&&e(t,null,r,o):n&&e&&e(null,n,r,o);});},t.prototype.cachedRequest=function(t,e){var n=this,r=e||{};return new Promise(function(e,o){!function(e){var o=r.cacheKey||t;n.cache.get(o,function(i,u){i||u?e(i,u):n.request(t,function(t,i,u,a){if(t)e(t,null);else{var s=a||r.ttl;s&&n.cache.set(o,i,s,e),e(null,i);}});});}(function(t,n){t&&o(t),n&&e(n);});})},t}();e.default=i;},function(t,e,n){e.__esModule=!0;var r=decodeURIComponent;e.default={parse:function(t,e){if("string"!=typeof t)throw new TypeError("argument str must be a string");var n={},o=e||{},i=t.split(/; */),u=o.decode||r;return i.forEach(function(t){var e=t.indexOf("=");if(!(e<0)){var r=t.substr(0,e).trim(),o=t.substr(++e,t.length).trim();'"'==o[0]&&(o=o.slice(1,-1)),void 0==n[r]&&(n[r]=function(t,e){try{return e(t)}catch(e){return t}}(o,u));}}),n}};},function(t,e,n){e.__esModule=!0;var r=n(4),o=n(3),i=n(1),u=function(){function t(t,e){this.api=new o.default(t,e);}return t.prototype.getApi=function(){return this.api.get()},t.prototype.everything=function(){return this.form("everything")},t.prototype.form=function(t){return new r.LazySearchForm(t,this.api)},t.prototype.query=function(t,e,n){return this.getApi().then(function(r){return r.query(t,e,n)})},t.prototype.queryFirst=function(t,e,n){return this.getApi().then(function(r){return r.queryFirst(t,e,n)})},t.prototype.getByID=function(t,e,n){return this.getApi().then(function(r){return r.getByID(t,e,n)})},t.prototype.getByIDs=function(t,e,n){return this.getApi().then(function(r){return r.getByIDs(t,e,n)})},t.prototype.getByUID=function(t,e,n,r){return this.getApi().then(function(o){return o.getByUID(t,e,n,r)})},t.prototype.getSingle=function(t,e,n){return this.getApi().then(function(r){return r.getSingle(t,e,n)})},t.prototype.getBookmark=function(t,e,n){return this.getApi().then(function(r){return r.getBookmark(t,e,n)})},t.prototype.previewSession=function(t,e,n,r){return this.getApi().then(function(o){return o.previewSession(t,e,n,r)})},t.prototype.getPreviewResolver=function(t,e){var n=this;return i.createPreviewResolver(t,e,function(t){return n.getApi().then(function(e){return e.getByID(t)})})},t.getApi=function(t,e){return new o.default(t,e).get()},t}();e.DefaultClient=u;},function(t,e,n){var r,o=n(6),i=n(5),u=n(13),a=n(3),s=n(2);!function(t){function e(t,e){return u.DefaultClient.getApi(t,e)}t.experimentCookie=s.EXPERIMENT_COOKIE,t.previewCookie=s.PREVIEW_COOKIE,t.Predicates=o.default,t.Experiments=i.Experiments,t.Api=a.default,t.client=function(t,e){return new u.DefaultClient(t,e)},t.getApi=e,t.api=function(t,n){return e(t,n)};}(r||(r={})),t.exports=r;},function(e,n){e.exports=t;},function(t,e){var n,r,o=t.exports={};function i(){throw new Error("setTimeout has not been defined")}function u(){throw new Error("clearTimeout has not been defined")}function a(t){if(n===setTimeout)return setTimeout(t,0);if((n===i||!n)&&setTimeout)return n=setTimeout,setTimeout(t,0);try{return n(t,0)}catch(e){try{return n.call(null,t,0)}catch(e){return n.call(this,t,0)}}}!function(){try{n="function"==typeof setTimeout?setTimeout:i;}catch(t){n=i;}try{r="function"==typeof clearTimeout?clearTimeout:u;}catch(t){r=u;}}();var s,f=[],c=!1,l=-1;function p(){c&&s&&(c=!1,s.length?f=s.concat(f):l=-1,f.length&&h());}function h(){if(!c){var t=a(p);c=!0;for(var e=f.length;e;){for(s=f,f=[];++l<e;)s&&s[l].run();l=-1,e=f.length;}s=null,c=!1,function(t){if(r===clearTimeout)return clearTimeout(t);if((r===u||!r)&&clearTimeout)return r=clearTimeout,clearTimeout(t);try{r(t);}catch(e){try{return r.call(null,t)}catch(e){return r.call(this,t)}}}(t);}}function d(t,e){this.fun=t,this.array=e;}function y(){}o.nextTick=function(t){var e=new Array(arguments.length-1);if(arguments.length>1)for(var n=1;n<arguments.length;n++)e[n-1]=arguments[n];f.push(new d(t,e)),1!==f.length||c||a(h);},d.prototype.run=function(){this.fun.apply(null,this.array);},o.title="browser",o.browser=!0,o.env={},o.argv=[],o.version="",o.versions={},o.on=y,o.addListener=y,o.once=y,o.off=y,o.removeListener=y,o.removeAllListeners=y,o.emit=y,o.prependListener=y,o.prependOnceListener=y,o.listeners=function(t){return []},o.binding=function(t){throw new Error("process.binding is not supported")},o.cwd=function(){return "/"},o.chdir=function(t){throw new Error("process.chdir is not supported")},o.umask=function(){return 0};},function(t,e,n){(function(t){!function(e,n){if(!e.setImmediate){var r,o=1,i={},u=!1,a=e.document,s=Object.getPrototypeOf&&Object.getPrototypeOf(e);s=s&&s.setTimeout?s:e,"[object process]"==={}.toString.call(e.process)?r=function(e){t.nextTick(function(){c(e);});}:function(){if(e.postMessage&&!e.importScripts){var t=!0,n=e.onmessage;return e.onmessage=function(){t=!1;},e.postMessage("","*"),e.onmessage=n,t}}()?function(){var t="setImmediate$"+Math.random()+"$",n=function(n){n.source===e&&"string"==typeof n.data&&0===n.data.indexOf(t)&&c(+n.data.slice(t.length));};e.addEventListener?e.addEventListener("message",n,!1):e.attachEvent("onmessage",n),r=function(n){e.postMessage(t+n,"*");};}():e.MessageChannel?function(){var t=new MessageChannel;t.port1.onmessage=function(t){c(t.data);},r=function(e){t.port2.postMessage(e);};}():a&&"onreadystatechange"in a.createElement("script")?function(){var t=a.documentElement;r=function(e){var n=a.createElement("script");n.onreadystatechange=function(){c(e),n.onreadystatechange=null,t.removeChild(n),n=null;},t.appendChild(n);};}():r=function(t){setTimeout(c,0,t);},s.setImmediate=function(t){"function"!=typeof t&&(t=new Function(""+t));for(var e=new Array(arguments.length-1),n=0;n<e.length;n++)e[n]=arguments[n+1];var u={callback:t,args:e};return i[o]=u,r(o),o++},s.clearImmediate=f;}function f(t){delete i[t];}function c(t){if(u)setTimeout(c,0,t);else{var e=i[t];if(e){u=!0;try{!function(t){var e=t.callback,r=t.args;switch(r.length){case 0:e();break;case 1:e(r[0]);break;case 2:e(r[0],r[1]);break;case 3:e(r[0],r[1],r[2]);break;default:e.apply(n,r);}}(e);}finally{f(t),u=!1;}}}}}("undefined"==typeof self?"undefined"==typeof commonjsGlobal?this:commonjsGlobal:self);}).call(this,n(16));},function(t,e,n){var r="undefined"!=typeof commonjsGlobal&&commonjsGlobal||"undefined"!=typeof self&&self||window,o=Function.prototype.apply;function i(t,e){this._id=t,this._clearFn=e;}e.setTimeout=function(){return new i(o.call(setTimeout,r,arguments),clearTimeout)},e.setInterval=function(){return new i(o.call(setInterval,r,arguments),clearInterval)},e.clearTimeout=e.clearInterval=function(t){t&&t.close();},i.prototype.unref=i.prototype.ref=function(){},i.prototype.close=function(){this._clearFn.call(r,this._id);},e.enroll=function(t,e){clearTimeout(t._idleTimeoutId),t._idleTimeout=e;},e.unenroll=function(t){clearTimeout(t._idleTimeoutId),t._idleTimeout=-1;},e._unrefActive=e.active=function(t){clearTimeout(t._idleTimeoutId);var e=t._idleTimeout;e>=0&&(t._idleTimeoutId=setTimeout(function(){t._onTimeout&&t._onTimeout();},e));},n(17),e.setImmediate="undefined"!=typeof self&&self.setImmediate||"undefined"!=typeof commonjsGlobal&&commonjsGlobal.setImmediate||this&&this.setImmediate,e.clearImmediate="undefined"!=typeof self&&self.clearImmediate||"undefined"!=typeof commonjsGlobal&&commonjsGlobal.clearImmediate||this&&this.clearImmediate;},function(t,e,n){n.r(e);var r=n(7),o=n(0),i=function(){if("undefined"!=typeof self)return self;if("undefined"!=typeof window)return window;if("undefined"!=typeof commonjsGlobal)return commonjsGlobal;throw new Error("unable to locate global object")}();i.Promise?i.Promise.prototype.finally||(i.Promise.prototype.finally=o.a):i.Promise=r.a;},function(t,e,n){n(19),n(15),t.exports=n(14);}])});
+});
+
+var Prismic$1 = unwrapExports(prismicJavascript_min$1);
+
+var ResourceType;
+(function (ResourceType) {
+    ResourceType["Article"] = "Article";
+    ResourceType["Blog"] = "Blog";
+    ResourceType["Book"] = "Book";
+    ResourceType["CaseStudy"] = "Case Study";
+    ResourceType["CustomerInterview"] = "Customer Interview";
+    ResourceType["Course"] = "Course";
+    ResourceType["Learning"] = "Learning";
+    ResourceType["Doc"] = "Doc";
+    ResourceType["Guide"] = "Guide";
+    ResourceType["Podcast"] = "Podcast";
+    ResourceType["Tutorial"] = "Tutorial";
+    ResourceType["Video"] = "Video";
+    ResourceType["Whitepaper"] = "Whitepaper";
+    ResourceType["Webinar"] = "Webinar";
+})(ResourceType || (ResourceType = {}));
+var ResourceSource;
+(function (ResourceSource) {
+    ResourceSource["Prismic"] = "prismic";
+})(ResourceSource || (ResourceSource = {}));
+
+const Client = (endpoint, req = null) => Prismic$1.client(endpoint, createClientOptions(req, null));
+const createClientOptions = (req = null, prismicAccessToken = null) => {
+    const reqOption = req ? { req } : {};
+    const accessTokenOption = prismicAccessToken ? { accessToken: prismicAccessToken } : {};
+    return Object.assign(Object.assign({}, reqOption), accessTokenOption);
+};
+const prismicDocToResource = (doc) => {
+    return {
+        id: doc.uid,
+        title: doc.data.title || null,
+        description: doc.data.tagline || null,
+        tags: doc.tags || [],
+        publishDate: doc.first_publication_date || null,
+        updatedDate: doc.last_publication_date || null,
+        type: prismicTypeToResourceType(doc.type),
+        authors: getAuthorsForPrismicDoc(doc),
+        metaImage: getImage(doc.data.meta_image),
+        heroImage: getImage(doc.data.hero_image || doc.data.cover_image),
+        source: ResourceSource.Prismic,
+        doc,
+    };
+};
+const getImage = (imageObj) => (imageObj && imageObj.url ? imageObj.url : '');
+const getAuthorsForPrismicDoc = (doc) => {
+    var _a, _b;
+    if (!doc.data.hosts && !doc.data.author) {
+        return [];
+    }
+    if (doc.type === 'webinar') {
+        return doc.data.hosts.map((h) => {
+            var _a, _b;
+            return ({
+                name: h.name || '',
+                title: h.title || '',
+                link: ((_a = h.profile_link) === null || _a === void 0 ? void 0 : _a.url) || '',
+                avatar: ((_b = h.photo) === null || _b === void 0 ? void 0 : _b.url) || '',
+            });
+        });
+    }
+    else if (doc.data.author && doc.data.author.length) {
+        return doc.data.author.map((a) => {
+            var _a, _b;
+            return ({
+                name: a.name || '',
+                title: a.title || '',
+                link: ((_a = a.author_url) === null || _a === void 0 ? void 0 : _a.url) || '',
+                avatar: ((_b = a.photo) === null || _b === void 0 ? void 0 : _b.url) || '',
+            });
+        });
+    }
+    else if (doc.data.author) {
+        return [
+            {
+                name: doc.data.author.name || '',
+                title: doc.data.author.title || '',
+                link: ((_a = doc.data.author.author_url) === null || _a === void 0 ? void 0 : _a.url) || '',
+                avatar: ((_b = doc.data.author.photo) === null || _b === void 0 ? void 0 : _b.url) || '',
+            },
+        ];
+    }
+    return [];
+};
+const prismicTypeToResourceType = (type) => ({
+    article: ResourceType.Article,
+    book: ResourceType.Book,
+    blog: ResourceType.Blog,
+    case_study: ResourceType.CaseStudy,
+    course: ResourceType.Course,
+    customer_story: ResourceType.CustomerInterview,
+    learning: ResourceType.Learning,
+    doc: ResourceType.Doc,
+    guide: ResourceType.Guide,
+    podcast: ResourceType.Podcast,
+    tutorial: ResourceType.Tutorial,
+    video: ResourceType.Video,
+    webinar: ResourceType.Webinar,
+    whitepaper: ResourceType.Whitepaper,
+}[type]);
+function linkResolver(doc) {
+    // Define the url depending on the document type
+    if (doc.type === 'article') {
+        return '/resources/articles/' + doc.uid;
+    }
+    else if (doc.type === 'case_study') {
+        return '/resources/case-studies/' + doc.uid;
+    }
+    else if (doc.type === 'customer_story') {
+        return '/resources/customer-interviews/' + doc.uid;
+    }
+    else if (doc.type === 'enterprise_blog_post') {
+        return '/enterprise/blog/' + doc.uid;
+    }
+    else if (doc.type === 'integration') {
+        return '/integrations/' + doc.uid;
+    }
+    else if (doc.type === 'podcast') {
+        return '/resources/podcasts/' + doc.uid;
+    }
+    else if (doc.type === 'thank_you') {
+        return '/thank-you/' + doc.uid;
+    }
+    else if (doc.type === 'video') {
+        return '/resources/videos/' + doc.uid;
+    }
+    else if (doc.type === 'webinar') {
+        return '/resources/webinars/' + doc.uid;
+    }
+    else if (doc.type === 'whitepaper') {
+        return '/resources/whitepapers/' + doc.uid;
+    }
+    // Default to homepage
+    return '/';
+}
+const resourceTypeToPath = (type) => ({
+    [ResourceType.Article]: 'articles',
+    [ResourceType.Blog]: 'blogs',
+    [ResourceType.Book]: 'blogs',
+    [ResourceType.CaseStudy]: 'case-studies',
+    [ResourceType.Course]: 'courses',
+    [ResourceType.CustomerInterview]: 'customer-interviews',
+    [ResourceType.Doc]: 'docs',
+    [ResourceType.Learning]: 'learning',
+    [ResourceType.Guide]: 'guides',
+    [ResourceType.Podcast]: 'podcasts',
+    [ResourceType.Tutorial]: 'tutorials',
+    [ResourceType.Video]: 'videos',
+    [ResourceType.Webinar]: 'webinars',
+    [ResourceType.Whitepaper]: 'whitepapers',
+}[type]);
+
+const ResourceAuthorItem = ({ author, byline, singleLine = false, className, key }) => {
+    return author ? (h("a", { href: author.link, target: "_blank", rel: "noopener", key: key, class: `
+        ${byline ? `resource-author-item--byline` : ''}
+        ${singleLine ? `resource-author-item--single-line` : ''}
+        ${className ? className : ''}
+        resource-author-item
+      `, "aria-label": `Author information - ${author.name}` },
+        h("div", { class: "resource-author" },
+            h("img", { loading: 'lazy', class: "author-avatar", src: author.avatar, alt: author.name }),
+            h("div", { class: "author-info" },
+                h("div", { class: "author-name" }, author.name),
+                author.title ? h("div", { class: "author-title" }, author.title) : null)))) : null;
+};
+
+var prismicDom_min = createCommonjsModule(function (module, exports) {
+!function(e,t){module.exports=t();}("undefined"!=typeof self?self:commonjsGlobal,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=1)}([function(e,t,n){e.exports=function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){e.exports=n(1);},function(e,t,n){var r=n(2),o=n(3);e.exports={Link:r,Date:o};},function(e,t,n){e.exports={url:function(e,t){if(e&&[e.link_type,e._linkType,e.linkType].some((function(e){return e&&["Document","Link.Document","Link.document"].includes(e)}))&&t&&"function"==typeof t){var n=t(e);if(n)return n}return e&&e.url?e.url:""}};},function(e,t){e.exports=function(e){if(!e)return null;var t=24==e.length?"".concat(e.substring(0,22),":").concat(e.substring(22,24)):e;return new Date(t)};}]);},function(e,t,n){e.exports=n(2);},function(e,t,n){var r=n(0),o=n(3),i=r.Date,u=r.Link;e.exports={Date:i,Link:u,RichText:o};},function(e,t,n){var r=n(4),o=n(0).Link,i=n(5),u=r.Elements;function c(e,t,n,r,c){switch(t){case u.heading1:return l("h1",n,c);case u.heading2:return l("h2",n,c);case u.heading3:return l("h3",n,c);case u.heading4:return l("h4",n,c);case u.heading5:return l("h5",n,c);case u.heading6:return l("h6",n,c);case u.paragraph:return l("p",n,c);case u.preformatted:return function(e){return "<pre".concat(a(e),">").concat(i(e.text),"</pre>")}(n);case u.strong:return l("strong",n,c);case u.em:return l("em",n,c);case u.listItem:case u.oListItem:return l("li",n,c);case u.list:return l("ul",n,c);case u.oList:return l("ol",n,c);case u.image:return function(e,t){var n=t.linkTo?o.url(t.linkTo,e):null,r=t.linkTo&&t.linkTo.target?'target="'.concat(t.linkTo.target,'" rel="noopener"'):"",i=[t.label||"","block-img"],u='<img src="'.concat(t.url,'" alt="').concat(t.alt||"",'" copyright="').concat(t.copyright||"",'">');return '\n    <p class="'.concat(i.join(" "),'">\n      ').concat(n?"<a ".concat(r,' href="').concat(n,'">').concat(u,"</a>"):u,"\n    </p>\n  ")}(e,n);case u.embed:return function(e){return '\n    <div data-oembed="'.concat(e.oembed.embed_url,'"\n      data-oembed-type="').concat(e.oembed.type,'"\n      data-oembed-provider="').concat(e.oembed.provider_name,'"\n      ').concat(a(e),">\n          \n      ").concat(e.oembed.html,"\n    </div>\n  ")}(n);case u.hyperlink:return function(e,t,n){var r=t.data.target?'target="'.concat(t.data.target,'" rel="noopener"'):"";return "<a ".concat(r,' href="').concat(o.url(t.data,e),'">').concat(n.join(""),"</a>")}(e,n,c);case u.label:return function(e,t){return "<span ".concat(a(e.data),">").concat(t.join(""),"</span>")}(n,c);case u.span:return function(e){return e?i(e).replace(/\n/g,"<br />"):""}(r);default:return ""}}function a(e){return e.label?' class="'.concat(e.label,'"'):""}function l(e,t,n){return "<".concat(e).concat(a(t),">").concat(n.join(""),"</").concat(e,">")}e.exports={asText:function(e,t){return r.asText(e,t)},asHtml:function(e,t,n){return r.serialize(e,c.bind(null,t),n).join("")},Elements:u};},function(e,t,n){e.exports=function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=9)}([function(e,t,n){var r=n(3);e.exports=function(e){return function t(n){return 0===arguments.length||r(n)?t:e.apply(this,arguments)}};},function(e,t,n){var r=n(0),o=n(3);e.exports=function(e){return function t(n,i){switch(arguments.length){case 0:return t;case 1:return o(n)?t:r((function(t){return e(n,t)}));default:return o(n)&&o(i)?t:o(n)?r((function(t){return e(t,i)})):o(i)?r((function(t){return e(n,t)})):e(n,i)}}};},function(e,t,n){var r;function o(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(t,"__esModule",{value:!0}),t.PRIORITIES=t.NODE_TYPES=void 0;var i={heading1:"heading1",heading2:"heading2",heading3:"heading3",heading4:"heading4",heading5:"heading5",heading6:"heading6",paragraph:"paragraph",preformatted:"preformatted",strong:"strong",em:"em",listItem:"list-item",oListItem:"o-list-item",list:"group-list-item",oList:"group-o-list-item",image:"image",embed:"embed",hyperlink:"hyperlink",label:"label",span:"span"};t.NODE_TYPES=i;var u=(o(r={},i.heading1,4),o(r,i.heading2,4),o(r,i.heading3,4),o(r,i.heading4,4),o(r,i.heading5,4),o(r,i.heading6,4),o(r,i.paragraph,3),o(r,i.preformatted,5),o(r,i.strong,6),o(r,i.em,6),o(r,i.oList,1),o(r,i.list,1),o(r,i.listItem,1),o(r,i.oListItem,1),o(r,i.image,1),o(r,i.embed,1),o(r,i.hyperlink,3),o(r,i.label,4),o(r,i.span,7),r);t.PRIORITIES=u;},function(e,t){e.exports=function(e){return null!=e&&"object"==typeof e&&!0===e["@@functional/placeholder"]};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r=d(n(12)),o=d(n(15)),i=d(n(16)),u=d(n(17)),c=d(n(21)),a=d(n(7)),l=n(23),f=n(2),s=n(8);function d(e){return e&&e.__esModule?e:{default:e}}function p(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function h(e){return function(e,t){return t.reduce((function(e,t){var n=(0, c.default)(e);if(n){if(n.some((function(e){return e.isParentOf(t)})))return (0, u.default)(e).concat([n.concat(t)]);var r=(0, c.default)(n);return r&&function(e,t){return e.end>=t.start}(r,t)?(0, u.default)(e).concat([n.concat(t)]):e.concat([[t]])}return [[t]]}),[])}(0,(0, i.default)([function(e,t){return e.start-t.start},function(e,t){return e.end-t.end}],e))}function y(e){if(0===e.length)throw new Error("Unable to elect node on empty list");var t=function(e){return function(e){if(Array.isArray(e))return e}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}(e.sort((function(e,t){if(e.isParentOf(t))return -1;if(t.isParentOf(e))return 1;var n=f.PRIORITIES[e.type]-f.PRIORITIES[t.type];return 0===n?e.text.length-t.text.length:n})));return {elected:t[0],others:t.slice(1)}}function v(e,t,n){if(t.length>0)return function(e,t,n){return t.reduce((function(r,o,i){var u=[],c=0===i&&o.start>n.lower,a=i===t.length-1&&n.upper>o.end;if(c){var l=new s.TextNode(n.lower,o.start,e.slice(n.lower,o.start));u=u.concat(l);}else{var f=t[i-1];if(f&&o.start>f.end){var d=e.slice(f.end,o.start),p=new s.TextNode(f.end,o.start,d);u=u.concat(p);}}if(u=u.concat(o),a){var h=new s.TextNode(o.end,n.upper,e.slice(o.end,n.upper));u=u.concat(h);}return r.concat(u)}),[])}(e,m(e,t),n);var r=e.slice(n.lower,n.upper);return [new s.TextNode(n.lower,n.upper,r)]}function m(e,t){var n=h((0, o.default)((function(e){return e.start}),t)).map(y),i=(0, r.default)(n.map((function(t){return function(e,t){var n=t.others.reduce((function(n,r){var o=n.inner,i=n.outer,u=function(e,t,n){return n.start<t.start?{inner:s.SpanNode.slice(n,t.start,n.end,e),outer:s.SpanNode.slice(n,n.start,t.start,e)}:n.end>t.end?{inner:s.SpanNode.slice(n,n.start,t.end,e),outer:s.SpanNode.slice(n,t.end,n.end,e)}:{inner:n}}(e,t.elected,r);return {inner:o.concat(u.inner),outer:u.outer?i.concat(u.outer):i}}),{inner:[],outer:[]}),r=n.inner,o=n.outer;return [t.elected.setChildren(v(e,r,t.elected.boundaries()))].concat(m(e,o))}(e,t)})));return (0, o.default)((function(e){return e.start}),i)}var b=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e);}var t,n;return t=e,(n=[{key:"fromRichText",value:function(e){return {key:(0, a.default)(),children:e.reduce((function(e,t,n){if(l.RichTextBlock.isEmbedBlock(t.type)||l.RichTextBlock.isImageBlock(t.type))return e.concat(new s.BlockNode(t.type,t));var r=function(e){var t=e.spans.map((function(t){var n=e.text.slice(t.start,t.end);return new s.SpanNode(t.start,t.end,t.type,n,[],t)})),n={lower:0,upper:e.text.length};return v(e.text,t,n)}(t),o=e[e.length-1];if(l.RichTextBlock.isListItem(t.type)&&o&&o instanceof s.ListBlockNode){var i=new s.ListItemBlockNode(t,r),c=o.addChild(i);return (0, u.default)(e).concat(c)}if(l.RichTextBlock.isOrderedListItem(t.type)&&o&&o instanceof s.OrderedListBlockNode){var a=new s.OrderedListItemBlockNode(t,r),f=o.addChild(a);return (0, u.default)(e).concat(f)}if(l.RichTextBlock.isListItem(t.type)){var d=new s.ListItemBlockNode(t,r),p=new s.ListBlockNode(l.RichTextBlock.emptyList(),[d]);return e.concat(p)}if(l.RichTextBlock.isOrderedListItem(t.type)){var h=new s.OrderedListItemBlockNode(t,r),y=new s.OrderedListBlockNode(l.RichTextBlock.emptyOrderedList(),[h]);return e.concat(y)}return e.concat(new s.BlockNode(t.type,t,r))}),[])}}}])&&p(t,n),e}();t.default=b;},function(e,t){e.exports=Array.isArray||function(e){return null!=e&&e.length>=0&&"[object Array]"===Object.prototype.toString.call(e)};},function(e,t){e.exports=function(e){return "[object String]"===Object.prototype.toString.call(e)};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(){var e=(new Date).getTime();return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,(function(t){var n=(e+16*Math.random())%16|0;return e=Math.floor(e/16),("x"==t?n:3&n|8).toString(16)}))};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.ListBlockNode=t.OrderedListBlockNode=t.OrderedListItemBlockNode=t.ListItemBlockNode=t.BlockNode=t.TextNode=t.SpanNode=t.Node=void 0;var r,o=(r=n(7))&&r.__esModule?r:{default:r},i=n(2);function u(e){return (u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function c(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function a(e,t,n){return t&&c(e.prototype,t),n&&c(e,n),e}function l(e,t){return !t||"object"!==u(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}(e):t}function f(e){return (f=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&function(e,t){(Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t);}(e,t);}function d(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var p=function e(t,n,r){d(this,e),this.key=(0, o.default)(),this.type=t,this.element=n,this.children=r;};t.Node=p;var h=function(e){function t(e,n,r,o,i,u){var c;return d(this,t),(c=l(this,f(t).call(this,r,u,i))).start=e,c.end=n,c.text=o,c.children=i,c}return s(t,p),a(t,[{key:"boundaries",value:function(){return {lower:this.start,upper:this.end}}},{key:"isParentOf",value:function(e){return this.start<=e.start&&this.end>=e.end}},{key:"setChildren",value:function(e){return new t(this.start,this.end,this.type,this.text,e,this.element)}}],[{key:"slice",value:function(e,n,r,o){return new t(n,r,e.type,o.slice(n,r),e.children,e.element)}}]),t}();t.SpanNode=h;var y=function(e){function t(e,n,r){d(this,t);var o={type:i.NODE_TYPES.span,start:e,end:n,text:r};return l(this,f(t).call(this,e,n,i.NODE_TYPES.span,r,[],o))}return s(t,h),t}();t.TextNode=y;var v=function(e){function t(e,n){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:[];return d(this,t),l(this,f(t).call(this,e,n,r))}return s(t,p),t}();t.BlockNode=v;var m=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.listItem,e,n))}return s(t,v),t}();t.ListItemBlockNode=m;var b=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.oListItem,e,n))}return s(t,v),t}();t.OrderedListItemBlockNode=b;var g=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.oList,e,n))}return s(t,v),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.OrderedListBlockNode=g;var x=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.list,e,n))}return s(t,v),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.ListBlockNode=x;},function(e,t,n){e.exports=n(10);},function(e,t,n){var r=c(n(11)),o=c(n(4)),i=c(n(24)),u=n(2);function c(e){return e&&e.__esModule?e:{default:e}}e.exports={asText:r.default,asTree:o.default.fromRichText,serialize:i.default,Elements:u.NODE_TYPES};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0,t.default=function(e,t){var n="string"==typeof t?t:" ";return e.map((function(e){return e.text})).join(n)};},function(e,t,n){var r=n(0)(n(13)(!0));e.exports=r;},function(e,t,n){var r=n(14);e.exports=function(e){return function t(n){for(var o,i,u,c=[],a=0,l=n.length;a<l;){if(r(n[a]))for(u=0,i=(o=e?t(n[a]):n[a]).length;u<i;)c[c.length]=o[u],u+=1;else c[c.length]=n[a];a+=1;}return c}};},function(e,t,n){var r=n(0),o=n(5),i=n(6),u=r((function(e){return !!o(e)||!!e&&"object"==typeof e&&!i(e)&&(1===e.nodeType?!!e.length:0===e.length||e.length>0&&e.hasOwnProperty(0)&&e.hasOwnProperty(e.length-1))}));e.exports=u;},function(e,t,n){var r=n(1)((function(e,t){return Array.prototype.slice.call(t,0).sort((function(t,n){var r=e(t),o=e(n);return r<o?-1:r>o?1:0}))}));e.exports=r;},function(e,t,n){var r=n(1)((function(e,t){return Array.prototype.slice.call(t,0).sort((function(t,n){for(var r=0,o=0;0===r&&o<e.length;)r=e[o](t,n),o+=1;return r}))}));e.exports=r;},function(e,t,n){var r=n(18)(0,-1);e.exports=r;},function(e,t,n){var r=n(19),o=n(20)(r("slice",(function(e,t,n){return Array.prototype.slice.call(n,e,t)})));e.exports=o;},function(e,t,n){var r=n(5);e.exports=function(e,t){return function(){var n=arguments.length;if(0===n)return t();var o=arguments[n-1];return r(o)||"function"!=typeof o[e]?t.apply(this,arguments):o[e].apply(o,Array.prototype.slice.call(arguments,0,n-1))}};},function(e,t,n){var r=n(0),o=n(1),i=n(3);e.exports=function(e){return function t(n,u,c){switch(arguments.length){case 0:return t;case 1:return i(n)?t:o((function(t,r){return e(n,t,r)}));case 2:return i(n)&&i(u)?t:i(n)?o((function(t,n){return e(t,u,n)})):i(u)?o((function(t,r){return e(n,t,r)})):r((function(t){return e(n,u,t)}));default:return i(n)&&i(u)&&i(c)?t:i(n)&&i(u)?o((function(t,n){return e(t,n,c)})):i(n)&&i(c)?o((function(t,n){return e(t,u,n)})):i(u)&&i(c)?o((function(t,r){return e(n,t,r)})):i(n)?r((function(t){return e(t,u,c)})):i(u)?r((function(t){return e(n,t,c)})):i(c)?r((function(t){return e(n,u,t)})):e(n,u,c)}}};},function(e,t,n){var r=n(22)(-1);e.exports=r;},function(e,t,n){var r=n(1),o=n(6),i=r((function(e,t){var n=e<0?t.length+e:e;return o(t)?t.charAt(n):t[n]}));e.exports=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.RichTextBlock=void 0;var r=n(2);function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}var i=function(){function e(t,n,r){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.type=t,this.text=n,this.spans=r;}var t,n;return t=e,(n=[{key:"isEmbedBlock",value:function(e){return e===r.NODE_TYPES.embed}},{key:"isImageBlock",value:function(e){return e===r.NODE_TYPES.image}},{key:"isList",value:function(e){return e===r.NODE_TYPES.list}},{key:"isOrderedList",value:function(e){return e===r.NODE_TYPES.oList}},{key:"isListItem",value:function(e){return e===r.NODE_TYPES.listItem}},{key:"isOrderedListItem",value:function(e){return e===r.NODE_TYPES.oListItem}},{key:"emptyList",value:function(){return {type:r.NODE_TYPES.list,spans:[],text:""}}},{key:"emptyOrderedList",value:function(){return {type:r.NODE_TYPES.oList,spans:[],text:""}}}])&&o(t,n),e}();t.RichTextBlock=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r,o=(r=n(4))&&r.__esModule?r:{default:r},i=n(8);t.default=function(e,t,n){return o.default.fromRichText(e).children.map((function(e,r){return function(e,t,n,r){return function e(n,o){var u=n instanceof i.SpanNode?n.text:null,c=n.children.reduce((function(t,n,r){return t.concat([e(n,r)])}),[]);return r&&r(n.type,n.element,u,c,o)||t(n.type,n.element,u,c,o)}(e,n)}(e,t,r,n)}))};}]);},function(e,t,n){/*!
+ * escape-html
+ * Copyright(c) 2012-2013 TJ Holowaychuk
+ * Copyright(c) 2015 Andreas Lubbe
+ * Copyright(c) 2015 Tiancheng "Timothy" Gu
+ * MIT Licensed
+ */var r=/["'&<>]/;e.exports=function(e){var t,n=""+e,o=r.exec(n);if(!o)return n;var i="",u=0,c=0;for(u=o.index;u<n.length;u++){switch(n.charCodeAt(u)){case 34:t="&quot;";break;case 38:t="&amp;";break;case 39:t="&#39;";break;case 60:t="&lt;";break;case 62:t="&gt;";break;default:continue}c!==u&&(i+=n.substring(c,u)),c=u+1,i+=t;}return c!==u?i+n.substring(c,u):i};}])}));
+});
+
+var PrismicDom = unwrapExports(prismicDom_min);
+
+const IONICFRAMEWORK_URL = 'https://ionicframework.com';
+const getResourcesUrl = () => `/resources/`;
+/**
+ * Get the path for the given resource type. For example ResourceType.Articles
+ * will be at /articles
+ * @param type
+ */
+const getResourceTypeUrl = (type) => {
+    const pathType = resourceTypeToPath(type);
+    return `${IONICFRAMEWORK_URL}${getResourcesUrl()}${pathType}`;
+};
+/**
+ * Get the full path to the given resource
+ * @param record
+ */
+const getResourceUrl = (resource) => {
+    const pr = resource;
+    // If the resource has an external content url, use that
+    if (pr.doc.data.content_url && pr.doc.data.content_url.url) {
+        return PrismicDom.Link.url(pr.doc.data.content_url, linkResolver);
+        //return pr.doc.data.content_url;
+    }
+    switch (resource.type) {
+        case ResourceType.Article:
+        case ResourceType.Webinar:
+        case ResourceType.CaseStudy:
+        case ResourceType.CustomerInterview:
+        case ResourceType.Whitepaper:
+            return `${getResourceTypeUrl(resource.type)}/${resource.id}`;
+        case ResourceType.Video:
+            return getVideoUrl(resource);
+        default:
+            return `${getResourceTypeUrl(resource.type)}/${resource.id}`;
+    }
+};
+const getVideoUrl = (resource) => {
+    const pr = resource;
+    if (pr.doc.data.wistia_id) {
+        return `https://ionicpro.wistia.com/medias/${pr.doc.data.wistia_id}`;
+    }
+    else if (pr.doc.data.youtube_id) {
+        return `https://www.youtube.com/watch?v=${pr.doc.data.youtube_id}`;
+    }
+    return '';
+};
+
+const ResourceMeta = ({ resource }) => {
+    var _a;
+    return (h("div", { class: "resource-meta" },
+        h("div", { class: "type" }, resource.type),
+        h("div", { class: "tags" }, (_a = resource.tags) === null || _a === void 0 ? void 0 : _a.map((t, i) => [h("span", null, t), i < resource.tags.length - 1 ? h(Sep, null) : null]))));
+};
+const Sep = () => h("span", { class: "sep" });
+
+const ResourceCard = (props) => {
+    if (props.hero) {
+        return h(StandardResourceCard, Object.assign({}, props));
+    }
+    switch (props.resource.type) {
+        case ResourceType.Whitepaper:
+            return h(WhitepaperResourceCard, Object.assign({}, props));
+        default:
+            return h(StandardResourceCard, Object.assign({}, props));
+    }
+};
+const StandardResourceCard = ({ resource, headingLevel = 3, showAuthor = true, showImage = true, showDescription = true, metaTop = false, key, }) => (h(Card, { embelish: false, class: `resource-card${metaTop ? ` resource-card--meta-top` : ''}`, key: key },
+    metaTop && h(ResourceMeta, { resource: resource }),
+    showImage && (h("a", { href: getResourceUrl(resource), class: "resource-card__image" },
+        h(HeroImage, { resource: resource }))),
+    !metaTop && h(ResourceMeta, { resource: resource }),
+    h("div", { class: "resource-card__content" },
+        h("a", { href: getResourceUrl(resource) },
+            h(Heading, { level: headingLevel }, resource.title)),
+        showDescription && h("p", null, resource.description)),
+    showAuthor && h(ResourceAuthorItem, { author: resource.authors[0] })));
+const WhitepaperResourceCard = (props) => {
+    const r = props.resource;
+    return (h(Card, { embelish: false, class: `resource-card resource-card--ad`, key: props.key },
+        h("a", { href: getResourceUrl(props.resource) },
+            h(Heading, { level: 3 }, r.doc.data.ad || r.title),
+            h(HeroImage, { resource: props.resource }))));
+};
+const HeroImage = ({ resource }) => (h("img", { loading: 'lazy', class: "resource-card__featured-image", src: resource.heroImage, alt: resource.title }));
+
+const moreResourcesCss = ".sc-more-resources-h{display:block}.resource-meta.sc-more-resources{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;letter-spacing:var(--letter-spacing-5);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.resource-meta.sc-more-resources .type.sc-more-resources{font-weight:500;font-size:10px;color:var(--c-carbon-900);text-transform:uppercase;margin-right:24px}@media (max-width: 768px){.resource-meta.sc-more-resources .type.sc-more-resources{margin-right:0}}.resource-meta.sc-more-resources .tags.sc-more-resources{color:var(--c-indigo-600);font-size:10px;text-transform:uppercase}.resource-meta.sc-more-resources .tags.sc-more-resources span.sc-more-resources{display:inline-block}.resource-meta.sc-more-resources .tags.sc-more-resources .sep.sc-more-resources{display:inline-block;height:11px;width:1px;margin:0 6px -2px;background:var(--c-indigo-300)}@media (max-width: 768px){.resource-meta.sc-more-resources{-ms-flex-direction:column;flex-direction:column;gap:8px}}.resource-card.sc-more-resources{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100%}.resource-card.sc-more-resources a.sc-more-resources{color:var(--c-carbon-900)}.resource-card.sc-more-resources h1.sc-more-resources,.resource-card.sc-more-resources h2.sc-more-resources,.resource-card.sc-more-resources h3.sc-more-resources,.resource-card.sc-more-resources h4.sc-more-resources,.resource-card.sc-more-resources h5.sc-more-resources{margin-top:0}.resource-card.sc-more-resources p.sc-more-resources{color:var(--c-indigo-900);font-size:16px;line-height:160%}.resource-card.sc-more-resources .resource-meta.sc-more-resources{margin-bottom:12px}.resource-card__content.sc-more-resources{-ms-flex:1;flex:1}.resource-card--meta-top.sc-more-resources .resource-meta.sc-more-resources{margin-bottom:24px}.resource-card__image.sc-more-resources{display:block;overflow:hidden;margin-bottom:24px;line-height:0}.resource-card__featured-image.sc-more-resources{max-width:100%;-webkit-transition:200ms -webkit-transform cubic-bezier(0.32, 0.72, 0, 1);transition:200ms -webkit-transform cubic-bezier(0.32, 0.72, 0, 1);transition:200ms transform cubic-bezier(0.32, 0.72, 0, 1);transition:200ms transform cubic-bezier(0.32, 0.72, 0, 1), 200ms -webkit-transform cubic-bezier(0.32, 0.72, 0, 1)}.resource-card__featured-image.sc-more-resources:hover{-webkit-transform:scale(1.05);transform:scale(1.05)}.resource-card--ad.sc-more-resources{background:var(--c-indigo-200);padding:30px}.resource-author-item.sc-more-resources .resource-author.sc-more-resources{display:grid;grid-template-columns:32px 1fr;-webkit-column-gap:8px;-moz-column-gap:8px;column-gap:8px}.resource-author-item.sc-more-resources .author-info.sc-more-resources{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}.resource-author-item.sc-more-resources .author-avatar.sc-more-resources{max-height:32px;border-radius:100%}.resource-author-item.sc-more-resources .author-name.sc-more-resources{font-size:14px;color:var(--c-carbon-900)}.resource-author-item.sc-more-resources .author-title.sc-more-resources{font-size:12px;color:var(--c-indigo-600)}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources{display:block;line-height:32px}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources .author-name.sc-more-resources{display:inline-block;vertical-align:middle;font-size:16px;color:var(--c-indigo-700)}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources .author-name.sc-more-resources:after{content:\", \"}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources .author-title.sc-more-resources{display:inline-block;vertical-align:middle;font-size:16px;margin-left:2px;color:var(--c-indigo-700)}";
+
+class MoreResources {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.prismicEndpoint = 'https://ionicframeworkcom.cdn.prismic.io/api/v2';
+    }
+    async componentWillLoad() {
+        console.log('Loaded resources', this.resources);
+        const client = Client(this.prismicEndpoint);
+        const requests = this.resources.map(r => client.getByUID(r.type, r.uid, null));
+        try {
+            this.docs = await (await Promise.all(requests)).map(d => prismicDocToResource(d));
+        }
+        catch (e) {
+            console.error('Unable to load more resources', e);
+        }
+    }
+    render() {
+        return (h(Host, null, h(Grid, null, this.docs.map(d => (h(Col, { md: 4, sm: 4, xs: 12, cols: 12, key: d.id }, h(ResourceCard, { resource: d, showDescription: false, showAuthor: false })))))));
+    }
+    static get style() { return moreResourcesCss; }
+    static get cmpMeta() { return {
+        "$flags$": 2,
+        "$tagName$": "more-resources",
+        "$members$": {
+            "resources": [16],
+            "prismicEndpoint": [1, "prismic-endpoint"],
+            "docs": [32]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+const newsletterSignupCss = ".sc-newsletter-signup:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.newsletter.sc-newsletter-signup{padding:62px 0;border-top:1px solid var(--c-indigo-20)}.newsletter.sc-newsletter-signup .ui-heading.sc-newsletter-signup{font-weight:500;margin:2px 0 6px}.newsletter.sc-newsletter-signup .ui-grid.sc-newsletter-signup{-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding-right:40px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup img.sc-newsletter-signup{width:64px;height:64px;margin-right:16px;display:inline-block;vertical-align:middle}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup div.sc-newsletter-signup{-ms-flex:1;flex:1}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup h2.sc-newsletter-signup{margin:0 0 6px}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup p.sc-newsletter-signup{margin:0;letter-spacing:0;line-height:23px;font-size:14px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{position:relative;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end;margin-bottom:2px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup{font-family:\"Inter\";-ms-flex:0 0 359px;flex:0 0 359px;padding:5px 10px 5px 15px;letter-spacing:-0.02em;margin-right:8px;width:200px;min-height:calc(100% - 1px);background-color:#fff;border:1px solid var(--c-indigo-30);border-radius:6px;font-size:16px;font-weight:400;color:#070D12;letter-spacing:-0.22px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup:placeholder{color:#6D6C82}.newsletter.sc-newsletter-signup form.sc-newsletter-signup button.sc-newsletter-signup{font-family:\"Inter\";-ms-flex:0;flex:0;background-color:#119EFF;color:white;line-height:20px;letter-spacing:-0.02em;border-radius:8px;padding:15px 16px 13px 16px;margin-left:5px}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup svg.sc-newsletter-signup{margin-right:16px}.newsletter.sc-newsletter-signup .error__message.sc-newsletter-signup{position:absolute;top:100%;color:red}@media screen and (max-width: 768px){.newsletter.sc-newsletter-signup .container.sc-newsletter-signup{-ms-flex-direction:column;flex-direction:column;text-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup,.newsletter.sc-newsletter-signup form.sc-newsletter-signup{-ms-flex:0 0 100%;flex:0 0 100%}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding:0}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{margin-top:24px;width:100%;-ms-flex-pack:center;justify-content:center}}.landing-page.sc-newsletter-signup .newsletter.sc-newsletter-signup{background-color:#102331}";
 
 class NewsletterSignup {
     constructor(hostRef) {
@@ -10347,8 +11499,8 @@ class NewsletterSignup {
         };
     }
     render() {
-        return (h("section", { class: "newsletter" }, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("hgroup", null, h("img", { src: "/assets/img/newsletter-icon.png", alt: "newsletter" }), h("div", null, h(Heading, { level: 4 }, "The Capacitor Newsletter"), h("p", null, "Keep up to date with the latest Capacitor news and updates")))), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, !this.emailSuccess &&
-            h("form", { onSubmit: this.sendToHubspot, ref: e => this.emailForm = e, class: "sc-newsletter-signup" }, h("input", { class: "sc-newsletter-signup", "aria-label": "Email address", type: "email", placeholder: "Email address", name: "email", required: true }), this.emailInvalid && h("div", { class: "error__message" }, "invalid email address"), h(Button, null, "Subscribe")), this.emailSuccess &&
+        return (h("section", { class: "newsletter" }, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("hgroup", null, h("div", null, h(Heading, { level: 4 }, "Join our Newsletter"), h("p", null, "Keep up to date with all the latest Capacitor news and updates")))), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, !this.emailSuccess &&
+            h("form", { onSubmit: this.sendToHubspot, ref: e => this.emailForm = e, class: "sc-newsletter-signup" }, h("input", { class: "sc-newsletter-signup", "aria-label": "Email address", type: "email", placeholder: "Your email address", name: "email", required: true }), this.emailInvalid && h("div", { class: "error__message" }, "invalid email address"), h(Button, null, "Subscribe")), this.emailSuccess &&
             h("div", { class: "success__message" }, h("svg", { width: "42", height: "42", viewBox: "0 0 42 42", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, h("path", { d: "M21 42c11.598 0 21-9.402 21-21S32.598 0 21 0 0 9.402 0 21s9.402 21 21 21z", fill: "#D3F3DB" }), h("path", { d: "M13.87 20.97a1.75 1.75 0 00-2.54 2.408l2.54-2.407zm3.588 6.33l-1.27 1.204a1.75 1.75 0 002.54 0l-1.27-1.204zM30.67 15.904a1.75 1.75 0 00-2.54-2.408l2.54 2.408zm-19.34 7.474l4.858 5.126 2.54-2.408-4.858-5.125-2.54 2.407zm7.398 5.126l11.942-12.6-2.54-2.408-11.942 12.6 2.54 2.408z", fill: "#43C465" })), h("p", null, "Success! You will now receive our email newsletter.")))))));
     }
     static get style() { return newsletterSignupCss; }
@@ -10365,14 +11517,14 @@ class NewsletterSignup {
     }; }
 }
 
-const platformBarCss = ".sc-site-platform-bar-h{display:block;background:var(--c-carbon-100)}.platform-bar__container.sc-site-platform-bar{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.platform-bar__logo.sc-site-platform-bar{-ms-flex:1;flex:1}.platform-bar__logo.sc-site-platform-bar img.sc-site-platform-bar{height:24px;margin:6px 0;vertical-align:middle}.platform-bar__desc.sc-site-platform-bar{-ms-flex:1;flex:1;-ms-flex-line-pack:end;align-content:flex-end;color:#ccc;font-size:var(--f-size-2);line-height:160%;text-align:right;letter-spacing:var(--f-tracking-tight)}.platform-bar__desc.sc-site-platform-bar strong.sc-site-platform-bar{color:white}.platform-bar__desc.sc-site-platform-bar a.sc-site-platform-bar{color:white;text-decoration:none}";
+const platformBarCss = ".sc-site-platform-bar-h{display:block;background:var(--c-carbon-100)}.platform-bar__container.sc-site-platform-bar{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:44px}.platform-bar__logo.sc-site-platform-bar{-ms-flex:1;flex:1}.platform-bar__logo.sc-site-platform-bar svg.sc-site-platform-bar{height:24px;margin:10px 0;vertical-align:middle}.platform-bar__desc.sc-site-platform-bar{-ms-flex:1;flex:1;-ms-flex-line-pack:end;align-content:flex-end;color:#ccc;font-size:var(--f-size-2);line-height:160%;text-align:right;letter-spacing:var(--f-tracking-tight);margin:0 -3px 2px 0}.platform-bar__desc.sc-site-platform-bar strong.sc-site-platform-bar{color:white;font-weight:400}.platform-bar__desc.sc-site-platform-bar a.sc-site-platform-bar{color:white;text-decoration:none}";
 
 class PlatformBar {
     constructor(hostRef) {
         registerInstance(this, hostRef);
     }
     render() {
-        return (h(Host, null, h(ResponsiveContainer, { class: "platform-bar__container" }, h("div", { class: "platform-bar__logo" }, h("a", { href: "https://ionic.io/" }, h("img", { src: "/assets/ionic-logo.png", alt: "Ionic Logo" }))), h("div", { class: "platform-bar__desc" }, "See how ", h("strong", null, this.productName), " fits into the ", h("a", { href: "https://ionic.io/" }, "Ionic Ecosystem"), " ->"))));
+        return (h(Host, null, h(ResponsiveContainer, { class: "platform-bar__container" }, h("div", { class: "platform-bar__logo" }, h("a", { href: "https://ionic.io/" }, h("svg", { width: "70", height: "24", viewBox: "0 0 70 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", role: "image", "aria-label": "Ionic Logo" }, h("path", { d: "M66.805 14.2224C66.4881 15.0748 65.6974 15.5478 64.7204 15.5478C63.2704 15.5478 62.095 14.3723 62.095 12.9223C62.095 11.4723 63.2704 10.2969 64.7204 10.2969C65.6975 10.2969 66.4638 10.7137 66.805 11.6224H69.4826C69.0392 9.29243 67.102 7.79688 64.7204 7.79688C61.8897 7.79688 59.595 10.0916 59.595 12.9223C59.595 15.753 61.8897 18.0478 64.7204 18.0478C67.102 18.0478 69.1606 16.3746 69.4826 14.2224H66.805Z", fill: "white" }), h("path", { d: "M55.778 8.05437H58.5659V17.8665H55.778V8.05437Z", fill: "white" }), h("path", { d: "M58.8464 5.68306C58.8464 6.61259 58.0928 7.36613 57.1633 7.36613C56.2338 7.36613 55.4802 6.61259 55.4802 5.68306C55.4802 4.75353 56.2338 4 57.1633 4C58.0928 4 58.8464 4.75353 58.8464 5.68306Z", fill: "white" }), h("path", { d: "M47.7925 9.25525C48.2599 8.41119 49.3224 7.83496 50.8523 7.83496C53.3258 7.83496 54.6347 9.40945 54.6347 11.7468V17.8663H51.8468V12.039C51.8468 10.8947 51.3368 10.1074 50.1044 10.1074C48.7529 10.1074 48.0049 10.9353 48.0049 12.2419V17.8581H45.217V8.05409H47.7925V9.25525Z", fill: "white" }), h("circle", { cx: "39.1897", cy: "12.9226", r: "3.87526", stroke: "white", "stroke-width": "2.5" }), h("path", { d: "M30.2975 8.05437H33.0854V17.8665H30.2975V8.05437Z", fill: "white" }), h("path", { d: "M33.3659 5.68306C33.3659 6.61259 32.6124 7.36613 31.6828 7.36613C30.7533 7.36613 29.9998 6.61259 29.9998 5.68306C29.9998 4.75353 30.7533 4 31.6828 4C32.6124 4 33.3659 4.75353 33.3659 5.68306Z", fill: "white" }), h("path", { d: "M12 17.1431C14.8336 17.1431 17.1428 14.8383 17.1428 12.0002C17.1428 9.16657 14.838 6.85735 12 6.85735C9.16192 6.85735 6.85711 9.16657 6.85711 12.0002C6.85711 14.8338 9.16633 17.1431 12 17.1431Z", fill: "white" }), h("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M12 2.88C6.96316 2.88 2.88 6.96316 2.88 12C2.88 17.0368 6.96316 21.12 12 21.12C17.0368 21.12 21.12 17.0368 21.12 12C21.12 10.6394 20.823 9.35203 20.2916 8.196L22.9084 6.99318C23.6097 8.51886 24 10.2158 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C15.4654 0 18.5895 1.47078 20.7781 3.81796L18.6717 5.78204C17.005 3.9946 14.6338 2.88 12 2.88Z", fill: "url(#paint0_radial)" }), h("path", { opacity: "0.4", d: "M20.5 11C22.433 11 24 9.433 24 7.5C24 5.567 22.433 4 20.5 4C18.567 4 17 5.567 17 7.5C17 9.433 18.567 11 20.5 11Z", fill: "#03060B" }), h("path", { d: "M20.5714 9.42843C22.4649 9.42843 24 7.89341 24 5.99986C24 4.10631 22.4649 2.57129 20.5714 2.57129C18.6778 2.57129 17.1428 4.10631 17.1428 5.99986C17.1428 7.89341 18.6778 9.42843 20.5714 9.42843Z", fill: "#03060B" }), h("path", { d: "M19.7143 7.71415C21.1344 7.71415 22.2857 6.56288 22.2857 5.14272C22.2857 3.72256 21.1344 2.57129 19.7143 2.57129C18.2941 2.57129 17.1428 3.72256 17.1428 5.14272C17.1428 6.56288 18.2941 7.71415 19.7143 7.71415Z", fill: "white" }), h("defs", null, h("radialGradient", { id: "paint0_radial", cx: "0", cy: "0", r: "1", gradientUnits: "userSpaceOnUse", gradientTransform: "translate(23 8.5) rotate(162.35) scale(11.5434 5.28499)" }, h("stop", { "stop-color": "white", "stop-opacity": "0.7" }), h("stop", { offset: "1", "stop-color": "white" })))))), h("div", { class: "platform-bar__desc" }, "See how ", h("strong", null, this.productName), " fits into the entire ", h("a", { href: "https://ionic.io/" }, "Ionic Ecosystem"), " ", h("span", { style: { 'letter-spacing': '0' } }, "->")))));
     }
     static get style() { return platformBarCss; }
     static get cmpMeta() { return {
@@ -10399,7 +11551,7 @@ class PluginApi {
             return;
         }
         const url = `api${this.index ? '-index' : ''}.html`;
-        return fetch(`/assets/docs-content/apis/${this.name}/${url}`)
+        return fetch(`/assets/plugins-content/apis/${this.name}/${url}`)
             .then(response => {
             return response.text();
         })
@@ -10473,14 +11625,14 @@ class PluginPlatforms {
     }; }
 }
 
-const preFooterCss = ".sc-pre-footer-h{display:block}img.sc-pre-footer{width:48px;height:48px}.ui-grid.sc-pre-footer{gap:0}.ui-col.sc-pre-footer{padding:64px 0}.ui-col.sc-pre-footer:first-child{border-right:1px solid var(--c-indigo-20)}.ui-col.sc-pre-footer:last-child{padding-left:86px}";
+const preFooterCss = ".sc-pre-footer-h{display:block;border-top:1px solid var(--c-indigo-20)}.ui-heading.sc-pre-footer{font-weight:500;font-size:20px;line-height:112%;margin:20px 0 8px}p.sc-pre-footer{font-size:16px;margin:0}img.sc-pre-footer{width:50px;height:50px}a.sc-pre-footer{border:none}.ui-grid.sc-pre-footer{gap:0}.ui-col.sc-pre-footer{padding:63px 0 55px}.ui-col.sc-pre-footer:first-child{border-right:1px solid var(--c-indigo-20)}.ui-col.sc-pre-footer:last-child{padding-left:86px}.arrow.sc-pre-footer{letter-spacing:0}";
 
 class PreFooter {
     constructor(hostRef) {
         registerInstance(this, hostRef);
     }
     render() {
-        return (h(Host, null, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h("a", { href: "/docs" }, h("img", { src: "/assets/img/docs.png", alt: "Read the docs" }), h(Heading, { level: 4 }, "Read the Docs ->"), h("p", null, "Install Capacitor and learn how to start building with it"))), h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h("a", { href: "/docs/apis" }, h("img", { src: "/assets/img/native-apis.png", alt: "Explore the Native APIs" }), h(Heading, { level: 4 }, "Explore Native APIs ->"), h("p", null, "Explore Native APIs that are available to all Capacitor apps")))))));
+        return (h(Host, null, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h("a", { href: "/docs" }, h("img", { src: "/assets/img/docs.png", alt: "Installation Guide" }), h(Heading, { level: 4 }, "Installation Guide ", h("span", { class: "arrow" }, "->")), h("p", null, "Install Capacitor and learn how to start building with it"))), h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h("a", { href: "/docs/apis" }, h("img", { src: "/assets/img/native-apis.png", alt: "Explore the Native Plugins" }), h(Heading, { level: 4 }, "Explore Native Plugins ", h("span", { class: "arrow" }, "->")), h("p", null, "Explore Native Plugins that are available to all Capacitor apps")))))));
     }
     static get style() { return preFooterCss; }
     static get cmpMeta() { return {
@@ -10493,7 +11645,7 @@ class PreFooter {
     }; }
 }
 
-const capacitorSiteHeaderCss = ".sc-capacitor-site-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-capacitor-site-header-h{position:-webkit-sticky;position:sticky;z-index:1000;top:-1px;background:transparent;display:block;padding:6px 0;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);-webkit-transition:background-color 0.4s ease, -webkit-box-shadow 0.4s ease;transition:background-color 0.4s ease, -webkit-box-shadow 0.4s ease;transition:background-color 0.4s ease, box-shadow 0.4s ease;transition:background-color 0.4s ease, box-shadow 0.4s ease, -webkit-box-shadow 0.4s ease;--link-color:var(--c-carbon-90)}@media (max-width: 550px){.sc-capacitor-site-header-h .ui-container.sc-capacitor-site-header{-ms-flex-direction:column;flex-direction:column}}.site-header--sticky.sc-capacitor-site-header-h{background:#fff}.page-theme--dark .sc-capacitor-site-header-h{background-color:transparent;--link-color:white}.site-header.sc-capacitor-site-header{display:-ms-flexbox;display:flex}.site-header__container.sc-capacitor-site-header{height:64px;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.site-header__logo-link.sc-capacitor-site-header{margin:0;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;text-decoration:none;border:0}.site-header__logo-link.sc-capacitor-site-header img.sc-capacitor-site-header{height:24px}.site-header__menu.sc-capacitor-site-header{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.site-header__menu--hovered.sc-capacitor-site-header a.sc-capacitor-site-header{opacity:0.4}.site-header__menu--hovered.sc-capacitor-site-header a.link--active.sc-capacitor-site-header{opacity:0.4}.site-header__menu.sc-capacitor-site-header nav.sc-capacitor-site-header{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:space-evenly;justify-content:space-evenly;max-width:550px}.site-header__menu.sc-capacitor-site-header a.sc-capacitor-site-header{border-bottom:0;-webkit-transition:color, opacity 0.4s;transition:color, opacity 0.4s;font-size:15px;font-family:var(--f-family-text);color:#222D3A;text-decoration:none;font-weight:normal;letter-spacing:-0.02em}.site-header__menu.sc-capacitor-site-header a.sc-capacitor-site-header:hover{opacity:1;border:0}.site-header__menu.sc-capacitor-site-header a.link--active.sc-capacitor-site-header{opacity:1}.site-header__menu.sc-capacitor-site-header .link.sc-capacitor-site-header,.site-header__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header{position:relative;border:0;-webkit-transition:color 0.3s;transition:color 0.3s}.site-header__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header .icon.sc-capacitor-site-header{margin-left:6px;-webkit-transition:top 0.2s, left 0.2s;transition:top 0.2s, left 0.2s;position:relative}.site-header__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header:hover{color:#000}.site-header__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header:hover .icon.sc-capacitor-site-header{left:1px;top:-1px}.site-header__buttons.sc-capacitor-site-header{min-width:130px}.site-header__buttons.sc-capacitor-site-header .ui-button.sc-capacitor-site-header{font-size:var(--f-size-4);letter-spacing:var(--f-tracking-tight);line-height:18px;padding:6px 10px;margin-left:5px}.site-header__buttons__github.sc-capacitor-site-header{background:#fff;border:1px solid #EBEFF4;color:var(--c-indigo-80);line-height:0}.site-header__buttons__github.sc-capacitor-site-header ion-icon.sc-capacitor-site-header{vertical-align:middle;margin-right:6px;margin-top:-2px}.site-header__buttons__install.sc-capacitor-site-header{background:var(--color-capacitor-blue)}.site-header__buttons__install.sc-capacitor-site-header svg.sc-capacitor-site-header{margin-right:6px;margin-bottom:-2px}";
+const capacitorSiteHeaderCss = ".sc-capacitor-site-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-capacitor-site-header-h{position:-webkit-sticky;position:sticky;z-index:1000;top:-1px;background:transparent;display:block;padding:14px 0 13px;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);-webkit-transition:background-color 0.4s ease, -webkit-box-shadow 0.4s ease;transition:background-color 0.4s ease, -webkit-box-shadow 0.4s ease;transition:background-color 0.4s ease, box-shadow 0.4s ease;transition:background-color 0.4s ease, box-shadow 0.4s ease, -webkit-box-shadow 0.4s ease;--link-color:var(--c-carbon-90)}@media (max-width: 550px){.sc-capacitor-site-header-h .ui-container.sc-capacitor-site-header{-ms-flex-direction:column;flex-direction:column}}.site-header--sticky.sc-capacitor-site-header-h{background:#fff}.page-theme--dark .sc-capacitor-site-header-h{background-color:transparent;--link-color:white}.site-header.sc-capacitor-site-header{display:-ms-flexbox;display:flex}.site-header__container.sc-capacitor-site-header{height:64px;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.site-header__logo-link.sc-capacitor-site-header{margin:0 0 2px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;text-decoration:none;border:0}.site-header__logo-link.sc-capacitor-site-header img.sc-capacitor-site-header{height:24px}.site-header__menu.sc-capacitor-site-header{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.site-header__menu--hovered.sc-capacitor-site-header a.sc-capacitor-site-header{opacity:0.4}.site-header__menu--hovered.sc-capacitor-site-header a.link--active.sc-capacitor-site-header{opacity:0.4}.site-header__menu.sc-capacitor-site-header nav.sc-capacitor-site-header{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:space-evenly;justify-content:space-evenly;max-width:550px;margin-left:15px}.site-header__menu.sc-capacitor-site-header a.sc-capacitor-site-header{border-bottom:0;-webkit-transition:color, opacity 0.4s;transition:color, opacity 0.4s;font-size:15px;line-height:18px;font-family:var(--f-family-text);color:#222d3a;text-decoration:none;font-weight:normal;letter-spacing:0;margin:0 2px 0 0}.site-header__menu.sc-capacitor-site-header a.sc-capacitor-site-header:hover{opacity:1;border:0}.site-header__menu.sc-capacitor-site-header a.link--active.sc-capacitor-site-header{opacity:1}.site-header__menu.sc-capacitor-site-header .link.sc-capacitor-site-header,.site-header__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header{position:relative;border:0;-webkit-transition:color 0.3s;transition:color 0.3s}.site-header__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header .icon.sc-capacitor-site-header{margin-left:6px;-webkit-transition:top 0.2s, left 0.2s;transition:top 0.2s, left 0.2s;position:relative}.site-header__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header:hover{color:#000}.site-header__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header:hover .icon.sc-capacitor-site-header{left:1px;top:-1px}.site-header__buttons.sc-capacitor-site-header{min-width:130px;margin-top:2px}.site-header__buttons.sc-capacitor-site-header .ui-button.sc-capacitor-site-header{font-size:15px;letter-spacing:var(--f-tracking-tight);line-height:18px;padding:8px 10px;margin-left:13px;margin-right:-2px;margin-top:-1px}.site-header__buttons__github.sc-capacitor-site-header{background:#fff;border:1px solid #ebeff4;color:var(--c-indigo-80);line-height:0}.site-header__buttons__github.sc-capacitor-site-header ion-icon.sc-capacitor-site-header{vertical-align:middle;margin-right:5px;margin-top:-2px;margin-left:-2px;font-size:16px;color:#73849a}.site-header__buttons__install.sc-capacitor-site-header{background:var(--color-capacitor-blue)}.site-header__buttons__install.sc-capacitor-site-header svg.sc-capacitor-site-header{margin-right:6px;margin-bottom:-2px}";
 
 const formatNumber = (n) => {
     if (n > 1000) {
@@ -10513,7 +11665,7 @@ class SiteHeader {
     }
     async componentWillLoad() {
         // TODO pull this in from GitHub at build
-        this.starCount = formatNumber('4.1k');
+        this.starCount = formatNumber('4.1K');
         // Figure out if we should force hover a nav item
         this.forceHovered = Router.activePath.replace('/', '').replace('#', '');
         Router.onChange('activePath', (v) => {
@@ -10573,11 +11725,12 @@ const NavLink = ({ path, hovered, onHover, onExit }, children) => {
         } }), children));
 };
 
-const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{--menu-width:280px;display:block;-ms-flex:0 0 auto;flex:0 0 auto;width:var(--menu-width);letter-spacing:0;padding:0 15px 0 18px;-webkit-box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-white);z-index:999;-webkit-transform:translateX(calc(-1 * var(--menu-width)));transform:translateX(calc(-1 * var(--menu-width)));-webkit-transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);height:100%;overflow-y:scroll}.menu-overlay-visible.sc-docs-menu-h{-webkit-transform:none;transform:none;-webkit-transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1)}.menu-overlay-visible.sc-docs-menu-h .menu-header.sc-docs-menu{background:white;position:-webkit-sticky;position:sticky;top:0;z-index:1}.menu-overlay-visible.sc-docs-menu-h .menu-header__logo-link.sc-docs-menu{margin-left:60px}.menu-overlay-visible.sc-docs-menu-h .menu-header__version-link.sc-docs-menu{display:none}}.sticky.sc-docs-menu{top:0;max-height:100vh}.menu-header.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;-webkit-transition:80ms height;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;-webkit-transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s transform ease, 0.2s color ease;transition:0.2s transform ease, 0.2s color ease, 0.2s -webkit-transform ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}";
+const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{--menu-width:280px;display:block;-ms-flex:0 0 auto;flex:0 0 auto;width:var(--menu-width);letter-spacing:0;padding:0 15px 0 18px;-webkit-box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-white);z-index:999;-webkit-transform:translateX(calc(-1 * var(--menu-width)));transform:translateX(calc(-1 * var(--menu-width)));-webkit-transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);height:100%;overflow-y:scroll}.menu-overlay-visible.sc-docs-menu-h{-webkit-transform:none;transform:none;-webkit-transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1)}.menu-overlay-visible.sc-docs-menu-h .menu-header.sc-docs-menu{background:white;position:-webkit-sticky;position:sticky;top:0;z-index:1}.menu-overlay-visible.sc-docs-menu-h .menu-header__logo-link.sc-docs-menu{margin-left:60px}.menu-overlay-visible.sc-docs-menu-h .menu-header__version-link.sc-docs-menu{display:none}}.sticky.sc-docs-menu{top:0;max-height:100vh}.menu-header.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px;max-width:125px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;-webkit-transition:80ms height;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;-webkit-transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s transform ease, 0.2s color ease;transition:0.2s transform ease, 0.2s color ease, 0.2s -webkit-transform ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}";
 
 class SiteMenu {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.template = 'docs';
         this.siteStructureList = [];
         this.selectedParent = null;
         this.closeList = [];
@@ -10610,10 +11763,12 @@ class SiteMenu {
         this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
     }
     render() {
-        const { version } = this;
+        const { template, version } = this;
         return (h(Host, { class: {
                 'menu-overlay-visible': this.showOverlay
-            } }, h("div", { class: "sticky" }, h("div", null, h("div", { class: "menu-header" }, h("app-menu-toggle", { icon: "close" }), h("a", Object.assign({}, href('/'), { class: "menu-header__logo-link" }), state.pageTheme === 'dark' ? (h("img", { src: "/assets/img/heading/logo-white.png", alt: "Capacitor Logo" })) : (h("img", { src: "/assets/img/heading/logo-black.png", alt: "Capacitor Logo" }))), h("a", Object.assign({}, href('/docs'), { class: "menu-header__docs-link" }), "docs"), version ?
+            } }, h("div", { class: "sticky" }, h("div", null, h("div", { class: "menu-header" }, h("app-menu-toggle", { icon: "close" }), h("a", Object.assign({}, href('/'), { class: "menu-header__logo-link" }), state.pageTheme === 'dark' ? (h("img", { src: "/assets/img/heading/logo-white.png", alt: "Capacitor Logo" })) : (h("img", { src: "/assets/img/heading/logo-black.png", alt: "Capacitor Logo" }))), template === 'plugins' ?
+            h("a", Object.assign({}, href('/docs/plugins'), { class: "menu-header__docs-link" }), "plugins")
+            : h("a", Object.assign({}, href('/docs'), { class: "menu-header__docs-link" }), "docs"), template === 'docs' && version ?
             h("a", { href: `https://github.com/ionic-team/capacitor/releases/tag/${version}`, rel: "noopener", target: "_blank", class: "menu-header__version-link" }, "v", version)
             : null), h("ul", { class: "menu-list" }, this.siteStructureList.map((item, i) => {
             const active = item.url === Router.activePath;
@@ -10640,6 +11795,7 @@ class SiteMenu {
         "$flags$": 2,
         "$tagName$": "docs-menu",
         "$members$": {
+            "template": [1],
             "siteStructureList": [16],
             "selectedParent": [1040],
             "closeList": [32],
@@ -10741,7 +11897,7 @@ class SiteModal {
     }; }
 }
 
-const siteRootCss = "@charset \"UTF-8\";:root{--c-white:#ffffff;--c-black:#000000;--c-blue-0:#f0f6ff;--c-blue-10:#e3edff;--c-blue-20:#cddfff;--c-blue-30:#b2ceff;--c-blue-40:#97bdff;--c-blue-50:#7cabff;--c-blue-60:#639bff;--c-blue-70:#4d8dff;--c-blue-80:#3880ff;--c-blue-90:#1b6dff;--c-blue-100:#0054e9;--c-ionic-brand:var(--c-blue-80);--c-gray-0:#f3f3f3;--c-gray-10:#e4e4e4;--c-gray-20:#c8c8c8;--c-gray-30:#aeaeae;--c-gray-40:#959595;--c-gray-50:#818181;--c-gray-60:#6d6d6d;--c-gray-70:#5f5f5f;--c-gray-80:#474747;--c-gray-90:#2f2f2f;--c-gray-100:#141414;--c-carbon-0:#eef1f3;--c-carbon-10:#d7dde2;--c-carbon-20:#b4bcc6;--c-carbon-30:#98a2ad;--c-carbon-40:#7d8894;--c-carbon-50:#677483;--c-carbon-60:#556170;--c-carbon-70:#434f5e;--c-carbon-80:#35404e;--c-carbon-90:#222d3a;--c-carbon-100:#03060b;--c-indigo-0:#fbfbfd;--c-indigo-10:#f6f8fb;--c-indigo-20:#e9edf3;--c-indigo-30:#dee3ea;--c-indigo-40:#ced6e0;--c-indigo-50:#b2becd;--c-indigo-60:#92a0b3;--c-indigo-70:#73849a;--c-indigo-80:#445b78;--c-indigo-90:#2d4665;--c-indigo-100:#001a3a;--c-green-0:#effff3;--c-green-10:#e7ffee;--c-green-20:#d0ffdd;--c-green-30:#b8ffcb;--c-green-40:#97ffb3;--c-green-50:#71f895;--c-green-60:#4ef27a;--c-green-70:#31e962;--c-green-80:#18dd4c;--c-green-90:#00d338;--c-green-100:#00b831;--c-lime-0:#f8fff0;--c-lime-10:#f2ffe1;--c-lime-20:#eeffd8;--c-lime-30:#e5ffc3;--c-lime-40:#d8ffa7;--c-lime-50:#c8ff83;--c-lime-60:#b7f964;--c-lime-70:#a7f544;--c-lime-80:#97ec2d;--c-lime-90:#87e017;--c-lime-100:#75d100;--c-lavender-0:#f6f8ff;--c-lavender-10:#e5ebff;--c-lavender-20:#ced9ff;--c-lavender-30:#b6c6ff;--c-lavender-40:#9fb5ff;--c-lavender-50:#8aa4ff;--c-lavender-60:#7493ff;--c-lavender-70:#597eff;--c-lavender-80:#3c67ff;--c-lavender-90:#194bfd;--c-lavender-100:#0033e8;--c-purple-0:#f4f4ff;--c-purple-10:#e9eaff;--c-purple-20:#d0d2ff;--c-purple-30:#b6b9f9;--c-purple-40:#9a99fc;--c-purple-50:#8482fb;--c-purple-60:#786df9;--c-purple-70:#6e5afd;--c-purple-80:#6030ff;--c-purple-90:#4712fb;--c-purple-100:#3400e5;--c-pink-0:#fff2fb;--c-pink-10:#ffe3f6;--c-pink-20:#ffd4f1;--c-pink-30:#ffc7ec;--c-pink-40:#ffb6e8;--c-pink-50:#ff9cdf;--c-pink-60:#fc82d5;--c-pink-70:#f567c8;--c-pink-80:#ef4cbb;--c-pink-90:#f02fb2;--c-pink-100:#e410a1;--c-red-0:#fff2f2;--c-red-10:#ffdddd;--c-red-20:#ffc8c7;--c-red-30:#ffb6b5;--c-red-40:#ff9e9c;--c-red-50:#ff8a88;--c-red-60:#ff7370;--c-red-70:#ff605b;--c-red-80:#ff4747;--c-red-90:#ff201a;--c-red-100:#e70700;--c-orange-0:#fff5f0;--c-orange-10:#ffede5;--c-orange-20:#ffdfd1;--c-orange-30:#ffd0bc;--c-orange-40:#ffc0a5;--c-orange-50:#ffaf8c;--c-orange-60:#ff9b70;--c-orange-70:#ff8753;--c-orange-80:#ff7336;--c-orange-90:#ff5b13;--c-orange-100:#eb4700;--c-yellow-0:#fffbef;--c-yellow-10:#fff8e3;--c-yellow-20:#fff6d8;--c-yellow-30:#fff3c9;--c-yellow-50:#ffedad;--c-yellow-50:#ffe78f;--c-yellow-60:#ffe072;--c-yellow-70:#ffd84d;--c-yellow-80:#ffd130;--c-yellow-90:#ffc805;--c-yellow-100:#f5bf00;--c-aqua-0:#f0fff9;--c-aqua-10:#e5fff6;--c-aqua-20:#d5ffef;--c-aqua-30:#c0ffe8;--c-aqua-40:#aaffe0;--c-aqua-50:#90fbd4;--c-aqua-60:#70f6c5;--c-aqua-70:#4deeb2;--c-aqua-80:#32e2a1;--c-aqua-90:#00db8a;--c-aqua-100:#00cc80;--c-teal-0:#eefeff;--c-teal-10:#dffdff;--c-teal-20:#d0fdff;--c-teal-30:#bbfcff;--c-teal-40:#a2fcff;--c-teal-50:#8bfbff;--c-teal-60:#73f6fb;--c-teal-70:#55ecf2;--c-teal-80:#35e2e9;--c-teal-90:#1bd2d9;--c-teal-100:#00b9c0;--c-cyan-0:#f3faff;--c-cyan-10:#e8f5ff;--c-cyan-20:#d3ecff;--c-cyan-30:#bfe4ff;--c-cyan-40:#a7daff;--c-cyan-50:#8dcfff;--c-cyan-60:#77c6ff;--c-cyan-70:#62bdff;--c-cyan-80:#46b1ff;--c-cyan-90:#24a3ff;--c-cyan-100:#0091fa}@font-face{font-family:Eina;font-display:swap;src:url(/assets/fonts/eina/eina-01-bold.woff2) format(\"woff2\"), url(/assets/fonts/eina/eina-01-bold.woff) format(\"woff\"), url(/assets/fonts/eina/eina-01-bold.ttf) format(\"ttf\"), url(/assets/fonts/eina/eina-01-bold.eot?#iefix) format(\"eot\");font-weight:700;unicode-range:U+000-5FF}@font-face{font-family:Eina;font-display:swap;src:url(/assets/fonts/eina/eina-01-semibold.woff2) format(\"woff2\"), url(/assets/fonts/eina/eina-01-semibold.woff) format(\"woff\"), url(/assets/fonts/eina/eina-01-semibold.ttf) format(\"ttf\"), url(/assets/fonts/eina/eina-01-semibold.eot?#iefix) format(\"eot\");font-weight:600;unicode-range:U+000-5FF}@font-face{font-family:Eina;font-display:swap;src:url(/assets/fonts/eina/eina-01-regular.woff2) format(\"woff2\"), url(/assets/fonts/eina/eina-01-regular.woff) format(\"woff\"), url(/assets/fonts/eina/eina-01-regular.ttf) format(\"ttf\"), url(/assets/fonts/eina/eina-01-regular.eot?#iefix) format(\"eot\");font-weight:400;unicode-range:U+000-5FF}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:400;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Regular.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Regular.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:400;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Italic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Italic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:500;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Medium.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Medium.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:500;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-MediumItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-MediumItalic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:600;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-SemiBold.woff2) format(\"woff2\"), url(/assets/fonts/Inter-SemiBold.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:600;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-SemiBoldItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-SemiBoldItalic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:700;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Bold.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Bold.woff) format(\"woff\")}@font-face{font-family:Inter;font-style:italic;font-weight:700;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-BoldItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-BoldItalic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:800;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-ExtraBold.woff2) format(\"woff2\"), url(/assets/fonts/Inter-ExtraBold.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:800;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-ExtraBoldItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-ExtraBoldItalic.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:normal;font-weight:900;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-Black.woff2) format(\"woff2\"), url(/assets/fonts/Inter-Black.woff) format(\"woff\")}@font-face{font-family:Inter;font-display:swap;font-style:italic;font-weight:900;unicode-range:U+000-5FF;src:url(/assets/fonts/Inter-BlackItalic.woff2) format(\"woff2\"), url(/assets/fonts/Inter-BlackItalic.woff) format(\"woff\")}@font-face{font-family:FreightTextPro;font-display:swap;font-weight:400;unicode-range:U+000-5FF;src:url(/assets/fonts/29D26A_0_0.eot);src:url(/assets/fonts/29D26A_0_0.eot?#iefix) format(\"embedded-opentype\"), url(/assets/fonts/29D26A_0_0.woff) format(\"woff\"), url(/assets/fonts/29D26A_0_0.ttf) format(\"truetype\")}@font-face{font-family:FreightTextPro;font-display:swap;font-weight:500;unicode-range:U+000-5FF;src:url(/assets/fonts/29D26A_1_0.eot);src:url(/assets/fonts/29D26A_1_0.eot?#iefix) format(\"embedded-opentype\"), url(/assets/fonts/29D26A_1_0.woff) format(\"woff\"), url(/assets/fonts/29D26A_1_0.ttf) format(\"truetype\")}:root{--f-family-display:\"Eina\", \"Helvetica Neue\", Helvetica, sans-serif;--f-family-text:\"Inter\", \"Inter UI\", Helvetica, Arial, sans-serif;--f-family-system:apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;--f-family-monospace:\"SF Mono\", \"Roboto Mono\", Menlo, monospace;--f-family-serif:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;--f-size-root:16px;--f-size-0:0.625rem;--f-size-1:0.6875rem;--f-size-2:0.75rem;--f-size-3:0.8125rem;--f-size-4:0.875rem;--f-size-5:1.00rem;--f-size-6:1.25rem;--f-size-7:1.50rem;--f-size-8:2.00rem;--f-size-9:2.50rem;--f-size-10:3.00rem;--f-size-11:3.50rem;--f-size-12:4.00rem;--f-size-13:4.50rem;--f-size-14:5.00rem;--f-size-15:5.50rem;--f-size-16:6.00rem;--f-leading-solid:1.0;--f-leading-title:1.12;--f-leading-body:1.6;--f-leading-prose:1.8;--f-tracking-dense:-0.04em;--f-tracking-tight:-0.02em;--f-tracking-solid:0.00em;--f-tracking-wide:0.04em;--f-tracking-super:0.08em;--f-tracking-extra:0.16em;--f-weight-light:300;--f-weight-regular:400;--f-weight-medium:500;--f-weight-semibold:600;--f-weight-bold:700}:root{--space-0:0.25rem;--space-1:0.50rem;--space-2:0.75rem;--space-3:1.00rem;--space-4:1.25rem;--space-5:1.5rem;--space-6:2.00rem;--space-7:2.50rem;--space-8:3.00rem;--space-9:4.00rem;--space-10:5.00rem;--space-11:6.00rem;--space-12:8.00rem;--space-13:10.00rem;--space-14:12.00rem;--space-15:14.00rem;--space-16:16.00rem;}:root{--radii-0:0;--radii-1:6px;--radii-2:8px;--radii-3:16px;--radii-4:100%}:root{--elevation-0:none;--elevation-1:0px 1px 2px rgba(2, 8, 20, 0.10), 0px 0px 1px rgba(2, 8, 20, 0.08);--elevation-2:0px 2px 4px rgba(2, 8, 20, 0.10), 0px 1px 2px rgba(2, 8, 20, 0.08);--elevation-3:0px 4px 8px rgba(2, 8, 20, 0.08), 0px 2px 4px rgba(2, 8, 20, 0.08);--elevation-4:0px 8px 16px rgba(2, 8, 20, 0.08), 0px 4px 8px rgba(2, 8, 20, 0.08);--elevation-5:0px 16px 32px rgba(2, 8, 20, 0.08), 0px 8px 16px rgba(2, 8, 20, 0.08);--elevation-6:0px 32px 64px rgba(2, 8, 20, 0.08), 0px 16px 32px rgba(2, 8, 20, 0.10)}:root{--z-subnav:1000;--z-header-dropdown:1005}.ui-blockquote{background:#f2f5f8;border-radius:4px;position:relative;padding:64px 80px 68px 111px;color:#5e749a;font-family:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;font-style:italic;border:none;margin:77px -16px 54px}.ui-blockquote:before{position:absolute;top:-6px;left:54px;font-size:180px;content:\"“\";color:#e3e7ec}.ui-breadcrumbs{font-size:13px;line-height:14px;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center}.ui-breadcrumbs li{display:inline-block}.ui-breadcrumbs li:first-child a{padding-left:0}.ui-breadcrumbs li:last-child a{color:var(--c-carbon-100);font-weight:500}.ui-breadcrumbs a{color:var(--c-carbon-50);font-size:13px;line-height:14px;padding:16px 2px;display:inline-block}.ui-breadcrumbs .nav-sep{display:inline-block;font-size:16px;font-weight:400;color:rgba(65, 77, 92, 0.2);margin:0 6px}.ui-breakpoint{display:none !important}@media (max-width: 480px){.ui-breakpoint-mobile{display:block !important}}@media (max-width: 480px){.ui-breakpoint-mobile.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet{display:block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 768px){.ui-breakpoint-desktop{display:block !important}}@media (min-width: 768px){.ui-breakpoint-desktop.ui-breakpoint-inline-block{display:inline-block !important}}.ui-button{cursor:pointer;display:inline-block;font-weight:500;border-radius:8px;line-height:1.4em;padding:16px 20px;-webkit-transition:all 0.3s ease;transition:all 0.3s ease;font-size:16px;border:0px solid rgba(0, 0, 0, 0);color:#fff;background:var(--button-background, var(--c-ionic-brand));letter-spacing:0.01em}.ui-card--embelish{background-color:#fff;border-radius:6px;-webkit-box-shadow:var(--elevation-4);box-shadow:var(--elevation-4);border-radius:14px}.ui-card--embelish .ui-card-content{padding:32px}.ui-container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width: 768px){.ui-container{width:750px}}@media (min-width: 992px){.ui-container{width:970px}}@media (min-width: 1104px){.ui-container{width:1054px}}.ui-grid{display:grid;-webkit-column-gap:56px;-moz-column-gap:56px;column-gap:56px;row-gap:96px;grid-template-columns:repeat(12, minmax(0, 1fr))}@media (max-width: 480px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:48px}}@media (max-width: 768px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:24px}}.ui-grid .ui-col-1{grid-column-end:span 1}.ui-grid .ui-col-2{grid-column-end:span 2}.ui-grid .ui-col-3{grid-column-end:span 3}.ui-grid .ui-col-4{grid-column-end:span 4}.ui-grid .ui-col-5{grid-column-end:span 5}.ui-grid .ui-col-6{grid-column-end:span 6}.ui-grid .ui-col-7{grid-column-end:span 7}.ui-grid .ui-col-8{grid-column-end:span 8}.ui-grid .ui-col-9{grid-column-end:span 9}.ui-grid .ui-col-10{grid-column-end:span 10}.ui-grid .ui-col-11{grid-column-end:span 11}.ui-grid .ui-col-12{grid-column-end:span 12}@media (min-width: 480px){.ui-grid .ui-col-xs-1{grid-column-end:span 1}.ui-grid .ui-col-xs-2{grid-column-end:span 2}.ui-grid .ui-col-xs-3{grid-column-end:span 3}.ui-grid .ui-col-xs-4{grid-column-end:span 4}.ui-grid .ui-col-xs-5{grid-column-end:span 5}.ui-grid .ui-col-xs-6{grid-column-end:span 6}.ui-grid .ui-col-xs-7{grid-column-end:span 7}.ui-grid .ui-col-xs-8{grid-column-end:span 8}.ui-grid .ui-col-xs-9{grid-column-end:span 9}.ui-grid .ui-col-xs-10{grid-column-end:span 10}.ui-grid .ui-col-xs-11{grid-column-end:span 11}.ui-grid .ui-col-xs-12{grid-column-end:span 12}}@media (min-width: 768px){.ui-grid .ui-col-sm-1{grid-column-end:span 1}.ui-grid .ui-col-sm-2{grid-column-end:span 2}.ui-grid .ui-col-sm-3{grid-column-end:span 3}.ui-grid .ui-col-sm-4{grid-column-end:span 4}.ui-grid .ui-col-sm-5{grid-column-end:span 5}.ui-grid .ui-col-sm-6{grid-column-end:span 6}.ui-grid .ui-col-sm-7{grid-column-end:span 7}.ui-grid .ui-col-sm-8{grid-column-end:span 8}.ui-grid .ui-col-sm-9{grid-column-end:span 9}.ui-grid .ui-col-sm-10{grid-column-end:span 10}.ui-grid .ui-col-sm-11{grid-column-end:span 11}.ui-grid .ui-col-sm-12{grid-column-end:span 12}}@media (min-width: 992px){.ui-grid .ui-col-md-1{grid-column-end:span 1}.ui-grid .ui-col-md-2{grid-column-end:span 2}.ui-grid .ui-col-md-3{grid-column-end:span 3}.ui-grid .ui-col-md-4{grid-column-end:span 4}.ui-grid .ui-col-md-5{grid-column-end:span 5}.ui-grid .ui-col-md-6{grid-column-end:span 6}.ui-grid .ui-col-md-7{grid-column-end:span 7}.ui-grid .ui-col-md-8{grid-column-end:span 8}.ui-grid .ui-col-md-9{grid-column-end:span 9}.ui-grid .ui-col-md-10{grid-column-end:span 10}.ui-grid .ui-col-md-11{grid-column-end:span 11}.ui-grid .ui-col-md-12{grid-column-end:span 12}}@media (min-width: 1200px){.ui-grid .ui-col-lg-1{grid-column-end:span 1}.ui-grid .ui-col-lg-2{grid-column-end:span 2}.ui-grid .ui-col-lg-3{grid-column-end:span 3}.ui-grid .ui-col-lg-4{grid-column-end:span 4}.ui-grid .ui-col-lg-5{grid-column-end:span 5}.ui-grid .ui-col-lg-6{grid-column-end:span 6}.ui-grid .ui-col-lg-7{grid-column-end:span 7}.ui-grid .ui-col-lg-8{grid-column-end:span 8}.ui-grid .ui-col-lg-9{grid-column-end:span 9}.ui-grid .ui-col-lg-10{grid-column-end:span 10}.ui-grid .ui-col-lg-11{grid-column-end:span 11}.ui-grid .ui-col-lg-12{grid-column-end:span 12}}.ui-heading{--title-font-family:var(--f-family-display);--subtitle-font-family:var(--f-family-text);--heading-color-dark:var(--c-carbon-90);--heading-color-light:var(--c-indigo-70);--h1-size:var(--f-size-12);--h1-leading:var(--f-leading-solid);--h1-weight:var(--f-weight-bold);--h2-size:var(--f-size-10);--h3-size:var(--f-size-8);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-2);margin:0;line-height:var(--f-leading-title)}.ui-theme--editorial .ui-heading{--title-font-family:var(--f-family-text);--h1-size:var(--f-size-9);--h1-leading:var(--f-leading-title);--h1-weight:var(--f-weight-semibold);--h2-size:var(--f-size-8);--h3-size:var(--f-size-7);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-0)}.ui-heading-1{font-family:var(--title-font-family);font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--f-tracking-dense);font-weight:var(--h1-weight);color:var(--heading-color-dark)}.ui-heading-2{font-family:var(--title-font-family);font-size:var(--h2-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-3{font-family:var(--title-font-family);font-size:var(--h3-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-4{font-family:var(--subtitle-font-family);font-size:var(--h4-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-5{font-family:var(--subtitle-font-family);font-size:var(--h5-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-6{font-family:var(--subtitle-font-family);font-size:var(--h6-size);letter-spacing:var(--f-tracking-extra);font-weight:var(--f-weight-bold);text-transform:uppercase;color:var(--heading-color-light)}.ui-heading--bordered{border-bottom:1px solid var(--c-indigo-30);margin-bottom:var(--space-5);padding-bottom:var(--space-2)}.ui-heading--strong{font-weight:var(--f-weight-bold)}.ui-heading--leading{line-height:var(--f-leading-text)}.ui-skeleton{display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:#EEEEEE;line-height:10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}.ui-skeleton--animated{position:relative;background:-webkit-gradient(linear, left top, right top, color-stop(8%, rgba(0, 0, 0, 0.065)), color-stop(18%, rgba(0, 0, 0, 0.135)), color-stop(33%, rgba(0, 0, 0, 0.065)));background:linear-gradient(to right, rgba(0, 0, 0, 0.065) 8%, rgba(0, 0, 0, 0.135) 18%, rgba(0, 0, 0, 0.065) 33%);background-size:800px 104px;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-name:shimmer;animation-name:shimmer;-webkit-animation-timing-function:linear;animation-timing-function:linear}@-webkit-keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}@keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}span{display:inline-block}.prismic-raw-html{width:100%;overflow:auto}.prismic-raw-html table{overflow-x:auto;margin-right:-15px;padding-right:15px;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:48px}.prismic-raw-html table td,.prismic-raw-html table th{text-align:left;min-width:120px;padding-right:12px;padding-top:12px;padding-bottom:12px}.prismic-raw-html table td:last-child,.prismic-raw-html table th:last-child{padding-right:0}.prismic-raw-html table th,.prismic-raw-html table b{font-weight:600}.prismic-raw-html table tbody tr td{border-top:1px solid #DEE3EA}.prismic-raw-html table tbody tr:first-child td{border-top:none}.prismic-raw-html table>thead>tr>th{border-bottom:1px solid #E9EDF3;font-weight:600}*{-webkit-box-sizing:border-box;box-sizing:border-box}html,body{padding:0;margin:0;width:100%;height:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:var(--f-family-text);font-size:var(--f-size-root);line-height:var(--f-leading-body);letter-spacing:var(--f-tracking-tight);color:var(--c-carbon-90);position:relative;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:var(--c-ionic-brand)}stencil-route-link a{color:inherit}ul{margin:0;padding:0}li{list-style:none}hr{border:none;height:1px;background:var(--c-indigo-30);margin:var(--space-6) 0}site-root{display:block;width:100%;height:100%}";
+const siteRootCss = "@charset \"UTF-8\";:root{--c-white:#ffffff;--c-black:#000000;--c-blue-0:#f0f6ff;--c-blue-10:#e3edff;--c-blue-20:#cddfff;--c-blue-30:#b2ceff;--c-blue-40:#97bdff;--c-blue-50:#7cabff;--c-blue-60:#639bff;--c-blue-70:#4d8dff;--c-blue-80:#3880ff;--c-blue-90:#1b6dff;--c-blue-100:#0054e9;--c-ionic-brand:var(--c-blue-80);--c-gray-0:#f3f3f3;--c-gray-10:#e4e4e4;--c-gray-20:#c8c8c8;--c-gray-30:#aeaeae;--c-gray-40:#959595;--c-gray-50:#818181;--c-gray-60:#6d6d6d;--c-gray-70:#5f5f5f;--c-gray-80:#474747;--c-gray-90:#2f2f2f;--c-gray-100:#141414;--c-carbon-0:#eef1f3;--c-carbon-10:#d7dde2;--c-carbon-20:#b4bcc6;--c-carbon-30:#98a2ad;--c-carbon-40:#7d8894;--c-carbon-50:#677483;--c-carbon-60:#556170;--c-carbon-70:#434f5e;--c-carbon-80:#35404e;--c-carbon-90:#222d3a;--c-carbon-100:#03060b;--c-indigo-0:#fbfbfd;--c-indigo-10:#f6f8fb;--c-indigo-20:#e9edf3;--c-indigo-30:#dee3ea;--c-indigo-40:#ced6e0;--c-indigo-50:#b2becd;--c-indigo-60:#92a0b3;--c-indigo-70:#73849a;--c-indigo-80:#445b78;--c-indigo-90:#2d4665;--c-indigo-100:#001a3a;--c-green-0:#effff3;--c-green-10:#e7ffee;--c-green-20:#d0ffdd;--c-green-30:#b8ffcb;--c-green-40:#97ffb3;--c-green-50:#71f895;--c-green-60:#4ef27a;--c-green-70:#31e962;--c-green-80:#18dd4c;--c-green-90:#00d338;--c-green-100:#00b831;--c-lime-0:#f8fff0;--c-lime-10:#f2ffe1;--c-lime-20:#eeffd8;--c-lime-30:#e5ffc3;--c-lime-40:#d8ffa7;--c-lime-50:#c8ff83;--c-lime-60:#b7f964;--c-lime-70:#a7f544;--c-lime-80:#97ec2d;--c-lime-90:#87e017;--c-lime-100:#75d100;--c-lavender-0:#f6f8ff;--c-lavender-10:#e5ebff;--c-lavender-20:#ced9ff;--c-lavender-30:#b6c6ff;--c-lavender-40:#9fb5ff;--c-lavender-50:#8aa4ff;--c-lavender-60:#7493ff;--c-lavender-70:#597eff;--c-lavender-80:#3c67ff;--c-lavender-90:#194bfd;--c-lavender-100:#0033e8;--c-purple-0:#f4f4ff;--c-purple-10:#e9eaff;--c-purple-20:#d0d2ff;--c-purple-30:#b6b9f9;--c-purple-40:#9a99fc;--c-purple-50:#8482fb;--c-purple-60:#786df9;--c-purple-70:#6e5afd;--c-purple-80:#6030ff;--c-purple-90:#4712fb;--c-purple-100:#3400e5;--c-pink-0:#fff2fb;--c-pink-10:#ffe3f6;--c-pink-20:#ffd4f1;--c-pink-30:#ffc7ec;--c-pink-40:#ffb6e8;--c-pink-50:#ff9cdf;--c-pink-60:#fc82d5;--c-pink-70:#f567c8;--c-pink-80:#ef4cbb;--c-pink-90:#f02fb2;--c-pink-100:#e410a1;--c-red-0:#fff2f2;--c-red-10:#ffdddd;--c-red-20:#ffc8c7;--c-red-30:#ffb6b5;--c-red-40:#ff9e9c;--c-red-50:#ff8a88;--c-red-60:#ff7370;--c-red-70:#ff605b;--c-red-80:#ff4747;--c-red-90:#ff201a;--c-red-100:#e70700;--c-orange-0:#fff5f0;--c-orange-10:#ffede5;--c-orange-20:#ffdfd1;--c-orange-30:#ffd0bc;--c-orange-40:#ffc0a5;--c-orange-50:#ffaf8c;--c-orange-60:#ff9b70;--c-orange-70:#ff8753;--c-orange-80:#ff7336;--c-orange-90:#ff5b13;--c-orange-100:#eb4700;--c-yellow-0:#fffbef;--c-yellow-10:#fff8e3;--c-yellow-20:#fff6d8;--c-yellow-30:#fff3c9;--c-yellow-50:#ffedad;--c-yellow-50:#ffe78f;--c-yellow-60:#ffe072;--c-yellow-70:#ffd84d;--c-yellow-80:#ffd130;--c-yellow-90:#ffc805;--c-yellow-100:#f5bf00;--c-aqua-0:#f0fff9;--c-aqua-10:#e5fff6;--c-aqua-20:#d5ffef;--c-aqua-30:#c0ffe8;--c-aqua-40:#aaffe0;--c-aqua-50:#90fbd4;--c-aqua-60:#70f6c5;--c-aqua-70:#4deeb2;--c-aqua-80:#32e2a1;--c-aqua-90:#00db8a;--c-aqua-100:#00cc80;--c-teal-0:#eefeff;--c-teal-10:#dffdff;--c-teal-20:#d0fdff;--c-teal-30:#bbfcff;--c-teal-40:#a2fcff;--c-teal-50:#8bfbff;--c-teal-60:#73f6fb;--c-teal-70:#55ecf2;--c-teal-80:#35e2e9;--c-teal-90:#1bd2d9;--c-teal-100:#00b9c0;--c-cyan-0:#f3faff;--c-cyan-10:#e8f5ff;--c-cyan-20:#d3ecff;--c-cyan-30:#bfe4ff;--c-cyan-40:#a7daff;--c-cyan-50:#8dcfff;--c-cyan-60:#77c6ff;--c-cyan-70:#62bdff;--c-cyan-80:#46b1ff;--c-cyan-90:#24a3ff;--c-cyan-100:#0091fa}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Bold\"), url(\"/assets/fonts/eina/eina-01-bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-bold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-bold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-bold.eot?#iefix\") format(\"eot\");font-weight:700;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Semibold\"), url(\"/assets/fonts/eina/eina-01-semibold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-semibold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-semibold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-semibold.eot?#iefix\") format(\"eot\");font-weight:600;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Regular\"), url(\"/assets/fonts/eina/eina-01-regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-regular.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-regular.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-regular.eot?#iefix\") format(\"eot\");font-weight:400;unicode-range:U+000-5FF}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Regular\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Regular.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Italic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Medium.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Medium.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter Bold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Bold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter BoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter Black\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Black.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Black.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter BlackItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff\") format(\"woff\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:400;unicode-range:U+000-5FF;src:url(\"/assets/fonts//29D26A_0_0.eot\");src:url(\"/assets/fonts//29D26A_0_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts//29D26A_0_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_0_0.ttf\") format(\"truetype\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:500;unicode-range:U+000-5FF;src:url(\"/assets/fonts/29D26A_1_0.eot\");src:url(\"/assets/fonts/29D26A_1_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/29D26A_1_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_1_0.ttf\") format(\"truetype\")}:root{--f-family-display:\"Eina\", \"Helvetica Neue\", Helvetica, sans-serif;--f-family-text:\"Inter\", \"Inter UI\", Helvetica, Arial, sans-serif;--f-family-system:apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;--f-family-monospace:\"SF Mono\", \"Roboto Mono\", Menlo, monospace;--f-family-serif:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;--f-size-root:16px;--f-size-0:0.625rem;--f-size-1:0.6875rem;--f-size-2:0.75rem;--f-size-3:0.8125rem;--f-size-4:0.875rem;--f-size-5:1.00rem;--f-size-6:1.25rem;--f-size-7:1.50rem;--f-size-8:2.00rem;--f-size-9:2.50rem;--f-size-10:3.00rem;--f-size-11:3.50rem;--f-size-12:4.00rem;--f-size-13:4.50rem;--f-size-14:5.00rem;--f-size-15:5.50rem;--f-size-16:6.00rem;--f-leading-solid:1.0;--f-leading-title:1.12;--f-leading-body:1.6;--f-leading-prose:1.8;--f-tracking-dense:-0.04em;--f-tracking-tight:-0.02em;--f-tracking-solid:0.00em;--f-tracking-wide:0.04em;--f-tracking-super:0.08em;--f-tracking-extra:0.16em;--f-weight-light:300;--f-weight-regular:400;--f-weight-medium:500;--f-weight-semibold:600;--f-weight-bold:700}:root{--space-0:0.25rem;--space-1:0.50rem;--space-2:0.75rem;--space-3:1.00rem;--space-4:1.25rem;--space-5:1.5rem;--space-6:2.00rem;--space-7:2.50rem;--space-8:3.00rem;--space-9:4.00rem;--space-10:5.00rem;--space-11:6.00rem;--space-12:8.00rem;--space-13:10.00rem;--space-14:12.00rem;--space-15:14.00rem;--space-16:16.00rem;}:root{--radii-0:0;--radii-1:6px;--radii-2:8px;--radii-3:16px;--radii-4:100%}:root{--elevation-0:none;--elevation-1:0px 1px 2px rgba(2, 8, 20, 0.10), 0px 0px 1px rgba(2, 8, 20, 0.08);--elevation-2:0px 2px 4px rgba(2, 8, 20, 0.10), 0px 1px 2px rgba(2, 8, 20, 0.08);--elevation-3:0px 4px 8px rgba(2, 8, 20, 0.08), 0px 2px 4px rgba(2, 8, 20, 0.08);--elevation-4:0px 8px 16px rgba(2, 8, 20, 0.08), 0px 4px 8px rgba(2, 8, 20, 0.08);--elevation-5:0px 16px 32px rgba(2, 8, 20, 0.08), 0px 8px 16px rgba(2, 8, 20, 0.08);--elevation-6:0px 32px 64px rgba(2, 8, 20, 0.08), 0px 16px 32px rgba(2, 8, 20, 0.10)}:root{--z-subnav:1000;--z-header-dropdown:1005}.ui-blockquote{background:#f2f5f8;border-radius:4px;position:relative;padding:64px 80px 68px 111px;color:#5e749a;font-family:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;font-style:italic;border:none;margin:77px -16px 54px}.ui-blockquote:before{position:absolute;top:-6px;left:54px;font-size:180px;content:\"“\";color:#e3e7ec}.ui-breadcrumbs{font-size:13px;line-height:14px;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center}.ui-breadcrumbs li{display:inline-block}.ui-breadcrumbs li:first-child a{padding-left:0}.ui-breadcrumbs li:last-child a{color:var(--c-carbon-100);font-weight:500}.ui-breadcrumbs a{color:var(--c-carbon-50);font-size:13px;line-height:14px;padding:16px 2px;display:inline-block}.ui-breadcrumbs .nav-sep{display:inline-block;font-size:16px;font-weight:400;color:rgba(65, 77, 92, 0.2);margin:0 6px}.ui-breakpoint{display:none !important}@media (max-width: 480px){.ui-breakpoint-mobile{display:block !important}}@media (max-width: 480px){.ui-breakpoint-mobile.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet{display:block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 768px){.ui-breakpoint-desktop{display:block !important}}@media (min-width: 768px){.ui-breakpoint-desktop.ui-breakpoint-inline-block{display:inline-block !important}}.ui-button{cursor:pointer;display:inline-block;font-weight:500;border-radius:8px;line-height:1.4em;padding:16px 20px;-webkit-transition:all 0.3s ease;transition:all 0.3s ease;font-size:16px;border:0px solid rgba(0, 0, 0, 0);color:#fff;background:var(--button-background, var(--c-ionic-brand));letter-spacing:0.01em}.ui-card--embelish{background-color:#fff;border-radius:6px;-webkit-box-shadow:var(--elevation-4);box-shadow:var(--elevation-4);border-radius:14px}.ui-card--embelish .ui-card-content{padding:32px}.ui-container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width: 768px){.ui-container{width:750px}}@media (min-width: 992px){.ui-container{width:970px}}@media (min-width: 1104px){.ui-container{width:1165px}}.ui-grid{display:grid;-webkit-column-gap:56px;-moz-column-gap:56px;column-gap:56px;row-gap:96px;grid-template-columns:repeat(12, minmax(0, 1fr))}@media (max-width: 480px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:48px}}@media (max-width: 768px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:24px}}.ui-grid .ui-col-1{grid-column-end:span 1}.ui-grid .ui-col-2{grid-column-end:span 2}.ui-grid .ui-col-3{grid-column-end:span 3}.ui-grid .ui-col-4{grid-column-end:span 4}.ui-grid .ui-col-5{grid-column-end:span 5}.ui-grid .ui-col-6{grid-column-end:span 6}.ui-grid .ui-col-7{grid-column-end:span 7}.ui-grid .ui-col-8{grid-column-end:span 8}.ui-grid .ui-col-9{grid-column-end:span 9}.ui-grid .ui-col-10{grid-column-end:span 10}.ui-grid .ui-col-11{grid-column-end:span 11}.ui-grid .ui-col-12{grid-column-end:span 12}@media (min-width: 480px){.ui-grid .ui-col-xs-1{grid-column-end:span 1}.ui-grid .ui-col-xs-2{grid-column-end:span 2}.ui-grid .ui-col-xs-3{grid-column-end:span 3}.ui-grid .ui-col-xs-4{grid-column-end:span 4}.ui-grid .ui-col-xs-5{grid-column-end:span 5}.ui-grid .ui-col-xs-6{grid-column-end:span 6}.ui-grid .ui-col-xs-7{grid-column-end:span 7}.ui-grid .ui-col-xs-8{grid-column-end:span 8}.ui-grid .ui-col-xs-9{grid-column-end:span 9}.ui-grid .ui-col-xs-10{grid-column-end:span 10}.ui-grid .ui-col-xs-11{grid-column-end:span 11}.ui-grid .ui-col-xs-12{grid-column-end:span 12}}@media (min-width: 768px){.ui-grid .ui-col-sm-1{grid-column-end:span 1}.ui-grid .ui-col-sm-2{grid-column-end:span 2}.ui-grid .ui-col-sm-3{grid-column-end:span 3}.ui-grid .ui-col-sm-4{grid-column-end:span 4}.ui-grid .ui-col-sm-5{grid-column-end:span 5}.ui-grid .ui-col-sm-6{grid-column-end:span 6}.ui-grid .ui-col-sm-7{grid-column-end:span 7}.ui-grid .ui-col-sm-8{grid-column-end:span 8}.ui-grid .ui-col-sm-9{grid-column-end:span 9}.ui-grid .ui-col-sm-10{grid-column-end:span 10}.ui-grid .ui-col-sm-11{grid-column-end:span 11}.ui-grid .ui-col-sm-12{grid-column-end:span 12}}@media (min-width: 992px){.ui-grid .ui-col-md-1{grid-column-end:span 1}.ui-grid .ui-col-md-2{grid-column-end:span 2}.ui-grid .ui-col-md-3{grid-column-end:span 3}.ui-grid .ui-col-md-4{grid-column-end:span 4}.ui-grid .ui-col-md-5{grid-column-end:span 5}.ui-grid .ui-col-md-6{grid-column-end:span 6}.ui-grid .ui-col-md-7{grid-column-end:span 7}.ui-grid .ui-col-md-8{grid-column-end:span 8}.ui-grid .ui-col-md-9{grid-column-end:span 9}.ui-grid .ui-col-md-10{grid-column-end:span 10}.ui-grid .ui-col-md-11{grid-column-end:span 11}.ui-grid .ui-col-md-12{grid-column-end:span 12}}@media (min-width: 1200px){.ui-grid .ui-col-lg-1{grid-column-end:span 1}.ui-grid .ui-col-lg-2{grid-column-end:span 2}.ui-grid .ui-col-lg-3{grid-column-end:span 3}.ui-grid .ui-col-lg-4{grid-column-end:span 4}.ui-grid .ui-col-lg-5{grid-column-end:span 5}.ui-grid .ui-col-lg-6{grid-column-end:span 6}.ui-grid .ui-col-lg-7{grid-column-end:span 7}.ui-grid .ui-col-lg-8{grid-column-end:span 8}.ui-grid .ui-col-lg-9{grid-column-end:span 9}.ui-grid .ui-col-lg-10{grid-column-end:span 10}.ui-grid .ui-col-lg-11{grid-column-end:span 11}.ui-grid .ui-col-lg-12{grid-column-end:span 12}}.ui-heading{--title-font-family:var(--f-family-display);--subtitle-font-family:var(--f-family-text);--heading-color-dark:var(--c-carbon-90);--heading-color-light:var(--c-indigo-70);--h1-size:var(--f-size-12);--h1-leading:var(--f-leading-solid);--h1-weight:var(--f-weight-bold);--h2-size:var(--f-size-10);--h3-size:var(--f-size-8);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-2);margin:0;line-height:var(--f-leading-title)}.ui-theme--editorial .ui-heading{--title-font-family:var(--f-family-text);--h1-size:var(--f-size-9);--h1-leading:var(--f-leading-title);--h1-weight:var(--f-weight-semibold);--h2-size:var(--f-size-8);--h3-size:var(--f-size-7);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-0)}.ui-heading-1{font-family:var(--title-font-family);font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--f-tracking-dense);font-weight:var(--h1-weight);color:var(--heading-color-dark)}.ui-heading-2{font-family:var(--title-font-family);font-size:var(--h2-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-3{font-family:var(--title-font-family);font-size:var(--h3-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-4{font-family:var(--subtitle-font-family);font-size:var(--h4-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-5{font-family:var(--subtitle-font-family);font-size:var(--h5-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-6{font-family:var(--subtitle-font-family);font-size:var(--h6-size);letter-spacing:var(--f-tracking-extra);font-weight:var(--f-weight-bold);text-transform:uppercase;color:var(--heading-color-light)}.ui-heading--bordered{border-bottom:1px solid var(--c-indigo-30);margin-bottom:var(--space-5);padding-bottom:var(--space-2)}.ui-heading--strong{font-weight:var(--f-weight-bold)}.ui-heading--leading{line-height:var(--f-leading-text)}.ui-skeleton{display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:#EEEEEE;line-height:10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}.ui-skeleton--animated{position:relative;background:-webkit-gradient(linear, left top, right top, color-stop(8%, rgba(0, 0, 0, 0.065)), color-stop(18%, rgba(0, 0, 0, 0.135)), color-stop(33%, rgba(0, 0, 0, 0.065)));background:linear-gradient(to right, rgba(0, 0, 0, 0.065) 8%, rgba(0, 0, 0, 0.135) 18%, rgba(0, 0, 0, 0.065) 33%);background-size:800px 104px;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-name:shimmer;animation-name:shimmer;-webkit-animation-timing-function:linear;animation-timing-function:linear}@-webkit-keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}@keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}span{display:inline-block}.prismic-raw-html{width:100%;overflow:auto}.prismic-raw-html table{overflow-x:auto;margin-right:-15px;padding-right:15px;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:48px}.prismic-raw-html table td,.prismic-raw-html table th{text-align:left;min-width:120px;padding-right:12px;padding-top:12px;padding-bottom:12px}.prismic-raw-html table td:last-child,.prismic-raw-html table th:last-child{padding-right:0}.prismic-raw-html table th,.prismic-raw-html table b{font-weight:600}.prismic-raw-html table tbody tr td{border-top:1px solid #DEE3EA}.prismic-raw-html table tbody tr:first-child td{border-top:none}.prismic-raw-html table>thead>tr>th{border-bottom:1px solid #E9EDF3;font-weight:600}*{-webkit-box-sizing:border-box;box-sizing:border-box}html,body{padding:0;margin:0;width:100%;height:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:var(--f-family-text);font-size:var(--f-size-root);line-height:var(--f-leading-body);letter-spacing:var(--f-tracking-tight);color:var(--c-carbon-90);position:relative;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:var(--c-ionic-brand)}stencil-route-link a{color:inherit}ul{margin:0;padding:0}li{list-style:none}hr{border:none;height:1px;background:var(--c-indigo-30);margin:var(--space-6) 0}site-root{display:block;width:100%;height:100%}";
 
 class SiteRoot {
     constructor(hostRef) {
@@ -10796,7 +11952,9 @@ registerComponents([
   CapacitorSiteRoutes,
   CodeSnippet,
   ContributorList,
+  CordovaLandingPage,
   Demo,
+  DisqusComments,
   DocSnippet,
   DocsHeader,
   DocsSearch,
@@ -10807,6 +11965,7 @@ registerComponents([
   InternalAd,
   LandingPage,
   LowerContentNav,
+  MoreResources,
   NewsletterSignup,
   PlatformBar,
   PluginApi,

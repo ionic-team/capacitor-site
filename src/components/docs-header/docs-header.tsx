@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, h } from '@stencil/core';
+import { Component, ComponentInterface, Host, Prop, h } from '@stencil/core';
 import { href } from 'stencil-router-v2';
 import Router from '../../router';
 
@@ -8,6 +8,7 @@ import Router from '../../router';
   scoped: true
 })
 export class DocsHeader implements ComponentInterface {
+  @Prop() template: 'docs' | 'plugins' = 'docs';
 
   isActive(path: string): boolean {
     const prefix = new RegExp("^" + path, "gm");
@@ -17,13 +18,14 @@ export class DocsHeader implements ComponentInterface {
   }
 
   render() {
+    const { template } = this;
+
     return (
       <Host>
         <docs-search></docs-search>
         <div class="docs-header__links">
-          <a {...href('/docs')} class={{ 'active': this.isActive('/docs') }}>Docs</a>
-          {/* TODO enable this when we move the plugins */}
-          {/* <a {...href('/plugins')} class={{ 'active': this.isActive('/plugins') }}>Plugins</a> */}
+          <a {...href('/docs')} class={{ 'active': template === 'docs' }}>Docs</a>
+          <a {...href('/docs/plugins')} class={{ 'active': template === 'plugins' }}>Plugins</a>
           <a {...href('/blog')}>Blog</a>
           <a {...href('/community')}>Community</a>
         </div>

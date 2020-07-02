@@ -13,6 +13,8 @@ import state from '../../store';
 export class SiteMenu implements ComponentInterface{
   version: string;
 
+  @Prop() template: 'docs' | 'plugins' = 'docs';
+
   @Prop() siteStructureList: SiteStructureItem[] = [];
   @Prop({ mutable: true }) selectedParent: SiteStructureItem = null;
 
@@ -54,7 +56,7 @@ export class SiteMenu implements ComponentInterface{
   }
 
   render() {
-    const { version } = this;
+    const { template, version } = this;
 
     return (
       <Host
@@ -73,15 +75,21 @@ export class SiteMenu implements ComponentInterface{
                   <img src="/assets/img/heading/logo-black.png" alt="Capacitor Logo" />
                 )}
               </a>
-              <a {...href('/docs')} class="menu-header__docs-link">
-                docs
-              </a>
-              { version ?
-                <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
-                  v{version}
+              { template === 'plugins' ?
+                <a {...href('/docs/plugins')} class="menu-header__docs-link">
+                  plugins
                 </a>
-                : null
+
+                : <a {...href('/docs')} class="menu-header__docs-link">
+                  docs
+                </a>
               }
+              { template === 'docs' && version ?
+                  <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
+                    v{version}
+                  </a>
+                  : null
+               }
             </div>
             <ul class="menu-list">
               { this.siteStructureList.map((item, i) => {
