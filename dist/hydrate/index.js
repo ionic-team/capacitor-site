@@ -8528,7 +8528,7 @@ class CapacitorSiteRoutes {
                 return h("blog-page", null);
             } }), h(Route, { path: match('/blog/:slug'), render: ({ slug }) => {
                 return h("blog-post", { slug: slug });
-            } }), h(Route, { path: "/cordova" }, h("cordova-landing-page", null)), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs", template: "docs" })), h(Route, { path: "/docs/plugins" }, h("document-component", { page: "/docs/plugins", template: "plugins" })), h(Route, { path: match('/docs/:pageName*'), render: ({ pageName }) => (h("document-component", { page: `/docs/${pageName}` })) }), h(Route, { path: match('/solution/:solutionId*'), render: ({ solutionId }) => (h("solution-page", { solutionId: `/solution/${solutionId}` })) }))));
+            } }), h(Route, { path: "/cordova" }, h("cordova-landing-page", null)), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs" })), h(Route, { path: match('/docs/:pageName*'), render: ({ pageName }) => (h("document-component", { page: `/docs/${pageName}` })) }), h(Route, { path: "/docs/plugins" }, h("document-component", { page: "/docs/plugins", template: "plugins" })), h(Route, { path: match('/solution/:solutionId*'), render: ({ solutionId }) => (h("solution-page", { solutionId: `/solution/${solutionId}` })) }))));
     }
     static get style() { return capacitorSiteRoutesCss; }
     static get cmpMeta() { return {
