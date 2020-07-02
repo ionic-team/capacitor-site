@@ -36,6 +36,16 @@ const position = await Plugins.Geolocation.getCurrentPosition();
 
 ### Using Capacitor as a Script Include
 
+npm init
+
+you must set `bundledWebRuntime` to `true` in your `capacitor.config.json`
+
+If not already, move your app into a folder within the project. set `webDir` to `www`
+
+> Can't use root folder because then the node_modules folder will be copied in also!
+
+
+
 To use Capacitor core in a web app that is not using a build system or bundler/module loader,
 you must set `bundledWebRuntime` to `true` in your `capacitor.config.json`, tell capacitor to
 copy the specified version of Capacitor Core into your project,
