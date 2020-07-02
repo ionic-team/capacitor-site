@@ -21,9 +21,12 @@ export class BlogPage {
 
   render() {
     if (this.posts) {
-      return (
-        <AllPosts posts={this.posts} />
-      )
+      return [
+        <AllPosts posts={this.posts} />,
+        <pre-footer />,
+        <newsletter-signup />,
+        <capacitor-site-footer />
+      ]
     }
 
     return null;

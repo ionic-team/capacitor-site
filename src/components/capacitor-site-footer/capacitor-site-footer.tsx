@@ -16,7 +16,7 @@ export class CapacitorSiteFooter {
               <Col md={6} sm={6} xs={12} cols={12} class="copyright">
                 <img src="/assets/img/logo-white2.png" alt="Capacitor Logo" class="logo" />
                 <p>
-                  Copyright @ {(new Date()).getFullYear()} Drifty Co.
+                  © {(new Date()).getFullYear()} Capacitor
                 </p>
                 <p><a href="https://ionic.io">Ionic Open Source</a> | Released under <span id="mit">MIT License</span></p>
               </Col>

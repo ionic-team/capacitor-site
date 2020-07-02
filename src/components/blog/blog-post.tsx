@@ -35,6 +35,9 @@ export class BlogPage {
             </hgroup>
             <BlogPost post={this.post} />
           </div>
+          <pre-footer />
+          <newsletter-signup />
+          <capacitor-site-footer />
         </Host>
       )
     }
