@@ -45,6 +45,7 @@
 * Web/PWA
   * [Getting Started](web/index.md)
   * [PWA Elements](web/pwa-elements.md)
+  * [Utilities](web/utilities.md)
 * Creating Plugins
   * [Introduction](plugins/index.md)
   * [Development Workflow](plugins/workflow.md)
