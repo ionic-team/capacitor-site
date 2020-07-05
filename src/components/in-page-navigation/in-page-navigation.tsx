@@ -13,6 +13,7 @@ interface ItemOffset {
 })
 export class InPageNavigtion {
   private adEl: HTMLElement;
+  private stickyEl: HTMLElement;
 
   @Prop() pageLinks: MarkdownHeading[] = [];
   @Prop() srcUrl: string = '';
@@ -32,32 +33,6 @@ export class InPageNavigtion {
     }
   }
 
-  componentWillUpdate() {
-    if (!this.adEl) {
-      return;
-    }
-
-    if (!this.adEl.children[0]) return;
-
-    this.adEl.style.height = '0px';
-  }
-
-  @Listen('internalAdLoaded', { target: 'body' })
-  componentDidRender() {
-    if (!this.adEl) {
-      return;
-    }
-
-    if (!this.adEl.children[0]) return;
-
-    if (this.adEl.children[0].getBoundingClientRect().bottom < window.innerHeight) {
-      this.adEl.style.height = 'auto';
-    } else {
-      this.adEl.style.height = '0px';
-    }
-  }
-
-
   @Watch('pageLinks')
   @Listen('resize', { target: 'window'})
   updateItemOffsets() {
@@ -72,8 +47,26 @@ export class InPageNavigtion {
     });
   }
 
+  @Watch('pageLinks')
+  checkHeight() {
+    if (!this.stickyEl) return;
+    this.stickyEl.getBoundingClientRect().bottom > window.innerHeight ? this.stickyEl.style.overflow = 'visible' : '';
+
+    if (!this.adEl) return;
+    this.adEl.style.visibility = 'hidden'
+    if (this.adEl.offsetHeight === 0) return;    
+
+    this.adEl.getBoundingClientRect().bottom < window.innerHeight ? this.adEl.style.visibility = 'visible' : '';
+  }
+
+
   componentDidLoad() {
     this.updateItemOffsets();
+    this.checkHeight();
+  }
+
+  componentDidUpdate() {
+    this.checkHeight();
   }
 
   ghIcon() {
@@ -105,12 +98,13 @@ export class InPageNavigtion {
       return (
         <div class="sticky">
           { submitEditLink }
+          <internal-ad ref={e => this.adEl = e}></internal-ad>
         </div>
       );
     }
 
     return (
-      <div class="sticky">
+      <div class="sticky" ref={e => this.stickyEl = e}>
         <h5>Contents</h5>
         <ul class="heading-links">
           { pageLinks.map(pl => (
