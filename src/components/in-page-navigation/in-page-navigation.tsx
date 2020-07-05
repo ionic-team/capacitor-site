@@ -49,23 +49,22 @@ export class InPageNavigtion {
 
   @Watch('pageLinks')
   checkHeight() {
-    if (!this.stickyEl) return;
+    if (!this.stickyEl || this.adEl.offsetHeight === 0) return;
     this.stickyEl.getBoundingClientRect().bottom > window.innerHeight ? this.stickyEl.style.overflow = 'visible' : '';
 
     if (!this.adEl) return;
     this.adEl.style.visibility = 'hidden'
-    if (this.adEl.offsetHeight === 0) return;    
 
     this.adEl.getBoundingClientRect().bottom < window.innerHeight ? this.adEl.style.visibility = 'visible' : '';
+    // this.adEl.render();
   }
 
 
   componentDidLoad() {
     this.updateItemOffsets();
-    this.checkHeight();
   }
 
-  componentDidUpdate() {
+  componentDidRender() {
     this.checkHeight();
   }
 
