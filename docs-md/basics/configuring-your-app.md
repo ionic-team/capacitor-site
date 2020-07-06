@@ -54,7 +54,7 @@ Current configuration options include:
 
   // A Boolean value that determines whether to hide native logs for iOS and Android. The preference is ignored if it's also declared inside ios or android
   // Default is false
-  "hideLogs": true
+  "hideLogs": true,
 
   // Server object contains port and url configurations
   "server": {
