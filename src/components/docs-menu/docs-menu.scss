@@ -162,7 +162,7 @@
 
 .menu-list {
   margin-top: 0;
-  padding: 13px 0;
+  padding: 13px 0 107px 0;
 }
 
 .menu-list .section-label:first-of-type {
@@ -268,5 +268,9 @@
     letter-spacing: 0;
 
     padding-left: 10px;
+  }
+
+  &:hover {
+    opacity: 0.6;
   }
 }
