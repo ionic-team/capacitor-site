@@ -24,7 +24,7 @@ Add to `site/markdown/plugins/README.md` to add the new entry to the side bar.
 
 ## Modifying documentation
 
-For smaller edits, navigate to the desired page in the [Capacitor docs](https://capacitor.ionicframework.com/docs/) then click the "Submit an edit" button.
+For smaller edits, navigate to the desired page in the [Capacitor docs](https://capacitorjs.com/docs/) then click the "Submit an edit" button.
 
 1. Locate the doc you want to modify in `site/markdown/docs/` or `site/markdown/plugins.
 1. Modify the documentation, making sure to keep the format the same as the rest of the doc.
