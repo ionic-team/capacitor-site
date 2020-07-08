@@ -16,10 +16,9 @@ export class DocsHeader implements ComponentInterface {
       <Host>
         <docs-search></docs-search>
         <div class="docs-header__links">
-          <a {...href('/docs')} class={{ 'active': template === 'docs' }}>Guide</a>
-          <a {...href('/docs/plugins')} class={{ 'active': template === 'plugins' }}>Plugins</a>
-          <a {...href('/blog')}>Blog</a>
+          <a {...href('/docs')} class={{ 'active': template === 'docs' }}>Docs</a>
           <a {...href('/community')}>Community</a>
+          <a {...href('/blog')}>Blog</a>
         </div>
         <div class="docs-header__link-divider"/>
         <div class="docs-header__external-links">
