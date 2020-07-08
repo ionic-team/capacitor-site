@@ -50,8 +50,6 @@ export class SiteMenu implements ComponentInterface{
       } else {
         this.closeList = [...this.closeList, itemNumber];
       }
-
-      console.log(e, this.closeList)
     }
   }
 
