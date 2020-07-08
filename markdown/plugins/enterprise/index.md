@@ -1,7 +1,7 @@
 ---
 title: Capacitor for Enterprises
 description: Capacitor offers powerful native features and support for enterprises
-url: /docs/enterprise
+url: /docs/plugins/enterprise
 ---
 
 # Capacitor for Enterprises
@@ -24,7 +24,7 @@ Combined with Identity Vault (below), Capacitor apps can implement the most powe
 
 ## Secure Identity Management
 
-[Identity Vault](https://ionicframework.com/enterprise/identity-vault) works in concert with Auth Connect to secure sensitive user and identity data, such as authentication tokens, backed by biometric authentication with support for the widest variety of iOS and Android devices. Identity Vault goes above and beyond a typical fingerprint or face scanning plugin to work with secure enclaves and encryption services on each platform. This is necessary because simply scanning a fingerprint or face identity, as most community plugins do, does not provide adequate security and protection from jailbreaking or other exploits. 
+[Identity Vault](https://ionicframework.com/enterprise/identity-vault) works in concert with Auth Connect to secure sensitive user and identity data, such as authentication tokens, backed by biometric authentication with support for the widest variety of iOS and Android devices. Identity Vault goes above and beyond a typical fingerprint or face scanning plugin to work with secure enclaves and encryption services on each platform. This is necessary because simply scanning a fingerprint or face identity, as most community plugins do, does not provide adequate security and protection from jailbreaking or other exploits.
 
 [Identity Vault](https://ionicframework.com/enterprise/identity-vault) may also be used standalone and integrated with any existing authentication flow to provide advanced session security.
 

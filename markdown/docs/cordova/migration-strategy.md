@@ -12,7 +12,7 @@ contributors:
 
 ## Why Migrate?
 
-Long-term stability and peace of mind. 
+Long-term stability and peace of mind.
 
 Capacitor is [backed by Ionic](https://ionicframework.com/), a long-term contributor to Cordova and the larger open source ecosystem. Ionic still uses Cordova heavily and will continue to invest in the platform for a long time to come.
 
@@ -34,9 +34,9 @@ Capacitor works with any Ionic project (1.0 to 4.x+), but in order to enjoy the 
 
 ### Audit Then Migrate Existing Cordova Plugins
 
-Begin by auditing your existing Cordova plugins - it's possible that you may be able to remove ones that are no longer needed. 
+Begin by auditing your existing Cordova plugins - it's possible that you may be able to remove ones that are no longer needed.
 
-Next, review all of Capacitor's [core plugins](/docs/apis) as well as [community plugins](/docs/community/plugins). You may be able to switch to the Capacitor-equivalent Cordova plugin.
+Next, review all of Capacitor's [core plugins](/docs/apis) as well as [community plugins](/docs/plugins/community). You may be able to switch to the Capacitor-equivalent Cordova plugin.
 
 Some plugins may not match functionality entirely, but based on the features you need that may not matter.
 

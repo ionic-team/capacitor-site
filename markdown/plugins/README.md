@@ -7,7 +7,7 @@
   * [Android Guide](plugins/android.md)
   * [Web/PWA Guide](plugins/web.md)
   * [JavaScript Guide](plugins/js.md)
-* Plugins
+* Plugin APIs
   * [Introduction](apis/index.md)
   * [Community Plugins](community/plugins.md)
   * [Enterprise Plugins](enterprise/index.md)

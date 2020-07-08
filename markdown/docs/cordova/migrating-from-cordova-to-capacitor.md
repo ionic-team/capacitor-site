@@ -16,7 +16,7 @@ Note that it's recommended to work in a separate code branch when applying these
 
 ## Add Capacitor
 
-Begin by opening your project in a Terminal, then add Capacitor to [a web app](/docs/getting-started) or [an Ionic app](/docs/getting-started/with-ionic). 
+Begin by opening your project in a Terminal, then add Capacitor to [a web app](/docs/getting-started) or [an Ionic app](/docs/getting-started/with-ionic).
 
 Next, open `config.xml` and find the `id` field in the widget element. In this example, it's `io.ionic.myapp`.
 
@@ -87,9 +87,9 @@ $ cordova-res android --skip-config --copy
 
 ## Migrate Plugins
 
-Begin by auditing your existing Cordova plugins - it's possible that you may be able to remove ones that are no longer needed. 
+Begin by auditing your existing Cordova plugins - it's possible that you may be able to remove ones that are no longer needed.
 
-Next, review all of Capacitor's [core plugins](/docs/apis) as well as [community plugins](/docs/community/plugins). You may be able to switch to the Capacitor-equivalent Cordova plugin.
+Next, review all of Capacitor's [core plugins](/docs/apis) as well as [community plugins](/docs/plugins/community). You may be able to switch to the Capacitor-equivalent Cordova plugin.
 
 Some plugins may not match functionality entirely, but based on the features you need that may not matter.
 
