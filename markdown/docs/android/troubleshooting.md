@@ -9,9 +9,9 @@ contributors:
 
 # Troubleshooting Android Issues
 
-<p class="intro">Creating a 100% perfect native management tool is nearly impossible, and sooner or later you'll run into various issues with some part of the Android workflow.</a>
+<p class="intro">Creating a 100% perfect native management tool is nearly impossible, and sooner or later you'll run into various issues with some part of the Android workflow.</p>
 
-<p class="intro">This guide attempts to document common Android issues with possible solutions.</a>
+<p class="intro">This guide attempts to document common Android issues with possible solutions.</p>
 
 ## Android Toolbox
 

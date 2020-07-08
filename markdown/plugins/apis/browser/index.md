@@ -23,7 +23,7 @@ import { Plugins } from '@capacitor/core';
 
 const { Browser } = Plugins;
 
-await Browser.open({ url: 'http://capacitor.ionicframework.com/' });
+await Browser.open({ url: 'http://capacitorjs.com/' });
 ```
 
 ## API
