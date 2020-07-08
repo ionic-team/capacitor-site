@@ -261,7 +261,7 @@
 
   border-top: 1px solid #dee3ea;
 
-  background: #fff;
+  background: var(--color-white);
   color: #222d3a;
 
   .arrow {
@@ -271,6 +271,6 @@
   }
 
   &:hover {
-    opacity: 0.6;
+    color: var(--color-grey-blue);
   }
 }
