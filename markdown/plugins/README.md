@@ -1,6 +1,8 @@
 # Table of Contents
 
 * [Introduction](index.md)
+* [Community Plugins](community/plugins.md)
+* [Enterprise Plugins](enterprise/index.md)
 * Creating Plugins
   * [Development Workflow](plugins/workflow.md)
   * [iOS Guide](plugins/ios.md)
@@ -9,8 +11,6 @@
   * [JavaScript Guide](plugins/js.md)
 * Plugin APIs
   * [Introduction](apis/index.md)
-  * [Community Plugins](community/plugins.md)
-  * [Enterprise Plugins](enterprise/index.md)
   * [Accessibility](apis/accessibility/index.md)
   * [App](apis/app/index.md)
   * [Background Task](apis/background-task/index.md)

@@ -97,13 +97,6 @@ export class SiteHeader {
                 Docs
               </NavLink>
               <NavLink
-                path="/docs/plugins"
-                hovered={this.hovered === '/docs/plugins'}
-                onHover={this.setHovered('/docs/plugins')}
-                onExit={this.clearHover}>
-                Plugins
-              </NavLink>
-              <NavLink
                 path="/community"
                 hovered={this.hovered === 'community' || this.forceHovered === 'community'}
                 onHover={this.setHovered('community')}

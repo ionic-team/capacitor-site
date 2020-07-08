@@ -73,15 +73,9 @@ export class SiteMenu implements ComponentInterface{
                   <img src="/assets/img/heading/logo-black.png" alt="Capacitor Logo" />
                 )}
               </a>
-              { template === 'plugins' ?
-                <a {...href('/docs/plugins')} class="menu-header__docs-link">
-                  plugins
-                </a>
-
-                : <a {...href('/docs')} class="menu-header__docs-link">
-                  docs
-                </a>
-              }
+              <a {...href('/docs')} class="menu-header__docs-link">
+                docs
+              </a>
               { template === 'docs' && version ?
                   <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
                     v{version}
