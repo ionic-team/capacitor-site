@@ -38,7 +38,7 @@ export class SiteHeader {
 
     Router.onChange('activePath', (v: any) => {
       // TODO: Make this an object and share it w/ render
-      if (['/#features', '/docs', '/blog', '/enterprise', '/community'].findIndex(x => x === v) >= 0) {
+      if (['/#features', '/docs', '/docs/plugins', '/blog', '/enterprise', '/community'].findIndex(x => x === v) >= 0) {
         this.forceHovered = v.replace('/', '').replace('#', '');
       }
     });
@@ -95,6 +95,13 @@ export class SiteHeader {
                 onHover={this.setHovered('docs')}
                 onExit={this.clearHover}>
                 Docs
+              </NavLink>
+              <NavLink
+                path="/docs/plugins"
+                hovered={this.hovered === '/docs/plugins'}
+                onHover={this.setHovered('/docs/plugins')}
+                onExit={this.clearHover}>
+                Plugins
               </NavLink>
               <NavLink
                 path="/community"
