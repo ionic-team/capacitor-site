@@ -19,3 +19,18 @@ export const handleRoutableLinkClick = (e: MouseEvent) => {
     }
   }
 }
+
+export const getTemplateFromPath = (path: string): 'docs' | 'plugins' => {
+  const re = /^\/docs\/([^\/]+).*/;
+  const m = re.exec(path);
+
+  if (m) {
+    const p = m[1];
+
+    if (['plugins', 'apis'].includes(p)) {
+      return 'plugins';
+    }
+  }
+
+  return 'docs';
+}

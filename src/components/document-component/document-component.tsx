@@ -5,7 +5,7 @@ import docsStructure from '../../assets/docs-structure.json';
 import pluginsStructure from '../../assets/plugins-structure.json';
 import { findItem } from '../../global/site-structure-utils';
 import { SiteStructureItem } from '../../global/definitions';
-import { handleRoutableLinkClick } from '../../utils/route-link';
+import { handleRoutableLinkClick, getTemplateFromPath } from '../../utils/route-link';
 
 import state from '../../store';
 
@@ -14,15 +14,14 @@ import state from '../../store';
   styleUrl: 'document-component.scss'
 })
 export class DocumentComponent implements ComponentInterface {
-  menuStructure;
+  menuStructure: SiteStructureItem[];
+  template: 'docs' | 'plugins';
 
   menuEl!: HTMLDocsMenuElement;
 
   @Prop() pages: string[] = [];
 
   @Prop() page: string = null;
-
-  @Prop() template: 'docs' | 'plugins' = 'docs';
 
   @State() item: SiteStructureItem;
   @State() nextItem: SiteStructureItem;
@@ -35,15 +34,8 @@ export class DocumentComponent implements ComponentInterface {
   }
 
   componentWillLoad() {
-    console.log(pluginsStructure);
     state.showTopBar = false;
-    this.menuStructure = docsStructure;
-
-    if (this.template === 'plugins') {
-      this.menuStructure = pluginsStructure;
-    }
-
-    return this.fetchNewContent(this.page);
+    this.fetchNewContent(this.page);
   }
 
   @Watch('page')
@@ -52,7 +44,13 @@ export class DocumentComponent implements ComponentInterface {
       return;
     }
     state.showTopBar = false;
-    const foundData = findItem(this.menuStructure as SiteStructureItem[], this.page);
+
+    this.template = getTemplateFromPath(this.page);
+    console.log('section is', this.template);
+    this.menuStructure = this.template === 'plugins' ? pluginsStructure : docsStructure;
+    console.log('menu structure', this.menuStructure);
+
+    const foundData = findItem(this.menuStructure, page);
     this.item = foundData.item;
     this.nextItem = foundData.nextItem;
     this.prevItem = foundData.prevItem;
@@ -71,7 +69,7 @@ export class DocumentComponent implements ComponentInterface {
           ref={ el => this.menuEl = el }
           template={this.template}
           selectedParent={this.parent}
-          siteStructureList={this.menuStructure as SiteStructureItem[]} />
+          siteStructureList={this.menuStructure} />
 
         <div class="content-container">
           <docs-header template={this.template} />

@@ -63,7 +63,6 @@ export namespace Components {
     interface DocumentComponent {
         "page": string;
         "pages": string[];
-        "template": "docs" | "plugins";
     }
     interface InPageNavigation {
         "currentPageUrl": string;
@@ -357,7 +356,6 @@ declare namespace LocalJSX {
     interface DocumentComponent {
         "page"?: string;
         "pages"?: string[];
-        "template"?: "docs" | "plugins";
     }
     interface InPageNavigation {
         "currentPageUrl"?: string;
