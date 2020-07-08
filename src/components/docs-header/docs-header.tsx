@@ -1,6 +1,5 @@
 import { Component, ComponentInterface, Host, Prop, h } from '@stencil/core';
 import { href } from 'stencil-router-v2';
-import Router from '../../router';
 
 @Component({
   tag: 'docs-header',
@@ -9,13 +8,6 @@ import Router from '../../router';
 })
 export class DocsHeader implements ComponentInterface {
   @Prop() template: 'docs' | 'plugins' = 'docs';
-
-  isActive(path: string): boolean {
-    const prefix = new RegExp("^" + path, "gm");
-    const regexRes = prefix.test(Router.activePath);
-
-    return regexRes;
-  }
 
   render() {
     const { template } = this;
