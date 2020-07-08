@@ -135,6 +135,16 @@ export class SiteMenu implements ComponentInterface{
               }) }
             </ul>
           </div>
+          { template === 'plugins'
+            ? <a class="menu-footer" {...href("/docs")}>
+                Guide
+                <span class="arrow">-&gt;</span>
+              </a>
+            : <a class="menu-footer" {...href("/docs/plugins")}>
+                Plugins
+                <span class="arrow">-&gt;</span>
+              </a>
+          }
         </div>
       </Host>
     );

@@ -248,3 +248,25 @@
 .menu-list ul.collapsed li {
   height: 0;
 }
+
+.menu-footer {
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  padding: 20px 15px 20px 18px;
+
+  width: var(--menu-width);
+
+  border-top: 1px solid #dee3ea;
+
+  background: #fff;
+  color: #222d3a;
+
+  .arrow {
+    letter-spacing: 0;
+
+    padding-left: 10px;
+  }
+}
