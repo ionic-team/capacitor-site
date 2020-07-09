@@ -68,7 +68,7 @@ if (Capacitor.isNative) {
 
 `isPluginAvailable: (name: string) => boolean;`
 
-Check if plugin is available on the currently running platform. The plugin name is defined in the Web plugin's configuration (`web.ts`). Works with both Capacitor Core and custom plugins.
+Check if a plugin is available on the currently running platform. The plugin name the name used in the plugin registry (e.g. `const { Name } = Plugins;`), which means it also works with custom plugins.
 
 ```typescript
 const isAvailable = Capacitor.isPluginAvailable('Camera');
