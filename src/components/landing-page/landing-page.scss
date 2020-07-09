@@ -64,6 +64,44 @@ section {
   }
 }
 
+.feature__register {
+  margin-block-end: 24px;
+  display:inline-flex;
+  align-items: center;
+  z-index: 1;
+  padding: 4px;
+  border-radius: 16px;
+  background: white;
+  color: var(--c-indigo-90);
+  font-size: 12px;
+  box-shadow: 0px 1px 4px rgba(0,0,0,.1);
+
+  &__text {
+    display: inline-block;
+
+    .text__content {
+      padding: 0 8px;
+    }
+  }
+
+  &__tag {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 4px 6px;
+    color: white;
+    background: #FFB762;
+    border-radius: var(--radii-3);
+    font-size: var(--f-size-0);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: var(--f-tracking-super);
+  }
+
+  &:hover, &:active, &:focus, &:focus-within {
+    border-bottom-color: transparent;
+  }
+}
+
 .points {
   .ui-paragraph {
     max-width: 540px;

@@ -1,7 +1,7 @@
 import { Component, h, Host, State } from '@stencil/core';
 
 import Helmet from '@stencil/helmet';
-import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph, Breakpoint } from '@ionic-internal/sites-shared';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 import FancyUnderline from '../FancyUnderline';
 
@@ -21,6 +21,19 @@ export class LandingPage {
             <Grid>
               <Col md={6} sm={6} xs={6} cols={12}>
                 <hgroup class="hero__heading">
+                <a href="https://ionicframework.com/resources/webinars/hybrid-app-development-redefined" target="_blank" rel="noopener nofollow" class="feature__register">
+                  <div class="feature__register__tag">Live demo</div>
+                    <Breakpoint mobile={false} inlineBlock={true} class="feature__register__text">
+                      <span class="text__content">
+                        Hybrid vs. Native Webinar -&gt;
+                      </span>
+                    </Breakpoint>
+                    <Breakpoint mobile={true} tablet={false} desktop={false} inlineBlock={true} class="feature__register__text">
+                      <span class="text__content">
+                        Hybrid vs. Native Webinar -&gt;
+                      </span>
+                    </Breakpoint>
+                </a>
                   <Heading level={1}>
                     A cross-platform native runtime for web apps.
                   </Heading>
