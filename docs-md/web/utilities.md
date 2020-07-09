@@ -44,7 +44,7 @@ document.getElementById("savedPhoto").src = savedPhoto;
 
 `getPlatform: () => string;`
 
-Get the name of the platform the app is currently running on: `web, ios, android`.
+Get the name of the platform the app is currently running on: `web`, `ios`, `android`.
 
 ```typescript
 if (Capacitor.getPlatform() === 'ios') {
