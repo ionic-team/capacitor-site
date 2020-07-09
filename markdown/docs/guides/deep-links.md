@@ -136,6 +136,53 @@ const App: React.FC = () => {
 };
 ```
 
+### Vue
+VueJS offers a first party routing system that integrates natively with Vue called Vue Router. To set up deep linking with Vue Router, start in the file that you used to configure all of your routes (usually `routes.js` or something similar).  
+
+First we import the capacitor `App` from plugins along with `Vue` and `VueRouter`.
+
+```javascript
+import { Plugins } from '@capacitor/core';
+const { App } = Plugins;
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+```
+
+Next, configure your routes using the Vue Router (more information on [Getting Started with Vue Router](https://router.vuejs.org/guide/#javascript)).
+
+```javascript
+const router = new VueRouter({
+    routes: []
+})
+```
+
+It's recommended to use `mode: history` so you don't have to deal with the `#`.
+
+Let Vue know that you are using Vue Router and register the router within Vue:
+
+```javascript
+const VueApp = new Vue({
+    router
+}).$mount('#app')
+```
+
+Finally, we need to register our app for deep linking. To do that, we add an event listener to the `appUrlOpen` event on the Capacitor App. Capacitor will pick this up, then we hand it off to Vue Router to navigate to the page requested.
+
+```javascript
+App.addListener('appUrlOpen', function( data ){
+    // Example url: https://beerswift.app/tabs/tabs2
+    // slug = /tabs/tabs2
+    const slug = data.url.split(".app").pop();
+
+    // We only push to the route if there is a slug present
+    if( slug ){
+        router.push({
+            path: slug
+        });
+    }
+});
+```
+
 ## Creating Site Association Files
 
 In order for Apple and Google to permit deep links to open your app, a two-way association between your website and app must be created. One file for each must be created and placed within a `.well-known` folder on your website, like so: https://beerswift.app/.well-known/.
