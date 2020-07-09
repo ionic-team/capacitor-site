@@ -1,3 +1,7 @@
 {
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/docs/community/plugins", "destination": "/docs/plugins/community" },
+    { "source": "/docs/enterprise", "destination": "/docs/plugins/enterprise" }
+  ]
 }
