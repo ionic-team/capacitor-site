@@ -56,7 +56,7 @@ if (Capacitor.getPlatform() === 'ios') {
 
 `isNative?: boolean;`
 
-Check whether the currently running platform is native (`ios, android`).
+Check whether the currently running platform is native (`ios`, `android`).
 
 ```typescript
 if (Capacitor.isNative) {
