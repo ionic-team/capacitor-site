@@ -1,14 +1,14 @@
 ---
 title: JavaScript Utilities
 description: Capacitor's JavaScript Utilities
-url: /docs/web/utilities
+url: /docs/basics/utilities
 contributors:
   - dotNetkow
 ---
 
 # JavaScript Utilities
 
-<p class="intro">Capacitor has several JavaScript utilities useful for ensuring apps run successfully across multiple platforms with the same codebase. To use them, import Capacitor and call the desired utility function:</p>
+<p class="intro">Capacitor has several JavaScript utilities useful for ensuring apps run successfully across multiple platforms with the same codebase. To use them, import Capacitor then call the desired utility function:</p>
 
 ```typescript
 import { Capacitor } from '@capacitor/core';
@@ -68,7 +68,7 @@ if (Capacitor.isNative) {
 
 `isPluginAvailable: (name: string) => boolean;`
 
-Check if a plugin is available on the currently running platform. The plugin name the name used in the plugin registry (e.g. `const { Name } = Plugins;`), which means it also works with custom plugins.
+Check if a plugin is available on the currently running platform. The plugin name is used in the plugin registry (e.g. `const { Name } = Plugins;`), which means it also works with custom plugins.
 
 ```typescript
 const isAvailable = Capacitor.isPluginAvailable('Camera');

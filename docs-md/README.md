@@ -13,6 +13,7 @@
   * [Using Plugins](basics/using-plugins.md)
   * [Native Project Configuration](basics/configuring-your-app.md)
   * [Progressive Web Apps](basics/progressive-web-app.md)
+  * [Utilities](basics/utilities.md)
   * [CLI Reference](basics/cli-commands.md)
 * Cordova/PhoneGap
   * [Introduction](cordova/index.md)
@@ -45,7 +46,6 @@
 * Web/PWA
   * [Getting Started](web/index.md)
   * [PWA Elements](web/pwa-elements.md)
-  * [Utilities](web/utilities.md)
 * Creating Plugins
   * [Introduction](plugins/index.md)
   * [Development Workflow](plugins/workflow.md)
