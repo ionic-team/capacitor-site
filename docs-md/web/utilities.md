@@ -21,7 +21,7 @@ const isAvailable = Capacitor.isPluginAvailable('Camera');
 
 Convert a device filepath into a Web View-friendly path.
 
-Capacitor apps are hosted on a local HTTP server and are served with the HTTP protocol. However, device files are accessed via the File protocol. To avoid difficulties between `http://` and `file://`, paths to device files must be rewritten to use the local HTTP server. For example, `file:///path/to/device/file` must be rewritten as `http://<host>:<port>/<prefix>/path/to/device/file` before being rendered in the app.
+Capacitor apps are served on a different protocol than device files. To avoid difficulties between these protocols, paths to device files must be rewritten. For example, on Android, `file:///path/to/device/file` must be rewritten as `http://localhost/_capacitor_file_/path/to/device/file` before being used in the Web View.
 
 ```typescript
 // file:///path/to/device/photo.jpg
