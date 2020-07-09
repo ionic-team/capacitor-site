@@ -14,7 +14,7 @@ contributors:
 
 One of the most common features provided by application developers to their users is push notifications. In this tutorial, we'll walk through all the steps needed to get [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) working on iOS and Android.
 
-For the purposes of registering and monitoring for push notifications from Firebase, we'll make use of the [Push Notification API for Capacitor](https://capacitor.ionicframework.com/docs/apis/push-notifications/) in an Ionic + Angular application.
+For the purposes of registering and monitoring for push notifications from Firebase, we'll make use of the [Push Notification API for Capacitor](https://capacitorjs.com/docs/apis/push-notifications) in an Ionic + Angular application.
 
 ## Required Dependencies
 

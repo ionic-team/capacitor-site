@@ -24,8 +24,8 @@ export class DocsHeader implements ComponentInterface {
           <a {...href('/docs')} class={{ 'active': this.isActive('/docs') }}>Docs</a>
           {/* TODO enable this when we move the plugins */}
           {/* <a {...href('/plugins')} class={{ 'active': this.isActive('/plugins') }}>Plugins</a> */}
-          <a {...href('/blog')}>Blog</a>
           <a {...href('/community')}>Community</a>
+          <a {...href('/blog')}>Blog</a>
         </div>
         <div class="docs-header__link-divider"/>
         <div class="docs-header__external-links">
