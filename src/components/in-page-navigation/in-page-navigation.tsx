@@ -12,7 +12,7 @@ interface ItemOffset {
   styleUrl: 'in-page-navigation.css'
 })
 export class InPageNavigtion {
-  private adEl: HTMLElement;
+  private adEl: HTMLInternalAdElement;
   private stickyEl: HTMLElement;
 
   @Prop() pageLinks: MarkdownHeading[] = [];
@@ -48,7 +48,11 @@ export class InPageNavigtion {
   }
 
   @Watch('pageLinks')
-  checkHeight() {
+  handleNavChange() {
+    this.checkHeight();
+  }
+
+  checkHeight = async () => {
     if (!this.stickyEl || this.adEl.offsetHeight === 0) return;
     this.stickyEl.getBoundingClientRect().bottom > window.innerHeight ? this.stickyEl.style.overflow = 'visible' : '';
 
@@ -56,15 +60,12 @@ export class InPageNavigtion {
     this.adEl.style.visibility = 'hidden'
 
     this.adEl.getBoundingClientRect().bottom < window.innerHeight ? this.adEl.style.visibility = 'visible' : '';
-    // this.adEl.render();
+    this.adEl.update();
   }
 
 
   componentDidLoad() {
     this.updateItemOffsets();
-  }
-
-  componentDidRender() {
     this.checkHeight();
   }
 
