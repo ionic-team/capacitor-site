@@ -17,6 +17,7 @@ export class LandingPage {
       <Host>
         <MetaHead />
         <section class="hero">
+          <div class="hero__background"></div>
           <ResponsiveContainer>
             <Grid>
               <Col md={6} sm={6} xs={6} cols={12}>

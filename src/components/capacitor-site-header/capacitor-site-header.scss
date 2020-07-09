@@ -1,10 +1,11 @@
 @use '../../global/variables';
 
+
 :host {
   position: sticky;
   z-index: 1000;
   top: -1px;
-  background: transparent;
+  background: #fff;
   display: block;
   padding: 14px 0 13px;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
