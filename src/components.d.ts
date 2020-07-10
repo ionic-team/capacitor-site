@@ -67,8 +67,6 @@ export namespace Components {
         "pageLinks": MarkdownHeading[];
         "srcUrl": string;
     }
-    interface InternalAd {
-    }
     interface LandingPage {
     }
     interface LowerContentNav {
@@ -217,12 +215,6 @@ declare global {
         prototype: HTMLInPageNavigationElement;
         new (): HTMLInPageNavigationElement;
     };
-    interface HTMLInternalAdElement extends Components.InternalAd, HTMLStencilElement {
-    }
-    var HTMLInternalAdElement: {
-        prototype: HTMLInternalAdElement;
-        new (): HTMLInternalAdElement;
-    };
     interface HTMLLandingPageElement extends Components.LandingPage, HTMLStencilElement {
     }
     var HTMLLandingPageElement: {
@@ -287,7 +279,6 @@ declare global {
         "docs-search": HTMLDocsSearchElement;
         "document-component": HTMLDocumentComponentElement;
         "in-page-navigation": HTMLInPageNavigationElement;
-        "internal-ad": HTMLInternalAdElement;
         "landing-page": HTMLLandingPageElement;
         "lower-content-nav": HTMLLowerContentNavElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
@@ -358,9 +349,6 @@ declare namespace LocalJSX {
         "pageLinks"?: MarkdownHeading[];
         "srcUrl"?: string;
     }
-    interface InternalAd {
-        "onInternalAdLoaded"?: (event: CustomEvent<any>) => void;
-    }
     interface LandingPage {
     }
     interface LowerContentNav {
@@ -403,7 +391,6 @@ declare namespace LocalJSX {
         "docs-search": DocsSearch;
         "document-component": DocumentComponent;
         "in-page-navigation": InPageNavigation;
-        "internal-ad": InternalAd;
         "landing-page": LandingPage;
         "lower-content-nav": LowerContentNav;
         "newsletter-signup": NewsletterSignup;
@@ -438,7 +425,6 @@ declare module "@stencil/core" {
             "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
             "document-component": LocalJSX.DocumentComponent & JSXBase.HTMLAttributes<HTMLDocumentComponentElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
-            "internal-ad": LocalJSX.InternalAd & JSXBase.HTMLAttributes<HTMLInternalAdElement>;
             "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;

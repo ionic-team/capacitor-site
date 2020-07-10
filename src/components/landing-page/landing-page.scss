@@ -1,6 +1,8 @@
 @use '../../global/variables';
 
+
 :host {
+  
   display: block;
 }
 
@@ -9,10 +11,23 @@ section {
 }
 
 .hero {
+  position:relative;
   margin-bottom: 96px;
 
-  background: url('/assets/img/landing/bg.png') no-repeat transparent;
-  background-size: cover;
+  &__background {
+    position: absolute;
+    // top: -50%;
+    bottom: 100px;
+    
+    width: 1800px;
+    height: 1800px;
+    left: calc(calc((1800px - 100%) / -2) - 50px);
+    
+    background: #F6F9FC;
+    transform: rotate(29deg) skewX(-30deg);
+    
+    z-index: -1;
+  }
 
   img {
     max-width: 100%;
