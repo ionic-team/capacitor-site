@@ -34,6 +34,7 @@ const { Keyboard } = Plugins;
 
 Keyboard.addListener('keyboardWillShow', (info: KeyboardInfo) => {
   console.log('keyboard will show with height', info.keyboardHeight);
+  // this.zone.run(() => { ... }); // Use NgZone in Angular if you want to set variables, etc.
 });
 
 Keyboard.addListener('keyboardDidShow', (info: KeyboardInfo) => {
@@ -75,6 +76,20 @@ Keyboard.show();
 Keyboard.hide();
 
 ```
+
+If you want to interact with your app - for example by setting a boolean variable that states whether the keyboard is visible or not - **use NgZone in Angular**:
+
+```
+import { NgZone } from '@angular/core';
+
+constructor(
+  private zone: NgZone,
+) {
+  Keyboard.addListener('keyboardWillShow', () => {
+    this.zone.run(() => { ... });
+  });
+```
+
 
 ## Keyboard configuration (iOS only)
 
