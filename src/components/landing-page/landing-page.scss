@@ -14,9 +14,12 @@ section {
   position:relative;
   margin-bottom: 96px;
 
+  hgroup {
+    position: relative;
+  }
+
   &__background {
     position: absolute;
-    // top: -50%;
     bottom: 100px;
     
     width: 1800px;
@@ -80,8 +83,11 @@ section {
 }
 
 .feature__register {
-  margin-block-end: 24px;
-  display:inline-flex;
+  position:absolute;
+  white-space: nowrap;
+  top: 50px;
+  width: auto;
+  display:flex;
   align-items: center;
   z-index: 1;
   padding: 4px;
