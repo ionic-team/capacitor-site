@@ -49,6 +49,9 @@
   }
 
   .site-header-links {
+    display: flex;
+    flex: 1;
+
     &__menu {
       flex: 1;
       display: flex;
