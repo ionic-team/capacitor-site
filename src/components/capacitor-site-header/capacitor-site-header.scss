@@ -167,7 +167,7 @@
 more-button {
   display: none;
 
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 site-backdrop {
@@ -211,6 +211,7 @@ site-backdrop {
       }
 
       nav {
+        max-width: 100%;
         flex-direction: column;
         margin-left: 0;
       }
