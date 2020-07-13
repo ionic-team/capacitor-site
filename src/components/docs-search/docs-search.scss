@@ -5,4 +5,31 @@
   align-items: center;
 
   flex: 1;
+
+  margin: 0 22px;
+}
+
+input {
+  font-family: "Inter";
+  font-size: 15px;
+
+  line-height: 18px;
+  letter-spacing: -0.01em;
+
+  padding: 15px 40px;
+
+  width: 100%;
+
+  border: none;
+
+  &:focus {
+    outline-color: var(--color-capacitor-blue);
+  }
+}
+
+ion-icon {
+  position: absolute;
+  left: 31px;
+  font-size: 17px;
+  top: 23px;
 }

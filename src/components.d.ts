@@ -57,6 +57,7 @@ export namespace Components {
         "toggleOverlayMenu": () => Promise<void>;
     }
     interface DocsSearch {
+        "placeholder": string;
     }
     interface DocumentComponent {
         "page": string;
@@ -359,6 +360,7 @@ declare namespace LocalJSX {
         "siteStructureList"?: SiteStructureItem[];
     }
     interface DocsSearch {
+        "placeholder"?: string;
     }
     interface DocumentComponent {
         "page"?: string;

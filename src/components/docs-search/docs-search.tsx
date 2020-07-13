@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, h } from '@stencil/core';
+import { Component, ComponentInterface, Prop, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'docs-search',
@@ -6,9 +6,16 @@ import { Component, ComponentInterface, Host, h } from '@stencil/core';
   scoped: true
 })
 export class DocsSearch implements ComponentInterface {
+  @Prop() placeholder = 'Search';
+
   render() {
+    const { placeholder } = this;
+
     return (
-      <Host></Host>
+      <Host>
+        <ion-icon name="search" />
+        <input placeholder={placeholder}></input>
+      </Host>
     );
   }
 }
