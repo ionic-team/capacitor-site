@@ -1,7 +1,7 @@
 import { Component, h, Host, State } from '@stencil/core';
 
 import Helmet from '@stencil/helmet';
-import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph, Breakpoint } from '@ionic-internal/sites-shared';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 import FancyUnderline from '../FancyUnderline';
 
@@ -17,10 +17,29 @@ export class LandingPage {
       <Host>
         <MetaHead />
         <section class="hero">
+          <div class="hero__background"></div>
           <ResponsiveContainer>
             <Grid>
               <Col md={6} sm={6} xs={6} cols={12}>
                 <hgroup class="hero__heading">
+                <a class="feature__register" href="https://ionicframework.com/resources/webinars/hybrid-app-development-redefined" target="_blank" rel="noopener nofollow">
+                  <div class="feature__register__tag">Live demo</div>
+                    <Breakpoint mobile={false} tablet={false} desktop={true} inlineBlock={true} class="feature__register__text">
+                      <span class="text__content">
+                        Hybrid vs. Native Webinar Wed, July 22nd <span style={{'letter-spacing':'0'}}>-&gt;</span>
+                      </span>
+                    </Breakpoint>
+                    <Breakpoint mobile={false} tablet={true} desktop={false} inlineBlock={true} class="feature__register__text">
+                      <span class="text__content">
+                        Hybrid vs. Native Webinar July 22nd<span style={{'letter-spacing':'0'}}>-&gt;</span>
+                      </span>
+                    </Breakpoint>
+                    <Breakpoint mobile={true} tablet={false} desktop={false} inlineBlock={true} class="feature__register__text">
+                      <span class="text__content">
+                        Hybrid vs. Native Webinar <span style={{'letter-spacing':'0'}}>-&gt;</span>
+                      </span>
+                    </Breakpoint>
+                </a>
                   <Heading level={1}>
                     A cross-platform native runtime for web apps.
                   </Heading>
@@ -37,6 +56,9 @@ export class LandingPage {
                     </AnchorButton>
                   </div>
                 </hgroup>
+                <div class="cordova-cta">
+                  <a href="/cordova">Migrating from Cordova {"->"}</a>
+                </div>
                 <img class="hero__platforms" src="/assets/img/supported-icons.png" alt="Supported platforms" />
               </Col>
               <Col md={6} sm={6} xs={6} cols={12} class="hero__graphic">
@@ -95,7 +117,7 @@ export class LandingPage {
             </hgroup>
             <Grid>
               {[
-                { 
+                {
                   key: 'camera',
                   name: 'Camera',
                   desc: 'Capture, save photos, and configure hardware parameters like focus and white balance.'
@@ -180,8 +202,8 @@ export class LandingPage {
             </Grid>
           </section>
         </ResponsiveContainer>
-        <newsletter-signup />
         <pre-footer />
+        <newsletter-signup />
         <capacitor-site-footer />
       </Host>
     );

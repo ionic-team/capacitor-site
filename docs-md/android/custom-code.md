@@ -10,9 +10,9 @@ contributors:
 
 # Custom Native Android Code
 
-<p class="intro">Many apps will want to add custom Java code to implement native features, without the overhead of building and publishing a proper Capacitor plugin.</a>
+<p class="intro">Many apps will want to add custom Java code to implement native features, without the overhead of building and publishing a proper Capacitor plugin.</p>
 
-<p class="intro">There are two ways to do this depending on whether or not you need to access that code from the WebView:</a>
+<p class="intro">There are two ways to do this depending on whether or not you need to access that code from the WebView:</p>
 
 ## WebView Accessible Native Code
 
@@ -83,7 +83,7 @@ CustomNativePlugin.customFunction();
 // Other codes...
 ```
 
-For more usages of plugin APIs, have a look at [Capacitor Android Plugin Guide](https://capacitor.ionicframework.com/docs/plugins/android/).
+For more usages of plugin APIs, have a look at [Capacitor Android Plugin Guide](https://capacitorjs.com/docs/plugins/android).
 
 ## Private Native Code
 

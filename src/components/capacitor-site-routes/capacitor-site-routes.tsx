@@ -48,6 +48,9 @@ export class CapacitorSiteRoutes {
             return <blog-post slug={slug} />
           }} />
 
+          <Route path="/cordova">
+            <cordova-landing-page />
+          </Route>
 
           <Route path="/enterprise">
             <capacitor-enterprise />

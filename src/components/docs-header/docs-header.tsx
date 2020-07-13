@@ -35,8 +35,8 @@ export class DocsHeader implements ComponentInterface {
           <div class="docs-header-links">
             <div class="docs-header-links__internal">
               <a {...href('/docs')} class={{ 'active': this.isActive('/docs') }}>Docs</a>
-              <a {...href('/blog')}>Blog</a>
               <a {...href('/community')}>Community</a>
+              <a {...href('/blog')}>Blog</a>
             </div>
             <div class="docs-header-links__divider"/>
             <div class="docs-header-links__external">
