@@ -73,6 +73,9 @@ export namespace Components {
         "next"?: SiteStructureItem;
         "prev"?: SiteStructureItem;
     }
+    interface MoreButton {
+        "icon": string;
+    }
     interface NewsletterSignup {
     }
     interface PluginApi {
@@ -83,6 +86,9 @@ export namespace Components {
         "platforms": string;
     }
     interface PreFooter {
+    }
+    interface SiteBackdrop {
+        "visible": boolean;
     }
     interface SolutionPage {
         "solutionId": string;
@@ -227,6 +233,12 @@ declare global {
         prototype: HTMLLowerContentNavElement;
         new (): HTMLLowerContentNavElement;
     };
+    interface HTMLMoreButtonElement extends Components.MoreButton, HTMLStencilElement {
+    }
+    var HTMLMoreButtonElement: {
+        prototype: HTMLMoreButtonElement;
+        new (): HTMLMoreButtonElement;
+    };
     interface HTMLNewsletterSignupElement extends Components.NewsletterSignup, HTMLStencilElement {
     }
     var HTMLNewsletterSignupElement: {
@@ -250,6 +262,12 @@ declare global {
     var HTMLPreFooterElement: {
         prototype: HTMLPreFooterElement;
         new (): HTMLPreFooterElement;
+    };
+    interface HTMLSiteBackdropElement extends Components.SiteBackdrop, HTMLStencilElement {
+    }
+    var HTMLSiteBackdropElement: {
+        prototype: HTMLSiteBackdropElement;
+        new (): HTMLSiteBackdropElement;
     };
     interface HTMLSolutionPageElement extends Components.SolutionPage, HTMLStencilElement {
     }
@@ -281,10 +299,12 @@ declare global {
         "in-page-navigation": HTMLInPageNavigationElement;
         "landing-page": HTMLLandingPageElement;
         "lower-content-nav": HTMLLowerContentNavElement;
+        "more-button": HTMLMoreButtonElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
         "plugin-api": HTMLPluginApiElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
         "pre-footer": HTMLPreFooterElement;
+        "site-backdrop": HTMLSiteBackdropElement;
         "solution-page": HTMLSolutionPageElement;
     }
 }
@@ -355,6 +375,9 @@ declare namespace LocalJSX {
         "next"?: SiteStructureItem;
         "prev"?: SiteStructureItem;
     }
+    interface MoreButton {
+        "icon"?: string;
+    }
     interface NewsletterSignup {
     }
     interface PluginApi {
@@ -365,6 +388,9 @@ declare namespace LocalJSX {
         "platforms"?: string;
     }
     interface PreFooter {
+    }
+    interface SiteBackdrop {
+        "visible"?: boolean;
     }
     interface SolutionPage {
         "solutionId"?: string;
@@ -393,10 +419,12 @@ declare namespace LocalJSX {
         "in-page-navigation": InPageNavigation;
         "landing-page": LandingPage;
         "lower-content-nav": LowerContentNav;
+        "more-button": MoreButton;
         "newsletter-signup": NewsletterSignup;
         "plugin-api": PluginApi;
         "plugin-platforms": PluginPlatforms;
         "pre-footer": PreFooter;
+        "site-backdrop": SiteBackdrop;
         "solution-page": SolutionPage;
     }
 }
@@ -427,10 +455,12 @@ declare module "@stencil/core" {
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;
+            "more-button": LocalJSX.MoreButton & JSXBase.HTMLAttributes<HTMLMoreButtonElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "plugin-api": LocalJSX.PluginApi & JSXBase.HTMLAttributes<HTMLPluginApiElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
+            "site-backdrop": LocalJSX.SiteBackdrop & JSXBase.HTMLAttributes<HTMLSiteBackdropElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
         }
     }

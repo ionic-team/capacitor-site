@@ -21,6 +21,8 @@ const formatNumber = (n) => {
 export class SiteHeader {
   @Element() el: HTMLElement;
 
+  @State() expanded = false;
+
   @State() sticky = false;
 
   // Hovered nav items
@@ -62,12 +64,18 @@ export class SiteHeader {
 
   clearHover = () => this.hovered = null;
 
+  toggleExpanded = () => this.expanded = !this.expanded;
 
   render() {
+    const { clearHover, expanded, forceHovered, hovered, starCount, sticky } = this;
+
     return (
       <Host class={{
-        'site-header--sticky': this.sticky
+        'site-header--sticky': sticky,
+        'site-header--expanded': expanded
       }}>
+        <site-backdrop visible={expanded} onClick={() => this.toggleExpanded()} />
+
         <ResponsiveContainer class="site-header">
           <a {...href('/')} class="site-header__logo-link">
             {state.pageTheme === 'dark' ? (
@@ -77,64 +85,68 @@ export class SiteHeader {
             )}
           </a>
 
-          <div class={{
-            'site-header__menu': true,
-            'site-header__menu--hovered': !!this.hovered || !!this.forceHovered
-          }}>
-            <nav>
-              <NavLink
-                path="/#features"
-                hovered={(this.hovered || this.forceHovered) === 'features'}
-                onHover={this.setHovered('features')}
-                onExit={this.clearHover}>
-                Features
-              </NavLink>
-              <NavLink
-                path="/docs"
-                hovered={this.hovered === 'docs'}
-                onHover={this.setHovered('docs')}
-                onExit={this.clearHover}>
-                Docs
-              </NavLink>
-              <NavLink
-                path="/community"
-                hovered={this.hovered === 'community' || this.forceHovered === 'community'}
-                onHover={this.setHovered('community')}
-                onExit={this.clearHover}>
-                Community
-              </NavLink>
-              <NavLink
-                path="/blog"
-                hovered={this.hovered === 'blog'}
-                onHover={this.setHovered('blog')}
-                onExit={this.clearHover}>
-                Blog
-              </NavLink>
-              <a
-                href="https://ionicframework.com/native"
-                target="_blank"
-                onMouseOver={this.setHovered('enterprise')}
-                onMouseOut={this.clearHover}
-                class={{
-                  'link--hovered': this.hovered === 'enterprise'
-                }}>
-                Enterprise
-              </a>
-            </nav>
-          </div>
+          <more-button onClick={() => this.toggleExpanded()} />
 
-          <div class="site-header__buttons">
-            <AnchorButton href="https://github.com/ionic-team/capacitor" class="site-header__buttons__github">
-              <ion-icon name="logo-github" />
-              {this.starCount ? this.starCount : 'GitHub'}
-            </AnchorButton>
-            <AnchorButton class="site-header__buttons__install" href="/docs/getting-started">
-              <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 12H10M8.75 5.99986L5 9.59995M5 9.59995L1.25 5.99986M5 9.59995L4.99998 0" stroke="white"/>
-              </svg>
+          <div class="site-header-links">
+            <div class={{
+              'site-header-links__menu': true,
+              'site-header-links__menu--hovered': !!hovered || !!forceHovered
+            }}>
+              <nav>
+                <NavLink
+                  path="/#features"
+                  hovered={(hovered || forceHovered) === 'features'}
+                  onHover={this.setHovered('features')}
+                  onExit={clearHover}>
+                  Features
+                </NavLink>
+                <NavLink
+                  path="/docs"
+                  hovered={hovered === 'docs'}
+                  onHover={this.setHovered('docs')}
+                  onExit={clearHover}>
+                  Docs
+                </NavLink>
+                <NavLink
+                  path="/community"
+                  hovered={hovered === 'community' || forceHovered === 'community'}
+                  onHover={this.setHovered('community')}
+                  onExit={clearHover}>
+                  Community
+                </NavLink>
+                <NavLink
+                  path="/blog"
+                  hovered={hovered === 'blog'}
+                  onHover={this.setHovered('blog')}
+                  onExit={clearHover}>
+                  Blog
+                </NavLink>
+                <a
+                  href="https://ionicframework.com/native"
+                  target="_blank"
+                  onMouseOver={this.setHovered('enterprise')}
+                  onMouseOut={clearHover}
+                  class={{
+                    'link--hovered': hovered === 'enterprise'
+                  }}>
+                  Enterprise
+                </a>
+              </nav>
+            </div>
 
-              Install
-            </AnchorButton>
+            <div class="site-header-links__buttons">
+              <AnchorButton href="https://github.com/ionic-team/capacitor" class="site-header-links__buttons__github">
+                <ion-icon name="logo-github" />
+                <span>{starCount ? starCount : 'GitHub'}</span>
+              </AnchorButton>
+              <AnchorButton class="site-header-links__buttons__install" href="/docs/getting-started">
+                <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 12H10M8.75 5.99986L5 9.59995M5 9.59995L1.25 5.99986M5 9.59995L4.99998 0" stroke="white"/>
+                </svg>
+
+                Install
+              </AnchorButton>
+            </div>
           </div>
         </ResponsiveContainer>
       </Host>
