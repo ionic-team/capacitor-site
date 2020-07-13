@@ -171,7 +171,7 @@ more-button {
 }
 
 site-backdrop {
-  top: 84px;
+  top: 108px;
 }
 
 /* Small width / mobile screens TODO should this be 550 ? */
@@ -212,6 +212,7 @@ site-backdrop {
 
       nav {
         flex-direction: column;
+        margin-left: 0;
       }
 
       a {

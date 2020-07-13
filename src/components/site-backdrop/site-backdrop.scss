@@ -14,7 +14,9 @@
   z-index: -1;
 }
 
-:host(.site-backdrop--visible) {
-  opacity: 1;
-  pointer-events: all;
+@media screen and (max-width: 768px) {
+  :host(.site-backdrop--visible) {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
