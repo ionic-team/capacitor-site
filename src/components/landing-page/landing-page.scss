@@ -2,7 +2,7 @@
 
 
 :host {
-  
+  overflow-x: hidden;
   display: block;
 }
 
@@ -11,6 +11,7 @@ section {
 }
 
 .hero {
+  overflow-x: hidden;
   position:relative;
   margin-bottom: 96px;
 
