@@ -17,9 +17,7 @@ export class DocsHeader implements ComponentInterface {
     return regexRes;
   }
 
-  toggleExpanded() {
-    this.expanded = !this.expanded;
-  }
+  toggleExpanded = () => this.expanded = !this.expanded;
 
   render() {
     const { expanded } = this;
@@ -28,22 +26,15 @@ export class DocsHeader implements ComponentInterface {
       <Host class={{
         'docs-header--expanded': expanded
       }}>
-        <div
-          class="docs-header__backdrop"
-          onClick={() => this.toggleExpanded()}
-        />
+        <site-backdrop visible={expanded} onClick={() => this.toggleExpanded()} />
 
         <header>
           <docs-search></docs-search>
-          <button class="docs-header__more-button" onClick={() => this.toggleExpanded()}>
-            <ion-icon name="ellipsis-vertical" />
-          </button>
+          <more-button onClick={() => this.toggleExpanded()} />
 
           <div class="docs-header-links">
             <div class="docs-header-links__internal">
               <a {...href('/docs')} class={{ 'active': this.isActive('/docs') }}>Docs</a>
-              {/* TODO enable this when we move the plugins */}
-              {/* <a {...href('/api')} class={{ 'active': this.isActive('/api') }}>Plugins</a> */}
               <a {...href('/blog')}>Blog</a>
               <a {...href('/community')}>Community</a>
             </div>

@@ -97,26 +97,15 @@ header {
   }
 }
 
-.docs-header__more-button {
+more-button {
   display: none;
 
   height: 64px;
   width: 64px;
-  font-size: 20px;
-
-  background: transparent;
-  border: none;
-  outline: none;
-
-  cursor: pointer;
-
-  &:hover {
-    opacity: .4;
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .docs-header__more-button {
+  more-button {
     display: block;
   }
 
@@ -189,21 +178,6 @@ header {
     }
   }
 
-  .docs-header__backdrop {
-    position: fixed;
-    top: 100%;
-    height: 100vh;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.4s opacity;
-
-    pointer-events: all;
-  }
-
   // Expanded header, more button clicked
   :host(.docs-header--expanded) {
     box-shadow: none;
@@ -215,12 +189,6 @@ header {
       transition:
         transform .25s cubic-bezier(.17,.67,.52,1),
         opacity .1s linear;
-    }
-
-    .docs-header__backdrop {
-      top: 0;
-
-      opacity: 1;
     }
   }
 }
