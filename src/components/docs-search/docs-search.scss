@@ -19,11 +19,12 @@ input {
   padding: 15px 40px;
 
   width: 100%;
+  max-width: 600px;
 
   border: none;
 
   &:focus {
-    outline-color: var(--color-capacitor-blue);
+    outline: none;
   }
 }
 
