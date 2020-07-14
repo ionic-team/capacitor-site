@@ -23,6 +23,10 @@ input {
 
   border: none;
 
+  &::placeholder {
+    color: #92a0b3;
+  }
+
   &:focus {
     outline: none;
   }
@@ -33,4 +37,6 @@ ion-icon {
   left: 31px;
   font-size: 17px;
   top: 23px;
+
+  color: #b2becd;
 }
