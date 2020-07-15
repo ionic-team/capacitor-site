@@ -54,7 +54,7 @@ npm install jetifier
 npx jetifier
 ```
 
-  To run it automatically after every package install, add `"postinstall": "jetifier"` in the `package.json`.
+  To run it automatically after every package install, add `"postinstall": "jetifier"` in the `package.json` under "scripts".
 
 Recommended changes:
 
