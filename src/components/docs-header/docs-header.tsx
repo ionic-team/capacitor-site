@@ -14,10 +14,13 @@ export class DocsHeader implements ComponentInterface {
 
     return (
       <Host>
-        <docs-search></docs-search>
         <div class="docs-header__links">
           <a {...href('/docs')} class={{ 'active': template === 'docs' }}>Guide</a>
-          <a {...href('/docs/plugins')} class={{ 'active': template === 'plugins' }}>Plugins</a>
+          <a {...href('/docs/plugins')} class={{ 'active': template === 'plugins' }}>Reference</a>
+        </div>
+        <div class="docs-header__link-divider"/>
+        <docs-search></docs-search>
+        <div class="docs-header__links">
           <a {...href('/community')}>Community</a>
           <a {...href('/blog')}>Blog</a>
         </div>
