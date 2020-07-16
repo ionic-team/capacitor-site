@@ -7,8 +7,8 @@ import Router from '../../router';
 
 import { RenderedBlog } from '../../models';
 
-const getBlogPostUrl = (doc: RenderedBlog) => `https://capacitorjs.com/blog/${doc.slug}`;
-
+const getBlogPostPath = (doc: RenderedBlog) => `/blog/${doc.slug}`;
+const getAbsoluteBlogPostUrl = (doc: RenderedBlog) => `https://capacitorjs.com/${getBlogPostPath(doc)}`;
 
 export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?: boolean }) => {
   const content = single ?
@@ -18,14 +18,14 @@ export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?:
   return (
     <div class="blog-post__wrap">
       <div class="blog-post">
-        <Heading level={2}><a href={getBlogPostUrl(post)}>{post.title}</a></Heading>
+        <Heading level={2}><a href={getBlogPostPath(post)}>{post.title}</a></Heading>
         <PostAuthor authorName={post.authorName} dateString={post.date} />
 
         <PostContent html={content} />
 
         {!single && post.preview ? <PostContinueReading post={post} /> : null}
 
-        {single && <disqus-comments url={getBlogPostUrl(post)} siteId='capacitor' id={post.slug} />}
+        {single && <disqus-comments url={getAbsoluteBlogPostUrl(post)} siteId='capacitor' id={post.slug} />}
       </div>
     </div>
   )
@@ -36,7 +36,7 @@ const PostContent = ({ html }: { html: string }) => (
 );
 
 const PostContinueReading = ({ post }: { post: RenderedBlog }) => 
-  <a class="blog-post__continue-reading" {...href(getBlogPostUrl(post), Router)}>Continue reading <ion-icon name="arrow-forward" /></a>
+  <a class="blog-post__continue-reading" {...href(getBlogPostPath(post), Router)}>Continue reading <ion-icon name="arrow-forward" /></a>
 
 const PostAuthor = ({ authorName, dateString }: { authorName: string, dateString: string }) => {
   const date = parseISO(dateString);

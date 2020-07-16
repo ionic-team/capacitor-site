@@ -59,7 +59,6 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
   const MORE_TOKEN = '<!--more-->';
   const moreIndex = data.body.indexOf(MORE_TOKEN);
   const postPreview = moreIndex >= 0 ? data.body.slice(0, moreIndex) : '';
-  const postBody = moreIndex >= 0 ? data.body.slice(moreIndex + MORE_TOKEN.length) : data.body;
 
   const parsedPreview = marked(postPreview, {
     highlight: (code, lang) => Prism.highlight(code, Prism.languages[lang], lang as any)
@@ -68,7 +67,7 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
   // final URL of the post
   .replace(/\$POST/g, `/blog/${slug}`);
 
-  const parsedBody = marked(postBody, {
+  const parsedBody = marked(data.body, {
     highlight: (code, lang) => Prism.highlight(code, Prism.languages[lang], lang as any)
   });
 

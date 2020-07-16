@@ -16,8 +16,6 @@ In no particular order, we announced:
 
 <!--more-->
 
-Today at the first ever official [Ioniconf](https://ioniconf.com/), we unveiled a number of exciting updates to Capacitor and the Capacitor community.
-
 The conference kicks off a new era for Capacitor and for [Ionic](https://ionic.io/), the company behind Capacitor.
 
 If you'd like to see the announcements live, the [keynote](https://ioniconf.com/) (along with the rest of the conference) is now [up](https://ioniconf.com/).
