@@ -28,7 +28,7 @@ As a side effect of being web-focused, Capacitor provides a standard web develop
 
 ## Build Native Apps with Material-UI, Chakra, Ant, Prime, and more
 
-Because Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using [Material-UI](https://material-ui.com/) or [Chakra](https://chakra-ui.com/) or [Prime](https://www.primefaces.org/primereact/) or [Ant](https://ant.design/) or [Ionic Framework](https://ionicframework.com/), or any other React UI library, can be turned into native apps using Capacitor (see our [examples repo](https:// for real code!).
+Because Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using [Material-UI](https://material-ui.com/) or [Chakra](https://chakra-ui.com/) or [Prime](https://www.primefaces.org/primereact/) or [Ant](https://ant.design/) or [Ionic Framework](https://ionicframework.com/), or any other React UI library, can be turned into native apps using Capacitor (see our [examples repo](https://github.com/capacitor-community/examples) for real code in a variety of libraries).
 
 This simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)
 
