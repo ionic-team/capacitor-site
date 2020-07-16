@@ -8,7 +8,7 @@ author: Max Lynch <max@ionic.io>
 
 In the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.
 
-However, React Native comes with a bunch of constraints. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). Additionally, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and skills with many React web libraries to deploy native apps.
+However, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.
 
 The net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.
 
@@ -28,7 +28,7 @@ As a side effect of being web-focused, Capacitor provides a standard web develop
 
 ## Build Native Apps with Material-UI, Chakra, Ant, Prime, and more
 
-Because Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using [Material-UI](https://material-ui.com/) or [Chakra](https://chakra-ui.com/) or [Prime](https://www.primefaces.org/primereact/) or [Ant](https://ant.design/) or [Ionic Framework](https://ionicframework.com/), or any other React UI library, can be turned into native apps using Capacitor.
+Because Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using [Material-UI](https://material-ui.com/) or [Chakra](https://chakra-ui.com/) or [Prime](https://www.primefaces.org/primereact/) or [Ant](https://ant.design/) or [Ionic Framework](https://ionicframework.com/), or any other React UI library, can be turned into native apps using Capacitor (see our [examples repo](https:// for real code!).
 
 This simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)
 
@@ -46,6 +46,19 @@ Adding native functionality and deploying to iOS, Android, and PWA with your exi
 npm install @capacitor/cli @capacitor/core
 npx cap init
 npx cap add ios
+```
+
+Then, to start using in a web app, import from `@capacitor/core`:
+
+```typescript
+import { Plugins } from '@capacitor/core';
+
+const { Share } = Plugins;
+await Share.share({
+  title: 'My awesome thing',
+  text: 'Check out this really awesome thing',
+  url: 'https://capacitorjs.com/
+});
 ```
 
 Capacitor apps can be built primarily in the browser, but to deploy and test on iOS or Android (simulator or device), open the IDE of choice and run directly in the IDE:
