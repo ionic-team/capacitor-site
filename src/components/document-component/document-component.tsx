@@ -46,9 +46,7 @@ export class DocumentComponent implements ComponentInterface {
     state.showTopBar = false;
 
     this.template = getTemplateFromPath(this.page);
-    console.log('section is', this.template);
     this.menuStructure = this.template === 'plugins' ? referenceStructure : guideStructure;
-    console.log('menu structure', this.menuStructure);
 
     const foundData = findItem(this.menuStructure, page);
     this.item = foundData.item;

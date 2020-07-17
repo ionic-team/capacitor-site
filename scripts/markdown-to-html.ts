@@ -16,15 +16,23 @@ const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const globAsync = promisify(glob);
 
-const SOURCE_DIRS = ['./docs/guide', './docs/reference'];
-const ASSET_DIRS = ['./src/assets/guide-content', './src/assets/reference-content'];
-const STRUCTURE_FILES = ['./src/assets/guide-structure.json', './src/assets/reference-structure.json'];
+const DOCS_FILES = [{
+  'assets': '/assets/guide-content',
+  'readme': './docs/guide/README.md',
+  'source': './docs/guide',
+  'structure': './src/assets/guide-structure.json'
+}, {
+  'assets': '/assets/reference-content',
+  'readme': './docs/reference/README.md',
+  'source': './docs/reference',
+  'structure': './src/assets/reference-structure.json'
+}];
 
 (async function() {
-  for (var i = 0; i < SOURCE_DIRS.length; i++) {
-    const SOURCE_DIR = SOURCE_DIRS[i];
-    const STRUCTURE_FILE = STRUCTURE_FILES[i];
-    const ASSET_DIR = ASSET_DIRS[i];
+  for (var i = 0; i < DOCS_FILES.length; i++) {
+    const SOURCE_DIR = DOCS_FILES[i].source;
+    const STRUCTURE_FILE = DOCS_FILES[i].structure;
+    const ASSET_DIR = DOCS_FILES[i].assets;
 
     const siteStructure = await readFile(STRUCTURE_FILE, { encoding: 'utf8' });
     const siteStructureJson: SiteStructureItem[] = JSON.parse(siteStructure);
