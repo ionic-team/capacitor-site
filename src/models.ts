@@ -14,6 +14,7 @@ export interface RenderedBlog {
   title: string;
   authorName: string;
   authorEmail: string;
+  authorUrl: string;
   slug: string;
   date: string;
   contents: string;

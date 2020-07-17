@@ -13,6 +13,7 @@ export interface RenderedBlog {
   title: string;
   authorName: string;
   authorEmail: string;
+  authorUrl: string;
   slug: string;
   date: string;
   contents: string;
@@ -54,6 +55,7 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
   const emailIndex = authorString.indexOf('<');
   const authorName = authorString.slice(0, emailIndex).trim();
   const authorEmail = authorString.slice(emailIndex + 1, authorString.indexOf('>')).trim();
+  const authorUrl = data.attributes.authorUrl as string;
 
   // Use the "more" token system to generate a preview on the index page
   const MORE_TOKEN = '<!--more-->';
@@ -75,6 +77,7 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
     title: data.attributes.title,
     authorName,
     authorEmail,
+    authorUrl,
     slug,
     date: (data.attributes.date as Date).toISOString(),
     contents: contents.toString('utf-8'),

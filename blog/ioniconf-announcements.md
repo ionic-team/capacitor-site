@@ -2,6 +2,7 @@
 title: Capacitor announcements at Ioniconf 2020
 date: 2020-06-24 08:00:00
 author: Max Lynch <max@ionic.io>
+authorUrl: https://twitter.com/maxlynch
 ---
 
 Today at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.
