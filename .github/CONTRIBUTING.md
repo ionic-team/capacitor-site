@@ -1,6 +1,6 @@
 # Contributing
 
-The Capacitor website (`site/`) and documentation (`site/markdown`) live alongside the code. Looking to assist? See Capacitor issues labeled "docs" [here](https://github.com/ionic-team/capacitor/issues?q=is%3Aopen+is%3Aissue+label%3Adocs).
+The Capacitor website (`capacitor-site/`) and documentation (`capacitor-site/docs`) live alongside the code. Looking to assist? See Capacitor issues labeled "docs" [here](https://github.com/ionic-team/capacitor/issues?q=is%3Aopen+is%3Aissue+label%3Adocs).
 
 ## Setup
 
