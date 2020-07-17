@@ -17,10 +17,10 @@ The Motion API tracks accelerometer and device orientation (compass heading, etc
 
 ## Permissions
 
-This plugin is currently implemented using Web APIs. Most browsers require permission before using this API. To request, permission, prompt the user for permission on any user-initiated action (such as a button click):
+This plugin is currently implemented using Web APIs. Most browsers require permission before using this API. To request permission, prompt the user for permission on any user-initiated action (such as a button click):
 
 ```typescript
-document.getElementById('start-button').addEventListener('click', async () => {
+myButton.addEventListener('click', async () => {
   try {
     await DeviceMotionEvent.requestPermission();
   } catch (e) {
