@@ -16,17 +16,15 @@ The Capacitor website (`site/`) and documentation (`site/markdown`) live alongsi
 
 ### Docs
 
-Add to `site/markdown/docs/README.md` to add the new entry to the side bar.
-
-### Plugins
-
-Add to `site/markdown/plugins/README.md` to add the new entry to the side bar.
+- Navigate to `capacitor-site/docs/`
+- For the Guide menu, add to `capacitor-site/docs/guide/README.md`
+- For the Reference menu, add to `capacitor-site/docs/reference/README.md`
 
 ## Modifying documentation
 
 For smaller edits, navigate to the desired page in the [Capacitor docs](https://capacitorjs.com/docs/) then click the "Submit an edit" button.
 
-1. Locate the doc you want to modify in `site/markdown/docs/` or `site/markdown/plugins.
+1. Locate the doc you want to modify in `capacitor-site/docs/`.
 1. Modify the documentation, making sure to keep the format the same as the rest of the doc.
 1. Run `npm run site-structure` to rebuild the content.
 1. Run `npm start` to make sure your changes look correct.

@@ -11,7 +11,7 @@ var path = require('path');
 var util = require('util');
 
 var SITE_DIR = path.join(process.cwd(), './');
-var PLUGINS_OUTPUT_DIR = 'src/assets/plugins-content/apis';
+var PLUGINS_OUTPUT_DIR = 'src/assets/reference-content/apis';
 
 const buildTypeLookup = (nodes) => {
   let d = {};

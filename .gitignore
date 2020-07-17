@@ -4,7 +4,7 @@ node_modules/
 www/
 .env
 dist/docs.json
-src/assets/docs-content
-src/assets/plugins-content
-src/assets/docs-structure.json
-src/assets/plugins-structure.json
+src/assets/guide-content
+src/assets/reference-content
+src/assets/guide-structure.json
+src/assets/reference-structure.json

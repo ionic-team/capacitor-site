@@ -141,7 +141,7 @@ export class SiteMenu implements ComponentInterface{
                 <span class="arrow">-&gt;</span>
               </a>
             : <a class="menu-footer" {...href("/docs/plugins")}>
-                Plugins
+                Reference
                 <span class="arrow">-&gt;</span>
               </a>
           }

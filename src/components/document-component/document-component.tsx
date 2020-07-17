@@ -1,8 +1,8 @@
 import { Component, Listen, Prop, Watch, ComponentInterface, State, h } from '@stencil/core';
 import Helmet from '@stencil/helmet';
 
-import docsStructure from '../../assets/docs-structure.json';
-import pluginsStructure from '../../assets/plugins-structure.json';
+import guideStructure from '../../assets/guide-structure.json';
+import referenceStructure from '../../assets/reference-structure.json';
 import { findItem } from '../../global/site-structure-utils';
 import { SiteStructureItem } from '../../global/definitions';
 import { handleRoutableLinkClick, getTemplateFromPath } from '../../utils/route-link';
@@ -47,7 +47,7 @@ export class DocumentComponent implements ComponentInterface {
 
     this.template = getTemplateFromPath(this.page);
     console.log('section is', this.template);
-    this.menuStructure = this.template === 'plugins' ? pluginsStructure : docsStructure;
+    this.menuStructure = this.template === 'plugins' ? referenceStructure : guideStructure;
     console.log('menu structure', this.menuStructure);
 
     const foundData = findItem(this.menuStructure, page);

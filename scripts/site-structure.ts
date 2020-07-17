@@ -8,9 +8,9 @@ import { generateSiteStructure } from './markdown-renderer';
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
-const SOURCE_FILES = ['./markdown/docs/README.md', './markdown/plugins/README.md'];
-const DESTINATION_FILES = ['./src/assets/docs-structure.json', './src/assets/plugins-structure.json'];
-const ASSET_DIRS = ['/assets/docs-content', '/assets/plugins-content'];
+const SOURCE_FILES = ['./docs/guide/README.md', './docs/reference/README.md'];
+const DESTINATION_FILES = ['./src/assets/guide-structure.json', './src/assets/reference-structure.json'];
+const ASSET_DIRS = ['/assets/guide-content', '/assets/reference-content'];
 
 (async function() {
   for (var i = 0; i < SOURCE_FILES.length; i++) {

@@ -15,7 +15,7 @@ export class PluginApi {
       return;
     }
     const url = `api${this.index ? '-index' : ''}.html`;
-    return fetch(`/assets/plugins-content/apis/${this.name}/${url}`)
+    return fetch(`/assets/reference-content/apis/${this.name}/${url}`)
       .then(response => {
         return response.text()
       })

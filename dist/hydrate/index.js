@@ -8910,7 +8910,7 @@ class DocSnippet {
     }; }
 }
 
-const docsHeaderCss = ".sc-docs-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-header-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;position:-webkit-sticky;position:sticky;top:0;background-color:#fff;width:100%;height:64px;color:#98a2ad;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);letter-spacing:0;z-index:1}.docs-header__links.sc-docs-header a.sc-docs-header,.docs-header__external-links.sc-docs-header a.sc-docs-header{color:#98a2ad;font-size:15px;border-bottom:none}.docs-header__links.sc-docs-header a.sc-docs-header:hover,.docs-header__external-links.sc-docs-header a.sc-docs-header:hover{color:#858e97}.docs-header__links.sc-docs-header a.active.sc-docs-header,.docs-header__external-links.sc-docs-header a.active.sc-docs-header{font-weight:500;color:#222d3a}.docs-header__links.sc-docs-header{margin-bottom:2px}.docs-header__links.sc-docs-header a.sc-docs-header{margin-right:24px}.docs-header__link-divider.sc-docs-header{width:1px;height:18px;background:#222d3a;opacity:0.2;margin-right:2px;margin-left:2px}.docs-header__external-links.sc-docs-header{margin-top:5px;margin-left:2px;margin-right:30px}.docs-header__external-links.sc-docs-header a.sc-docs-header{margin-left:22px;font-size:19px}";
+const docsHeaderCss = ".sc-docs-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-header-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;position:-webkit-sticky;position:sticky;top:0;background-color:#fff;width:100%;height:64px;color:#98a2ad;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);letter-spacing:0;z-index:1}.docs-header__links.sc-docs-header a.sc-docs-header,.docs-header__external-links.sc-docs-header a.sc-docs-header{color:#98a2ad;font-size:15px;border-bottom:none}.docs-header__links.sc-docs-header a.sc-docs-header:hover,.docs-header__external-links.sc-docs-header a.sc-docs-header:hover{color:#858e97}.docs-header__links.sc-docs-header a.active.sc-docs-header,.docs-header__external-links.sc-docs-header a.active.sc-docs-header{font-weight:500;color:#222d3a}.docs-header__links.sc-docs-header{margin-bottom:2px;margin-left:24px}.docs-header__links.sc-docs-header a.sc-docs-header{margin-right:24px}.docs-header__link-divider.sc-docs-header{width:1px;height:18px;background:#222d3a;opacity:0.2;margin-right:2px;margin-left:2px}.docs-header__external-links.sc-docs-header{margin-top:5px;margin-left:2px;margin-right:30px}.docs-header__external-links.sc-docs-header a.sc-docs-header{margin-left:22px;font-size:19px}";
 
 class DocsHeader {
     constructor(hostRef) {
@@ -8919,7 +8919,7 @@ class DocsHeader {
     }
     render() {
         const { template } = this;
-        return (h(Host, null, h("div", { class: "docs-header__links" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': template === 'docs' } }), "Guide"), h("a", Object.assign({}, href('/docs/plugins'), { class: { 'active': template === 'plugins' } }), "Reference")), h("docs-search", null), h("div", { class: "docs-header__links" }, h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header__link-divider" }), h("div", { class: "docs-header__external-links" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" })), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" })))));
+        return (h(Host, null, h("div", { class: "docs-header__links" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': template === 'docs' } }), "Guide"), h("a", Object.assign({}, href('/docs/plugins'), { class: { 'active': template === 'plugins' } }), "Reference")), h("div", { class: "docs-header__link-divider" }), h("docs-search", null), h("div", { class: "docs-header__links" }, h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header__link-divider" }), h("div", { class: "docs-header__external-links" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" })), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" })))));
     }
     static get style() { return docsHeaderCss; }
     static get cmpMeta() { return {
@@ -8954,10 +8954,10 @@ class DocsSearch {
     }; }
 }
 
-var docsStructure = [
+var guideStructure = [
 	{
 		text: "Introduction",
-		filePath: "/assets/docs-content/index.json",
+		filePath: "/assets/guide-content/index.json",
 		url: "/docs"
 	},
 	{
@@ -8965,17 +8965,17 @@ var docsStructure = [
 		children: [
 			{
 				text: "Required Dependencies",
-				filePath: "/assets/docs-content/getting-started/dependencies.json",
+				filePath: "/assets/guide-content/getting-started/dependencies.json",
 				url: "/docs/getting-started/dependencies"
 			},
 			{
 				text: "Installation",
-				filePath: "/assets/docs-content/getting-started/index.json",
+				filePath: "/assets/guide-content/getting-started/index.json",
 				url: "/docs/getting-started"
 			},
 			{
 				text: "Using with Ionic",
-				filePath: "/assets/docs-content/getting-started/with-ionic.json",
+				filePath: "/assets/guide-content/getting-started/with-ionic.json",
 				url: "/docs/getting-started/with-ionic"
 			}
 		]
@@ -8985,42 +8985,42 @@ var docsStructure = [
 		children: [
 			{
 				text: "Development Workflow",
-				filePath: "/assets/docs-content/basics/workflow.json",
+				filePath: "/assets/guide-content/basics/workflow.json",
 				url: "/docs/basics/workflow"
 			},
 			{
 				text: "Opening Native IDE",
-				filePath: "/assets/docs-content/basics/opening-native-projects.json",
+				filePath: "/assets/guide-content/basics/opening-native-projects.json",
 				url: "/docs/basics/opening-native-projects"
 			},
 			{
 				text: "Building your App",
-				filePath: "/assets/docs-content/basics/building-your-app.json",
+				filePath: "/assets/guide-content/basics/building-your-app.json",
 				url: "/docs/basics/building-your-app"
 			},
 			{
 				text: "Running your App",
-				filePath: "/assets/docs-content/basics/running-your-app.json",
+				filePath: "/assets/guide-content/basics/running-your-app.json",
 				url: "/docs/basics/running-your-app"
 			},
 			{
 				text: "Using Plugins",
-				filePath: "/assets/docs-content/basics/using-plugins.json",
+				filePath: "/assets/guide-content/basics/using-plugins.json",
 				url: "/docs/basics/using-plugins"
 			},
 			{
 				text: "Native Project Configuration",
-				filePath: "/assets/docs-content/basics/configuring-your-app.json",
+				filePath: "/assets/guide-content/basics/configuring-your-app.json",
 				url: "/docs/basics/configuring-your-app"
 			},
 			{
 				text: "Progressive Web Apps",
-				filePath: "/assets/docs-content/basics/progressive-web-app.json",
+				filePath: "/assets/guide-content/basics/progressive-web-app.json",
 				url: "/docs/basics/progressive-web-app"
 			},
 			{
 				text: "CLI Reference",
-				filePath: "/assets/docs-content/basics/cli-commands.json",
+				filePath: "/assets/guide-content/basics/cli-commands.json",
 				url: "/docs/basics/cli-commands"
 			}
 		]
@@ -9030,27 +9030,27 @@ var docsStructure = [
 		children: [
 			{
 				text: "Introduction",
-				filePath: "/assets/docs-content/cordova/index.json",
+				filePath: "/assets/guide-content/cordova/index.json",
 				url: "/docs/cordova"
 			},
 			{
 				text: "Migration Strategy",
-				filePath: "/assets/docs-content/cordova/migration-strategy.json",
+				filePath: "/assets/guide-content/cordova/migration-strategy.json",
 				url: "/docs/cordova/migration-strategy"
 			},
 			{
 				text: "Cordova to Capacitor Migration",
-				filePath: "/assets/docs-content/cordova/migrating-from-cordova-to-capacitor.json",
+				filePath: "/assets/guide-content/cordova/migrating-from-cordova-to-capacitor.json",
 				url: "/docs/cordova/migrating-from-cordova-to-capacitor"
 			},
 			{
 				text: "Cordova/Ionic Native Plugins",
-				filePath: "/assets/docs-content/cordova/using-cordova-plugins.json",
+				filePath: "/assets/guide-content/cordova/using-cordova-plugins.json",
 				url: "/docs/cordova/using-cordova-plugins"
 			},
 			{
 				text: "Known Incompatible Plugins",
-				filePath: "/assets/docs-content/cordova/known-incompatible-plugins.json",
+				filePath: "/assets/guide-content/cordova/known-incompatible-plugins.json",
 				url: "/docs/cordova/known-incompatible-plugins"
 			}
 		]
@@ -9060,37 +9060,37 @@ var docsStructure = [
 		children: [
 			{
 				text: "Live Reload",
-				filePath: "/assets/docs-content/guides/live-reload.json",
+				filePath: "/assets/guide-content/guides/live-reload.json",
 				url: "/docs/guides/live-reload"
 			},
 			{
 				text: "Ionic Photo Gallery App",
-				filePath: "/assets/docs-content/guides/ionic-framework-app.json",
+				filePath: "/assets/guide-content/guides/ionic-framework-app.json",
 				url: "/docs/guides/ionic-framework-app"
 			},
 			{
 				text: "Push Notifications - Firebase",
-				filePath: "/assets/docs-content/guides/push-notifications-firebase.json",
+				filePath: "/assets/guide-content/guides/push-notifications-firebase.json",
 				url: "/docs/guides/push-notifications-firebase"
 			},
 			{
 				text: "Deep Links",
-				filePath: "/assets/docs-content/guides/deep-links.json",
+				filePath: "/assets/guide-content/guides/deep-links.json",
 				url: "/docs/guides/deep-links"
 			},
 			{
 				text: "Deploying and Updating",
-				filePath: "/assets/docs-content/guides/deploying.json",
+				filePath: "/assets/guide-content/guides/deploying.json",
 				url: "/docs/guides/deploying-updates"
 			},
 			{
 				text: "Splash Screens and Icons",
-				filePath: "/assets/docs-content/guides/splash-screens-and-icons.json",
+				filePath: "/assets/guide-content/guides/splash-screens-and-icons.json",
 				url: "/docs/guides/splash-screens-and-icons"
 			},
 			{
 				text: "Community Guides",
-				filePath: "/assets/docs-content/guides/community.json",
+				filePath: "/assets/guide-content/guides/community.json",
 				url: "/docs/guides/community"
 			}
 		]
@@ -9100,32 +9100,32 @@ var docsStructure = [
 		children: [
 			{
 				text: "Getting Started",
-				filePath: "/assets/docs-content/ios/index.json",
+				filePath: "/assets/guide-content/ios/index.json",
 				url: "/docs/ios"
 			},
 			{
 				text: "Configuration",
-				filePath: "/assets/docs-content/ios/configuration.json",
+				filePath: "/assets/guide-content/ios/configuration.json",
 				url: "/docs/ios/configuration"
 			},
 			{
 				text: "Updating",
-				filePath: "/assets/docs-content/ios/updating.json",
+				filePath: "/assets/guide-content/ios/updating.json",
 				url: "/docs/ios/updating"
 			},
 			{
 				text: "Custom Native Code",
-				filePath: "/assets/docs-content/ios/custom-code.json",
+				filePath: "/assets/guide-content/ios/custom-code.json",
 				url: "/docs/ios/custom-code"
 			},
 			{
 				text: "Deploying to App Store",
-				filePath: "/assets/docs-content/ios/deploying-to-app-store.json",
+				filePath: "/assets/guide-content/ios/deploying-to-app-store.json",
 				url: "/docs/ios/deploying-to-app-store"
 			},
 			{
 				text: "Troubleshooting",
-				filePath: "/assets/docs-content/ios/troubleshooting.json",
+				filePath: "/assets/guide-content/ios/troubleshooting.json",
 				url: "/docs/ios/troubleshooting"
 			}
 		]
@@ -9135,32 +9135,32 @@ var docsStructure = [
 		children: [
 			{
 				text: "Getting Started",
-				filePath: "/assets/docs-content/android/index.json",
+				filePath: "/assets/guide-content/android/index.json",
 				url: "/docs/android"
 			},
 			{
 				text: "Configuration",
-				filePath: "/assets/docs-content/android/configuration.json",
+				filePath: "/assets/guide-content/android/configuration.json",
 				url: "/docs/android/configuration"
 			},
 			{
 				text: "Updating",
-				filePath: "/assets/docs-content/android/updating.json",
+				filePath: "/assets/guide-content/android/updating.json",
 				url: "/docs/android/updating"
 			},
 			{
 				text: "Custom Native Code",
-				filePath: "/assets/docs-content/android/custom-code.json",
+				filePath: "/assets/guide-content/android/custom-code.json",
 				url: "/docs/android/custom-code"
 			},
 			{
 				text: "Deploying to Google Play",
-				filePath: "/assets/docs-content/android/deploying-to-google-play.json",
+				filePath: "/assets/guide-content/android/deploying-to-google-play.json",
 				url: "/docs/android/deploying-to-google-play"
 			},
 			{
 				text: "Troubleshooting",
-				filePath: "/assets/docs-content/android/troubleshooting.json",
+				filePath: "/assets/guide-content/android/troubleshooting.json",
 				url: "/docs/android/troubleshooting"
 			}
 		]
@@ -9170,32 +9170,32 @@ var docsStructure = [
 		children: [
 			{
 				text: "Getting Started",
-				filePath: "/assets/docs-content/web/index.json",
+				filePath: "/assets/guide-content/web/index.json",
 				url: "/docs/web"
 			},
 			{
 				text: "PWA Elements",
-				filePath: "/assets/docs-content/web/pwa-elements.json",
+				filePath: "/assets/guide-content/web/pwa-elements.json",
 				url: "/docs/pwa-elements"
 			}
 		]
 	}
 ];
 
-var pluginsStructure = [
+var referenceStructure = [
 	{
 		text: "Introduction",
-		filePath: "/assets/plugins-content/index.json",
+		filePath: "/assets/reference-content/index.json",
 		url: "/docs/plugins"
 	},
 	{
 		text: "Community Plugins",
-		filePath: "/assets/plugins-content/community/plugins.json",
+		filePath: "/assets/reference-content/community/plugins.json",
 		url: "/docs/plugins/community"
 	},
 	{
 		text: "Enterprise Plugins",
-		filePath: "/assets/plugins-content/enterprise/index.json",
+		filePath: "/assets/reference-content/enterprise/index.json",
 		url: "/docs/plugins/enterprise"
 	},
 	{
@@ -9203,27 +9203,27 @@ var pluginsStructure = [
 		children: [
 			{
 				text: "Development Workflow",
-				filePath: "/assets/plugins-content/plugins/workflow.json",
+				filePath: "/assets/reference-content/plugins/workflow.json",
 				url: "/docs/plugins/workflow"
 			},
 			{
 				text: "iOS Guide",
-				filePath: "/assets/plugins-content/plugins/ios.json",
+				filePath: "/assets/reference-content/plugins/ios.json",
 				url: "/docs/plugins/ios"
 			},
 			{
 				text: "Android Guide",
-				filePath: "/assets/plugins-content/plugins/android.json",
+				filePath: "/assets/reference-content/plugins/android.json",
 				url: "/docs/plugins/android"
 			},
 			{
 				text: "Web/PWA Guide",
-				filePath: "/assets/plugins-content/plugins/web.json",
+				filePath: "/assets/reference-content/plugins/web.json",
 				url: "/docs/plugins/web"
 			},
 			{
 				text: "JavaScript Guide",
-				filePath: "/assets/plugins-content/plugins/js.json",
+				filePath: "/assets/reference-content/plugins/js.json",
 				url: "/docs/plugins/js"
 			}
 		]
@@ -9233,122 +9233,122 @@ var pluginsStructure = [
 		children: [
 			{
 				text: "Introduction",
-				filePath: "/assets/plugins-content/apis/index.json",
+				filePath: "/assets/reference-content/apis/index.json",
 				url: "/docs/apis"
 			},
 			{
 				text: "Accessibility",
-				filePath: "/assets/plugins-content/apis/accessibility/index.json",
+				filePath: "/assets/reference-content/apis/accessibility/index.json",
 				url: "/docs/apis/accessibility"
 			},
 			{
 				text: "App",
-				filePath: "/assets/plugins-content/apis/app/index.json",
+				filePath: "/assets/reference-content/apis/app/index.json",
 				url: "/docs/apis/app"
 			},
 			{
 				text: "Background Task",
-				filePath: "/assets/plugins-content/apis/background-task/index.json",
+				filePath: "/assets/reference-content/apis/background-task/index.json",
 				url: "/docs/apis/background-task"
 			},
 			{
 				text: "Browser",
-				filePath: "/assets/plugins-content/apis/browser/index.json",
+				filePath: "/assets/reference-content/apis/browser/index.json",
 				url: "/docs/apis/browser"
 			},
 			{
 				text: "Camera",
-				filePath: "/assets/plugins-content/apis/camera/index.json",
+				filePath: "/assets/reference-content/apis/camera/index.json",
 				url: "/docs/apis/camera"
 			},
 			{
 				text: "Clipboard",
-				filePath: "/assets/plugins-content/apis/clipboard/index.json",
+				filePath: "/assets/reference-content/apis/clipboard/index.json",
 				url: "/docs/apis/clipboard"
 			},
 			{
 				text: "Console",
-				filePath: "/assets/plugins-content/apis/console/index.json",
+				filePath: "/assets/reference-content/apis/console/index.json",
 				url: "/docs/apis/console"
 			},
 			{
 				text: "Device",
-				filePath: "/assets/plugins-content/apis/device/index.json",
+				filePath: "/assets/reference-content/apis/device/index.json",
 				url: "/docs/apis/device"
 			},
 			{
 				text: "Filesystem",
-				filePath: "/assets/plugins-content/apis/filesystem/index.json",
+				filePath: "/assets/reference-content/apis/filesystem/index.json",
 				url: "/docs/apis/filesystem"
 			},
 			{
 				text: "Geolocation",
-				filePath: "/assets/plugins-content/apis/geolocation/index.json",
+				filePath: "/assets/reference-content/apis/geolocation/index.json",
 				url: "/docs/apis/geolocation"
 			},
 			{
 				text: "Haptics",
-				filePath: "/assets/plugins-content/apis/haptics/index.json",
+				filePath: "/assets/reference-content/apis/haptics/index.json",
 				url: "/docs/apis/haptics"
 			},
 			{
 				text: "Keyboard",
-				filePath: "/assets/plugins-content/apis/keyboard/index.json",
+				filePath: "/assets/reference-content/apis/keyboard/index.json",
 				url: "/docs/apis/keyboard"
 			},
 			{
 				text: "Local Notifications",
-				filePath: "/assets/plugins-content/apis/local-notifications/index.json",
+				filePath: "/assets/reference-content/apis/local-notifications/index.json",
 				url: "/docs/apis/local-notifications"
 			},
 			{
 				text: "Modals",
-				filePath: "/assets/plugins-content/apis/modals/index.json",
+				filePath: "/assets/reference-content/apis/modals/index.json",
 				url: "/docs/apis/modals"
 			},
 			{
 				text: "Motion",
-				filePath: "/assets/plugins-content/apis/motion/index.json",
+				filePath: "/assets/reference-content/apis/motion/index.json",
 				url: "/docs/apis/motion"
 			},
 			{
 				text: "Network",
-				filePath: "/assets/plugins-content/apis/network/index.json",
+				filePath: "/assets/reference-content/apis/network/index.json",
 				url: "/docs/apis/network"
 			},
 			{
 				text: "Permissions",
-				filePath: "/assets/plugins-content/apis/permissions/index.json",
+				filePath: "/assets/reference-content/apis/permissions/index.json",
 				url: "/docs/apis/permissions"
 			},
 			{
 				text: "Push Notifications",
-				filePath: "/assets/plugins-content/apis/push-notifications/index.json",
+				filePath: "/assets/reference-content/apis/push-notifications/index.json",
 				url: "/docs/apis/push-notifications"
 			},
 			{
 				text: "Share",
-				filePath: "/assets/plugins-content/apis/share/index.json",
+				filePath: "/assets/reference-content/apis/share/index.json",
 				url: "/docs/apis/share"
 			},
 			{
 				text: "Splash Screen",
-				filePath: "/assets/plugins-content/apis/splash-screen/index.json",
+				filePath: "/assets/reference-content/apis/splash-screen/index.json",
 				url: "/docs/apis/splash-screen"
 			},
 			{
 				text: "Status Bar",
-				filePath: "/assets/plugins-content/apis/status-bar/index.json",
+				filePath: "/assets/reference-content/apis/status-bar/index.json",
 				url: "/docs/apis/status-bar"
 			},
 			{
 				text: "Storage",
-				filePath: "/assets/plugins-content/apis/storage/index.json",
+				filePath: "/assets/reference-content/apis/storage/index.json",
 				url: "/docs/apis/storage"
 			},
 			{
 				text: "Toast",
-				filePath: "/assets/plugins-content/apis/toast/index.json",
+				filePath: "/assets/reference-content/apis/toast/index.json",
 				url: "/docs/apis/toast"
 			}
 		]
@@ -9430,7 +9430,7 @@ class DocumentComponent {
         state.showTopBar = false;
         this.template = getTemplateFromPath(this.page);
         console.log('section is', this.template);
-        this.menuStructure = this.template === 'plugins' ? pluginsStructure : docsStructure;
+        this.menuStructure = this.template === 'plugins' ? referenceStructure : guideStructure;
         console.log('menu structure', this.menuStructure);
         const foundData = findItem(this.menuStructure, page);
         this.item = foundData.item;
@@ -10895,7 +10895,7 @@ class PluginApi {
             return;
         }
         const url = `api${this.index ? '-index' : ''}.html`;
-        return fetch(`/assets/plugins-content/apis/${this.name}/${url}`)
+        return fetch(`/assets/reference-content/apis/${this.name}/${url}`)
             .then(response => {
             return response.text();
         })
@@ -11128,7 +11128,7 @@ class SiteMenu {
                 h("a", { rel: "noopener", class: "link--external", target: "_blank", href: item.filePath }, item.text)));
         }))), template === 'plugins'
             ? h("a", Object.assign({ class: "menu-footer" }, href("/docs")), "Guide", h("span", { class: "arrow" }, "->"))
-            : h("a", Object.assign({ class: "menu-footer" }, href("/docs/plugins")), "Plugins", h("span", { class: "arrow" }, "->")))));
+            : h("a", Object.assign({ class: "menu-footer" }, href("/docs/plugins")), "Reference", h("span", { class: "arrow" }, "->")))));
     }
     static get watchers() { return {
         "selectedParent": ["selectedParentChange"]

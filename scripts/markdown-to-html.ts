@@ -16,9 +16,9 @@ const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const globAsync = promisify(glob);
 
-const SOURCE_DIRS = ['./markdown/docs', './markdown/plugins'];
-const ASSET_DIRS = ['./src/assets/docs-content', './src/assets/plugins-content'];
-const STRUCTURE_FILES = ['./src/assets/docs-structure.json', './src/assets/plugins-structure.json'];
+const SOURCE_DIRS = ['./docs/guide', './docs/reference'];
+const ASSET_DIRS = ['./src/assets/guide-content', './src/assets/reference-content'];
+const STRUCTURE_FILES = ['./src/assets/guide-structure.json', './src/assets/reference-structure.json'];
 
 (async function() {
   for (var i = 0; i < SOURCE_DIRS.length; i++) {
