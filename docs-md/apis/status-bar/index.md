@@ -21,7 +21,7 @@ This plugin requires "View controller-based status bar appearance" (`UIViewContr
 
 The status bar visibility defaults to visible and the style defaults to `StatusBarStyle.Light`. You can change these defaults by adding `UIStatusBarHidden` and or `UIStatusBarStyle` in the `Info.plist`.
 
-`setbackgroundColor` and `setOverlaysWebView` are currently not supported on iOS devices.
+`setBackgroundColor` and `setOverlaysWebView` are currently not supported on iOS devices.
 
 ## Events
 
