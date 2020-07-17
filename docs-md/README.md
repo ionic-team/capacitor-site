@@ -28,6 +28,7 @@
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying.md)
   * [Splash Screens and Icons](guides/splash-screens-and-icons.md)
+  * [Screen Orientation](guides/screen-orientation.md)
   * [Community Guides](guides/community.md)
 * iOS
   * [Getting Started](ios/index.md)
