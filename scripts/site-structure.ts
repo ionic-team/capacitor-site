@@ -4,16 +4,16 @@ import fs from 'fs';
 import path, { dirname, basename } from 'path';
 import frontMatter from 'front-matter';
 import { generateSiteStructure } from './markdown-renderer';
-import { DOCS_FILES } from './common';
+import { SITE_FILES } from './common';
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
 (async function() {
-  for (var i = 0; i < DOCS_FILES.length; i++) {
-    const SOURCE_FILE = DOCS_FILES[i].readme;
-    const DESTINATION_FILE = DOCS_FILES[i].structure;
-    const ASSET_DIR = DOCS_FILES[i].assets;
+  for (const SITE_FILE of SITE_FILES) {
+    const SOURCE_FILE = `${SITE_FILE.source}/README.md`;
+    const DESTINATION_FILE = SITE_FILE.structure;
+    const ASSET_DIR = SITE_FILE.assets;
 
     const markdownContents = await readFile(SOURCE_FILE, { encoding: 'utf8' });
 

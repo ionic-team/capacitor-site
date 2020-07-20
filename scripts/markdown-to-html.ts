@@ -9,7 +9,7 @@ import { collectHeadingMetadata, changeCodeCreation, localizeMarkdownLink } from
 import frontMatter from 'front-matter';
 import fetch from 'node-fetch';
 import { SiteStructureItem, MarkdownContent } from '../src/global/definitions';
-import { DOCS_FILES } from './common';
+import { SITE_FILES } from './common';
 
 require('dotenv').config();
 
@@ -18,10 +18,10 @@ const writeFile = promisify(fs.writeFile);
 const globAsync = promisify(glob);
 
 (async function() {
-  for (var i = 0; i < DOCS_FILES.length; i++) {
-    const SOURCE_DIR = DOCS_FILES[i].source;
-    const STRUCTURE_FILE = DOCS_FILES[i].structure;
-    const ASSET_DIR = DOCS_FILES[i].assets;
+  for (const SITE_FILE of SITE_FILES) {
+    const SOURCE_DIR = SITE_FILE.source;
+    const STRUCTURE_FILE = SITE_FILE.structure;
+    const ASSET_DIR = `src/${SITE_FILE.assets}`;
 
     const siteStructure = await readFile(STRUCTURE_FILE, { encoding: 'utf8' });
     const siteStructureJson: SiteStructureItem[] = JSON.parse(siteStructure);
