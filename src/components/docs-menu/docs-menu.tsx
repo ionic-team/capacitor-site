@@ -27,7 +27,7 @@ export class SiteMenu implements ComponentInterface{
     this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
 
     // TODO pull this in from GitHub at build
-    this.version = '2.2.0';
+    this.version = '2.3.0';
   }
 
   @Method()
