@@ -30,6 +30,7 @@
   * [Live Reload](guides/live-reload.md)
   * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
   * [Screen Orientation](guides/screen-orientation.md)
+  * [Security](guides/security.md)
   * [Splash Screens and Icons](guides/splash-screens-and-icons.md)
   * [Storage](guides/storage.md)
   * [Community Guides](guides/community.md)
