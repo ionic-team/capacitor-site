@@ -8,7 +8,7 @@ import Router from '../../router';
   scoped: true
 })
 export class DocsHeader implements ComponentInterface {
-  @Prop() template: 'docs' | 'plugins' = 'docs';
+  @Prop() template: 'guide' | 'reference' = 'guide';
 
   @State() expanded = false;
 
@@ -36,8 +36,8 @@ export class DocsHeader implements ComponentInterface {
 
           <div class="docs-header-links">
             <div class="docs-header-links__internal">
-              <a {...href('/docs')} class={{ 'active': template === 'docs' }}>Guide</a>
-              <a {...href('/docs/plugins')} class={{ 'active': template === 'plugins' }}>Reference</a>
+              <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guide</a>
+              <a {...href('/docs/plugins')} class={{ 'active': template === 'reference' }}>Reference</a>
             </div>
 
             <div class="docs-header-links__divider"/>

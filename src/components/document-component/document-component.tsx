@@ -15,7 +15,7 @@ import state from '../../store';
 })
 export class DocumentComponent implements ComponentInterface {
   menuStructure: SiteStructureItem[];
-  template: 'docs' | 'plugins';
+  template: 'guide' | 'reference';
 
   menuEl!: HTMLDocsMenuElement;
 
@@ -46,7 +46,7 @@ export class DocumentComponent implements ComponentInterface {
     state.showTopBar = false;
 
     this.template = getTemplateFromPath(this.page);
-    this.menuStructure = this.template === 'plugins' ? referenceStructure : guideStructure;
+    this.menuStructure = this.template === 'reference' ? referenceStructure : guideStructure;
 
     const foundData = findItem(this.menuStructure, page);
     this.item = foundData.item;

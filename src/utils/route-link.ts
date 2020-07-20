@@ -20,7 +20,7 @@ export const handleRoutableLinkClick = (e: MouseEvent) => {
   }
 }
 
-export const getTemplateFromPath = (path: string): 'docs' | 'plugins' => {
+export const getTemplateFromPath = (path: string): 'guide' | 'reference' => {
   const re = /^\/docs\/([^\/]+).*/;
   const m = re.exec(path);
 
@@ -28,9 +28,9 @@ export const getTemplateFromPath = (path: string): 'docs' | 'plugins' => {
     const p = m[1];
 
     if (['plugins', 'apis'].includes(p)) {
-      return 'plugins';
+      return 'reference';
     }
   }
 
-  return 'docs';
+  return 'guide';
 }

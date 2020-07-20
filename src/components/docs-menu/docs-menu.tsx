@@ -13,7 +13,7 @@ import state from '../../store';
 export class SiteMenu implements ComponentInterface{
   version: string;
 
-  @Prop() template: 'docs' | 'plugins' = 'docs';
+  @Prop() template: 'guide' | 'reference' = 'guide';
 
   @Prop() siteStructureList: SiteStructureItem[] = [];
   @Prop({ mutable: true }) selectedParent: SiteStructureItem = null;
@@ -76,7 +76,7 @@ export class SiteMenu implements ComponentInterface{
               <a {...href('/docs')} class="menu-header__docs-link">
                 docs
               </a>
-              { template === 'docs' && version ?
+              { template === 'guide' && version ?
                   <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
                     v{version}
                   </a>
@@ -135,7 +135,7 @@ export class SiteMenu implements ComponentInterface{
               }) }
             </ul>
           </div>
-          { template === 'plugins'
+          { template === 'reference'
             ? <a class="menu-footer" {...href("/docs")}>
                 Guide
                 <span class="arrow">-&gt;</span>
