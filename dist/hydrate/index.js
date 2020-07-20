@@ -8750,16 +8750,18 @@ class DocsHeader {
     }; }
 }
 
-const docsSearchCss = ".sc-docs-search:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-search-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex:1;flex:1;margin:0 22px}input.sc-docs-search{font-family:\"Inter\";font-size:15px;line-height:18px;letter-spacing:-0.01em;padding:15px 40px;width:100%;border:none}input.sc-docs-search:focus{outline-color:var(--color-capacitor-blue)}ion-icon.sc-docs-search{position:absolute;left:31px;font-size:17px;top:23px}";
+const docsSearchCss = ".sc-docs-search:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-search-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex:1;flex:1;margin:0 22px}input.sc-docs-search{font-family:\"Inter\";font-size:15px;line-height:18px;letter-spacing:-0.01em;padding:15px 40px;width:100%;max-width:600px;border:none}input.sc-docs-search::-webkit-input-placeholder{color:#92a0b3}input.sc-docs-search::-moz-placeholder{color:#92a0b3}input.sc-docs-search:-ms-input-placeholder{color:#92a0b3}input.sc-docs-search::-ms-input-placeholder{color:#92a0b3}input.sc-docs-search::placeholder{color:#92a0b3}input.sc-docs-search:focus{outline:none}ion-icon.sc-docs-search{position:absolute;left:31px;font-size:17px;top:23px;color:#b2becd}";
 
 class DocsSearch {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.placeholder = 'Search';
     }
+    componentDidLoad() {
+    }
     render() {
         const { placeholder } = this;
-        return (h(Host, null, h("ion-icon", { name: "search" }), h("input", { placeholder: placeholder })));
+        return (h(Host, null, h("ion-icon", { name: "search" }), h("input", { name: "search", type: "search", autocomplete: "off", placeholder: placeholder })));
     }
     static get style() { return docsSearchCss; }
     static get cmpMeta() { return {
