@@ -1,4 +1,4 @@
-@use '~prismjs/themes/prism-dark';
+@use '~prismjs/themes/prism';
 @use '../../global/variables';
 
 blog-page, blog-post {
@@ -64,6 +64,10 @@ blog-page, blog-post {
         border-bottom: none;
       }
     }
+  }
+
+  img {
+    max-width: 100%;
   }
 
   p {

@@ -13,6 +13,7 @@
   * [Using Plugins](basics/using-plugins.md)
   * [Native Project Configuration](basics/configuring-your-app.md)
   * [Progressive Web Apps](basics/progressive-web-app.md)
+  * [Utilities](basics/utilities.md)
   * [CLI Reference](basics/cli-commands.md)
 * Cordova/PhoneGap
   * [Introduction](cordova/index.md)
@@ -21,12 +22,14 @@
   * [Cordova/Ionic Native Plugins](cordova/using-cordova-plugins.md)
   * [Known Incompatible Plugins](cordova/known-incompatible-plugins.md)
 * Guides
-  * [Live Reload](guides/live-reload.md)
-  * [Ionic Photo Gallery App](guides/ionic-framework-app.md)
-  * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying.md)
+  * [In App Purchases](guides/in-app-purchases.md)
+  * [Ionic Photo Gallery App](guides/ionic-framework-app.md)
+  * [Live Reload](guides/live-reload.md)
+  * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
   * [Splash Screens and Icons](guides/splash-screens-and-icons.md)
+  * [Screen Orientation](guides/screen-orientation.md)
   * [Community Guides](guides/community.md)
 * iOS
   * [Getting Started](ios/index.md)

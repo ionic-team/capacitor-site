@@ -1,27 +1,25 @@
 @use '../../global/variables';
 
+
 :host {
   position: sticky;
   z-index: 1000;
   top: -1px;
-  background: transparent;
+  background: #fff;
   display: block;
-  padding: 14px 0 13px;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
   transition: background-color 0.4s ease, box-shadow 0.4s ease;
 
   --link-color: var(--c-carbon-90);
 
-
-  @media (max-width: 550px) {
-    .ui-container {
-      flex-direction: column;
-    }
-  }
-
   &.site-header--sticky {
     background: #fff;
   }
+}
+
+.ui-container {
+  background: #fff;
+  padding: 14px 0 13px;
 }
 
 .page-theme--dark {
@@ -41,7 +39,7 @@
   }
 
   &__logo-link {
-    margin: 0 0 2px;
+    margin: 0 0 2px 15px;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -52,113 +50,202 @@
     }
   }
 
-  &__menu {
-    flex: 1;
+  .site-header-links {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 1;
+    margin-right: 15px;
 
-    &--hovered {
-      a {
-        opacity: 0.4;
-      }
-      a.link--active {
-        opacity: 0.4;
-      }
-    }
-
-    nav {
+    &__menu {
       flex: 1;
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
-      max-width: 550px;
-      margin-left: 15px;
-    }
+      justify-content: center;
 
-    a {
-      border-bottom: 0;
-      transition: color, opacity .4s;
-      font-size: 15px;
-      line-height: 18px;
-      font-family: var(--f-family-text);
-      // color: var(--c-carbon-90);
-      color: #222d3a;
-      // opacity: 0.4;
-      text-decoration: none;
-      font-weight: normal;
-      letter-spacing: 0;
-      margin: 0 2px 0 0;
+      &--hovered {
+        a {
+          opacity: 0.4;
+        }
+        a.link--active {
+          opacity: 0.4;
+        }
+      }
 
-      &:hover {
-        opacity: 1;
+      nav {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        max-width: 550px;
+        margin-left: 15px;
+      }
+
+      a {
+        border-bottom: 0;
+        transition: color, opacity .4s;
+        font-size: 15px;
+        line-height: 18px;
+        font-family: var(--f-family-text);
+        color: #222d3a;
+        text-decoration: none;
+        font-weight: normal;
+        letter-spacing: 0;
+        margin: 0 2px 0 0;
+
+        &:hover {
+          opacity: 1;
+          border: 0;
+        }
+      }
+
+      a.link--active {
+        opacity: 1
+      }
+
+      .link,
+      .link--external  {
+        position: relative;
         border: 0;
+        transition: color .3s;
+      }
+
+      .link--external .icon {
+        margin-left: 6px;
+        transition: top 0.2s, left 0.2s;
+        position: relative;
+      }
+
+      .link--external:hover {
+        color: #000;
+
+        .icon {
+          left: 1px;
+          top: -1px;
+        }
       }
     }
 
-    a.link--active {
-      opacity: 1
-    }
+    &__buttons {
+      min-width: 130px;
+      margin-top: 2px;
 
-    .link,
-    .link--external  {
-      position: relative;
-      border: 0;
-      transition: color .3s;
-    }
+      .ui-button {
+        font-size: 15px;
+        letter-spacing: var(--f-tracking-tight);
+        line-height: 18px;
+        padding: 8px 10px;
+        margin-left: 13px;
+        margin-right: -2px;
+        margin-top: -1px;
+      }
 
-    .link--external .icon {
-      margin-left: 6px;
-      transition: top 0.2s, left 0.2s;
-      position: relative;
-    }
+      &__github {
+        background: #fff;
+        border: 1px solid #ebeff4;
+        color: var(--c-indigo-80);
+        line-height: 0;
 
-    .link--external:hover {
-      color: #000;
-
-      .icon {
-        left: 1px;
-        top: -1px;
+        ion-icon {
+          vertical-align: middle;
+          margin-right: 5px;
+          margin-top: -2px;
+          margin-left: -2px;
+          font-size: 16px;
+          color: #73849a;
+        }
+      }
+      &__install {
+        background: var(--color-capacitor-blue);
+        svg {
+          margin-right: 6px;
+          margin-bottom: -2px;
+        }
       }
     }
   }
+}
 
-  &__buttons {
-    min-width: 130px;
-    margin-top: 2px;
+more-button {
+  display: none;
 
-    .ui-button {
-      font-size: 15px;
-      letter-spacing: var(--f-tracking-tight);
-      line-height: 18px;
-      padding: 8px 10px;
-      margin-left: 13px;
-      margin-right: -2px;
-      margin-top: -1px;
+  margin-right: 10px;
+}
+
+site-backdrop {
+  top: 108px;
+}
+
+/* Small width / mobile screens */
+@media screen and (max-width: 768px) {
+  .site-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    more-button {
+      display: block;
     }
 
-    &__github {
+    .site-header-links {
+      position: absolute;
+      top: 100%;
+
+      display: block;
+
       background: #fff;
-      border: 1px solid #ebeff4;
-      color: var(--c-indigo-80);
-      line-height: 0;
 
-      ion-icon {
-        vertical-align: middle;
-        margin-right: 5px;
-        margin-top: -2px;
-        margin-left: -2px;
-        font-size: 16px;
-        color: #73849a;
+      width: 100%;
+      height: auto;
+
+      padding: 10px 0;
+
+      opacity: 0;
+      transform: translateY(-10px);
+      transition:
+        transform .2s cubic-bezier(.36,.66,.04,1),
+        opacity .2s linear;
+
+      box-shadow: rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px;
+
+      &__buttons {
+        display: none;
       }
-    }
-    &__install {
-      background: var(--color-capacitor-blue);
-      svg {
-        margin-right: 6px;
-        margin-bottom: -2px;
+
+      nav {
+        max-width: 100%;
+        flex-direction: column;
+        margin-left: 0;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 44px;
+
+        margin: 0;
+        padding: 0 20px;
+
+        border: none;
+        outline: none;
+
+        color: #000;
+
+        &:hover {
+          background: rgba(0,0,0, 0.03);
+          color: initial;
+        }
       }
     }
   }
 
+  :host(.site-header--expanded) {
+    .site-header-links {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(-1px);
+      transition:
+        transform .25s cubic-bezier(.17,.67,.52,1),
+        opacity .1s linear;
+    }
+  }
 }
