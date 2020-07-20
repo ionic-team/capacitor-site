@@ -23,8 +23,7 @@ export class SiteMenu implements ComponentInterface{
   @State() showOverlay = false;
 
   async componentWillLoad() {
-    const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
-    this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
+    this.siteStructureListChange();
 
     // TODO pull this in from GitHub at build
     this.version = '2.3.0';
@@ -33,6 +32,12 @@ export class SiteMenu implements ComponentInterface{
   @Method()
   async toggleOverlayMenu() {
     this.showOverlay = !this.showOverlay;
+  }
+
+  @Watch('siteStructureList')
+  siteStructureListChange() {
+    const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
+    this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
   }
 
   @Watch('selectedParent')

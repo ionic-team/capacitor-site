@@ -1,11 +1,9 @@
 import { Component, Listen, Prop, Watch, ComponentInterface, State, h } from '@stencil/core';
 import Helmet from '@stencil/helmet';
 
-import guideStructure from '../../assets/guide-structure.json';
-import referenceStructure from '../../assets/reference-structure.json';
 import { findItem } from '../../global/site-structure-utils';
 import { SiteStructureItem } from '../../global/definitions';
-import { handleRoutableLinkClick, getTemplateFromPath } from '../../utils/route-link';
+import { handleRoutableLinkClick, getTemplateFromPath, getSiteStructureList } from '../../utils/route-link';
 
 import state from '../../store';
 
@@ -14,7 +12,6 @@ import state from '../../store';
   styleUrl: 'document-component.scss'
 })
 export class DocumentComponent implements ComponentInterface {
-  menuStructure: SiteStructureItem[];
   template: 'guide' | 'reference';
 
   menuEl!: HTMLDocsMenuElement;
@@ -27,6 +24,7 @@ export class DocumentComponent implements ComponentInterface {
   @State() nextItem: SiteStructureItem;
   @State() prevItem: SiteStructureItem;
   @State() parent: SiteStructureItem;
+  @State() menuStructure: SiteStructureItem[];
 
   @Listen('menuToggleClick')
   toggleMenu() {
@@ -46,7 +44,7 @@ export class DocumentComponent implements ComponentInterface {
     state.showTopBar = false;
 
     this.template = getTemplateFromPath(this.page);
-    this.menuStructure = this.template === 'reference' ? referenceStructure : guideStructure;
+    this.menuStructure = getSiteStructureList(this.page);
 
     const foundData = findItem(this.menuStructure, page);
     this.item = foundData.item;
