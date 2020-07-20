@@ -1,7 +1,7 @@
 ---
 title: Capacitor Community Plugins
 description: Capacitor Community Plugins
-url: /docs/plugins/community
+url: /docs/community
 ---
 
 # Capacitor Community Plugins

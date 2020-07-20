@@ -14,7 +14,6 @@
   * [Native Project Configuration](basics/configuring-your-app.md)
   * [Progressive Web Apps](basics/progressive-web-app.md)
   * [Utilities](basics/utilities.md)
-  * [CLI Reference](basics/cli-commands.md)
 * Cordova/PhoneGap
   * [Introduction](cordova/index.md)
   * [Migration Strategy](cordova/migration-strategy.md)
@@ -48,3 +47,12 @@
 * Web/PWA
   * [Getting Started](web/index.md)
   * [PWA Elements](web/pwa-elements.md)
+* [Community Plugins](community/index.md)
+* [Enterprise Plugins](enterprise/index.md)
+* Creating Plugins
+  * [Introduction](plugins/index.md)
+  * [Development Workflow](plugins/workflow.md)
+  * [iOS Guide](plugins/ios.md)
+  * [Android Guide](plugins/android.md)
+  * [Web/PWA Guide](plugins/web.md)
+  * [JavaScript Guide](plugins/js.md)

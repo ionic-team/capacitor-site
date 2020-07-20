@@ -54,7 +54,7 @@ export class SiteMenu implements ComponentInterface{
   }
 
   render() {
-    const { template, version } = this;
+    const { version } = this;
 
     return (
       <Host
@@ -76,7 +76,7 @@ export class SiteMenu implements ComponentInterface{
               <a {...href('/docs')} class="menu-header__docs-link">
                 docs
               </a>
-              { template === 'guide' && version ?
+              { version ?
                   <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
                     v{version}
                   </a>
@@ -135,16 +135,6 @@ export class SiteMenu implements ComponentInterface{
               }) }
             </ul>
           </div>
-          { template === 'reference'
-            ? <a class="menu-footer" {...href("/docs")}>
-                Guide
-                <span class="arrow">-&gt;</span>
-              </a>
-            : <a class="menu-footer" {...href("/docs/plugins")}>
-                Reference
-                <span class="arrow">-&gt;</span>
-              </a>
-          }
         </div>
       </Host>
     );

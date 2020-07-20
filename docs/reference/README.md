@@ -1,14 +1,6 @@
 # Table of Contents
 
-* [Introduction](index.md)
-* [Community Plugins](community/plugins.md)
-* [Enterprise Plugins](enterprise/index.md)
-* Creating Plugins
-  * [Development Workflow](plugins/workflow.md)
-  * [iOS Guide](plugins/ios.md)
-  * [Android Guide](plugins/android.md)
-  * [Web/PWA Guide](plugins/web.md)
-  * [JavaScript Guide](plugins/js.md)
+* [CLI Reference](cli/index.md)
 * Plugin APIs
   * [Introduction](apis/index.md)
   * [Accessibility](apis/accessibility/index.md)
@@ -34,5 +26,3 @@
   * [Status Bar](apis/status-bar/index.md)
   * [Storage](apis/storage/index.md)
   * [Toast](apis/toast/index.md)
-
-

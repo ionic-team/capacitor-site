@@ -27,7 +27,7 @@ export const getTemplateFromPath = (path: string): 'guide' | 'reference' => {
   if (m) {
     const p = m[1];
 
-    if (['plugins', 'apis'].includes(p)) {
+    if (['apis', 'reference'].includes(p)) {
       return 'reference';
     }
   }

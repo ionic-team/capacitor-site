@@ -8749,7 +8749,7 @@ const docsHeaderCss = ".sc-docs-header:root{--color-capacitor-blue:#119eff;--but
 class DocsHeader {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.template = 'docs';
+        this.template = 'guide';
         this.expanded = false;
         this.toggleExpanded = () => this.expanded = !this.expanded;
     }
@@ -8762,7 +8762,7 @@ class DocsHeader {
         const { expanded, template } = this;
         return (h(Host, { class: {
                 'docs-header--expanded': expanded
-            } }, h("site-backdrop", { visible: expanded, onClick: () => this.toggleExpanded() }), h("header", null, h("docs-search", { class: "docs-search--mobile" }), h("more-button", { onClick: () => this.toggleExpanded() }), h("div", { class: "docs-header-links" }, h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': template === 'docs' } }), "Guide"), h("a", Object.assign({}, href('/docs/plugins'), { class: { 'active': template === 'plugins' } }), "Reference")), h("div", { class: "docs-header-links__divider" }), h("docs-search", { class: "docs-search--default" }), h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header-links__divider" }), h("div", { class: "docs-header-links__external" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" }), h("span", null, "Twitter", h("ion-icon", { name: "open-outline" }))), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" }), h("span", null, "GitHub", h("ion-icon", { name: "open-outline" }))))))));
+            } }, h("site-backdrop", { visible: expanded, onClick: () => this.toggleExpanded() }), h("header", null, h("docs-search", { class: "docs-search--mobile" }), h("more-button", { onClick: () => this.toggleExpanded() }), h("div", { class: "docs-header-links" }, h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': template === 'guide' } }), "Guide"), h("a", Object.assign({}, href('/docs/reference'), { class: { 'active': template === 'reference' } }), "Reference")), h("div", { class: "docs-header-links__divider" }), h("docs-search", { class: "docs-search--default" }), h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header-links__divider" }), h("div", { class: "docs-header-links__external" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" }), h("span", null, "Twitter", h("ion-icon", { name: "open-outline" }))), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" }), h("span", null, "GitHub", h("ion-icon", { name: "open-outline" }))))))));
     }
     static get style() { return docsHeaderCss; }
     static get cmpMeta() { return {
@@ -8866,11 +8866,6 @@ var guideStructure = [
 				text: "Utilities",
 				filePath: "/assets/guide-content/basics/utilities.json",
 				url: "/docs/basics/utilities"
-			},
-			{
-				text: "CLI Reference",
-				filePath: "/assets/guide-content/basics/cli-commands.json",
-				url: "/docs/basics/cli-commands"
 			}
 		]
 	},
@@ -9038,6 +9033,46 @@ var guideStructure = [
 				url: "/docs/pwa-elements"
 			}
 		]
+	},
+	{
+		text: "Plugins",
+		children: [
+			{
+				text: "Community Plugins",
+				filePath: "/assets/guide-content/community/plugins.json",
+				url: "/docs/plugins/community"
+			},
+			{
+				text: "Enterprise Plugins",
+				filePath: "/assets/guide-content/enterprise/index.json",
+				url: "/docs/plugins/enterprise"
+			},
+			{
+				text: "Development Workflow",
+				filePath: "/assets/guide-content/plugins/workflow.json",
+				url: "/docs/plugins/workflow"
+			},
+			{
+				text: "iOS Guide",
+				filePath: "/assets/guide-content/plugins/ios.json",
+				url: "/docs/plugins/ios"
+			},
+			{
+				text: "Android Guide",
+				filePath: "/assets/guide-content/plugins/android.json",
+				url: "/docs/plugins/android"
+			},
+			{
+				text: "Web/PWA Guide",
+				filePath: "/assets/guide-content/plugins/web.json",
+				url: "/docs/plugins/web"
+			},
+			{
+				text: "JavaScript Guide",
+				filePath: "/assets/guide-content/plugins/js.json",
+				url: "/docs/plugins/js"
+			}
+		]
 	}
 ];
 
@@ -9045,47 +9080,12 @@ var referenceStructure = [
 	{
 		text: "Introduction",
 		filePath: "/assets/reference-content/index.json",
-		url: "/docs/plugins"
+		url: "/docs/reference"
 	},
 	{
-		text: "Community Plugins",
-		filePath: "/assets/reference-content/community/plugins.json",
-		url: "/docs/plugins/community"
-	},
-	{
-		text: "Enterprise Plugins",
-		filePath: "/assets/reference-content/enterprise/index.json",
-		url: "/docs/plugins/enterprise"
-	},
-	{
-		text: "Creating Plugins",
-		children: [
-			{
-				text: "Development Workflow",
-				filePath: "/assets/reference-content/plugins/workflow.json",
-				url: "/docs/plugins/workflow"
-			},
-			{
-				text: "iOS Guide",
-				filePath: "/assets/reference-content/plugins/ios.json",
-				url: "/docs/plugins/ios"
-			},
-			{
-				text: "Android Guide",
-				filePath: "/assets/reference-content/plugins/android.json",
-				url: "/docs/plugins/android"
-			},
-			{
-				text: "Web/PWA Guide",
-				filePath: "/assets/reference-content/plugins/web.json",
-				url: "/docs/plugins/web"
-			},
-			{
-				text: "JavaScript Guide",
-				filePath: "/assets/reference-content/plugins/js.json",
-				url: "/docs/plugins/js"
-			}
-		]
+		text: "CLI Reference",
+		filePath: "/assets/reference-content/reference/cli/index.json",
+		url: null
 	},
 	{
 		text: "Plugin APIs",
@@ -9260,11 +9260,11 @@ const getTemplateFromPath = (path) => {
     const m = re.exec(path);
     if (m) {
         const p = m[1];
-        if (['plugins', 'apis'].includes(p)) {
-            return 'plugins';
+        if (['apis', 'reference'].includes(p)) {
+            return 'reference';
         }
     }
-    return 'docs';
+    return 'guide';
 };
 
 const documentComponentCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}document-component .container{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;max-width:none;padding:0}document-component .content-container{width:100%;display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column}document-component plugin-platforms{display:block;float:right}document-component plugin-platforms .platform{margin-left:8px}document-component table,document-component td,document-component th{border:1px solid #eee;border-collapse:collapse}document-component table{width:100%}document-component table th{text-align:left;padding:4px}document-component table td{font-size:12px;line-height:18px;vertical-align:top;padding:4px;min-width:150px}document-component table td code{font-size:12px}document-component .heading-link{position:relative;text-decoration:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;color:#2d2d4c}document-component .heading-link:hover{border-bottom:1px solid transparent}document-component .heading-link ion-icon{-webkit-transition:opacity 0.2s;transition:opacity 0.2s;position:absolute;left:-24px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}document-component .heading-link:hover ion-icon{opacity:0.8}document-component img{max-width:100%;margin:8px 0}document-component h1:first-child anchor-link{display:none}document-component ul{-webkit-padding-start:16px}document-component ul li,document-component ul code{font-size:14px;margin-top:16px}document-component p a{color:#1d9aff;text-decoration:none}document-component p code,document-component ul code,document-component ol code{padding:1px 4px 2px;background-color:#ecf4fb;color:#16161D;border-radius:3px}document-component #introButton{background:#1d9aff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer}document-component #introButton:hover{-webkit-box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);-webkit-transform:translateY(1px);transform:translateY(1px)}document-component .btn.pull-left,document-component .btn.pull-right{margin:64px 8px 20px}";
@@ -9288,7 +9288,7 @@ class DocumentComponent {
         }
         state.showTopBar = false;
         this.template = getTemplateFromPath(this.page);
-        this.menuStructure = this.template === 'plugins' ? referenceStructure : guideStructure;
+        this.menuStructure = this.template === 'reference' ? referenceStructure : guideStructure;
         const foundData = findItem(this.menuStructure, page);
         this.item = foundData.item;
         this.nextItem = foundData.nextItem;
@@ -10914,7 +10914,7 @@ class SiteHeader {
         this.forceHovered = Router.activePath.replace('/', '').replace('#', '');
         Router.onChange('activePath', (v) => {
             // TODO: Make this an object and share it w/ render
-            if (['/#features', '/docs', '/docs/plugins', '/blog', '/enterprise', '/community'].findIndex(x => x === v) >= 0) {
+            if (['/#features', '/docs', '/blog', '/enterprise', '/community'].findIndex(x => x === v) >= 0) {
                 this.forceHovered = v.replace('/', '').replace('#', '');
             }
         });
@@ -10977,7 +10977,7 @@ const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-
 class SiteMenu {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.template = 'docs';
+        this.template = 'guide';
         this.siteStructureList = [];
         this.selectedParent = null;
         this.closeList = [];
@@ -11012,7 +11012,7 @@ class SiteMenu {
         const { template, version } = this;
         return (h(Host, { class: {
                 'menu-overlay-visible': this.showOverlay
-            } }, h("div", { class: "sticky" }, h("div", null, h("div", { class: "menu-header" }, h("app-menu-toggle", { icon: "close" }), h("a", Object.assign({}, href('/'), { class: "menu-header__logo-link" }), state.pageTheme === 'dark' ? (h("img", { src: "/assets/img/heading/logo-white.png", alt: "Capacitor Logo" })) : (h("img", { src: "/assets/img/heading/logo-black.png", alt: "Capacitor Logo" }))), h("a", Object.assign({}, href('/docs'), { class: "menu-header__docs-link" }), "docs"), template === 'docs' && version ?
+            } }, h("div", { class: "sticky" }, h("div", null, h("div", { class: "menu-header" }, h("app-menu-toggle", { icon: "close" }), h("a", Object.assign({}, href('/'), { class: "menu-header__logo-link" }), state.pageTheme === 'dark' ? (h("img", { src: "/assets/img/heading/logo-white.png", alt: "Capacitor Logo" })) : (h("img", { src: "/assets/img/heading/logo-black.png", alt: "Capacitor Logo" }))), h("a", Object.assign({}, href('/docs'), { class: "menu-header__docs-link" }), "docs"), template === 'guide' && version ?
             h("a", { href: `https://github.com/ionic-team/capacitor/releases/tag/${version}`, rel: "noopener", target: "_blank", class: "menu-header__version-link" }, "v", version)
             : null), h("ul", { class: "menu-list" }, this.siteStructureList.map((item, i) => {
             const active = item.url === Router.activePath;
@@ -11029,9 +11029,9 @@ class SiteMenu {
                         "section-active": active
                     } }), h("span", { class: "section-active-indicator" }), h("span", { class: "section-label" }, item.text)) :
                 h("a", { rel: "noopener", class: "link--external", target: "_blank", href: item.filePath }, item.text)));
-        }))), template === 'plugins'
+        }))), template === 'reference'
             ? h("a", Object.assign({ class: "menu-footer" }, href("/docs")), "Guide", h("span", { class: "arrow" }, "->"))
-            : h("a", Object.assign({ class: "menu-footer" }, href("/docs/plugins")), "Reference", h("span", { class: "arrow" }, "->")))));
+            : h("a", Object.assign({ class: "menu-footer" }, href("/docs/reference")), "Reference", h("span", { class: "arrow" }, "->")))));
     }
     static get watchers() { return {
         "selectedParent": ["selectedParentChange"]
