@@ -4,8 +4,7 @@ declare var docsearch: any;
 
 @Component({
   tag: 'docs-search',
-  styleUrl: 'docs-search.scss',
-  scoped: true
+  styleUrl: 'docs-search.scss'
 })
 export class DocsSearch implements ComponentInterface {
   @Prop() placeholder = 'Search';
