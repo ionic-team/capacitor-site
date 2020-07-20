@@ -4,21 +4,10 @@ import fs from 'fs';
 import path, { dirname, basename } from 'path';
 import frontMatter from 'front-matter';
 import { generateSiteStructure } from './markdown-renderer';
+import { DOCS_FILES } from './common';
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
-
-const DOCS_FILES = [{
-  'assets': '/assets/guide-content',
-  'readme': './docs/guide/README.md',
-  'source': './docs/guide',
-  'structure': './src/assets/guide-structure.json'
-}, {
-  'assets': '/assets/reference-content',
-  'readme': './docs/reference/README.md',
-  'source': './docs/reference',
-  'structure': './src/assets/reference-structure.json'
-}];
 
 (async function() {
   for (var i = 0; i < DOCS_FILES.length; i++) {

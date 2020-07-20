@@ -9,24 +9,13 @@ import { collectHeadingMetadata, changeCodeCreation, localizeMarkdownLink } from
 import frontMatter from 'front-matter';
 import fetch from 'node-fetch';
 import { SiteStructureItem, MarkdownContent } from '../src/global/definitions';
+import { DOCS_FILES } from './common';
 
 require('dotenv').config();
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const globAsync = promisify(glob);
-
-const DOCS_FILES = [{
-  'assets': '/assets/guide-content',
-  'readme': './docs/guide/README.md',
-  'source': './docs/guide',
-  'structure': './src/assets/guide-structure.json'
-}, {
-  'assets': '/assets/reference-content',
-  'readme': './docs/reference/README.md',
-  'source': './docs/reference',
-  'structure': './src/assets/reference-structure.json'
-}];
 
 (async function() {
   for (var i = 0; i < DOCS_FILES.length; i++) {
