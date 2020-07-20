@@ -31,7 +31,7 @@ export class DocsHeader implements ComponentInterface {
         <site-backdrop visible={expanded} onClick={() => this.toggleExpanded()} />
 
         <header>
-          <docs-search></docs-search>
+          <docs-search class="docs-search--mobile"></docs-search>
           <more-button onClick={() => this.toggleExpanded()} />
 
           <div class="docs-header-links">
@@ -41,6 +41,8 @@ export class DocsHeader implements ComponentInterface {
             </div>
 
             <div class="docs-header-links__divider"/>
+
+            <docs-search class="docs-search--default"></docs-search>
 
             <div class="docs-header-links__internal">
               <a {...href('/community')}>Community</a>

@@ -24,6 +24,7 @@
 
 header {
   display: flex;
+  justify-content: flex-end;
   position: absolute;
   top: 0;
 
@@ -36,9 +37,16 @@ header {
   background: #fff;
 }
 
+.docs-search--mobile {
+  display: none;
+
+  flex: 0;
+}
+
 .docs-header-links {
   display: flex;
   align-items: center;
+  width: 100%;
 
   background: #fff;
 
@@ -106,6 +114,11 @@ more-button {
 }
 
 @media screen and (max-width: 768px) {
+  .docs-search--default {
+    display: none;
+  }
+
+  .docs-search--mobile,
   more-button {
     display: block;
   }
