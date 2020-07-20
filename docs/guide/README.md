@@ -21,14 +21,16 @@
   * [Cordova/Ionic Native Plugins](cordova/using-cordova-plugins.md)
   * [Known Incompatible Plugins](cordova/known-incompatible-plugins.md)
 * Guides
+  * [CI/CD](guides/ci-cd.md)
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying.md)
   * [In App Purchases](guides/in-app-purchases.md)
   * [Ionic Photo Gallery App](guides/ionic-framework-app.md)
   * [Live Reload](guides/live-reload.md)
   * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
-  * [Splash Screens and Icons](guides/splash-screens-and-icons.md)
   * [Screen Orientation](guides/screen-orientation.md)
+  * [Splash Screens and Icons](guides/splash-screens-and-icons.md)
+  * [Storage](guides/storage.md)
   * [Community Guides](guides/community.md)
 * iOS
   * [Getting Started](ios/index.md)
