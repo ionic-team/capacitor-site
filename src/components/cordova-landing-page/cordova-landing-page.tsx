@@ -142,7 +142,7 @@ cordova-res android --skip-config --copy
         <Col md={5} sm={5} xs={5} cols={12}>
           <Heading level={3}>Audit existing Cordova plugins.</Heading>
           <Paragraph>
-          Review all of Capacitor's <a href="/docs/apis" target="_blank">core</a> and <a href="/docs/plugins/community" target="_blank">community</a> plugins.
+          Review all of Capacitor's <a href="/docs/apis" target="_blank">core</a> and <a href="/docs/community" target="_blank">community</a> plugins.
             You may be able to switch to the Capacitor-equivalent Cordova plugin, such as the Camera.
           </Paragraph>
           <Paragraph>
