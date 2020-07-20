@@ -8762,7 +8762,7 @@ class DocsHeader {
         const { expanded, template } = this;
         return (h(Host, { class: {
                 'docs-header--expanded': expanded
-            } }, h("site-backdrop", { visible: expanded, onClick: () => this.toggleExpanded() }), h("header", null, h("docs-search", { class: "docs-search--mobile" }), h("more-button", { onClick: () => this.toggleExpanded() }), h("div", { class: "docs-header-links" }, h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': template === 'guide' } }), "Guide"), h("a", Object.assign({}, href('/docs/reference'), { class: { 'active': template === 'reference' } }), "Reference")), h("div", { class: "docs-header-links__divider" }), h("docs-search", { class: "docs-search--default" }), h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header-links__divider" }), h("div", { class: "docs-header-links__external" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" }), h("span", null, "Twitter", h("ion-icon", { name: "open-outline" }))), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" }), h("span", null, "GitHub", h("ion-icon", { name: "open-outline" }))))))));
+            } }, h("site-backdrop", { visible: expanded, onClick: () => this.toggleExpanded() }), h("header", null, h("docs-search", { class: "docs-search--mobile" }), h("more-button", { onClick: () => this.toggleExpanded() }), h("div", { class: "docs-header-links" }, h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': template === 'guide' } }), "Guide"), h("a", Object.assign({}, href('/docs/apis'), { class: { 'active': template === 'reference' } }), "Reference")), h("div", { class: "docs-header-links__divider" }), h("docs-search", { class: "docs-search--default" }), h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header-links__divider" }), h("div", { class: "docs-header-links__external" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" }), h("span", null, "Twitter", h("ion-icon", { name: "open-outline" }))), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" }), h("span", null, "GitHub", h("ion-icon", { name: "open-outline" }))))))));
     }
     static get style() { return docsHeaderCss; }
     static get cmpMeta() { return {
@@ -8798,14 +8798,43 @@ class DocsSearch {
     }; }
 }
 
+function findItem(siteStructureList, url, foundData = { parent: null }) {
+    for (const item of siteStructureList) {
+        if (item.url === url) {
+            foundData.item = item;
+            if (item.parent) {
+                foundData.parent = item;
+            }
+        }
+        else if (foundData.item != null && item.url != null) {
+            foundData.nextItem = item;
+        }
+        else if (item.url != null && foundData.item == null) {
+            foundData.prevItem = item;
+        }
+        else if (item.children && item.children.length > 0) {
+            if (foundData.item == null) {
+                foundData.parent = item;
+            }
+            foundData = findItem(item.children, url, foundData);
+        }
+        if (foundData.item != null && foundData.nextItem != null) {
+            return foundData;
+        }
+    }
+    return foundData;
+}
+
 var guideStructure = [
 	{
 		text: "Introduction",
 		filePath: "/assets/guide-content/index.json",
+		parent: true,
 		url: "/docs"
 	},
 	{
 		text: "Getting Started",
+		parent: true,
 		children: [
 			{
 				text: "Required Dependencies",
@@ -8826,6 +8855,7 @@ var guideStructure = [
 	},
 	{
 		text: "Basics",
+		parent: true,
 		children: [
 			{
 				text: "Development Workflow",
@@ -8871,6 +8901,7 @@ var guideStructure = [
 	},
 	{
 		text: "Cordova/PhoneGap",
+		parent: true,
 		children: [
 			{
 				text: "Introduction",
@@ -8901,6 +8932,7 @@ var guideStructure = [
 	},
 	{
 		text: "Guides",
+		parent: true,
 		children: [
 			{
 				text: "Deep Links",
@@ -8951,6 +8983,7 @@ var guideStructure = [
 	},
 	{
 		text: "iOS",
+		parent: true,
 		children: [
 			{
 				text: "Getting Started",
@@ -8986,6 +9019,7 @@ var guideStructure = [
 	},
 	{
 		text: "Android",
+		parent: true,
 		children: [
 			{
 				text: "Getting Started",
@@ -9021,6 +9055,7 @@ var guideStructure = [
 	},
 	{
 		text: "Web/PWA",
+		parent: true,
 		children: [
 			{
 				text: "Getting Started",
@@ -9035,17 +9070,25 @@ var guideStructure = [
 		]
 	},
 	{
-		text: "Plugins",
+		text: "Community Plugins",
+		filePath: "/assets/guide-content/community/index.json",
+		parent: true,
+		url: "/docs/community"
+	},
+	{
+		text: "Enterprise Plugins",
+		filePath: "/assets/guide-content/enterprise/index.json",
+		parent: true,
+		url: "/docs/enterprise"
+	},
+	{
+		text: "Creating Plugins",
+		parent: true,
 		children: [
 			{
-				text: "Community Plugins",
-				filePath: "/assets/guide-content/community/plugins.json",
-				url: "/docs/plugins/community"
-			},
-			{
-				text: "Enterprise Plugins",
-				filePath: "/assets/guide-content/enterprise/index.json",
-				url: "/docs/plugins/enterprise"
+				text: "Introduction",
+				filePath: "/assets/guide-content/plugins/index.json",
+				url: "/docs/plugins"
 			},
 			{
 				text: "Development Workflow",
@@ -9078,17 +9121,14 @@ var guideStructure = [
 
 var referenceStructure = [
 	{
-		text: "Introduction",
-		filePath: "/assets/reference-content/index.json",
-		url: "/docs/reference"
-	},
-	{
 		text: "CLI Reference",
-		filePath: "/assets/reference-content/reference/cli/index.json",
-		url: null
+		filePath: "/assets/reference-content/cli/index.json",
+		parent: true,
+		url: "/docs/reference/cli"
 	},
 	{
 		text: "Plugin APIs",
+		parent: true,
 		children: [
 			{
 				text: "Introduction",
@@ -9214,30 +9254,6 @@ var referenceStructure = [
 	}
 ];
 
-function findItem(siteStructureList, url, foundData = { parent: null }) {
-    for (const item of siteStructureList) {
-        if (item.url === url) {
-            foundData.item = item;
-        }
-        else if (foundData.item != null && item.url != null) {
-            foundData.nextItem = item;
-        }
-        else if (item.url != null && foundData.item == null) {
-            foundData.prevItem = item;
-        }
-        else if (item.children && item.children.length > 0) {
-            if (foundData.item == null) {
-                foundData.parent = item;
-            }
-            foundData = findItem(item.children, url, foundData);
-        }
-        if (foundData.item != null && foundData.nextItem != null) {
-            return foundData;
-        }
-    }
-    return foundData;
-}
-
 const handleRoutableLinkClick = (e) => {
     if (e.metaKey || e.ctrlKey) {
         return;
@@ -9266,6 +9282,10 @@ const getTemplateFromPath = (path) => {
     }
     return 'guide';
 };
+const getSiteStructureList = (path) => {
+    const template = getTemplateFromPath(path);
+    return template === 'reference' ? referenceStructure : guideStructure;
+};
 
 const documentComponentCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}document-component .container{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;max-width:none;padding:0}document-component .content-container{width:100%;display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column}document-component plugin-platforms{display:block;float:right}document-component plugin-platforms .platform{margin-left:8px}document-component table,document-component td,document-component th{border:1px solid #eee;border-collapse:collapse}document-component table{width:100%}document-component table th{text-align:left;padding:4px}document-component table td{font-size:12px;line-height:18px;vertical-align:top;padding:4px;min-width:150px}document-component table td code{font-size:12px}document-component .heading-link{position:relative;text-decoration:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;color:#2d2d4c}document-component .heading-link:hover{border-bottom:1px solid transparent}document-component .heading-link ion-icon{-webkit-transition:opacity 0.2s;transition:opacity 0.2s;position:absolute;left:-24px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}document-component .heading-link:hover ion-icon{opacity:0.8}document-component img{max-width:100%;margin:8px 0}document-component h1:first-child anchor-link{display:none}document-component ul{-webkit-padding-start:16px}document-component ul li,document-component ul code{font-size:14px;margin-top:16px}document-component p a{color:#1d9aff;text-decoration:none}document-component p code,document-component ul code,document-component ol code{padding:1px 4px 2px;background-color:#ecf4fb;color:#16161D;border-radius:3px}document-component #introButton{background:#1d9aff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer}document-component #introButton:hover{-webkit-box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);-webkit-transform:translateY(1px);transform:translateY(1px)}document-component .btn.pull-left,document-component .btn.pull-right{margin:64px 8px 20px}";
 
@@ -9288,7 +9308,7 @@ class DocumentComponent {
         }
         state.showTopBar = false;
         this.template = getTemplateFromPath(this.page);
-        this.menuStructure = this.template === 'reference' ? referenceStructure : guideStructure;
+        this.menuStructure = getSiteStructureList(this.page);
         const foundData = findItem(this.menuStructure, page);
         this.item = foundData.item;
         this.nextItem = foundData.nextItem;
@@ -9318,7 +9338,8 @@ class DocumentComponent {
             "item": [32],
             "nextItem": [32],
             "prevItem": [32],
-            "parent": [32]
+            "parent": [32],
+            "menuStructure": [32]
         },
         "$listeners$": [[0, "menuToggleClick", "toggleMenu"]],
         "$lazyBundleIds$": "-",
@@ -10972,7 +10993,7 @@ const NavLink = ({ path, hovered, onHover, onExit }, children) => {
         } }), children));
 };
 
-const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{--menu-width:280px;display:block;-ms-flex:0 0 auto;flex:0 0 auto;width:var(--menu-width);letter-spacing:0;padding:0 15px 0 18px;-webkit-box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-white);z-index:999;-webkit-transform:translateX(calc(-1 * var(--menu-width)));transform:translateX(calc(-1 * var(--menu-width)));-webkit-transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);height:100%;overflow-y:scroll}.menu-overlay-visible.sc-docs-menu-h{-webkit-transform:none;transform:none;-webkit-transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1)}.menu-overlay-visible.sc-docs-menu-h .menu-header.sc-docs-menu{background:white;position:-webkit-sticky;position:sticky;top:0;z-index:1}.menu-overlay-visible.sc-docs-menu-h .menu-header__logo-link.sc-docs-menu{margin-left:60px}.menu-overlay-visible.sc-docs-menu-h .menu-header__version-link.sc-docs-menu{display:none}}.sticky.sc-docs-menu{top:0;max-height:100vh}.menu-header.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px;max-width:125px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0 107px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;-webkit-transition:80ms height;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;-webkit-transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s transform ease, 0.2s color ease;transition:0.2s transform ease, 0.2s color ease, 0.2s -webkit-transform ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}.menu-footer.sc-docs-menu{position:fixed;bottom:0;left:0;padding:20px 15px 20px 18px;width:var(--menu-width);border-top:1px solid #dee3ea;background:var(--color-white);color:#222d3a}.menu-footer.sc-docs-menu .arrow.sc-docs-menu{letter-spacing:0;padding-left:10px}.menu-footer.sc-docs-menu:hover{color:var(--color-grey-blue)}";
+const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{--menu-width:280px;display:block;-ms-flex:0 0 auto;flex:0 0 auto;width:var(--menu-width);letter-spacing:0;padding:0 15px 0 18px;-webkit-box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-white);z-index:999;-webkit-transform:translateX(calc(-1 * var(--menu-width)));transform:translateX(calc(-1 * var(--menu-width)));-webkit-transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);height:100%;overflow-y:scroll}.menu-overlay-visible.sc-docs-menu-h{-webkit-transform:none;transform:none;-webkit-transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1)}.menu-overlay-visible.sc-docs-menu-h .menu-header.sc-docs-menu{background:white;position:-webkit-sticky;position:sticky;top:0;z-index:1}.menu-overlay-visible.sc-docs-menu-h .menu-header__logo-link.sc-docs-menu{margin-left:60px}.menu-overlay-visible.sc-docs-menu-h .menu-header__version-link.sc-docs-menu{display:none}}.sticky.sc-docs-menu{top:0;max-height:100vh}.menu-header.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px;max-width:125px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0 107px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;-webkit-transition:80ms height;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;-webkit-transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s transform ease, 0.2s color ease;transition:0.2s transform ease, 0.2s color ease, 0.2s -webkit-transform ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}";
 
 class SiteMenu {
     constructor(hostRef) {
@@ -10996,23 +11017,28 @@ class SiteMenu {
         };
     }
     async componentWillLoad() {
-        const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
-        this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
+        this.siteStructureListChange();
         // TODO pull this in from GitHub at build
-        this.version = '2.2.0';
+        this.version = '2.3.0';
     }
     async toggleOverlayMenu() {
         this.showOverlay = !this.showOverlay;
+    }
+    siteStructureListChange() {
+        const parentIndex = this.siteStructureList.findIndex(item => {
+            return item === this.selectedParent;
+        });
+        this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
     }
     selectedParentChange() {
         const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
         this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
     }
     render() {
-        const { template, version } = this;
+        const { version } = this;
         return (h(Host, { class: {
                 'menu-overlay-visible': this.showOverlay
-            } }, h("div", { class: "sticky" }, h("div", null, h("div", { class: "menu-header" }, h("app-menu-toggle", { icon: "close" }), h("a", Object.assign({}, href('/'), { class: "menu-header__logo-link" }), state.pageTheme === 'dark' ? (h("img", { src: "/assets/img/heading/logo-white.png", alt: "Capacitor Logo" })) : (h("img", { src: "/assets/img/heading/logo-black.png", alt: "Capacitor Logo" }))), h("a", Object.assign({}, href('/docs'), { class: "menu-header__docs-link" }), "docs"), template === 'guide' && version ?
+            } }, h("div", { class: "sticky" }, h("div", null, h("div", { class: "menu-header" }, h("app-menu-toggle", { icon: "close" }), h("a", Object.assign({}, href('/'), { class: "menu-header__logo-link" }), state.pageTheme === 'dark' ? (h("img", { src: "/assets/img/heading/logo-white.png", alt: "Capacitor Logo" })) : (h("img", { src: "/assets/img/heading/logo-black.png", alt: "Capacitor Logo" }))), h("a", Object.assign({}, href('/docs'), { class: "menu-header__docs-link" }), "docs"), version ?
             h("a", { href: `https://github.com/ionic-team/capacitor/releases/tag/${version}`, rel: "noopener", target: "_blank", class: "menu-header__version-link" }, "v", version)
             : null), h("ul", { class: "menu-list" }, this.siteStructureList.map((item, i) => {
             const active = item.url === Router.activePath;
@@ -11029,11 +11055,10 @@ class SiteMenu {
                         "section-active": active
                     } }), h("span", { class: "section-active-indicator" }), h("span", { class: "section-label" }, item.text)) :
                 h("a", { rel: "noopener", class: "link--external", target: "_blank", href: item.filePath }, item.text)));
-        }))), template === 'reference'
-            ? h("a", Object.assign({ class: "menu-footer" }, href("/docs")), "Guide", h("span", { class: "arrow" }, "->"))
-            : h("a", Object.assign({ class: "menu-footer" }, href("/docs/reference")), "Reference", h("span", { class: "arrow" }, "->")))));
+        }))))));
     }
     static get watchers() { return {
+        "siteStructureList": ["siteStructureListChange"],
         "selectedParent": ["selectedParentChange"]
     }; }
     static get style() { return docsMenuCss; }

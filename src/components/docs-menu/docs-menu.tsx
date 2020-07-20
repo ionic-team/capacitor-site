@@ -36,7 +36,9 @@ export class SiteMenu implements ComponentInterface{
 
   @Watch('siteStructureList')
   siteStructureListChange() {
-    const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
+    const parentIndex = this.siteStructureList.findIndex(item => {
+      return item === this.selectedParent;
+    });
     this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
   }
 
