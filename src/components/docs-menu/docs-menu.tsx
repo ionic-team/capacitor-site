@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, Method, Prop, State, Watch, h } from '@stencil/core';
+import { Component, ComponentInterface, Event, EventEmitter, Host, Method, Prop, State, Watch, h } from '@stencil/core';
 import { SiteStructureItem } from '../../global/definitions';
 import { href } from 'stencil-router-v2';
 
@@ -22,6 +22,8 @@ export class SiteMenu implements ComponentInterface{
 
   @State() showOverlay = false;
 
+  @Event() menuToggled: EventEmitter;
+
   async componentWillLoad() {
     this.siteStructureListChange();
 
@@ -32,6 +34,11 @@ export class SiteMenu implements ComponentInterface{
   @Method()
   async toggleOverlayMenu() {
     this.showOverlay = !this.showOverlay;
+  }
+
+  @Watch('showOverlay')
+  showOverlayChange() {
+    this.menuToggled.emit(this.showOverlay);
   }
 
   @Watch('siteStructureList')

@@ -25,9 +25,20 @@ export class DocumentComponent implements ComponentInterface {
   @State() prevItem: SiteStructureItem;
   @State() parent: SiteStructureItem;
   @State() menuStructure: SiteStructureItem[];
+  @State() showBackdrop: boolean = false;
 
   @Listen('menuToggleClick')
   toggleMenu() {
+    this.menuEl.toggleOverlayMenu();
+  }
+
+  @Listen('menuToggled')
+  menuToggled(ev: CustomEvent) {
+    const isOpen = ev.detail;
+    this.showBackdrop = isOpen;
+  }
+
+  backdropClicked() {
     this.menuEl.toggleOverlayMenu();
   }
 
@@ -60,6 +71,8 @@ export class DocumentComponent implements ComponentInterface {
     return (
       <div class="container">
         <app-menu-toggle />
+
+        <site-backdrop visible={this.showBackdrop} onClick={() => this.backdropClicked()}></site-backdrop>
 
         <docs-menu
           ref={ el => this.menuEl = el }

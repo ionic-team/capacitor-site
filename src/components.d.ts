@@ -358,6 +358,7 @@ declare namespace LocalJSX {
         "template"?: "guide" | "reference";
     }
     interface DocsMenu {
+        "onMenuToggled"?: (event: CustomEvent<any>) => void;
         "selectedParent"?: SiteStructureItem;
         "siteStructureList"?: SiteStructureItem[];
         "template"?: "guide" | "reference";
