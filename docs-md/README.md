@@ -21,15 +21,16 @@
   * [Cordova to Capacitor Migration](cordova/migrating-from-cordova-to-capacitor.md)
   * [Cordova/Ionic Native Plugins](cordova/using-cordova-plugins.md)
   * [Known Incompatible Plugins](cordova/known-incompatible-plugins.md)
-* Guides
+* Concepts
   * [CI/CD](guides/ci-cd.md)
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying.md)
   * [In App Purchases](guides/in-app-purchases.md)
-  * [Ionic Photo Gallery App](guides/ionic-framework-app.md)
   * [Live Reload](guides/live-reload.md)
   * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
+  * [React Hooks](guides/react-hooks.md)
   * [Screen Orientation](guides/screen-orientation.md)
+  * [Security](guides/security.md)
   * [Splash Screens and Icons](guides/splash-screens-and-icons.md)
   * [Storage](guides/storage.md)
   * [Community Guides](guides/community.md)
