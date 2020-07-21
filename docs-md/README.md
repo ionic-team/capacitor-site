@@ -29,6 +29,7 @@
   * [Ionic Photo Gallery App](guides/ionic-framework-app.md)
   * [Live Reload](guides/live-reload.md)
   * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
+  * [React Hooks](guides/react-hooks.md)
   * [Screen Orientation](guides/screen-orientation.md)
   * [Security](guides/security.md)
   * [Splash Screens and Icons](guides/splash-screens-and-icons.md)
