@@ -9,7 +9,15 @@ The official [Capacitor](https://capacitorjs.com/) documentation, built with [St
 
 Install the [latest versions of Node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-Run `npm i` and then `npm start` to launch the site in development mode.
+Once npm is install, run
+
+```
+npm install
+npm run build
+npm run start
+```
+
+The site will launch in development mode.
 
 
 ## Contributing

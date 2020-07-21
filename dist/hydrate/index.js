@@ -6841,7 +6841,7 @@ const registerHost = (elm, cmpMeta) => {
 };
 const styles = new Map();
 
-const anchorLinkCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}anchor-link{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}anchor-link.hover-anchor{position:absolute;margin-left:-25px;color:#d6d1d1}.anchor-link-relative{position:relative}.anchor-link-relative{position:relative}@media screen and (max-width: 768px){anchor-link.hover-anchor{margin-left:-18px}}";
+const anchorLinkCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}anchor-link{cursor:pointer;user-select:none}anchor-link.hover-anchor{position:absolute;margin-left:-25px;color:#d6d1d1}.anchor-link-relative{position:relative}.anchor-link-relative{position:relative}@media screen and (max-width: 768px){anchor-link.hover-anchor{margin-left:-18px}}";
 
 /**
  * Used in the generated doc markup as well as the site, so don't remve this
@@ -7057,7 +7057,7 @@ const { state } = createStore({
     prismLanguagesLoaded: {}
 });
 
-const capacitorSiteCss = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.push{margin-top:70px}.push-sm{margin-top:36px}.block{display:block}.pull-left{float:left}.pull-right{float:right}.no-scroll{overflow:hidden}.sticky{position:-webkit-sticky;position:sticky;top:100px;max-height:calc(100vh - 100px);overflow-y:auto;overflow-x:hidden}.btn{-webkit-transition:all 0.15s ease;transition:all 0.15s ease;text-decoration:none;border:none;outline:none;font-size:13px;font-weight:700;text-transform:uppercase;padding:12px 14px;border-radius:4px;letter-spacing:0.04em;-webkit-box-shadow:var(--button-shadow);box-shadow:var(--button-shadow);cursor:pointer;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}.btn a{text-decoration:none}.btn app-icon{margin-right:8px;opacity:0.8}.btn:hover{text-decoration:none;-webkit-transform:translateY(1px);transform:translateY(1px);-webkit-box-shadow:var(--button-shadow-hover);box-shadow:var(--button-shadow-hover)}.btn--primary{background:var(--color-dodger-blue);color:var(--color-white)}.btn--secondary{background:var(--color-white);color:var(--color-dodger-blue)}.btn--tertiary{background:#F4F4FD;color:var(--color-dodger-blue);-webkit-box-shadow:none;box-shadow:none}.btn--tertiary:hover{background-color:#ececf9;-webkit-box-shadow:none;box-shadow:none;-webkit-transform:none;transform:none}.btn--small{letter-spacing:-0.02em;text-transform:none;font-size:15px;padding:5px 12px 7px;font-weight:500;border-radius:8px;min-height:38px}*{-webkit-box-sizing:border-box;box-sizing:border-box}capacitor-site{min-height:100%;display:block}site-root{-ms-flex:1;flex:1}.page-theme--dark{background:var(--c-carbon-100);color:var(--c-indigo-10)}.page-theme--dark .ui-heading,.page-theme--dark h1,.page-theme--dark h2,.page-theme--dark h3,.page-theme--dark h4,.page-theme--dark h5{color:var(--c-indigo-10)}.page-theme--dark p{color:var(--c-indigo-10)}.no-scroll{overflow:hidden}.left-sidebar-in{-webkit-animation-name:slideIn;animation-name:slideIn;-webkit-animation-duration:0.7s;animation-duration:0.7s;-webkit-animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes slideIn{from{left:0}to{left:calc(100vw - 56px)}}@keyframes slideIn{from{left:0}to{left:calc(100vw - 56px)}}.left-sidebar-out{-webkit-animation-name:slideOut;animation-name:slideOut;-webkit-animation-duration:0.7s;animation-duration:0.7s;-webkit-animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes slideOut{from{left:calc(100vw - 56px)}to{left:0}}@keyframes slideOut{from{left:calc(100vw - 56px)}to{left:0}}.root{position:relative}.row{display:-ms-flexbox;display:flex}.col{-ms-flex:1;flex:1}.container{max-width:1280px;width:100%;margin:auto;padding:0 24px}.container-flex{display:-ms-flexbox;display:flex}document-component>div{display:-ms-flexbox;display:flex}.doc-content{margin:0 auto}.input-with-button{display:-ms-flexbox;display:flex;height:50px;max-width:460px;-ms-flex:1;flex:1}.input-with-button input{-ms-flex:1;flex:1;height:100%}.input-with-button button{-ms-flex-positive:0;flex-grow:0;-ms-flex-negative:1;flex-shrink:1;margin:0;border:0;border-radius:0px 3px 3px 0;height:100%}.input-with-button button:hover{-webkit-transform:none;transform:none}.measure-lg{max-width:670px}.app{height:100%}::-moz-selection{background:#98d2ff}::selection{background:#98d2ff}::-moz-selection{background:#98d2ff}html,body{font-family:\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";width:100%;height:100%;padding:0;margin:0;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;scroll-padding-top:80px}body{background-color:#fff}h1,h2,h3,h4{color:#16161d;letter-spacing:0px;font-weight:700}h1{font-size:40px;letter-spacing:-0.03em;font-weight:600}h2{font-size:22px;letter-spacing:-0.02em;font-weight:600}h2,h3{margin-top:64px;margin-bottom:8px}h2 code{font-weight:600;font-family:\"Roboto Mono\", \"Source Code Pro\", monospace;font-size:20px;color:#16161D;background:#ecf4fb;margin-left:6px;padding:4px 8px;border-radius:4px}ul li{font-size:14px;margin-top:16px}ol li{color:#4a5568;font-size:15px;line-height:1.8em;margin:16px 0}p,ul{color:#4a5568;font-size:15px;line-height:1.8em;margin:16px 0px}strong,b{font-weight:500}a{-webkit-transition:border 0.3s;transition:border 0.3s;color:#1d9aff;border-bottom:1px solid transparent}a:hover{border-bottom-color:rgba(29, 154, 255, 0.3)}p a{font-weight:500}.intro{font-size:18px;margin-bottom:24px;letter-spacing:-0.01em}.intro code{font-size:18px}blockquote{background:rgba(255, 250, 237, 0.8);border-left:4px solid #ffcc5f;border-radius:2px 4px 4px 2px;color:#736545 !important;font-size:14px;line-height:1.8em;margin:auto;padding:16px 20px}.wrapper{line-height:32px;min-height:100%;padding-top:100px;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:start;align-items:flex-start}.nextButton{background:#5851ff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer;float:right;margin-right:5px}.nextButton:hover{text-decoration:none;-webkit-transform:translateY(1px);transform:translateY(1px);-webkit-box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16);box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16)}.backButton{color:#5851ff;background:white;text-decoration:none;float:left;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer;margin-bottom:15px;margin-left:5px}.backButton:hover{text-decoration:none;-webkit-transform:translateY(1px);transform:translateY(1px);-webkit-box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16);box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16)}pre{word-break:break-all;word-wrap:break-word;display:block;white-space:pre-wrap;margin:24px 0px 28px;border-radius:4px;color:#16161D;background-color:#f8f8f8}pre code{font-weight:500;display:block;overflow-x:auto;word-wrap:normal;white-space:pre-wrap;-webkit-box-sizing:border-box;box-sizing:border-box;font-size:14px;line-height:20px}code{font-weight:400;font-family:\"Roboto Mono\", \"Source Code Pro\", monospace;font-size:14px}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#db00e9}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#2973b7}.hljs-tag{color:#2973b7}.hljs-literal{color:#56b6c2}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#2cc17e}.hljs-built_in,.hljs-class .hljs-title{color:#db00e9}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#d19a66}.hljs-attr{color:#525252}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#2973b7}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}@media screen and (max-width: 355px){.wrapper{padding-top:100px}}@media screen and (max-width: 450px){.wrapper{padding-top:80px}site-header stencil-route-link a{display:initial}}@media screen and (max-width: 590px){.wrapper{margin-right:0;margin-left:0;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.wrapper .pull-right{padding:0 15px;width:100%;min-height:100vh}.wrapper .pull-left{position:relative;padding:15px;width:100%;bottom:0;background-color:#16161d}.wrapper .pull-left *{color:#ffffff}}@media screen and (min-width: 590px){.wrapper .pull-left{min-width:250px;max-width:250px;position:-webkit-sticky;position:sticky;top:50px}.wrapper .pull-right{padding-left:96px;padding-right:32px;-ms-flex:1 1 auto;flex:1 1 auto;overflow:auto;min-height:100vh}}.document .container{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.document plugin-platforms{display:block;float:right}.document plugin-platforms .platform{margin-left:8px}.document img{max-width:100%}.document h1:first-child anchor-link{display:none}.document ul{-webkit-padding-start:0px}.document ul li,.document ul code{font-size:16px;margin-left:18px}.document p a{color:#1d9aff;text-decoration:none}.document p code,.document ul code,.document ol code{padding:0 4px 3px;background-color:#ecf4fb;color:#16161D;border-radius:3px}.document #introButton{background:#1d9aff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:16px 20px;border-radius:2px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer}.document #introButton:hover{-webkit-box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);-webkit-transform:translateY(1px);transform:translateY(1px)}";
+const capacitorSiteCss = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.push{margin-top:70px}.push-sm{margin-top:36px}.block{display:block}.pull-left{float:left}.pull-right{float:right}.no-scroll{overflow:hidden}.sticky{position:sticky;top:100px;max-height:calc(100vh - 100px);overflow-y:auto;overflow-x:hidden}.btn{transition:all 0.15s ease;text-decoration:none;border:none;outline:none;font-size:13px;font-weight:700;text-transform:uppercase;padding:12px 14px;border-radius:4px;letter-spacing:0.04em;box-shadow:var(--button-shadow);cursor:pointer;display:inline-flex;align-items:center}.btn a{text-decoration:none}.btn app-icon{margin-right:8px;opacity:0.8}.btn:hover{text-decoration:none;transform:translateY(1px);box-shadow:var(--button-shadow-hover)}.btn--primary{background:var(--color-dodger-blue);color:var(--color-white)}.btn--secondary{background:var(--color-white);color:var(--color-dodger-blue)}.btn--tertiary{background:#F4F4FD;color:var(--color-dodger-blue);box-shadow:none}.btn--tertiary:hover{background-color:#ececf9;box-shadow:none;transform:none}.btn--small{letter-spacing:-0.02em;text-transform:none;font-size:15px;padding:5px 12px 7px;font-weight:500;border-radius:8px;min-height:38px}*{box-sizing:border-box}capacitor-site{min-height:100%;display:block}site-root{flex:1}.page-theme--dark{background:var(--c-carbon-100);color:var(--c-indigo-10)}.page-theme--dark .ui-heading,.page-theme--dark h1,.page-theme--dark h2,.page-theme--dark h3,.page-theme--dark h4,.page-theme--dark h5{color:var(--c-indigo-10)}.page-theme--dark p{color:var(--c-indigo-10)}.no-scroll{overflow:hidden}.left-sidebar-in{animation-name:slideIn;animation-duration:0.7s;animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);animation-fill-mode:forwards}@keyframes slideIn{from{left:0}to{left:calc(100vw - 56px)}}.left-sidebar-out{animation-name:slideOut;animation-duration:0.7s;animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);animation-fill-mode:forwards}@keyframes slideOut{from{left:calc(100vw - 56px)}to{left:0}}.root{position:relative}.row{display:flex}.col{flex:1}.container{max-width:1280px;width:100%;margin:auto;padding:0 24px}.container-flex{display:flex}document-component>div{display:flex}.doc-content{max-width:100%;margin:0 auto}.input-with-button{display:flex;height:50px;max-width:460px;flex:1}.input-with-button input{flex:1;height:100%}.input-with-button button{flex-grow:0;flex-shrink:1;margin:0;border:0;border-radius:0px 3px 3px 0;height:100%}.input-with-button button:hover{transform:none}.measure-lg{max-width:670px}.app{height:100%}::selection{background:#98d2ff}::-moz-selection{background:#98d2ff}html,body{font-family:\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";width:100%;height:100%;padding:0;margin:0;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;scroll-padding-top:80px}body{background-color:#fff}h1,h2,h3,h4{color:#16161d;letter-spacing:0px;font-weight:700}h1{font-size:40px;letter-spacing:-0.03em;font-weight:600}h2{font-size:22px;letter-spacing:-0.02em;font-weight:600}h2,h3{margin-top:64px;margin-bottom:8px}h2 code{font-weight:600;font-family:\"Roboto Mono\", \"Source Code Pro\", monospace;font-size:20px;color:#16161D;background:#ecf4fb;margin-left:6px;padding:4px 8px;border-radius:4px}ul li{font-size:14px;margin-top:16px}ol li{color:#4a5568;font-size:15px;line-height:1.8em;margin:16px 0}p,ul{color:#4a5568;font-size:15px;line-height:1.8em;margin:16px 0px}strong,b{font-weight:500}a{transition:border 0.3s;color:#1d9aff;border-bottom:1px solid transparent}a:hover{border-bottom-color:rgba(29, 154, 255, 0.3)}p a{font-weight:500}.intro{font-size:18px;margin-bottom:24px;letter-spacing:-0.01em}.intro code{font-size:18px}blockquote{background:rgba(255, 250, 237, 0.8);border-left:4px solid #ffcc5f;border-radius:2px 4px 4px 2px;color:#736545 !important;font-size:14px;line-height:1.8em;margin:auto;padding:16px 20px}.wrapper{line-height:32px;min-height:100%;padding-top:100px;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-start;align-content:stretch;align-items:flex-start}.nextButton{background:#5851ff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;transition:all 0.15s ease;cursor:pointer;float:right;margin-right:5px}.nextButton:hover{text-decoration:none;transform:translateY(1px);box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16)}.backButton{color:#5851ff;background:white;text-decoration:none;float:left;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;transition:all 0.15s ease;cursor:pointer;margin-bottom:15px;margin-left:5px}.backButton:hover{text-decoration:none;transform:translateY(1px);box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16)}pre{word-break:break-all;word-wrap:break-word;display:block;white-space:pre-wrap;margin:24px 0px 28px;border-radius:4px;color:#16161D;background-color:#f8f8f8}pre code{font-weight:500;display:block;overflow-x:auto;word-wrap:normal;white-space:pre-wrap;box-sizing:border-box;font-size:14px;line-height:20px}code{font-weight:400;font-family:\"Roboto Mono\", \"Source Code Pro\", monospace;font-size:14px}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#db00e9}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#2973b7}.hljs-tag{color:#2973b7}.hljs-literal{color:#56b6c2}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#2cc17e}.hljs-built_in,.hljs-class .hljs-title{color:#db00e9}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#d19a66}.hljs-attr{color:#525252}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#2973b7}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}@media screen and (max-width: 355px){.wrapper{padding-top:100px}}@media screen and (max-width: 450px){.wrapper{padding-top:80px}site-header stencil-route-link a{display:initial}}@media screen and (max-width: 590px){.wrapper{margin-right:0;margin-left:0;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.wrapper .pull-right{padding:0 15px;width:100%;min-height:100vh}.wrapper .pull-left{position:relative;padding:15px;width:100%;bottom:0;background-color:#16161d}.wrapper .pull-left *{color:#ffffff}}@media screen and (min-width: 590px){.wrapper .pull-left{min-width:250px;max-width:250px;position:-webkit-sticky;position:sticky;top:50px}.wrapper .pull-right{padding-left:96px;padding-right:32px;flex:1 1 auto;overflow:auto;min-height:100vh}}.document .container{display:flex;justify-content:space-between}.document plugin-platforms{display:block;float:right}.document plugin-platforms .platform{margin-left:8px}.document img{max-width:100%}.document h1:first-child anchor-link{display:none}.document ul{-webkit-padding-start:0px}.document ul li,.document ul code{font-size:16px;margin-left:18px}.document p a{color:#1d9aff;text-decoration:none}.document p code,.document ul code,.document ol code{padding:0 4px 3px;background-color:#ecf4fb;color:#16161D;border-radius:3px}.document #introButton{background:#1d9aff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:16px 20px;border-radius:2px;box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;transition:all 0.15s ease;cursor:pointer}.document #introButton:hover{box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);transform:translateY(1px)}";
 
 class App {
     constructor(hostRef) {
@@ -7081,7 +7081,7 @@ class App {
     }; }
 }
 
-const appMenuToggleCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}app-menu-toggle{display:none;position:fixed;top:0px;left:0px;z-index:999}app-menu-toggle .menu-toggle-button{display:-ms-flexbox;display:flex;-ms-flex-align:start;align-items:flex-start;-ms-flex-pack:center;justify-content:center;padding:10px;border:none;background:transparent;font-size:28px;outline:none}app-menu-toggle .menu-toggle-button ion-icon{padding:8px}app-menu-toggle .menu-toggle-button:hover ion-icon{opacity:0.4}app-menu-toggle .menu-toggle-button:active ion-icon{color:initial}app-menu-toggle ion-icon{-webkit-transition:opacity 0.3s;transition:opacity 0.3s;opacity:0.7;cursor:pointer}app-menu-toggle.left-sidebar-in>div{height:100vh;padding-right:50px}@media screen and (max-width: 768px){app-menu-toggle{display:-ms-flexbox;display:flex}}";
+const appMenuToggleCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}app-menu-toggle{display:none;position:fixed;top:0px;left:0px;z-index:999}app-menu-toggle .menu-toggle-button{display:flex;align-items:flex-start;justify-content:center;padding:10px;border:none;background:transparent;font-size:28px;outline:none}app-menu-toggle .menu-toggle-button ion-icon{padding:8px}app-menu-toggle .menu-toggle-button:hover ion-icon{opacity:0.4}app-menu-toggle .menu-toggle-button:active ion-icon{color:initial}app-menu-toggle ion-icon{transition:opacity 0.3s;opacity:0.7;cursor:pointer}app-menu-toggle.left-sidebar-in>div{height:100vh;padding-right:50px}@media screen and (max-width: 768px){app-menu-toggle{display:flex}}";
 
 class AppBurger {
     constructor(hostRef) {
@@ -7108,7 +7108,7 @@ class AppBurger {
     }; }
 }
 
-const appMarkedCss = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}app-marked{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex:1;flex:1;min-width:0;width:100%;padding:22px 32px 32px}";
+const appMarkedCss = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}app-marked{display:flex;justify-content:space-between;flex:1;min-width:0;width:100%;padding:22px 32px 32px}";
 
 class AppMarked {
     constructor(hostRef) {
@@ -7621,26 +7621,19 @@ var __rest = (undefined && undefined.__rest) || function (s, e) {
         }
     return t;
 };
-const applyClasses = (mobile, tablet, desktop, inlineBlock) => {
-    const classes = [];
-    classes.push('ui-breakpoint');
-    if (inlineBlock) {
-        classes.push('ui-breakpoint-inline-block');
-    }
-    if (mobile) {
-        classes.push('ui-breakpoint-mobile');
-    }
-    if (tablet) {
-        classes.push('ui-breakpoint-tablet');
-    }
-    if (desktop) {
-        classes.push('ui-breakpoint-desktop');
-    }
-    return classes.join(' ');
-};
 const Breakpoint = (_a, children) => {
-    var { mobile = true, tablet = true, desktop = true, inlineBlock = false } = _a, props = __rest(_a, ["mobile", "tablet", "desktop", "inlineBlock"]);
-    return h("div", Object.assign({}, applyProps(props, { class: applyClasses(mobile, tablet, desktop, inlineBlock) })), children);
+    var { xs, sm, md, lg, xl, display = 'block' } = _a, props = __rest(_a, ["xs", "sm", "md", "lg", "xl", "display"]);
+    const Tag = display === 'inline' ? 'span' : 'div';
+    //cascade values up breakpoints
+    xs = xs !== undefined ? xs : false;
+    sm = sm !== undefined ? sm : xs;
+    md = md !== undefined ? md : sm;
+    lg = lg !== undefined ? lg : md;
+    xl = xl !== undefined ? xl : lg;
+    const breakpoints = [['xs', xs], ['sm', sm], ['md', md], ['lg', lg], ['xl', xl]];
+    //Combine classes into string based on breakpoint values
+    const className = breakpoints.reduce((acc, cur) => `${acc} ${cur[1] ? `ui-breakpoint-${cur[0]}` : ``}`, 'ui-breakpoint');
+    return (h(Tag, Object.assign({}, applyProps(props, { class: className }), { style: { '--display': display } }), children));
 };
 
 const AnchorButton = (props, children) => h("a", Object.assign({}, applyProps(props, { class: 'ui-button' })), children);
@@ -7686,7 +7679,7 @@ var __rest$2 = (undefined && undefined.__rest) || function (s, e) {
         }
     return t;
 };
-const applyClasses$1 = (cols, xs, sm, md, lg) => {
+const applyClasses = (cols, xs, sm, md, lg) => {
     const classes = [];
     // General class, doesn't apply column behavior but
     // can be useful for selectors
@@ -7715,7 +7708,7 @@ const applyClasses$1 = (cols, xs, sm, md, lg) => {
 };
 const Col = (_a, children) => {
     var { cols, xs, sm, md, lg } = _a, props = __rest$2(_a, ["cols", "xs", "sm", "md", "lg"]);
-    return (h("div", Object.assign({}, applyProps(props, { class: applyClasses$1(cols, xs, sm, md, lg) })), children));
+    return (h("div", Object.assign({}, applyProps(props, { class: applyClasses(cols, xs, sm, md, lg) })), children));
 };
 
 var __rest$3 = (undefined && undefined.__rest) || function (s, e) {
@@ -7793,21 +7786,68 @@ var __rest$4 = (undefined && undefined.__rest) || function (s, e) {
     return t;
 };
 const Heading = (_a, children) => {
-    var { level = 3, bordered = false, leading = false, strong = false } = _a, props = __rest$4(_a, ["level", "bordered", "leading", "strong"]);
-    const Tag = `h${level}`;
+    var { level = 3, poster = false, as } = _a, props = __rest$4(_a, ["level", "poster", "as"]);
+    const Tag = as ? as : (poster ? 'h1' : `h${level}`);
     const classes = [
         `ui-heading`,
-        ` ui-heading-${level}`,
-        `${bordered ? ` ui-heading--bordered` : ``}`,
-        `${leading ? ` ui-heading--leading` : ``}`,
-        `${strong ? ` ui-heading--strong` : ``}`
+        `${poster ? `ui-poster-${level}` : `ui-heading-${level}`}`
     ];
-    return (h(Tag, Object.assign({}, applyProps(props, { class: classes.join('') }), { ref: (e) => observe(e) }), children));
+    return (h(Tag, Object.assign({}, applyProps(props, { class: classes.join(' ') }), { ref: (e) => observe(e) }), children));
 };
 
-const Paragraph = (props, children) => h("p", Object.assign({}, applyProps(props, { class: 'ui-paragraph' })), children);
+var __rest$5 = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+const Paragraph = (_a, children) => {
+    var { level = 3, leading = 'body' } = _a, props = __rest$5(_a, ["level", "leading"]);
+    const classes = [
+        `ui-paragraph`,
+        `ui-paragraph-${level}`,
+        `ui-paragraph--${leading}`,
+    ];
+    return (h("p", Object.assign({}, applyProps(props, { class: classes.join(' ') })), children));
+};
 
-const ResponsiveContainer = (props, children) => (h("div", Object.assign({}, applyProps(props, { class: 'ui-container' })), children));
+var __rest$6 = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+const ResponsiveContainer = (_a, children) => {
+    var { as = 'div' } = _a, props = __rest$6(_a, ["as"]);
+    const Tag = as;
+    return h(Tag, Object.assign({}, applyProps(props, { class: 'ui-container' })), children);
+};
+
+var __rest$7 = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+const ThemeProvider = (_a, children) => {
+    var { type = 'base' } = _a, props = __rest$7(_a, ["type"]);
+    return (h("div", Object.assign({}, applyProps(props, { class: `ui-theme--${type}` })), children));
+};
 
 function toInteger(dirtyNumber) {
   if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
@@ -8115,7 +8155,8 @@ function validateTimezone(_hours, minutes) {
 
 const Router = createRouter();
 
-const getBlogPostUrl = (doc) => `https://capacitorjs.com/blog/${doc.slug}`;
+const getBlogPostPath = (doc) => `/blog/${doc.slug}`;
+const getAbsoluteBlogPostUrl = (doc) => `https://capacitorjs.com/${getBlogPostPath(doc)}`;
 const BlogPost = ({ post, single = true }) => {
     const content = single ?
         post.html :
@@ -8123,22 +8164,24 @@ const BlogPost = ({ post, single = true }) => {
     return (h("div", { class: "blog-post__wrap" },
         h("div", { class: "blog-post" },
             h(Heading, { level: 2 },
-                h("a", { href: getBlogPostUrl(post) }, post.title)),
-            h(PostAuthor, { authorName: post.authorName, dateString: post.date }),
+                h("a", { href: getBlogPostPath(post) }, post.title)),
+            h(PostAuthor, { authorName: post.authorName, authorUrl: post.authorUrl, dateString: post.date }),
             h(PostContent, { html: content }),
             !single && post.preview ? h(PostContinueReading, { post: post }) : null,
-            single && h("disqus-comments", { url: getBlogPostUrl(post), siteId: 'capacitor', id: post.slug }))));
+            single && h("disqus-comments", { url: getAbsoluteBlogPostUrl(post), siteId: 'capacitor', id: post.slug }))));
 };
 const PostContent = ({ html }) => (h("div", { innerHTML: html }));
-const PostContinueReading = ({ post }) => h("a", Object.assign({ class: "blog-post__continue-reading" }, href(getBlogPostUrl(post), Router)),
+const PostContinueReading = ({ post }) => h("a", Object.assign({ class: "blog-post__continue-reading" }, href(getBlogPostPath(post), Router)),
     "Continue reading ",
     h("ion-icon", { name: "arrow-forward" }));
-const PostAuthor = ({ authorName, dateString }) => {
+const PostAuthor = ({ authorName, authorUrl, dateString }) => {
     const date = parseISO(dateString);
     return (h("div", { class: "blog-post__author" },
         h("span", null,
             "By ",
-            authorName,
+            authorUrl ?
+                h("a", { href: authorUrl, target: "_blank" }, authorName) :
+                authorName,
             " on ",
             h(DateTime, { date: date }))));
 };
@@ -8148,65 +8191,73 @@ var posts = [
 		title: "Native React Apps Without React Native",
 		authorName: "Max Lynch",
 		authorEmail: "max@ionic.io",
+		authorUrl: "https://twitter.com/maxlynch",
 		slug: "native-react-apps-without-react-native",
 		date: "2020-07-14T08:00:00.000Z",
-		contents: "---\ntitle: Native React Apps Without React Native\ndate: 2020-07-14 08:00:00\nauthor: Max Lynch <max@ionic.io>\n---\n\n![Native React Apps Without React Native](/assets/img/blog/native-wout-react-native.png)\n\nIn the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.\n\nHowever, React Native comes with a bunch of constraints. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). Additionally, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and skills with many React web libraries to deploy native apps.\n\nThe net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.\n\nTo do that, we need to take a look at [Capacitor](https://capacitorjs.com/) -- a native runtime for cross-platform web apps, including any and all React web apps.\n\n## Capacitor: Native Runtime for Web Apps\n\n[Capacitor](https://capacitorjs.com/) is sort of an “electron for mobile” that provides a native runtime for any modern web app, so it can run natively on iOS, Android, and the web using the same code. Capacitor provides full native API access through a [powerful plugin system](https://capacitorjs.com/docs/plugins), so apps can access the same level of functionality as any other pure native (or React Native) app.\n\nCapacitor is focused on enabling modern web apps to run on multiple platforms, and embraces browser-built apps. Capacitor is not a native UI abstraction like React Native, though native UI can certainly be used alongside a Capacitor app.\n\nCapacitor apps for iOS and Android [are native apps](https://medium.com/@maxlynch/cordova-ionic-apps-are-native-apps-64f9e1a995d9), they just happen to do a large amount of their work in a primary WebView.\n\nAs a side effect of being web-focused, Capacitor provides a standard web development experience where apps can be built largely in the browser, bringing the experience and tooling web developers have come to love.\n\n## Build Native Apps with Material-UI, Chakra, Ant, Prime, and more\n\nBecause Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using [Material-UI](https://material-ui.com/) or [Chakra](https://chakra-ui.com/) or [Prime](https://www.primefaces.org/primereact/) or [Ant](https://ant.design/) or [Ionic Framework](https://ionicframework.com/), or any other React UI library, can be turned into native apps using Capacitor.\n\nThis simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)\n\n## Bonus: Deploy Progressive Web Apps and Native Apps\n\nOne additional bonus feature of Capacitor is that it works on the web for Progressive Web Apps. That means an app using Capacitor can access many of the same APIs on native mobile but on the web instead. For example, the [Camera](https://capacitorjs.com/docs/apis/camera) and [Share](https://capacitorjs.com/docs/apis/share) APIs work across iOS, Android, and the web with the same code.\n\nWith this capability, teams often can build and ship on three platforms on day one, or even embrace [Progressive Web App First Development](https://ionicframework.com/blog/forget-mobile-first-progressive-web-app-first-is-the-future/), by using Capacitor.\n\n## Transform your React Web App into Native with Capacitor\n\nAdding native functionality and deploying to iOS, Android, and PWA with your existing React web app is easy. Just install Capacitor, drop it into to your project, and add a platform:\n\n```shell\nnpm install @capacitor/cli @capacitor/core\nnpx cap init\nnpx cap add ios\n```\n\nCapacitor apps can be built primarily in the browser, but to deploy and test on iOS or Android (simulator or device), open the IDE of choice and run directly in the IDE:\n\n```shell\nnpx cap open ios\n```\n\nFor the full getting started instructions, check out the [Capacitor documentation](https://capacitorjs.com/docs/getting-started).\n\n## Conclusion\n\nReact Native is no longer the only option for React devs to build iOS and Android apps. Capacitor provides a web-focused solution for teams building React web apps to enable them to ship to the app stores and the web with the same code base.\n\nAnd, for teams that are building a new app and interested in exploring a mobile-focused UI library for their Capacitor apps, [Ionic React](https://ionicframework.com/) is a great and popular option.\n\nBeyond React, Capacitor can be used with any modern web app technology, so is a good fit for teams with a diversity of frontend technologies in use, which is another challenge with React Native.\n\nWe're excited about Capacitor in the React ecosystem, and many teams are as well. Today, Capacitor is powering React apps with hundreds of millions of users, and for major brands and [enterprise customers](https://ionicframework.com/customers) like Burger King and Popeye's. Capacitor adoption has been [growing quickly](https://twitter.com/maxlynch/status/1280531102650769408) and given that given that web development with React represents the largest area of React development ([> 17x React Native](https://npmcharts.com/compare/react-native,react-dom?interval=7)), we're thrilled about the potential to help more web devs build cross-platform apps.\n\nCheck out Capacitor today and stay tuned for some exciting updates with the project coming soon: [capacitorjs.com](https://capacitorjs.com/)",
-		preview: "",
-		html: "<p><img src=\"/assets/img/blog/native-wout-react-native.png\" alt=\"Native React Apps Without React Native\"></p>\n<p>In the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.</p>\n<p>However, React Native comes with a bunch of constraints. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). Additionally, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and skills with many React web libraries to deploy native apps.</p>\n<p>The net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.</p>\n<p>To do that, we need to take a look at <a href=\"https://capacitorjs.com/\">Capacitor</a> -- a native runtime for cross-platform web apps, including any and all React web apps.</p>\n<h2 id=\"capacitor-native-runtime-for-web-apps\">Capacitor: Native Runtime for Web Apps</h2>\n<p><a href=\"https://capacitorjs.com/\">Capacitor</a> is sort of an “electron for mobile” that provides a native runtime for any modern web app, so it can run natively on iOS, Android, and the web using the same code. Capacitor provides full native API access through a <a href=\"https://capacitorjs.com/docs/plugins\">powerful plugin system</a>, so apps can access the same level of functionality as any other pure native (or React Native) app.</p>\n<p>Capacitor is focused on enabling modern web apps to run on multiple platforms, and embraces browser-built apps. Capacitor is not a native UI abstraction like React Native, though native UI can certainly be used alongside a Capacitor app.</p>\n<p>Capacitor apps for iOS and Android <a href=\"https://medium.com/@maxlynch/cordova-ionic-apps-are-native-apps-64f9e1a995d9\">are native apps</a>, they just happen to do a large amount of their work in a primary WebView.</p>\n<p>As a side effect of being web-focused, Capacitor provides a standard web development experience where apps can be built largely in the browser, bringing the experience and tooling web developers have come to love.</p>\n<h2 id=\"build-native-apps-with-material-ui-chakra-ant-prime-and-more\">Build Native Apps with Material-UI, Chakra, Ant, Prime, and more</h2>\n<p>Because Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using <a href=\"https://material-ui.com/\">Material-UI</a> or <a href=\"https://chakra-ui.com/\">Chakra</a> or <a href=\"https://www.primefaces.org/primereact/\">Prime</a> or <a href=\"https://ant.design/\">Ant</a> or <a href=\"https://ionicframework.com/\">Ionic Framework</a>, or any other React UI library, can be turned into native apps using Capacitor.</p>\n<p>This simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)</p>\n<h2 id=\"bonus-deploy-progressive-web-apps-and-native-apps\">Bonus: Deploy Progressive Web Apps and Native Apps</h2>\n<p>One additional bonus feature of Capacitor is that it works on the web for Progressive Web Apps. That means an app using Capacitor can access many of the same APIs on native mobile but on the web instead. For example, the <a href=\"https://capacitorjs.com/docs/apis/camera\">Camera</a> and <a href=\"https://capacitorjs.com/docs/apis/share\">Share</a> APIs work across iOS, Android, and the web with the same code.</p>\n<p>With this capability, teams often can build and ship on three platforms on day one, or even embrace <a href=\"https://ionicframework.com/blog/forget-mobile-first-progressive-web-app-first-is-the-future/\">Progressive Web App First Development</a>, by using Capacitor.</p>\n<h2 id=\"transform-your-react-web-app-into-native-with-capacitor\">Transform your React Web App into Native with Capacitor</h2>\n<p>Adding native functionality and deploying to iOS, Android, and PWA with your existing React web app is easy. Just install Capacitor, drop it into to your project, and add a platform:</p>\n<pre><code class=\"language-shell\"><span class=\"token function\">npm</span> <span class=\"token function\">install</span> @capacitor/cli @capacitor/core\nnpx cap init\nnpx cap <span class=\"token function\">add</span> ios</code></pre>\n<p>Capacitor apps can be built primarily in the browser, but to deploy and test on iOS or Android (simulator or device), open the IDE of choice and run directly in the IDE:</p>\n<pre><code class=\"language-shell\">npx cap <span class=\"token function\">open</span> ios</code></pre>\n<p>For the full getting started instructions, check out the <a href=\"https://capacitorjs.com/docs/getting-started\">Capacitor documentation</a>.</p>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>React Native is no longer the only option for React devs to build iOS and Android apps. Capacitor provides a web-focused solution for teams building React web apps to enable them to ship to the app stores and the web with the same code base.</p>\n<p>And, for teams that are building a new app and interested in exploring a mobile-focused UI library for their Capacitor apps, <a href=\"https://ionicframework.com/\">Ionic React</a> is a great and popular option.</p>\n<p>Beyond React, Capacitor can be used with any modern web app technology, so is a good fit for teams with a diversity of frontend technologies in use, which is another challenge with React Native.</p>\n<p>We&#39;re excited about Capacitor in the React ecosystem, and many teams are as well. Today, Capacitor is powering React apps with hundreds of millions of users, and for major brands and <a href=\"https://ionicframework.com/customers\">enterprise customers</a> like Burger King and Popeye&#39;s. Capacitor adoption has been <a href=\"https://twitter.com/maxlynch/status/1280531102650769408\">growing quickly</a> and given that given that web development with React represents the largest area of React development (<a href=\"https://npmcharts.com/compare/react-native,react-dom?interval=7\">&gt; 17x React Native</a>), we&#39;re thrilled about the potential to help more web devs build cross-platform apps.</p>\n<p>Check out Capacitor today and stay tuned for some exciting updates with the project coming soon: <a href=\"https://capacitorjs.com/\">capacitorjs.com</a></p>\n",
+		contents: "---\ntitle: Native React Apps Without React Native\ndate: 2020-07-14 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\n![Native React Apps Without React Native](/assets/img/blog/native-wout-react-native.png)\n\nIn the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.\n\nHowever, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.\n\nThe net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.\n\nTo do that, we need to take a look at [Capacitor](https://capacitorjs.com/) -- a native runtime for cross-platform web apps, including any and all React web apps.\n\n<!--more-->\n\n## Capacitor: Native Runtime for Web Apps\n\n[Capacitor](https://capacitorjs.com/) is sort of an “electron for mobile” that provides a native runtime for any modern web app, so it can run natively on iOS, Android, and the web using the same code. Capacitor provides full native API access through a [powerful plugin system](https://capacitorjs.com/docs/plugins), so apps can access the same level of functionality as any other pure native (or React Native) app.\n\nCapacitor is focused on enabling modern web apps to run on multiple platforms, and embraces browser-built apps. Capacitor is not a native UI abstraction like React Native, though native UI can certainly be used alongside a Capacitor app.\n\nCapacitor apps for iOS and Android [are native apps](https://medium.com/@maxlynch/cordova-ionic-apps-are-native-apps-64f9e1a995d9), they just happen to do a large amount of their work in a primary WebView.\n\nAs a side effect of being web-focused, Capacitor provides a standard web development experience where apps can be built largely in the browser, bringing the experience and tooling web developers have come to love.\n\n## Build Native Apps with Material-UI, Chakra, Ant, Prime, and more\n\nBecause Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using [Material-UI](https://material-ui.com/) or [Chakra](https://chakra-ui.com/) or [Prime](https://www.primefaces.org/primereact/) or [Ant](https://ant.design/) or [Ionic Framework](https://ionicframework.com/), or any other React UI library, can be turned into native apps using Capacitor (see our [examples repo](https://github.com/capacitor-community/examples) for real code in a variety of libraries).\n\nThis simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)\n\n## Bonus: Deploy Progressive Web Apps and Native Apps\n\nOne additional bonus feature of Capacitor is that it works on the web for Progressive Web Apps. That means an app using Capacitor can access many of the same APIs on native mobile but on the web instead. For example, the [Camera](https://capacitorjs.com/docs/apis/camera) and [Share](https://capacitorjs.com/docs/apis/share) APIs work across iOS, Android, and the web with the same code.\n\nWith this capability, teams often can build and ship on three platforms on day one, or even embrace [Progressive Web App First Development](https://ionicframework.com/blog/forget-mobile-first-progressive-web-app-first-is-the-future/), by using Capacitor.\n\n## Transform your React Web App into Native with Capacitor\n\nAdding native functionality and deploying to iOS, Android, and PWA with your existing React web app is easy. Just install Capacitor, drop it into to your project, and add a platform:\n\n```shell\nnpm install @capacitor/cli @capacitor/core\nnpx cap init\nnpx cap add ios\n```\n\nThen, to start using in a web app, import from `@capacitor/core`:\n\n```typescript\nimport { Plugins } from '@capacitor/core';\n\nconst { Share } = Plugins;\nawait Share.share({\n  title: 'My awesome thing',\n  text: 'Check out this really awesome thing',\n  url: 'https://capacitorjs.com/'\n});\n```\n\nThen run your web app:\n\n```shell\nnpm start\n```\n\nCapacitor apps can be built primarily in the browser, but to deploy and test on iOS or Android (simulator or device), open the IDE of choice and run directly in the IDE:\n\n```shell\nnpx cap open ios\n```\n\nFor the full getting started instructions, check out the [Capacitor documentation](https://capacitorjs.com/docs/getting-started).\n\n## Conclusion\n\nReact Native is no longer the only option for React devs to build iOS and Android apps. Capacitor provides a web-focused solution for teams building React web apps to enable them to ship to the app stores and the web with the same code base.\n\nAnd, for teams that are building a new app and interested in exploring a mobile-focused UI library for their Capacitor apps, [Ionic React](https://ionicframework.com/) is a great and popular option.\n\nBeyond React, Capacitor can be used with any modern web app technology, so is a good fit for teams with a diversity of frontend technologies in use, which is another challenge with React Native.\n\nWe're excited about Capacitor in the React ecosystem, and many teams are as well. Today, Capacitor is powering React apps with hundreds of millions of users, and for major brands and [enterprise customers](https://ionicframework.com/customers) like Burger King and Popeye's. Capacitor adoption has been [growing quickly](https://twitter.com/maxlynch/status/1280531102650769408) and given that given that web development with React represents the largest area of React development ([> 17x React Native](https://npmcharts.com/compare/react-native,react-dom?interval=7)), we're thrilled about the potential to help more web devs build cross-platform apps.\n\nCheck out Capacitor today and stay tuned for some exciting updates with the project coming soon: [capacitorjs.com](https://capacitorjs.com/)",
+		preview: "<p><img src=\"/assets/img/blog/native-wout-react-native.png\" alt=\"Native React Apps Without React Native\"></p>\n<p>In the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.</p>\n<p>However, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.</p>\n<p>The net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.</p>\n<p>To do that, we need to take a look at <a href=\"https://capacitorjs.com/\">Capacitor</a> -- a native runtime for cross-platform web apps, including any and all React web apps.</p>\n",
+		html: "<p><img src=\"/assets/img/blog/native-wout-react-native.png\" alt=\"Native React Apps Without React Native\"></p>\n<p>In the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.</p>\n<p>However, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.</p>\n<p>The net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.</p>\n<p>To do that, we need to take a look at <a href=\"https://capacitorjs.com/\">Capacitor</a> -- a native runtime for cross-platform web apps, including any and all React web apps.</p>\n<!--more-->\n\n<h2 id=\"capacitor-native-runtime-for-web-apps\">Capacitor: Native Runtime for Web Apps</h2>\n<p><a href=\"https://capacitorjs.com/\">Capacitor</a> is sort of an “electron for mobile” that provides a native runtime for any modern web app, so it can run natively on iOS, Android, and the web using the same code. Capacitor provides full native API access through a <a href=\"https://capacitorjs.com/docs/plugins\">powerful plugin system</a>, so apps can access the same level of functionality as any other pure native (or React Native) app.</p>\n<p>Capacitor is focused on enabling modern web apps to run on multiple platforms, and embraces browser-built apps. Capacitor is not a native UI abstraction like React Native, though native UI can certainly be used alongside a Capacitor app.</p>\n<p>Capacitor apps for iOS and Android <a href=\"https://medium.com/@maxlynch/cordova-ionic-apps-are-native-apps-64f9e1a995d9\">are native apps</a>, they just happen to do a large amount of their work in a primary WebView.</p>\n<p>As a side effect of being web-focused, Capacitor provides a standard web development experience where apps can be built largely in the browser, bringing the experience and tooling web developers have come to love.</p>\n<h2 id=\"build-native-apps-with-material-ui-chakra-ant-prime-and-more\">Build Native Apps with Material-UI, Chakra, Ant, Prime, and more</h2>\n<p>Because Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using <a href=\"https://material-ui.com/\">Material-UI</a> or <a href=\"https://chakra-ui.com/\">Chakra</a> or <a href=\"https://www.primefaces.org/primereact/\">Prime</a> or <a href=\"https://ant.design/\">Ant</a> or <a href=\"https://ionicframework.com/\">Ionic Framework</a>, or any other React UI library, can be turned into native apps using Capacitor (see our <a href=\"https://github.com/capacitor-community/examples\">examples repo</a> for real code in a variety of libraries).</p>\n<p>This simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)</p>\n<h2 id=\"bonus-deploy-progressive-web-apps-and-native-apps\">Bonus: Deploy Progressive Web Apps and Native Apps</h2>\n<p>One additional bonus feature of Capacitor is that it works on the web for Progressive Web Apps. That means an app using Capacitor can access many of the same APIs on native mobile but on the web instead. For example, the <a href=\"https://capacitorjs.com/docs/apis/camera\">Camera</a> and <a href=\"https://capacitorjs.com/docs/apis/share\">Share</a> APIs work across iOS, Android, and the web with the same code.</p>\n<p>With this capability, teams often can build and ship on three platforms on day one, or even embrace <a href=\"https://ionicframework.com/blog/forget-mobile-first-progressive-web-app-first-is-the-future/\">Progressive Web App First Development</a>, by using Capacitor.</p>\n<h2 id=\"transform-your-react-web-app-into-native-with-capacitor\">Transform your React Web App into Native with Capacitor</h2>\n<p>Adding native functionality and deploying to iOS, Android, and PWA with your existing React web app is easy. Just install Capacitor, drop it into to your project, and add a platform:</p>\n<pre><code class=\"language-shell\"><span class=\"token function\">npm</span> <span class=\"token function\">install</span> @capacitor/cli @capacitor/core\nnpx cap init\nnpx cap <span class=\"token function\">add</span> ios</code></pre>\n<p>Then, to start using in a web app, import from <code>@capacitor/core</code>:</p>\n<pre><code class=\"language-typescript\"><span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> Plugins <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'@capacitor/core'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">const</span> <span class=\"token punctuation\">{</span> Share <span class=\"token punctuation\">}</span> <span class=\"token operator\">=</span> Plugins<span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">await</span> Share<span class=\"token punctuation\">.</span><span class=\"token function\">share</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">{</span>\n  title<span class=\"token punctuation\">:</span> <span class=\"token string\">'My awesome thing'</span><span class=\"token punctuation\">,</span>\n  text<span class=\"token punctuation\">:</span> <span class=\"token string\">'Check out this really awesome thing'</span><span class=\"token punctuation\">,</span>\n  url<span class=\"token punctuation\">:</span> <span class=\"token string\">'https://capacitorjs.com/'</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></code></pre>\n<p>Then run your web app:</p>\n<pre><code class=\"language-shell\"><span class=\"token function\">npm</span> start</code></pre>\n<p>Capacitor apps can be built primarily in the browser, but to deploy and test on iOS or Android (simulator or device), open the IDE of choice and run directly in the IDE:</p>\n<pre><code class=\"language-shell\">npx cap <span class=\"token function\">open</span> ios</code></pre>\n<p>For the full getting started instructions, check out the <a href=\"https://capacitorjs.com/docs/getting-started\">Capacitor documentation</a>.</p>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>React Native is no longer the only option for React devs to build iOS and Android apps. Capacitor provides a web-focused solution for teams building React web apps to enable them to ship to the app stores and the web with the same code base.</p>\n<p>And, for teams that are building a new app and interested in exploring a mobile-focused UI library for their Capacitor apps, <a href=\"https://ionicframework.com/\">Ionic React</a> is a great and popular option.</p>\n<p>Beyond React, Capacitor can be used with any modern web app technology, so is a good fit for teams with a diversity of frontend technologies in use, which is another challenge with React Native.</p>\n<p>We&#39;re excited about Capacitor in the React ecosystem, and many teams are as well. Today, Capacitor is powering React apps with hundreds of millions of users, and for major brands and <a href=\"https://ionicframework.com/customers\">enterprise customers</a> like Burger King and Popeye&#39;s. Capacitor adoption has been <a href=\"https://twitter.com/maxlynch/status/1280531102650769408\">growing quickly</a> and given that given that web development with React represents the largest area of React development (<a href=\"https://npmcharts.com/compare/react-native,react-dom?interval=7\">&gt; 17x React Native</a>), we&#39;re thrilled about the potential to help more web devs build cross-platform apps.</p>\n<p>Check out Capacitor today and stay tuned for some exciting updates with the project coming soon: <a href=\"https://capacitorjs.com/\">capacitorjs.com</a></p>\n",
 		meta: {
 			title: "Native React Apps Without React Native",
 			date: "2020-07-14T08:00:00.000Z",
-			author: "Max Lynch <max@ionic.io>"
+			author: "Max Lynch <max@ionic.io>",
+			authorUrl: "https://twitter.com/maxlynch"
 		}
 	},
 	{
 		title: "Capacitor announcements at Ioniconf 2020",
 		authorName: "Max Lynch",
 		authorEmail: "max@ionic.io",
+		authorUrl: "https://twitter.com/maxlynch",
 		slug: "capacitor-announcements-at-ioniconf-2020",
 		date: "2020-06-24T08:00:00.000Z",
-		contents: "---\ntitle: Capacitor announcements at Ioniconf 2020\ndate: 2020-06-24 08:00:00\nauthor: Max Lynch <max@ionic.io>\n---\n\nToday at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.\n\nIn no particular order, we announced:\n\n* [Capacitor opening up to all modern web technologies]($POST#capacitor-opening-up)\n* [The Capacitor Community project]($POST#capacitor-community)\n* [Capacitor Elements]($POST#capacitor-elements)\n* [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)\n* [Updated site and domain]($POST#updated-site-domain-and-docs)\n\n<!--more-->\n\nToday at the first ever official [Ioniconf](https://ioniconf.com/), we unveiled a number of exciting updates to Capacitor and the Capacitor community.\n\nThe conference kicks off a new era for Capacitor and for [Ionic](https://ionic.io/), the company behind Capacitor.\n\nIf you'd like to see the announcements live, the [keynote](https://ioniconf.com/) (along with the rest of the conference) is now [up](https://ioniconf.com/).\n\n## Capacitor opening up\n\nOne of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.\n\nWhile technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.\n\nWith this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.\n\nThe new Capacitor mission is to help _all_ web developers build cross-platform apps with their web development skills.\n\n## Capacitor Community\n\nOne of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.\n\nYesterday, web announced a new [Capacitor Community](https://github.com/capacitor-community) GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.\n\nTo start, we have a number of great plugins and many are in development. Check out the [Http](https://github.com/capacitor-community/http), [Contacts](https://github.com/capacitor-community/contacts), and [Apple Sign In](https://github.com/capacitor-community/apple-sign-in) plugins. We've also started moving the [Electron](https://github.com/capacitor-community/electron) platform to the community org.\n\nEvery project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.\n\n## Capacitor Elements\n\nWe announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.\n\nThese components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.\n\nThe goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.\n\nThis makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.\n\nStay tuned for more updates soon!\n\n## Deploy to App Store for Capacitor\n\nWe announced that [Deploy to App Store](https://ionicframework.com/docs/appflow/destinations/intro), a powerful new feature available in Ionic's DevOps service [Appflow](https://useappflow.com/) that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.\n\nThis feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.\n\nAppflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.\n\n## Updated Site, Domain, and Docs\n\nWe've updated the Capacitor site and moved to a new domain ([capacitorjs.com](https://capacitorjs.com)) and Twitter handle ([@capacitorjs](https://twitter.com/capacitorjs)).\n\nWe also rolled out [updated documentation](/docs) as we embark on a documentation overhaul.\n\n## Stay tuned\n\nCapacitor is quickly becoming the focal point of Ionic's open source offering, and we're investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.\n\nStay tuned for a ton more Capacitor updates in the coming months!",
+		contents: "---\ntitle: Capacitor announcements at Ioniconf 2020\ndate: 2020-06-24 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\nToday at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.\n\nIn no particular order, we announced:\n\n* [Capacitor opening up to all modern web technologies]($POST#capacitor-opening-up)\n* [The Capacitor Community project]($POST#capacitor-community)\n* [Capacitor Elements]($POST#capacitor-elements)\n* [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)\n* [Updated site and domain]($POST#updated-site-domain-and-docs)\n\n<!--more-->\n\nThe conference kicks off a new era for Capacitor and for [Ionic](https://ionic.io/), the company behind Capacitor.\n\nIf you'd like to see the announcements live, the [keynote](https://ioniconf.com/) (along with the rest of the conference) is now [up](https://ioniconf.com/).\n\n## Capacitor opening up\n\nOne of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.\n\nWhile technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.\n\nWith this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.\n\nThe new Capacitor mission is to help _all_ web developers build cross-platform apps with their web development skills.\n\n## Capacitor Community\n\nOne of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.\n\nYesterday, web announced a new [Capacitor Community](https://github.com/capacitor-community) GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.\n\nTo start, we have a number of great plugins and many are in development. Check out the [Http](https://github.com/capacitor-community/http), [Contacts](https://github.com/capacitor-community/contacts), and [Apple Sign In](https://github.com/capacitor-community/apple-sign-in) plugins. We've also started moving the [Electron](https://github.com/capacitor-community/electron) platform to the community org.\n\nEvery project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.\n\n## Capacitor Elements\n\nWe announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.\n\nThese components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.\n\nThe goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.\n\nThis makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.\n\nStay tuned for more updates soon!\n\n## Deploy to App Store for Capacitor\n\nWe announced that [Deploy to App Store](https://ionicframework.com/docs/appflow/destinations/intro), a powerful new feature available in Ionic's DevOps service [Appflow](https://useappflow.com/) that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.\n\nThis feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.\n\nAppflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.\n\n## Updated Site, Domain, and Docs\n\nWe've updated the Capacitor site and moved to a new domain ([capacitorjs.com](https://capacitorjs.com)) and Twitter handle ([@capacitorjs](https://twitter.com/capacitorjs)).\n\nWe also rolled out [updated documentation](/docs) as we embark on a documentation overhaul.\n\n## Stay tuned\n\nCapacitor is quickly becoming the focal point of Ionic's open source offering, and we're investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.\n\nStay tuned for a ton more Capacitor updates in the coming months!",
 		preview: "<p>Today at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.</p>\n<p>In no particular order, we announced:</p>\n<ul>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#capacitor-opening-up\">Capacitor opening up to all modern web technologies</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#capacitor-community\">The Capacitor Community project</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#capacitor-elements\">Capacitor Elements</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#updated-site-domain-and-docs\">Updated site and domain</a></li>\n</ul>\n",
-		html: "<p>Today at the first ever official <a href=\"https://ioniconf.com/\">Ioniconf</a>, we unveiled a number of exciting updates to Capacitor and the Capacitor community.</p>\n<p>The conference kicks off a new era for Capacitor and for <a href=\"https://ionic.io/\">Ionic</a>, the company behind Capacitor.</p>\n<p>If you&#39;d like to see the announcements live, the <a href=\"https://ioniconf.com/\">keynote</a> (along with the rest of the conference) is now <a href=\"https://ioniconf.com/\">up</a>.</p>\n<h2 id=\"capacitor-opening-up\">Capacitor opening up</h2>\n<p>One of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.</p>\n<p>While technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.</p>\n<p>With this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.</p>\n<p>The new Capacitor mission is to help <em>all</em> web developers build cross-platform apps with their web development skills.</p>\n<h2 id=\"capacitor-community\">Capacitor Community</h2>\n<p>One of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.</p>\n<p>Yesterday, web announced a new <a href=\"https://github.com/capacitor-community\">Capacitor Community</a> GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.</p>\n<p>To start, we have a number of great plugins and many are in development. Check out the <a href=\"https://github.com/capacitor-community/http\">Http</a>, <a href=\"https://github.com/capacitor-community/contacts\">Contacts</a>, and <a href=\"https://github.com/capacitor-community/apple-sign-in\">Apple Sign In</a> plugins. We&#39;ve also started moving the <a href=\"https://github.com/capacitor-community/electron\">Electron</a> platform to the community org.</p>\n<p>Every project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.</p>\n<h2 id=\"capacitor-elements\">Capacitor Elements</h2>\n<p>We announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.</p>\n<p>These components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.</p>\n<p>The goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.</p>\n<p>This makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.</p>\n<p>Stay tuned for more updates soon!</p>\n<h2 id=\"deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</h2>\n<p>We announced that <a href=\"https://ionicframework.com/docs/appflow/destinations/intro\">Deploy to App Store</a>, a powerful new feature available in Ionic&#39;s DevOps service <a href=\"https://useappflow.com/\">Appflow</a> that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.</p>\n<p>This feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.</p>\n<p>Appflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.</p>\n<h2 id=\"updated-site-domain-and-docs\">Updated Site, Domain, and Docs</h2>\n<p>We&#39;ve updated the Capacitor site and moved to a new domain (<a href=\"https://capacitorjs.com\">capacitorjs.com</a>) and Twitter handle (<a href=\"https://twitter.com/capacitorjs\">@capacitorjs</a>).</p>\n<p>We also rolled out <a href=\"/docs\">updated documentation</a> as we embark on a documentation overhaul.</p>\n<h2 id=\"stay-tuned\">Stay tuned</h2>\n<p>Capacitor is quickly becoming the focal point of Ionic&#39;s open source offering, and we&#39;re investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.</p>\n<p>Stay tuned for a ton more Capacitor updates in the coming months!</p>\n",
+		html: "<p>Today at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.</p>\n<p>In no particular order, we announced:</p>\n<ul>\n<li><a href=\"$POST#capacitor-opening-up\">Capacitor opening up to all modern web technologies</a></li>\n<li><a href=\"$POST#capacitor-community\">The Capacitor Community project</a></li>\n<li><a href=\"$POST#capacitor-elements\">Capacitor Elements</a></li>\n<li><a href=\"$POST#deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</a></li>\n<li><a href=\"$POST#updated-site-domain-and-docs\">Updated site and domain</a></li>\n</ul>\n<!--more-->\n\n<p>The conference kicks off a new era for Capacitor and for <a href=\"https://ionic.io/\">Ionic</a>, the company behind Capacitor.</p>\n<p>If you&#39;d like to see the announcements live, the <a href=\"https://ioniconf.com/\">keynote</a> (along with the rest of the conference) is now <a href=\"https://ioniconf.com/\">up</a>.</p>\n<h2 id=\"capacitor-opening-up\">Capacitor opening up</h2>\n<p>One of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.</p>\n<p>While technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.</p>\n<p>With this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.</p>\n<p>The new Capacitor mission is to help <em>all</em> web developers build cross-platform apps with their web development skills.</p>\n<h2 id=\"capacitor-community\">Capacitor Community</h2>\n<p>One of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.</p>\n<p>Yesterday, web announced a new <a href=\"https://github.com/capacitor-community\">Capacitor Community</a> GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.</p>\n<p>To start, we have a number of great plugins and many are in development. Check out the <a href=\"https://github.com/capacitor-community/http\">Http</a>, <a href=\"https://github.com/capacitor-community/contacts\">Contacts</a>, and <a href=\"https://github.com/capacitor-community/apple-sign-in\">Apple Sign In</a> plugins. We&#39;ve also started moving the <a href=\"https://github.com/capacitor-community/electron\">Electron</a> platform to the community org.</p>\n<p>Every project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.</p>\n<h2 id=\"capacitor-elements\">Capacitor Elements</h2>\n<p>We announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.</p>\n<p>These components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.</p>\n<p>The goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.</p>\n<p>This makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.</p>\n<p>Stay tuned for more updates soon!</p>\n<h2 id=\"deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</h2>\n<p>We announced that <a href=\"https://ionicframework.com/docs/appflow/destinations/intro\">Deploy to App Store</a>, a powerful new feature available in Ionic&#39;s DevOps service <a href=\"https://useappflow.com/\">Appflow</a> that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.</p>\n<p>This feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.</p>\n<p>Appflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.</p>\n<h2 id=\"updated-site-domain-and-docs\">Updated Site, Domain, and Docs</h2>\n<p>We&#39;ve updated the Capacitor site and moved to a new domain (<a href=\"https://capacitorjs.com\">capacitorjs.com</a>) and Twitter handle (<a href=\"https://twitter.com/capacitorjs\">@capacitorjs</a>).</p>\n<p>We also rolled out <a href=\"/docs\">updated documentation</a> as we embark on a documentation overhaul.</p>\n<h2 id=\"stay-tuned\">Stay tuned</h2>\n<p>Capacitor is quickly becoming the focal point of Ionic&#39;s open source offering, and we&#39;re investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.</p>\n<p>Stay tuned for a ton more Capacitor updates in the coming months!</p>\n",
 		meta: {
 			title: "Capacitor announcements at Ioniconf 2020",
 			date: "2020-06-24T08:00:00.000Z",
-			author: "Max Lynch <max@ionic.io>"
+			author: "Max Lynch <max@ionic.io>",
+			authorUrl: "https://twitter.com/maxlynch"
 		}
 	},
 	{
 		title: "Announcing Capacitor 2.0",
 		authorName: "Max Lynch",
 		authorEmail: "max@ionic.io",
+		authorUrl: "https://twitter.com/maxlynch",
 		slug: "announcing-capacitor-2-0",
 		date: "2020-04-08T08:00:00.000Z",
-		contents: "---\ntitle: Announcing Capacitor 2.0\ndate: 2020-04-08 08:00:00\nauthor: Max Lynch <max@ionic.io>\n---\n\nToday we are excited to announce Capacitor 2.0!\n\nCapacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:\n\n * Swift 5 and Xcode 11+ support\n * Android 10 (SDK 29) and AndroidX support\n * Bug fixes and usability improvements to 23+ core plugins\n * Support for generating splash screens and icons\n\nWe documented the whole update and talked about what's next for Capacitor over on the Ionic blog.\n\nCheck it out:\n\n[https://ionicframework.com/blog/announcing-capacitor-2-0/](https://ionicframework.com/blog/announcing-capacitor-2-0/)",
+		contents: "---\ntitle: Announcing Capacitor 2.0\ndate: 2020-04-08 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\nToday we are excited to announce Capacitor 2.0!\n\nCapacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:\n\n * Swift 5 and Xcode 11+ support\n * Android 10 (SDK 29) and AndroidX support\n * Bug fixes and usability improvements to 23+ core plugins\n * Support for generating splash screens and icons\n\nWe documented the whole update and talked about what's next for Capacitor over on the Ionic blog.\n\nCheck it out:\n\n[https://ionicframework.com/blog/announcing-capacitor-2-0/](https://ionicframework.com/blog/announcing-capacitor-2-0/)",
 		preview: "",
 		html: "<p>Today we are excited to announce Capacitor 2.0!</p>\n<p>Capacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:</p>\n<ul>\n<li>Swift 5 and Xcode 11+ support</li>\n<li>Android 10 (SDK 29) and AndroidX support</li>\n<li>Bug fixes and usability improvements to 23+ core plugins</li>\n<li>Support for generating splash screens and icons</li>\n</ul>\n<p>We documented the whole update and talked about what&#39;s next for Capacitor over on the Ionic blog.</p>\n<p>Check it out:</p>\n<p><a href=\"https://ionicframework.com/blog/announcing-capacitor-2-0/\">https://ionicframework.com/blog/announcing-capacitor-2-0/</a></p>\n",
 		meta: {
 			title: "Announcing Capacitor 2.0",
 			date: "2020-04-08T08:00:00.000Z",
-			author: "Max Lynch <max@ionic.io>"
+			author: "Max Lynch <max@ionic.io>",
+			authorUrl: "https://twitter.com/maxlynch"
 		}
 	},
 	{
 		title: "Announcing Capacitor 1.0",
 		authorName: "Max Lynch",
 		authorEmail: "max@ionic.io",
+		authorUrl: "https://twitter.com/maxlynch",
 		slug: "announcing-capacitor-1-0",
 		date: "2019-05-22T08:00:00.000Z",
-		contents: "---\ntitle: Announcing Capacitor 1.0\ndate: 2019-05-22 08:00:00\nauthor: Max Lynch <max@ionic.io>\n---\n\nToday I’m thrilled to announce the 1.0 release of [Capacitor](/), Ionic’s new Native API Container that makes it easy to build web apps that run on iOS, Android, and the web as Progressive Web Apps—with full access to native functionality on each platform.\n\nWe documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.\n\nTake a look: [https://ionicframework.com/blog/announcing-capacitor-1-0/](https://ionicframework.com/blog/announcing-capacitor-1-0/).",
+		contents: "---\ntitle: Announcing Capacitor 1.0\ndate: 2019-05-22 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\nToday I’m thrilled to announce the 1.0 release of [Capacitor](/), Ionic’s new Native API Container that makes it easy to build web apps that run on iOS, Android, and the web as Progressive Web Apps—with full access to native functionality on each platform.\n\nWe documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.\n\nTake a look: [https://ionicframework.com/blog/announcing-capacitor-1-0/](https://ionicframework.com/blog/announcing-capacitor-1-0/).",
 		preview: "",
 		html: "<p>Today I’m thrilled to announce the 1.0 release of <a href=\"/\">Capacitor</a>, Ionic’s new Native API Container that makes it easy to build web apps that run on iOS, Android, and the web as Progressive Web Apps—with full access to native functionality on each platform.</p>\n<p>We documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.</p>\n<p>Take a look: <a href=\"https://ionicframework.com/blog/announcing-capacitor-1-0/\">https://ionicframework.com/blog/announcing-capacitor-1-0/</a>.</p>\n",
 		meta: {
 			title: "Announcing Capacitor 1.0",
 			date: "2019-05-22T08:00:00.000Z",
-			author: "Max Lynch <max@ionic.io>"
+			author: "Max Lynch <max@ionic.io>",
+			authorUrl: "https://twitter.com/maxlynch"
 		}
 	}
 ];
 
-const blogPageCss = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
+const blogPageCss = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post img{max-width:100%}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
 
 class BlogPage {
     constructor(hostRef) {
@@ -8242,7 +8293,7 @@ const AllPosts = ({ posts }) => {
     return (h("div", { class: "blog-posts" }, h("hgroup", { class: "blog-posts__heading" }, h(Heading, { level: 3 }, "Blog")), posts.map(p => h(BlogPost, { post: p, single: false }))));
 };
 
-const blogPageCss$1 = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
+const blogPageCss$1 = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post img{max-width:100%}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
 
 class BlogPage$1 {
     constructor(hostRef) {
@@ -8275,7 +8326,7 @@ class BlogPage$1 {
     }; }
 }
 
-const capacitorCommunityCss = ".sc-capacitor-community-h{display:block}hgroup.sc-capacitor-community{text-align:center;padding:var(--space-12) 0;max-width:560px;margin:auto}hgroup.sc-capacitor-community .ui-heading.sc-capacitor-community{font-family:var(--f-family-display);font-weight:700;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin:4px 0}hgroup.sc-capacitor-community .ui-paragraph.sc-capacitor-community{font-size:20px;line-height:1.6em;margin:8px 0 0 3px;letter-spacing:-0.02em}.ui-grid.sc-capacitor-community{-webkit-column-gap:56px;-moz-column-gap:56px;column-gap:56px;margin-top:-11px;padding-bottom:var(--space-12)}.ui-col.sc-capacitor-community a.sc-capacitor-community{display:block}.ui-col.sc-capacitor-community img.sc-capacitor-community{display:block;max-width:100%}.ui-col.sc-capacitor-community .ui-heading.sc-capacitor-community{margin:28px 0 16px 2px;font-size:20px;font-family:var(--f-family-text);font-weight:500;letter-spacing:-0.02em}.ui-col.sc-capacitor-community .ui-paragraph.sc-capacitor-community{margin:0 0 0 2px;font-size:16px;line-height:1.6em}";
+const capacitorCommunityCss = ".sc-capacitor-community-h{display:block}hgroup.sc-capacitor-community{text-align:center;padding:var(--space-12) 0;max-width:560px;margin:auto}hgroup.sc-capacitor-community .ui-heading.sc-capacitor-community{font-family:var(--f-family-display);font-weight:700;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin:4px 0}hgroup.sc-capacitor-community .ui-paragraph.sc-capacitor-community{font-size:20px;line-height:1.6em;margin:8px 0 0 3px;letter-spacing:-0.02em}.ui-grid.sc-capacitor-community{column-gap:56px;margin-top:-11px;padding-bottom:var(--space-12)}.ui-col.sc-capacitor-community a.sc-capacitor-community{display:block}.ui-col.sc-capacitor-community img.sc-capacitor-community{display:block;max-width:100%}.ui-col.sc-capacitor-community .ui-heading.sc-capacitor-community{margin:28px 0 16px 2px;font-size:20px;font-family:var(--f-family-text);font-weight:500;letter-spacing:-0.02em}.ui-col.sc-capacitor-community .ui-paragraph.sc-capacitor-community{margin:0 0 0 2px;font-size:16px;line-height:1.6em}";
 
 class CapacitorCommunity {
     constructor(hostRef) {
@@ -8340,7 +8391,25 @@ class CapacitorSiteRoutes {
                 return h("blog-page", null);
             } }), h(Route, { path: match('/blog/:slug'), render: ({ slug }) => {
                 return h("blog-post", { slug: slug });
-            } }), h(Route, { path: "/cordova" }, h("cordova-landing-page", null)), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs" })), h(Route, { path: match('/docs/:pageName*'), render: ({ pageName }) => (h("document-component", { page: `/docs/${pageName}` })) }), h(Route, { path: match('/solution/:solutionId*'), render: ({ solutionId }) => (h("solution-page", { solutionId: `/solution/${solutionId}` })) }))));
+            } }), h(Route, { path: "/cordova" }, h("cordova-landing-page", null))
+        // <Route path="/react">
+        //   <react-landing-page />
+        // </Route>
+        // <Route path="/preact">
+        //   <react-landing-page flavor={{name: 'Preact', color:'#673ab8', logo:'/assets/img/landing/framework-preact.png' }} />
+        // </Route>
+        , "// ", h(Route, { path: "/react" }, "//   ", h("react-landing-page", null)
+        // </Route>
+        // <Route path="/preact">
+        //   <react-landing-page flavor={{name: 'Preact', color:'#673ab8', logo:'/assets/img/landing/framework-preact.png' }} />
+        // </Route>
+        , "// ")
+        // <Route path="/preact">
+        //   <react-landing-page flavor={{name: 'Preact', color:'#673ab8', logo:'/assets/img/landing/framework-preact.png' }} />
+        // </Route>
+        , "// ", h(Route, { path: "/preact" }, "//   ", h("react-landing-page", { flavor: { name: 'Preact', color: '#673ab8', logo: '/assets/img/landing/framework-preact.png' } })
+        // </Route>
+        , "// "), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs" })), h(Route, { path: match('/docs/:pageName*'), render: ({ pageName }) => (h("document-component", { page: `/docs/${pageName}` })) }), h(Route, { path: match('/solution/:solutionId*'), render: ({ solutionId }) => (h("solution-page", { solutionId: `/solution/${solutionId}` })) }))));
     }
     static get style() { return capacitorSiteRoutesCss; }
     static get cmpMeta() { return {
@@ -8391,7 +8460,7 @@ class CodeSnippet {
     }; }
 }
 
-const contributorListCss = "contributor-list{display:block}contributor-list ul.img-list{display:-ms-flexbox;display:flex;-ms-flex-direction:row-reverse;flex-direction:row-reverse;-ms-flex-pack:end;justify-content:flex-end;list-style:none;margin:0;padding:0}contributor-list li:last-child{margin-left:0 !important}contributor-list li:not(:last-child){margin-left:-10px}contributor-list img{border:solid 2px var(--background);border-radius:50%;height:32px;width:32px;border:2px solid #FFF}contributor-list a.contributor-img{display:block;border:none;-webkit-transition:-webkit-transform 50ms ease-out;transition:-webkit-transform 50ms ease-out;transition:transform 50ms ease-out;transition:transform 50ms ease-out, -webkit-transform 50ms ease-out}@media (hover: hover){contributor-list a:hover{-webkit-transform:scale(1.125);transform:scale(1.125);z-index:1}}";
+const contributorListCss = "contributor-list{display:block}contributor-list ul.img-list{display:flex;flex-direction:row-reverse;justify-content:flex-end;list-style:none;margin:0;padding:0}contributor-list li:last-child{margin-left:0 !important}contributor-list li:not(:last-child){margin-left:-10px}contributor-list img{border:solid 2px var(--background);border-radius:50%;height:32px;width:32px;border:2px solid #FFF}contributor-list a.contributor-img{display:block;border:none;transition:transform 50ms ease-out}@media (hover: hover){contributor-list a:hover{transform:scale(1.125);z-index:1}}";
 
 class ContributorList {
     constructor(hostRef) {
@@ -8537,7 +8606,7 @@ const TabBar = (_, children) => (h("div", { class: "ui-tab-bar" }, children));
 const TabBarButton = ({ tabSelect, selected }, children) => (h("div", { class: `ui-tab-bar__button${selected ? ' ui-tab-bar__button--selected' : ''}`, onClick: tabSelect }, children));
 const Tab = ({ selected }, children) => (h("div", { class: "ui-tab", style: { display: selected ? 'block' : 'none' } }, children));
 
-const cordovaLandingPageCss = ".sc-cordova-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-cordova-landing-page-h{display:block;scroll-behavior:smooth}.hero.sc-cordova-landing-page{margin-bottom:96px;text-align:center}.hero.sc-cordova-landing-page img.sc-cordova-landing-page{max-width:100%}.hero__heading.sc-cordova-landing-page{padding-top:64px}.hero__heading.sc-cordova-landing-page h1.sc-cordova-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-text)}.hero__heading.sc-cordova-landing-page h3.sc-cordova-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__graphic.sc-cordova-landing-page{padding-top:64px}.hero__buttons.sc-cordova-landing-page .ui-button.sc-cordova-landing-page{-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-cordova-landing-page .ui-button.sc-cordova-landing-page:first-child{margin-right:16px}.hero__buttons.sc-cordova-landing-page .btn-white.sc-cordova-landing-page{background:white;-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.points.sc-cordova-landing-page .ui-paragraph.sc-cordova-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-cordova-landing-page{width:64px;margin-left:-10px}.points.sc-cordova-landing-page h2.sc-cordova-landing-page{margin:0}.section--getting-started.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:96px}.section--getting-started.sc-cordova-landing-page hgroup.sc-cordova-landing-page .ui-heading.sc-cordova-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-cordova-landing-page{padding-bottom:120px}.section--getting-started__step.sc-cordova-landing-page .apple.sc-cordova-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-cordova-landing-page .android.sc-cordova-landing-page{margin-top:8px;margin-left:12px;height:26px}.section--getting-started__step.sc-cordova-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-cordova-landing-page .ui-col.sc-cordova-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-cordova-landing-page .ui-col.sc-cordova-landing-page:first-child:after{content:\"\";display:block;margin-top:35px !important;height:60%;width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-cordova-landing-page .ui-col.sc-cordova-landing-page .ui-heading.sc-cordova-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-cordova-landing-page img.sc-cordova-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:76px}.section--native-features.sc-cordova-landing-page img.sc-cordova-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-cordova-landing-page .ui-grid.sc-cordova-landing-page{-webkit-column-gap:16px;-moz-column-gap:16px;column-gap:16px;row-gap:16px}.section--your-framework.sc-cordova-landing-page .framework.sc-cordova-landing-page{height:200px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.section--your-framework.sc-cordova-landing-page .framework.sc-cordova-landing-page img.sc-cordova-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-cordova-landing-page hgroup.sc-cordova-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-cordova-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-cordova-landing-page img.sc-cordova-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-cordova-landing-page img.sc-cordova-landing-page:last-child{margin-right:0}.section--more-resources.sc-cordova-landing-page{margin-bottom:96px}.section--more-resources.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:24px}.ui-fancy-underline.sc-cordova-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-cordova-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-cordova-landing-page .ui-tab.sc-cordova-landing-page{min-height:300px}.ui-tabs.sc-cordova-landing-page .ui-tab-bar.sc-cordova-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:16px}.ui-tabs.sc-cordova-landing-page .ui-tab-bar__button.sc-cordova-landing-page{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-cordova-landing-page .ui-tab-bar__button--selected.sc-cordova-landing-page{background:#617184;color:white;border-radius:6px}";
+const cordovaLandingPageCss = ".sc-cordova-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-cordova-landing-page-h{display:block;scroll-behavior:smooth}.hero.sc-cordova-landing-page{margin-bottom:96px;text-align:center}.hero.sc-cordova-landing-page img.sc-cordova-landing-page{max-width:100%}.hero__heading.sc-cordova-landing-page{padding-top:64px}.hero__heading.sc-cordova-landing-page h1.sc-cordova-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-text)}.hero__heading.sc-cordova-landing-page h3.sc-cordova-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__graphic.sc-cordova-landing-page{padding-top:64px}.hero__buttons.sc-cordova-landing-page .ui-button.sc-cordova-landing-page{box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-cordova-landing-page .ui-button.sc-cordova-landing-page:first-child{margin-right:16px}.hero__buttons.sc-cordova-landing-page .btn-white.sc-cordova-landing-page{background:white;box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.points.sc-cordova-landing-page .ui-paragraph.sc-cordova-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-cordova-landing-page{width:64px;margin-left:-10px}.points.sc-cordova-landing-page h2.sc-cordova-landing-page{margin:0}.section--getting-started.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:96px}.section--getting-started.sc-cordova-landing-page hgroup.sc-cordova-landing-page .ui-heading.sc-cordova-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-cordova-landing-page{padding-bottom:120px}.section--getting-started__step.sc-cordova-landing-page .apple.sc-cordova-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-cordova-landing-page .android.sc-cordova-landing-page{margin-top:8px;margin-left:12px;height:26px}.section--getting-started__step.sc-cordova-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-cordova-landing-page .ui-col.sc-cordova-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-cordova-landing-page .ui-col.sc-cordova-landing-page:first-child:after{content:\"\";display:block;margin-top:35px !important;height:60%;width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-cordova-landing-page .ui-col.sc-cordova-landing-page .ui-heading.sc-cordova-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-cordova-landing-page img.sc-cordova-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:76px}.section--native-features.sc-cordova-landing-page img.sc-cordova-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-cordova-landing-page .ui-grid.sc-cordova-landing-page{column-gap:16px;row-gap:16px}.section--your-framework.sc-cordova-landing-page .framework.sc-cordova-landing-page{height:200px;display:flex;align-items:center;justify-content:center}.section--your-framework.sc-cordova-landing-page .framework.sc-cordova-landing-page img.sc-cordova-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-cordova-landing-page hgroup.sc-cordova-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-cordova-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-cordova-landing-page img.sc-cordova-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-cordova-landing-page img.sc-cordova-landing-page:last-child{margin-right:0}.section--more-resources.sc-cordova-landing-page{margin-bottom:96px}.section--more-resources.sc-cordova-landing-page hgroup.sc-cordova-landing-page{margin-bottom:24px}.ui-fancy-underline.sc-cordova-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-cordova-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-cordova-landing-page .ui-tab.sc-cordova-landing-page{min-height:300px}.ui-tabs.sc-cordova-landing-page .ui-tab-bar.sc-cordova-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:flex;flex-direction:row;padding:16px}.ui-tabs.sc-cordova-landing-page .ui-tab-bar__button.sc-cordova-landing-page{cursor:pointer;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-cordova-landing-page .ui-tab-bar__button--selected.sc-cordova-landing-page{background:#617184;color:white;border-radius:6px}";
 
 class CordovaLandingPage {
     constructor(hostRef) {
@@ -8627,933 +8696,103 @@ const MoreResourcesSection = () => (h(ResponsiveContainer, { class: "section--mo
     ] })));
 const MetaHead = () => (h(Helmet, null, h("title", null, "Capacitor: Cross-platform native runtime for web apps"), h("meta", { name: "description", content: 'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript' }), h("meta", { name: "twitter:card", content: "summary_large_image" }), h("meta", { name: "twitter:site", content: "@capacitorjs" }), h("meta", { name: "twitter:creator", content: "capacitorjs" }), h("meta", { name: "twitter:title", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:description", content: "Build cross-platform apps with web technologies" })));
 
-const demoCss = "@charset \"UTF-8\";:root{--c-white:#ffffff;--c-black:#000000;--c-blue-0:#f0f6ff;--c-blue-10:#e3edff;--c-blue-20:#cddfff;--c-blue-30:#b2ceff;--c-blue-40:#97bdff;--c-blue-50:#7cabff;--c-blue-60:#639bff;--c-blue-70:#4d8dff;--c-blue-80:#3880ff;--c-blue-90:#1b6dff;--c-blue-100:#0054e9;--c-ionic-brand:var(--c-blue-80);--c-gray-0:#f3f3f3;--c-gray-10:#e4e4e4;--c-gray-20:#c8c8c8;--c-gray-30:#aeaeae;--c-gray-40:#959595;--c-gray-50:#818181;--c-gray-60:#6d6d6d;--c-gray-70:#5f5f5f;--c-gray-80:#474747;--c-gray-90:#2f2f2f;--c-gray-100:#141414;--c-carbon-0:#eef1f3;--c-carbon-10:#d7dde2;--c-carbon-20:#b4bcc6;--c-carbon-30:#98a2ad;--c-carbon-40:#7d8894;--c-carbon-50:#677483;--c-carbon-60:#556170;--c-carbon-70:#434f5e;--c-carbon-80:#35404e;--c-carbon-90:#222d3a;--c-carbon-100:#03060b;--c-indigo-0:#fbfbfd;--c-indigo-10:#f6f8fb;--c-indigo-20:#e9edf3;--c-indigo-30:#dee3ea;--c-indigo-40:#ced6e0;--c-indigo-50:#b2becd;--c-indigo-60:#92a0b3;--c-indigo-70:#73849a;--c-indigo-80:#445b78;--c-indigo-90:#2d4665;--c-indigo-100:#001a3a;--c-green-0:#effff3;--c-green-10:#e7ffee;--c-green-20:#d0ffdd;--c-green-30:#b8ffcb;--c-green-40:#97ffb3;--c-green-50:#71f895;--c-green-60:#4ef27a;--c-green-70:#31e962;--c-green-80:#18dd4c;--c-green-90:#00d338;--c-green-100:#00b831;--c-lime-0:#f8fff0;--c-lime-10:#f2ffe1;--c-lime-20:#eeffd8;--c-lime-30:#e5ffc3;--c-lime-40:#d8ffa7;--c-lime-50:#c8ff83;--c-lime-60:#b7f964;--c-lime-70:#a7f544;--c-lime-80:#97ec2d;--c-lime-90:#87e017;--c-lime-100:#75d100;--c-lavender-0:#f6f8ff;--c-lavender-10:#e5ebff;--c-lavender-20:#ced9ff;--c-lavender-30:#b6c6ff;--c-lavender-40:#9fb5ff;--c-lavender-50:#8aa4ff;--c-lavender-60:#7493ff;--c-lavender-70:#597eff;--c-lavender-80:#3c67ff;--c-lavender-90:#194bfd;--c-lavender-100:#0033e8;--c-purple-0:#f4f4ff;--c-purple-10:#e9eaff;--c-purple-20:#d0d2ff;--c-purple-30:#b6b9f9;--c-purple-40:#9a99fc;--c-purple-50:#8482fb;--c-purple-60:#786df9;--c-purple-70:#6e5afd;--c-purple-80:#6030ff;--c-purple-90:#4712fb;--c-purple-100:#3400e5;--c-pink-0:#fff2fb;--c-pink-10:#ffe3f6;--c-pink-20:#ffd4f1;--c-pink-30:#ffc7ec;--c-pink-40:#ffb6e8;--c-pink-50:#ff9cdf;--c-pink-60:#fc82d5;--c-pink-70:#f567c8;--c-pink-80:#ef4cbb;--c-pink-90:#f02fb2;--c-pink-100:#e410a1;--c-red-0:#fff2f2;--c-red-10:#ffdddd;--c-red-20:#ffc8c7;--c-red-30:#ffb6b5;--c-red-40:#ff9e9c;--c-red-50:#ff8a88;--c-red-60:#ff7370;--c-red-70:#ff605b;--c-red-80:#ff4747;--c-red-90:#ff201a;--c-red-100:#e70700;--c-orange-0:#fff5f0;--c-orange-10:#ffede5;--c-orange-20:#ffdfd1;--c-orange-30:#ffd0bc;--c-orange-40:#ffc0a5;--c-orange-50:#ffaf8c;--c-orange-60:#ff9b70;--c-orange-70:#ff8753;--c-orange-80:#ff7336;--c-orange-90:#ff5b13;--c-orange-100:#eb4700;--c-yellow-0:#fffbef;--c-yellow-10:#fff8e3;--c-yellow-20:#fff6d8;--c-yellow-30:#fff3c9;--c-yellow-50:#ffedad;--c-yellow-50:#ffe78f;--c-yellow-60:#ffe072;--c-yellow-70:#ffd84d;--c-yellow-80:#ffd130;--c-yellow-90:#ffc805;--c-yellow-100:#f5bf00;--c-aqua-0:#f0fff9;--c-aqua-10:#e5fff6;--c-aqua-20:#d5ffef;--c-aqua-30:#c0ffe8;--c-aqua-40:#aaffe0;--c-aqua-50:#90fbd4;--c-aqua-60:#70f6c5;--c-aqua-70:#4deeb2;--c-aqua-80:#32e2a1;--c-aqua-90:#00db8a;--c-aqua-100:#00cc80;--c-teal-0:#eefeff;--c-teal-10:#dffdff;--c-teal-20:#d0fdff;--c-teal-30:#bbfcff;--c-teal-40:#a2fcff;--c-teal-50:#8bfbff;--c-teal-60:#73f6fb;--c-teal-70:#55ecf2;--c-teal-80:#35e2e9;--c-teal-90:#1bd2d9;--c-teal-100:#00b9c0;--c-cyan-0:#f3faff;--c-cyan-10:#e8f5ff;--c-cyan-20:#d3ecff;--c-cyan-30:#bfe4ff;--c-cyan-40:#a7daff;--c-cyan-50:#8dcfff;--c-cyan-60:#77c6ff;--c-cyan-70:#62bdff;--c-cyan-80:#46b1ff;--c-cyan-90:#24a3ff;--c-cyan-100:#0091fa}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Bold\"), url(\"/assets/fonts/eina/eina-01-bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-bold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-bold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-bold.eot?#iefix\") format(\"eot\");font-weight:700;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Semibold\"), url(\"/assets/fonts/eina/eina-01-semibold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-semibold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-semibold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-semibold.eot?#iefix\") format(\"eot\");font-weight:600;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Regular\"), url(\"/assets/fonts/eina/eina-01-regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-regular.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-regular.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-regular.eot?#iefix\") format(\"eot\");font-weight:400;unicode-range:U+000-5FF}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Regular\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Regular.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Italic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Medium.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Medium.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter Bold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Bold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter BoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter Black\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Black.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Black.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter BlackItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff\") format(\"woff\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:400;unicode-range:U+000-5FF;src:url(\"/assets/fonts//29D26A_0_0.eot\");src:url(\"/assets/fonts//29D26A_0_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts//29D26A_0_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_0_0.ttf\") format(\"truetype\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:500;unicode-range:U+000-5FF;src:url(\"/assets/fonts/29D26A_1_0.eot\");src:url(\"/assets/fonts/29D26A_1_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/29D26A_1_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_1_0.ttf\") format(\"truetype\")}:root{--f-family-display:\"Eina\", \"Helvetica Neue\", Helvetica, sans-serif;--f-family-text:\"Inter\", \"Inter UI\", Helvetica, Arial, sans-serif;--f-family-system:apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;--f-family-monospace:\"SF Mono\", \"Roboto Mono\", Menlo, monospace;--f-family-serif:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;--f-size-root:16px;--f-size-0:0.625rem;--f-size-1:0.6875rem;--f-size-2:0.75rem;--f-size-3:0.8125rem;--f-size-4:0.875rem;--f-size-5:1.00rem;--f-size-6:1.25rem;--f-size-7:1.50rem;--f-size-8:2.00rem;--f-size-9:2.50rem;--f-size-10:3.00rem;--f-size-11:3.50rem;--f-size-12:4.00rem;--f-size-13:4.50rem;--f-size-14:5.00rem;--f-size-15:5.50rem;--f-size-16:6.00rem;--f-leading-solid:1.0;--f-leading-title:1.12;--f-leading-body:1.6;--f-leading-prose:1.8;--f-tracking-dense:-0.04em;--f-tracking-tight:-0.02em;--f-tracking-solid:0.00em;--f-tracking-wide:0.04em;--f-tracking-super:0.08em;--f-tracking-extra:0.16em;--f-weight-light:300;--f-weight-regular:400;--f-weight-medium:500;--f-weight-semibold:600;--f-weight-bold:700}:root{--space-0:0.25rem;--space-1:0.50rem;--space-2:0.75rem;--space-3:1.00rem;--space-4:1.25rem;--space-5:1.5rem;--space-6:2.00rem;--space-7:2.50rem;--space-8:3.00rem;--space-9:4.00rem;--space-10:5.00rem;--space-11:6.00rem;--space-12:8.00rem;--space-13:10.00rem;--space-14:12.00rem;--space-15:14.00rem;--space-16:16.00rem;}:root{--radii-0:0;--radii-1:6px;--radii-2:8px;--radii-3:16px;--radii-4:100%}:root{--elevation-0:none;--elevation-1:0px 1px 2px rgba(2, 8, 20, 0.10), 0px 0px 1px rgba(2, 8, 20, 0.08);--elevation-2:0px 2px 4px rgba(2, 8, 20, 0.10), 0px 1px 2px rgba(2, 8, 20, 0.08);--elevation-3:0px 4px 8px rgba(2, 8, 20, 0.08), 0px 2px 4px rgba(2, 8, 20, 0.08);--elevation-4:0px 8px 16px rgba(2, 8, 20, 0.08), 0px 4px 8px rgba(2, 8, 20, 0.08);--elevation-5:0px 16px 32px rgba(2, 8, 20, 0.08), 0px 8px 16px rgba(2, 8, 20, 0.08);--elevation-6:0px 32px 64px rgba(2, 8, 20, 0.08), 0px 16px 32px rgba(2, 8, 20, 0.10)}:root{--z-subnav:1000;--z-header-dropdown:1005}.ui-blockquote{background:#f2f5f8;border-radius:4px;position:relative;padding:64px 80px 68px 111px;color:#5e749a;font-family:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;font-style:italic;border:none;margin:77px -16px 54px}.ui-blockquote:before{position:absolute;top:-6px;left:54px;font-size:180px;content:\"“\";color:#e3e7ec}.ui-breadcrumbs{font-size:13px;line-height:14px;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center}.ui-breadcrumbs li{display:inline-block}.ui-breadcrumbs li:first-child a{padding-left:0}.ui-breadcrumbs li:last-child a{color:var(--c-carbon-100);font-weight:500}.ui-breadcrumbs a{color:var(--c-carbon-50);font-size:13px;line-height:14px;padding:16px 2px;display:inline-block}.ui-breadcrumbs .nav-sep{display:inline-block;font-size:16px;font-weight:400;color:rgba(65, 77, 92, 0.2);margin:0 6px}.ui-breakpoint{display:none !important}@media (max-width: 480px){.ui-breakpoint-mobile{display:block !important}}@media (max-width: 480px){.ui-breakpoint-mobile.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet{display:block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 768px){.ui-breakpoint-desktop{display:block !important}}@media (min-width: 768px){.ui-breakpoint-desktop.ui-breakpoint-inline-block{display:inline-block !important}}.ui-button{cursor:pointer;display:inline-block;font-weight:500;border-radius:8px;line-height:1.4em;padding:16px 20px;-webkit-transition:all 0.3s ease;transition:all 0.3s ease;font-size:16px;border:0px solid rgba(0, 0, 0, 0);color:#fff;background:var(--button-background, var(--c-ionic-brand));letter-spacing:0.01em}.ui-card--embelish{background-color:#fff;border-radius:6px;-webkit-box-shadow:var(--elevation-4);box-shadow:var(--elevation-4);border-radius:14px}.ui-card--embelish .ui-card-content{padding:32px}.ui-container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width: 768px){.ui-container{width:750px}}@media (min-width: 992px){.ui-container{width:970px}}@media (min-width: 1104px){.ui-container{width:1054px}}.ui-grid{display:grid;-webkit-column-gap:56px;-moz-column-gap:56px;column-gap:56px;row-gap:96px;grid-template-columns:repeat(12, minmax(0, 1fr))}@media (max-width: 480px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:48px}}@media (max-width: 768px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:24px}}.ui-grid .ui-col-1{grid-column-end:span 1}.ui-grid .ui-col-2{grid-column-end:span 2}.ui-grid .ui-col-3{grid-column-end:span 3}.ui-grid .ui-col-4{grid-column-end:span 4}.ui-grid .ui-col-5{grid-column-end:span 5}.ui-grid .ui-col-6{grid-column-end:span 6}.ui-grid .ui-col-7{grid-column-end:span 7}.ui-grid .ui-col-8{grid-column-end:span 8}.ui-grid .ui-col-9{grid-column-end:span 9}.ui-grid .ui-col-10{grid-column-end:span 10}.ui-grid .ui-col-11{grid-column-end:span 11}.ui-grid .ui-col-12{grid-column-end:span 12}@media (min-width: 480px){.ui-grid .ui-col-xs-1{grid-column-end:span 1}.ui-grid .ui-col-xs-2{grid-column-end:span 2}.ui-grid .ui-col-xs-3{grid-column-end:span 3}.ui-grid .ui-col-xs-4{grid-column-end:span 4}.ui-grid .ui-col-xs-5{grid-column-end:span 5}.ui-grid .ui-col-xs-6{grid-column-end:span 6}.ui-grid .ui-col-xs-7{grid-column-end:span 7}.ui-grid .ui-col-xs-8{grid-column-end:span 8}.ui-grid .ui-col-xs-9{grid-column-end:span 9}.ui-grid .ui-col-xs-10{grid-column-end:span 10}.ui-grid .ui-col-xs-11{grid-column-end:span 11}.ui-grid .ui-col-xs-12{grid-column-end:span 12}}@media (min-width: 768px){.ui-grid .ui-col-sm-1{grid-column-end:span 1}.ui-grid .ui-col-sm-2{grid-column-end:span 2}.ui-grid .ui-col-sm-3{grid-column-end:span 3}.ui-grid .ui-col-sm-4{grid-column-end:span 4}.ui-grid .ui-col-sm-5{grid-column-end:span 5}.ui-grid .ui-col-sm-6{grid-column-end:span 6}.ui-grid .ui-col-sm-7{grid-column-end:span 7}.ui-grid .ui-col-sm-8{grid-column-end:span 8}.ui-grid .ui-col-sm-9{grid-column-end:span 9}.ui-grid .ui-col-sm-10{grid-column-end:span 10}.ui-grid .ui-col-sm-11{grid-column-end:span 11}.ui-grid .ui-col-sm-12{grid-column-end:span 12}}@media (min-width: 992px){.ui-grid .ui-col-md-1{grid-column-end:span 1}.ui-grid .ui-col-md-2{grid-column-end:span 2}.ui-grid .ui-col-md-3{grid-column-end:span 3}.ui-grid .ui-col-md-4{grid-column-end:span 4}.ui-grid .ui-col-md-5{grid-column-end:span 5}.ui-grid .ui-col-md-6{grid-column-end:span 6}.ui-grid .ui-col-md-7{grid-column-end:span 7}.ui-grid .ui-col-md-8{grid-column-end:span 8}.ui-grid .ui-col-md-9{grid-column-end:span 9}.ui-grid .ui-col-md-10{grid-column-end:span 10}.ui-grid .ui-col-md-11{grid-column-end:span 11}.ui-grid .ui-col-md-12{grid-column-end:span 12}}@media (min-width: 1200px){.ui-grid .ui-col-lg-1{grid-column-end:span 1}.ui-grid .ui-col-lg-2{grid-column-end:span 2}.ui-grid .ui-col-lg-3{grid-column-end:span 3}.ui-grid .ui-col-lg-4{grid-column-end:span 4}.ui-grid .ui-col-lg-5{grid-column-end:span 5}.ui-grid .ui-col-lg-6{grid-column-end:span 6}.ui-grid .ui-col-lg-7{grid-column-end:span 7}.ui-grid .ui-col-lg-8{grid-column-end:span 8}.ui-grid .ui-col-lg-9{grid-column-end:span 9}.ui-grid .ui-col-lg-10{grid-column-end:span 10}.ui-grid .ui-col-lg-11{grid-column-end:span 11}.ui-grid .ui-col-lg-12{grid-column-end:span 12}}.ui-heading{--title-font-family:var(--f-family-display);--subtitle-font-family:var(--f-family-text);--heading-color-dark:var(--c-carbon-90);--heading-color-light:var(--c-indigo-70);--h1-size:var(--f-size-12);--h1-leading:var(--f-leading-solid);--h1-weight:var(--f-weight-bold);--h2-size:var(--f-size-10);--h3-size:var(--f-size-8);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-2);margin:0;line-height:var(--f-leading-title)}.ui-theme--editorial .ui-heading{--title-font-family:var(--f-family-text);--h1-size:var(--f-size-9);--h1-leading:var(--f-leading-title);--h1-weight:var(--f-weight-semibold);--h2-size:var(--f-size-8);--h3-size:var(--f-size-7);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-0)}.ui-heading-1{font-family:var(--title-font-family);font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--f-tracking-dense);font-weight:var(--h1-weight);color:var(--heading-color-dark)}.ui-heading-2{font-family:var(--title-font-family);font-size:var(--h2-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-3{font-family:var(--title-font-family);font-size:var(--h3-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-4{font-family:var(--subtitle-font-family);font-size:var(--h4-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-5{font-family:var(--subtitle-font-family);font-size:var(--h5-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-6{font-family:var(--subtitle-font-family);font-size:var(--h6-size);letter-spacing:var(--f-tracking-extra);font-weight:var(--f-weight-bold);text-transform:uppercase;color:var(--heading-color-light)}.ui-heading--bordered{border-bottom:1px solid var(--c-indigo-30);margin-bottom:var(--space-5);padding-bottom:var(--space-2)}.ui-heading--strong{font-weight:var(--f-weight-bold)}.ui-heading--leading{line-height:var(--f-leading-text)}.ui-skeleton{display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:#EEEEEE;line-height:10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}.ui-skeleton--animated{position:relative;background:-webkit-gradient(linear, left top, right top, color-stop(8%, rgba(0, 0, 0, 0.065)), color-stop(18%, rgba(0, 0, 0, 0.135)), color-stop(33%, rgba(0, 0, 0, 0.065)));background:linear-gradient(to right, rgba(0, 0, 0, 0.065) 8%, rgba(0, 0, 0, 0.135) 18%, rgba(0, 0, 0, 0.065) 33%);background-size:800px 104px;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-name:shimmer;animation-name:shimmer;-webkit-animation-timing-function:linear;animation-timing-function:linear}@-webkit-keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}@keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}span{display:inline-block}.prismic-raw-html{width:100%;overflow:auto}.prismic-raw-html table{overflow-x:auto;margin-right:-15px;padding-right:15px;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:48px}.prismic-raw-html table td,.prismic-raw-html table th{text-align:left;min-width:120px;padding-right:12px;padding-top:12px;padding-bottom:12px}.prismic-raw-html table td:last-child,.prismic-raw-html table th:last-child{padding-right:0}.prismic-raw-html table th,.prismic-raw-html table b{font-weight:600}.prismic-raw-html table tbody tr td{border-top:1px solid #DEE3EA}.prismic-raw-html table tbody tr:first-child td{border-top:none}.prismic-raw-html table>thead>tr>th{border-bottom:1px solid #E9EDF3;font-weight:600}*{-webkit-box-sizing:border-box;box-sizing:border-box}html,body{padding:0;margin:0;width:100%;height:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:var(--f-family-text);font-size:var(--f-size-root);line-height:var(--f-leading-body);letter-spacing:var(--f-tracking-tight);color:var(--c-carbon-90);position:relative;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:var(--c-ionic-brand)}stencil-route-link a{color:inherit}ul{margin:0;padding:0}li{list-style:none}hr{border:none;height:1px;background:var(--c-indigo-30);margin:var(--space-6) 0}:host{display:block}.demos{padding:48px}.demo{margin-bottom:48px}";
+const reactLandingPageCss = ".sc-react-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-react-landing-page-h{display:block;scroll-behavior:smooth}.hero.sc-react-landing-page{margin-bottom:96px;text-align:center}.hero.sc-react-landing-page img.sc-react-landing-page{max-width:225px;margin-bottom:32px}.hero__heading.sc-react-landing-page{padding-top:64px}.hero__heading.sc-react-landing-page h1.sc-react-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-text)}.hero__heading.sc-react-landing-page h3.sc-react-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__graphic.sc-react-landing-page{padding-top:64px}.hero__buttons.sc-react-landing-page .ui-button.sc-react-landing-page{box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-react-landing-page .ui-button.sc-react-landing-page:first-child{margin-right:16px}.hero__buttons.sc-react-landing-page .btn-white.sc-react-landing-page{background:white;box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.points.sc-react-landing-page .ui-paragraph.sc-react-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-react-landing-page{width:64px;margin-left:-10px}.points.sc-react-landing-page h2.sc-react-landing-page{margin:0}.section--getting-started.sc-react-landing-page{margin-bottom:32px}.section--getting-started.sc-react-landing-page hgroup.sc-react-landing-page{margin-bottom:96px}.section--getting-started.sc-react-landing-page hgroup.sc-react-landing-page .ui-heading.sc-react-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-react-landing-page{padding-bottom:120px}.section--getting-started__step.sc-react-landing-page .apple.sc-react-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-react-landing-page .android.sc-react-landing-page{margin-top:8px;margin-left:12px;height:26px}.section--getting-started__step.sc-react-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-react-landing-page .ui-col.sc-react-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-react-landing-page .ui-col.sc-react-landing-page:first-child:after{content:\"\";display:block;margin-top:35px !important;height:60%;width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-react-landing-page .ui-col.sc-react-landing-page .ui-heading.sc-react-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-react-landing-page hgroup.sc-react-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-react-landing-page img.sc-react-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-react-landing-page hgroup.sc-react-landing-page{margin-bottom:76px}.section--native-features.sc-react-landing-page img.sc-react-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-react-landing-page .ui-grid.sc-react-landing-page{column-gap:16px;row-gap:16px}.section--your-framework.sc-react-landing-page .framework.sc-react-landing-page{height:200px;display:flex;align-items:center;justify-content:center}.section--your-framework.sc-react-landing-page .framework.sc-react-landing-page img.sc-react-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-react-landing-page hgroup.sc-react-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-react-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-react-landing-page img.sc-react-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-react-landing-page img.sc-react-landing-page:last-child{margin-right:0}.section--more-resources.sc-react-landing-page{margin-bottom:96px}.section--more-resources.sc-react-landing-page hgroup.sc-react-landing-page{margin-bottom:24px}.ui-fancy-underline.sc-react-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-react-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-react-landing-page .ui-tab.sc-react-landing-page{min-height:300px}.ui-tabs.sc-react-landing-page .ui-tab-bar.sc-react-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:flex;flex-direction:row;padding:16px}.ui-tabs.sc-react-landing-page .ui-tab-bar__button.sc-react-landing-page{cursor:pointer;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-react-landing-page .ui-tab-bar__button--selected.sc-react-landing-page{background:#617184;color:white;border-radius:6px}";
 
-class Demo {
+class CordovaLandingPage$1 {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-    }
-    render() {
-        return (h("div", { class: "demos" }, h("site-platform-bar", { "product-name": "Stencil" }), h(ButtonDemo, null), h(HeadingDemo, null), h(GridDemo, null), h(CardDemo, null), h(MoresResourcesDemo, null)));
-    }
-    static get style() { return demoCss; }
-    static get cmpMeta() { return {
-        "$flags$": 0,
-        "$tagName$": "shared-demo",
-        "$members$": undefined,
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-const ButtonDemo = () => (h("div", { class: "demo demo-button" }, h(Heading, { level: 3, bordered: true }, "Buttons"), h(Button, null, "Button")));
-const HeadingDemo = () => (h("div", { class: "demo demo-heading" }, h(Heading, { level: 3, bordered: true }, "Headings"), h(Heading, { level: 1 }, "Level 1"), h(Heading, { level: 2 }, "Level 2"), h(Heading, { level: 3 }, "Level 3"), h(Heading, { level: 4 }, "Level 4"), h(Heading, { level: 5 }, "Level 5")));
-const GridDemo = () => (h("div", { class: "demo demo-grid" }, h(Heading, { level: 3, bordered: true }, "Grid"), h(Grid, { class: "demo demo-grid" }, h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 1"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 2"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 3"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 4"))));
-const CardDemo = () => (h("div", { class: "demo demo-card" }, h(Heading, { level: 3, bordered: true }, "Cards"), h(Card, null, h(CardContent, null, h("hgroup", null, h(Heading, { level: 3 }, "Card"), h(Paragraph, null, "Unicorn next level roof party health goth, squid brooklyn pabst biodiesel kickstarter man bun small batch kale chips flexitarian. Edison bulb selfies mumblecore ethical, helvetica affogato palo santo. Taxidermy humblebrag hexagon, pabst stumptown PBR&B succulents. Lumbersexual fam shabby chic cardigan lomo quinoa put a bird on it salvia authentic hell of migas aesthetic truffaut gentrify tattooed. Migas direct trade polaroid distillery, ugh brunch farm-to-table fingerstache vaporware readymade occupy aesthetic four dollar toast. Freegan lyft vegan ramps vexillologist taxidermy listicle vinyl blue bottle pug."))))));
-const MoresResourcesDemo = () => (h("div", null, h("more-resources", { resources: [
-        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
-        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
-        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
-        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
-        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
-        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
-    ] })));
-
-const disqusCommentsCss = ":host{display:block}";
-
-class DisqusComments {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-        this.setScriptEl = (el) => {
-            this.targetEl = el;
+        this.flavor = {
+            name: 'React',
+            color: '#61dafb',
+            logo: '/assets/img/landing/framework-react.png',
         };
     }
-    componentDidLoad() {
-        var _a;
-        const script = `
-    var disqus_config = function () {
-      this.page.url = '${this.url}';  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = '${this.siteId}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-
-    (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://${this.siteId}.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-    `;
-        this.scriptEl = document.createElement('script');
-        this.scriptEl.type = 'text/javascript';
-        this.scriptEl.innerHTML = script;
-        (_a = this.targetEl) === null || _a === void 0 ? void 0 : _a.appendChild(this.scriptEl);
-        const disqusScript = document.createElement('script');
-        disqusScript.id = 'dsq-count-scr';
-        disqusScript.async = true;
-        disqusScript.src = `//${this.siteId}.disqus.com/count.js`;
-        this.disqusScriptEl = disqusScript;
-        document.body.appendChild(disqusScript);
-    }
-    componentDidUnload() {
-        var _a, _b, _c, _d;
-        (_b = (_a = this.scriptEl) === null || _a === void 0 ? void 0 : _a.parentNode) === null || _b === void 0 ? void 0 : _b.removeChild(this.scriptEl);
-        (_d = (_c = this.disqusScriptEl) === null || _c === void 0 ? void 0 : _c.parentNode) === null || _d === void 0 ? void 0 : _d.removeChild(this.disqusScriptEl);
-    }
     render() {
-        return (h(Host, null, h("div", { id: "disqus_thread" }), h("div", { ref: (e) => this.setScriptEl(e) }), h("noscript", null, "Please enable JavaScript to view the", ' ', h("a", { href: "https://disqus.com/?ref_noscript" }, "comments powered by Disqus."))));
+        return (h(Host, null, h(MetaHead$1, null), h("section", { class: "hero" }, h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 12, sm: 12, xs: 12, cols: 12 }, h("hgroup", { class: "hero__heading" }, h("img", { src: this.flavor.logo, alt: "React", class: "react" }), h(Heading, { level: 2 }, this.flavor.name, " & Capacitor"), h(Heading, { level: 3 }, "Access native device features all with web technology"), h(AnchorButton, { href: "#install", id: "get-started", style: { '--button-background': this.flavor.color } }, "Get Started")))))), h(GettingStartedSection$1, { selectedCodeTab: this.flavor.name }), h("newsletter-signup", null), h("pre-footer", null), h("capacitor-site-footer", null)));
     }
-    static get style() { return disqusCommentsCss; }
-    static get cmpMeta() { return {
-        "$flags$": 0,
-        "$tagName$": "disqus-comments",
-        "$members$": {
-            "url": [1],
-            "siteId": [1, "site-id"]
-        },
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
-class DocSnippet {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-    }
-    render() {
-        return (h("div", { class: "snippet" }));
-    }
-    static get cmpMeta() { return {
-        "$flags$": 0,
-        "$tagName$": "doc-snippet",
-        "$members$": undefined,
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
-const docsHeaderCss = ".sc-docs-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-header-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;position:-webkit-sticky;position:sticky;top:0;background-color:#fff;width:100%;height:64px;color:#98a2ad;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);letter-spacing:0;z-index:1}header.sc-docs-header{display:-ms-flexbox;display:flex;position:absolute;top:0;height:100%;width:100%;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;background:#fff}.docs-header-links.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#fff}.docs-header-links.sc-docs-header a.sc-docs-header{color:#98a2ad;font-size:15px;border-bottom:none}.docs-header-links.sc-docs-header a.sc-docs-header:hover{color:#858e97}.docs-header-links.sc-docs-header a.active.sc-docs-header{font-weight:500;color:#222d3a}.docs-header-links__internal.sc-docs-header{margin-bottom:2px}.docs-header-links__internal.sc-docs-header a.sc-docs-header{margin-right:24px}.docs-header-links__divider.sc-docs-header{width:1px;height:18px;background:#222d3a;opacity:0.2;margin-right:2px;margin-left:2px}.docs-header-links__external.sc-docs-header{margin-top:5px;margin-left:2px;margin-right:30px}.docs-header-links__external.sc-docs-header ion-icon.sc-docs-header{margin-left:22px;font-size:19px}.docs-header-links__external.sc-docs-header span.sc-docs-header{display:none}more-button.sc-docs-header{display:none;height:64px;width:64px}@media screen and (max-width: 768px){more-button.sc-docs-header{display:block}.docs-header-links.sc-docs-header{display:block;width:100%;height:auto;padding-bottom:10px;opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px);-webkit-transition:opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);transition:opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear;transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);-webkit-box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px;box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px}.docs-header-links__internal.sc-docs-header,.docs-header-links__external.sc-docs-header{margin:0}.docs-header-links.sc-docs-header a.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;width:100%;height:44px;margin:0;padding:0 20px;border:none;outline:none;color:#000}.docs-header-links.sc-docs-header a.sc-docs-header>ion-icon.sc-docs-header{display:none}.docs-header-links.sc-docs-header a.sc-docs-header span.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%}.docs-header-links.sc-docs-header a.sc-docs-header span.sc-docs-header ion-icon.sc-docs-header{color:#98a2ad;font-size:14px}.docs-header-links.sc-docs-header a.sc-docs-header:hover{background:rgba(0, 0, 0, 0.03);color:initial}.docs-header-links.sc-docs-header .docs-header-links__divider.sc-docs-header{display:block;width:100%;height:1px;background:rgba(0, 0, 0, 0.3)}.docs-header--expanded.sc-docs-header-h{-webkit-box-shadow:none;box-shadow:none}.docs-header--expanded.sc-docs-header-h .docs-header-links.sc-docs-header{opacity:1;pointer-events:all;-webkit-transform:translateY(-1px);transform:translateY(-1px);-webkit-transition:opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1);transition:opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1);transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear;transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1)}}";
-
-class DocsHeader {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-        this.expanded = false;
-        this.toggleExpanded = () => this.expanded = !this.expanded;
-    }
-    isActive(path) {
-        const prefix = new RegExp("^" + path, "gm");
-        const regexRes = prefix.test(Router.activePath);
-        return regexRes;
-    }
-    render() {
-        const { expanded } = this;
-        return (h(Host, { class: {
-                'docs-header--expanded': expanded
-            } }, h("site-backdrop", { visible: expanded, onClick: () => this.toggleExpanded() }), h("header", null, h("docs-search", null), h("more-button", { onClick: () => this.toggleExpanded() }), h("div", { class: "docs-header-links" }, h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': this.isActive('/docs') } }), "Docs"), h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header-links__divider" }), h("div", { class: "docs-header-links__external" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" }), h("span", null, "Twitter", h("ion-icon", { name: "open-outline" }))), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" }), h("span", null, "GitHub", h("ion-icon", { name: "open-outline" }))))))));
-    }
-    static get style() { return docsHeaderCss; }
+    static get style() { return reactLandingPageCss; }
     static get cmpMeta() { return {
         "$flags$": 2,
-        "$tagName$": "docs-header",
+        "$tagName$": "react-landing-page",
         "$members$": {
-            "expanded": [32]
+            "flavor": [16]
         },
         "$listeners$": undefined,
         "$lazyBundleIds$": "-",
         "$attrsToReflect$": []
     }; }
 }
+const GettingStartedSection$1 = ({ selectedCodeTab }) => {
+    return (h("section", { class: "section--getting-started" }, h(ResponsiveContainer, null, h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "01"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3, id: "install" }, "Install Capacitor."), h(Paragraph, null, "Add Capacitor to your project and create a config for your app")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+npm install @capacitor/core @capacitor/cli
+npx cap init [name] [id] --webDir=build
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "02"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Build the Web App."), h(Paragraph, null, "The compiled web assets will be copied into each Capacitor native platform during the next step.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+# Most web apps
+npm run build
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "03"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Install the native platforms you want to target."), h("img", { src: "/assets/img/landing/apple.png", alt: "Apple", class: "apple" }), h("img", { src: "/assets/img/landing/android.png", alt: "Android", class: "android" }), h(Paragraph, null, "Capacitor's native projects exist in their own top-level folders and should be considered part of your app (check them into source control).")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+npx cap add android
+npx cap add ios
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "04"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Adding calls to Native APIs"), h(Paragraph, null, "With Capacitor installed, adding calls to native device features is as straight forward as calling other JavaScript methods")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, selectedCodeTab === 'React' ? (h("code-snippet", { language: "typescript", code: `
+import React, {useState, useCallback} from 'react';
+import { Plugins } from '@capacitor/core';
 
-const docsSearchCss = ".sc-docs-search:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-search-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex:1;flex:1}";
+export default function GeolocationPage() {
 
-class DocsSearch {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-    }
-    render() {
-        return (h(Host, null));
-    }
-    static get style() { return docsSearchCss; }
-    static get cmpMeta() { return {
-        "$flags$": 2,
-        "$tagName$": "docs-search",
-        "$members$": undefined,
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
+  const [loc, setLoc] = useState(null);
+  const { Geolocation } = Plugins;
+
+  const getCurrentPosition = useCallback(async () => {
+    const coordinates = await Geolocation.getCurrentPosition();
+    setLoc(coordinates);
+  }, [coordinates]);
+
+  return (
+    <div>
+      <h1>Geolocation</h1>
+      <p>Your location is:</p>
+      <p>Latitude: {loc?.coords.latitude}</p>
+      <p>Longitude: {loc?.coords.longitude}</p>
+
+      <button onClick={() => getCurrentPosition()}>
+        Get Current Location
+      </button>
+    </div>
+  );
 }
+` })) : (h("code-snippet", { language: "typescript", code: `
 
-var siteStructure = [
-	{
-		text: "Introduction",
-		filePath: "/assets/docs-content/index.json",
-		url: "/docs"
-	},
-	{
-		text: "Getting Started",
-		children: [
-			{
-				text: "Required Dependencies",
-				filePath: "/assets/docs-content/getting-started/dependencies.json",
-				url: "/docs/getting-started/dependencies"
-			},
-			{
-				text: "Installation",
-				filePath: "/assets/docs-content/getting-started/index.json",
-				url: "/docs/getting-started"
-			},
-			{
-				text: "Using with Ionic",
-				filePath: "/assets/docs-content/getting-started/with-ionic.json",
-				url: "/docs/getting-started/with-ionic"
-			}
-		]
-	},
-	{
-		text: "Basics",
-		children: [
-			{
-				text: "Development Workflow",
-				filePath: "/assets/docs-content/basics/workflow.json",
-				url: "/docs/basics/workflow"
-			},
-			{
-				text: "Opening Native IDE",
-				filePath: "/assets/docs-content/basics/opening-native-projects.json",
-				url: "/docs/basics/opening-native-projects"
-			},
-			{
-				text: "Building your App",
-				filePath: "/assets/docs-content/basics/building-your-app.json",
-				url: "/docs/basics/building-your-app"
-			},
-			{
-				text: "Running your App",
-				filePath: "/assets/docs-content/basics/running-your-app.json",
-				url: "/docs/basics/running-your-app"
-			},
-			{
-				text: "Using Plugins",
-				filePath: "/assets/docs-content/basics/using-plugins.json",
-				url: "/docs/basics/using-plugins"
-			},
-			{
-				text: "Native Project Configuration",
-				filePath: "/assets/docs-content/basics/configuring-your-app.json",
-				url: "/docs/basics/configuring-your-app"
-			},
-			{
-				text: "Progressive Web Apps",
-				filePath: "/assets/docs-content/basics/progressive-web-app.json",
-				url: "/docs/basics/progressive-web-app"
-			},
-			{
-				text: "Utilities",
-				filePath: "/assets/docs-content/basics/utilities.json",
-				url: "/docs/basics/utilities"
-			},
-			{
-				text: "CLI Reference",
-				filePath: "/assets/docs-content/basics/cli-commands.json",
-				url: "/docs/basics/cli-commands"
-			}
-		]
-	},
-	{
-		text: "Cordova/PhoneGap",
-		children: [
-			{
-				text: "Introduction",
-				filePath: "/assets/docs-content/cordova/index.json",
-				url: "/docs/cordova"
-			},
-			{
-				text: "Migration Strategy",
-				filePath: "/assets/docs-content/cordova/migration-strategy.json",
-				url: "/docs/cordova/migration-strategy"
-			},
-			{
-				text: "Cordova to Capacitor Migration",
-				filePath: "/assets/docs-content/cordova/migrating-from-cordova-to-capacitor.json",
-				url: "/docs/cordova/migrating-from-cordova-to-capacitor"
-			},
-			{
-				text: "Cordova/Ionic Native Plugins",
-				filePath: "/assets/docs-content/cordova/using-cordova-plugins.json",
-				url: "/docs/cordova/using-cordova-plugins"
-			},
-			{
-				text: "Known Incompatible Plugins",
-				filePath: "/assets/docs-content/cordova/known-incompatible-plugins.json",
-				url: "/docs/cordova/known-incompatible-plugins"
-			}
-		]
-	},
-	{
-		text: "Guides",
-		children: [
-			{
-				text: "Live Reload",
-				filePath: "/assets/docs-content/guides/live-reload.json",
-				url: "/docs/guides/live-reload"
-			},
-			{
-				text: "Ionic Photo Gallery App",
-				filePath: "/assets/docs-content/guides/ionic-framework-app.json",
-				url: "/docs/guides/ionic-framework-app"
-			},
-			{
-				text: "Push Notifications - Firebase",
-				filePath: "/assets/docs-content/guides/push-notifications-firebase.json",
-				url: "/docs/guides/push-notifications-firebase"
-			},
-			{
-				text: "Deep Links",
-				filePath: "/assets/docs-content/guides/deep-links.json",
-				url: "/docs/guides/deep-links"
-			},
-			{
-				text: "Deploying and Updating",
-				filePath: "/assets/docs-content/guides/deploying.json",
-				url: "/docs/guides/deploying-updates"
-			},
-			{
-				text: "Splash Screens and Icons",
-				filePath: "/assets/docs-content/guides/splash-screens-and-icons.json",
-				url: "/docs/guides/splash-screens-and-icons"
-			},
-			{
-				text: "Community Guides",
-				filePath: "/assets/docs-content/guides/community.json",
-				url: "/docs/guides/community"
-			}
-		]
-	},
-	{
-		text: "iOS",
-		children: [
-			{
-				text: "Getting Started",
-				filePath: "/assets/docs-content/ios/index.json",
-				url: "/docs/ios"
-			},
-			{
-				text: "Configuration",
-				filePath: "/assets/docs-content/ios/configuration.json",
-				url: "/docs/ios/configuration"
-			},
-			{
-				text: "Updating",
-				filePath: "/assets/docs-content/ios/updating.json",
-				url: "/docs/ios/updating"
-			},
-			{
-				text: "Custom Native Code",
-				filePath: "/assets/docs-content/ios/custom-code.json",
-				url: "/docs/ios/custom-code"
-			},
-			{
-				text: "Deploying to App Store",
-				filePath: "/assets/docs-content/ios/deploying-to-app-store.json",
-				url: "/docs/ios/deploying-to-app-store"
-			},
-			{
-				text: "Troubleshooting",
-				filePath: "/assets/docs-content/ios/troubleshooting.json",
-				url: "/docs/ios/troubleshooting"
-			}
-		]
-	},
-	{
-		text: "Android",
-		children: [
-			{
-				text: "Getting Started",
-				filePath: "/assets/docs-content/android/index.json",
-				url: "/docs/android"
-			},
-			{
-				text: "Configuration",
-				filePath: "/assets/docs-content/android/configuration.json",
-				url: "/docs/android/configuration"
-			},
-			{
-				text: "Updating",
-				filePath: "/assets/docs-content/android/updating.json",
-				url: "/docs/android/updating"
-			},
-			{
-				text: "Custom Native Code",
-				filePath: "/assets/docs-content/android/custom-code.json",
-				url: "/docs/android/custom-code"
-			},
-			{
-				text: "Deploying to Google Play",
-				filePath: "/assets/docs-content/android/deploying-to-google-play.json",
-				url: "/docs/android/deploying-to-google-play"
-			},
-			{
-				text: "Troubleshooting",
-				filePath: "/assets/docs-content/android/troubleshooting.json",
-				url: "/docs/android/troubleshooting"
-			}
-		]
-	},
-	{
-		text: "Web/PWA",
-		children: [
-			{
-				text: "Getting Started",
-				filePath: "/assets/docs-content/web/index.json",
-				url: "/docs/web"
-			},
-			{
-				text: "PWA Elements",
-				filePath: "/assets/docs-content/web/pwa-elements.json",
-				url: "/docs/pwa-elements"
-			}
-		]
-	},
-	{
-		text: "Creating Plugins",
-		children: [
-			{
-				text: "Introduction",
-				filePath: "/assets/docs-content/plugins/index.json",
-				url: "/docs/plugins"
-			},
-			{
-				text: "Development Workflow",
-				filePath: "/assets/docs-content/plugins/workflow.json",
-				url: "/docs/plugins/workflow"
-			},
-			{
-				text: "iOS Guide",
-				filePath: "/assets/docs-content/plugins/ios.json",
-				url: "/docs/plugins/ios"
-			},
-			{
-				text: "Android Guide",
-				filePath: "/assets/docs-content/plugins/android.json",
-				url: "/docs/plugins/android"
-			},
-			{
-				text: "Web/PWA Guide",
-				filePath: "/assets/docs-content/plugins/web.json",
-				url: "/docs/plugins/web"
-			},
-			{
-				text: "JavaScript Guide",
-				filePath: "/assets/docs-content/plugins/js.json",
-				url: "/docs/plugins/js"
-			}
-		]
-	},
-	{
-		text: "Plugins",
-		children: [
-			{
-				text: "Introduction",
-				filePath: "/assets/docs-content/apis/index.json",
-				url: "/docs/apis"
-			},
-			{
-				text: "Community Plugins",
-				filePath: "/assets/docs-content/community/plugins.json",
-				url: "/docs/community/plugins"
-			},
-			{
-				text: "Enterprise Plugins",
-				filePath: "/assets/docs-content/enterprise/index.json",
-				url: "/docs/enterprise"
-			},
-			{
-				text: "Accessibility",
-				filePath: "/assets/docs-content/apis/accessibility/index.json",
-				url: "/docs/apis/accessibility"
-			},
-			{
-				text: "App",
-				filePath: "/assets/docs-content/apis/app/index.json",
-				url: "/docs/apis/app"
-			},
-			{
-				text: "Background Task",
-				filePath: "/assets/docs-content/apis/background-task/index.json",
-				url: "/docs/apis/background-task"
-			},
-			{
-				text: "Browser",
-				filePath: "/assets/docs-content/apis/browser/index.json",
-				url: "/docs/apis/browser"
-			},
-			{
-				text: "Camera",
-				filePath: "/assets/docs-content/apis/camera/index.json",
-				url: "/docs/apis/camera"
-			},
-			{
-				text: "Clipboard",
-				filePath: "/assets/docs-content/apis/clipboard/index.json",
-				url: "/docs/apis/clipboard"
-			},
-			{
-				text: "Console",
-				filePath: "/assets/docs-content/apis/console/index.json",
-				url: "/docs/apis/console"
-			},
-			{
-				text: "Device",
-				filePath: "/assets/docs-content/apis/device/index.json",
-				url: "/docs/apis/device"
-			},
-			{
-				text: "Filesystem",
-				filePath: "/assets/docs-content/apis/filesystem/index.json",
-				url: "/docs/apis/filesystem"
-			},
-			{
-				text: "Geolocation",
-				filePath: "/assets/docs-content/apis/geolocation/index.json",
-				url: "/docs/apis/geolocation"
-			},
-			{
-				text: "Haptics",
-				filePath: "/assets/docs-content/apis/haptics/index.json",
-				url: "/docs/apis/haptics"
-			},
-			{
-				text: "Keyboard",
-				filePath: "/assets/docs-content/apis/keyboard/index.json",
-				url: "/docs/apis/keyboard"
-			},
-			{
-				text: "Local Notifications",
-				filePath: "/assets/docs-content/apis/local-notifications/index.json",
-				url: "/docs/apis/local-notifications"
-			},
-			{
-				text: "Modals",
-				filePath: "/assets/docs-content/apis/modals/index.json",
-				url: "/docs/apis/modals"
-			},
-			{
-				text: "Motion",
-				filePath: "/assets/docs-content/apis/motion/index.json",
-				url: "/docs/apis/motion"
-			},
-			{
-				text: "Network",
-				filePath: "/assets/docs-content/apis/network/index.json",
-				url: "/docs/apis/network"
-			},
-			{
-				text: "Permissions",
-				filePath: "/assets/docs-content/apis/permissions/index.json",
-				url: "/docs/apis/permissions"
-			},
-			{
-				text: "Push Notifications",
-				filePath: "/assets/docs-content/apis/push-notifications/index.json",
-				url: "/docs/apis/push-notifications"
-			},
-			{
-				text: "Share",
-				filePath: "/assets/docs-content/apis/share/index.json",
-				url: "/docs/apis/share"
-			},
-			{
-				text: "Splash Screen",
-				filePath: "/assets/docs-content/apis/splash-screen/index.json",
-				url: "/docs/apis/splash-screen"
-			},
-			{
-				text: "Status Bar",
-				filePath: "/assets/docs-content/apis/status-bar/index.json",
-				url: "/docs/apis/status-bar"
-			},
-			{
-				text: "Storage",
-				filePath: "/assets/docs-content/apis/storage/index.json",
-				url: "/docs/apis/storage"
-			},
-			{
-				text: "Toast",
-				filePath: "/assets/docs-content/apis/toast/index.json",
-				url: "/docs/apis/toast"
-			}
-		]
-	}
-];
+import { h } from 'preact';
+import { useState, useCallback } from 'preact/hooks';
+import { Plugins } from '@capacitor/core';
 
-function findItem(siteStructureList, url, foundData = { parent: null }) {
-    for (const item of siteStructureList) {
-        if (item.url === url) {
-            foundData.item = item;
-        }
-        else if (foundData.item != null && item.url != null) {
-            foundData.nextItem = item;
-        }
-        else if (item.url != null && foundData.item == null) {
-            foundData.prevItem = item;
-        }
-        else if (item.children && item.children.length > 0) {
-            if (foundData.item == null) {
-                foundData.parent = item;
-            }
-            foundData = findItem(item.children, url, foundData);
-        }
-        if (foundData.item != null && foundData.nextItem != null) {
-            return foundData;
-        }
-    }
-    return foundData;
+export default function GeolocationPage() {
+
+  const [loc, setLoc] = useState(null);
+  const { Geolocation } = Plugins;
+
+  const getCurrentPosition = useCallback(async () => {
+    const coordinates = await Geolocation.getCurrentPosition();
+    setLoc(coordinates);
+  }, [coordinates]);
+
+  return (
+    <div>
+      <h1>Geolocation</h1>
+      <p>Your location is:</p>
+      <p>Latitude: {loc?.coords.latitude}</p>
+      <p>Longitude: {loc?.coords.longitude}</p>
+
+      <button onClick={() => getCurrentPosition()}>
+        Get Current Location
+      </button>
+    </div>
+  );
 }
-
-const handleRoutableLinkClick = (e) => {
-    if (e.metaKey || e.ctrlKey) {
-        return;
-    }
-    if (e && (e.which == 2 || e.button == 4)) {
-        return;
-    }
-    if (e.target.tagName === 'A') {
-        const href = e.target.href;
-        const u = new URL(href);
-        if (u.origin === window.location.origin) {
-            e.stopPropagation();
-            e.preventDefault();
-            Router.push(u.pathname);
-        }
-    }
+` })))), h(Grid, null, h(Col, { md: 12, sm: 12, xs: 12, cols: 12 }, h(Heading, { level: 3 }, "Continue your Capacitor Journey."), h(Paragraph, null, "This is only the beginning. Learn more about", ' ', h("a", { href: "/docs/cordova/using-cordova-plugins", target: "_blank" }, "using Cordova plugins"), ' ', "in a Capacitor project, check out the Capacitor", ' ', h("a", { href: "/docs/basics/workflow", target: "_blank" }, "development workflow"), ", or create your own", ' ', h("a", { href: "/docs/plugins", target: "_blank" }, "native plugin"), "."))))));
 };
-
-const documentComponentCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}document-component .container{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;max-width:none;padding:0}document-component .content-container{width:100%;display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column}document-component plugin-platforms{display:block;float:right}document-component plugin-platforms .platform{margin-left:8px}document-component table,document-component td,document-component th{border:1px solid #eee;border-collapse:collapse}document-component table{width:100%}document-component table th{text-align:left;padding:4px}document-component table td{font-size:12px;line-height:18px;vertical-align:top;padding:4px;min-width:150px}document-component table td code{font-size:12px}document-component .heading-link{position:relative;text-decoration:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;color:#2d2d4c}document-component .heading-link:hover{border-bottom:1px solid transparent}document-component .heading-link ion-icon{-webkit-transition:opacity 0.2s;transition:opacity 0.2s;position:absolute;left:-24px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}document-component .heading-link:hover ion-icon{opacity:0.8}document-component img{max-width:100%;margin:8px 0}document-component h1:first-child anchor-link{display:none}document-component ul{-webkit-padding-start:16px}document-component ul li,document-component ul code{font-size:14px;margin-top:16px}document-component p a{color:#1d9aff;text-decoration:none}document-component p code,document-component ul code,document-component ol code{padding:1px 4px 2px;background-color:#ecf4fb;color:#16161D;border-radius:3px}document-component #introButton{background:#1d9aff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer}document-component #introButton:hover{-webkit-box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);-webkit-transform:translateY(1px);transform:translateY(1px)}document-component .btn.pull-left,document-component .btn.pull-right{margin:64px 8px 20px}";
-
-class DocumentComponent {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-        this.pages = [];
-        this.page = null;
-    }
-    toggleMenu() {
-        this.menuEl.toggleOverlayMenu();
-    }
-    componentWillLoad() {
-        console.log('Hiding topbar', state.showTopBar);
-        state.showTopBar = false;
-        return this.fetchNewContent(this.page);
-    }
-    fetchNewContent(page, oldPage) {
-        if (page == null || page === oldPage) {
-            return;
-        }
-        state.showTopBar = false;
-        const foundData = findItem(siteStructure, this.page);
-        this.item = foundData.item;
-        this.nextItem = foundData.nextItem;
-        this.prevItem = foundData.prevItem;
-        this.parent = foundData.parent;
-    }
-    render() {
-        if (this.item == null) {
-            return h("h1", null, "Page not found");
-        }
-        return (h("div", { class: "container" }, h("app-menu-toggle", null), h("docs-menu", { ref: el => this.menuEl = el, selectedParent: this.parent, siteStructureList: siteStructure }), h("div", { class: "content-container" }, h("docs-header", null), h("app-marked", { fetchPath: this.item.filePath, renderer: (docsContent) => [
-                h(Helmet, null, h("title", null, docsContent.title ? `${docsContent.title} - Capacitor` : 'Capacitor')),
-                h("div", { class: "doc-content" }, h("div", { class: "measure-lg" }, h("div", { onClick: handleRoutableLinkClick, innerHTML: docsContent.content }), h("h2", null, "Contributors"), h("contributor-list", { contributors: docsContent.contributors }), h("lower-content-nav", { next: this.nextItem, prev: this.prevItem }))),
-                h("in-page-navigation", { pageLinks: docsContent.headings, srcUrl: docsContent.srcPath, currentPageUrl: docsContent.url })
-            ] }))));
-    }
-    static get watchers() { return {
-        "page": ["fetchNewContent"]
-    }; }
-    static get style() { return documentComponentCss; }
-    static get cmpMeta() { return {
-        "$flags$": 0,
-        "$tagName$": "document-component",
-        "$members$": {
-            "pages": [16],
-            "page": [1],
-            "item": [32],
-            "nextItem": [32],
-            "prevItem": [32],
-            "parent": [32]
-        },
-        "$listeners$": [[0, "menuToggleClick", "toggleMenu"]],
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
-const enterpriseCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}capacitor-enterprise{display:block;margin:76px 0}capacitor-enterprise .cta h1{margin-top:0}capacitor-enterprise .cta .btn{margin-top:24px;background-color:#111;color:white}capacitor-enterprise .container{max-width:1024px;margin:auto}capacitor-enterprise .points{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));-webkit-column-gap:16px;-moz-column-gap:16px;column-gap:16px;row-gap:24px}@media (max-width: 480px){capacitor-enterprise .points{grid-template-columns:1fr}}capacitor-enterprise hgroup{text-align:center}capacitor-enterprise .hs-form{margin:48px auto;max-width:420px !important;font-weight:400}capacitor-enterprise .hs-form .hs-form-required{display:none}capacitor-enterprise .hs-form form fieldset.form-columns-2 .input{margin-right:12px}capacitor-enterprise .hs-form form.stacked .field{margin-bottom:4px}capacitor-enterprise .hs-form .hs-input,capacitor-enterprise .hs-form input.hs-input,capacitor-enterprise .hs-form select.hs-input{-webkit-appearance:none;appearance:none;-moz-appearance:none;border:1px solid #e1e5ed;font-weight:500;border-radius:4px;-webkit-transition:border-color 0.2s;transition:border-color 0.2s;-webkit-box-shadow:none;box-shadow:none;outline:none;height:30px;padding:6px 12px;font-size:14px;line-height:1.428571429}capacitor-enterprise .hs-form .hs-input:placeholder,capacitor-enterprise .hs-form input.hs-input:placeholder,capacitor-enterprise .hs-form select.hs-input:placeholder{color:#aaa}capacitor-enterprise .hs-form .hs-input:hover,capacitor-enterprise .hs-form .hs-input:focus,capacitor-enterprise .hs-form .hs-input:active,capacitor-enterprise .hs-form input.hs-input:hover,capacitor-enterprise .hs-form input.hs-input:focus,capacitor-enterprise .hs-form input.hs-input:active,capacitor-enterprise .hs-form select.hs-input:hover,capacitor-enterprise .hs-form select.hs-input:focus,capacitor-enterprise .hs-form select.hs-input:active{outline:none;border-color:#3880ff;-webkit-box-shadow:none;box-shadow:none}capacitor-enterprise .hs-form .hs-input.hs-input.error,capacitor-enterprise .hs-form input.hs-input.hs-input.error,capacitor-enterprise .hs-form select.hs-input.hs-input.error{border-color:#ee0000}capacitor-enterprise .hs-form select.hs-input{height:44px;width:calc(100% + 6px) !important}capacitor-enterprise .hs-form textarea.hs-input{padding:12px;width:calc(100% + 3px) !important;min-height:192px}capacitor-enterprise .hs-form .hs_submit input.hs-button{font-size:13px;padding:10px 18px 10px;margin-right:-14px;margin-top:-36px;line-height:23px;float:right;font-weight:600;letter-spacing:0;text-transform:none;text-shadow:none;background:#3880ff;border:0;outline:0;-webkit-transition:all 0.2s linear;transition:all 0.2s linear;-webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.12);box-shadow:0 1px 3px rgba(0, 0, 0, 0.12)}capacitor-enterprise .hs-form .hs_submit input.hs-button:hover{border:0;-webkit-box-shadow:0 4px 8px rgba(0, 0, 0, 0.12);box-shadow:0 4px 8px rgba(0, 0, 0, 0.12);background:#5995fc;color:#fff;outline:0}capacitor-enterprise .hs-form .hs_submit input.hs-button:active,capacitor-enterprise .hs-form .hs_submit input.hs-button:active:not(.inactive):not(.link),capacitor-enterprise .hs-form .hs_submit input.hs-button:focus:not(.inactive){border:0;color:#fff;-webkit-box-shadow:inset 0 1px 4px rgba(0, 0, 0, 0.2);box-shadow:inset 0 1px 4px rgba(0, 0, 0, 0.2);background:#5995fc;outline:0}capacitor-enterprise .hs-form .submitted-message{font-size:18px;padding:34px 0 78px;text-align:center;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;font-weight:400;color:#35af55;max-width:410px;background-color:white;margin:0 auto}capacitor-enterprise .hs-form .submitted-message:before{content:\"\";display:block;background-image:url(\"/img/checkmark-light-green.svg\");background-repeat:no-repeat;background-size:100%;width:42px;height:42px;margin-bottom:12px}capacitor-enterprise .modal .hs-form .hs_submit input.hs-button{padding:0}capacitor-enterprise .hs-form,capacitor-enterprise .hs-form fieldset,capacitor-enterprise .hs-form iframe{max-width:100%}capacitor-enterprise .hs-form .hs-form-field{margin-top:16px}capacitor-enterprise .hs-form label{margin-bottom:3px}capacitor-enterprise .hs-form .hs-form-required{display:inline;color:#F45454;margin-left:4px}capacitor-enterprise .hs-form .hs-richtext{margin-top:8px}capacitor-enterprise .hs-form .hs-input,capacitor-enterprise .hs-form input.hs-input{-webkit-transition:border 0.3s;transition:border 0.3s;font-weight:500;background-color:#fff;background-image:none;border:1px solid #ced6e3;line-height:1.39286;border-radius:4px;padding:11px 15px;font-size:15px;margin-bottom:0;color:#505863}capacitor-enterprise .hs-form input.hs-input[type=number]{float:none}capacitor-enterprise .hs-form input.hs-input[type=text],capacitor-enterprise .hs-form input.hs-input[type=email],capacitor-enterprise .hs-form input.hs-input[type=tel]{height:auto;width:100%;float:none}capacitor-enterprise .hs-form input.hs-input[type=text]:focus,capacitor-enterprise .hs-form input.hs-input[type=email]:focus,capacitor-enterprise .hs-form input.hs-input[type=tel]:focus{border-color:#629eff}capacitor-enterprise .hs-form input.hs-input[type=radio],capacitor-enterprise .hs-form input.hs-input[type=checkbox]{height:auto;margin-right:8px}capacitor-enterprise .hs-form .hs-form-booleancheckbox-display{display:-ms-flexbox;display:flex}capacitor-enterprise .hs-form select.hs-input{height:44px;-webkit-appearance:none;appearance:none;-moz-appearance:none;background-image:linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);background-position:calc(100% - 20px) 50%, calc(100% - 15px) 50%;background-size:5px 5px, 5px 5px, 1px 1.5em;background-repeat:no-repeat}capacitor-enterprise .hs-form form fieldset.form-columns-2 .input{margin:0}capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field{padding:0 10px}capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field:first-child{padding-left:0}capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field:last-child{padding-right:0}capacitor-enterprise .hs-form .inputs-list,capacitor-enterprise .hs-form .hs-error-msgs{margin:0;padding:0;list-style-type:none}capacitor-enterprise .hs-form .inputs-list.multi-container{overflow:hidden}capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child,capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child~li{width:50%;float:left;padding-right:11px}capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child~li:nth-child(even){padding-right:0;padding-left:11px}capacitor-enterprise .hs-form .hs-form-checkbox-display{margin-top:4px;display:-ms-flexbox;display:flex}capacitor-enterprise .hs-form .hs-form-checkbox-display .hs-input[type=checkbox]{margin-right:10px}capacitor-enterprise .hs-form .hs-form-checkbox-display span{font-size:15px;color:#505863}capacitor-enterprise .hs-form .hs-error-msgs{padding:5px 0 0;font-size:11px;color:#F45454}capacitor-enterprise .hs-form .hs_submit{margin-top:30px}capacitor-enterprise .hs-form .hs_submit input.hs-button{-webkit-transition:all 0.3s ease;transition:all 0.3s ease;margin:0;float:none;font-size:16px;font-weight:700;padding:12px 20px;vertical-align:middle;color:white;background:#3880ff;-webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.12);box-shadow:0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.12);border-radius:4px;line-height:18px;letter-spacing:-0.01em}capacitor-enterprise .hs-form .hs_submit input.hs-button:hover{-webkit-box-shadow:0 7px 14px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 7px 14px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.08);background:#4d8dfd;color:#fff;outline:none}@media (max-width: 480px){capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field{width:100%;float:none;padding:0}capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field+.hs-form-field{margin-top:24px}capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child,capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child~li{width:100%;float:none;padding-right:0}capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child~li:nth-child(even){padding-left:0}capacitor-enterprise .hs-form .hs_submit input.hs-button{width:100%}}capacitor-enterprise .hubspot-override--large .hs-form label:not(.hs-form-booleancheckbox-display){text-transform:uppercase;font-size:12px;letter-spacing:0.05em;margin-bottom:6px}capacitor-enterprise .hubspot-override--large .hs-form .hs-form-booleancheckbox-display{font-size:15px}capacitor-enterprise .hubspot-override--large .hs-form .hs-richtext p span,capacitor-enterprise .hubspot-override--large .hs-form .hs-richtext p a{font-size:15px}capacitor-enterprise .hubspot-override--large .hs-form .hs-input,capacitor-enterprise .hubspot-override--large .hs-form input.hs-input{padding:16px 20px 18px;font-size:18px}capacitor-enterprise .hubspot-override--large .hs-form select.hs-input{text-indent:10px;height:60px}@-moz-document url-prefix(){capacitor-enterprise .hubspot-override--large .hs-form select.hs-input{text-indent:0}}capacitor-enterprise .hubspot-override--large .hs-form .hs-error-msgs label{font-size:11px;letter-spacing:0;text-transform:none}capacitor-enterprise .hubspot-override--large .hs-form fieldset.form-columns-2 .hs-form-field{padding:0 20px}capacitor-enterprise .hubspot-override--large .hs-form .hs_submit{text-align:center;padding-top:18px}capacitor-enterprise .hubspot-override--large .hs-form .hs_submit input.hs-button{padding:22px 27px 24px;border-radius:6px}@media (max-width: 480px){capacitor-enterprise .hubspot-override--large .hs-form fieldset.form-columns-2 .hs-form-field{padding:0}}capacitor-enterprise .hubspot-override--measure{max-width:748px;margin-left:auto;margin-right:auto}";
-
-class Enterprise {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-    }
-    componentWillLoad() {
-        state.pageTheme = 'dark';
-    }
-    componentDidLoad() {
-        const hbsScript = document.createElement('script');
-        hbsScript.src = '//js.hsforms.net/forms/v2.js';
-        hbsScript.type = 'text/javascript';
-        hbsScript.charset = 'utf-8';
-        hbsScript.addEventListener('load', () => {
-            window.hbspt.forms.create({
-                portalId: '3776657',
-                formId: 'd0019a78-110e-4d28-b356-56357b4abe4b',
-                target: '#scripts',
-                css: ''
-            });
-        });
-        document.body.appendChild(hbsScript);
-        // el.appendChild(hbsScript);
-    }
-    render() {
-        return (h("div", { class: "enterprise" }, h(ResponsiveContainer, null, h(Grid, { class: "cta" }, h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h("h1", null, "Capacitor for Enterprises"), h("p", null, "Powerful solution for mission-critical enterprise apps", h("br", null), "across consumer and employee-facing", h("br", null), "iOS, Android, and Progressive Web Apps."), h("a", { href: "#contact" }, "Get in touch ->")))), h("section", { class: "section" }, h("div", { class: "container" }, h("hgroup", null, h("h2", null, "Enterprise mobile development, made easy"), h("p", null, "Meet your development goals with premium software and services that accelerate development and reduce project risk.")), h("div", { class: "points" }, h("div", { class: "point" }, h("h3", null, "Build with confidence"), h("p", null, "Enjoy peace of mind knowing the native plugins you depend on are built and maintained by a team you can trust, and backed by mission-critical support and expert services.")), h("div", { class: "point" }, h("h3", null, "Protect your users & data"), h("p", null, "Give your users the best possible mobile security, with advanced biometric authentication, SSO integration, and the latest in secure encrypted storage.")), h("div", { class: "point" }, h("h3", null, "Accelerate your mobile projects"), h("p", null, "Save valuable time and effort that would normally be spent chasing plugins and building from scratch. Capacitor Enterprise delivers everything you need on Day 1."))))), h("section", { id: "highlights" }, h("div", { class: "container" }, h("div", { class: "highlight" }, h("h2", null, "World-class support"), h("p", null, "Get guaranteed response SLAs through the app lifecycle. Ionic's professional support team is on-hand to help you troubleshoot and address issues occurring at the native layer.")), h("div", { class: "highlight" }, h("h2", null, "Stable, secure plugin library"), h("p", null, "Native features maintained by our team of native experts. Active subscribers get ongoing updates to supported plugins, to keep pace with OS and API changes, and evolving devices.")), h("div", { class: "highlight" }, h("h2", null, "Pre-built solutions"), h("p", null, "Accelerate development with pre-built native solutions to common mobile use cases, like biometrics, authentication, and encrypted offline storage. Built by mobile experts. Deployed in minutes.")), h("div", { class: "highlight" }, h("h2", null, "Expert help & guidance"), h("p", null, "Our team of native experts will work with you to define a native strategy that fits your unique goals and challenges. From architectural reviews to performance & security audits.")))), h("section", { id: "key-features" }, h("div", { class: "container" }, h("hgroup", null, h("h2", null, "Key features"), h("p", null, "Premium software and services to help you reach your development goals")), h("div", { class: "points" }, h("div", { class: "point" }, h("h3", null, "Core Device Plugins"), h("p", null, "Everything you need to deliver the core functionality your users expect, from essentials like camera and geolocation, to payments and security.")), h("div", { class: "point" }, h("h3", null, "Biometrics Sign-in"), h("p", null, "Add a critical layer of protection width advanced biometrics that locks down sensitive data, by employing the latest in native security best practices.")), h("div", { class: "point" }, h("h3", null, "Auth Integration"), h("p", null, "Easily connect through existing authentication providers, including Auth0, Azure Active Directory, and AWS Cognito--from any mobile device.")), h("div", { class: "point" }, h("h3", null, "Secure Offline Storage"), h("p", null, "Deliver secure, offline-first mobile experiences with a flexible mobile storage solution that uses military-grade encryption to prevent unwanted access and secure user data.")), h("div", { class: "point" }, h("h3", null, "Guaranteed SLA"), h("p", null, "Timely support and troubleshooting when you need it most. Get expert help directly from our team with guaranteed response times.")), h("div", { class: "point" }, h("h3", null, "Guidance & Expertise"), h("p", null, "Ensure your team is utilizing best practices when adding native functionality, helping you meet your deadlines while avoiding costly tech debt."))))), h("section", null, h("div", { class: "container" }, h("hgroup", null, h("h2", null, "Use Cases")), h("div", null, h("h3", null, "Mission-critical projects"), h("p", null, "When your brand and company reputation are on the line, you need a solution that will work on Day 1. Capacitor Enterprise is a great fit for teams building mission-critical projects who want to minimize project risk and reach their goals.")), h("div", null, h("h3", null, "Highly secure apps"), h("p", null, "Handling sensitive user or company data? Protect what matters most with advanced mobile security solutions that take advantage of the latest in native security best practices--from biometrics to military-grade encryption.")), h("div", null, h("h3", null, "Accelerated timeline"), h("p", null, "Facing an aggressive release timeline? We can help. Our pre-built solutions will save you weeks or months of coding from scratch, while our native mobile experts can help you find ways to speed up development and better reach your goals.")))), h("section", { id: "contact" }, h("div", { class: "container" }, h("hgroup", null, h("h2", null, "Learn more"), h("p", null, "Fill out form below to receive more information on Capacitor Enterprise."))), h("div", { id: "scripts", class: "hubspot-override" }))));
-    }
-    static get style() { return enterpriseCss; }
-    static get cmpMeta() { return {
-        "$flags$": 0,
-        "$tagName$": "capacitor-enterprise",
-        "$members$": undefined,
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
-const getName = (iconName, icon, mode, ios, md) => {
-    // default to "md" if somehow the mode wasn't set
-    mode = (mode && toLower(mode)) === 'ios' ? 'ios' : 'md';
-    // if an icon was passed in using the ios or md attributes
-    // set the iconName to whatever was passed in
-    if (ios && mode === 'ios') {
-        iconName = toLower(ios);
-    }
-    else if (md && mode === 'md') {
-        iconName = toLower(md);
-    }
-    else {
-        if (!iconName && icon && !isSrc(icon)) {
-            iconName = icon;
-        }
-        if (isStr(iconName)) {
-            iconName = toLower(iconName);
-        }
-    }
-    if (!isStr(iconName) || iconName.trim() === '') {
-        return null;
-    }
-    // only allow alpha characters and dash
-    const invalidChars = iconName.replace(/[a-z]|-|\d/gi, '');
-    if (invalidChars !== '') {
-        return null;
-    }
-    return iconName;
+const MetaHead$1 = () => {
+    return (h(Helmet, null, h("title", null, "Capacitor: Cross-platform native runtime for web apps"), h("meta", { name: "description", content: 'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript' }), h("meta", { name: "twitter:card", content: "summary_large_image" }), h("meta", { name: "twitter:site", content: "@capacitorjs" }), h("meta", { name: "twitter:creator", content: "capacitorjs" }), h("meta", { name: "twitter:title", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:description", content: "Build cross-platform apps with web technologies" })));
 };
-const isSrc = (str) => str.length > 0 && /(\/|\.)/.test(str);
-const isStr = (val) => typeof val === 'string';
-const toLower = (val) => val.toLowerCase();
-
-const iconCss = "/*!@:host*/.sc-ion-icon-h{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}/*!@:host .ionicon*/.sc-ion-icon-h .ionicon.sc-ion-icon{stroke:currentColor}/*!@.ionicon-fill-none*/.ionicon-fill-none.sc-ion-icon{fill:none}/*!@.ionicon-stroke-width*/.ionicon-stroke-width.sc-ion-icon{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}/*!@.icon-inner,\n.ionicon,\nsvg*/.icon-inner.sc-ion-icon,.ionicon.sc-ion-icon,svg.sc-ion-icon{display:block;height:100%;width:100%}/*!@:host(.flip-rtl) .icon-inner*/.flip-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}/*!@:host(.icon-small)*/.icon-small.sc-ion-icon-h{font-size:18px !important}/*!@:host(.icon-large)*/.icon-large.sc-ion-icon-h{font-size:32px !important}/*!@:host(.ion-color)*/.ion-color.sc-ion-icon-h{color:var(--ion-color-base) !important}/*!@:host(.ion-color-primary)*/.ion-color-primary.sc-ion-icon-h{--ion-color-base:var(--ion-color-primary, #3880ff)}/*!@:host(.ion-color-secondary)*/.ion-color-secondary.sc-ion-icon-h{--ion-color-base:var(--ion-color-secondary, #0cd1e8)}/*!@:host(.ion-color-tertiary)*/.ion-color-tertiary.sc-ion-icon-h{--ion-color-base:var(--ion-color-tertiary, #f4a942)}/*!@:host(.ion-color-success)*/.ion-color-success.sc-ion-icon-h{--ion-color-base:var(--ion-color-success, #10dc60)}/*!@:host(.ion-color-warning)*/.ion-color-warning.sc-ion-icon-h{--ion-color-base:var(--ion-color-warning, #ffce00)}/*!@:host(.ion-color-danger)*/.ion-color-danger.sc-ion-icon-h{--ion-color-base:var(--ion-color-danger, #f14141)}/*!@:host(.ion-color-light)*/.ion-color-light.sc-ion-icon-h{--ion-color-base:var(--ion-color-light, #f4f5f8)}/*!@:host(.ion-color-medium)*/.ion-color-medium.sc-ion-icon-h{--ion-color-base:var(--ion-color-medium, #989aa2)}/*!@:host(.ion-color-dark)*/.ion-color-dark.sc-ion-icon-h{--ion-color-base:var(--ion-color-dark, #222428)}";
-
-class Icon {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-        this.isVisible = false;
-        /**
-         * The mode determines which platform styles to use.
-         */
-        this.mode = getIonMode();
-        /**
-         * If enabled, ion-icon will be loaded lazily when it's visible in the viewport.
-         * Default, `false`.
-         */
-        this.lazy = false;
-    }
-    connectedCallback() {
-        // purposely do not return the promise here because loading
-        // the svg file should not hold up loading the app
-        // only load the svg if it's visible
-        this.waitUntilVisible(this.el, '50px', () => {
-            this.isVisible = true;
-            this.loadIcon();
-        });
-    }
-    disconnectedCallback() {
-        if (this.io) {
-            this.io.disconnect();
-            this.io = undefined;
-        }
-    }
-    waitUntilVisible(el, rootMargin, cb) {
-        {
-            // browser doesn't support IntersectionObserver
-            // so just fallback to always show it
-            cb();
-        }
-    }
-    loadIcon() {
-        if (!this.ariaLabel) {
-            const label = getName(this.name, this.icon, this.mode, this.ios, this.md);
-            // user did not provide a label
-            // come up with the label based on the icon name
-            if (label) {
-                this.ariaLabel = label.replace(/\-/g, ' ');
-            }
-        }
-    }
-    render() {
-        const mode = this.mode || 'md';
-        const flipRtl = this.flipRtl || (this.ariaLabel && (this.ariaLabel.indexOf('arrow') > -1 || this.ariaLabel.indexOf('chevron') > -1) && this.flipRtl !== false);
-        return (h(Host, { role: "img", class: Object.assign(Object.assign({ [mode]: true }, createColorClasses(this.color)), { [`icon-${this.size}`]: !!this.size, 'flip-rtl': !!flipRtl && this.el.ownerDocument.dir === 'rtl' }) }, ( h("div", { class: "icon-inner" }))));
-    }
-    static get assetsDirs() { return ["svg"]; }
-    get el() { return getElement(this); }
-    static get watchers() { return {
-        "name": ["loadIcon"],
-        "src": ["loadIcon"],
-        "icon": ["loadIcon"]
-    }; }
-    static get style() { return iconCss; }
-    static get cmpMeta() { return {
-        "$flags$": 9,
-        "$tagName$": "ion-icon",
-        "$members$": {
-            "mode": [1025],
-            "color": [1],
-            "ariaLabel": [1537, "aria-label"],
-            "ios": [1],
-            "md": [1],
-            "flipRtl": [4, "flip-rtl"],
-            "name": [1],
-            "src": [1],
-            "icon": [8],
-            "size": [1],
-            "lazy": [4],
-            "svgContent": [32],
-            "isVisible": [32]
-        },
-        "$listeners$": undefined,
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": [["ariaLabel", "aria-label"]]
-    }; }
-}
-const getIonMode = () =>  'md';
-const createColorClasses = (color) => {
-    return (color) ? {
-        'ion-color': true,
-        [`ion-color-${color}`]: true
-    } : null;
-};
-
-const inPageNavigationCss = "in-page-navigation{-ms-flex:0 0 240px;flex:0 0 240px;padding-top:26px;padding-left:16px;overflow:visible;letter-spacing:0}in-page-navigation .sticky{overflow:hidden}in-page-navigation internal-ad{visibility:hidden}in-page-navigation h5{text-transform:uppercase;font-size:11px;margin-top:0;margin-bottom:6px;font-weight:600;color:#a0aec0;letter-spacing:.05em}in-page-navigation .heading-links{--indent-size:12px;list-style:none;line-height:1;padding:0;margin:0;margin-left:calc(var(--indent-size) * -2)}in-page-navigation .heading-links li{width:188px;overflow:hidden;text-overflow:ellipsis;cursor:pointer}in-page-navigation .heading-links a{font-weight:400;color:var(--color-gunpowder);font-size:13px;line-height:18px;font-weight:500;border:none;text-decoration:none;border:none !important;-webkit-transition:.2s color ease;transition:.2s color ease}in-page-navigation .heading-links a:hover{color:var(--color-woodsmoke)}in-page-navigation .heading-links a:hover{border:none}in-page-navigation .heading-links .heading-link:hover,in-page-navigation .heading-links .heading-link.selected{border-bottom:none;-webkit-transform:translateX(calc(var(--indent-size) * 1 + 2px));transform:translateX(calc(var(--indent-size) * 1 + 2px));font-weight:500}in-page-navigation li.heading-link{padding:0 11px;margin-top:0;margin-left:0;border-left:2px solid transparent;-webkit-transition:.2s transform ease;transition:.2s transform ease}in-page-navigation li.heading-link.selected{border-left:2px solid var(--color-dodger-blue)}in-page-navigation li.heading-link.selected a{color:var(--color-dodger-blue);font-weight:600}in-page-navigation li.size-h2{-webkit-transform:translateX(calc(var(--indent-size) * 1));transform:translateX(calc(var(--indent-size) * 1))}in-page-navigation li.size-h3{-webkit-transform:translateX(calc(var(--indent-size) * 2));transform:translateX(calc(var(--indent-size) * 2))}in-page-navigation li.size-h4{-webkit-transform:translateX(calc(var(--indent-size) * 3));transform:translateX(calc(var(--indent-size) * 3))}in-page-navigation li.size-h3 a,in-page-navigation li.size-h4 a{font-weight:400;color:#6c6c8b}in-page-navigation li.size-h3:hover a,in-page-navigation li.size-h4:hover a{color:var(--color-gunpowder)}in-page-navigation li.heading-link.size-h3:hover,in-page-navigation li.heading-link.size-h3.selected{-webkit-transform:translateX(calc(var(--indent-size) * 2 + 2px));transform:translateX(calc(var(--indent-size) * 2 + 2px))}in-page-navigation li.heading-link.size-h4:hover,in-page-navigation li.heading-link.size-h4.selected{-webkit-transform:translateX(calc(var(--indent-size) * 3 + 2px));transform:translateX(calc(var(--indent-size) * 3 + 2px))}in-page-navigation li.heading-link stencil-route-link{margin-top:4px}in-page-navigation .submit-edit-link{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;font-size:12px;color:var(--color-dodger-blue);font-weight:600;text-decoration:none}in-page-navigation .submit-edit-link svg{width:16px;fill:currentColor}in-page-navigation .submit-edit-link span{-webkit-transition:border 0.2s;transition:border 0.2s;height:16px;margin-left:6px;margin-bottom:2px}in-page-navigation .heading-links+.submit-edit-link{margin-top:28px;border-bottom:none}@media screen and (max-width: 1024px){in-page-navigation{display:none}}";
-
-class InPageNavigtion {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-        this.pageLinks = [];
-        this.srcUrl = '';
-        this.currentPageUrl = '';
-        this.itemOffsets = [];
-        this.selectedId = null;
-        this.checkHeight = async () => {
-            if (!this.stickyEl || this.adEl.offsetHeight === 0)
-                return;
-            this.stickyEl.getBoundingClientRect().bottom > window.innerHeight ? this.stickyEl.style.overflow = 'visible' : '';
-            if (!this.adEl)
-                return;
-            this.adEl.style.visibility = 'hidden';
-            this.adEl.getBoundingClientRect().bottom < window.innerHeight ? this.adEl.style.visibility = 'visible' : '';
-            this.adEl.update();
-        };
-    }
-    function() {
-        const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
-        if (itemIndex === 0 || this.itemOffsets[this.itemOffsets.length - 1] === undefined) {
-            this.selectedId = null;
-        }
-        else if (itemIndex === -1) {
-            this.selectedId = this.itemOffsets[this.itemOffsets.length - 1].id;
-        }
-        else {
-            this.selectedId = this.itemOffsets[itemIndex - 1].id;
-        }
-    }
-    updateItemOffsets() {
-        requestAnimationFrame(() => {
-            this.itemOffsets = this.pageLinks.map((pl) => {
-                const item = document.getElementById(pl.id);
-                return {
-                    id: pl.id,
-                    topOffset: item.getBoundingClientRect().top + window.scrollY
-                };
-            });
-        });
-    }
-    handleNavChange() {
-        this.checkHeight();
-    }
-    componentDidLoad() {
-        this.updateItemOffsets();
-        this.checkHeight();
-    }
-    ghIcon() {
-        return (h("svg", { id: "icon-github", viewBox: "0 0 512 512", width: "100%", height: "100%" }, h("path", { d: "M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9 1.4.3 2.6.4 3.8.4 8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1-8.4 1.9-15.9 2.7-22.6 2.7-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1 10.5 0 20-3.4 25.6-6 2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8 0 0 1.6-.5 5-.5 8.1 0 26.4 3.1 56.6 24.1 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 30.2-21 48.5-24.1 56.6-24.1 3.4 0 5 .5 5 .5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5 1.2 0 2.6-.1 4-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z" })));
-    }
-    stripTags(html) {
-        const tmp = document.createElement('div');
-        tmp.innerHTML = html;
-        return tmp.textContent || tmp.innerText || '';
-    }
-    render() {
-        const pageLinks = this.pageLinks.filter(pl => pl.level !== 1);
-        const submitEditLink = (h("a", { class: "submit-edit-link", target: "_blank", href: `https://github.com/ionic-team/capacitor-site/blob/master/${this.srcUrl}` }, this.ghIcon(), h("span", null, "Submit an edit")));
-        if (pageLinks.length === 0) {
-            return (h("div", { class: "sticky" }, submitEditLink, h("internal-ad", { ref: e => this.adEl = e })));
-        }
-        return (h("div", { class: "sticky", ref: e => this.stickyEl = e }, h("h5", null, "Contents"), h("ul", { class: "heading-links" }, pageLinks.map(pl => (h("li", { class: {
-                'heading-link': true,
-                [`size-h${pl.level}`]: true,
-                'selected': this.selectedId === pl.id
-            } }, h("stencil-route-link", null, h("a", Object.assign({}, href(`#${pl.id}`)), this.stripTags(pl.text))))))), submitEditLink, h("internal-ad", { ref: e => this.adEl = e })));
-    }
-    static get watchers() { return {
-        "pageLinks": ["updateItemOffsets", "handleNavChange"]
-    }; }
-    static get style() { return inPageNavigationCss; }
-    static get cmpMeta() { return {
-        "$flags$": 0,
-        "$tagName$": "in-page-navigation",
-        "$members$": {
-            "pageLinks": [16],
-            "srcUrl": [1, "src-url"],
-            "currentPageUrl": [1, "current-page-url"],
-            "itemOffsets": [32],
-            "selectedId": [32]
-        },
-        "$listeners$": [[9, "scroll", "function"], [9, "resize", "updateItemOffsets"]],
-        "$lazyBundleIds$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
-var prismicDom_min = createCommonjsModule(function (module, exports) {
-!function(e,t){module.exports=t();}("undefined"!=typeof self?self:commonjsGlobal,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=1)}([function(e,t,n){e.exports=function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){e.exports=n(1);},function(e,t,n){var r=n(2),o=n(3);e.exports={Link:r,Date:o};},function(e,t,n){e.exports={url:function(e,t){if(e&&[e.link_type,e._linkType,e.linkType].some((function(e){return e&&["Document","Link.Document","Link.document"].includes(e)}))&&t&&"function"==typeof t){var n=t(e);if(n)return n}return e&&e.url?e.url:""}};},function(e,t){e.exports=function(e){if(!e)return null;var t=24==e.length?"".concat(e.substring(0,22),":").concat(e.substring(22,24)):e;return new Date(t)};}]);},function(e,t,n){e.exports=n(2);},function(e,t,n){var r=n(0),o=n(3),i=r.Date,u=r.Link;e.exports={Date:i,Link:u,RichText:o};},function(e,t,n){var r=n(4),o=n(0).Link,i=n(5),u=r.Elements;function c(e,t,n,r,c){switch(t){case u.heading1:return l("h1",n,c);case u.heading2:return l("h2",n,c);case u.heading3:return l("h3",n,c);case u.heading4:return l("h4",n,c);case u.heading5:return l("h5",n,c);case u.heading6:return l("h6",n,c);case u.paragraph:return l("p",n,c);case u.preformatted:return function(e){return "<pre".concat(a(e),">").concat(i(e.text),"</pre>")}(n);case u.strong:return l("strong",n,c);case u.em:return l("em",n,c);case u.listItem:case u.oListItem:return l("li",n,c);case u.list:return l("ul",n,c);case u.oList:return l("ol",n,c);case u.image:return function(e,t){var n=t.linkTo?o.url(t.linkTo,e):null,r=t.linkTo&&t.linkTo.target?'target="'.concat(t.linkTo.target,'" rel="noopener"'):"",i=[t.label||"","block-img"],u='<img src="'.concat(t.url,'" alt="').concat(t.alt||"",'" copyright="').concat(t.copyright||"",'">');return '\n    <p class="'.concat(i.join(" "),'">\n      ').concat(n?"<a ".concat(r,' href="').concat(n,'">').concat(u,"</a>"):u,"\n    </p>\n  ")}(e,n);case u.embed:return function(e){return '\n    <div data-oembed="'.concat(e.oembed.embed_url,'"\n      data-oembed-type="').concat(e.oembed.type,'"\n      data-oembed-provider="').concat(e.oembed.provider_name,'"\n      ').concat(a(e),">\n          \n      ").concat(e.oembed.html,"\n    </div>\n  ")}(n);case u.hyperlink:return function(e,t,n){var r=t.data.target?'target="'.concat(t.data.target,'" rel="noopener"'):"";return "<a ".concat(r,' href="').concat(o.url(t.data,e),'">').concat(n.join(""),"</a>")}(e,n,c);case u.label:return function(e,t){return "<span ".concat(a(e.data),">").concat(t.join(""),"</span>")}(n,c);case u.span:return function(e){return e?i(e).replace(/\n/g,"<br />"):""}(r);default:return ""}}function a(e){return e.label?' class="'.concat(e.label,'"'):""}function l(e,t,n){return "<".concat(e).concat(a(t),">").concat(n.join(""),"</").concat(e,">")}e.exports={asText:function(e,t){return r.asText(e,t)},asHtml:function(e,t,n){return r.serialize(e,c.bind(null,t),n).join("")},Elements:u};},function(e,t,n){e.exports=function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=9)}([function(e,t,n){var r=n(3);e.exports=function(e){return function t(n){return 0===arguments.length||r(n)?t:e.apply(this,arguments)}};},function(e,t,n){var r=n(0),o=n(3);e.exports=function(e){return function t(n,i){switch(arguments.length){case 0:return t;case 1:return o(n)?t:r((function(t){return e(n,t)}));default:return o(n)&&o(i)?t:o(n)?r((function(t){return e(t,i)})):o(i)?r((function(t){return e(n,t)})):e(n,i)}}};},function(e,t,n){var r;function o(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(t,"__esModule",{value:!0}),t.PRIORITIES=t.NODE_TYPES=void 0;var i={heading1:"heading1",heading2:"heading2",heading3:"heading3",heading4:"heading4",heading5:"heading5",heading6:"heading6",paragraph:"paragraph",preformatted:"preformatted",strong:"strong",em:"em",listItem:"list-item",oListItem:"o-list-item",list:"group-list-item",oList:"group-o-list-item",image:"image",embed:"embed",hyperlink:"hyperlink",label:"label",span:"span"};t.NODE_TYPES=i;var u=(o(r={},i.heading1,4),o(r,i.heading2,4),o(r,i.heading3,4),o(r,i.heading4,4),o(r,i.heading5,4),o(r,i.heading6,4),o(r,i.paragraph,3),o(r,i.preformatted,5),o(r,i.strong,6),o(r,i.em,6),o(r,i.oList,1),o(r,i.list,1),o(r,i.listItem,1),o(r,i.oListItem,1),o(r,i.image,1),o(r,i.embed,1),o(r,i.hyperlink,3),o(r,i.label,4),o(r,i.span,7),r);t.PRIORITIES=u;},function(e,t){e.exports=function(e){return null!=e&&"object"==typeof e&&!0===e["@@functional/placeholder"]};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r=d(n(12)),o=d(n(15)),i=d(n(16)),u=d(n(17)),c=d(n(21)),a=d(n(7)),l=n(23),f=n(2),s=n(8);function d(e){return e&&e.__esModule?e:{default:e}}function p(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function h(e){return function(e,t){return t.reduce((function(e,t){var n=(0, c.default)(e);if(n){if(n.some((function(e){return e.isParentOf(t)})))return (0, u.default)(e).concat([n.concat(t)]);var r=(0, c.default)(n);return r&&function(e,t){return e.end>=t.start}(r,t)?(0, u.default)(e).concat([n.concat(t)]):e.concat([[t]])}return [[t]]}),[])}(0,(0, i.default)([function(e,t){return e.start-t.start},function(e,t){return e.end-t.end}],e))}function y(e){if(0===e.length)throw new Error("Unable to elect node on empty list");var t=function(e){return function(e){if(Array.isArray(e))return e}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}(e.sort((function(e,t){if(e.isParentOf(t))return -1;if(t.isParentOf(e))return 1;var n=f.PRIORITIES[e.type]-f.PRIORITIES[t.type];return 0===n?e.text.length-t.text.length:n})));return {elected:t[0],others:t.slice(1)}}function v(e,t,n){if(t.length>0)return function(e,t,n){return t.reduce((function(r,o,i){var u=[],c=0===i&&o.start>n.lower,a=i===t.length-1&&n.upper>o.end;if(c){var l=new s.TextNode(n.lower,o.start,e.slice(n.lower,o.start));u=u.concat(l);}else{var f=t[i-1];if(f&&o.start>f.end){var d=e.slice(f.end,o.start),p=new s.TextNode(f.end,o.start,d);u=u.concat(p);}}if(u=u.concat(o),a){var h=new s.TextNode(o.end,n.upper,e.slice(o.end,n.upper));u=u.concat(h);}return r.concat(u)}),[])}(e,m(e,t),n);var r=e.slice(n.lower,n.upper);return [new s.TextNode(n.lower,n.upper,r)]}function m(e,t){var n=h((0, o.default)((function(e){return e.start}),t)).map(y),i=(0, r.default)(n.map((function(t){return function(e,t){var n=t.others.reduce((function(n,r){var o=n.inner,i=n.outer,u=function(e,t,n){return n.start<t.start?{inner:s.SpanNode.slice(n,t.start,n.end,e),outer:s.SpanNode.slice(n,n.start,t.start,e)}:n.end>t.end?{inner:s.SpanNode.slice(n,n.start,t.end,e),outer:s.SpanNode.slice(n,t.end,n.end,e)}:{inner:n}}(e,t.elected,r);return {inner:o.concat(u.inner),outer:u.outer?i.concat(u.outer):i}}),{inner:[],outer:[]}),r=n.inner,o=n.outer;return [t.elected.setChildren(v(e,r,t.elected.boundaries()))].concat(m(e,o))}(e,t)})));return (0, o.default)((function(e){return e.start}),i)}var b=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e);}var t,n;return t=e,(n=[{key:"fromRichText",value:function(e){return {key:(0, a.default)(),children:e.reduce((function(e,t,n){if(l.RichTextBlock.isEmbedBlock(t.type)||l.RichTextBlock.isImageBlock(t.type))return e.concat(new s.BlockNode(t.type,t));var r=function(e){var t=e.spans.map((function(t){var n=e.text.slice(t.start,t.end);return new s.SpanNode(t.start,t.end,t.type,n,[],t)})),n={lower:0,upper:e.text.length};return v(e.text,t,n)}(t),o=e[e.length-1];if(l.RichTextBlock.isListItem(t.type)&&o&&o instanceof s.ListBlockNode){var i=new s.ListItemBlockNode(t,r),c=o.addChild(i);return (0, u.default)(e).concat(c)}if(l.RichTextBlock.isOrderedListItem(t.type)&&o&&o instanceof s.OrderedListBlockNode){var a=new s.OrderedListItemBlockNode(t,r),f=o.addChild(a);return (0, u.default)(e).concat(f)}if(l.RichTextBlock.isListItem(t.type)){var d=new s.ListItemBlockNode(t,r),p=new s.ListBlockNode(l.RichTextBlock.emptyList(),[d]);return e.concat(p)}if(l.RichTextBlock.isOrderedListItem(t.type)){var h=new s.OrderedListItemBlockNode(t,r),y=new s.OrderedListBlockNode(l.RichTextBlock.emptyOrderedList(),[h]);return e.concat(y)}return e.concat(new s.BlockNode(t.type,t,r))}),[])}}}])&&p(t,n),e}();t.default=b;},function(e,t){e.exports=Array.isArray||function(e){return null!=e&&e.length>=0&&"[object Array]"===Object.prototype.toString.call(e)};},function(e,t){e.exports=function(e){return "[object String]"===Object.prototype.toString.call(e)};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(){var e=(new Date).getTime();return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,(function(t){var n=(e+16*Math.random())%16|0;return e=Math.floor(e/16),("x"==t?n:3&n|8).toString(16)}))};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.ListBlockNode=t.OrderedListBlockNode=t.OrderedListItemBlockNode=t.ListItemBlockNode=t.BlockNode=t.TextNode=t.SpanNode=t.Node=void 0;var r,o=(r=n(7))&&r.__esModule?r:{default:r},i=n(2);function u(e){return (u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function c(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function a(e,t,n){return t&&c(e.prototype,t),n&&c(e,n),e}function l(e,t){return !t||"object"!==u(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}(e):t}function f(e){return (f=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&function(e,t){(Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t);}(e,t);}function d(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var p=function e(t,n,r){d(this,e),this.key=(0, o.default)(),this.type=t,this.element=n,this.children=r;};t.Node=p;var h=function(e){function t(e,n,r,o,i,u){var c;return d(this,t),(c=l(this,f(t).call(this,r,u,i))).start=e,c.end=n,c.text=o,c.children=i,c}return s(t,p),a(t,[{key:"boundaries",value:function(){return {lower:this.start,upper:this.end}}},{key:"isParentOf",value:function(e){return this.start<=e.start&&this.end>=e.end}},{key:"setChildren",value:function(e){return new t(this.start,this.end,this.type,this.text,e,this.element)}}],[{key:"slice",value:function(e,n,r,o){return new t(n,r,e.type,o.slice(n,r),e.children,e.element)}}]),t}();t.SpanNode=h;var y=function(e){function t(e,n,r){d(this,t);var o={type:i.NODE_TYPES.span,start:e,end:n,text:r};return l(this,f(t).call(this,e,n,i.NODE_TYPES.span,r,[],o))}return s(t,h),t}();t.TextNode=y;var v=function(e){function t(e,n){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:[];return d(this,t),l(this,f(t).call(this,e,n,r))}return s(t,p),t}();t.BlockNode=v;var m=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.listItem,e,n))}return s(t,v),t}();t.ListItemBlockNode=m;var b=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.oListItem,e,n))}return s(t,v),t}();t.OrderedListItemBlockNode=b;var g=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.oList,e,n))}return s(t,v),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.OrderedListBlockNode=g;var x=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.list,e,n))}return s(t,v),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.ListBlockNode=x;},function(e,t,n){e.exports=n(10);},function(e,t,n){var r=c(n(11)),o=c(n(4)),i=c(n(24)),u=n(2);function c(e){return e&&e.__esModule?e:{default:e}}e.exports={asText:r.default,asTree:o.default.fromRichText,serialize:i.default,Elements:u.NODE_TYPES};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0,t.default=function(e,t){var n="string"==typeof t?t:" ";return e.map((function(e){return e.text})).join(n)};},function(e,t,n){var r=n(0)(n(13)(!0));e.exports=r;},function(e,t,n){var r=n(14);e.exports=function(e){return function t(n){for(var o,i,u,c=[],a=0,l=n.length;a<l;){if(r(n[a]))for(u=0,i=(o=e?t(n[a]):n[a]).length;u<i;)c[c.length]=o[u],u+=1;else c[c.length]=n[a];a+=1;}return c}};},function(e,t,n){var r=n(0),o=n(5),i=n(6),u=r((function(e){return !!o(e)||!!e&&"object"==typeof e&&!i(e)&&(1===e.nodeType?!!e.length:0===e.length||e.length>0&&e.hasOwnProperty(0)&&e.hasOwnProperty(e.length-1))}));e.exports=u;},function(e,t,n){var r=n(1)((function(e,t){return Array.prototype.slice.call(t,0).sort((function(t,n){var r=e(t),o=e(n);return r<o?-1:r>o?1:0}))}));e.exports=r;},function(e,t,n){var r=n(1)((function(e,t){return Array.prototype.slice.call(t,0).sort((function(t,n){for(var r=0,o=0;0===r&&o<e.length;)r=e[o](t,n),o+=1;return r}))}));e.exports=r;},function(e,t,n){var r=n(18)(0,-1);e.exports=r;},function(e,t,n){var r=n(19),o=n(20)(r("slice",(function(e,t,n){return Array.prototype.slice.call(n,e,t)})));e.exports=o;},function(e,t,n){var r=n(5);e.exports=function(e,t){return function(){var n=arguments.length;if(0===n)return t();var o=arguments[n-1];return r(o)||"function"!=typeof o[e]?t.apply(this,arguments):o[e].apply(o,Array.prototype.slice.call(arguments,0,n-1))}};},function(e,t,n){var r=n(0),o=n(1),i=n(3);e.exports=function(e){return function t(n,u,c){switch(arguments.length){case 0:return t;case 1:return i(n)?t:o((function(t,r){return e(n,t,r)}));case 2:return i(n)&&i(u)?t:i(n)?o((function(t,n){return e(t,u,n)})):i(u)?o((function(t,r){return e(n,t,r)})):r((function(t){return e(n,u,t)}));default:return i(n)&&i(u)&&i(c)?t:i(n)&&i(u)?o((function(t,n){return e(t,n,c)})):i(n)&&i(c)?o((function(t,n){return e(t,u,n)})):i(u)&&i(c)?o((function(t,r){return e(n,t,r)})):i(n)?r((function(t){return e(t,u,c)})):i(u)?r((function(t){return e(n,t,c)})):i(c)?r((function(t){return e(n,u,t)})):e(n,u,c)}}};},function(e,t,n){var r=n(22)(-1);e.exports=r;},function(e,t,n){var r=n(1),o=n(6),i=r((function(e,t){var n=e<0?t.length+e:e;return o(t)?t.charAt(n):t[n]}));e.exports=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.RichTextBlock=void 0;var r=n(2);function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}var i=function(){function e(t,n,r){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.type=t,this.text=n,this.spans=r;}var t,n;return t=e,(n=[{key:"isEmbedBlock",value:function(e){return e===r.NODE_TYPES.embed}},{key:"isImageBlock",value:function(e){return e===r.NODE_TYPES.image}},{key:"isList",value:function(e){return e===r.NODE_TYPES.list}},{key:"isOrderedList",value:function(e){return e===r.NODE_TYPES.oList}},{key:"isListItem",value:function(e){return e===r.NODE_TYPES.listItem}},{key:"isOrderedListItem",value:function(e){return e===r.NODE_TYPES.oListItem}},{key:"emptyList",value:function(){return {type:r.NODE_TYPES.list,spans:[],text:""}}},{key:"emptyOrderedList",value:function(){return {type:r.NODE_TYPES.oList,spans:[],text:""}}}])&&o(t,n),e}();t.RichTextBlock=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r,o=(r=n(4))&&r.__esModule?r:{default:r},i=n(8);t.default=function(e,t,n){return o.default.fromRichText(e).children.map((function(e,r){return function(e,t,n,r){return function e(n,o){var u=n instanceof i.SpanNode?n.text:null,c=n.children.reduce((function(t,n,r){return t.concat([e(n,r)])}),[]);return r&&r(n.type,n.element,u,c,o)||t(n.type,n.element,u,c,o)}(e,n)}(e,t,r,n)}))};}]);},function(e,t,n){/*!
- * escape-html
- * Copyright(c) 2012-2013 TJ Holowaychuk
- * Copyright(c) 2015 Andreas Lubbe
- * Copyright(c) 2015 Tiancheng "Timothy" Gu
- * MIT Licensed
- */var r=/["'&<>]/;e.exports=function(e){var t,n=""+e,o=r.exec(n);if(!o)return n;var i="",u=0,c=0;for(u=o.index;u<n.length;u++){switch(n.charCodeAt(u)){case 34:t="&quot;";break;case 38:t="&amp;";break;case 39:t="&#39;";break;case 60:t="&lt;";break;case 62:t="&gt;";break;default:continue}c!==u&&(i+=n.substring(c,u)),c=u+1,i+=t;}return c!==u?i+n.substring(c,u):i};}])}));
-});
-
-var PrismicDom = unwrapExports(prismicDom_min);
 
 (function(self) {
 
@@ -10033,6 +9272,987 @@ var prismicJavascript_min = createCommonjsModule(function (module, exports) {
 
 var Prismic = unwrapExports(prismicJavascript_min);
 
+const demoCss = "@charset \"UTF-8\";@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Bold\"), url(\"/assets/fonts/eina/eina-01-bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-bold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-bold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-bold.eot?#iefix\") format(\"eot\");font-weight:700;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Semibold\"), url(\"/assets/fonts/eina/eina-01-semibold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-semibold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-semibold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-semibold.eot?#iefix\") format(\"eot\");font-weight:600;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Regular\"), url(\"/assets/fonts/eina/eina-01-regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-regular.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-regular.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-regular.eot?#iefix\") format(\"eot\");font-weight:400;unicode-range:U+000-5FF}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Regular\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Regular.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Italic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Medium.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Medium.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter Bold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Bold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter BoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter Black\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Black.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Black.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter BlackItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff\") format(\"woff\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:400;unicode-range:U+000-5FF;src:url(\"/assets/fonts//29D26A_0_0.eot\");src:url(\"/assets/fonts//29D26A_0_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts//29D26A_0_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_0_0.ttf\") format(\"truetype\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:500;unicode-range:U+000-5FF;src:url(\"/assets/fonts/29D26A_1_0.eot\");src:url(\"/assets/fonts/29D26A_1_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/29D26A_1_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_1_0.ttf\") format(\"truetype\")}:root{--f-family-display:Eina, \"Helvetica Neue\", Helvetica, sans-serif;--f-family-text:Inter, \"Inter UI\", Helvetica, Arial, sans-serif;--f-family-system:apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;--f-family-monospace:\"SF Mono\", \"Roboto Mono\", Menlo, monospace;--f-family-serif:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;--f-weight-light:300;--f-weight-regular:400;--f-weight-medium:500;--f-weight-semibold:600;--f-weight-bold:700;--f-size-0:0.625rem;--f-size-1:0.6875rem;--f-size-2:0.75rem;--f-size-3:0.8125rem;--f-size-4:0.875rem;--f-size-5:1rem;--f-size-6:1.25rem;--f-size-7:1.5rem;--f-size-8:2rem;--f-size-9:2.5rem;--f-size-10:3rem;--f-size-11:3.5rem;--f-size-12:4rem;--f-size-13:4.5rem;--f-size-14:5rem;--f-size-15:5.5rem;--f-size-16:6rem;--f-leading-solid:1;--f-leading-title:1.12;--f-leading-body:1.6;--f-leading-prose:1.8;--f-tracking-dense:-0.04em;--f-tracking-tight:-0.02em;--f-tracking-solid:0em;--f-tracking-wide:0.04em;--f-tracking-super:0.08em;--f-tracking-extra:0.16em;--space-0:0.25rem;--space-1:0.5rem;--space-2:0.75rem;--space-3:1rem;--space-4:1.25rem;--space-5:1.5rem;--space-6:2rem;--space-7:2.5rem;--space-8:3rem;--space-9:4rem;--space-10:5rem;--space-11:6rem;--space-12:8rem;--space-13:10rem;--space-14:12rem;--space-15:14rem;--space-16:16rem;--breakpoint-0:640px;--breakpoint-1:768px;--breakpoint-2:1024px;--breakpoint-3:1280px;--radius-0:0px;--radius-1:6px;--radius-2:8px;--radius-3:16px;--radius-4:100%;--border-regular:1px solid;--border-dashed:1px dashed;--border-heavy:2px solid;--elevation-0:none;--elevation-1:0px 1px 2px rgba(2, 8, 20, 0.1), 0px 0px 1px rgba(2, 8, 20, 0.08);--elevation-2:0px 2px 4px rgba(2, 8, 20, 0.1), 0px 1px 2px rgba(2, 8, 20, 0.08);--elevation-3:0px 4px 8px rgba(2, 8, 20, 0.08), 0px 2px 4px rgba(2, 8, 20, 0.08);--elevation-4:0px 8px 16px rgba(2, 8, 20, 0.08), 0px 4px 8px rgba(2, 8, 20, 0.08);--elevation-5:0px 16px 32px rgba(2, 8, 20, 0.08), 0px 8px 16px rgba(2, 8, 20, 0.08);--elevation-6:0px 32px 64px rgba(2, 8, 20, 0.08), 0px 16px 32px rgba(2, 8, 20, 0.1);--duration-instantly:0s;--duration-quickly:0.15s;--c-black:#000000;--c-white:#ffffff;--c-blue-0:#f0f6ff;--c-blue-10:#e3edff;--c-blue-20:#cddfff;--c-blue-30:#b2ceff;--c-blue-40:#97bdff;--c-blue-50:#7cabff;--c-blue-60:#639bff;--c-blue-70:#4d8dff;--c-blue-80:#3880ff;--c-blue-90:#1b6dff;--c-blue-100:#0054e9;--c-gray-0:#f3f3f3;--c-gray-10:#e4e4e4;--c-gray-20:#c8c8c8;--c-gray-30:#aeaeae;--c-gray-40:#959595;--c-gray-50:#818181;--c-gray-60:#6d6d6d;--c-gray-70:#5f5f5f;--c-gray-80:#474747;--c-gray-90:#2f2f2f;--c-gray-100:#141414;--c-carbon-0:#eef1f3;--c-carbon-10:#d7dde2;--c-carbon-20:#b4bcc6;--c-carbon-30:#98a2ad;--c-carbon-40:#7d8894;--c-carbon-50:#677483;--c-carbon-60:#556170;--c-carbon-70:#434f5e;--c-carbon-80:#35404e;--c-carbon-90:#222d3a;--c-carbon-100:#03060b;--c-indigo-0:#fbfbfd;--c-indigo-10:#f6f8fb;--c-indigo-20:#e9edf3;--c-indigo-30:#dee3ea;--c-indigo-40:#ced6e0;--c-indigo-50:#b2becd;--c-indigo-60:#92a0b3;--c-indigo-70:#73849a;--c-indigo-80:#445b78;--c-indigo-90:#2d4665;--c-indigo-100:#001a3a;--c-green-0:#effff3;--c-green-10:#e7ffee;--c-green-20:#d0ffdd;--c-green-30:#b8ffcb;--c-green-40:#97ffb3;--c-green-50:#71f895;--c-green-60:#4ef27a;--c-green-70:#31e962;--c-green-80:#18dd4c;--c-green-90:#00d338;--c-green-100:#00b831;--c-lime-0:#f8fff0;--c-lime-10:#f2ffe1;--c-lime-20:#eeffd8;--c-lime-30:#e5ffc3;--c-lime-40:#d8ffa7;--c-lime-50:#c8ff83;--c-lime-60:#b7f964;--c-lime-70:#a7f544;--c-lime-80:#97ec2d;--c-lime-90:#87e017;--c-lime-100:#75d100;--c-lavender-0:#f6f8ff;--c-lavender-10:#e5ebff;--c-lavender-20:#ced9ff;--c-lavender-30:#b6c6ff;--c-lavender-40:#9fb5ff;--c-lavender-50:#8aa4ff;--c-lavender-60:#7493ff;--c-lavender-70:#597eff;--c-lavender-80:#3c67ff;--c-lavender-90:#194bfd;--c-lavender-100:#0033e8;--c-purple-0:#f4f4ff;--c-purple-10:#e9eaff;--c-purple-20:#d0d2ff;--c-purple-30:#b6b9f9;--c-purple-40:#9a99fc;--c-purple-50:#8482fb;--c-purple-60:#786df9;--c-purple-70:#6e5afd;--c-purple-80:#6030ff;--c-purple-90:#4712fb;--c-purple-100:#3400e5;--c-pink-0:#fff2fb;--c-pink-10:#ffe3f6;--c-pink-20:#ffd4f1;--c-pink-30:#ffc7ec;--c-pink-40:#ffb6e8;--c-pink-50:#ff9cdf;--c-pink-60:#fc82d5;--c-pink-70:#f567c8;--c-pink-80:#ef4cbb;--c-pink-90:#f02fb2;--c-pink-100:#e410a1;--c-red-0:#fff2f2;--c-red-10:#ffdddd;--c-red-20:#ffc8c7;--c-red-30:#ffb6b5;--c-red-40:#ff9e9c;--c-red-50:#ff8a88;--c-red-60:#ff7370;--c-red-70:#ff605b;--c-red-80:#ff4747;--c-red-90:#ff201a;--c-red-100:#e70700;--c-orange-0:#fff5f0;--c-orange-10:#ffede5;--c-orange-20:#ffdfd1;--c-orange-30:#ffd0bc;--c-orange-40:#ffc0a5;--c-orange-50:#ffaf8c;--c-orange-60:#ff9b70;--c-orange-70:#ff8753;--c-orange-80:#ff7336;--c-orange-90:#ff5b13;--c-orange-100:#eb4700;--c-yellow-0:#fffbef;--c-yellow-10:#fff8e3;--c-yellow-20:#fff6d8;--c-yellow-30:#fff3c9;--c-yellow-40:#ffedad;--c-yellow-50:#ffe78f;--c-yellow-60:#ffe072;--c-yellow-70:#ffd84d;--c-yellow-80:#ffd130;--c-yellow-90:#ffc805;--c-yellow-100:#f5bf00;--c-aqua-0:#f0fff9;--c-aqua-10:#e5fff6;--c-aqua-20:#d5ffef;--c-aqua-30:#c0ffe8;--c-aqua-40:#aaffe0;--c-aqua-50:#90fbd4;--c-aqua-60:#70f6c5;--c-aqua-70:#4deeb2;--c-aqua-80:#32e2a1;--c-aqua-90:#00db8a;--c-aqua-100:#00cc80;--c-teal-0:#eefeff;--c-teal-10:#dffdff;--c-teal-20:#d0fdff;--c-teal-30:#bbfcff;--c-teal-40:#a2fcff;--c-teal-50:#8bfbff;--c-teal-60:#73f6fb;--c-teal-70:#55ecf2;--c-teal-80:#35e2e9;--c-teal-90:#1bd2d9;--c-teal-100:#00b9c0;--c-cyan-0:#f3faff;--c-cyan-10:#e8f5ff;--c-cyan-20:#d3ecff;--c-cyan-30:#bfe4ff;--c-cyan-40:#a7daff;--c-cyan-50:#8dcfff;--c-cyan-60:#77c6ff;--c-cyan-70:#62bdff;--c-cyan-80:#46b1ff;--c-cyan-90:#24a3ff;--c-cyan-100:#0091fa}:root{--c-ionic-brand:var(--c-blue-80);--f-size-root:16px;--z-subnav:1000;--z-header-dropdown:1005}*{box-sizing:border-box}html,body{padding:0;margin:0;width:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:var(--f-family-text);font-size:var(--f-size-root);line-height:var(--f-leading-body);letter-spacing:var(--f-tracking-tight);color:var(--c-carbon-90);position:relative;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:var(--c-ionic-brand)}stencil-route-link a{color:inherit}ul{margin:0;padding:0}li{list-style:none}hr{border:none;height:1px;background:var(--c-indigo-30);margin:var(--space-6) 0}.ui-blockquote{background:#f2f5f8;border-radius:4px;position:relative;padding:64px 80px 68px 111px;color:#5e749a;font-family:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;font-style:italic;border:none;margin:77px -16px 54px}.ui-blockquote:before{position:absolute;top:-6px;left:54px;font-size:180px;content:\"“\";color:#e3e7ec}.ui-breadcrumbs{font-size:13px;line-height:14px;display:flex;flex-direction:row;align-items:center}.ui-breadcrumbs li{display:inline-block}.ui-breadcrumbs li:first-child a{padding-left:0}.ui-breadcrumbs li:last-child a{color:var(--c-carbon-100);font-weight:500}.ui-breadcrumbs a{color:var(--c-carbon-50);font-size:13px;line-height:14px;padding:16px 2px;display:inline-block}.ui-breadcrumbs .nav-sep{display:inline-block;font-size:16px;font-weight:400;color:rgba(65, 77, 92, 0.2);margin:0 6px}.ui-breakpoint{display:none}@media (min-width: 1200px){.ui-breakpoint-xl{display:var(--display)}}@media (min-width: 992px) and (max-width: 1199px){.ui-breakpoint-lg{display:var(--display)}}@media (min-width: 768px) and (max-width: 991px){.ui-breakpoint-md{display:var(--display)}}@media (min-width: 480px) and (max-width: 767px){.ui-breakpoint-sm{display:var(--display)}}@media (max-width: 479px){.ui-breakpoint-xs{display:var(--display)}}.ui-button{cursor:pointer;display:inline-block;font-weight:500;border-radius:8px;line-height:1.4em;padding:16px 20px;transition:all 0.3s ease;font-size:16px;border:0px solid rgba(0, 0, 0, 0);color:#fff;background:var(--button-background, var(--c-ionic-brand));letter-spacing:0.01em}.ui-card--embelish{background-color:#fff;border-radius:6px;box-shadow:var(--elevation-4);border-radius:14px}.ui-card--embelish .ui-card-content{padding:32px}.ui-container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width: 768px){.ui-container{width:750px}}@media (min-width: 992px){.ui-container{width:970px}}@media (min-width: 1104px){.ui-container{width:1054px}}.ui-grid{display:grid;column-gap:56px;row-gap:96px;grid-template-columns:repeat(12, minmax(0, 1fr))}@media (max-width: 480px){.ui-grid{column-gap:0;row-gap:48px}}@media (max-width: 768px){.ui-grid{column-gap:0;row-gap:24px}}.ui-grid .ui-col-1{grid-column-end:span 1}.ui-grid .ui-col-2{grid-column-end:span 2}.ui-grid .ui-col-3{grid-column-end:span 3}.ui-grid .ui-col-4{grid-column-end:span 4}.ui-grid .ui-col-5{grid-column-end:span 5}.ui-grid .ui-col-6{grid-column-end:span 6}.ui-grid .ui-col-7{grid-column-end:span 7}.ui-grid .ui-col-8{grid-column-end:span 8}.ui-grid .ui-col-9{grid-column-end:span 9}.ui-grid .ui-col-10{grid-column-end:span 10}.ui-grid .ui-col-11{grid-column-end:span 11}.ui-grid .ui-col-12{grid-column-end:span 12}@media (min-width: 480px){.ui-grid .ui-col-xs-1{grid-column-end:span 1}.ui-grid .ui-col-xs-2{grid-column-end:span 2}.ui-grid .ui-col-xs-3{grid-column-end:span 3}.ui-grid .ui-col-xs-4{grid-column-end:span 4}.ui-grid .ui-col-xs-5{grid-column-end:span 5}.ui-grid .ui-col-xs-6{grid-column-end:span 6}.ui-grid .ui-col-xs-7{grid-column-end:span 7}.ui-grid .ui-col-xs-8{grid-column-end:span 8}.ui-grid .ui-col-xs-9{grid-column-end:span 9}.ui-grid .ui-col-xs-10{grid-column-end:span 10}.ui-grid .ui-col-xs-11{grid-column-end:span 11}.ui-grid .ui-col-xs-12{grid-column-end:span 12}}@media (min-width: 768px){.ui-grid .ui-col-sm-1{grid-column-end:span 1}.ui-grid .ui-col-sm-2{grid-column-end:span 2}.ui-grid .ui-col-sm-3{grid-column-end:span 3}.ui-grid .ui-col-sm-4{grid-column-end:span 4}.ui-grid .ui-col-sm-5{grid-column-end:span 5}.ui-grid .ui-col-sm-6{grid-column-end:span 6}.ui-grid .ui-col-sm-7{grid-column-end:span 7}.ui-grid .ui-col-sm-8{grid-column-end:span 8}.ui-grid .ui-col-sm-9{grid-column-end:span 9}.ui-grid .ui-col-sm-10{grid-column-end:span 10}.ui-grid .ui-col-sm-11{grid-column-end:span 11}.ui-grid .ui-col-sm-12{grid-column-end:span 12}}@media (min-width: 992px){.ui-grid .ui-col-md-1{grid-column-end:span 1}.ui-grid .ui-col-md-2{grid-column-end:span 2}.ui-grid .ui-col-md-3{grid-column-end:span 3}.ui-grid .ui-col-md-4{grid-column-end:span 4}.ui-grid .ui-col-md-5{grid-column-end:span 5}.ui-grid .ui-col-md-6{grid-column-end:span 6}.ui-grid .ui-col-md-7{grid-column-end:span 7}.ui-grid .ui-col-md-8{grid-column-end:span 8}.ui-grid .ui-col-md-9{grid-column-end:span 9}.ui-grid .ui-col-md-10{grid-column-end:span 10}.ui-grid .ui-col-md-11{grid-column-end:span 11}.ui-grid .ui-col-md-12{grid-column-end:span 12}}@media (min-width: 1200px){.ui-grid .ui-col-lg-1{grid-column-end:span 1}.ui-grid .ui-col-lg-2{grid-column-end:span 2}.ui-grid .ui-col-lg-3{grid-column-end:span 3}.ui-grid .ui-col-lg-4{grid-column-end:span 4}.ui-grid .ui-col-lg-5{grid-column-end:span 5}.ui-grid .ui-col-lg-6{grid-column-end:span 6}.ui-grid .ui-col-lg-7{grid-column-end:span 7}.ui-grid .ui-col-lg-8{grid-column-end:span 8}.ui-grid .ui-col-lg-9{grid-column-end:span 9}.ui-grid .ui-col-lg-10{grid-column-end:span 10}.ui-grid .ui-col-lg-11{grid-column-end:span 11}.ui-grid .ui-col-lg-12{grid-column-end:span 12}}:root{--h1-color:var(--c-carbon-90);--h2-color:var(--c-carbon-90);--h3-color:var(--c-carbon-90);--h4-color:var(--c-carbon-90);--h5-color:var(--c-carbon-90);--h6-color:var(--c-indigo-70);--h1-size:var(--f-size-12);--h2-size:var(--f-size-10);--h3-size:var(--f-size-8);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-2);--h1-leading:var(--f-leading-solid);--h2-leading:var(--f-leading-title);--h3-leading:var(--f-leading-title);--h4-leading:var(--f-leading-title);--h5-leading:var(--f-leading-title);--h6-leading:var(--f-leading-title);--h1-tracking:var(--f-tracking-dense);--h2-tracking:var(--f-tracking-dense);--h3-tracking:var(--f-tracking-tight);--h4-tracking:var(--f-tracking-tight);--h5-tracking:var(--f-tracking-tight);--h6-tracking:var(--f-tracking-extra);--h1-font:var(--f-family-display);--h2-font:var(--f-family-display);--h3-font:var(--f-family-display);--h4-font:var(--f-family-text);--h5-font:var(--f-family-text);--h6-font:var(--f-family-monospace);--h1-weight:var(--f-weight-bold);--h2-weight:var(--f-weight-bold);--h3-weight:var(--f-weight-semibold);--h4-weight:var(--f-weight-medium);--h5-weight:var(--f-weight-semibold);--h6-weight:var(--f-weight-bold);--h1-transform:none;--h2-transform:none;--h3-transform:none;--h4-transform:none;--h5-transform:none;--h6-transform:uppercase;--poster1-color:var(--c-carbon-90);--poster2-color:var(--c-carbon-90);--poster3-color:var(--c-carbon-90);--poster4-color:var(--c-carbon-90);--poster1-size:var(--f-size-16);--poster2-size:var(--f-size-15);--poster3-size:var(--f-size-14);--poster4-size:var(--f-size-13);--poster1-leading:var(--f-leading-solid);--poster2-leading:var(--f-leading-solid);--poster3-leading:var(--f-leading-solid);--poster4-leading:var(--f-leading-solid);--poster1-tracking:var(--f-tracking-dense);--poster2-tracking:var(--f-tracking-dense);--poster3-tracking:var(--f-tracking-dense);--poster4-tracking:var(--f-tracking-dense);--poster1-font:var(--f-family-display);--poster2-font:var(--f-family-display);--poster3-font:var(--f-family-display);--poster4-font:var(--f-family-text);--poster1-weight:var(--f-weight-bold);--poster2-weight:var(--f-weight-semibold);--poster3-weight:var(--f-weight-bold);--poster4-weight:var(--f-weight-semibold);--poster1-transform:none;--poster2-transform:none;--poster3-transform:none;--poster4-transform:none}.ui-heading{margin:0}.ui-theme--editorial .ui-heading{--h6-color:var(--c-carbon-90);--h1-size:var(--f-size-9);--h2-size:var(--f-size-8);--h3-size:var(--f-size-7);--h6-size:var(--f-size-0);--h1-leading:var(--f-leading-title);--h1-font:var(--f-family-text);--h2-font:var(--f-family-text);--h3-font:var(--f-family-text);--h6-font:var(--f-family-text);--h1-tracking:var(--f-tracking-tight);--h2-tracking:var(--f-tracking-tight);--h3-tracking:var(--f-tracking-solid);--h4-tracking:var(--f-tracking-solid);--h6-tracking:var(--f-tracking-super);--h1-leading:var(--f-leading-title);--h1-weight:var(--f-weight-semibold);--h2-weight:var(--f-weight-semibold);--h4-weight:var(--f-weight-semibold);--h5-weight:var(--f-weight-medium);--h6-weight:var(--f-weight-medium)}.ui-heading-1{font-family:var(--h1-font);font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--h1-tracking);font-weight:var(--h1-weight);color:var(--h1-color);text-transform:var(--h1-transform)}.ui-heading-2{font-family:var(--h2-font);font-size:var(--h2-size);line-height:var(--h2-leading);letter-spacing:var(--h2-tracking);font-weight:var(--h2-weight);color:var(--h2-color);text-transform:var(--h2-transform)}.ui-heading-3{font-family:var(--h3-font);font-size:var(--h3-size);line-height:var(--h3-leading);letter-spacing:var(--h3-tracking);font-weight:var(--h3-weight);color:var(--h3-color);text-transform:var(--h3-transform)}.ui-heading-4{font-family:var(--h4-font);font-size:var(--h4-size);line-height:var(--h4-leading);letter-spacing:var(--h4-tracking);font-weight:var(--h4-weight);color:var(--h4-color);text-transform:var(--h4-transform)}.ui-heading-5{font-family:var(--h5-font);font-size:var(--h5-size);line-height:var(--h5-leading);letter-spacing:var(--h5-tracking);font-weight:var(--h5-weight);color:var(--h5-color);text-transform:var(--h5-transform)}.ui-heading-6{font-family:var(--h6-font);font-size:var(--h6-size);line-height:var(--h6-leading);letter-spacing:var(--h6-tracking);font-weight:var(--h6-weight);color:var(--h6-color);text-transform:var(--h6-transform)}.ui-poster-1{font-family:var(--poster1-font);font-size:var(--poster1-size);line-height:var(--poster1-leading);letter-spacing:var(--poster1-tracking);font-weight:var(--poster1-weight);color:var(--poster1-color);text-transform:var(--poster1-transform)}.ui-poster-2{font-family:var(--poster2-font);font-size:var(--poster2-size);line-height:var(--poster2-leading);letter-spacing:var(--poster2-tracking);font-weight:var(--poster2-weight);color:var(--poster2-color);text-transform:var(--poster2-transform)}.ui-poster-3{font-family:var(--poster3-font);font-size:var(--poster3-size);line-height:var(--poster3-leading);letter-spacing:var(--poster3-tracking);font-weight:var(--poster3-weight);color:var(--poster3-color);text-transform:var(--poster3-transform)}.ui-poster-4{font-family:var(--poster4-font);font-size:var(--poster4-size);line-height:var(--poster4-leading);letter-spacing:var(--poster4-tracking);font-weight:var(--poster4-weight);color:var(--poster4-color);text-transform:var(--poster4-transform)}:root{--p1-color:var(--c-indigo-90);--p2-color:var(--c-indigo-90);--p3-color:var(--c-indigo-90);--p4-color:var(--c-indigo-90);--p5-color:var(--c-indigo-90);--p6-color:var(--c-indigo-90);--p1-size:var(--f-size-7);--p2-size:var(--f-size-6);--p3-size:var(--f-size-5);--p4-size:var(--f-size-4);--p5-size:var(--f-size-3);--p6-size:var(--f-size-2);--p1-leading:var(--f-leading-body);--p2-leading:var(--f-leading-body);--p3-leading:var(--f-leading-body);--p4-leading:var(--f-leading-body);--p5-leading:var(--f-leading-body);--p6-leading:var(--f-leading-body);--p1-tracking:var(--f-tracking-tight);--p2-tracking:var(--f-tracking-tight);--p3-tracking:var(--f-tracking-tight);--p4-tracking:var(--f-tracking-solid);--p5-tracking:var(--f-tracking-solid);--p6-tracking:var(--f-tracking-solid);--p1-weight:var(--f-weight-regular);--p2-weight:var(--f-weight-regular);--p3-weight:var(--f-weight-regular);--p4-weight:var(--f-weight-regular);--p5-weight:var(--f-weight-regular);--p6-weight:var(--f-weight-regular);--p1-transform:none;--p2-transform:none;--p3-transform:none;--p4-transform:none;--p5-transform:none;--p6-transform:none}.ui-paragraph{margin:0}.ui-paragraph--base{--p1-leading:var(--f-leading-body);--p2-leading:var(--f-leading-body);--p3-leading:var(--f-leading-body);--p4-leading:var(--f-leading-body);--p5-leading:var(--f-leading-body);--p6-leading:var(--f-leading-body)}.ui-paragraph--prose{--p1-leading:var(--f-leading-prose);--p2-leading:var(--f-leading-prose);--p3-leading:var(--f-leading-prose);--p4-leading:var(--f-leading-prose);--p5-leading:var(--f-leading-prose);--p6-leading:var(--f-leading-prose)}.ui-paragraph-1{font-family:var(--p1-font);font-size:var(--p1-size);line-height:var(--p1-leading);letter-spacing:var(--p1-tracking);font-weight:var(--p1-weight);color:var(--p1-color);text-transform:var(--p1-transform)}.ui-paragraph-2{font-family:var(--p2-font);font-size:var(--p2-size);line-height:var(--p2-leading);letter-spacing:var(--p2-tracking);font-weight:var(--p2-weight);color:var(--p2-color);text-transform:var(--p2-transform)}.ui-paragraph-3{font-family:var(--p3-font);font-size:var(--p3-size);line-height:var(--p3-leading);letter-spacing:var(--p3-tracking);font-weight:var(--p3-weight);color:var(--p3-color);text-transform:var(--p3-transform)}.ui-paragraph-4{font-family:var(--p4-font);font-size:var(--p4-size);line-height:var(--p4-leading);letter-spacing:var(--p4-tracking);font-weight:var(--p4-weight);color:var(--p4-color);text-transform:var(--p4-transform)}.ui-paragraph-5{font-family:var(--p5-font);font-size:var(--p5-size);line-height:var(--p5-leading);letter-spacing:var(--p5-tracking);font-weight:var(--p5-weight);color:var(--p5-color);text-transform:var(--p5-transform)}.ui-paragraph-6{font-family:var(--p6-font);font-size:var(--p6-size);line-height:var(--p6-leading);letter-spacing:var(--p6-tracking);font-weight:var(--p6-weight);color:var(--p6-color);text-transform:var(--p6-transform)}.ui-skeleton{display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:#EEEEEE;line-height:10px;user-select:none;pointer-events:none}.ui-skeleton--animated{position:relative;background:linear-gradient(to right, rgba(0, 0, 0, 0.065) 8%, rgba(0, 0, 0, 0.135) 18%, rgba(0, 0, 0, 0.065) 33%);background-size:800px 104px;animation-duration:1s;animation-fill-mode:forwards;animation-iteration-count:infinite;animation-name:shimmer;animation-timing-function:linear}@keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}.ui-skeleton span{display:inline-block}.prismic-raw-html{width:100%;overflow:auto}.prismic-raw-html table{overflow-x:auto;margin-right:-15px;padding-right:15px;box-sizing:content-box;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:48px}.prismic-raw-html table td,.prismic-raw-html table th{text-align:left;min-width:120px;padding-right:12px;padding-top:12px;padding-bottom:12px}.prismic-raw-html table td:last-child,.prismic-raw-html table th:last-child{padding-right:0}.prismic-raw-html table th,.prismic-raw-html table b{font-weight:600}.prismic-raw-html table tbody tr td{border-top:1px solid #DEE3EA}.prismic-raw-html table tbody tr:first-child td{border-top:none}.prismic-raw-html table>thead>tr>th{border-bottom:1px solid #E9EDF3;font-weight:600}:host{display:block}.demo{margin-bottom:48px}";
+
+class Demo {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.getPage = async (prismicId) => {
+            const apiURL = 'https://ionicframeworkcom.prismic.io/api/v2';
+            const defaults = {
+                title: 'Ionic - Putting Web Technologies to Work For You',
+                description: 'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript',
+                meta_image: 'https://ionicframework.com/img/meta/ionic-framework-og.png'
+            };
+            if (!prismicId)
+                return;
+            try {
+                const api = await Prismic.getApi(apiURL);
+                const response = await api.getSingle(prismicId);
+                this.data = response.data;
+                console.log(response.data);
+                // if the page has meta data, set it, otherwise use the default
+                // note, if you're hard coding meta data, do it after calling getPage()
+                ['title', 'description', 'meta_image'].forEach(prop => {
+                    this.data[prop] = response.data[prop] ? response.data[prop] : defaults[prop];
+                });
+            }
+            catch (e) {
+                console.warn(e);
+            }
+        };
+    }
+    componentWillLoad() {
+        this.getPage('ionicio_homepage');
+    }
+    render() {
+        const { data } = this;
+        if (!data)
+            return;
+        return (h("div", { class: "demos" }, h("site-platform-bar", { "product-name": "a jalapeno" }), h(ButtonDemo, null), h(HeadingDemo, null), h(ParagraphDemo, null), h(GridDemo, null), h(CardDemo, null), h(MoresResourcesDemo, null)));
+    }
+    static get style() { return demoCss; }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "shared-demo",
+        "$members$": {
+            "data": [32]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+const ButtonDemo = () => (h("div", { class: "demo demo-button" }, h(Heading, { level: 3, bordered: true }, "Buttons"), h(Button, null, "Button")));
+const ParagraphDemo = () => (h("div", { class: "demo demo-heading" }, h(Paragraph, { level: 1 }, "La final de la Copa de Campeones de Europa de 1977-78 fue un partido de f\u00FAtbol disputado el 10 de mayo de 1978 entre el Liverpool de Inglaterra y el Club Brujas de B\u00E9lgica en el Estadio Wembley de Londres, lugar definido por el comit\u00E9 ejecutivo de la UEFA el 20 de septiembre de 1977. El partido defini\u00F3 al campe\u00F3n de la Copa de Campeones de Europa 1977-78, principal competici\u00F3n futbol\u00EDstica europea de la temporada. Liverpool lleg\u00F3 a la instancia como el vigente campe\u00F3n y esta era su segunda final en la competencia, mientras que para Club Brujas era la primera vez que llegaba al encuentro definitorio. Anteriormente se enfrentaron en la final de la Copa de la UEFA 1975-76, con victoria por 4-3 del equipo ingl\u00E9s en el global."), h(Paragraph, { level: 2 }, "La final de la Copa de Campeones de Europa de 1977-78 fue un partido de f\u00FAtbol disputado el 10 de mayo de 1978 entre el Liverpool de Inglaterra y el Club Brujas de B\u00E9lgica en el Estadio Wembley de Londres, lugar definido por el comit\u00E9 ejecutivo de la UEFA el 20 de septiembre de 1977. El partido defini\u00F3 al campe\u00F3n de la Copa de Campeones de Europa 1977-78, principal competici\u00F3n futbol\u00EDstica europea de la temporada. Liverpool lleg\u00F3 a la instancia como el vigente campe\u00F3n y esta era su segunda final en la competencia, mientras que para Club Brujas era la primera vez que llegaba al encuentro definitorio. Anteriormente se enfrentaron en la final de la Copa de la UEFA 1975-76, con victoria por 4-3 del equipo ingl\u00E9s en el global."), h(Paragraph, { level: 3 }, "La final de la Copa de Campeones de Europa de 1977-78 fue un partido de f\u00FAtbol disputado el 10 de mayo de 1978 entre el Liverpool de Inglaterra y el Club Brujas de B\u00E9lgica en el Estadio Wembley de Londres, lugar definido por el comit\u00E9 ejecutivo de la UEFA el 20 de septiembre de 1977. El partido defini\u00F3 al campe\u00F3n de la Copa de Campeones de Europa 1977-78, principal competici\u00F3n futbol\u00EDstica europea de la temporada. Liverpool lleg\u00F3 a la instancia como el vigente campe\u00F3n y esta era su segunda final en la competencia, mientras que para Club Brujas era la primera vez que llegaba al encuentro definitorio. Anteriormente se enfrentaron en la final de la Copa de la UEFA 1975-76, con victoria por 4-3 del equipo ingl\u00E9s en el global."), h(Paragraph, { level: 4, leading: 'prose' }, "La final de la Copa de Campeones de Europa de 1977-78 fue un partido de f\u00FAtbol disputado el 10 de mayo de 1978 entre el Liverpool de Inglaterra y el Club Brujas de B\u00E9lgica en el Estadio Wembley de Londres, lugar definido por el comit\u00E9 ejecutivo de la UEFA el 20 de septiembre de 1977. El partido defini\u00F3 al campe\u00F3n de la Copa de Campeones de Europa 1977-78, principal competici\u00F3n futbol\u00EDstica europea de la temporada. Liverpool lleg\u00F3 a la instancia como el vigente campe\u00F3n y esta era su segunda final en la competencia, mientras que para Club Brujas era la primera vez que llegaba al encuentro definitorio. Anteriormente se enfrentaron en la final de la Copa de la UEFA 1975-76, con victoria por 4-3 del equipo ingl\u00E9s en el global."), h(Paragraph, { level: 5, leading: 'prose' }, "La final de la Copa de Campeones de Europa de 1977-78 fue un partido de f\u00FAtbol disputado el 10 de mayo de 1978 entre el Liverpool de Inglaterra y el Club Brujas de B\u00E9lgica en el Estadio Wembley de Londres, lugar definido por el comit\u00E9 ejecutivo de la UEFA el 20 de septiembre de 1977. El partido defini\u00F3 al campe\u00F3n de la Copa de Campeones de Europa 1977-78, principal competici\u00F3n futbol\u00EDstica europea de la temporada. Liverpool lleg\u00F3 a la instancia como el vigente campe\u00F3n y esta era su segunda final en la competencia, mientras que para Club Brujas era la primera vez que llegaba al encuentro definitorio. Anteriormente se enfrentaron en la final de la Copa de la UEFA 1975-76, con victoria por 4-3 del equipo ingl\u00E9s en el global."), h(Paragraph, { level: 6 }, "La final de la Copa de Campeones de Europa de 1977-78 fue un partido de f\u00FAtbol disputado el 10 de mayo de 1978 entre el Liverpool de Inglaterra y el Club Brujas de B\u00E9lgica en el Estadio Wembley de Londres, lugar definido por el comit\u00E9 ejecutivo de la UEFA el 20 de septiembre de 1977. El partido defini\u00F3 al campe\u00F3n de la Copa de Campeones de Europa 1977-78, principal competici\u00F3n futbol\u00EDstica europea de la temporada. Liverpool lleg\u00F3 a la instancia como el vigente campe\u00F3n y esta era su segunda final en la competencia, mientras que para Club Brujas era la primera vez que llegaba al encuentro definitorio. Anteriormente se enfrentaron en la final de la Copa de la UEFA 1975-76, con victoria por 4-3 del equipo ingl\u00E9s en el global.")));
+const HeadingDemo = () => (h("div", { class: "demo demo-heading" }, h(ThemeProvider, { type: 'editorial' }, h(Heading, { level: 1, as: 'h6' }, "Headings"), h(Heading, { level: 3, as: 'h5' }, "Level 1"), h(Heading, { level: 2 }, "Level 2"), h(Heading, { level: 3 }, "Level 3"), h(Heading, { level: 4 }, "Level 4"), h(Heading, { level: 5 }, "Level 5"), h(Heading, { level: 6 }, "Level 6"))));
+const GridDemo = () => (h("div", { class: "demo demo-grid" }, h(Heading, { level: 3, bordered: true }, "Grid"), h(Grid, { class: "demo demo-grid" }, h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 1"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 2"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 3"), h(Col, { md: 3, sm: 3, xs: 3, cols: 12 }, "Column 4"))));
+const CardDemo = () => (h("div", { class: "demo demo-card" }, h(Heading, { level: 3, bordered: true }, "Cards"), h(Card, null, h(CardContent, null, h("hgroup", null, h(Heading, { level: 3 }, "Card"), h(Paragraph, null, "Unicorn next level roof party health goth, squid brooklyn pabst biodiesel kickstarter man bun small batch kale chips flexitarian. Edison bulb selfies mumblecore ethical, helvetica affogato palo santo. Taxidermy humblebrag hexagon, pabst stumptown PBR&B succulents. Lumbersexual fam shabby chic cardigan lomo quinoa put a bird on it salvia authentic hell of migas aesthetic truffaut gentrify tattooed. Migas direct trade polaroid distillery, ugh brunch farm-to-table fingerstache vaporware readymade occupy aesthetic four dollar toast. Freegan lyft vegan ramps vexillologist taxidermy listicle vinyl blue bottle pug."))))));
+const MoresResourcesDemo = () => (h("div", null, h("more-resources", { resources: [
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+        { uid: 'capacitor-vs-cordova-modern-hybrid-app-development', type: 'article' },
+    ] })));
+
+const disqusCommentsCss = ":host{display:block}";
+
+class DisqusComments {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.setScriptEl = (el) => {
+            this.targetEl = el;
+        };
+    }
+    componentDidLoad() {
+        var _a;
+        const script = `
+    var disqus_config = function () {
+      this.page.url = '${this.url}';  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = '${this.siteId}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://${this.siteId}.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    `;
+        this.scriptEl = document.createElement('script');
+        this.scriptEl.type = 'text/javascript';
+        this.scriptEl.innerHTML = script;
+        (_a = this.targetEl) === null || _a === void 0 ? void 0 : _a.appendChild(this.scriptEl);
+        const disqusScript = document.createElement('script');
+        disqusScript.id = 'dsq-count-scr';
+        disqusScript.async = true;
+        disqusScript.src = `//${this.siteId}.disqus.com/count.js`;
+        this.disqusScriptEl = disqusScript;
+        document.body.appendChild(disqusScript);
+    }
+    componentDidUnload() {
+        var _a, _b, _c, _d;
+        (_b = (_a = this.scriptEl) === null || _a === void 0 ? void 0 : _a.parentNode) === null || _b === void 0 ? void 0 : _b.removeChild(this.scriptEl);
+        (_d = (_c = this.disqusScriptEl) === null || _c === void 0 ? void 0 : _c.parentNode) === null || _d === void 0 ? void 0 : _d.removeChild(this.disqusScriptEl);
+    }
+    render() {
+        return (h(Host, null, h("div", { id: "disqus_thread" }), h("div", { ref: (e) => this.setScriptEl(e) }), h("noscript", null, "Please enable JavaScript to view the", ' ', h("a", { href: "https://disqus.com/?ref_noscript" }, "comments powered by Disqus."))));
+    }
+    static get style() { return disqusCommentsCss; }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "disqus-comments",
+        "$members$": {
+            "url": [1],
+            "siteId": [1, "site-id"]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+class DocSnippet {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    render() {
+        return (h("div", { class: "snippet" }));
+    }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "doc-snippet",
+        "$members$": undefined,
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+const docsHeaderCss = ".sc-docs-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-header-h{display:flex;align-items:center;position:sticky;top:0;background-color:#fff;width:100%;height:64px;color:#98a2ad;box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);letter-spacing:0;z-index:1}header.sc-docs-header{display:flex;position:absolute;top:0;height:100%;width:100%;flex-wrap:wrap;align-items:center;background:#fff}.docs-header-links.sc-docs-header{display:flex;align-items:center;background:#fff}.docs-header-links.sc-docs-header a.sc-docs-header{color:#98a2ad;font-size:15px;border-bottom:none}.docs-header-links.sc-docs-header a.sc-docs-header:hover{color:#858e97}.docs-header-links.sc-docs-header a.active.sc-docs-header{font-weight:500;color:#222d3a}.docs-header-links__internal.sc-docs-header{margin-bottom:2px}.docs-header-links__internal.sc-docs-header a.sc-docs-header{margin-right:24px}.docs-header-links__divider.sc-docs-header{width:1px;height:18px;background:#222d3a;opacity:0.2;margin-right:2px;margin-left:2px}.docs-header-links__external.sc-docs-header{margin-top:5px;margin-left:2px;margin-right:30px}.docs-header-links__external.sc-docs-header ion-icon.sc-docs-header{margin-left:22px;font-size:19px}.docs-header-links__external.sc-docs-header span.sc-docs-header{display:none}more-button.sc-docs-header{display:none;height:64px;width:64px}@media screen and (max-width: 768px){more-button.sc-docs-header{display:block}.docs-header-links.sc-docs-header{display:block;width:100%;height:auto;padding-bottom:10px;opacity:0;transform:translateY(-10px);transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear;box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px}.docs-header-links__internal.sc-docs-header,.docs-header-links__external.sc-docs-header{margin:0}.docs-header-links.sc-docs-header a.sc-docs-header{display:flex;align-items:center;width:100%;height:44px;margin:0;padding:0 20px;border:none;outline:none;color:#000}.docs-header-links.sc-docs-header a.sc-docs-header>ion-icon.sc-docs-header{display:none}.docs-header-links.sc-docs-header a.sc-docs-header span.sc-docs-header{display:flex;justify-content:space-between;align-items:center;width:100%}.docs-header-links.sc-docs-header a.sc-docs-header span.sc-docs-header ion-icon.sc-docs-header{color:#98a2ad;font-size:14px}.docs-header-links.sc-docs-header a.sc-docs-header:hover{background:rgba(0, 0, 0, 0.03);color:initial}.docs-header-links.sc-docs-header .docs-header-links__divider.sc-docs-header{display:block;width:100%;height:1px;background:rgba(0, 0, 0, 0.3)}.docs-header--expanded.sc-docs-header-h{box-shadow:none}.docs-header--expanded.sc-docs-header-h .docs-header-links.sc-docs-header{opacity:1;pointer-events:all;transform:translateY(-1px);transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear}}";
+
+class DocsHeader {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.expanded = false;
+        this.toggleExpanded = () => this.expanded = !this.expanded;
+    }
+    isActive(path) {
+        const prefix = new RegExp("^" + path, "gm");
+        const regexRes = prefix.test(Router.activePath);
+        return regexRes;
+    }
+    render() {
+        const { expanded } = this;
+        return (h(Host, { class: {
+                'docs-header--expanded': expanded
+            } }, h("site-backdrop", { visible: expanded, onClick: () => this.toggleExpanded() }), h("header", null, h("docs-search", null), h("more-button", { onClick: () => this.toggleExpanded() }), h("div", { class: "docs-header-links" }, h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': this.isActive('/docs') } }), "Docs"), h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header-links__divider" }), h("div", { class: "docs-header-links__external" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" }), h("span", null, "Twitter", h("ion-icon", { name: "open-outline" }))), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" }), h("span", null, "GitHub", h("ion-icon", { name: "open-outline" }))))))));
+    }
+    static get style() { return docsHeaderCss; }
+    static get cmpMeta() { return {
+        "$flags$": 2,
+        "$tagName$": "docs-header",
+        "$members$": {
+            "expanded": [32]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+const docsSearchCss = ".sc-docs-search:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-search-h{display:flex;align-items:center;flex:1}";
+
+class DocsSearch {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    render() {
+        return (h(Host, null));
+    }
+    static get style() { return docsSearchCss; }
+    static get cmpMeta() { return {
+        "$flags$": 2,
+        "$tagName$": "docs-search",
+        "$members$": undefined,
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+var siteStructure = [
+	{
+		text: "Introduction",
+		filePath: "/assets/docs-content/index.json",
+		url: "/docs"
+	},
+	{
+		text: "Getting Started",
+		children: [
+			{
+				text: "Required Dependencies",
+				filePath: "/assets/docs-content/getting-started/dependencies.json",
+				url: "/docs/getting-started/dependencies"
+			},
+			{
+				text: "Installation",
+				filePath: "/assets/docs-content/getting-started/index.json",
+				url: "/docs/getting-started"
+			},
+			{
+				text: "Using with Ionic",
+				filePath: "/assets/docs-content/getting-started/with-ionic.json",
+				url: "/docs/getting-started/with-ionic"
+			}
+		]
+	},
+	{
+		text: "Basics",
+		children: [
+			{
+				text: "Development Workflow",
+				filePath: "/assets/docs-content/basics/workflow.json",
+				url: "/docs/basics/workflow"
+			},
+			{
+				text: "Opening Native IDE",
+				filePath: "/assets/docs-content/basics/opening-native-projects.json",
+				url: "/docs/basics/opening-native-projects"
+			},
+			{
+				text: "Building your App",
+				filePath: "/assets/docs-content/basics/building-your-app.json",
+				url: "/docs/basics/building-your-app"
+			},
+			{
+				text: "Running your App",
+				filePath: "/assets/docs-content/basics/running-your-app.json",
+				url: "/docs/basics/running-your-app"
+			},
+			{
+				text: "Using Plugins",
+				filePath: "/assets/docs-content/basics/using-plugins.json",
+				url: "/docs/basics/using-plugins"
+			},
+			{
+				text: "Native Project Configuration",
+				filePath: "/assets/docs-content/basics/configuring-your-app.json",
+				url: "/docs/basics/configuring-your-app"
+			},
+			{
+				text: "Progressive Web Apps",
+				filePath: "/assets/docs-content/basics/progressive-web-app.json",
+				url: "/docs/basics/progressive-web-app"
+			},
+			{
+				text: "Utilities",
+				filePath: "/assets/docs-content/basics/utilities.json",
+				url: "/docs/basics/utilities"
+			},
+			{
+				text: "CLI Reference",
+				filePath: "/assets/docs-content/basics/cli-commands.json",
+				url: "/docs/basics/cli-commands"
+			}
+		]
+	},
+	{
+		text: "Cordova/PhoneGap",
+		children: [
+			{
+				text: "Introduction",
+				filePath: "/assets/docs-content/cordova/index.json",
+				url: "/docs/cordova"
+			},
+			{
+				text: "Migration Strategy",
+				filePath: "/assets/docs-content/cordova/migration-strategy.json",
+				url: "/docs/cordova/migration-strategy"
+			},
+			{
+				text: "Cordova to Capacitor Migration",
+				filePath: "/assets/docs-content/cordova/migrating-from-cordova-to-capacitor.json",
+				url: "/docs/cordova/migrating-from-cordova-to-capacitor"
+			},
+			{
+				text: "Cordova/Ionic Native Plugins",
+				filePath: "/assets/docs-content/cordova/using-cordova-plugins.json",
+				url: "/docs/cordova/using-cordova-plugins"
+			},
+			{
+				text: "Known Incompatible Plugins",
+				filePath: "/assets/docs-content/cordova/known-incompatible-plugins.json",
+				url: "/docs/cordova/known-incompatible-plugins"
+			}
+		]
+	},
+	{
+		text: "Guides",
+		children: [
+			{
+				text: "CI/CD",
+				filePath: "/assets/docs-content/guides/ci-cd.json",
+				url: "/docs/guides/ci-cd"
+			},
+			{
+				text: "Deep Links",
+				filePath: "/assets/docs-content/guides/deep-links.json",
+				url: "/docs/guides/deep-links"
+			},
+			{
+				text: "Deploying and Updating",
+				filePath: "/assets/docs-content/guides/deploying.json",
+				url: "/docs/guides/deploying-updates"
+			},
+			{
+				text: "In App Purchases",
+				filePath: "/assets/docs-content/guides/in-app-purchases.json",
+				url: "/docs/guides/in-app-purchases"
+			},
+			{
+				text: "Ionic Photo Gallery App",
+				filePath: "/assets/docs-content/guides/ionic-framework-app.json",
+				url: "/docs/guides/ionic-framework-app"
+			},
+			{
+				text: "Live Reload",
+				filePath: "/assets/docs-content/guides/live-reload.json",
+				url: "/docs/guides/live-reload"
+			},
+			{
+				text: "Push Notifications - Firebase",
+				filePath: "/assets/docs-content/guides/push-notifications-firebase.json",
+				url: "/docs/guides/push-notifications-firebase"
+			},
+			{
+				text: "Screen Orientation",
+				filePath: "/assets/docs-content/guides/screen-orientation.json",
+				url: "/docs/guides/screen-orientation"
+			},
+			{
+				text: "Splash Screens and Icons",
+				filePath: "/assets/docs-content/guides/splash-screens-and-icons.json",
+				url: "/docs/guides/splash-screens-and-icons"
+			},
+			{
+				text: "Storage",
+				filePath: "/assets/docs-content/guides/storage.json",
+				url: "/docs/guides/storage"
+			},
+			{
+				text: "Community Guides",
+				filePath: "/assets/docs-content/guides/community.json",
+				url: "/docs/guides/community"
+			}
+		]
+	},
+	{
+		text: "iOS",
+		children: [
+			{
+				text: "Getting Started",
+				filePath: "/assets/docs-content/ios/index.json",
+				url: "/docs/ios"
+			},
+			{
+				text: "Configuration",
+				filePath: "/assets/docs-content/ios/configuration.json",
+				url: "/docs/ios/configuration"
+			},
+			{
+				text: "Updating",
+				filePath: "/assets/docs-content/ios/updating.json",
+				url: "/docs/ios/updating"
+			},
+			{
+				text: "Custom Native Code",
+				filePath: "/assets/docs-content/ios/custom-code.json",
+				url: "/docs/ios/custom-code"
+			},
+			{
+				text: "Deploying to App Store",
+				filePath: "/assets/docs-content/ios/deploying-to-app-store.json",
+				url: "/docs/ios/deploying-to-app-store"
+			},
+			{
+				text: "Troubleshooting",
+				filePath: "/assets/docs-content/ios/troubleshooting.json",
+				url: "/docs/ios/troubleshooting"
+			}
+		]
+	},
+	{
+		text: "Android",
+		children: [
+			{
+				text: "Getting Started",
+				filePath: "/assets/docs-content/android/index.json",
+				url: "/docs/android"
+			},
+			{
+				text: "Configuration",
+				filePath: "/assets/docs-content/android/configuration.json",
+				url: "/docs/android/configuration"
+			},
+			{
+				text: "Updating",
+				filePath: "/assets/docs-content/android/updating.json",
+				url: "/docs/android/updating"
+			},
+			{
+				text: "Custom Native Code",
+				filePath: "/assets/docs-content/android/custom-code.json",
+				url: "/docs/android/custom-code"
+			},
+			{
+				text: "Deploying to Google Play",
+				filePath: "/assets/docs-content/android/deploying-to-google-play.json",
+				url: "/docs/android/deploying-to-google-play"
+			},
+			{
+				text: "Troubleshooting",
+				filePath: "/assets/docs-content/android/troubleshooting.json",
+				url: "/docs/android/troubleshooting"
+			}
+		]
+	},
+	{
+		text: "Web/PWA",
+		children: [
+			{
+				text: "Getting Started",
+				filePath: "/assets/docs-content/web/index.json",
+				url: "/docs/web"
+			},
+			{
+				text: "PWA Elements",
+				filePath: "/assets/docs-content/web/pwa-elements.json",
+				url: "/docs/pwa-elements"
+			}
+		]
+	},
+	{
+		text: "Creating Plugins",
+		children: [
+			{
+				text: "Introduction",
+				filePath: "/assets/docs-content/plugins/index.json",
+				url: "/docs/plugins"
+			},
+			{
+				text: "Development Workflow",
+				filePath: "/assets/docs-content/plugins/workflow.json",
+				url: "/docs/plugins/workflow"
+			},
+			{
+				text: "iOS Guide",
+				filePath: "/assets/docs-content/plugins/ios.json",
+				url: "/docs/plugins/ios"
+			},
+			{
+				text: "Android Guide",
+				filePath: "/assets/docs-content/plugins/android.json",
+				url: "/docs/plugins/android"
+			},
+			{
+				text: "Web/PWA Guide",
+				filePath: "/assets/docs-content/plugins/web.json",
+				url: "/docs/plugins/web"
+			},
+			{
+				text: "JavaScript Guide",
+				filePath: "/assets/docs-content/plugins/js.json",
+				url: "/docs/plugins/js"
+			}
+		]
+	},
+	{
+		text: "Plugins",
+		children: [
+			{
+				text: "Introduction",
+				filePath: "/assets/docs-content/apis/index.json",
+				url: "/docs/apis"
+			},
+			{
+				text: "Community Plugins",
+				filePath: "/assets/docs-content/community/plugins.json",
+				url: "/docs/community/plugins"
+			},
+			{
+				text: "Enterprise Plugins",
+				filePath: "/assets/docs-content/enterprise/index.json",
+				url: "/docs/enterprise"
+			},
+			{
+				text: "Accessibility",
+				filePath: "/assets/docs-content/apis/accessibility/index.json",
+				url: "/docs/apis/accessibility"
+			},
+			{
+				text: "App",
+				filePath: "/assets/docs-content/apis/app/index.json",
+				url: "/docs/apis/app"
+			},
+			{
+				text: "Background Task",
+				filePath: "/assets/docs-content/apis/background-task/index.json",
+				url: "/docs/apis/background-task"
+			},
+			{
+				text: "Browser",
+				filePath: "/assets/docs-content/apis/browser/index.json",
+				url: "/docs/apis/browser"
+			},
+			{
+				text: "Camera",
+				filePath: "/assets/docs-content/apis/camera/index.json",
+				url: "/docs/apis/camera"
+			},
+			{
+				text: "Clipboard",
+				filePath: "/assets/docs-content/apis/clipboard/index.json",
+				url: "/docs/apis/clipboard"
+			},
+			{
+				text: "Console",
+				filePath: "/assets/docs-content/apis/console/index.json",
+				url: "/docs/apis/console"
+			},
+			{
+				text: "Device",
+				filePath: "/assets/docs-content/apis/device/index.json",
+				url: "/docs/apis/device"
+			},
+			{
+				text: "Filesystem",
+				filePath: "/assets/docs-content/apis/filesystem/index.json",
+				url: "/docs/apis/filesystem"
+			},
+			{
+				text: "Geolocation",
+				filePath: "/assets/docs-content/apis/geolocation/index.json",
+				url: "/docs/apis/geolocation"
+			},
+			{
+				text: "Haptics",
+				filePath: "/assets/docs-content/apis/haptics/index.json",
+				url: "/docs/apis/haptics"
+			},
+			{
+				text: "Keyboard",
+				filePath: "/assets/docs-content/apis/keyboard/index.json",
+				url: "/docs/apis/keyboard"
+			},
+			{
+				text: "Local Notifications",
+				filePath: "/assets/docs-content/apis/local-notifications/index.json",
+				url: "/docs/apis/local-notifications"
+			},
+			{
+				text: "Modals",
+				filePath: "/assets/docs-content/apis/modals/index.json",
+				url: "/docs/apis/modals"
+			},
+			{
+				text: "Motion",
+				filePath: "/assets/docs-content/apis/motion/index.json",
+				url: "/docs/apis/motion"
+			},
+			{
+				text: "Network",
+				filePath: "/assets/docs-content/apis/network/index.json",
+				url: "/docs/apis/network"
+			},
+			{
+				text: "Permissions",
+				filePath: "/assets/docs-content/apis/permissions/index.json",
+				url: "/docs/apis/permissions"
+			},
+			{
+				text: "Push Notifications",
+				filePath: "/assets/docs-content/apis/push-notifications/index.json",
+				url: "/docs/apis/push-notifications"
+			},
+			{
+				text: "Share",
+				filePath: "/assets/docs-content/apis/share/index.json",
+				url: "/docs/apis/share"
+			},
+			{
+				text: "Splash Screen",
+				filePath: "/assets/docs-content/apis/splash-screen/index.json",
+				url: "/docs/apis/splash-screen"
+			},
+			{
+				text: "Status Bar",
+				filePath: "/assets/docs-content/apis/status-bar/index.json",
+				url: "/docs/apis/status-bar"
+			},
+			{
+				text: "Storage",
+				filePath: "/assets/docs-content/apis/storage/index.json",
+				url: "/docs/apis/storage"
+			},
+			{
+				text: "Toast",
+				filePath: "/assets/docs-content/apis/toast/index.json",
+				url: "/docs/apis/toast"
+			}
+		]
+	}
+];
+
+function findItem(siteStructureList, url, foundData = { parent: null }) {
+    for (const item of siteStructureList) {
+        if (item.url === url) {
+            foundData.item = item;
+        }
+        else if (foundData.item != null && item.url != null) {
+            foundData.nextItem = item;
+        }
+        else if (item.url != null && foundData.item == null) {
+            foundData.prevItem = item;
+        }
+        else if (item.children && item.children.length > 0) {
+            if (foundData.item == null) {
+                foundData.parent = item;
+            }
+            foundData = findItem(item.children, url, foundData);
+        }
+        if (foundData.item != null && foundData.nextItem != null) {
+            return foundData;
+        }
+    }
+    return foundData;
+}
+
+const handleRoutableLinkClick = (e) => {
+    if (e.metaKey || e.ctrlKey) {
+        return;
+    }
+    if (e && (e.which == 2 || e.button == 4)) {
+        return;
+    }
+    if (e.target.tagName === 'A') {
+        const href = e.target.href;
+        const u = new URL(href);
+        if (u.origin === window.location.origin) {
+            e.stopPropagation();
+            e.preventDefault();
+            Router.push(u.pathname);
+        }
+    }
+};
+
+const documentComponentCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}document-component .container{display:flex;justify-content:space-between;max-width:none;padding:0}document-component .content-container{width:100%;display:flex;flex-flow:column}document-component plugin-platforms{display:block;float:right}document-component plugin-platforms .platform{margin-left:8px}document-component table,document-component td,document-component th{border:1px solid #eee;border-collapse:collapse}document-component table{width:100%}document-component table th{text-align:left;padding:4px}document-component table td{font-size:12px;line-height:18px;vertical-align:top;padding:4px;min-width:150px}document-component table td code{font-size:12px}document-component .heading-link{position:relative;text-decoration:none;display:flex;align-items:center;color:#2d2d4c}document-component .heading-link:hover{border-bottom:1px solid transparent}document-component .heading-link ion-icon{transition:opacity 0.2s;position:absolute;left:-24px;display:flex;align-items:center;opacity:0}document-component .heading-link:hover ion-icon{opacity:0.8}document-component img{max-width:100%;margin:8px 0}document-component h1:first-child anchor-link{display:none}document-component ul{-webkit-padding-start:16px}document-component ul li,document-component ul code{font-size:14px;margin-top:16px}document-component p a{color:#1d9aff;text-decoration:none}document-component p code,document-component ul code,document-component ol code{padding:1px 4px 2px;background-color:#ecf4fb;color:#16161D;border-radius:3px}document-component #introButton{background:#1d9aff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;transition:all 0.15s ease;cursor:pointer}document-component #introButton:hover{box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);transform:translateY(1px)}document-component .btn.pull-left,document-component .btn.pull-right{margin:64px 8px 20px}";
+
+class DocumentComponent {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.pages = [];
+        this.page = null;
+    }
+    toggleMenu() {
+        this.menuEl.toggleOverlayMenu();
+    }
+    componentWillLoad() {
+        console.log('Hiding topbar', state.showTopBar);
+        state.showTopBar = false;
+        return this.fetchNewContent(this.page);
+    }
+    fetchNewContent(page, oldPage) {
+        if (page == null || page === oldPage) {
+            return;
+        }
+        state.showTopBar = false;
+        const foundData = findItem(siteStructure, this.page);
+        this.item = foundData.item;
+        this.nextItem = foundData.nextItem;
+        this.prevItem = foundData.prevItem;
+        this.parent = foundData.parent;
+    }
+    render() {
+        if (this.item == null) {
+            return h("h1", null, "Page not found");
+        }
+        return (h("div", { class: "container" }, h("app-menu-toggle", null), h("docs-menu", { ref: el => this.menuEl = el, selectedParent: this.parent, siteStructureList: siteStructure }), h("div", { class: "content-container" }, h("docs-header", null), h("app-marked", { fetchPath: this.item.filePath, renderer: (docsContent) => [
+                h(Helmet, null, h("title", null, docsContent.title ? `${docsContent.title} - Capacitor` : 'Capacitor')),
+                h("div", { class: "doc-content" }, h("div", { class: "measure-lg" }, h("div", { onClick: handleRoutableLinkClick, innerHTML: docsContent.content }), h("h2", null, "Contributors"), h("contributor-list", { contributors: docsContent.contributors }), h("lower-content-nav", { next: this.nextItem, prev: this.prevItem }))),
+                h("in-page-navigation", { pageLinks: docsContent.headings, srcUrl: docsContent.srcPath, currentPageUrl: docsContent.url })
+            ] }))));
+    }
+    static get watchers() { return {
+        "page": ["fetchNewContent"]
+    }; }
+    static get style() { return documentComponentCss; }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "document-component",
+        "$members$": {
+            "pages": [16],
+            "page": [1],
+            "item": [32],
+            "nextItem": [32],
+            "prevItem": [32],
+            "parent": [32]
+        },
+        "$listeners$": [[0, "menuToggleClick", "toggleMenu"]],
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+const enterpriseCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}capacitor-enterprise{display:block;margin:76px 0}capacitor-enterprise .cta h1{margin-top:0}capacitor-enterprise .cta .btn{margin-top:24px;background-color:#111;color:white}capacitor-enterprise .container{max-width:1024px;margin:auto}capacitor-enterprise .points{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));column-gap:16px;row-gap:24px}@media (max-width: 480px){capacitor-enterprise .points{grid-template-columns:1fr}}capacitor-enterprise hgroup{text-align:center}capacitor-enterprise .hs-form{margin:48px auto;max-width:420px !important;font-weight:400}capacitor-enterprise .hs-form .hs-form-required{display:none}capacitor-enterprise .hs-form form fieldset.form-columns-2 .input{margin-right:12px}capacitor-enterprise .hs-form form.stacked .field{margin-bottom:4px}capacitor-enterprise .hs-form .hs-input,capacitor-enterprise .hs-form input.hs-input,capacitor-enterprise .hs-form select.hs-input{appearance:none;-moz-appearance:none;border:1px solid #e1e5ed;font-weight:500;border-radius:4px;transition:border-color 0.2s;box-shadow:none;outline:none;height:30px;padding:6px 12px;font-size:14px;line-height:1.428571429}capacitor-enterprise .hs-form .hs-input:placeholder,capacitor-enterprise .hs-form input.hs-input:placeholder,capacitor-enterprise .hs-form select.hs-input:placeholder{color:#aaa}capacitor-enterprise .hs-form .hs-input:hover,capacitor-enterprise .hs-form .hs-input:focus,capacitor-enterprise .hs-form .hs-input:active,capacitor-enterprise .hs-form input.hs-input:hover,capacitor-enterprise .hs-form input.hs-input:focus,capacitor-enterprise .hs-form input.hs-input:active,capacitor-enterprise .hs-form select.hs-input:hover,capacitor-enterprise .hs-form select.hs-input:focus,capacitor-enterprise .hs-form select.hs-input:active{outline:none;border-color:#3880ff;box-shadow:none}capacitor-enterprise .hs-form .hs-input.hs-input.error,capacitor-enterprise .hs-form input.hs-input.hs-input.error,capacitor-enterprise .hs-form select.hs-input.hs-input.error{border-color:#ee0000}capacitor-enterprise .hs-form select.hs-input{height:44px;width:calc(100% + 6px) !important}capacitor-enterprise .hs-form textarea.hs-input{padding:12px;width:calc(100% + 3px) !important;min-height:192px}capacitor-enterprise .hs-form .hs_submit input.hs-button{font-size:13px;padding:10px 18px 10px;margin-right:-14px;margin-top:-36px;line-height:23px;float:right;font-weight:600;letter-spacing:0;text-transform:none;text-shadow:none;background:#3880ff;border:0;outline:0;transition:all 0.2s linear;box-shadow:0 1px 3px rgba(0, 0, 0, 0.12)}capacitor-enterprise .hs-form .hs_submit input.hs-button:hover{border:0;box-shadow:0 4px 8px rgba(0, 0, 0, 0.12);background:#5995fc;color:#fff;outline:0}capacitor-enterprise .hs-form .hs_submit input.hs-button:active,capacitor-enterprise .hs-form .hs_submit input.hs-button:active:not(.inactive):not(.link),capacitor-enterprise .hs-form .hs_submit input.hs-button:focus:not(.inactive){border:0;color:#fff;box-shadow:inset 0 1px 4px rgba(0, 0, 0, 0.2);background:#5995fc;outline:0}capacitor-enterprise .hs-form .submitted-message{font-size:18px;padding:34px 0 78px;text-align:center;display:flex;flex-direction:column;align-items:center;font-weight:400;color:#35af55;max-width:410px;background-color:white;margin:0 auto}capacitor-enterprise .hs-form .submitted-message:before{content:\"\";display:block;background-image:url(\"/img/checkmark-light-green.svg\");background-repeat:no-repeat;background-size:100%;width:42px;height:42px;margin-bottom:12px}capacitor-enterprise .modal .hs-form .hs_submit input.hs-button{padding:0}capacitor-enterprise .hs-form,capacitor-enterprise .hs-form fieldset,capacitor-enterprise .hs-form iframe{max-width:100%}capacitor-enterprise .hs-form .hs-form-field{margin-top:16px}capacitor-enterprise .hs-form label{margin-bottom:3px}capacitor-enterprise .hs-form .hs-form-required{display:inline;color:#F45454;margin-left:4px}capacitor-enterprise .hs-form .hs-richtext{margin-top:8px}capacitor-enterprise .hs-form .hs-input,capacitor-enterprise .hs-form input.hs-input{transition:border 0.3s;font-weight:500;background-color:#fff;background-image:none;border:1px solid #ced6e3;line-height:1.39286;border-radius:4px;padding:11px 15px;font-size:15px;margin-bottom:0;color:#505863}capacitor-enterprise .hs-form input.hs-input[type=number]{float:none}capacitor-enterprise .hs-form input.hs-input[type=text],capacitor-enterprise .hs-form input.hs-input[type=email],capacitor-enterprise .hs-form input.hs-input[type=tel]{height:auto;width:100%;float:none}capacitor-enterprise .hs-form input.hs-input[type=text]:focus,capacitor-enterprise .hs-form input.hs-input[type=email]:focus,capacitor-enterprise .hs-form input.hs-input[type=tel]:focus{border-color:#629eff}capacitor-enterprise .hs-form input.hs-input[type=radio],capacitor-enterprise .hs-form input.hs-input[type=checkbox]{height:auto;margin-right:8px}capacitor-enterprise .hs-form .hs-form-booleancheckbox-display{display:flex}capacitor-enterprise .hs-form select.hs-input{height:44px;appearance:none;-moz-appearance:none;background-image:linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);background-position:calc(100% - 20px) 50%, calc(100% - 15px) 50%;background-size:5px 5px, 5px 5px, 1px 1.5em;background-repeat:no-repeat}capacitor-enterprise .hs-form form fieldset.form-columns-2 .input{margin:0}capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field{padding:0 10px}capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field:first-child{padding-left:0}capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field:last-child{padding-right:0}capacitor-enterprise .hs-form .inputs-list,capacitor-enterprise .hs-form .hs-error-msgs{margin:0;padding:0;list-style-type:none}capacitor-enterprise .hs-form .inputs-list.multi-container{overflow:hidden}capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child,capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child~li{width:50%;float:left;padding-right:11px}capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child~li:nth-child(even){padding-right:0;padding-left:11px}capacitor-enterprise .hs-form .hs-form-checkbox-display{margin-top:4px;display:flex}capacitor-enterprise .hs-form .hs-form-checkbox-display .hs-input[type=checkbox]{margin-right:10px}capacitor-enterprise .hs-form .hs-form-checkbox-display span{font-size:15px;color:#505863}capacitor-enterprise .hs-form .hs-error-msgs{padding:5px 0 0;font-size:11px;color:#F45454}capacitor-enterprise .hs-form .hs_submit{margin-top:30px}capacitor-enterprise .hs-form .hs_submit input.hs-button{transition:all 0.3s ease;margin:0;float:none;font-size:16px;font-weight:700;padding:12px 20px;vertical-align:middle;color:white;background:#3880ff;box-shadow:0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.12);border-radius:4px;line-height:18px;letter-spacing:-0.01em}capacitor-enterprise .hs-form .hs_submit input.hs-button:hover{box-shadow:0 7px 14px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.08);background:#4d8dfd;color:#fff;outline:none}@media (max-width: 480px){capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field{width:100%;float:none;padding:0}capacitor-enterprise .hs-form fieldset.form-columns-2 .hs-form-field+.hs-form-field{margin-top:24px}capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child,capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child~li{width:100%;float:none;padding-right:0}capacitor-enterprise .hs-form .inputs-list.multi-container li:nth-last-child(n+6):first-child~li:nth-child(even){padding-left:0}capacitor-enterprise .hs-form .hs_submit input.hs-button{width:100%}}capacitor-enterprise .hubspot-override--large .hs-form label:not(.hs-form-booleancheckbox-display){text-transform:uppercase;font-size:12px;letter-spacing:0.05em;margin-bottom:6px}capacitor-enterprise .hubspot-override--large .hs-form .hs-form-booleancheckbox-display{font-size:15px}capacitor-enterprise .hubspot-override--large .hs-form .hs-richtext p span,capacitor-enterprise .hubspot-override--large .hs-form .hs-richtext p a{font-size:15px}capacitor-enterprise .hubspot-override--large .hs-form .hs-input,capacitor-enterprise .hubspot-override--large .hs-form input.hs-input{padding:16px 20px 18px;font-size:18px}capacitor-enterprise .hubspot-override--large .hs-form select.hs-input{text-indent:10px;height:60px}@-moz-document url-prefix(){capacitor-enterprise .hubspot-override--large .hs-form select.hs-input{text-indent:0}}capacitor-enterprise .hubspot-override--large .hs-form .hs-error-msgs label{font-size:11px;letter-spacing:0;text-transform:none}capacitor-enterprise .hubspot-override--large .hs-form fieldset.form-columns-2 .hs-form-field{padding:0 20px}capacitor-enterprise .hubspot-override--large .hs-form .hs_submit{text-align:center;padding-top:18px}capacitor-enterprise .hubspot-override--large .hs-form .hs_submit input.hs-button{padding:22px 27px 24px;border-radius:6px}@media (max-width: 480px){capacitor-enterprise .hubspot-override--large .hs-form fieldset.form-columns-2 .hs-form-field{padding:0}}capacitor-enterprise .hubspot-override--measure{max-width:748px;margin-left:auto;margin-right:auto}";
+
+class Enterprise {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    componentWillLoad() {
+        state.pageTheme = 'dark';
+    }
+    componentDidLoad() {
+        const hbsScript = document.createElement('script');
+        hbsScript.src = '//js.hsforms.net/forms/v2.js';
+        hbsScript.type = 'text/javascript';
+        hbsScript.charset = 'utf-8';
+        hbsScript.addEventListener('load', () => {
+            window.hbspt.forms.create({
+                portalId: '3776657',
+                formId: 'd0019a78-110e-4d28-b356-56357b4abe4b',
+                target: '#scripts',
+                css: ''
+            });
+        });
+        document.body.appendChild(hbsScript);
+        // el.appendChild(hbsScript);
+    }
+    render() {
+        return (h("div", { class: "enterprise" }, h(ResponsiveContainer, null, h(Grid, { class: "cta" }, h(Col, { md: 6, sm: 6, xs: 12, cols: 12 }, h("h1", null, "Capacitor for Enterprises"), h("p", null, "Powerful solution for mission-critical enterprise apps", h("br", null), "across consumer and employee-facing", h("br", null), "iOS, Android, and Progressive Web Apps."), h("a", { href: "#contact" }, "Get in touch ->")))), h("section", { class: "section" }, h("div", { class: "container" }, h("hgroup", null, h("h2", null, "Enterprise mobile development, made easy"), h("p", null, "Meet your development goals with premium software and services that accelerate development and reduce project risk.")), h("div", { class: "points" }, h("div", { class: "point" }, h("h3", null, "Build with confidence"), h("p", null, "Enjoy peace of mind knowing the native plugins you depend on are built and maintained by a team you can trust, and backed by mission-critical support and expert services.")), h("div", { class: "point" }, h("h3", null, "Protect your users & data"), h("p", null, "Give your users the best possible mobile security, with advanced biometric authentication, SSO integration, and the latest in secure encrypted storage.")), h("div", { class: "point" }, h("h3", null, "Accelerate your mobile projects"), h("p", null, "Save valuable time and effort that would normally be spent chasing plugins and building from scratch. Capacitor Enterprise delivers everything you need on Day 1."))))), h("section", { id: "highlights" }, h("div", { class: "container" }, h("div", { class: "highlight" }, h("h2", null, "World-class support"), h("p", null, "Get guaranteed response SLAs through the app lifecycle. Ionic's professional support team is on-hand to help you troubleshoot and address issues occurring at the native layer.")), h("div", { class: "highlight" }, h("h2", null, "Stable, secure plugin library"), h("p", null, "Native features maintained by our team of native experts. Active subscribers get ongoing updates to supported plugins, to keep pace with OS and API changes, and evolving devices.")), h("div", { class: "highlight" }, h("h2", null, "Pre-built solutions"), h("p", null, "Accelerate development with pre-built native solutions to common mobile use cases, like biometrics, authentication, and encrypted offline storage. Built by mobile experts. Deployed in minutes.")), h("div", { class: "highlight" }, h("h2", null, "Expert help & guidance"), h("p", null, "Our team of native experts will work with you to define a native strategy that fits your unique goals and challenges. From architectural reviews to performance & security audits.")))), h("section", { id: "key-features" }, h("div", { class: "container" }, h("hgroup", null, h("h2", null, "Key features"), h("p", null, "Premium software and services to help you reach your development goals")), h("div", { class: "points" }, h("div", { class: "point" }, h("h3", null, "Core Device Plugins"), h("p", null, "Everything you need to deliver the core functionality your users expect, from essentials like camera and geolocation, to payments and security.")), h("div", { class: "point" }, h("h3", null, "Biometrics Sign-in"), h("p", null, "Add a critical layer of protection width advanced biometrics that locks down sensitive data, by employing the latest in native security best practices.")), h("div", { class: "point" }, h("h3", null, "Auth Integration"), h("p", null, "Easily connect through existing authentication providers, including Auth0, Azure Active Directory, and AWS Cognito--from any mobile device.")), h("div", { class: "point" }, h("h3", null, "Secure Offline Storage"), h("p", null, "Deliver secure, offline-first mobile experiences with a flexible mobile storage solution that uses military-grade encryption to prevent unwanted access and secure user data.")), h("div", { class: "point" }, h("h3", null, "Guaranteed SLA"), h("p", null, "Timely support and troubleshooting when you need it most. Get expert help directly from our team with guaranteed response times.")), h("div", { class: "point" }, h("h3", null, "Guidance & Expertise"), h("p", null, "Ensure your team is utilizing best practices when adding native functionality, helping you meet your deadlines while avoiding costly tech debt."))))), h("section", null, h("div", { class: "container" }, h("hgroup", null, h("h2", null, "Use Cases")), h("div", null, h("h3", null, "Mission-critical projects"), h("p", null, "When your brand and company reputation are on the line, you need a solution that will work on Day 1. Capacitor Enterprise is a great fit for teams building mission-critical projects who want to minimize project risk and reach their goals.")), h("div", null, h("h3", null, "Highly secure apps"), h("p", null, "Handling sensitive user or company data? Protect what matters most with advanced mobile security solutions that take advantage of the latest in native security best practices--from biometrics to military-grade encryption.")), h("div", null, h("h3", null, "Accelerated timeline"), h("p", null, "Facing an aggressive release timeline? We can help. Our pre-built solutions will save you weeks or months of coding from scratch, while our native mobile experts can help you find ways to speed up development and better reach your goals.")))), h("section", { id: "contact" }, h("div", { class: "container" }, h("hgroup", null, h("h2", null, "Learn more"), h("p", null, "Fill out form below to receive more information on Capacitor Enterprise."))), h("div", { id: "scripts", class: "hubspot-override" }))));
+    }
+    static get style() { return enterpriseCss; }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "capacitor-enterprise",
+        "$members$": undefined,
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+const getName = (iconName, icon, mode, ios, md) => {
+    // default to "md" if somehow the mode wasn't set
+    mode = (mode && toLower(mode)) === 'ios' ? 'ios' : 'md';
+    // if an icon was passed in using the ios or md attributes
+    // set the iconName to whatever was passed in
+    if (ios && mode === 'ios') {
+        iconName = toLower(ios);
+    }
+    else if (md && mode === 'md') {
+        iconName = toLower(md);
+    }
+    else {
+        if (!iconName && icon && !isSrc(icon)) {
+            iconName = icon;
+        }
+        if (isStr(iconName)) {
+            iconName = toLower(iconName);
+        }
+    }
+    if (!isStr(iconName) || iconName.trim() === '') {
+        return null;
+    }
+    // only allow alpha characters and dash
+    const invalidChars = iconName.replace(/[a-z]|-|\d/gi, '');
+    if (invalidChars !== '') {
+        return null;
+    }
+    return iconName;
+};
+const isSrc = (str) => str.length > 0 && /(\/|\.)/.test(str);
+const isStr = (val) => typeof val === 'string';
+const toLower = (val) => val.toLowerCase();
+
+const iconCss = "/*!@:host*/.sc-ion-icon-h{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;box-sizing:content-box !important}/*!@:host .ionicon*/.sc-ion-icon-h .ionicon.sc-ion-icon{stroke:currentColor}/*!@.ionicon-fill-none*/.ionicon-fill-none.sc-ion-icon{fill:none}/*!@.ionicon-stroke-width*/.ionicon-stroke-width.sc-ion-icon{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}/*!@.icon-inner,\n.ionicon,\nsvg*/.icon-inner.sc-ion-icon,.ionicon.sc-ion-icon,svg.sc-ion-icon{display:block;height:100%;width:100%}/*!@:host(.flip-rtl) .icon-inner*/.flip-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{transform:scaleX(-1)}/*!@:host(.icon-small)*/.icon-small.sc-ion-icon-h{font-size:18px !important}/*!@:host(.icon-large)*/.icon-large.sc-ion-icon-h{font-size:32px !important}/*!@:host(.ion-color)*/.ion-color.sc-ion-icon-h{color:var(--ion-color-base) !important}/*!@:host(.ion-color-primary)*/.ion-color-primary.sc-ion-icon-h{--ion-color-base:var(--ion-color-primary, #3880ff)}/*!@:host(.ion-color-secondary)*/.ion-color-secondary.sc-ion-icon-h{--ion-color-base:var(--ion-color-secondary, #0cd1e8)}/*!@:host(.ion-color-tertiary)*/.ion-color-tertiary.sc-ion-icon-h{--ion-color-base:var(--ion-color-tertiary, #f4a942)}/*!@:host(.ion-color-success)*/.ion-color-success.sc-ion-icon-h{--ion-color-base:var(--ion-color-success, #10dc60)}/*!@:host(.ion-color-warning)*/.ion-color-warning.sc-ion-icon-h{--ion-color-base:var(--ion-color-warning, #ffce00)}/*!@:host(.ion-color-danger)*/.ion-color-danger.sc-ion-icon-h{--ion-color-base:var(--ion-color-danger, #f14141)}/*!@:host(.ion-color-light)*/.ion-color-light.sc-ion-icon-h{--ion-color-base:var(--ion-color-light, #f4f5f8)}/*!@:host(.ion-color-medium)*/.ion-color-medium.sc-ion-icon-h{--ion-color-base:var(--ion-color-medium, #989aa2)}/*!@:host(.ion-color-dark)*/.ion-color-dark.sc-ion-icon-h{--ion-color-base:var(--ion-color-dark, #222428)}";
+
+class Icon {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.isVisible = false;
+        /**
+         * The mode determines which platform styles to use.
+         */
+        this.mode = getIonMode();
+        /**
+         * If enabled, ion-icon will be loaded lazily when it's visible in the viewport.
+         * Default, `false`.
+         */
+        this.lazy = false;
+    }
+    connectedCallback() {
+        // purposely do not return the promise here because loading
+        // the svg file should not hold up loading the app
+        // only load the svg if it's visible
+        this.waitUntilVisible(this.el, '50px', () => {
+            this.isVisible = true;
+            this.loadIcon();
+        });
+    }
+    disconnectedCallback() {
+        if (this.io) {
+            this.io.disconnect();
+            this.io = undefined;
+        }
+    }
+    waitUntilVisible(el, rootMargin, cb) {
+        {
+            // browser doesn't support IntersectionObserver
+            // so just fallback to always show it
+            cb();
+        }
+    }
+    loadIcon() {
+        if (!this.ariaLabel) {
+            const label = getName(this.name, this.icon, this.mode, this.ios, this.md);
+            // user did not provide a label
+            // come up with the label based on the icon name
+            if (label) {
+                this.ariaLabel = label.replace(/\-/g, ' ');
+            }
+        }
+    }
+    render() {
+        const mode = this.mode || 'md';
+        const flipRtl = this.flipRtl || (this.ariaLabel && (this.ariaLabel.indexOf('arrow') > -1 || this.ariaLabel.indexOf('chevron') > -1) && this.flipRtl !== false);
+        return (h(Host, { role: "img", class: Object.assign(Object.assign({ [mode]: true }, createColorClasses(this.color)), { [`icon-${this.size}`]: !!this.size, 'flip-rtl': !!flipRtl && this.el.ownerDocument.dir === 'rtl' }) }, ( h("div", { class: "icon-inner" }))));
+    }
+    static get assetsDirs() { return ["svg"]; }
+    get el() { return getElement(this); }
+    static get watchers() { return {
+        "name": ["loadIcon"],
+        "src": ["loadIcon"],
+        "icon": ["loadIcon"]
+    }; }
+    static get style() { return iconCss; }
+    static get cmpMeta() { return {
+        "$flags$": 9,
+        "$tagName$": "ion-icon",
+        "$members$": {
+            "mode": [1025],
+            "color": [1],
+            "ariaLabel": [1537, "aria-label"],
+            "ios": [1],
+            "md": [1],
+            "flipRtl": [4, "flip-rtl"],
+            "name": [1],
+            "src": [1],
+            "icon": [8],
+            "size": [1],
+            "lazy": [4],
+            "svgContent": [32],
+            "isVisible": [32]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": [["ariaLabel", "aria-label"]]
+    }; }
+}
+const getIonMode = () =>  'md';
+const createColorClasses = (color) => {
+    return (color) ? {
+        'ion-color': true,
+        [`ion-color-${color}`]: true
+    } : null;
+};
+
+const inPageNavigationCss = "in-page-navigation{flex:0 0 240px;padding-top:26px;padding-left:16px;overflow:visible;letter-spacing:0}in-page-navigation .sticky{overflow:hidden}in-page-navigation internal-ad{visibility:hidden}in-page-navigation h5{text-transform:uppercase;font-size:11px;margin-top:0;margin-bottom:6px;font-weight:600;color:#a0aec0;letter-spacing:.05em}in-page-navigation .heading-links{--indent-size:12px;list-style:none;line-height:1;padding:0;margin:0;margin-left:calc(var(--indent-size) * -2)}in-page-navigation .heading-links li{width:188px;overflow:hidden;text-overflow:ellipsis;cursor:pointer}in-page-navigation .heading-links a{font-weight:400;color:var(--color-gunpowder);font-size:13px;line-height:18px;font-weight:500;border:none;text-decoration:none;border:none !important;transition:.2s color ease}in-page-navigation .heading-links a:hover{color:var(--color-woodsmoke)}in-page-navigation .heading-links a:hover{border:none}in-page-navigation .heading-links .heading-link:hover,in-page-navigation .heading-links .heading-link.selected{border-bottom:none;transform:translateX(calc(var(--indent-size) * 1 + 2px));font-weight:500}in-page-navigation li.heading-link{padding:0 11px;margin-top:0;margin-left:0;border-left:2px solid transparent;transition:.2s transform ease}in-page-navigation li.heading-link.selected{border-left:2px solid var(--color-dodger-blue)}in-page-navigation li.heading-link.selected a{color:var(--color-dodger-blue);font-weight:600}in-page-navigation li.size-h2{transform:translateX(calc(var(--indent-size) * 1))}in-page-navigation li.size-h3{transform:translateX(calc(var(--indent-size) * 2))}in-page-navigation li.size-h4{transform:translateX(calc(var(--indent-size) * 3))}in-page-navigation li.size-h3 a,in-page-navigation li.size-h4 a{font-weight:400;color:#6c6c8b}in-page-navigation li.size-h3:hover a,in-page-navigation li.size-h4:hover a{color:var(--color-gunpowder)}in-page-navigation li.heading-link.size-h3:hover,in-page-navigation li.heading-link.size-h3.selected{transform:translateX(calc(var(--indent-size) * 2 + 2px))}in-page-navigation li.heading-link.size-h4:hover,in-page-navigation li.heading-link.size-h4.selected{transform:translateX(calc(var(--indent-size) * 3 + 2px))}in-page-navigation li.heading-link stencil-route-link{margin-top:4px}in-page-navigation .submit-edit-link{display:flex;align-items:center;font-size:12px;color:var(--color-dodger-blue);font-weight:600;text-decoration:none}in-page-navigation .submit-edit-link svg{width:16px;fill:currentColor}in-page-navigation .submit-edit-link span{transition:border 0.2s;height:16px;margin-left:6px;margin-bottom:2px}in-page-navigation .heading-links+.submit-edit-link{margin-top:28px;border-bottom:none}@media screen and (max-width: 1024px){in-page-navigation{display:none}}";
+
+class InPageNavigtion {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        this.pageLinks = [];
+        this.srcUrl = '';
+        this.currentPageUrl = '';
+        this.itemOffsets = [];
+        this.selectedId = null;
+        this.checkHeight = async () => {
+            if (!this.stickyEl || this.adEl.offsetHeight === 0)
+                return;
+            this.stickyEl.getBoundingClientRect().bottom > window.innerHeight ? this.stickyEl.style.overflow = 'visible' : '';
+            if (!this.adEl)
+                return;
+            this.adEl.style.visibility = 'hidden';
+            this.adEl.getBoundingClientRect().bottom < window.innerHeight ? this.adEl.style.visibility = 'visible' : '';
+            this.adEl.update();
+        };
+    }
+    function() {
+        const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
+        if (itemIndex === 0 || this.itemOffsets[this.itemOffsets.length - 1] === undefined) {
+            this.selectedId = null;
+        }
+        else if (itemIndex === -1) {
+            this.selectedId = this.itemOffsets[this.itemOffsets.length - 1].id;
+        }
+        else {
+            this.selectedId = this.itemOffsets[itemIndex - 1].id;
+        }
+    }
+    updateItemOffsets() {
+        requestAnimationFrame(() => {
+            this.itemOffsets = this.pageLinks.map((pl) => {
+                const item = document.getElementById(pl.id);
+                return {
+                    id: pl.id,
+                    topOffset: item.getBoundingClientRect().top + window.scrollY
+                };
+            });
+        });
+    }
+    handleNavChange() {
+        this.checkHeight();
+    }
+    componentDidLoad() {
+        this.updateItemOffsets();
+        this.checkHeight();
+    }
+    ghIcon() {
+        return (h("svg", { id: "icon-github", viewBox: "0 0 512 512", width: "100%", height: "100%" }, h("path", { d: "M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9 1.4.3 2.6.4 3.8.4 8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1-8.4 1.9-15.9 2.7-22.6 2.7-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1 10.5 0 20-3.4 25.6-6 2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8 0 0 1.6-.5 5-.5 8.1 0 26.4 3.1 56.6 24.1 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 30.2-21 48.5-24.1 56.6-24.1 3.4 0 5 .5 5 .5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5 1.2 0 2.6-.1 4-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z" })));
+    }
+    stripTags(html) {
+        const tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || '';
+    }
+    render() {
+        const pageLinks = this.pageLinks.filter(pl => pl.level !== 1);
+        const submitEditLink = (h("a", { class: "submit-edit-link", target: "_blank", href: `https://github.com/ionic-team/capacitor-site/blob/master/${this.srcUrl}` }, this.ghIcon(), h("span", null, "Submit an edit")));
+        if (pageLinks.length === 0) {
+            return (h("div", { class: "sticky" }, submitEditLink, h("internal-ad", { ref: e => this.adEl = e })));
+        }
+        return (h("div", { class: "sticky", ref: e => this.stickyEl = e }, h("h5", null, "Contents"), h("ul", { class: "heading-links" }, pageLinks.map(pl => (h("li", { class: {
+                'heading-link': true,
+                [`size-h${pl.level}`]: true,
+                'selected': this.selectedId === pl.id
+            } }, h("stencil-route-link", null, h("a", Object.assign({}, href(`#${pl.id}`)), this.stripTags(pl.text))))))), submitEditLink, h("internal-ad", { ref: e => this.adEl = e })));
+    }
+    static get watchers() { return {
+        "pageLinks": ["updateItemOffsets", "handleNavChange"]
+    }; }
+    static get style() { return inPageNavigationCss; }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "in-page-navigation",
+        "$members$": {
+            "pageLinks": [16],
+            "srcUrl": [1, "src-url"],
+            "currentPageUrl": [1, "current-page-url"],
+            "itemOffsets": [32],
+            "selectedId": [32]
+        },
+        "$listeners$": [[9, "scroll", "function"], [9, "resize", "updateItemOffsets"]],
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}
+
+var prismicDom_min = createCommonjsModule(function (module, exports) {
+!function(e,t){module.exports=t();}("undefined"!=typeof self?self:commonjsGlobal,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=1)}([function(e,t,n){e.exports=function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){e.exports=n(1);},function(e,t,n){var r=n(2),o=n(3);e.exports={Link:r,Date:o};},function(e,t,n){e.exports={url:function(e,t){if(e&&[e.link_type,e._linkType,e.linkType].some((function(e){return e&&["Document","Link.Document","Link.document"].includes(e)}))&&t&&"function"==typeof t){var n=t(e);if(n)return n}return e&&e.url?e.url:""}};},function(e,t){e.exports=function(e){if(!e)return null;var t=24==e.length?"".concat(e.substring(0,22),":").concat(e.substring(22,24)):e;return new Date(t)};}]);},function(e,t,n){e.exports=n(2);},function(e,t,n){var r=n(0),o=n(3),i=r.Date,u=r.Link;e.exports={Date:i,Link:u,RichText:o};},function(e,t,n){var r=n(4),o=n(0).Link,i=n(5),u=r.Elements;function c(e,t,n,r,c){switch(t){case u.heading1:return l("h1",n,c);case u.heading2:return l("h2",n,c);case u.heading3:return l("h3",n,c);case u.heading4:return l("h4",n,c);case u.heading5:return l("h5",n,c);case u.heading6:return l("h6",n,c);case u.paragraph:return l("p",n,c);case u.preformatted:return function(e){return "<pre".concat(a(e),">").concat(i(e.text),"</pre>")}(n);case u.strong:return l("strong",n,c);case u.em:return l("em",n,c);case u.listItem:case u.oListItem:return l("li",n,c);case u.list:return l("ul",n,c);case u.oList:return l("ol",n,c);case u.image:return function(e,t){var n=t.linkTo?o.url(t.linkTo,e):null,r=t.linkTo&&t.linkTo.target?'target="'.concat(t.linkTo.target,'" rel="noopener"'):"",i=[t.label||"","block-img"],u='<img src="'.concat(t.url,'" alt="').concat(t.alt||"",'" copyright="').concat(t.copyright||"",'">');return '\n    <p class="'.concat(i.join(" "),'">\n      ').concat(n?"<a ".concat(r,' href="').concat(n,'">').concat(u,"</a>"):u,"\n    </p>\n  ")}(e,n);case u.embed:return function(e){return '\n    <div data-oembed="'.concat(e.oembed.embed_url,'"\n      data-oembed-type="').concat(e.oembed.type,'"\n      data-oembed-provider="').concat(e.oembed.provider_name,'"\n      ').concat(a(e),">\n          \n      ").concat(e.oembed.html,"\n    </div>\n  ")}(n);case u.hyperlink:return function(e,t,n){var r=t.data.target?'target="'.concat(t.data.target,'" rel="noopener"'):"";return "<a ".concat(r,' href="').concat(o.url(t.data,e),'">').concat(n.join(""),"</a>")}(e,n,c);case u.label:return function(e,t){return "<span ".concat(a(e.data),">").concat(t.join(""),"</span>")}(n,c);case u.span:return function(e){return e?i(e).replace(/\n/g,"<br />"):""}(r);default:return ""}}function a(e){return e.label?' class="'.concat(e.label,'"'):""}function l(e,t,n){return "<".concat(e).concat(a(t),">").concat(n.join(""),"</").concat(e,">")}e.exports={asText:function(e,t){return r.asText(e,t)},asHtml:function(e,t,n){return r.serialize(e,c.bind(null,t),n).join("")},Elements:u};},function(e,t,n){e.exports=function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r});},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0});},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=9)}([function(e,t,n){var r=n(3);e.exports=function(e){return function t(n){return 0===arguments.length||r(n)?t:e.apply(this,arguments)}};},function(e,t,n){var r=n(0),o=n(3);e.exports=function(e){return function t(n,i){switch(arguments.length){case 0:return t;case 1:return o(n)?t:r((function(t){return e(n,t)}));default:return o(n)&&o(i)?t:o(n)?r((function(t){return e(t,i)})):o(i)?r((function(t){return e(n,t)})):e(n,i)}}};},function(e,t,n){var r;function o(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(t,"__esModule",{value:!0}),t.PRIORITIES=t.NODE_TYPES=void 0;var i={heading1:"heading1",heading2:"heading2",heading3:"heading3",heading4:"heading4",heading5:"heading5",heading6:"heading6",paragraph:"paragraph",preformatted:"preformatted",strong:"strong",em:"em",listItem:"list-item",oListItem:"o-list-item",list:"group-list-item",oList:"group-o-list-item",image:"image",embed:"embed",hyperlink:"hyperlink",label:"label",span:"span"};t.NODE_TYPES=i;var u=(o(r={},i.heading1,4),o(r,i.heading2,4),o(r,i.heading3,4),o(r,i.heading4,4),o(r,i.heading5,4),o(r,i.heading6,4),o(r,i.paragraph,3),o(r,i.preformatted,5),o(r,i.strong,6),o(r,i.em,6),o(r,i.oList,1),o(r,i.list,1),o(r,i.listItem,1),o(r,i.oListItem,1),o(r,i.image,1),o(r,i.embed,1),o(r,i.hyperlink,3),o(r,i.label,4),o(r,i.span,7),r);t.PRIORITIES=u;},function(e,t){e.exports=function(e){return null!=e&&"object"==typeof e&&!0===e["@@functional/placeholder"]};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r=d(n(12)),o=d(n(15)),i=d(n(16)),u=d(n(17)),c=d(n(21)),a=d(n(7)),l=n(23),f=n(2),s=n(8);function d(e){return e&&e.__esModule?e:{default:e}}function p(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function h(e){return function(e,t){return t.reduce((function(e,t){var n=(0, c.default)(e);if(n){if(n.some((function(e){return e.isParentOf(t)})))return (0, u.default)(e).concat([n.concat(t)]);var r=(0, c.default)(n);return r&&function(e,t){return e.end>=t.start}(r,t)?(0, u.default)(e).concat([n.concat(t)]):e.concat([[t]])}return [[t]]}),[])}(0,(0, i.default)([function(e,t){return e.start-t.start},function(e,t){return e.end-t.end}],e))}function y(e){if(0===e.length)throw new Error("Unable to elect node on empty list");var t=function(e){return function(e){if(Array.isArray(e))return e}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}(e.sort((function(e,t){if(e.isParentOf(t))return -1;if(t.isParentOf(e))return 1;var n=f.PRIORITIES[e.type]-f.PRIORITIES[t.type];return 0===n?e.text.length-t.text.length:n})));return {elected:t[0],others:t.slice(1)}}function v(e,t,n){if(t.length>0)return function(e,t,n){return t.reduce((function(r,o,i){var u=[],c=0===i&&o.start>n.lower,a=i===t.length-1&&n.upper>o.end;if(c){var l=new s.TextNode(n.lower,o.start,e.slice(n.lower,o.start));u=u.concat(l);}else{var f=t[i-1];if(f&&o.start>f.end){var d=e.slice(f.end,o.start),p=new s.TextNode(f.end,o.start,d);u=u.concat(p);}}if(u=u.concat(o),a){var h=new s.TextNode(o.end,n.upper,e.slice(o.end,n.upper));u=u.concat(h);}return r.concat(u)}),[])}(e,m(e,t),n);var r=e.slice(n.lower,n.upper);return [new s.TextNode(n.lower,n.upper,r)]}function m(e,t){var n=h((0, o.default)((function(e){return e.start}),t)).map(y),i=(0, r.default)(n.map((function(t){return function(e,t){var n=t.others.reduce((function(n,r){var o=n.inner,i=n.outer,u=function(e,t,n){return n.start<t.start?{inner:s.SpanNode.slice(n,t.start,n.end,e),outer:s.SpanNode.slice(n,n.start,t.start,e)}:n.end>t.end?{inner:s.SpanNode.slice(n,n.start,t.end,e),outer:s.SpanNode.slice(n,t.end,n.end,e)}:{inner:n}}(e,t.elected,r);return {inner:o.concat(u.inner),outer:u.outer?i.concat(u.outer):i}}),{inner:[],outer:[]}),r=n.inner,o=n.outer;return [t.elected.setChildren(v(e,r,t.elected.boundaries()))].concat(m(e,o))}(e,t)})));return (0, o.default)((function(e){return e.start}),i)}var b=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e);}var t,n;return t=e,(n=[{key:"fromRichText",value:function(e){return {key:(0, a.default)(),children:e.reduce((function(e,t,n){if(l.RichTextBlock.isEmbedBlock(t.type)||l.RichTextBlock.isImageBlock(t.type))return e.concat(new s.BlockNode(t.type,t));var r=function(e){var t=e.spans.map((function(t){var n=e.text.slice(t.start,t.end);return new s.SpanNode(t.start,t.end,t.type,n,[],t)})),n={lower:0,upper:e.text.length};return v(e.text,t,n)}(t),o=e[e.length-1];if(l.RichTextBlock.isListItem(t.type)&&o&&o instanceof s.ListBlockNode){var i=new s.ListItemBlockNode(t,r),c=o.addChild(i);return (0, u.default)(e).concat(c)}if(l.RichTextBlock.isOrderedListItem(t.type)&&o&&o instanceof s.OrderedListBlockNode){var a=new s.OrderedListItemBlockNode(t,r),f=o.addChild(a);return (0, u.default)(e).concat(f)}if(l.RichTextBlock.isListItem(t.type)){var d=new s.ListItemBlockNode(t,r),p=new s.ListBlockNode(l.RichTextBlock.emptyList(),[d]);return e.concat(p)}if(l.RichTextBlock.isOrderedListItem(t.type)){var h=new s.OrderedListItemBlockNode(t,r),y=new s.OrderedListBlockNode(l.RichTextBlock.emptyOrderedList(),[h]);return e.concat(y)}return e.concat(new s.BlockNode(t.type,t,r))}),[])}}}])&&p(t,n),e}();t.default=b;},function(e,t){e.exports=Array.isArray||function(e){return null!=e&&e.length>=0&&"[object Array]"===Object.prototype.toString.call(e)};},function(e,t){e.exports=function(e){return "[object String]"===Object.prototype.toString.call(e)};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(){var e=(new Date).getTime();return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,(function(t){var n=(e+16*Math.random())%16|0;return e=Math.floor(e/16),("x"==t?n:3&n|8).toString(16)}))};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.ListBlockNode=t.OrderedListBlockNode=t.OrderedListItemBlockNode=t.ListItemBlockNode=t.BlockNode=t.TextNode=t.SpanNode=t.Node=void 0;var r,o=(r=n(7))&&r.__esModule?r:{default:r},i=n(2);function u(e){return (u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function c(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}function a(e,t,n){return t&&c(e.prototype,t),n&&c(e,n),e}function l(e,t){return !t||"object"!==u(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}(e):t}function f(e){return (f=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function s(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&function(e,t){(Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t);}(e,t);}function d(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var p=function e(t,n,r){d(this,e),this.key=(0, o.default)(),this.type=t,this.element=n,this.children=r;};t.Node=p;var h=function(e){function t(e,n,r,o,i,u){var c;return d(this,t),(c=l(this,f(t).call(this,r,u,i))).start=e,c.end=n,c.text=o,c.children=i,c}return s(t,p),a(t,[{key:"boundaries",value:function(){return {lower:this.start,upper:this.end}}},{key:"isParentOf",value:function(e){return this.start<=e.start&&this.end>=e.end}},{key:"setChildren",value:function(e){return new t(this.start,this.end,this.type,this.text,e,this.element)}}],[{key:"slice",value:function(e,n,r,o){return new t(n,r,e.type,o.slice(n,r),e.children,e.element)}}]),t}();t.SpanNode=h;var y=function(e){function t(e,n,r){d(this,t);var o={type:i.NODE_TYPES.span,start:e,end:n,text:r};return l(this,f(t).call(this,e,n,i.NODE_TYPES.span,r,[],o))}return s(t,h),t}();t.TextNode=y;var v=function(e){function t(e,n){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:[];return d(this,t),l(this,f(t).call(this,e,n,r))}return s(t,p),t}();t.BlockNode=v;var m=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.listItem,e,n))}return s(t,v),t}();t.ListItemBlockNode=m;var b=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.oListItem,e,n))}return s(t,v),t}();t.OrderedListItemBlockNode=b;var g=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.oList,e,n))}return s(t,v),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.OrderedListBlockNode=g;var x=function(e){function t(e,n){return d(this,t),l(this,f(t).call(this,i.NODE_TYPES.list,e,n))}return s(t,v),a(t,[{key:"addChild",value:function(e){var n=this.children.concat(e);return new t(this.element,n)}}]),t}();t.ListBlockNode=x;},function(e,t,n){e.exports=n(10);},function(e,t,n){var r=c(n(11)),o=c(n(4)),i=c(n(24)),u=n(2);function c(e){return e&&e.__esModule?e:{default:e}}e.exports={asText:r.default,asTree:o.default.fromRichText,serialize:i.default,Elements:u.NODE_TYPES};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0,t.default=function(e,t){var n="string"==typeof t?t:" ";return e.map((function(e){return e.text})).join(n)};},function(e,t,n){var r=n(0)(n(13)(!0));e.exports=r;},function(e,t,n){var r=n(14);e.exports=function(e){return function t(n){for(var o,i,u,c=[],a=0,l=n.length;a<l;){if(r(n[a]))for(u=0,i=(o=e?t(n[a]):n[a]).length;u<i;)c[c.length]=o[u],u+=1;else c[c.length]=n[a];a+=1;}return c}};},function(e,t,n){var r=n(0),o=n(5),i=n(6),u=r((function(e){return !!o(e)||!!e&&"object"==typeof e&&!i(e)&&(1===e.nodeType?!!e.length:0===e.length||e.length>0&&e.hasOwnProperty(0)&&e.hasOwnProperty(e.length-1))}));e.exports=u;},function(e,t,n){var r=n(1)((function(e,t){return Array.prototype.slice.call(t,0).sort((function(t,n){var r=e(t),o=e(n);return r<o?-1:r>o?1:0}))}));e.exports=r;},function(e,t,n){var r=n(1)((function(e,t){return Array.prototype.slice.call(t,0).sort((function(t,n){for(var r=0,o=0;0===r&&o<e.length;)r=e[o](t,n),o+=1;return r}))}));e.exports=r;},function(e,t,n){var r=n(18)(0,-1);e.exports=r;},function(e,t,n){var r=n(19),o=n(20)(r("slice",(function(e,t,n){return Array.prototype.slice.call(n,e,t)})));e.exports=o;},function(e,t,n){var r=n(5);e.exports=function(e,t){return function(){var n=arguments.length;if(0===n)return t();var o=arguments[n-1];return r(o)||"function"!=typeof o[e]?t.apply(this,arguments):o[e].apply(o,Array.prototype.slice.call(arguments,0,n-1))}};},function(e,t,n){var r=n(0),o=n(1),i=n(3);e.exports=function(e){return function t(n,u,c){switch(arguments.length){case 0:return t;case 1:return i(n)?t:o((function(t,r){return e(n,t,r)}));case 2:return i(n)&&i(u)?t:i(n)?o((function(t,n){return e(t,u,n)})):i(u)?o((function(t,r){return e(n,t,r)})):r((function(t){return e(n,u,t)}));default:return i(n)&&i(u)&&i(c)?t:i(n)&&i(u)?o((function(t,n){return e(t,n,c)})):i(n)&&i(c)?o((function(t,n){return e(t,u,n)})):i(u)&&i(c)?o((function(t,r){return e(n,t,r)})):i(n)?r((function(t){return e(t,u,c)})):i(u)?r((function(t){return e(n,t,c)})):i(c)?r((function(t){return e(n,u,t)})):e(n,u,c)}}};},function(e,t,n){var r=n(22)(-1);e.exports=r;},function(e,t,n){var r=n(1),o=n(6),i=r((function(e,t){var n=e<0?t.length+e:e;return o(t)?t.charAt(n):t[n]}));e.exports=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.RichTextBlock=void 0;var r=n(2);function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r);}}var i=function(){function e(t,n,r){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.type=t,this.text=n,this.spans=r;}var t,n;return t=e,(n=[{key:"isEmbedBlock",value:function(e){return e===r.NODE_TYPES.embed}},{key:"isImageBlock",value:function(e){return e===r.NODE_TYPES.image}},{key:"isList",value:function(e){return e===r.NODE_TYPES.list}},{key:"isOrderedList",value:function(e){return e===r.NODE_TYPES.oList}},{key:"isListItem",value:function(e){return e===r.NODE_TYPES.listItem}},{key:"isOrderedListItem",value:function(e){return e===r.NODE_TYPES.oListItem}},{key:"emptyList",value:function(){return {type:r.NODE_TYPES.list,spans:[],text:""}}},{key:"emptyOrderedList",value:function(){return {type:r.NODE_TYPES.oList,spans:[],text:""}}}])&&o(t,n),e}();t.RichTextBlock=i;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r,o=(r=n(4))&&r.__esModule?r:{default:r},i=n(8);t.default=function(e,t,n){return o.default.fromRichText(e).children.map((function(e,r){return function(e,t,n,r){return function e(n,o){var u=n instanceof i.SpanNode?n.text:null,c=n.children.reduce((function(t,n,r){return t.concat([e(n,r)])}),[]);return r&&r(n.type,n.element,u,c,o)||t(n.type,n.element,u,c,o)}(e,n)}(e,t,r,n)}))};}]);},function(e,t,n){/*!
+ * escape-html
+ * Copyright(c) 2012-2013 TJ Holowaychuk
+ * Copyright(c) 2015 Andreas Lubbe
+ * Copyright(c) 2015 Tiancheng "Timothy" Gu
+ * MIT Licensed
+ */var r=/["'&<>]/;e.exports=function(e){var t,n=""+e,o=r.exec(n);if(!o)return n;var i="",u=0,c=0;for(u=o.index;u<n.length;u++){switch(n.charCodeAt(u)){case 34:t="&quot;";break;case 38:t="&amp;";break;case 39:t="&#39;";break;case 60:t="&lt;";break;case 62:t="&gt;";break;default:continue}c!==u&&(i+=n.substring(c,u)),c=u+1,i+=t;}return c!==u?i+n.substring(c,u):i};}])}));
+});
+
+var PrismicDom = unwrapExports(prismicDom_min);
+
 const apiURL = 'https://ionicframeworkcom.prismic.io/api/v2';
 const cacheLife = 20 * 60 * 1000; // 20 mins
 let ads;
@@ -10117,7 +10337,7 @@ const hrefClimber = (el) => {
     }
 };
 
-const internalAdCss = "internal-ad{max-width:148px;display:block;margin:48px 0 0}internal-ad p{font-size:13px;line-height:19px;font-weight:400;letter-spacing:0.02em;color:var(--text-color--dark);-webkit-transition:.2s color;transition:.2s color}internal-ad a:hover p{color:var(--text-color)}@media (max-width: 1233px){internal-ad{display:none}}";
+const internalAdCss = "internal-ad{max-width:148px;display:block;margin:48px 0 0}internal-ad p{font-size:13px;line-height:19px;font-weight:400;letter-spacing:0.02em;color:var(--text-color--dark);transition:.2s color}internal-ad a:hover p{color:var(--text-color)}@media (max-width: 1233px){internal-ad{display:none}}";
 
 class InternalAd {
     constructor(hostRef) {
@@ -10160,7 +10380,7 @@ class InternalAd {
 
 const FancyUnderline = (_, children) => (h("span", { class: "ui-fancy-underline" }, children));
 
-const landingPageCss = ".sc-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-landing-page-h{overflow-x:hidden;display:block}section.sc-landing-page{margin-bottom:196px}.hero.sc-landing-page{overflow-x:hidden;position:relative;margin-bottom:96px}.hero.sc-landing-page hgroup.sc-landing-page{position:relative}.hero__background.sc-landing-page{position:absolute;bottom:100px;width:1800px;height:1800px;left:calc(calc((1800px - 100%) / -2) - 50px);background:#F6F9FC;-webkit-transform:rotate(29deg) skewX(-30deg);transform:rotate(29deg) skewX(-30deg);z-index:-1}.hero.sc-landing-page img.sc-landing-page{max-width:100%}.hero__heading.sc-landing-page{padding-top:120px}.hero__heading.sc-landing-page h1.sc-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-display)}.hero__heading.sc-landing-page h3.sc-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;font-family:var(--f-family-text);letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__platforms.sc-landing-page{height:16px;margin-top:16px}.hero__graphic.sc-landing-page{padding-top:96px}.hero__buttons.sc-landing-page .ui-button.sc-landing-page{-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-landing-page .ui-button.sc-landing-page:first-child{margin-right:16px}.hero__buttons.sc-landing-page .btn-white.sc-landing-page{background:white;-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.feature__register.sc-landing-page{position:absolute;white-space:nowrap;top:50px;width:auto;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;z-index:1;padding:4px;border-radius:16px;background:white;color:var(--c-indigo-90);font-size:12px;-webkit-box-shadow:0px 1px 4px rgba(0, 0, 0, 0.1);box-shadow:0px 1px 4px rgba(0, 0, 0, 0.1)}.feature__register__text.sc-landing-page{display:inline-block}.feature__register__text.sc-landing-page .text__content.sc-landing-page{padding:0 8px}.feature__register__tag.sc-landing-page{display:inline-block;white-space:nowrap;padding:4px 6px;color:white;background:#FFB762;border-radius:var(--radii-3);font-size:var(--f-size-0);font-weight:bold;text-transform:uppercase;letter-spacing:var(--f-tracking-super)}.feature__register.sc-landing-page:hover,.feature__register.sc-landing-page:active,.feature__register.sc-landing-page:focus,.feature__register.sc-landing-page:focus-within{border-bottom-color:transparent}.points.sc-landing-page .ui-paragraph.sc-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-landing-page{width:64px;margin-left:-10px}.points.sc-landing-page h2.sc-landing-page{margin:0}.section--getting-started.sc-landing-page hgroup.sc-landing-page{margin-bottom:96px}.section--getting-started.sc-landing-page hgroup.sc-landing-page .ui-heading.sc-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-landing-page{padding-bottom:120px}.section--getting-started__step.sc-landing-page .apple.sc-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-landing-page .android.sc-landing-page{margin-top:8px;margin-left:12px;height:26px}@media (max-width: 768px){.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{display:none !important}}.section--getting-started__step.sc-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-landing-page:last-child .ui-col.sc-landing-page:first-child:after{display:none}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{content:\"\";display:block;margin-top:12px !important;height:calc(100% - 42px);width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-landing-page .ui-col.sc-landing-page .ui-heading.sc-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-landing-page img.sc-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--native-features.sc-landing-page img.sc-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-landing-page .ui-grid.sc-landing-page{-webkit-column-gap:16px;-moz-column-gap:16px;column-gap:16px;row-gap:16px}.section--your-framework.sc-landing-page .framework.sc-landing-page{height:200px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.section--your-framework.sc-landing-page .framework.sc-landing-page img.sc-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-landing-page hgroup.sc-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-landing-page img.sc-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-landing-page img.sc-landing-page:last-child{margin-right:0}.ui-fancy-underline.sc-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-landing-page .ui-tab.sc-landing-page{min-height:300px}.ui-tabs.sc-landing-page .ui-tab-bar.sc-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:16px}.ui-tabs.sc-landing-page .ui-tab-bar__button.sc-landing-page{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-landing-page .ui-tab-bar__button--selected.sc-landing-page{background:#617184;color:white;border-radius:6px}.cordova-cta.sc-landing-page{padding-top:10px;text-decoration:none;font-family:Inter;font-style:normal;font-weight:normal;font-size:14px;line-height:160%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;letter-spacing:0px}.cordova-cta.sc-landing-page a.sc-landing-page{color:#33ACFF}div.cordova-cta.sc-landing-page a.sc-landing-page:hover{text-decoration:none}";
+const landingPageCss = ".sc-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-landing-page-h{overflow-x:hidden;display:block}section.sc-landing-page{margin-bottom:196px}.hero.sc-landing-page{overflow-x:hidden;position:relative;margin-bottom:96px}.hero.sc-landing-page hgroup.sc-landing-page{position:relative}.hero__background.sc-landing-page{position:absolute;bottom:100px;width:1800px;height:1800px;left:calc(calc((1800px - 100%) / -2) - 50px);background:#F6F9FC;transform:rotate(29deg) skewX(-30deg);z-index:-1}.hero.sc-landing-page img.sc-landing-page{max-width:100%}.hero__heading.sc-landing-page{padding-top:120px}.hero__heading.sc-landing-page h1.sc-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-display)}.hero__heading.sc-landing-page h3.sc-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;font-family:var(--f-family-text);letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__platforms.sc-landing-page{height:16px;margin-top:16px}.hero__graphic.sc-landing-page{padding-top:96px}.hero__buttons.sc-landing-page .ui-button.sc-landing-page{box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-landing-page .ui-button.sc-landing-page:first-child{margin-right:16px}.hero__buttons.sc-landing-page .btn-white.sc-landing-page{background:white;box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.feature__register.sc-landing-page{position:absolute;white-space:nowrap;top:50px;width:auto;display:flex;align-items:center;z-index:1;padding:4px;border-radius:16px;background:white;color:var(--c-indigo-90);font-size:12px;box-shadow:0px 1px 4px rgba(0, 0, 0, 0.1)}.feature__register__text.sc-landing-page .text__content.sc-landing-page{padding:0 8px}.feature__register__tag.sc-landing-page{display:inline-block;white-space:nowrap;padding:4px 6px;color:white;background:#FFB762;border-radius:var(--radius-3);font-size:var(--f-size-0);font-weight:bold;text-transform:uppercase;letter-spacing:var(--f-tracking-super)}.feature__register.sc-landing-page:hover,.feature__register.sc-landing-page:active,.feature__register.sc-landing-page:focus,.feature__register.sc-landing-page:focus-within{border-bottom-color:transparent}.points.sc-landing-page .ui-paragraph.sc-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-landing-page{width:64px;margin-left:-10px}.points.sc-landing-page h2.sc-landing-page{margin:0}.section--getting-started.sc-landing-page hgroup.sc-landing-page{margin-bottom:96px}.section--getting-started.sc-landing-page hgroup.sc-landing-page .ui-heading.sc-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-landing-page{padding-bottom:120px}.section--getting-started__step.sc-landing-page .apple.sc-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-landing-page .android.sc-landing-page{margin-top:8px;margin-left:12px;height:26px}@media (max-width: 768px){.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{display:none !important}}.section--getting-started__step.sc-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-landing-page:last-child .ui-col.sc-landing-page:first-child:after{display:none}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{content:\"\";display:block;margin-top:12px !important;height:calc(100% - 42px);width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-landing-page .ui-col.sc-landing-page .ui-heading.sc-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-landing-page img.sc-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--native-features.sc-landing-page img.sc-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-landing-page .ui-grid.sc-landing-page{column-gap:16px;row-gap:16px}.section--your-framework.sc-landing-page .framework.sc-landing-page{height:200px;display:flex;align-items:center;justify-content:center}.section--your-framework.sc-landing-page .framework.sc-landing-page img.sc-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-landing-page hgroup.sc-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-landing-page img.sc-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-landing-page img.sc-landing-page:last-child{margin-right:0}.ui-fancy-underline.sc-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-landing-page .ui-tab.sc-landing-page{min-height:300px}.ui-tabs.sc-landing-page .ui-tab-bar.sc-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:flex;flex-direction:row;padding:16px}.ui-tabs.sc-landing-page .ui-tab-bar__button.sc-landing-page{cursor:pointer;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-landing-page .ui-tab-bar__button--selected.sc-landing-page{background:#617184;color:white;border-radius:6px}.cordova-cta.sc-landing-page{padding-top:10px;text-decoration:none;font-family:Inter;font-style:normal;font-weight:normal;font-size:14px;line-height:160%;display:flex;align-items:center;letter-spacing:0px}.cordova-cta.sc-landing-page a.sc-landing-page{color:#33ACFF}div.cordova-cta.sc-landing-page a.sc-landing-page:hover{text-decoration:none}";
 
 class LandingPage {
     constructor(hostRef) {
@@ -10168,7 +10388,7 @@ class LandingPage {
         this.selectedCodeTab = 'notifications';
     }
     render() {
-        return (h(Host, null, h(MetaHead$1, null), h("section", { class: "hero" }, h("div", { class: "hero__background" }), h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("hgroup", { class: "hero__heading" }, h("a", { class: "feature__register", href: "https://ionicframework.com/resources/webinars/hybrid-app-development-redefined", target: "_blank", rel: "noopener nofollow" }, h("div", { class: "feature__register__tag" }, "Live demo"), h(Breakpoint, { mobile: false, tablet: false, desktop: true, inlineBlock: true, class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar Wed, July 22nd ", h("span", { style: { 'letter-spacing': '0' } }, "->"))), h(Breakpoint, { mobile: false, tablet: true, desktop: false, inlineBlock: true, class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar July 22nd", h("span", { style: { 'letter-spacing': '0' } }, "->"))), h(Breakpoint, { mobile: true, tablet: false, desktop: false, inlineBlock: true, class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar ", h("span", { style: { 'letter-spacing': '0' } }, "->")))), h(Heading, { level: 1 }, "A cross-platform native runtime for web apps."), h(Heading, { level: 3 }, "Capacitor turns any web app into a native app so you can run one app across iOS, Android, and the Web with the same code."), h("div", { class: "hero__buttons" }, h(AnchorButton, { href: "/docs/getting-started", id: "get-started" }, "Get Started"), h(AnchorButton, { href: "/docs", id: "explore-docs", class: "btn-white" }, "Explore Docs"))), h("div", { class: "cordova-cta" }, h("a", { href: "/cordova" }, "Migrating from Cordova ", "->")), h("img", { class: "hero__platforms", src: "/assets/img/supported-icons.png", alt: "Supported platforms" })), h(Col, { md: 6, sm: 6, xs: 6, cols: 12, class: "hero__graphic" }, h("img", { src: "/assets/img/landing/hero-graphic.png", alt: "Capacitor Architecture Diagram" }))))), h(GettingStartedSection$1, { selectedCodeTab: this.selectedCodeTab, setSelectedCodeTab: (tab) => { this.selectedCodeTab = tab; } }), h(ResponsiveContainer, null, h("section", { class: "section--web-apps-to-native" }, h("hgroup", null, h(Heading, { level: 3 }, "Connect web apps to", h("br", null), h(FancyUnderline, null, "native functionality."))), h(Grid, null, h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/universal-apps.png", alt: "Universal apps" }), h(Heading, { level: 4 }, "Universal apps"), h(Paragraph, null, "Build web-based applications that run equally well across iOS, Android, and as Progressive Web Apps.")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-access.png", alt: "Native access" }), h(Heading, { level: 4 }, "Native access"), h(Paragraph, null, "Access the full Native SDKs on each platform, and easily deploy to the App Stores (and the web).")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-pwas.png", alt: "Native PWAs" }), h(Heading, { level: 4 }, "Native PWAs"), h(Paragraph, null, "Add custom native functionality with a simple Plugin API, or use existing Cordova plugins with our compatibility layer.")))), h("section", { class: "section--native-features" }, h("hgroup", null, h(Heading, { level: 3 }, "Cross-platform core", h("br", null), h(FancyUnderline, null, "native features"))), h(Grid, null, [
+        return (h(Host, null, h(MetaHead$2, null), h("section", { class: "hero" }, h("div", { class: "hero__background" }), h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("hgroup", { class: "hero__heading" }, h("a", { class: "feature__register", href: "https://ionicframework.com/resources/webinars/hybrid-app-development-redefined", target: "_blank", rel: "noopener nofollow" }, h("div", { class: "feature__register__tag" }, "Live demo"), h(Breakpoint, { sm: true, display: "inline-block", class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar Wed, July 22nd ", h("span", { style: { 'letter-spacing': '0' } }, "->"))), h(Breakpoint, { xs: true, sm: false, display: 'inline-block', class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar ", h("span", { style: { 'letter-spacing': '0' } }, "->")))), h(Heading, { level: 1 }, "A cross-platform native runtime for web apps."), h(Heading, { level: 3 }, "Capacitor turns any web app into a native app so you can run one app across iOS, Android, and the Web with the same code."), h("div", { class: "hero__buttons" }, h(AnchorButton, { href: "/docs/getting-started", id: "get-started" }, "Get Started"), h(AnchorButton, { href: "/docs", id: "explore-docs", class: "btn-white" }, "Explore Docs"))), h("div", { class: "cordova-cta" }, h("a", { href: "/cordova" }, "Migrating from Cordova ", "->")), h("img", { class: "hero__platforms", src: "/assets/img/supported-icons.png", alt: "Supported platforms" })), h(Col, { md: 6, sm: 6, xs: 6, cols: 12, class: "hero__graphic" }, h("img", { src: "/assets/img/landing/hero-graphic.png", alt: "Capacitor Architecture Diagram" }))))), h(GettingStartedSection$2, { selectedCodeTab: this.selectedCodeTab, setSelectedCodeTab: (tab) => { this.selectedCodeTab = tab; } }), h(ResponsiveContainer, null, h("section", { class: "section--web-apps-to-native" }, h("hgroup", null, h(Heading, { level: 3 }, "Connect web apps to", h("br", null), h(FancyUnderline, null, "native functionality."))), h(Grid, null, h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/universal-apps.png", alt: "Universal apps" }), h(Heading, { level: 4 }, "Universal apps"), h(Paragraph, null, "Build web-based applications that run equally well across iOS, Android, and as Progressive Web Apps.")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-access.png", alt: "Native access" }), h(Heading, { level: 4 }, "Native access"), h(Paragraph, null, "Access the full Native SDKs on each platform, and easily deploy to the App Stores (and the web).")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-pwas.png", alt: "Native PWAs" }), h(Heading, { level: 4 }, "Native PWAs"), h(Paragraph, null, "Add custom native functionality with a simple Plugin API, or use existing Cordova plugins with our compatibility layer.")))), h("section", { class: "section--native-features" }, h("hgroup", null, h(Heading, { level: 3 }, "Cross-platform core", h("br", null), h(FancyUnderline, null, "native features"))), h(Grid, null, [
             {
                 key: 'camera',
                 name: 'Camera',
@@ -10236,7 +10456,7 @@ class LandingPage {
         "$attrsToReflect$": []
     }; }
 }
-const GettingStartedSection$1 = ({ selectedCodeTab, setSelectedCodeTab }) => (h("section", { class: "section--getting-started" }, h(ResponsiveContainer, null, h("hgroup", null, h(Heading, { level: 2 }, "Getting started is easy.")), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "01"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Drop Capacitor into any existing web app.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
+const GettingStartedSection$2 = ({ selectedCodeTab, setSelectedCodeTab }) => (h("section", { class: "section--getting-started" }, h(ResponsiveContainer, null, h("hgroup", null, h(Heading, { level: 2 }, "Getting started is easy.")), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "01"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Drop Capacitor into any existing web app.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
 npm install @capacitor/cli @capacitor/core
 npx cap init
 ` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "02"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Install the native platforms you want to target."), h("img", { src: "/assets/img/landing/apple.png", alt: "Apple", class: "apple" }), h("img", { src: "/assets/img/landing/android.png", alt: "Android", class: "android" })), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("code-snippet", { language: "shell-session", code: `
@@ -10293,7 +10513,7 @@ public class MyAwesomePlugin: CAPPlugin {
   }
 }
 ` }))))))));
-const MetaHead$1 = () => (h(Helmet, null, h("title", null, "Capacitor: Cross-platform native runtime for web apps"), h("meta", { name: "description", content: 'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript' }), h("meta", { property: "og:description", content: "Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript" }), h("meta", { property: "og:site_name", content: "Capacitor" }), h("meta", { name: "twitter:card", content: "summary_large_image" }), h("meta", { name: "twitter:site", content: "@capacitorjs" }), h("meta", { name: "twitter:creator", content: "capacitorjs" }), h("meta", { name: "twitter:title", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:description", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:image", content: "https://capacitorjs.com/assets/img/og.png" }), h("meta", { property: "og:image", content: "https://capacitorjs.com/assets/img/og.png" }), h("meta", { property: "og:url", content: "https://capacitorjs.com/" })));
+const MetaHead$2 = () => (h(Helmet, null, h("title", null, "Capacitor: Cross-platform native runtime for web apps"), h("meta", { name: "description", content: 'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript' }), h("meta", { property: "og:description", content: "Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript" }), h("meta", { property: "og:site_name", content: "Capacitor" }), h("meta", { name: "twitter:card", content: "summary_large_image" }), h("meta", { name: "twitter:site", content: "@capacitorjs" }), h("meta", { name: "twitter:creator", content: "capacitorjs" }), h("meta", { name: "twitter:title", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:description", content: "Build cross-platform apps with web technologies" }), h("meta", { name: "twitter:image", content: "https://capacitorjs.com/assets/img/og.png" }), h("meta", { property: "og:image", content: "https://capacitorjs.com/assets/img/og.png" }), h("meta", { property: "og:url", content: "https://capacitorjs.com/" })));
 
 const lowerContentNavCss = "lower-content-nav{display:block;overflow:hidden}";
 
@@ -10349,7 +10569,7 @@ class MoreButton {
     }; }
 }
 
-const siteBackdropCss = ".sc-site-backdrop-h{position:fixed;top:0;height:100vh;left:0;right:0;background:rgba(0, 0, 0, 0.1);cursor:pointer;opacity:0;pointer-events:none;-webkit-transition:0.4s opacity;transition:0.4s opacity;z-index:-1}@media screen and (max-width: 768px){.site-backdrop--visible.sc-site-backdrop-h{opacity:1;pointer-events:all}}";
+const siteBackdropCss = ".sc-site-backdrop-h{position:fixed;top:0;height:100vh;left:0;right:0;background:rgba(0, 0, 0, 0.1);cursor:pointer;opacity:0;pointer-events:none;transition:0.4s opacity;z-index:-1}@media screen and (max-width: 768px){.site-backdrop--visible.sc-site-backdrop-h{opacity:1;pointer-events:all}}";
 
 class MoreButton$1 {
     constructor(hostRef) {
@@ -10624,15 +10844,16 @@ const WhitepaperResourceCard = (props) => {
 };
 const HeroImage = ({ resource }) => (h("img", { loading: 'lazy', class: "resource-card__featured-image", src: resource.heroImage, alt: resource.title }));
 
-const moreResourcesCss = ".sc-more-resources-h{display:block}.resource-meta.sc-more-resources{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;letter-spacing:var(--letter-spacing-5);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.resource-meta.sc-more-resources .type.sc-more-resources{font-weight:500;font-size:10px;color:var(--c-carbon-900);text-transform:uppercase;margin-right:24px}@media (max-width: 768px){.resource-meta.sc-more-resources .type.sc-more-resources{margin-right:0}}.resource-meta.sc-more-resources .tags.sc-more-resources{color:var(--c-indigo-600);font-size:10px;text-transform:uppercase}.resource-meta.sc-more-resources .tags.sc-more-resources span.sc-more-resources{display:inline-block}.resource-meta.sc-more-resources .tags.sc-more-resources .sep.sc-more-resources{display:inline-block;height:11px;width:1px;margin:0 6px -2px;background:var(--c-indigo-300)}@media (max-width: 768px){.resource-meta.sc-more-resources{-ms-flex-direction:column;flex-direction:column;gap:8px}}.resource-card.sc-more-resources{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100%}.resource-card.sc-more-resources a.sc-more-resources{color:var(--c-carbon-900)}.resource-card.sc-more-resources h1.sc-more-resources,.resource-card.sc-more-resources h2.sc-more-resources,.resource-card.sc-more-resources h3.sc-more-resources,.resource-card.sc-more-resources h4.sc-more-resources,.resource-card.sc-more-resources h5.sc-more-resources{margin-top:0}.resource-card.sc-more-resources p.sc-more-resources{color:var(--c-indigo-900);font-size:16px;line-height:160%}.resource-card.sc-more-resources .resource-meta.sc-more-resources{margin-bottom:12px}.resource-card__content.sc-more-resources{-ms-flex:1;flex:1}.resource-card--meta-top.sc-more-resources .resource-meta.sc-more-resources{margin-bottom:24px}.resource-card__image.sc-more-resources{display:block;overflow:hidden;margin-bottom:24px;line-height:0}.resource-card__featured-image.sc-more-resources{max-width:100%;-webkit-transition:200ms -webkit-transform cubic-bezier(0.32, 0.72, 0, 1);transition:200ms -webkit-transform cubic-bezier(0.32, 0.72, 0, 1);transition:200ms transform cubic-bezier(0.32, 0.72, 0, 1);transition:200ms transform cubic-bezier(0.32, 0.72, 0, 1), 200ms -webkit-transform cubic-bezier(0.32, 0.72, 0, 1)}.resource-card__featured-image.sc-more-resources:hover{-webkit-transform:scale(1.05);transform:scale(1.05)}.resource-card--ad.sc-more-resources{background:var(--c-indigo-200);padding:30px}.resource-author-item.sc-more-resources .resource-author.sc-more-resources{display:grid;grid-template-columns:32px 1fr;-webkit-column-gap:8px;-moz-column-gap:8px;column-gap:8px}.resource-author-item.sc-more-resources .author-info.sc-more-resources{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}.resource-author-item.sc-more-resources .author-avatar.sc-more-resources{max-height:32px;border-radius:100%}.resource-author-item.sc-more-resources .author-name.sc-more-resources{font-size:14px;color:var(--c-carbon-900)}.resource-author-item.sc-more-resources .author-title.sc-more-resources{font-size:12px;color:var(--c-indigo-600)}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources{display:block;line-height:32px}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources .author-name.sc-more-resources{display:inline-block;vertical-align:middle;font-size:16px;color:var(--c-indigo-700)}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources .author-name.sc-more-resources:after{content:\", \"}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources .author-title.sc-more-resources{display:inline-block;vertical-align:middle;font-size:16px;margin-left:2px;color:var(--c-indigo-700)}";
+const moreResourcesCss = ".sc-more-resources-h{display:block}.resource-meta.sc-more-resources{display:flex;flex-direction:row;letter-spacing:var(--letter-spacing-5);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.resource-meta.sc-more-resources .type.sc-more-resources{font-weight:500;font-size:10px;color:var(--c-carbon-900);text-transform:uppercase;margin-right:24px}@media (max-width: 768px){.resource-meta.sc-more-resources .type.sc-more-resources{margin-right:0}}.resource-meta.sc-more-resources .tags.sc-more-resources{color:var(--c-indigo-600);font-size:10px;text-transform:uppercase}.resource-meta.sc-more-resources .tags.sc-more-resources span.sc-more-resources{display:inline-block}.resource-meta.sc-more-resources .tags.sc-more-resources .sep.sc-more-resources{display:inline-block;height:11px;width:1px;margin:0 6px -2px;background:var(--c-indigo-300)}@media (max-width: 768px){.resource-meta.sc-more-resources{flex-direction:column;gap:8px}}.resource-card.sc-more-resources{display:flex;flex-direction:column;height:100%}.resource-card.sc-more-resources a.sc-more-resources{color:var(--c-carbon-900)}.resource-card.sc-more-resources h1.sc-more-resources,.resource-card.sc-more-resources h2.sc-more-resources,.resource-card.sc-more-resources h3.sc-more-resources,.resource-card.sc-more-resources h4.sc-more-resources,.resource-card.sc-more-resources h5.sc-more-resources{margin-top:0}.resource-card.sc-more-resources p.sc-more-resources{color:var(--c-indigo-900);font-size:16px;line-height:160%}.resource-card.sc-more-resources .resource-meta.sc-more-resources{margin-bottom:12px}.resource-card__content.sc-more-resources{flex:1}.resource-card--meta-top.sc-more-resources .resource-meta.sc-more-resources{margin-bottom:24px}.resource-card__image.sc-more-resources{display:block;overflow:hidden;margin-bottom:24px;line-height:0}.resource-card__featured-image.sc-more-resources{max-width:100%;transition:200ms transform cubic-bezier(0.32, 0.72, 0, 1)}.resource-card__featured-image.sc-more-resources:hover{transform:scale(1.05)}.resource-card--ad.sc-more-resources{background:var(--c-indigo-200);padding:30px}.resource-author-item.sc-more-resources .resource-author.sc-more-resources{display:grid;grid-template-columns:32px 1fr;column-gap:8px}.resource-author-item.sc-more-resources .author-info.sc-more-resources{display:flex;flex-direction:column;justify-content:center}.resource-author-item.sc-more-resources .author-avatar.sc-more-resources{max-height:32px;border-radius:100%}.resource-author-item.sc-more-resources .author-name.sc-more-resources{font-size:14px;color:var(--c-carbon-900)}.resource-author-item.sc-more-resources .author-title.sc-more-resources{font-size:12px;color:var(--c-indigo-600)}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources{display:block;line-height:32px}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources .author-name.sc-more-resources{display:inline-block;vertical-align:middle;font-size:16px;color:var(--c-indigo-700)}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources .author-name.sc-more-resources:after{content:\", \"}.resource-author-item--single-line.sc-more-resources .author-info.sc-more-resources .author-title.sc-more-resources{display:inline-block;vertical-align:middle;font-size:16px;margin-left:2px;color:var(--c-indigo-700)}";
 
 class MoreResources {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.showAuthor = false;
+        this.showDescription = true;
         this.prismicEndpoint = 'https://ionicframeworkcom.cdn.prismic.io/api/v2';
     }
     async componentWillLoad() {
-        console.log('Loaded resources', this.resources);
         const client = Client(this.prismicEndpoint);
         const requests = this.resources.map(r => client.getByUID(r.type, r.uid, null));
         try {
@@ -10643,7 +10864,8 @@ class MoreResources {
         }
     }
     render() {
-        return (h(Host, null, h(Grid, null, this.docs.map(d => (h(Col, { md: 4, sm: 4, xs: 12, cols: 12, key: d.id }, h(ResourceCard, { resource: d, showDescription: false, showAuthor: false })))))));
+        const { showAuthor, showDescription } = this;
+        return (h(Host, null, h(Grid, null, this.docs.map(d => (h(Col, { md: 4, sm: 4, xs: 12, cols: 12, key: d.id }, h(ResourceCard, { resource: d, showDescription: showDescription, showAuthor: showAuthor })))))));
     }
     static get style() { return moreResourcesCss; }
     static get cmpMeta() { return {
@@ -10651,6 +10873,8 @@ class MoreResources {
         "$tagName$": "more-resources",
         "$members$": {
             "resources": [16],
+            "showAuthor": [4, "show-author"],
+            "showDescription": [4, "show-description"],
             "prismicEndpoint": [1, "prismic-endpoint"],
             "docs": [32]
         },
@@ -10660,7 +10884,7 @@ class MoreResources {
     }; }
 }
 
-const newsletterSignupCss = ".sc-newsletter-signup:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.newsletter.sc-newsletter-signup{padding:62px 0;border-top:1px solid var(--c-indigo-20)}.newsletter.sc-newsletter-signup .ui-heading.sc-newsletter-signup{font-weight:500;margin:2px 0 6px}.newsletter.sc-newsletter-signup .ui-grid.sc-newsletter-signup{-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding-right:40px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup img.sc-newsletter-signup{width:64px;height:64px;margin-right:16px;display:inline-block;vertical-align:middle}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup div.sc-newsletter-signup{-ms-flex:1;flex:1}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup h2.sc-newsletter-signup{margin:0 0 6px}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup p.sc-newsletter-signup{margin:0;letter-spacing:0;line-height:23px;font-size:14px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{position:relative;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end;margin-bottom:2px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup{font-family:\"Inter\";-ms-flex:0 0 359px;flex:0 0 359px;padding:5px 10px 5px 15px;letter-spacing:-0.02em;margin-right:8px;width:200px;min-height:calc(100% - 1px);background-color:#fff;border:1px solid var(--c-indigo-30);border-radius:6px;font-size:16px;font-weight:400;color:#070D12;letter-spacing:-0.22px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup:placeholder{color:#6D6C82}.newsletter.sc-newsletter-signup form.sc-newsletter-signup button.sc-newsletter-signup{font-family:\"Inter\";-ms-flex:0;flex:0;background-color:#119EFF;color:white;line-height:20px;letter-spacing:-0.02em;border-radius:8px;padding:15px 16px 13px 16px;margin-left:5px}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup svg.sc-newsletter-signup{margin-right:16px}.newsletter.sc-newsletter-signup .error__message.sc-newsletter-signup{position:absolute;top:100%;color:red}@media screen and (max-width: 768px){.newsletter.sc-newsletter-signup .container.sc-newsletter-signup{-ms-flex-direction:column;flex-direction:column;text-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup,.newsletter.sc-newsletter-signup form.sc-newsletter-signup{-ms-flex:0 0 100%;flex:0 0 100%}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding:0}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{margin-top:24px;width:100%;-ms-flex-pack:center;justify-content:center}}.landing-page.sc-newsletter-signup .newsletter.sc-newsletter-signup{background-color:#102331}";
+const newsletterSignupCss = ".sc-newsletter-signup:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.newsletter.sc-newsletter-signup{padding:62px 0;border-top:1px solid var(--c-indigo-20)}.newsletter.sc-newsletter-signup .ui-heading.sc-newsletter-signup{font-weight:500;margin:2px 0 6px}.newsletter.sc-newsletter-signup .ui-grid.sc-newsletter-signup{align-items:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding-right:40px;display:flex;justify-content:center}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup img.sc-newsletter-signup{width:64px;height:64px;margin-right:16px;display:inline-block;vertical-align:middle}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup div.sc-newsletter-signup{flex:1}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup h2.sc-newsletter-signup{margin:0 0 6px}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup p.sc-newsletter-signup{margin:0;letter-spacing:0;line-height:23px;font-size:14px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{position:relative;display:flex;justify-content:flex-end;margin-bottom:2px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup{font-family:\"Inter\";flex:0 0 359px;padding:5px 10px 5px 15px;letter-spacing:-0.02em;margin-right:8px;width:200px;min-height:calc(100% - 1px);background-color:#fff;border:1px solid var(--c-indigo-30);border-radius:6px;font-size:16px;font-weight:400;color:#070D12;letter-spacing:-0.22px}.newsletter.sc-newsletter-signup form.sc-newsletter-signup input.sc-newsletter-signup:placeholder{color:#6D6C82}.newsletter.sc-newsletter-signup form.sc-newsletter-signup button.sc-newsletter-signup{font-family:\"Inter\";flex:0;background-color:#119EFF;color:white;line-height:20px;letter-spacing:-0.02em;border-radius:8px;padding:15px 16px 13px 16px;margin-left:5px}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup{display:flex;align-items:center}.newsletter.sc-newsletter-signup .success__message.sc-newsletter-signup svg.sc-newsletter-signup{margin-right:16px}.newsletter.sc-newsletter-signup .error__message.sc-newsletter-signup{position:absolute;top:100%;color:red}@media screen and (max-width: 768px){.newsletter.sc-newsletter-signup .container.sc-newsletter-signup{flex-direction:column;text-align:center;align-items:center;justify-content:space-between}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup,.newsletter.sc-newsletter-signup form.sc-newsletter-signup{flex:0 0 100%}.newsletter.sc-newsletter-signup hgroup.sc-newsletter-signup{padding:0}.newsletter.sc-newsletter-signup form.sc-newsletter-signup{margin-top:24px;width:100%;justify-content:center}}.landing-page.sc-newsletter-signup .newsletter.sc-newsletter-signup{background-color:#102331}";
 
 class NewsletterSignup {
     constructor(hostRef) {
@@ -10721,14 +10945,14 @@ class NewsletterSignup {
     }; }
 }
 
-const platformBarCss = ".sc-site-platform-bar-h{display:block;background:var(--c-carbon-100);font-family:var(--f-family-text)}.platform-bar__container.sc-site-platform-bar{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:44px;-ms-flex-pack:justify;justify-content:space-between}.platform-bar__logo.sc-site-platform-bar{-webkit-margin-end:var(--space-3);margin-inline-end:var(--space-3)}.platform-bar__logo.sc-site-platform-bar svg.sc-site-platform-bar{height:24px;margin:10px 0;vertical-align:middle}.platform-bar__desc.sc-site-platform-bar{-ms-flex-line-pack:end;align-content:flex-end;color:#ccc;font-size:var(--f-size-2);line-height:160%;text-align:right;letter-spacing:var(--f-tracking-tight);margin:0 -3px 2px 0}.platform-bar__desc.sc-site-platform-bar strong.sc-site-platform-bar{color:white;font-weight:400}.platform-bar__desc.sc-site-platform-bar a.sc-site-platform-bar{color:white;text-decoration:none;white-space:nowrap}.platform-bar__desc.sc-site-platform-bar ion-icon.sc-site-platform-bar{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-webkit-margin-start:var(--space-0);margin-inline-start:var(--space-0)}";
+const platformBarCss = ".sc-site-platform-bar-h{display:block;background:var(--c-carbon-100);font-family:var(--f-family-text)}.nowrap.sc-site-platform-bar{display:inline-block;white-space:nowrap}.platform-bar__container.sc-site-platform-bar{display:flex;align-items:center;height:44px;justify-content:space-between}.platform-bar__logo.sc-site-platform-bar{margin-inline-end:var(--space-3)}.platform-bar__logo.sc-site-platform-bar svg.sc-site-platform-bar{height:24px;margin:10px 0;vertical-align:middle}.platform-bar__desc.sc-site-platform-bar{align-content:flex-end;color:#ccc;font-size:var(--f-size-2);line-height:160%;text-align:right;letter-spacing:var(--f-tracking-tight);margin:0 -3px 0 0}.platform-bar__desc.sc-site-platform-bar strong.sc-site-platform-bar{color:white;font-weight:400}.platform-bar__desc.sc-site-platform-bar a.sc-site-platform-bar{color:white;text-decoration:none;white-space:nowrap}.platform-bar__desc.sc-site-platform-bar ion-icon.sc-site-platform-bar{display:flex;align-items:center;margin-inline-start:var(--space-0)}";
 
 class PlatformBar {
     constructor(hostRef) {
         registerInstance(this, hostRef);
     }
     render() {
-        return (h(Host, null, h(ResponsiveContainer, { class: "platform-bar__container" }, h("div", { class: "platform-bar__logo" }, h("a", { href: "https://ionic.io/" }, h("svg", { width: "70", height: "24", viewBox: "0 0 70 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", role: "image", "aria-label": "Ionic Logo" }, h("path", { d: "M66.805 14.2224C66.4881 15.0748 65.6974 15.5478 64.7204 15.5478C63.2704 15.5478 62.095 14.3723 62.095 12.9223C62.095 11.4723 63.2704 10.2969 64.7204 10.2969C65.6975 10.2969 66.4638 10.7137 66.805 11.6224H69.4826C69.0392 9.29243 67.102 7.79688 64.7204 7.79688C61.8897 7.79688 59.595 10.0916 59.595 12.9223C59.595 15.753 61.8897 18.0478 64.7204 18.0478C67.102 18.0478 69.1606 16.3746 69.4826 14.2224H66.805Z", fill: "white" }), h("path", { d: "M55.778 8.05437H58.5659V17.8665H55.778V8.05437Z", fill: "white" }), h("path", { d: "M58.8464 5.68306C58.8464 6.61259 58.0928 7.36613 57.1633 7.36613C56.2338 7.36613 55.4802 6.61259 55.4802 5.68306C55.4802 4.75353 56.2338 4 57.1633 4C58.0928 4 58.8464 4.75353 58.8464 5.68306Z", fill: "white" }), h("path", { d: "M47.7925 9.25525C48.2599 8.41119 49.3224 7.83496 50.8523 7.83496C53.3258 7.83496 54.6347 9.40945 54.6347 11.7468V17.8663H51.8468V12.039C51.8468 10.8947 51.3368 10.1074 50.1044 10.1074C48.7529 10.1074 48.0049 10.9353 48.0049 12.2419V17.8581H45.217V8.05409H47.7925V9.25525Z", fill: "white" }), h("circle", { cx: "39.1897", cy: "12.9226", r: "3.87526", stroke: "white", "stroke-width": "2.5" }), h("path", { d: "M30.2975 8.05437H33.0854V17.8665H30.2975V8.05437Z", fill: "white" }), h("path", { d: "M33.3659 5.68306C33.3659 6.61259 32.6124 7.36613 31.6828 7.36613C30.7533 7.36613 29.9998 6.61259 29.9998 5.68306C29.9998 4.75353 30.7533 4 31.6828 4C32.6124 4 33.3659 4.75353 33.3659 5.68306Z", fill: "white" }), h("path", { d: "M12 17.1431C14.8336 17.1431 17.1428 14.8383 17.1428 12.0002C17.1428 9.16657 14.838 6.85735 12 6.85735C9.16192 6.85735 6.85711 9.16657 6.85711 12.0002C6.85711 14.8338 9.16633 17.1431 12 17.1431Z", fill: "white" }), h("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M12 2.88C6.96316 2.88 2.88 6.96316 2.88 12C2.88 17.0368 6.96316 21.12 12 21.12C17.0368 21.12 21.12 17.0368 21.12 12C21.12 10.6394 20.823 9.35203 20.2916 8.196L22.9084 6.99318C23.6097 8.51886 24 10.2158 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C15.4654 0 18.5895 1.47078 20.7781 3.81796L18.6717 5.78204C17.005 3.9946 14.6338 2.88 12 2.88Z", fill: "url(#paint0_radial)" }), h("path", { opacity: "0.4", d: "M20.5 11C22.433 11 24 9.433 24 7.5C24 5.567 22.433 4 20.5 4C18.567 4 17 5.567 17 7.5C17 9.433 18.567 11 20.5 11Z", fill: "#03060B" }), h("path", { d: "M20.5714 9.42843C22.4649 9.42843 24 7.89341 24 5.99986C24 4.10631 22.4649 2.57129 20.5714 2.57129C18.6778 2.57129 17.1428 4.10631 17.1428 5.99986C17.1428 7.89341 18.6778 9.42843 20.5714 9.42843Z", fill: "#03060B" }), h("path", { d: "M19.7143 7.71415C21.1344 7.71415 22.2857 6.56288 22.2857 5.14272C22.2857 3.72256 21.1344 2.57129 19.7143 2.57129C18.2941 2.57129 17.1428 3.72256 17.1428 5.14272C17.1428 6.56288 18.2941 7.71415 19.7143 7.71415Z", fill: "white" }), h("defs", null, h("radialGradient", { id: "paint0_radial", cx: "0", cy: "0", r: "1", gradientUnits: "userSpaceOnUse", gradientTransform: "translate(23 8.5) rotate(162.35) scale(11.5434 5.28499)" }, h("stop", { "stop-color": "white", "stop-opacity": "0.7" }), h("stop", { offset: "1", "stop-color": "white" })))))), h("div", { class: "platform-bar__desc" }, "See how ", h("strong", null, this.productName), " fits into the entire ", h("a", { href: "https://ionic.io/" }, "Ionic Ecosystem"), " ", h("span", { style: { 'letter-spacing': '0' } }, "->")))));
+        return (h(Host, null, h(ResponsiveContainer, { class: "platform-bar__container" }, h("div", { class: "platform-bar__logo" }, h("a", { href: "https://ionic.io/" }, h("svg", { width: "70", height: "24", viewBox: "0 0 70 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", role: "image", "aria-label": "Ionic Logo" }, h("path", { d: "M66.805 14.2224C66.4881 15.0748 65.6974 15.5478 64.7204 15.5478C63.2704 15.5478 62.095 14.3723 62.095 12.9223C62.095 11.4723 63.2704 10.2969 64.7204 10.2969C65.6975 10.2969 66.4638 10.7137 66.805 11.6224H69.4826C69.0392 9.29243 67.102 7.79688 64.7204 7.79688C61.8897 7.79688 59.595 10.0916 59.595 12.9223C59.595 15.753 61.8897 18.0478 64.7204 18.0478C67.102 18.0478 69.1606 16.3746 69.4826 14.2224H66.805Z", fill: "white" }), h("path", { d: "M55.778 8.05437H58.5659V17.8665H55.778V8.05437Z", fill: "white" }), h("path", { d: "M58.8464 5.68306C58.8464 6.61259 58.0928 7.36613 57.1633 7.36613C56.2338 7.36613 55.4802 6.61259 55.4802 5.68306C55.4802 4.75353 56.2338 4 57.1633 4C58.0928 4 58.8464 4.75353 58.8464 5.68306Z", fill: "white" }), h("path", { d: "M47.7925 9.25525C48.2599 8.41119 49.3224 7.83496 50.8523 7.83496C53.3258 7.83496 54.6347 9.40945 54.6347 11.7468V17.8663H51.8468V12.039C51.8468 10.8947 51.3368 10.1074 50.1044 10.1074C48.7529 10.1074 48.0049 10.9353 48.0049 12.2419V17.8581H45.217V8.05409H47.7925V9.25525Z", fill: "white" }), h("circle", { cx: "39.1897", cy: "12.9226", r: "3.87526", stroke: "white", "stroke-width": "2.5" }), h("path", { d: "M30.2975 8.05437H33.0854V17.8665H30.2975V8.05437Z", fill: "white" }), h("path", { d: "M33.3659 5.68306C33.3659 6.61259 32.6124 7.36613 31.6828 7.36613C30.7533 7.36613 29.9998 6.61259 29.9998 5.68306C29.9998 4.75353 30.7533 4 31.6828 4C32.6124 4 33.3659 4.75353 33.3659 5.68306Z", fill: "white" }), h("path", { d: "M12 17.1431C14.8336 17.1431 17.1428 14.8383 17.1428 12.0002C17.1428 9.16657 14.838 6.85735 12 6.85735C9.16192 6.85735 6.85711 9.16657 6.85711 12.0002C6.85711 14.8338 9.16633 17.1431 12 17.1431Z", fill: "white" }), h("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M12 2.88C6.96316 2.88 2.88 6.96316 2.88 12C2.88 17.0368 6.96316 21.12 12 21.12C17.0368 21.12 21.12 17.0368 21.12 12C21.12 10.6394 20.823 9.35203 20.2916 8.196L22.9084 6.99318C23.6097 8.51886 24 10.2158 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C15.4654 0 18.5895 1.47078 20.7781 3.81796L18.6717 5.78204C17.005 3.9946 14.6338 2.88 12 2.88Z", fill: "url(#paint0_radial)" }), h("path", { opacity: "0.4", d: "M20.5 11C22.433 11 24 9.433 24 7.5C24 5.567 22.433 4 20.5 4C18.567 4 17 5.567 17 7.5C17 9.433 18.567 11 20.5 11Z", fill: "#03060B" }), h("path", { d: "M20.5714 9.42843C22.4649 9.42843 24 7.89341 24 5.99986C24 4.10631 22.4649 2.57129 20.5714 2.57129C18.6778 2.57129 17.1428 4.10631 17.1428 5.99986C17.1428 7.89341 18.6778 9.42843 20.5714 9.42843Z", fill: "#03060B" }), h("path", { d: "M19.7143 7.71415C21.1344 7.71415 22.2857 6.56288 22.2857 5.14272C22.2857 3.72256 21.1344 2.57129 19.7143 2.57129C18.2941 2.57129 17.1428 3.72256 17.1428 5.14272C17.1428 6.56288 18.2941 7.71415 19.7143 7.71415Z", fill: "white" }), h("defs", null, h("radialGradient", { id: "paint0_radial", cx: "0", cy: "0", r: "1", gradientUnits: "userSpaceOnUse", gradientTransform: "translate(23 8.5) rotate(162.35) scale(11.5434 5.28499)" }, h("stop", { "stop-color": "white", "stop-opacity": "0.7" }), h("stop", { offset: "1", "stop-color": "white" })))))), h(Breakpoint, { md: true, class: "platform-bar__desc" }, "See how ", h("strong", null, this.productName), " fits into the entire ", h("span", { class: "nowrap" }, h("a", { href: "https://ionic.io/" }, "Ionic Ecosystem"), " ", h("span", { style: { 'letter-spacing': '0' } }, "->"))), h(Breakpoint, { xs: true, md: false, class: "platform-bar__desc" }, h("strong", null, this.productName), " is part of the ", h("span", { class: "nowrap" }, h("a", { href: "https://ionic.io/" }, "Ionic Ecosystem"), " ", h("span", { style: { 'letter-spacing': '0' } }, "->"))))));
     }
     static get style() { return platformBarCss; }
     static get cmpMeta() { return {
@@ -10849,7 +11073,7 @@ class PreFooter {
     }; }
 }
 
-const capacitorSiteHeaderCss = ".sc-capacitor-site-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-capacitor-site-header-h{position:-webkit-sticky;position:sticky;z-index:1000;top:-1px;background:#fff;display:block;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);-webkit-transition:background-color 0.4s ease, -webkit-box-shadow 0.4s ease;transition:background-color 0.4s ease, -webkit-box-shadow 0.4s ease;transition:background-color 0.4s ease, box-shadow 0.4s ease;transition:background-color 0.4s ease, box-shadow 0.4s ease, -webkit-box-shadow 0.4s ease;--link-color:var(--c-carbon-90)}.site-header--sticky.sc-capacitor-site-header-h{background:#fff}.ui-container.sc-capacitor-site-header{background:#fff;padding:14px 0 13px}.page-theme--dark .sc-capacitor-site-header-h{background-color:transparent;--link-color:white}.site-header.sc-capacitor-site-header{display:-ms-flexbox;display:flex}.site-header__container.sc-capacitor-site-header{height:64px;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.site-header__logo-link.sc-capacitor-site-header{margin:0 0 2px 15px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;text-decoration:none;border:0}.site-header__logo-link.sc-capacitor-site-header img.sc-capacitor-site-header{height:24px}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;margin-right:15px}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.site-header.sc-capacitor-site-header .site-header-links__menu--hovered.sc-capacitor-site-header a.sc-capacitor-site-header{opacity:0.4}.site-header.sc-capacitor-site-header .site-header-links__menu--hovered.sc-capacitor-site-header a.link--active.sc-capacitor-site-header{opacity:0.4}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header nav.sc-capacitor-site-header{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:space-evenly;justify-content:space-evenly;max-width:550px;margin-left:15px}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header a.sc-capacitor-site-header{border-bottom:0;-webkit-transition:color, opacity 0.4s;transition:color, opacity 0.4s;font-size:15px;line-height:18px;font-family:var(--f-family-text);color:#222d3a;text-decoration:none;font-weight:normal;letter-spacing:0;margin:0 2px 0 0}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header a.sc-capacitor-site-header:hover{opacity:1;border:0}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header a.link--active.sc-capacitor-site-header{opacity:1}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link.sc-capacitor-site-header,.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header{position:relative;border:0;-webkit-transition:color 0.3s;transition:color 0.3s}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header .icon.sc-capacitor-site-header{margin-left:6px;-webkit-transition:top 0.2s, left 0.2s;transition:top 0.2s, left 0.2s;position:relative}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header:hover{color:#000}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header:hover .icon.sc-capacitor-site-header{left:1px;top:-1px}.site-header.sc-capacitor-site-header .site-header-links__buttons.sc-capacitor-site-header{min-width:130px;margin-top:2px}.site-header.sc-capacitor-site-header .site-header-links__buttons.sc-capacitor-site-header .ui-button.sc-capacitor-site-header{font-size:15px;letter-spacing:var(--f-tracking-tight);line-height:18px;padding:8px 10px;margin-left:13px;margin-right:-2px;margin-top:-1px}.site-header.sc-capacitor-site-header .site-header-links__buttons__github.sc-capacitor-site-header{background:#fff;border:1px solid #ebeff4;color:var(--c-indigo-80);line-height:0}.site-header.sc-capacitor-site-header .site-header-links__buttons__github.sc-capacitor-site-header ion-icon.sc-capacitor-site-header{vertical-align:middle;margin-right:5px;margin-top:-2px;margin-left:-2px;font-size:16px;color:#73849a}.site-header.sc-capacitor-site-header .site-header-links__buttons__install.sc-capacitor-site-header{background:var(--color-capacitor-blue)}.site-header.sc-capacitor-site-header .site-header-links__buttons__install.sc-capacitor-site-header svg.sc-capacitor-site-header{margin-right:6px;margin-bottom:-2px}more-button.sc-capacitor-site-header{display:none;margin-right:10px}site-backdrop.sc-capacitor-site-header{top:108px}@media screen and (max-width: 768px){.site-header.sc-capacitor-site-header{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:justify;justify-content:space-between}.site-header.sc-capacitor-site-header more-button.sc-capacitor-site-header{display:block}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header{position:absolute;top:100%;display:block;background:#fff;width:100%;height:auto;padding:10px 0;opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px);-webkit-transition:opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);transition:opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear;transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);-webkit-box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px;box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px}.site-header.sc-capacitor-site-header .site-header-links__buttons.sc-capacitor-site-header{display:none}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header nav.sc-capacitor-site-header{max-width:100%;-ms-flex-direction:column;flex-direction:column;margin-left:0}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header a.sc-capacitor-site-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;width:100%;height:44px;margin:0;padding:0 20px;border:none;outline:none;color:#000}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header a.sc-capacitor-site-header:hover{background:rgba(0, 0, 0, 0.03);color:initial}.site-header--expanded.sc-capacitor-site-header-h .site-header-links.sc-capacitor-site-header{opacity:1;pointer-events:all;-webkit-transform:translateY(-1px);transform:translateY(-1px);-webkit-transition:opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1);transition:opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1);transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear;transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1)}}";
+const capacitorSiteHeaderCss = ".sc-capacitor-site-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-capacitor-site-header-h{position:sticky;z-index:1000;top:-1px;background:#fff;display:block;box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);transition:background-color 0.4s ease, box-shadow 0.4s ease;--link-color:var(--c-carbon-90)}.site-header--sticky.sc-capacitor-site-header-h{background:#fff}.ui-container.sc-capacitor-site-header{background:#fff;padding:14px 0 13px}.page-theme--dark .sc-capacitor-site-header-h{background-color:transparent;--link-color:white}.site-header.sc-capacitor-site-header{display:flex}.site-header__container.sc-capacitor-site-header{height:64px;display:flex;justify-content:space-between}.site-header__logo-link.sc-capacitor-site-header{margin:0 0 2px 15px;display:flex;align-items:center;text-decoration:none;border:0}.site-header__logo-link.sc-capacitor-site-header img.sc-capacitor-site-header{height:24px}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header{display:flex;flex:1;margin-right:15px}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header{flex:1;display:flex;align-items:center;justify-content:center}.site-header.sc-capacitor-site-header .site-header-links__menu--hovered.sc-capacitor-site-header a.sc-capacitor-site-header{opacity:0.4}.site-header.sc-capacitor-site-header .site-header-links__menu--hovered.sc-capacitor-site-header a.link--active.sc-capacitor-site-header{opacity:0.4}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header nav.sc-capacitor-site-header{flex:1;display:flex;align-items:center;justify-content:space-evenly;max-width:550px;margin-left:15px}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header a.sc-capacitor-site-header{border-bottom:0;transition:color, opacity 0.4s;font-size:15px;line-height:18px;font-family:var(--f-family-text);color:#222d3a;text-decoration:none;font-weight:normal;letter-spacing:0;margin:0 2px 0 0}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header a.sc-capacitor-site-header:hover{opacity:1;border:0}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header a.link--active.sc-capacitor-site-header{opacity:1}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link.sc-capacitor-site-header,.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header{position:relative;border:0;transition:color 0.3s}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header .icon.sc-capacitor-site-header{margin-left:6px;transition:top 0.2s, left 0.2s;position:relative}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header:hover{color:#000}.site-header.sc-capacitor-site-header .site-header-links__menu.sc-capacitor-site-header .link--external.sc-capacitor-site-header:hover .icon.sc-capacitor-site-header{left:1px;top:-1px}.site-header.sc-capacitor-site-header .site-header-links__buttons.sc-capacitor-site-header{min-width:130px;margin-top:2px}.site-header.sc-capacitor-site-header .site-header-links__buttons.sc-capacitor-site-header .ui-button.sc-capacitor-site-header{font-size:15px;letter-spacing:var(--f-tracking-tight);line-height:18px;padding:8px 10px;margin-left:13px;margin-right:-2px;margin-top:-1px}.site-header.sc-capacitor-site-header .site-header-links__buttons__github.sc-capacitor-site-header{background:#fff;border:1px solid #ebeff4;color:var(--c-indigo-80);line-height:0}.site-header.sc-capacitor-site-header .site-header-links__buttons__github.sc-capacitor-site-header ion-icon.sc-capacitor-site-header{vertical-align:middle;margin-right:5px;margin-top:-2px;margin-left:-2px;font-size:16px;color:#73849a}.site-header.sc-capacitor-site-header .site-header-links__buttons__install.sc-capacitor-site-header{background:var(--color-capacitor-blue)}.site-header.sc-capacitor-site-header .site-header-links__buttons__install.sc-capacitor-site-header svg.sc-capacitor-site-header{margin-right:6px;margin-bottom:-2px}more-button.sc-capacitor-site-header{display:none;margin-right:10px}site-backdrop.sc-capacitor-site-header{top:108px}@media screen and (max-width: 768px){.site-header.sc-capacitor-site-header{display:flex;flex-wrap:wrap;justify-content:space-between}.site-header.sc-capacitor-site-header more-button.sc-capacitor-site-header{display:block}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header{position:absolute;top:100%;display:block;background:#fff;width:100%;height:auto;padding:10px 0;opacity:0;transform:translateY(-10px);transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear;box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px}.site-header.sc-capacitor-site-header .site-header-links__buttons.sc-capacitor-site-header{display:none}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header nav.sc-capacitor-site-header{max-width:100%;flex-direction:column;margin-left:0}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header a.sc-capacitor-site-header{display:flex;align-items:center;width:100%;height:44px;margin:0;padding:0 20px;border:none;outline:none;color:#000}.site-header.sc-capacitor-site-header .site-header-links.sc-capacitor-site-header a.sc-capacitor-site-header:hover{background:rgba(0, 0, 0, 0.03);color:initial}.site-header--expanded.sc-capacitor-site-header-h .site-header-links.sc-capacitor-site-header{opacity:1;pointer-events:all;transform:translateY(-1px);transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear}}";
 
 const formatNumber = (n) => {
     if (n > 1000) {
@@ -10934,7 +11158,7 @@ const NavLink = ({ path, hovered, onHover, onExit }, children) => {
         } }), children));
 };
 
-const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{--menu-width:280px;display:block;-ms-flex:0 0 auto;flex:0 0 auto;width:var(--menu-width);letter-spacing:0;padding:0 15px 0 18px;-webkit-box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-white);z-index:999;-webkit-transform:translateX(calc(-1 * var(--menu-width)));transform:translateX(calc(-1 * var(--menu-width)));-webkit-transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);height:100%;overflow-y:scroll}.menu-overlay-visible.sc-docs-menu-h{-webkit-transform:none;transform:none;-webkit-transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1)}.menu-overlay-visible.sc-docs-menu-h .menu-header.sc-docs-menu{background:white;position:-webkit-sticky;position:sticky;top:0;z-index:1}.menu-overlay-visible.sc-docs-menu-h .menu-header__logo-link.sc-docs-menu{margin-left:60px}.menu-overlay-visible.sc-docs-menu-h .menu-header__version-link.sc-docs-menu{display:none}}.sticky.sc-docs-menu{top:0;max-height:100vh}.menu-header.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;-webkit-transition:80ms height;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;-webkit-transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s transform ease, 0.2s color ease;transition:0.2s transform ease, 0.2s color ease, 0.2s -webkit-transform ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}";
+const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{--menu-width:280px;display:block;flex:0 0 auto;width:var(--menu-width);letter-spacing:0;padding:0 15px 0 18px;box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-white);z-index:999;transform:translateX(calc(-1 * var(--menu-width)));transition:transform 200ms cubic-bezier(0, 0, 0.2, 1);height:100%;overflow-y:scroll}.menu-overlay-visible.sc-docs-menu-h{transform:none;transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1)}.menu-overlay-visible.sc-docs-menu-h .menu-header.sc-docs-menu{background:white;position:sticky;top:0;z-index:1}.menu-overlay-visible.sc-docs-menu-h .menu-header__logo-link.sc-docs-menu{margin-left:60px}.menu-overlay-visible.sc-docs-menu-h .menu-header__version-link.sc-docs-menu{display:none}}span.sc-docs-menu{display:inline-block}.sticky.sc-docs-menu{top:0;max-height:100vh}.menu-header.sc-docs-menu{display:flex;align-items:center;justify-content:space-between;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:flex;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;transition:0.2s transform ease, 0.2s color ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}";
 
 class SiteMenu {
     constructor(hostRef) {
@@ -11013,7 +11237,7 @@ class SiteMenu {
     }; }
 }
 
-const siteModalCss = ":root{--modal-z-index:1100;--modal-backdrop-z-index:1090;--modal-width:768px;--modal-padding:48px;--modal-border-radius:24px}site-modal{display:block;pointer-events:none;position:fixed;top:0;left:0;bottom:0;right:0;z-index:var(--modal-z-index)}.modal__backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:var(--modal-backdrop-z-index);-webkit-transition:opacity 300ms ease-in-out;transition:opacity 300ms ease-in-out;background-color:#000;opacity:0}.modal__backdrop.in{opacity:0.5}.modal__backdrop.out{opacity:0}.modal__wrap{-webkit-transition:-webkit-transform 300ms cubic-bezier(0.32, 0.72, 0, 1);transition:-webkit-transform 300ms cubic-bezier(0.32, 0.72, 0, 1);transition:transform 300ms cubic-bezier(0.32, 0.72, 0, 1);transition:transform 300ms cubic-bezier(0.32, 0.72, 0, 1), -webkit-transform 300ms cubic-bezier(0.32, 0.72, 0, 1);-webkit-transform:translateY(-120%);transform:translateY(-120%)}.modal__wrap.in{-webkit-transform:translate(0%);transform:translate(0%)}.modal__content{pointer-events:auto;max-width:var(--modal-width);margin:76px auto;background:white;position:relative;border-radius:var(--modal-border-radius)}.modal__content .modal__close-button{position:absolute;top:-10px;right:-10px;background:#fff;color:var(--c-carbon-90);padding:0;text-align:center;border:0;border-radius:100%;height:30px;width:30px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2);outline:0}.modal__content .modal__close-button ion-icon{vertical-align:middle;margin-top:-3px}.modal__body{padding:var(--modal-padding);max-height:calc(100vh - 76px);overflow:auto}.modal__body h1,.modal__body h2,.modal__body h3,.modal__body h4,.modal__body h5{margin-top:0}";
+const siteModalCss = ":root{--modal-z-index:1100;--modal-backdrop-z-index:1090;--modal-width:768px;--modal-padding:48px;--modal-border-radius:24px}site-modal{display:block;pointer-events:none;position:fixed;top:0;left:0;bottom:0;right:0;z-index:var(--modal-z-index)}.modal__backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:var(--modal-backdrop-z-index);transition:opacity 300ms ease-in-out;background-color:#000;opacity:0}.modal__backdrop.in{opacity:0.5}.modal__backdrop.out{opacity:0}.modal__wrap{transition:transform 300ms cubic-bezier(0.32, 0.72, 0, 1);transform:translateY(-120%)}.modal__wrap.in{transform:translate(0%)}.modal__content{pointer-events:auto;max-width:var(--modal-width);margin:76px auto;background:white;position:relative;border-radius:var(--modal-border-radius)}.modal__content .modal__close-button{position:absolute;top:-10px;right:-10px;background:#fff;color:var(--c-carbon-90);padding:0;text-align:center;border:0;border-radius:100%;height:30px;width:30px;box-shadow:var(--elevation-2);outline:0}.modal__content .modal__close-button ion-icon{vertical-align:middle;margin-top:-3px}.modal__body{padding:var(--modal-padding);max-height:calc(100vh - 76px);overflow:auto}.modal__body h1,.modal__body h2,.modal__body h3,.modal__body h4,.modal__body h5{margin-top:0}";
 
 class SiteModal {
     constructor(hostRef) {
@@ -11102,7 +11326,7 @@ class SiteModal {
     }; }
 }
 
-const siteRootCss = "@charset \"UTF-8\";:root{--c-white:#ffffff;--c-black:#000000;--c-blue-0:#f0f6ff;--c-blue-10:#e3edff;--c-blue-20:#cddfff;--c-blue-30:#b2ceff;--c-blue-40:#97bdff;--c-blue-50:#7cabff;--c-blue-60:#639bff;--c-blue-70:#4d8dff;--c-blue-80:#3880ff;--c-blue-90:#1b6dff;--c-blue-100:#0054e9;--c-ionic-brand:var(--c-blue-80);--c-gray-0:#f3f3f3;--c-gray-10:#e4e4e4;--c-gray-20:#c8c8c8;--c-gray-30:#aeaeae;--c-gray-40:#959595;--c-gray-50:#818181;--c-gray-60:#6d6d6d;--c-gray-70:#5f5f5f;--c-gray-80:#474747;--c-gray-90:#2f2f2f;--c-gray-100:#141414;--c-carbon-0:#eef1f3;--c-carbon-10:#d7dde2;--c-carbon-20:#b4bcc6;--c-carbon-30:#98a2ad;--c-carbon-40:#7d8894;--c-carbon-50:#677483;--c-carbon-60:#556170;--c-carbon-70:#434f5e;--c-carbon-80:#35404e;--c-carbon-90:#222d3a;--c-carbon-100:#03060b;--c-indigo-0:#fbfbfd;--c-indigo-10:#f6f8fb;--c-indigo-20:#e9edf3;--c-indigo-30:#dee3ea;--c-indigo-40:#ced6e0;--c-indigo-50:#b2becd;--c-indigo-60:#92a0b3;--c-indigo-70:#73849a;--c-indigo-80:#445b78;--c-indigo-90:#2d4665;--c-indigo-100:#001a3a;--c-green-0:#effff3;--c-green-10:#e7ffee;--c-green-20:#d0ffdd;--c-green-30:#b8ffcb;--c-green-40:#97ffb3;--c-green-50:#71f895;--c-green-60:#4ef27a;--c-green-70:#31e962;--c-green-80:#18dd4c;--c-green-90:#00d338;--c-green-100:#00b831;--c-lime-0:#f8fff0;--c-lime-10:#f2ffe1;--c-lime-20:#eeffd8;--c-lime-30:#e5ffc3;--c-lime-40:#d8ffa7;--c-lime-50:#c8ff83;--c-lime-60:#b7f964;--c-lime-70:#a7f544;--c-lime-80:#97ec2d;--c-lime-90:#87e017;--c-lime-100:#75d100;--c-lavender-0:#f6f8ff;--c-lavender-10:#e5ebff;--c-lavender-20:#ced9ff;--c-lavender-30:#b6c6ff;--c-lavender-40:#9fb5ff;--c-lavender-50:#8aa4ff;--c-lavender-60:#7493ff;--c-lavender-70:#597eff;--c-lavender-80:#3c67ff;--c-lavender-90:#194bfd;--c-lavender-100:#0033e8;--c-purple-0:#f4f4ff;--c-purple-10:#e9eaff;--c-purple-20:#d0d2ff;--c-purple-30:#b6b9f9;--c-purple-40:#9a99fc;--c-purple-50:#8482fb;--c-purple-60:#786df9;--c-purple-70:#6e5afd;--c-purple-80:#6030ff;--c-purple-90:#4712fb;--c-purple-100:#3400e5;--c-pink-0:#fff2fb;--c-pink-10:#ffe3f6;--c-pink-20:#ffd4f1;--c-pink-30:#ffc7ec;--c-pink-40:#ffb6e8;--c-pink-50:#ff9cdf;--c-pink-60:#fc82d5;--c-pink-70:#f567c8;--c-pink-80:#ef4cbb;--c-pink-90:#f02fb2;--c-pink-100:#e410a1;--c-red-0:#fff2f2;--c-red-10:#ffdddd;--c-red-20:#ffc8c7;--c-red-30:#ffb6b5;--c-red-40:#ff9e9c;--c-red-50:#ff8a88;--c-red-60:#ff7370;--c-red-70:#ff605b;--c-red-80:#ff4747;--c-red-90:#ff201a;--c-red-100:#e70700;--c-orange-0:#fff5f0;--c-orange-10:#ffede5;--c-orange-20:#ffdfd1;--c-orange-30:#ffd0bc;--c-orange-40:#ffc0a5;--c-orange-50:#ffaf8c;--c-orange-60:#ff9b70;--c-orange-70:#ff8753;--c-orange-80:#ff7336;--c-orange-90:#ff5b13;--c-orange-100:#eb4700;--c-yellow-0:#fffbef;--c-yellow-10:#fff8e3;--c-yellow-20:#fff6d8;--c-yellow-30:#fff3c9;--c-yellow-50:#ffedad;--c-yellow-50:#ffe78f;--c-yellow-60:#ffe072;--c-yellow-70:#ffd84d;--c-yellow-80:#ffd130;--c-yellow-90:#ffc805;--c-yellow-100:#f5bf00;--c-aqua-0:#f0fff9;--c-aqua-10:#e5fff6;--c-aqua-20:#d5ffef;--c-aqua-30:#c0ffe8;--c-aqua-40:#aaffe0;--c-aqua-50:#90fbd4;--c-aqua-60:#70f6c5;--c-aqua-70:#4deeb2;--c-aqua-80:#32e2a1;--c-aqua-90:#00db8a;--c-aqua-100:#00cc80;--c-teal-0:#eefeff;--c-teal-10:#dffdff;--c-teal-20:#d0fdff;--c-teal-30:#bbfcff;--c-teal-40:#a2fcff;--c-teal-50:#8bfbff;--c-teal-60:#73f6fb;--c-teal-70:#55ecf2;--c-teal-80:#35e2e9;--c-teal-90:#1bd2d9;--c-teal-100:#00b9c0;--c-cyan-0:#f3faff;--c-cyan-10:#e8f5ff;--c-cyan-20:#d3ecff;--c-cyan-30:#bfe4ff;--c-cyan-40:#a7daff;--c-cyan-50:#8dcfff;--c-cyan-60:#77c6ff;--c-cyan-70:#62bdff;--c-cyan-80:#46b1ff;--c-cyan-90:#24a3ff;--c-cyan-100:#0091fa}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Bold\"), url(\"/assets/fonts/eina/eina-01-bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-bold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-bold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-bold.eot?#iefix\") format(\"eot\");font-weight:700;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Semibold\"), url(\"/assets/fonts/eina/eina-01-semibold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-semibold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-semibold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-semibold.eot?#iefix\") format(\"eot\");font-weight:600;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Regular\"), url(\"/assets/fonts/eina/eina-01-regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-regular.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-regular.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-regular.eot?#iefix\") format(\"eot\");font-weight:400;unicode-range:U+000-5FF}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Regular\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Regular.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Italic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Medium.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Medium.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter Bold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Bold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter BoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter Black\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Black.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Black.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter BlackItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff\") format(\"woff\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:400;unicode-range:U+000-5FF;src:url(\"/assets/fonts//29D26A_0_0.eot\");src:url(\"/assets/fonts//29D26A_0_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts//29D26A_0_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_0_0.ttf\") format(\"truetype\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:500;unicode-range:U+000-5FF;src:url(\"/assets/fonts/29D26A_1_0.eot\");src:url(\"/assets/fonts/29D26A_1_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/29D26A_1_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_1_0.ttf\") format(\"truetype\")}:root{--f-family-display:\"Eina\", \"Helvetica Neue\", Helvetica, sans-serif;--f-family-text:\"Inter\", \"Inter UI\", Helvetica, Arial, sans-serif;--f-family-system:apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;--f-family-monospace:\"SF Mono\", \"Roboto Mono\", Menlo, monospace;--f-family-serif:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;--f-size-root:16px;--f-size-0:0.625rem;--f-size-1:0.6875rem;--f-size-2:0.75rem;--f-size-3:0.8125rem;--f-size-4:0.875rem;--f-size-5:1.00rem;--f-size-6:1.25rem;--f-size-7:1.50rem;--f-size-8:2.00rem;--f-size-9:2.50rem;--f-size-10:3.00rem;--f-size-11:3.50rem;--f-size-12:4.00rem;--f-size-13:4.50rem;--f-size-14:5.00rem;--f-size-15:5.50rem;--f-size-16:6.00rem;--f-leading-solid:1.0;--f-leading-title:1.12;--f-leading-body:1.6;--f-leading-prose:1.8;--f-tracking-dense:-0.04em;--f-tracking-tight:-0.02em;--f-tracking-solid:0.00em;--f-tracking-wide:0.04em;--f-tracking-super:0.08em;--f-tracking-extra:0.16em;--f-weight-light:300;--f-weight-regular:400;--f-weight-medium:500;--f-weight-semibold:600;--f-weight-bold:700}:root{--space-0:0.25rem;--space-1:0.50rem;--space-2:0.75rem;--space-3:1.00rem;--space-4:1.25rem;--space-5:1.5rem;--space-6:2.00rem;--space-7:2.50rem;--space-8:3.00rem;--space-9:4.00rem;--space-10:5.00rem;--space-11:6.00rem;--space-12:8.00rem;--space-13:10.00rem;--space-14:12.00rem;--space-15:14.00rem;--space-16:16.00rem;}:root{--radii-0:0;--radii-1:6px;--radii-2:8px;--radii-3:16px;--radii-4:100%}:root{--elevation-0:none;--elevation-1:0px 1px 2px rgba(2, 8, 20, 0.10), 0px 0px 1px rgba(2, 8, 20, 0.08);--elevation-2:0px 2px 4px rgba(2, 8, 20, 0.10), 0px 1px 2px rgba(2, 8, 20, 0.08);--elevation-3:0px 4px 8px rgba(2, 8, 20, 0.08), 0px 2px 4px rgba(2, 8, 20, 0.08);--elevation-4:0px 8px 16px rgba(2, 8, 20, 0.08), 0px 4px 8px rgba(2, 8, 20, 0.08);--elevation-5:0px 16px 32px rgba(2, 8, 20, 0.08), 0px 8px 16px rgba(2, 8, 20, 0.08);--elevation-6:0px 32px 64px rgba(2, 8, 20, 0.08), 0px 16px 32px rgba(2, 8, 20, 0.10)}:root{--z-subnav:1000;--z-header-dropdown:1005}.ui-blockquote{background:#f2f5f8;border-radius:4px;position:relative;padding:64px 80px 68px 111px;color:#5e749a;font-family:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;font-style:italic;border:none;margin:77px -16px 54px}.ui-blockquote:before{position:absolute;top:-6px;left:54px;font-size:180px;content:\"“\";color:#e3e7ec}.ui-breadcrumbs{font-size:13px;line-height:14px;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center}.ui-breadcrumbs li{display:inline-block}.ui-breadcrumbs li:first-child a{padding-left:0}.ui-breadcrumbs li:last-child a{color:var(--c-carbon-100);font-weight:500}.ui-breadcrumbs a{color:var(--c-carbon-50);font-size:13px;line-height:14px;padding:16px 2px;display:inline-block}.ui-breadcrumbs .nav-sep{display:inline-block;font-size:16px;font-weight:400;color:rgba(65, 77, 92, 0.2);margin:0 6px}.ui-breakpoint{display:none !important}@media (max-width: 480px){.ui-breakpoint-mobile{display:block !important}}@media (max-width: 480px){.ui-breakpoint-mobile.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet{display:block !important}}@media (min-width: 480px) and (max-width: 768px){.ui-breakpoint-tablet.ui-breakpoint-inline-block{display:inline-block !important}}@media (min-width: 768px){.ui-breakpoint-desktop{display:block !important}}@media (min-width: 768px){.ui-breakpoint-desktop.ui-breakpoint-inline-block{display:inline-block !important}}.ui-button{cursor:pointer;display:inline-block;font-weight:500;border-radius:8px;line-height:1.4em;padding:16px 20px;-webkit-transition:all 0.3s ease;transition:all 0.3s ease;font-size:16px;border:0px solid rgba(0, 0, 0, 0);color:#fff;background:var(--button-background, var(--c-ionic-brand));letter-spacing:0.01em}.ui-card--embelish{background-color:#fff;border-radius:6px;-webkit-box-shadow:var(--elevation-4);box-shadow:var(--elevation-4);border-radius:14px}.ui-card--embelish .ui-card-content{padding:32px}.ui-container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width: 768px){.ui-container{width:750px}}@media (min-width: 992px){.ui-container{width:970px}}@media (min-width: 1104px){.ui-container{width:1054px}}.ui-grid{display:grid;-webkit-column-gap:56px;-moz-column-gap:56px;column-gap:56px;row-gap:96px;grid-template-columns:repeat(12, minmax(0, 1fr))}@media (max-width: 480px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:48px}}@media (max-width: 768px){.ui-grid{-webkit-column-gap:0;-moz-column-gap:0;column-gap:0;row-gap:24px}}.ui-grid .ui-col-1{grid-column-end:span 1}.ui-grid .ui-col-2{grid-column-end:span 2}.ui-grid .ui-col-3{grid-column-end:span 3}.ui-grid .ui-col-4{grid-column-end:span 4}.ui-grid .ui-col-5{grid-column-end:span 5}.ui-grid .ui-col-6{grid-column-end:span 6}.ui-grid .ui-col-7{grid-column-end:span 7}.ui-grid .ui-col-8{grid-column-end:span 8}.ui-grid .ui-col-9{grid-column-end:span 9}.ui-grid .ui-col-10{grid-column-end:span 10}.ui-grid .ui-col-11{grid-column-end:span 11}.ui-grid .ui-col-12{grid-column-end:span 12}@media (min-width: 480px){.ui-grid .ui-col-xs-1{grid-column-end:span 1}.ui-grid .ui-col-xs-2{grid-column-end:span 2}.ui-grid .ui-col-xs-3{grid-column-end:span 3}.ui-grid .ui-col-xs-4{grid-column-end:span 4}.ui-grid .ui-col-xs-5{grid-column-end:span 5}.ui-grid .ui-col-xs-6{grid-column-end:span 6}.ui-grid .ui-col-xs-7{grid-column-end:span 7}.ui-grid .ui-col-xs-8{grid-column-end:span 8}.ui-grid .ui-col-xs-9{grid-column-end:span 9}.ui-grid .ui-col-xs-10{grid-column-end:span 10}.ui-grid .ui-col-xs-11{grid-column-end:span 11}.ui-grid .ui-col-xs-12{grid-column-end:span 12}}@media (min-width: 768px){.ui-grid .ui-col-sm-1{grid-column-end:span 1}.ui-grid .ui-col-sm-2{grid-column-end:span 2}.ui-grid .ui-col-sm-3{grid-column-end:span 3}.ui-grid .ui-col-sm-4{grid-column-end:span 4}.ui-grid .ui-col-sm-5{grid-column-end:span 5}.ui-grid .ui-col-sm-6{grid-column-end:span 6}.ui-grid .ui-col-sm-7{grid-column-end:span 7}.ui-grid .ui-col-sm-8{grid-column-end:span 8}.ui-grid .ui-col-sm-9{grid-column-end:span 9}.ui-grid .ui-col-sm-10{grid-column-end:span 10}.ui-grid .ui-col-sm-11{grid-column-end:span 11}.ui-grid .ui-col-sm-12{grid-column-end:span 12}}@media (min-width: 992px){.ui-grid .ui-col-md-1{grid-column-end:span 1}.ui-grid .ui-col-md-2{grid-column-end:span 2}.ui-grid .ui-col-md-3{grid-column-end:span 3}.ui-grid .ui-col-md-4{grid-column-end:span 4}.ui-grid .ui-col-md-5{grid-column-end:span 5}.ui-grid .ui-col-md-6{grid-column-end:span 6}.ui-grid .ui-col-md-7{grid-column-end:span 7}.ui-grid .ui-col-md-8{grid-column-end:span 8}.ui-grid .ui-col-md-9{grid-column-end:span 9}.ui-grid .ui-col-md-10{grid-column-end:span 10}.ui-grid .ui-col-md-11{grid-column-end:span 11}.ui-grid .ui-col-md-12{grid-column-end:span 12}}@media (min-width: 1200px){.ui-grid .ui-col-lg-1{grid-column-end:span 1}.ui-grid .ui-col-lg-2{grid-column-end:span 2}.ui-grid .ui-col-lg-3{grid-column-end:span 3}.ui-grid .ui-col-lg-4{grid-column-end:span 4}.ui-grid .ui-col-lg-5{grid-column-end:span 5}.ui-grid .ui-col-lg-6{grid-column-end:span 6}.ui-grid .ui-col-lg-7{grid-column-end:span 7}.ui-grid .ui-col-lg-8{grid-column-end:span 8}.ui-grid .ui-col-lg-9{grid-column-end:span 9}.ui-grid .ui-col-lg-10{grid-column-end:span 10}.ui-grid .ui-col-lg-11{grid-column-end:span 11}.ui-grid .ui-col-lg-12{grid-column-end:span 12}}.ui-heading{--title-font-family:var(--f-family-display);--subtitle-font-family:var(--f-family-text);--heading-color-dark:var(--c-carbon-90);--heading-color-light:var(--c-indigo-70);--h1-size:var(--f-size-12);--h1-leading:var(--f-leading-solid);--h1-weight:var(--f-weight-bold);--h2-size:var(--f-size-10);--h3-size:var(--f-size-8);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-2);margin:0;line-height:var(--f-leading-title)}.ui-theme--editorial .ui-heading{--title-font-family:var(--f-family-text);--h1-size:var(--f-size-9);--h1-leading:var(--f-leading-title);--h1-weight:var(--f-weight-semibold);--h2-size:var(--f-size-8);--h3-size:var(--f-size-7);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-0)}.ui-heading-1{font-family:var(--title-font-family);font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--f-tracking-dense);font-weight:var(--h1-weight);color:var(--heading-color-dark)}.ui-heading-2{font-family:var(--title-font-family);font-size:var(--h2-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-3{font-family:var(--title-font-family);font-size:var(--h3-size);letter-spacing:var(--f-tracking-dense);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-4{font-family:var(--subtitle-font-family);font-size:var(--h4-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-5{font-family:var(--subtitle-font-family);font-size:var(--h5-size);letter-spacing:var(--f-tracking-tight);font-weight:var(--f-weight-semibold);color:var(--heading-color-dark)}.ui-heading-6{font-family:var(--subtitle-font-family);font-size:var(--h6-size);letter-spacing:var(--f-tracking-extra);font-weight:var(--f-weight-bold);text-transform:uppercase;color:var(--heading-color-light)}.ui-heading--bordered{border-bottom:1px solid var(--c-indigo-30);margin-bottom:var(--space-5);padding-bottom:var(--space-2)}.ui-heading--strong{font-weight:var(--f-weight-bold)}.ui-heading--leading{line-height:var(--f-leading-text)}.ui-skeleton{display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:#EEEEEE;line-height:10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}.ui-skeleton--animated{position:relative;background:-webkit-gradient(linear, left top, right top, color-stop(8%, rgba(0, 0, 0, 0.065)), color-stop(18%, rgba(0, 0, 0, 0.135)), color-stop(33%, rgba(0, 0, 0, 0.065)));background:linear-gradient(to right, rgba(0, 0, 0, 0.065) 8%, rgba(0, 0, 0, 0.135) 18%, rgba(0, 0, 0, 0.065) 33%);background-size:800px 104px;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-name:shimmer;animation-name:shimmer;-webkit-animation-timing-function:linear;animation-timing-function:linear}@-webkit-keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}@keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}span{display:inline-block}.prismic-raw-html{width:100%;overflow:auto}.prismic-raw-html table{overflow-x:auto;margin-right:-15px;padding-right:15px;-webkit-box-sizing:content-box;box-sizing:content-box;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:48px}.prismic-raw-html table td,.prismic-raw-html table th{text-align:left;min-width:120px;padding-right:12px;padding-top:12px;padding-bottom:12px}.prismic-raw-html table td:last-child,.prismic-raw-html table th:last-child{padding-right:0}.prismic-raw-html table th,.prismic-raw-html table b{font-weight:600}.prismic-raw-html table tbody tr td{border-top:1px solid #DEE3EA}.prismic-raw-html table tbody tr:first-child td{border-top:none}.prismic-raw-html table>thead>tr>th{border-bottom:1px solid #E9EDF3;font-weight:600}*{-webkit-box-sizing:border-box;box-sizing:border-box}html,body{padding:0;margin:0;width:100%;height:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:var(--f-family-text);font-size:var(--f-size-root);line-height:var(--f-leading-body);letter-spacing:var(--f-tracking-tight);color:var(--c-carbon-90);position:relative;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:var(--c-ionic-brand)}stencil-route-link a{color:inherit}ul{margin:0;padding:0}li{list-style:none}hr{border:none;height:1px;background:var(--c-indigo-30);margin:var(--space-6) 0}site-root{display:block;width:100%;height:100%}";
+const siteRootCss = "@charset \"UTF-8\";@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Bold\"), url(\"/assets/fonts/eina/eina-01-bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-bold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-bold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-bold.eot?#iefix\") format(\"eot\");font-weight:700;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Semibold\"), url(\"/assets/fonts/eina/eina-01-semibold.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-semibold.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-semibold.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-semibold.eot?#iefix\") format(\"eot\");font-weight:600;unicode-range:U+000-5FF}@font-face{font-family:\"Eina\";font-display:swap;src:local(\"Eina Regular\"), url(\"/assets/fonts/eina/eina-01-regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/eina/eina-01-regular.woff\") format(\"woff\"), url(\"/assets/fonts/eina/eina-01-regular.ttf\") format(\"ttf\"), url(\"/assets/fonts/eina/eina-01-regular.eot?#iefix\") format(\"eot\");font-weight:400;unicode-range:U+000-5FF}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Regular\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Regular.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Regular.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:400;unicode-range:U+000-5FF;src:local(\"Inter Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Italic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Italic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Medium.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Medium.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:500;unicode-range:U+000-5FF;src:local(\"Inter Medium Italic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-MediumItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:600;unicode-range:U+000-5FF;src:local(\"Inter SemiBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-SemiBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter Bold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Bold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Bold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:700;unicode-range:U+000-5FF;src:local(\"Inter BoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBold\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBold.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:800;unicode-range:U+000-5FF;src:local(\"Inter ExtraBoldItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-ExtraBoldItalic.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:normal;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter Black\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-Black.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-Black.woff\") format(\"woff\")}@font-face{font-family:\"Inter\";font-display:swap;font-style:italic;font-weight:900;unicode-range:U+000-5FF;src:local(\"Inter BlackItalic\"), url(\"/assets/fonts/inter/Inter-variable-ASCII-subset.woff2\") format(\"woff2-variations\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff2\") format(\"woff2\"), url(\"/assets/fonts/inter/Inter-BlackItalic.woff\") format(\"woff\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:400;unicode-range:U+000-5FF;src:url(\"/assets/fonts//29D26A_0_0.eot\");src:url(\"/assets/fonts//29D26A_0_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts//29D26A_0_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_0_0.ttf\") format(\"truetype\")}@font-face{font-family:\"FreightTextPro\";font-display:swap;font-weight:500;unicode-range:U+000-5FF;src:url(\"/assets/fonts/29D26A_1_0.eot\");src:url(\"/assets/fonts/29D26A_1_0.eot?#iefix\") format(\"embedded-opentype\"), url(\"/assets/fonts/29D26A_1_0.woff\") format(\"woff\"), url(\"/assets/fonts/29D26A_1_0.ttf\") format(\"truetype\")}:root{--f-family-display:Eina, \"Helvetica Neue\", Helvetica, sans-serif;--f-family-text:Inter, \"Inter UI\", Helvetica, Arial, sans-serif;--f-family-system:apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;--f-family-monospace:\"SF Mono\", \"Roboto Mono\", Menlo, monospace;--f-family-serif:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;--f-weight-light:300;--f-weight-regular:400;--f-weight-medium:500;--f-weight-semibold:600;--f-weight-bold:700;--f-size-0:0.625rem;--f-size-1:0.6875rem;--f-size-2:0.75rem;--f-size-3:0.8125rem;--f-size-4:0.875rem;--f-size-5:1rem;--f-size-6:1.25rem;--f-size-7:1.5rem;--f-size-8:2rem;--f-size-9:2.5rem;--f-size-10:3rem;--f-size-11:3.5rem;--f-size-12:4rem;--f-size-13:4.5rem;--f-size-14:5rem;--f-size-15:5.5rem;--f-size-16:6rem;--f-leading-solid:1;--f-leading-title:1.12;--f-leading-body:1.6;--f-leading-prose:1.8;--f-tracking-dense:-0.04em;--f-tracking-tight:-0.02em;--f-tracking-solid:0em;--f-tracking-wide:0.04em;--f-tracking-super:0.08em;--f-tracking-extra:0.16em;--space-0:0.25rem;--space-1:0.5rem;--space-2:0.75rem;--space-3:1rem;--space-4:1.25rem;--space-5:1.5rem;--space-6:2rem;--space-7:2.5rem;--space-8:3rem;--space-9:4rem;--space-10:5rem;--space-11:6rem;--space-12:8rem;--space-13:10rem;--space-14:12rem;--space-15:14rem;--space-16:16rem;--breakpoint-0:640px;--breakpoint-1:768px;--breakpoint-2:1024px;--breakpoint-3:1280px;--radius-0:0px;--radius-1:6px;--radius-2:8px;--radius-3:16px;--radius-4:100%;--border-regular:1px solid;--border-dashed:1px dashed;--border-heavy:2px solid;--elevation-0:none;--elevation-1:0px 1px 2px rgba(2, 8, 20, 0.1), 0px 0px 1px rgba(2, 8, 20, 0.08);--elevation-2:0px 2px 4px rgba(2, 8, 20, 0.1), 0px 1px 2px rgba(2, 8, 20, 0.08);--elevation-3:0px 4px 8px rgba(2, 8, 20, 0.08), 0px 2px 4px rgba(2, 8, 20, 0.08);--elevation-4:0px 8px 16px rgba(2, 8, 20, 0.08), 0px 4px 8px rgba(2, 8, 20, 0.08);--elevation-5:0px 16px 32px rgba(2, 8, 20, 0.08), 0px 8px 16px rgba(2, 8, 20, 0.08);--elevation-6:0px 32px 64px rgba(2, 8, 20, 0.08), 0px 16px 32px rgba(2, 8, 20, 0.1);--duration-instantly:0s;--duration-quickly:0.15s;--c-black:#000000;--c-white:#ffffff;--c-blue-0:#f0f6ff;--c-blue-10:#e3edff;--c-blue-20:#cddfff;--c-blue-30:#b2ceff;--c-blue-40:#97bdff;--c-blue-50:#7cabff;--c-blue-60:#639bff;--c-blue-70:#4d8dff;--c-blue-80:#3880ff;--c-blue-90:#1b6dff;--c-blue-100:#0054e9;--c-gray-0:#f3f3f3;--c-gray-10:#e4e4e4;--c-gray-20:#c8c8c8;--c-gray-30:#aeaeae;--c-gray-40:#959595;--c-gray-50:#818181;--c-gray-60:#6d6d6d;--c-gray-70:#5f5f5f;--c-gray-80:#474747;--c-gray-90:#2f2f2f;--c-gray-100:#141414;--c-carbon-0:#eef1f3;--c-carbon-10:#d7dde2;--c-carbon-20:#b4bcc6;--c-carbon-30:#98a2ad;--c-carbon-40:#7d8894;--c-carbon-50:#677483;--c-carbon-60:#556170;--c-carbon-70:#434f5e;--c-carbon-80:#35404e;--c-carbon-90:#222d3a;--c-carbon-100:#03060b;--c-indigo-0:#fbfbfd;--c-indigo-10:#f6f8fb;--c-indigo-20:#e9edf3;--c-indigo-30:#dee3ea;--c-indigo-40:#ced6e0;--c-indigo-50:#b2becd;--c-indigo-60:#92a0b3;--c-indigo-70:#73849a;--c-indigo-80:#445b78;--c-indigo-90:#2d4665;--c-indigo-100:#001a3a;--c-green-0:#effff3;--c-green-10:#e7ffee;--c-green-20:#d0ffdd;--c-green-30:#b8ffcb;--c-green-40:#97ffb3;--c-green-50:#71f895;--c-green-60:#4ef27a;--c-green-70:#31e962;--c-green-80:#18dd4c;--c-green-90:#00d338;--c-green-100:#00b831;--c-lime-0:#f8fff0;--c-lime-10:#f2ffe1;--c-lime-20:#eeffd8;--c-lime-30:#e5ffc3;--c-lime-40:#d8ffa7;--c-lime-50:#c8ff83;--c-lime-60:#b7f964;--c-lime-70:#a7f544;--c-lime-80:#97ec2d;--c-lime-90:#87e017;--c-lime-100:#75d100;--c-lavender-0:#f6f8ff;--c-lavender-10:#e5ebff;--c-lavender-20:#ced9ff;--c-lavender-30:#b6c6ff;--c-lavender-40:#9fb5ff;--c-lavender-50:#8aa4ff;--c-lavender-60:#7493ff;--c-lavender-70:#597eff;--c-lavender-80:#3c67ff;--c-lavender-90:#194bfd;--c-lavender-100:#0033e8;--c-purple-0:#f4f4ff;--c-purple-10:#e9eaff;--c-purple-20:#d0d2ff;--c-purple-30:#b6b9f9;--c-purple-40:#9a99fc;--c-purple-50:#8482fb;--c-purple-60:#786df9;--c-purple-70:#6e5afd;--c-purple-80:#6030ff;--c-purple-90:#4712fb;--c-purple-100:#3400e5;--c-pink-0:#fff2fb;--c-pink-10:#ffe3f6;--c-pink-20:#ffd4f1;--c-pink-30:#ffc7ec;--c-pink-40:#ffb6e8;--c-pink-50:#ff9cdf;--c-pink-60:#fc82d5;--c-pink-70:#f567c8;--c-pink-80:#ef4cbb;--c-pink-90:#f02fb2;--c-pink-100:#e410a1;--c-red-0:#fff2f2;--c-red-10:#ffdddd;--c-red-20:#ffc8c7;--c-red-30:#ffb6b5;--c-red-40:#ff9e9c;--c-red-50:#ff8a88;--c-red-60:#ff7370;--c-red-70:#ff605b;--c-red-80:#ff4747;--c-red-90:#ff201a;--c-red-100:#e70700;--c-orange-0:#fff5f0;--c-orange-10:#ffede5;--c-orange-20:#ffdfd1;--c-orange-30:#ffd0bc;--c-orange-40:#ffc0a5;--c-orange-50:#ffaf8c;--c-orange-60:#ff9b70;--c-orange-70:#ff8753;--c-orange-80:#ff7336;--c-orange-90:#ff5b13;--c-orange-100:#eb4700;--c-yellow-0:#fffbef;--c-yellow-10:#fff8e3;--c-yellow-20:#fff6d8;--c-yellow-30:#fff3c9;--c-yellow-40:#ffedad;--c-yellow-50:#ffe78f;--c-yellow-60:#ffe072;--c-yellow-70:#ffd84d;--c-yellow-80:#ffd130;--c-yellow-90:#ffc805;--c-yellow-100:#f5bf00;--c-aqua-0:#f0fff9;--c-aqua-10:#e5fff6;--c-aqua-20:#d5ffef;--c-aqua-30:#c0ffe8;--c-aqua-40:#aaffe0;--c-aqua-50:#90fbd4;--c-aqua-60:#70f6c5;--c-aqua-70:#4deeb2;--c-aqua-80:#32e2a1;--c-aqua-90:#00db8a;--c-aqua-100:#00cc80;--c-teal-0:#eefeff;--c-teal-10:#dffdff;--c-teal-20:#d0fdff;--c-teal-30:#bbfcff;--c-teal-40:#a2fcff;--c-teal-50:#8bfbff;--c-teal-60:#73f6fb;--c-teal-70:#55ecf2;--c-teal-80:#35e2e9;--c-teal-90:#1bd2d9;--c-teal-100:#00b9c0;--c-cyan-0:#f3faff;--c-cyan-10:#e8f5ff;--c-cyan-20:#d3ecff;--c-cyan-30:#bfe4ff;--c-cyan-40:#a7daff;--c-cyan-50:#8dcfff;--c-cyan-60:#77c6ff;--c-cyan-70:#62bdff;--c-cyan-80:#46b1ff;--c-cyan-90:#24a3ff;--c-cyan-100:#0091fa}:root{--c-ionic-brand:var(--c-blue-80);--f-size-root:16px;--z-subnav:1000;--z-header-dropdown:1005}*{box-sizing:border-box}html,body{padding:0;margin:0;width:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:var(--f-family-text);font-size:var(--f-size-root);line-height:var(--f-leading-body);letter-spacing:var(--f-tracking-tight);color:var(--c-carbon-90);position:relative;overflow-x:hidden}body.no-scroll{overflow:hidden}a{text-decoration:none;color:var(--c-ionic-brand)}stencil-route-link a{color:inherit}ul{margin:0;padding:0}li{list-style:none}hr{border:none;height:1px;background:var(--c-indigo-30);margin:var(--space-6) 0}.ui-blockquote{background:#f2f5f8;border-radius:4px;position:relative;padding:64px 80px 68px 111px;color:#5e749a;font-family:\"Adobe Caslon\", Georgia, Times, \"Times New Roman\", serif;font-style:italic;border:none;margin:77px -16px 54px}.ui-blockquote:before{position:absolute;top:-6px;left:54px;font-size:180px;content:\"“\";color:#e3e7ec}.ui-breadcrumbs{font-size:13px;line-height:14px;display:flex;flex-direction:row;align-items:center}.ui-breadcrumbs li{display:inline-block}.ui-breadcrumbs li:first-child a{padding-left:0}.ui-breadcrumbs li:last-child a{color:var(--c-carbon-100);font-weight:500}.ui-breadcrumbs a{color:var(--c-carbon-50);font-size:13px;line-height:14px;padding:16px 2px;display:inline-block}.ui-breadcrumbs .nav-sep{display:inline-block;font-size:16px;font-weight:400;color:rgba(65, 77, 92, 0.2);margin:0 6px}.ui-breakpoint{display:none}@media (min-width: 1200px){.ui-breakpoint-xl{display:var(--display)}}@media (min-width: 992px) and (max-width: 1199px){.ui-breakpoint-lg{display:var(--display)}}@media (min-width: 768px) and (max-width: 991px){.ui-breakpoint-md{display:var(--display)}}@media (min-width: 480px) and (max-width: 767px){.ui-breakpoint-sm{display:var(--display)}}@media (max-width: 479px){.ui-breakpoint-xs{display:var(--display)}}.ui-button{cursor:pointer;display:inline-block;font-weight:500;border-radius:8px;line-height:1.4em;padding:16px 20px;transition:all 0.3s ease;font-size:16px;border:0px solid rgba(0, 0, 0, 0);color:#fff;background:var(--button-background, var(--c-ionic-brand));letter-spacing:0.01em}.ui-card--embelish{background-color:#fff;border-radius:6px;box-shadow:var(--elevation-4);border-radius:14px}.ui-card--embelish .ui-card-content{padding:32px}.ui-container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width: 768px){.ui-container{width:750px}}@media (min-width: 992px){.ui-container{width:970px}}@media (min-width: 1104px){.ui-container{width:1054px}}.ui-grid{display:grid;column-gap:56px;row-gap:96px;grid-template-columns:repeat(12, minmax(0, 1fr))}@media (max-width: 480px){.ui-grid{column-gap:0;row-gap:48px}}@media (max-width: 768px){.ui-grid{column-gap:0;row-gap:24px}}.ui-grid .ui-col-1{grid-column-end:span 1}.ui-grid .ui-col-2{grid-column-end:span 2}.ui-grid .ui-col-3{grid-column-end:span 3}.ui-grid .ui-col-4{grid-column-end:span 4}.ui-grid .ui-col-5{grid-column-end:span 5}.ui-grid .ui-col-6{grid-column-end:span 6}.ui-grid .ui-col-7{grid-column-end:span 7}.ui-grid .ui-col-8{grid-column-end:span 8}.ui-grid .ui-col-9{grid-column-end:span 9}.ui-grid .ui-col-10{grid-column-end:span 10}.ui-grid .ui-col-11{grid-column-end:span 11}.ui-grid .ui-col-12{grid-column-end:span 12}@media (min-width: 480px){.ui-grid .ui-col-xs-1{grid-column-end:span 1}.ui-grid .ui-col-xs-2{grid-column-end:span 2}.ui-grid .ui-col-xs-3{grid-column-end:span 3}.ui-grid .ui-col-xs-4{grid-column-end:span 4}.ui-grid .ui-col-xs-5{grid-column-end:span 5}.ui-grid .ui-col-xs-6{grid-column-end:span 6}.ui-grid .ui-col-xs-7{grid-column-end:span 7}.ui-grid .ui-col-xs-8{grid-column-end:span 8}.ui-grid .ui-col-xs-9{grid-column-end:span 9}.ui-grid .ui-col-xs-10{grid-column-end:span 10}.ui-grid .ui-col-xs-11{grid-column-end:span 11}.ui-grid .ui-col-xs-12{grid-column-end:span 12}}@media (min-width: 768px){.ui-grid .ui-col-sm-1{grid-column-end:span 1}.ui-grid .ui-col-sm-2{grid-column-end:span 2}.ui-grid .ui-col-sm-3{grid-column-end:span 3}.ui-grid .ui-col-sm-4{grid-column-end:span 4}.ui-grid .ui-col-sm-5{grid-column-end:span 5}.ui-grid .ui-col-sm-6{grid-column-end:span 6}.ui-grid .ui-col-sm-7{grid-column-end:span 7}.ui-grid .ui-col-sm-8{grid-column-end:span 8}.ui-grid .ui-col-sm-9{grid-column-end:span 9}.ui-grid .ui-col-sm-10{grid-column-end:span 10}.ui-grid .ui-col-sm-11{grid-column-end:span 11}.ui-grid .ui-col-sm-12{grid-column-end:span 12}}@media (min-width: 992px){.ui-grid .ui-col-md-1{grid-column-end:span 1}.ui-grid .ui-col-md-2{grid-column-end:span 2}.ui-grid .ui-col-md-3{grid-column-end:span 3}.ui-grid .ui-col-md-4{grid-column-end:span 4}.ui-grid .ui-col-md-5{grid-column-end:span 5}.ui-grid .ui-col-md-6{grid-column-end:span 6}.ui-grid .ui-col-md-7{grid-column-end:span 7}.ui-grid .ui-col-md-8{grid-column-end:span 8}.ui-grid .ui-col-md-9{grid-column-end:span 9}.ui-grid .ui-col-md-10{grid-column-end:span 10}.ui-grid .ui-col-md-11{grid-column-end:span 11}.ui-grid .ui-col-md-12{grid-column-end:span 12}}@media (min-width: 1200px){.ui-grid .ui-col-lg-1{grid-column-end:span 1}.ui-grid .ui-col-lg-2{grid-column-end:span 2}.ui-grid .ui-col-lg-3{grid-column-end:span 3}.ui-grid .ui-col-lg-4{grid-column-end:span 4}.ui-grid .ui-col-lg-5{grid-column-end:span 5}.ui-grid .ui-col-lg-6{grid-column-end:span 6}.ui-grid .ui-col-lg-7{grid-column-end:span 7}.ui-grid .ui-col-lg-8{grid-column-end:span 8}.ui-grid .ui-col-lg-9{grid-column-end:span 9}.ui-grid .ui-col-lg-10{grid-column-end:span 10}.ui-grid .ui-col-lg-11{grid-column-end:span 11}.ui-grid .ui-col-lg-12{grid-column-end:span 12}}:root{--h1-color:var(--c-carbon-90);--h2-color:var(--c-carbon-90);--h3-color:var(--c-carbon-90);--h4-color:var(--c-carbon-90);--h5-color:var(--c-carbon-90);--h6-color:var(--c-indigo-70);--h1-size:var(--f-size-12);--h2-size:var(--f-size-10);--h3-size:var(--f-size-8);--h4-size:var(--f-size-6);--h5-size:var(--f-size-5);--h6-size:var(--f-size-2);--h1-leading:var(--f-leading-solid);--h2-leading:var(--f-leading-title);--h3-leading:var(--f-leading-title);--h4-leading:var(--f-leading-title);--h5-leading:var(--f-leading-title);--h6-leading:var(--f-leading-title);--h1-tracking:var(--f-tracking-dense);--h2-tracking:var(--f-tracking-dense);--h3-tracking:var(--f-tracking-tight);--h4-tracking:var(--f-tracking-tight);--h5-tracking:var(--f-tracking-tight);--h6-tracking:var(--f-tracking-extra);--h1-font:var(--f-family-display);--h2-font:var(--f-family-display);--h3-font:var(--f-family-display);--h4-font:var(--f-family-text);--h5-font:var(--f-family-text);--h6-font:var(--f-family-monospace);--h1-weight:var(--f-weight-bold);--h2-weight:var(--f-weight-bold);--h3-weight:var(--f-weight-semibold);--h4-weight:var(--f-weight-medium);--h5-weight:var(--f-weight-semibold);--h6-weight:var(--f-weight-bold);--h1-transform:none;--h2-transform:none;--h3-transform:none;--h4-transform:none;--h5-transform:none;--h6-transform:uppercase;--poster1-color:var(--c-carbon-90);--poster2-color:var(--c-carbon-90);--poster3-color:var(--c-carbon-90);--poster4-color:var(--c-carbon-90);--poster1-size:var(--f-size-16);--poster2-size:var(--f-size-15);--poster3-size:var(--f-size-14);--poster4-size:var(--f-size-13);--poster1-leading:var(--f-leading-solid);--poster2-leading:var(--f-leading-solid);--poster3-leading:var(--f-leading-solid);--poster4-leading:var(--f-leading-solid);--poster1-tracking:var(--f-tracking-dense);--poster2-tracking:var(--f-tracking-dense);--poster3-tracking:var(--f-tracking-dense);--poster4-tracking:var(--f-tracking-dense);--poster1-font:var(--f-family-display);--poster2-font:var(--f-family-display);--poster3-font:var(--f-family-display);--poster4-font:var(--f-family-text);--poster1-weight:var(--f-weight-bold);--poster2-weight:var(--f-weight-semibold);--poster3-weight:var(--f-weight-bold);--poster4-weight:var(--f-weight-semibold);--poster1-transform:none;--poster2-transform:none;--poster3-transform:none;--poster4-transform:none}.ui-heading{margin:0}.ui-theme--editorial .ui-heading{--h6-color:var(--c-carbon-90);--h1-size:var(--f-size-9);--h2-size:var(--f-size-8);--h3-size:var(--f-size-7);--h6-size:var(--f-size-0);--h1-leading:var(--f-leading-title);--h1-font:var(--f-family-text);--h2-font:var(--f-family-text);--h3-font:var(--f-family-text);--h6-font:var(--f-family-text);--h1-tracking:var(--f-tracking-tight);--h2-tracking:var(--f-tracking-tight);--h3-tracking:var(--f-tracking-solid);--h4-tracking:var(--f-tracking-solid);--h6-tracking:var(--f-tracking-super);--h1-leading:var(--f-leading-title);--h1-weight:var(--f-weight-semibold);--h2-weight:var(--f-weight-semibold);--h4-weight:var(--f-weight-semibold);--h5-weight:var(--f-weight-medium);--h6-weight:var(--f-weight-medium)}.ui-heading-1{font-family:var(--h1-font);font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--h1-tracking);font-weight:var(--h1-weight);color:var(--h1-color);text-transform:var(--h1-transform)}.ui-heading-2{font-family:var(--h2-font);font-size:var(--h2-size);line-height:var(--h2-leading);letter-spacing:var(--h2-tracking);font-weight:var(--h2-weight);color:var(--h2-color);text-transform:var(--h2-transform)}.ui-heading-3{font-family:var(--h3-font);font-size:var(--h3-size);line-height:var(--h3-leading);letter-spacing:var(--h3-tracking);font-weight:var(--h3-weight);color:var(--h3-color);text-transform:var(--h3-transform)}.ui-heading-4{font-family:var(--h4-font);font-size:var(--h4-size);line-height:var(--h4-leading);letter-spacing:var(--h4-tracking);font-weight:var(--h4-weight);color:var(--h4-color);text-transform:var(--h4-transform)}.ui-heading-5{font-family:var(--h5-font);font-size:var(--h5-size);line-height:var(--h5-leading);letter-spacing:var(--h5-tracking);font-weight:var(--h5-weight);color:var(--h5-color);text-transform:var(--h5-transform)}.ui-heading-6{font-family:var(--h6-font);font-size:var(--h6-size);line-height:var(--h6-leading);letter-spacing:var(--h6-tracking);font-weight:var(--h6-weight);color:var(--h6-color);text-transform:var(--h6-transform)}.ui-poster-1{font-family:var(--poster1-font);font-size:var(--poster1-size);line-height:var(--poster1-leading);letter-spacing:var(--poster1-tracking);font-weight:var(--poster1-weight);color:var(--poster1-color);text-transform:var(--poster1-transform)}.ui-poster-2{font-family:var(--poster2-font);font-size:var(--poster2-size);line-height:var(--poster2-leading);letter-spacing:var(--poster2-tracking);font-weight:var(--poster2-weight);color:var(--poster2-color);text-transform:var(--poster2-transform)}.ui-poster-3{font-family:var(--poster3-font);font-size:var(--poster3-size);line-height:var(--poster3-leading);letter-spacing:var(--poster3-tracking);font-weight:var(--poster3-weight);color:var(--poster3-color);text-transform:var(--poster3-transform)}.ui-poster-4{font-family:var(--poster4-font);font-size:var(--poster4-size);line-height:var(--poster4-leading);letter-spacing:var(--poster4-tracking);font-weight:var(--poster4-weight);color:var(--poster4-color);text-transform:var(--poster4-transform)}:root{--p1-color:var(--c-indigo-90);--p2-color:var(--c-indigo-90);--p3-color:var(--c-indigo-90);--p4-color:var(--c-indigo-90);--p5-color:var(--c-indigo-90);--p6-color:var(--c-indigo-90);--p1-size:var(--f-size-7);--p2-size:var(--f-size-6);--p3-size:var(--f-size-5);--p4-size:var(--f-size-4);--p5-size:var(--f-size-3);--p6-size:var(--f-size-2);--p1-leading:var(--f-leading-body);--p2-leading:var(--f-leading-body);--p3-leading:var(--f-leading-body);--p4-leading:var(--f-leading-body);--p5-leading:var(--f-leading-body);--p6-leading:var(--f-leading-body);--p1-tracking:var(--f-tracking-tight);--p2-tracking:var(--f-tracking-tight);--p3-tracking:var(--f-tracking-tight);--p4-tracking:var(--f-tracking-solid);--p5-tracking:var(--f-tracking-solid);--p6-tracking:var(--f-tracking-solid);--p1-weight:var(--f-weight-regular);--p2-weight:var(--f-weight-regular);--p3-weight:var(--f-weight-regular);--p4-weight:var(--f-weight-regular);--p5-weight:var(--f-weight-regular);--p6-weight:var(--f-weight-regular);--p1-transform:none;--p2-transform:none;--p3-transform:none;--p4-transform:none;--p5-transform:none;--p6-transform:none}.ui-paragraph{margin:0}.ui-paragraph--base{--p1-leading:var(--f-leading-body);--p2-leading:var(--f-leading-body);--p3-leading:var(--f-leading-body);--p4-leading:var(--f-leading-body);--p5-leading:var(--f-leading-body);--p6-leading:var(--f-leading-body)}.ui-paragraph--prose{--p1-leading:var(--f-leading-prose);--p2-leading:var(--f-leading-prose);--p3-leading:var(--f-leading-prose);--p4-leading:var(--f-leading-prose);--p5-leading:var(--f-leading-prose);--p6-leading:var(--f-leading-prose)}.ui-paragraph-1{font-family:var(--p1-font);font-size:var(--p1-size);line-height:var(--p1-leading);letter-spacing:var(--p1-tracking);font-weight:var(--p1-weight);color:var(--p1-color);text-transform:var(--p1-transform)}.ui-paragraph-2{font-family:var(--p2-font);font-size:var(--p2-size);line-height:var(--p2-leading);letter-spacing:var(--p2-tracking);font-weight:var(--p2-weight);color:var(--p2-color);text-transform:var(--p2-transform)}.ui-paragraph-3{font-family:var(--p3-font);font-size:var(--p3-size);line-height:var(--p3-leading);letter-spacing:var(--p3-tracking);font-weight:var(--p3-weight);color:var(--p3-color);text-transform:var(--p3-transform)}.ui-paragraph-4{font-family:var(--p4-font);font-size:var(--p4-size);line-height:var(--p4-leading);letter-spacing:var(--p4-tracking);font-weight:var(--p4-weight);color:var(--p4-color);text-transform:var(--p4-transform)}.ui-paragraph-5{font-family:var(--p5-font);font-size:var(--p5-size);line-height:var(--p5-leading);letter-spacing:var(--p5-tracking);font-weight:var(--p5-weight);color:var(--p5-color);text-transform:var(--p5-transform)}.ui-paragraph-6{font-family:var(--p6-font);font-size:var(--p6-size);line-height:var(--p6-leading);letter-spacing:var(--p6-tracking);font-weight:var(--p6-weight);color:var(--p6-color);text-transform:var(--p6-transform)}.ui-skeleton{display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:#EEEEEE;line-height:10px;user-select:none;pointer-events:none}.ui-skeleton--animated{position:relative;background:linear-gradient(to right, rgba(0, 0, 0, 0.065) 8%, rgba(0, 0, 0, 0.135) 18%, rgba(0, 0, 0, 0.065) 33%);background-size:800px 104px;animation-duration:1s;animation-fill-mode:forwards;animation-iteration-count:infinite;animation-name:shimmer;animation-timing-function:linear}@keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}.ui-skeleton span{display:inline-block}.prismic-raw-html{width:100%;overflow:auto}.prismic-raw-html table{overflow-x:auto;margin-right:-15px;padding-right:15px;box-sizing:content-box;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:48px}.prismic-raw-html table td,.prismic-raw-html table th{text-align:left;min-width:120px;padding-right:12px;padding-top:12px;padding-bottom:12px}.prismic-raw-html table td:last-child,.prismic-raw-html table th:last-child{padding-right:0}.prismic-raw-html table th,.prismic-raw-html table b{font-weight:600}.prismic-raw-html table tbody tr td{border-top:1px solid #DEE3EA}.prismic-raw-html table tbody tr:first-child td{border-top:none}.prismic-raw-html table>thead>tr>th{border-bottom:1px solid #E9EDF3;font-weight:600}site-root{display:block;width:100%}";
 
 class SiteRoot {
     constructor(hostRef) {
@@ -11158,6 +11382,7 @@ registerComponents([
   CodeSnippet,
   ContributorList,
   CordovaLandingPage,
+  CordovaLandingPage$1,
   Demo,
   DisqusComments,
   DocSnippet,
