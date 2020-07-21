@@ -28,7 +28,7 @@ For apps that must work with persisted sensitive keys or tokens on the client, s
 
 Modern mobile devices and operating systems provide powerful security APIs and dedicated security hardware for storing sensitive values on device. This is how apps provide biometric or secure passcode authentication while managing highly sensitive values such as encryption keys or session tokens.
 
-The APIs that provide this functionality are available in the [iOS Keychain Services](https://developer.apple.com/documentation/security/keychain_services) and [Android Keystore](https://developer.android.com/training/articles/keystore) APIs. These APIs are complex and low-level, so you will likely want to find a plugin that uses them for you.
+The APIs that provide this functionality are available in the [iOS Keychain Services](https://developer.apple.com/documentation/security/keychain_services) and [Android Keystore](https://developer.android.com/training/articles/keystore) APIs. These APIs are complex and low-level, so you will likely want to find a plugin that uses them for you (such as this [cordova-plugin-ios-keychain](https://github.com/ionic-team/cordova-plugin-ios-keychain) community plugin).
 
 For enterprise use cases, the Capacitor team provides [Identity Vault](https://ionicframework.com/enterprise/identity-vault) which provides an easy-to-use API and frequently updated experience on top of these native security APIs. Identity Vault can be used with other Capacitor enterprise products such as [Offline Storage](https://ionicframework.com/enterprise/offline-storage) and [Auth Connect](https://ionicframework.com/enterprise/auth-connect) to provide the encryption key or authentication token management component of each experience, respectively.
 
