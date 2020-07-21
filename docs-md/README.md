@@ -22,6 +22,7 @@
   * [Cordova/Ionic Native Plugins](cordova/using-cordova-plugins.md)
   * [Known Incompatible Plugins](cordova/known-incompatible-plugins.md)
 * Concepts
+  * [Ads](guides/ads.md)
   * [CI/CD](guides/ci-cd.md)
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying.md)

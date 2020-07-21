@@ -16,11 +16,13 @@ Security is a wide topic, but there are a number of areas that Capacitor develop
 
 Data Security deals with the security of data stored locally and also in app code.
 
-### Avoid Storing Secrets
+### Avoid Embedding Secrets in Code
 
-One of the most important security tips for Capacitor apps is to _never store secrets_ in the client. That means make sure your code never contains secret API keys, encryption keys, or any other sensitive data that could be easily stolen using basic app analysis techniques.
+One of the most important security tips for Capacitor apps, and any frontend app for that matter, is to _never embed secrets_ in your app code. That means make sure your code never contains secret API keys, encryption keys, or any other sensitive data that could be easily stolen using basic app analysis techniques. Watch for environment variable plugins that could be injecting sensitive values into your app code at build time.
 
-For apps that must store and work with sensitive values, the _only_ safe way is by using secure keychain/keystore techniques as detailed below.
+Instead, move most operations requiring secret keys or tokens to the server-side, where they can be protected and any requests can be forwarded from the server. This might be a serverless function or a traditional server-side app process.
+
+For apps that must work with persisted sensitive keys or tokens on the client, such as an auth token or an encryption key, the recommended way to truly protect them from an attack is by using secure keychain/keystore techniques as detailed below.
 
 ### Storing Encryption Keys, Session Tokens, etc.
 
