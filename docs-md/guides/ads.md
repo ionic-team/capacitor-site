@@ -14,6 +14,7 @@ The most popular ad network for mobile apps is Google Admob, and there is a [com
 
 ```shell
 npm install @capacitor-community/admob
+npx cap update
 ```
 
 Then, follow the [Capacitor Community Admob](https://github.com/capacitor-community/admob) documentation for configuration and usage.
