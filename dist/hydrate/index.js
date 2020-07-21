@@ -8590,7 +8590,7 @@ npm install -g cordova-res
 
 cordova-res ios --skip-config --copy
 cordova-res android --skip-config --copy
-` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "06"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Audit existing Cordova plugins."), h(Paragraph, null, "Review all of Capacitor's ", h("a", { href: "/docs/apis", target: "_blank" }, "core"), " and ", h("a", { href: "/docs/plugins/community", target: "_blank" }, "community"), " plugins. You may be able to switch to the Capacitor-equivalent Cordova plugin, such as the Camera."), h(Paragraph, null, "Remove unneeded ones to improve performance and reduce app size.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h(Tabs, null, h(TabBar, null, h(TabBarButton, { selected: selectedCodeTab === 'before', tabSelect: () => setSelectedCodeTab('before') }, "Cordova Camera"), h(TabBarButton, { selected: selectedCodeTab === 'after', tabSelect: () => setSelectedCodeTab('after') }, "Capacitor Camera")), h(Tab, { selected: selectedCodeTab === 'before' }, h("code-snippet", { style: { '--border-radius': '0 0 8px 8px' }, language: "typescript", code: `
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "06"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Audit existing Cordova plugins."), h(Paragraph, null, "Review all of Capacitor's ", h("a", { href: "/docs/apis", target: "_blank" }, "core"), " and ", h("a", { href: "/docs/community", target: "_blank" }, "community"), " plugins. You may be able to switch to the Capacitor-equivalent Cordova plugin, such as the Camera."), h(Paragraph, null, "Remove unneeded ones to improve performance and reduce app size.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h(Tabs, null, h(TabBar, null, h(TabBarButton, { selected: selectedCodeTab === 'before', tabSelect: () => setSelectedCodeTab('before') }, "Cordova Camera"), h(TabBarButton, { selected: selectedCodeTab === 'after', tabSelect: () => setSelectedCodeTab('after') }, "Capacitor Camera")), h(Tab, { selected: selectedCodeTab === 'before' }, h("code-snippet", { style: { '--border-radius': '0 0 8px 8px' }, language: "typescript", code: `
 import { Camera } from '@ionic-native/camera/ngx';
 
 constructor(private camera: Camera) {}
@@ -8935,6 +8935,11 @@ var guideStructure = [
 		parent: true,
 		children: [
 			{
+				text: "CI/CD",
+				filePath: "/assets/guide-content/guides/ci-cd.json",
+				url: "/docs/guides/ci-cd"
+			},
+			{
 				text: "Deep Links",
 				filePath: "/assets/guide-content/guides/deep-links.json",
 				url: "/docs/guides/deep-links"
@@ -8965,14 +8970,19 @@ var guideStructure = [
 				url: "/docs/guides/push-notifications-firebase"
 			},
 			{
+				text: "Screen Orientation",
+				filePath: "/assets/guide-content/guides/screen-orientation.json",
+				url: "/docs/guides/screen-orientation"
+			},
+			{
 				text: "Splash Screens and Icons",
 				filePath: "/assets/guide-content/guides/splash-screens-and-icons.json",
 				url: "/docs/guides/splash-screens-and-icons"
 			},
 			{
-				text: "Screen Orientation",
-				filePath: "/assets/guide-content/guides/screen-orientation.json",
-				url: "/docs/guides/screen-orientation"
+				text: "Storage",
+				filePath: "/assets/guide-content/guides/storage.json",
+				url: "/docs/guides/storage"
 			},
 			{
 				text: "Community Guides",
@@ -11025,9 +11035,7 @@ class SiteMenu {
         this.showOverlay = !this.showOverlay;
     }
     siteStructureListChange() {
-        const parentIndex = this.siteStructureList.findIndex(item => {
-            return item === this.selectedParent;
-        });
+        const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
         this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
     }
     selectedParentChange() {

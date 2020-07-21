@@ -114,10 +114,6 @@ more-button {
 }
 
 @media screen and (max-width: 768px) {
-  .docs-search--default {
-    display: none;
-  }
-
   .docs-search--mobile,
   more-button {
     display: block;
@@ -132,6 +128,8 @@ more-button {
     padding-bottom: 10px;
 
     opacity: 0;
+    pointer-events: none;
+
     transform: translateY(-10px);
     transition:
       transform .2s cubic-bezier(.36,.66,.04,1),
@@ -189,6 +187,11 @@ more-button {
       height: 1px;
 
       background: rgba(0,0,0, 0.3);
+    }
+
+    .hide-mobile,
+    .docs-search--default {
+      display: none;
     }
   }
 

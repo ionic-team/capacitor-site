@@ -35,6 +35,8 @@
         position: sticky;
         top: 0;
         z-index: 1;
+
+        border-bottom: 1px solid #e9edf3;
       }
 
       .menu-header__logo-link {
@@ -43,6 +45,10 @@
 
       .menu-header__version-link {
         display: none;
+      }
+
+      .section-list {
+        display: block;
       }
     }
   }
@@ -150,6 +156,40 @@
 
   .section-active-indicator::after {
     background: var(--color-capacitor-blue);
+  }
+}
+
+.section-list {
+  display: none;
+
+  padding: 0;
+
+  border-bottom: 1px solid #dee3ea;
+}
+
+.section-list li {
+  margin: 16px 0;
+}
+
+.section-list a {
+  font-weight: 500;
+  font-size: 16px;
+
+  letter-spacing: -0.01em;
+
+  color: var(--color-grey-blue);
+
+  border: none;
+
+  cursor: pointer;
+
+  &.active {
+    color: #222d3a;
+    font-weight: 600;
+  }
+
+  &:hover {
+    color: var(--color-woodsmoke);
   }
 }
 

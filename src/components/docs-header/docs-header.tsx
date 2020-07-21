@@ -35,12 +35,12 @@ export class DocsHeader implements ComponentInterface {
           <more-button onClick={() => this.toggleExpanded()} />
 
           <div class="docs-header-links">
-            <div class="docs-header-links__internal">
+            <div class="docs-header-links__internal hide-mobile">
               <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guide</a>
               <a {...href('/docs/apis')} class={{ 'active': template === 'reference' }}>Reference</a>
             </div>
 
-            <div class="docs-header-links__divider"/>
+            <div class="docs-header-links__divider hide-mobile"/>
 
             <docs-search class="docs-search--default"></docs-search>
 

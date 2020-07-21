@@ -59,7 +59,7 @@ export class SiteMenu implements ComponentInterface{
   }
 
   render() {
-    const { version } = this;
+    const { template, version } = this;
 
     return (
       <Host
@@ -88,6 +88,14 @@ export class SiteMenu implements ComponentInterface{
                   : null
                }
             </div>
+            <ul class="section-list">
+               <li>
+                 <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guide</a>
+               </li>
+               <li>
+                 <a {...href('/docs/apis')} class={{ 'active': template === 'reference' }}>Reference</a>
+               </li>
+            </ul>
             <ul class="menu-list">
               { this.siteStructureList.map((item, i) => {
                 const active = item.url === Router.activePath;
