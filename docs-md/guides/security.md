@@ -22,7 +22,7 @@ One of the most important security tips for Capacitor apps, and any frontend app
 
 Instead, move most operations requiring secret keys or tokens to the server-side, where they can be protected and any requests can be forwarded from the server. This might be a serverless function or a traditional server-side app process.
 
-For apps that must work with persisted sensitive keys or tokens on the client, such as an auth token or an encryption key, the recommended options are to only deal with the value in memory (i.e. never persist it to disk), or by using secure keychain/keystore techniques that as detailed below.
+For apps that must work with persisted sensitive keys or tokens on the client, such as an auth token or an encryption key, the recommended options are to only deal with the value in memory (i.e. never persist it to disk), or by using secure keychain/keystore techniques as detailed below.
 
 ### Storing Encryption Keys, Session Tokens, etc.
 
