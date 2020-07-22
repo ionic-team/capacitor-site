@@ -4,15 +4,17 @@ docs-search {
   display: flex;
   align-items: center;
 
+  position: relative;
+
   flex: 1;
 
   margin: 0 22px;
 
   ion-icon {
     position: absolute;
-    left: 31px;
+    left: 8px;
+
     font-size: 17px;
-    top: 23px;
 
     color: #b2becd;
 
