@@ -7108,7 +7108,7 @@ class AppBurger {
     }; }
 }
 
-const appMarkedCss = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}app-marked{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex:1;flex:1;min-width:0;width:100%;padding:22px 32px 32px}";
+const appMarkedCss = "code[class*=language-],pre[class*=language-]{color:black;background:#F5F7FA;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;padding:24px;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#F5F7FA}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#F5F7FA}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#28A45C}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#4475CC}.token.function,.token.class-name{color:#CC5A74}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}app-marked{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex:1;flex:1;min-width:0;width:100%;padding:22px 32px 32px}";
 
 class AppMarked {
     constructor(hostRef) {
@@ -7860,7 +7860,7 @@ var timezoneRegex = /^([+-])(\d{2})(?::?(\d{2}))?$/;
  *
  * - The previous `parse` implementation was renamed to `parseISO`.
  *
- *   ```javascript
+ *   ```typescript
  *   // Before v2.0.0
  *   parse('2016-01-01')
  *
@@ -7871,7 +7871,7 @@ var timezoneRegex = /^([+-])(\d{2})(?::?(\d{2}))?$/;
  * - `parseISO` now validates separate date and time values in ISO-8601 strings
  *   and returns `Invalid Date` if the date is invalid.
  *
- *   ```javascript
+ *   ```typescript
  *   parseISO('2018-13-32')
  *   //=> Invalid Date
  *   ```
@@ -8130,6 +8130,7 @@ const BlogPost = ({ post, single = true }) => {
             !single && post.preview ? h(PostContinueReading, { post: post }) : null,
             single && h("disqus-comments", { url: getAbsoluteBlogPostUrl(post), siteId: 'capacitor', id: post.slug }))));
 };
+const PostFeaturedImage = ({ post }) => (h("img", { class: "blog-post__featured-image", src: post.featuredImage, alt: post.featuredImageAlt }));
 const PostContent = ({ html }) => (h("div", { innerHTML: html }));
 const PostContinueReading = ({ post }) => h("a", Object.assign({ class: "blog-post__continue-reading" }, href(getBlogPostPath(post), Router)),
     "Continue reading ",
@@ -8149,6 +8150,7 @@ const PostAuthor = ({ authorName, authorUrl, dateString }) => {
 var posts = [
 	{
 		title: "Native React Apps Without React Native",
+		description: "Build app store apps using React web libraries and Capacitor",
 		authorName: "Max Lynch",
 		authorEmail: "max@ionic.io",
 		authorUrl: "https://twitter.com/maxlynch",
@@ -8166,6 +8168,7 @@ var posts = [
 	},
 	{
 		title: "Capacitor announcements at Ioniconf 2020",
+		description: "All the Capacitor announcements from Ioniconf 2020",
 		authorName: "Max Lynch",
 		authorEmail: "max@ionic.io",
 		authorUrl: "https://twitter.com/maxlynch",
@@ -8176,6 +8179,7 @@ var posts = [
 		html: "<p>Today at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.</p>\n<p>In no particular order, we announced:</p>\n<ul>\n<li><a href=\"$POST#capacitor-opening-up\">Capacitor opening up to all modern web technologies</a></li>\n<li><a href=\"$POST#capacitor-community\">The Capacitor Community project</a></li>\n<li><a href=\"$POST#capacitor-elements\">Capacitor Elements</a></li>\n<li><a href=\"$POST#deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</a></li>\n<li><a href=\"$POST#updated-site-domain-and-docs\">Updated site and domain</a></li>\n</ul>\n<!--more-->\n\n<p>The conference kicks off a new era for Capacitor and for <a href=\"https://ionic.io/\">Ionic</a>, the company behind Capacitor.</p>\n<p>If you&#39;d like to see the announcements live, the <a href=\"https://ioniconf.com/\">keynote</a> (along with the rest of the conference) is now <a href=\"https://ioniconf.com/\">up</a>.</p>\n<h2 id=\"capacitor-opening-up\">Capacitor opening up</h2>\n<p>One of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.</p>\n<p>While technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.</p>\n<p>With this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.</p>\n<p>The new Capacitor mission is to help <em>all</em> web developers build cross-platform apps with their web development skills.</p>\n<h2 id=\"capacitor-community\">Capacitor Community</h2>\n<p>One of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.</p>\n<p>Yesterday, web announced a new <a href=\"https://github.com/capacitor-community\">Capacitor Community</a> GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.</p>\n<p>To start, we have a number of great plugins and many are in development. Check out the <a href=\"https://github.com/capacitor-community/http\">Http</a>, <a href=\"https://github.com/capacitor-community/contacts\">Contacts</a>, and <a href=\"https://github.com/capacitor-community/apple-sign-in\">Apple Sign In</a> plugins. We&#39;ve also started moving the <a href=\"https://github.com/capacitor-community/electron\">Electron</a> platform to the community org.</p>\n<p>Every project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.</p>\n<h2 id=\"capacitor-elements\">Capacitor Elements</h2>\n<p>We announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.</p>\n<p>These components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.</p>\n<p>The goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.</p>\n<p>This makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.</p>\n<p>Stay tuned for more updates soon!</p>\n<h2 id=\"deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</h2>\n<p>We announced that <a href=\"https://ionicframework.com/docs/appflow/destinations/intro\">Deploy to App Store</a>, a powerful new feature available in Ionic&#39;s DevOps service <a href=\"https://useappflow.com/\">Appflow</a> that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.</p>\n<p>This feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.</p>\n<p>Appflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.</p>\n<h2 id=\"updated-site-domain-and-docs\">Updated Site, Domain, and Docs</h2>\n<p>We&#39;ve updated the Capacitor site and moved to a new domain (<a href=\"https://capacitorjs.com\">capacitorjs.com</a>) and Twitter handle (<a href=\"https://twitter.com/capacitorjs\">@capacitorjs</a>).</p>\n<p>We also rolled out <a href=\"/docs\">updated documentation</a> as we embark on a documentation overhaul.</p>\n<h2 id=\"stay-tuned\">Stay tuned</h2>\n<p>Capacitor is quickly becoming the focal point of Ionic&#39;s open source offering, and we&#39;re investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.</p>\n<p>Stay tuned for a ton more Capacitor updates in the coming months!</p>\n",
 		meta: {
 			title: "Capacitor announcements at Ioniconf 2020",
+			description: "All the Capacitor announcements from Ioniconf 2020",
 			date: "2020-06-24T08:00:00.000Z",
 			author: "Max Lynch <max@ionic.io>",
 			authorUrl: "https://twitter.com/maxlynch"
@@ -8183,6 +8187,7 @@ var posts = [
 	},
 	{
 		title: "Announcing Capacitor 2.0",
+		description: "See what Capacitor 2.0 has to offer for web devs building mobile apps",
 		authorName: "Max Lynch",
 		authorEmail: "max@ionic.io",
 		authorUrl: "https://twitter.com/maxlynch",
@@ -8193,6 +8198,7 @@ var posts = [
 		html: "<p>Today we are excited to announce Capacitor 2.0!</p>\n<p>Capacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:</p>\n<ul>\n<li>Swift 5 and Xcode 11+ support</li>\n<li>Android 10 (SDK 29) and AndroidX support</li>\n<li>Bug fixes and usability improvements to 23+ core plugins</li>\n<li>Support for generating splash screens and icons</li>\n</ul>\n<p>We documented the whole update and talked about what&#39;s next for Capacitor over on the Ionic blog.</p>\n<p>Check it out:</p>\n<p><a href=\"https://ionicframework.com/blog/announcing-capacitor-2-0/\">https://ionicframework.com/blog/announcing-capacitor-2-0/</a></p>\n",
 		meta: {
 			title: "Announcing Capacitor 2.0",
+			description: "See what Capacitor 2.0 has to offer for web devs building mobile apps",
 			date: "2020-04-08T08:00:00.000Z",
 			author: "Max Lynch <max@ionic.io>",
 			authorUrl: "https://twitter.com/maxlynch"
@@ -8200,6 +8206,7 @@ var posts = [
 	},
 	{
 		title: "Announcing Capacitor 1.0",
+		description: "Build awesome mobile apps using web technology with Capacitor",
 		authorName: "Max Lynch",
 		authorEmail: "max@ionic.io",
 		authorUrl: "https://twitter.com/maxlynch",
@@ -8210,6 +8217,7 @@ var posts = [
 		html: "<p>Today I’m thrilled to announce the 1.0 release of <a href=\"/\">Capacitor</a>, Ionic’s new Native API Container that makes it easy to build web apps that run on iOS, Android, and the web as Progressive Web Apps—with full access to native functionality on each platform.</p>\n<p>We documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.</p>\n<p>Take a look: <a href=\"https://ionicframework.com/blog/announcing-capacitor-1-0/\">https://ionicframework.com/blog/announcing-capacitor-1-0/</a>.</p>\n",
 		meta: {
 			title: "Announcing Capacitor 1.0",
+			description: "Build awesome mobile apps using web technology with Capacitor",
 			date: "2019-05-22T08:00:00.000Z",
 			author: "Max Lynch <max@ionic.io>",
 			authorUrl: "https://twitter.com/maxlynch"
@@ -8268,7 +8276,7 @@ class BlogPage$1 {
     }
     render() {
         if (this.slug && this.post) {
-            return (h(Host, null, h("div", { class: "blog-posts" }, h("hgroup", { class: "blog-posts__heading" }, h(Heading, { level: 3 }, h("a", Object.assign({}, href('/blog')), "Blog"))), h(BlogPost, { post: this.post })), h("pre-footer", null), h("newsletter-signup", null), h("capacitor-site-footer", null)));
+            return (h(Host, null, h(Helmet, null, h("title", null, this.post.title, " - Capacitor Blog - Cross-platform native runtime for web apps"), h("meta", { name: "description", content: this.post.description }), h("meta", { name: "twitter:description", content: `${this.post.description} - Capacitor Blog` }), h("meta", { property: "og:image", content: this.post.featuredImage || 'https://capacitorjs.com/assets/img/og.png' })), h("div", { class: "blog-posts" }, h("hgroup", { class: "blog-posts__heading" }, h(Heading, { level: 3 }, h("a", Object.assign({}, href('/blog')), "Blog"))), h(BlogPost, { post: this.post })), h("pre-footer", null), h("newsletter-signup", null), h("capacitor-site-footer", null)));
         }
         return null;
     }
@@ -8429,119 +8437,6 @@ class ContributorList {
         "$attrsToReflect$": []
     }; }
 }
-
-const isObject = (val) => !Array.isArray(val) && val !== null && typeof val === 'object';
-const hasChildren = ({ vchildren }) => Array.isArray(vchildren);
-const hasAttributes = ({ vattrs }, requiredAttrs = []) => isObject(vattrs) && requiredAttrs.every(vattrs.hasOwnProperty.bind(vattrs));
-const isTextNode = ({ vtext }) => typeof vtext === 'string';
-// Can't use instanceof HTMLElement because MockHTMLElement during pre-rendering isn't
-const isElement = (val) => typeof val === 'object' && val.nodeType === 1 && typeof val.ownerDocument === 'object';
-const isElementArray = (val) => Array.isArray(val) && val.every(isElement);
-const convertToPublic$1 = (node) => ({
-    vattrs: node.$attrs$,
-    vchildren: node.$children$,
-    vkey: node.$key$,
-    vname: node.$name$,
-    vtag: node.$tag$,
-    vtext: node.$text$,
-});
-
-const createElement = ({ vtag, vattrs, vchildren, vtext }) => {
-    if (vtext != null) {
-        return document.createTextNode(vtext);
-    }
-    const element = document.createElement(vtag);
-    if (vattrs != null) {
-        for (const key in vattrs) {
-            element.setAttribute(key, vattrs[key]);
-        }
-    }
-    if (vchildren != null) {
-        for (const child of vchildren) {
-            element.appendChild(createElement(convertToPublic$1(child)));
-        }
-    }
-    return element;
-};
-const shouldApplyToHead = (val) => isElement(val) || (isElementArray(val) && val.length === 2);
-const applyToHead = (element) => {
-    if (Array.isArray(element)) {
-        return document.head.replaceChild(element[0], element[1]);
-    }
-    return document.head.appendChild(element);
-};
-
-function title(node, head) {
-    const firstChild = (node.vchildren || [])[0];
-    if (hasChildren(node) && isTextNode(convertToPublic$1(firstChild))) {
-        return [createElement(node), head.querySelector('title')];
-    }
-}
-function meta(node, head) {
-    var _a, _b, _c;
-    const namePropKey = ((_a = node.vattrs) === null || _a === void 0 ? void 0 : _a.property) ? 'property' : 'name';
-    const namePropValue = ((_b = node.vattrs) === null || _b === void 0 ? void 0 : _b.property) || ((_c = node.vattrs) === null || _c === void 0 ? void 0 : _c.name);
-    const existingElement = head.querySelector(`meta[${namePropKey}="${namePropValue}"]`);
-    if (existingElement !== null) {
-        return [createElement(node), existingElement];
-    }
-    else {
-        return createElement(node);
-    }
-}
-function link(node) {
-    if (!hasChildren(node)) {
-        return createElement(node);
-    }
-}
-function style(node) {
-    const firstChild = (node.vchildren || [])[0];
-    if (hasChildren(node) && isTextNode(convertToPublic$1(firstChild))) {
-        return createElement(node);
-    }
-}
-function script(node) {
-    if (hasChildren(node) || hasAttributes(node)) {
-        return createElement(node);
-    }
-}
-function base(node) {
-    if (!hasChildren(node) && hasAttributes(node)) {
-        return createElement(node);
-    }
-}
-const template = createElement;
-const noscript = createElement; // SSR only
-const types = {
-    title,
-    meta,
-    link,
-    style,
-    script,
-    base,
-    template,
-    noscript,
-};
-
-const headExists = document && document.head;
-const validTagNames = Object.keys(types);
-const isValidNode = (node) => validTagNames.indexOf(node.$tag$) > -1;
-const renderNode = (node) => types[node.vtag](node, document.head);
-const Helmet = (_props, children, utils) => {
-    if (!headExists) {
-        return null;
-    }
-    const validChildren = children.filter(isValidNode);
-    // Build an HTMLElement for each provided virtual child
-    const rendered = [];
-    utils.forEach(validChildren, (n) => {
-        rendered.push(renderNode(n));
-    });
-    rendered
-        .filter(shouldApplyToHead)
-        .forEach(applyToHead);
-    return null;
-};
 
 const Tabs = (_props, children) => (h("div", { class: "ui-tabs" }, children));
 const TabBar = (_, children) => (h("div", { class: "ui-tab-bar" }, children));
@@ -8973,6 +8868,36 @@ var guideStructure = [
 				text: "Screen Orientation",
 				filePath: "/assets/guide-content/guides/screen-orientation.json",
 				url: "/docs/guides/screen-orientation"
+			},
+			{
+				text: "In App Purchases",
+				filePath: "/assets/docs-content/guides/in-app-purchases.json",
+				url: "/docs/guides/in-app-purchases"
+			},
+			{
+				text: "Live Reload",
+				filePath: "/assets/docs-content/guides/live-reload.json",
+				url: "/docs/guides/live-reload"
+			},
+			{
+				text: "Push Notifications - Firebase",
+				filePath: "/assets/docs-content/guides/push-notifications-firebase.json",
+				url: "/docs/guides/push-notifications-firebase"
+			},
+			{
+				text: "React Hooks",
+				filePath: "/assets/docs-content/guides/react-hooks.json",
+				url: "/docs/guides/react-hooks"
+			},
+			{
+				text: "Screen Orientation",
+				filePath: "/assets/docs-content/guides/screen-orientation.json",
+				url: "/docs/guides/screen-orientation"
+			},
+			{
+				text: "Security",
+				filePath: "/assets/docs-content/guides/security.json",
+				url: "/docs/guides/security"
 			},
 			{
 				text: "Splash Screens and Icons",
@@ -10229,7 +10154,7 @@ class InternalAd {
 
 const FancyUnderline = (_, children) => (h("span", { class: "ui-fancy-underline" }, children));
 
-const landingPageCss = ".sc-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-landing-page-h{overflow-x:hidden;display:block}section.sc-landing-page{margin-bottom:196px}.hero.sc-landing-page{overflow-x:hidden;position:relative;margin-bottom:96px}.hero.sc-landing-page hgroup.sc-landing-page{position:relative}.hero__background.sc-landing-page{position:absolute;bottom:100px;width:1800px;height:1800px;left:calc(calc((1800px - 100%) / -2) - 50px);background:#F6F9FC;-webkit-transform:rotate(29deg) skewX(-30deg);transform:rotate(29deg) skewX(-30deg);z-index:-1}.hero.sc-landing-page img.sc-landing-page{max-width:100%}.hero__heading.sc-landing-page{padding-top:120px}.hero__heading.sc-landing-page h1.sc-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-display)}.hero__heading.sc-landing-page h3.sc-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;font-family:var(--f-family-text);letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__platforms.sc-landing-page{height:16px;margin-top:16px}.hero__graphic.sc-landing-page{padding-top:96px}.hero__buttons.sc-landing-page .ui-button.sc-landing-page{-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-landing-page .ui-button.sc-landing-page:first-child{margin-right:16px}.hero__buttons.sc-landing-page .btn-white.sc-landing-page{background:white;-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.feature__register.sc-landing-page{position:absolute;white-space:nowrap;top:50px;width:auto;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;z-index:1;padding:4px;border-radius:16px;background:white;color:var(--c-indigo-90);font-size:12px;-webkit-box-shadow:0px 1px 4px rgba(0, 0, 0, 0.1);box-shadow:0px 1px 4px rgba(0, 0, 0, 0.1)}.feature__register__text.sc-landing-page{display:inline-block}.feature__register__text.sc-landing-page .text__content.sc-landing-page{padding:0 8px}.feature__register__tag.sc-landing-page{display:inline-block;white-space:nowrap;padding:4px 6px;color:white;background:#FFB762;border-radius:var(--radii-3);font-size:var(--f-size-0);font-weight:bold;text-transform:uppercase;letter-spacing:var(--f-tracking-super)}.feature__register.sc-landing-page:hover,.feature__register.sc-landing-page:active,.feature__register.sc-landing-page:focus,.feature__register.sc-landing-page:focus-within{border-bottom-color:transparent}.points.sc-landing-page .ui-paragraph.sc-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-landing-page{width:64px;margin-left:-10px}.points.sc-landing-page h2.sc-landing-page{margin:0}.section--getting-started.sc-landing-page hgroup.sc-landing-page{margin-bottom:96px}.section--getting-started.sc-landing-page hgroup.sc-landing-page .ui-heading.sc-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-landing-page{padding-bottom:120px}.section--getting-started__step.sc-landing-page .apple.sc-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-landing-page .android.sc-landing-page{margin-top:8px;margin-left:12px;height:26px}@media (max-width: 768px){.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{display:none !important}}.section--getting-started__step.sc-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-landing-page:last-child .ui-col.sc-landing-page:first-child:after{display:none}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{content:\"\";display:block;margin-top:12px !important;height:calc(100% - 42px);width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-landing-page .ui-col.sc-landing-page .ui-heading.sc-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-landing-page img.sc-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--native-features.sc-landing-page img.sc-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-landing-page .ui-grid.sc-landing-page{-webkit-column-gap:16px;-moz-column-gap:16px;column-gap:16px;row-gap:16px}.section--your-framework.sc-landing-page .framework.sc-landing-page{height:200px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.section--your-framework.sc-landing-page .framework.sc-landing-page img.sc-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-landing-page hgroup.sc-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-landing-page img.sc-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-landing-page img.sc-landing-page:last-child{margin-right:0}.ui-fancy-underline.sc-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-landing-page .ui-tab.sc-landing-page{min-height:300px}.ui-tabs.sc-landing-page .ui-tab-bar.sc-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:16px}.ui-tabs.sc-landing-page .ui-tab-bar__button.sc-landing-page{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-landing-page .ui-tab-bar__button--selected.sc-landing-page{background:#617184;color:white;border-radius:6px}.cordova-cta.sc-landing-page{padding-top:10px;text-decoration:none;font-family:Inter;font-style:normal;font-weight:normal;font-size:14px;line-height:160%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;letter-spacing:0px}.cordova-cta.sc-landing-page a.sc-landing-page{color:#33ACFF}div.cordova-cta.sc-landing-page a.sc-landing-page:hover{text-decoration:none}";
+const landingPageCss = ".sc-landing-page:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-landing-page-h{overflow-x:hidden;display:block}section.sc-landing-page{margin-bottom:196px}.hero.sc-landing-page{overflow-x:hidden;position:relative;margin-bottom:96px}.hero.sc-landing-page hgroup.sc-landing-page{position:relative}.hero__background.sc-landing-page{position:absolute;bottom:100px;width:1800px;height:1800px;left:calc(calc((1800px - 100%) / -2) - 50px);background:#F6F9FC;-webkit-transform:rotate(29deg) skewX(-30deg);transform:rotate(29deg) skewX(-30deg);z-index:-1}.hero.sc-landing-page img.sc-landing-page{max-width:100%}.hero__heading.sc-landing-page{padding-top:120px}.hero__heading.sc-landing-page h1.sc-landing-page{font-size:64px;line-height:100%;letter-spacing:var(--f-tracking-dense);color:var(--c-carbon-100);margin-bottom:16px;font-family:var(--f-family-display)}.hero__heading.sc-landing-page h3.sc-landing-page{margin-top:12px;margin-bottom:16px;font-size:22px;line-height:160%;font-family:var(--f-family-text);letter-spacing:var(--f-tracking-tight);color:#2D4665;font-weight:normal}.hero__platforms.sc-landing-page{height:16px;margin-top:16px}.hero__graphic.sc-landing-page{padding-top:96px}.hero__buttons.sc-landing-page .ui-button.sc-landing-page{-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1)}.hero__buttons.sc-landing-page .ui-button.sc-landing-page:first-child{margin-right:16px}.hero__buttons.sc-landing-page .btn-white.sc-landing-page{background:white;-webkit-box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);box-shadow:0px 1px 2px rgba(2, 8, 20, 0.1);color:var(--color-capacitor-blue)}.feature__register.sc-landing-page{position:absolute;white-space:nowrap;top:50px;width:auto;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;z-index:1;padding:4px;border-radius:16px;background:white;color:var(--c-indigo-90);font-size:12px;-webkit-box-shadow:0px 1px 4px rgba(0, 0, 0, 0.1);box-shadow:0px 1px 4px rgba(0, 0, 0, 0.1)}.feature__register__text.sc-landing-page .text__content.sc-landing-page{padding:0 8px}.feature__register__tag.sc-landing-page{display:inline-block;white-space:nowrap;padding:4px 6px;color:white;background:#FFB762;border-radius:var(--radius-3);font-size:var(--f-size-0);font-weight:bold;text-transform:uppercase;letter-spacing:var(--f-tracking-super)}.feature__register.sc-landing-page:hover,.feature__register.sc-landing-page:active,.feature__register.sc-landing-page:focus,.feature__register.sc-landing-page:focus-within{border-bottom-color:transparent}.points.sc-landing-page .ui-paragraph.sc-landing-page{max-width:540px;margin-bottom:64px}.points__img.sc-landing-page{width:64px;margin-left:-10px}.points.sc-landing-page h2.sc-landing-page{margin:0}.section--getting-started.sc-landing-page hgroup.sc-landing-page{margin-bottom:96px}.section--getting-started.sc-landing-page hgroup.sc-landing-page .ui-heading.sc-landing-page{font-size:48px;font-weight:600;color:var(--c-carbon-100);letter-spacing:var(--f-tracking-dense)}.section--getting-started__step.sc-landing-page{padding-bottom:120px}.section--getting-started__step.sc-landing-page .apple.sc-landing-page{margin-top:8px;height:26px}.section--getting-started__step.sc-landing-page .android.sc-landing-page{margin-top:8px;margin-left:12px;height:26px}@media (max-width: 768px){.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{display:none !important}}.section--getting-started__step.sc-landing-page:last-child{padding-bottom:0;min-height:500px}.section--getting-started__step.sc-landing-page:last-child .ui-col.sc-landing-page:first-child:after{display:none}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child{font-size:12px;color:var(--c-carbon-40);font-family:var(--f-family-monospace);text-align:center;height:calc(100% + 120px)}.section--getting-started__step.sc-landing-page .ui-col.sc-landing-page:first-child:after{content:\"\";display:block;margin-top:12px !important;height:calc(100% - 42px);width:1px;margin:auto;background:var(--c-carbon-10)}.section--getting-started.sc-landing-page .ui-col.sc-landing-page .ui-heading.sc-landing-page{font-size:28px;font-weight:600;letter-spacing:var(--f-tracking-tight)}.section--web-apps-to-native.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--web-apps-to-native.sc-landing-page img.sc-landing-page{height:64px;margin-bottom:24px}.section--native-features.sc-landing-page hgroup.sc-landing-page{margin-bottom:76px}.section--native-features.sc-landing-page img.sc-landing-page{height:32px;margin-bottom:24px}.section--your-framework.sc-landing-page .ui-grid.sc-landing-page{-webkit-column-gap:16px;-moz-column-gap:16px;column-gap:16px;row-gap:16px}.section--your-framework.sc-landing-page .framework.sc-landing-page{height:200px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.section--your-framework.sc-landing-page .framework.sc-landing-page img.sc-landing-page{height:96px;mix-blend-mode:multiply}.section--platforms.sc-landing-page hgroup.sc-landing-page{text-align:center;max-width:560px;margin:auto}.section--platforms__all.sc-landing-page{text-align:center;margin-top:96px}.section--platforms__all.sc-landing-page img.sc-landing-page{max-width:100%;max-height:412px;margin-right:96px}.section--platforms__all.sc-landing-page img.sc-landing-page:last-child{margin-right:0}.ui-fancy-underline.sc-landing-page{display:inline-block;position:relative}.ui-fancy-underline.sc-landing-page:before{z-index:-1;background:#BFE4FF;display:block;content:\"\";position:absolute;bottom:0;left:0;width:100%;height:50%}.ui-tabs.sc-landing-page .ui-tab.sc-landing-page{min-height:300px}.ui-tabs.sc-landing-page .ui-tab-bar.sc-landing-page{background:#2E3B4A;border-radius:8px 8px 0 0;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;padding:16px}.ui-tabs.sc-landing-page .ui-tab-bar__button.sc-landing-page{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:var(--f-family-display);font-size:13px;color:var(--c-indigo-30);padding:6px 14px;margin-right:10px}.ui-tabs.sc-landing-page .ui-tab-bar__button--selected.sc-landing-page{background:#617184;color:white;border-radius:6px}.cordova-cta.sc-landing-page{padding-top:10px;text-decoration:none;font-family:Inter;font-style:normal;font-weight:normal;font-size:14px;line-height:160%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;letter-spacing:0px}.cordova-cta.sc-landing-page a.sc-landing-page{color:#33ACFF}div.cordova-cta.sc-landing-page a.sc-landing-page:hover{text-decoration:none}";
 
 class LandingPage {
     constructor(hostRef) {

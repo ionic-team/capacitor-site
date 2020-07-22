@@ -141,7 +141,7 @@ VueJS offers a first party routing system that integrates natively with Vue call
 
 First we import the capacitor `App` from plugins along with `Vue` and `VueRouter`.
 
-```javascript
+```typescript
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
 import Vue from 'vue';
@@ -150,7 +150,7 @@ import VueRouter from 'vue-router';
 
 Next, configure your routes using the Vue Router (more information on [Getting Started with Vue Router](https://router.vuejs.org/guide/#javascript)).
 
-```javascript
+```typescript
 const router = new VueRouter({
     routes: []
 })
@@ -160,7 +160,7 @@ It's recommended to use `mode: history` so you don't have to deal with the `#`.
 
 Let Vue know that you are using Vue Router and register the router within Vue:
 
-```javascript
+```typescript
 const VueApp = new Vue({
     router
 }).$mount('#app')
@@ -168,7 +168,7 @@ const VueApp = new Vue({
 
 Finally, we need to register our app for deep linking. To do that, we add an event listener to the `appUrlOpen` event on the Capacitor App. Capacitor will pick this up, then we hand it off to Vue Router to navigate to the page requested.
 
-```javascript
+```typescript
 App.addListener('appUrlOpen', function( data ){
     // Example url: https://beerswift.app/tabs/tabs2
     // slug = /tabs/tabs2
