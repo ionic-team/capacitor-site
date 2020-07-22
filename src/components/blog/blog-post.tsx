@@ -6,6 +6,7 @@ import { BlogPost } from './blog-common';
 import posts from '../../assets/blog.json';
 import { Heading } from '@ionic-internal/sites-shared';
 import { href } from 'stencil-router-v2';
+import Helmet from '@stencil/helmet';
 
 @Component({
   tag: 'blog-post',
@@ -29,6 +30,15 @@ export class BlogPage {
     if (this.slug && this.post) {
       return (
         <Host>
+          <Helmet>
+            <title>{this.post.title} - Capacitor Blog - Cross-platform native runtime for web apps</title>
+            <meta
+              name="description"
+              content={this.post.description}
+            />
+            <meta name="twitter:description" content={`${this.post.description} - Capacitor Blog`} />
+            <meta property="og:image" content={this.post.featuredImage || 'https://capacitorjs.com/assets/img/og.png'} />
+          </Helmet>
           <div class="blog-posts">
             <hgroup class="blog-posts__heading">
               <Heading level={3}><a {...href('/blog')}>Blog</a></Heading>

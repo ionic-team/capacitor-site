@@ -7,17 +7,17 @@ export interface MarkdownContent {
     srcPath?: string;
     content?: string;
   }
-  
+
   export interface MarkdownHeading {
     id: string;
     level: number;
     text: string;
   }
-  
+
   export interface SiteStructureItem {
     text: string,
     url?: string;
     filePath?: string;
     children?: SiteStructureItem[];
+    parent?: boolean;
   }
-  

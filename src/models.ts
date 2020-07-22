@@ -12,11 +12,16 @@ export interface BlogPostsResponse extends PrismicDocsResponse {};
 
 export interface RenderedBlog {
   title: string;
+  description: string;
   authorName: string;
   authorEmail: string;
+  authorUrl: string;
   slug: string;
   date: string;
   contents: string;
+
+  featuredImage?: string;
+  featuredImageAlt?: string;
 
   // The actual rendered HTML (preview and body)
   preview: string;

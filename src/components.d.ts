@@ -50,10 +50,12 @@ export namespace Components {
     interface DocSnippet {
     }
     interface DocsHeader {
+        "template": "guide" | "reference";
     }
     interface DocsMenu {
         "selectedParent": SiteStructureItem;
         "siteStructureList": SiteStructureItem[];
+        "template": "guide" | "reference";
         "toggleOverlayMenu": () => Promise<void>;
     }
     interface DocsSearch {
@@ -354,10 +356,13 @@ declare namespace LocalJSX {
     interface DocSnippet {
     }
     interface DocsHeader {
+        "template"?: "guide" | "reference";
     }
     interface DocsMenu {
+        "onMenuToggled"?: (event: CustomEvent<any>) => void;
         "selectedParent"?: SiteStructureItem;
         "siteStructureList"?: SiteStructureItem[];
+        "template"?: "guide" | "reference";
     }
     interface DocsSearch {
         "placeholder"?: string;

@@ -2,7 +2,7 @@
 
 
 :host {
-  
+  overflow-x: hidden;
   display: block;
 }
 
@@ -11,6 +11,7 @@ section {
 }
 
 .hero {
+  overflow-x: hidden;
   position:relative;
   margin-bottom: 96px;
 
@@ -98,8 +99,6 @@ section {
   box-shadow: 0px 1px 4px rgba(0,0,0,.1);
 
   &__text {
-    display: inline-block;
-
     .text__content {
       padding: 0 8px;
     }
@@ -111,7 +110,7 @@ section {
     padding: 4px 6px;
     color: white;
     background: #FFB762;
-    border-radius: var(--radii-3);
+    border-radius: var(--radius-3);
     font-size: var(--f-size-0);
     font-weight: bold;
     text-transform: uppercase;

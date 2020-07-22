@@ -11,7 +11,7 @@ var path = require('path');
 var util = require('util');
 
 var SITE_DIR = path.join(process.cwd(), './');
-var SITE_OUTPUT_DIR = 'src/assets/docs-content/apis';
+var API_OUTPUT_DIR = 'src/assets/reference-content/apis';
 
 const buildTypeLookup = (nodes) => {
   let d = {};
@@ -22,7 +22,7 @@ const buildTypeLookup = (nodes) => {
 const writeIndexHtmlOutput = (plugin, string) => {
   const pluginNameSplitCapitalized = plugin.name.match(/[A-Z][a-z]+/g);
   const targetDirName = pluginNameSplitCapitalized.slice(0, pluginNameSplitCapitalized.length-1).join('-').toLowerCase();
-  const p = path.join(SITE_DIR, SITE_OUTPUT_DIR, targetDirName, 'api-index.html');
+  const p = path.join(SITE_DIR, API_OUTPUT_DIR, targetDirName, 'api-index.html');
   try {
     fs.ensureDirSync(path.dirname(p));
     fs.writeFileSync(p, string, { encoding: 'utf8' });
@@ -35,7 +35,7 @@ const writeIndexHtmlOutput = (plugin, string) => {
 const writeDocumentationHtmlOutput = (plugin, string) => {
   const pluginNameSplitCapitalized = plugin.name.match(/[A-Z][a-z]+/g);
   const targetDirName = pluginNameSplitCapitalized.slice(0, pluginNameSplitCapitalized.length-1).join('-').toLowerCase();
-  const p = path.join(SITE_DIR, SITE_OUTPUT_DIR, targetDirName, 'api.html');
+  const p = path.join(SITE_DIR, API_OUTPUT_DIR, targetDirName, 'api.html');
   console.log('WRITING', p);
   try {
     fs.ensureDirSync(path.dirname(p));

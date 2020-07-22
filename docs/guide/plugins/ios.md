@@ -153,7 +153,7 @@ self.bridge.triggerDocumentJSEvent(eventName: "myCustomEvent", data: "my custom 
 
 And to listen for it, just use regular javascript:
 
-```javascript
+```typescript
 window.addEventListener("myCustomEvent", function() {
   console.log("myCustomEvent was fired")
 });
@@ -175,7 +175,7 @@ To emit the event from the Swift plugin class you can do it like this:
 
 To remove a listener from the plugin object:
 
-```javascript
+```typescript
 const myPluginEventListener = Plugins.MyPlugin.addListener("myPluginEvent", (info: any) => {
   console.log("myPluginEvent was fired");
 });
