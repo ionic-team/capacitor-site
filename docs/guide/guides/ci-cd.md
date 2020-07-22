@@ -48,4 +48,4 @@ To use it in this way, use webhooks to send built assets to Appflow on each comm
 
 ## Other Mobile CI/CD Options
 
-There are other services for Mobile CI/CD, though none focused on Capacitor. Some of those options include [Visual Studio App Center](https://appcenter.ms), [Bitrise](https://www.bitrise.io/), and [Buddybuild](https://www.buddybuild.com/) (iOS only). Keep in mind none of these services provide remote real-time app updates for Capacitor apps.
+There are other services for Mobile CI/CD, though none focused on Capacitor. Some of those options include [Visual Studio App Center](https://appcenter.ms), [Bitrise](https://www.bitrise.io/), and [Buddybuild](https://www.buddybuild.com/) (iOS only). Keep in mind none of these services currently provide remote real-time app updates for Capacitor apps.

@@ -24,17 +24,12 @@ export class LandingPage {
                 <hgroup class="hero__heading">
                 <a class="feature__register" href="https://ionicframework.com/resources/webinars/hybrid-app-development-redefined" target="_blank" rel="noopener nofollow">
                   <div class="feature__register__tag">Live demo</div>
-                    <Breakpoint mobile={false} tablet={false} desktop={true} inlineBlock={true} class="feature__register__text">
+                    <Breakpoint mobile={true} inlineBlock={true} class="feature__register__text">
                       <span class="text__content">
                         Hybrid vs. Native Webinar Wed, July 22nd <span style={{'letter-spacing':'0'}}>-&gt;</span>
                       </span>
                     </Breakpoint>
-                    <Breakpoint mobile={false} tablet={true} desktop={false} inlineBlock={true} class="feature__register__text">
-                      <span class="text__content">
-                        Hybrid vs. Native Webinar July 22nd<span style={{'letter-spacing':'0'}}>-&gt;</span>
-                      </span>
-                    </Breakpoint>
-                    <Breakpoint mobile={true} tablet={false} desktop={false} inlineBlock={true} class="feature__register__text">
+                    <Breakpoint mobile={true} tablet={false} inlineBlock={true} class="feature__register__text">
                       <span class="text__content">
                         Hybrid vs. Native Webinar <span style={{'letter-spacing':'0'}}>-&gt;</span>
                       </span>

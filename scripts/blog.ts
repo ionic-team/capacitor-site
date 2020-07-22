@@ -14,6 +14,9 @@ export interface RenderedBlog {
   authorName: string;
   authorEmail: string;
   authorUrl: string;
+  description: string;
+  featuredImage: string;
+  featuredImageAlt: string;
   slug: string;
   date: string;
   contents: string;
@@ -75,6 +78,7 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
 
   const rendered = {
     title: data.attributes.title,
+    description: data.attributes.description,
     authorName,
     authorEmail,
     authorUrl,
@@ -83,7 +87,9 @@ async function buildPost(postFile: string): Promise<RenderedBlog> {
     contents: contents.toString('utf-8'),
     preview: parsedPreview,
     html: parsedBody,
-    meta: data.attributes
+    meta: data.attributes,
+    featuredImage: data.attributes.featuredImage,
+    featuredImageAlt: data.attributes.featuredImageAlt
   } as RenderedBlog;
 
   return rendered;
