@@ -197,7 +197,7 @@ bridge.triggerDocumentJSEvent("myCustomEvent",  "{ 'dataKey': 'dataValue' }");
 
 And to listen for it, just use regular javascript:
 
-```javascript
+```typescript
 window.addEventListener("myCustomEvent", function() {
   console.log("myCustomEvent was fired")
 });
@@ -223,7 +223,7 @@ notifyListeners("myPluginEvent", ret);
 
 To remove a listener from the plugin object:
 
-```javascript
+```typescript
 const myPluginEventListener = Plugins.MyPlugin.addListener("myPluginEvent", (info: any) => {
   console.log("myPluginEvent was fired");
 });

@@ -73,7 +73,7 @@ public class MainActivity extends BridgeActivity {
 
 Then you can use your functions in your webView code:
 
-```javascript
+```typescript
 // Other codes...
 import { Plugins } from "@capacitor/core";
 const { CustomNativePlugin } = Plugins;

@@ -29,6 +29,16 @@ export class CapacitorSiteRoutes {
 
       // Reset scroll position
       requestAnimationFrame(() => window.scrollTo(0, 0));
+
+      if (newValue.hash) {
+        const id = newValue.hash.slice(1);
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView && el.scrollIntoView();
+          }
+        }, 50);
+      }
     });
   }
 
