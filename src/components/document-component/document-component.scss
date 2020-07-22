@@ -7,6 +7,10 @@ document-component {
 
     max-width: none;
     padding: 0;
+
+    > site-backdrop {
+      z-index: 2 !important;
+    }
   }
 
   .content-container {

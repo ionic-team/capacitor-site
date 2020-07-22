@@ -42,14 +42,16 @@ export function generateSiteStructure(nodes: any): SiteStructureItem[] {
     const [title, ...items] = listItem.children;
     let heading = title.children[0];
     let headingItem: any = {
-      text: heading.value
+      text: heading.value,
+      parent: true
     };
     if (heading.type === 'link') {
       const filePath = heading.url;
       heading = title.children[0].children[0];
       headingItem = {
         text: heading.value,
-        filePath
+        filePath,
+        parent: true
       };
     }
     let listChildren = [];

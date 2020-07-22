@@ -1,10 +1,9 @@
 import { Component, Listen, Prop, Watch, ComponentInterface, State, h } from '@stencil/core';
 import Helmet from '@stencil/helmet';
 
-import siteStructure from '../../assets/docs-structure.json';
 import { findItem } from '../../global/site-structure-utils';
 import { SiteStructureItem } from '../../global/definitions';
-import { handleRoutableLinkClick } from '../../utils/route-link';
+import { handleRoutableLinkClick, getTemplateFromPath, getSiteStructureList } from '../../utils/route-link';
 
 import state from '../../store';
 
@@ -13,6 +12,8 @@ import state from '../../store';
   styleUrl: 'document-component.scss'
 })
 export class DocumentComponent implements ComponentInterface {
+  template: 'guide' | 'reference';
+
   menuEl!: HTMLDocsMenuElement;
 
   @Prop() pages: string[] = [];
@@ -23,16 +24,27 @@ export class DocumentComponent implements ComponentInterface {
   @State() nextItem: SiteStructureItem;
   @State() prevItem: SiteStructureItem;
   @State() parent: SiteStructureItem;
+  @State() menuStructure: SiteStructureItem[];
+  @State() showBackdrop: boolean = false;
 
   @Listen('menuToggleClick')
   toggleMenu() {
     this.menuEl.toggleOverlayMenu();
   }
 
+  @Listen('menuToggled')
+  menuToggled(ev: CustomEvent) {
+    const isOpen = ev.detail;
+    this.showBackdrop = isOpen;
+  }
+
+  backdropClicked() {
+    this.menuEl.toggleOverlayMenu();
+  }
+
   componentWillLoad() {
-    console.log('Hiding topbar', state.showTopBar);
     state.showTopBar = false;
-    return this.fetchNewContent(this.page);
+    this.fetchNewContent(this.page);
   }
 
   @Watch('page')
@@ -41,7 +53,11 @@ export class DocumentComponent implements ComponentInterface {
       return;
     }
     state.showTopBar = false;
-    const foundData = findItem(siteStructure as SiteStructureItem[], this.page);
+
+    this.template = getTemplateFromPath(this.page);
+    this.menuStructure = getSiteStructureList(this.page);
+
+    const foundData = findItem(this.menuStructure, page);
     this.item = foundData.item;
     this.nextItem = foundData.nextItem;
     this.prevItem = foundData.prevItem;
@@ -56,13 +72,16 @@ export class DocumentComponent implements ComponentInterface {
       <div class="container">
         <app-menu-toggle />
 
+        <site-backdrop visible={this.showBackdrop} onClick={() => this.backdropClicked()}></site-backdrop>
+
         <docs-menu
           ref={ el => this.menuEl = el }
+          template={this.template}
           selectedParent={this.parent}
-          siteStructureList={siteStructure as SiteStructureItem[]} />
+          siteStructureList={this.menuStructure} />
 
         <div class="content-container">
-          <docs-header/>
+          <docs-header template={this.template} />
 
           <app-marked fetchPath={this.item.filePath} renderer={(docsContent) => [
             <Helmet>

@@ -74,8 +74,8 @@ export class CapacitorSiteRoutes {
             <document-component page="/docs" />
           </Route>
 
-          <Route path={match('/docs/:pageName*')} render={({ pageName }) => (
-            <document-component page={`/docs/${pageName}`} />
+          <Route path={match('/docs/:route*')} render={( opts ) => (
+            <document-component page={`/docs/${opts.route}`}/>
           )} />
 
           <Route path={match('/solution/:solutionId*')} render={({ solutionId }) => (

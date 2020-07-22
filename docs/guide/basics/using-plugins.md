@@ -19,7 +19,7 @@ contributors:
 
 The community has built a number of plugins for various native functionality and you can easily add them to your app.
 
-See our [Community Plugins](/docs/community/plugins/) list for some options.
+See our [Community Plugins](/docs/community/) list for some options.
 
 ## Using Cordova and Ionic Native Plugins
 

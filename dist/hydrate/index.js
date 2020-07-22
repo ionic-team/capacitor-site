@@ -7057,7 +7057,7 @@ const { state } = createStore({
     prismLanguagesLoaded: {}
 });
 
-const capacitorSiteCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}code[class*=language-],pre[class*=language-]{color:black;background:#F5F7FA;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;padding:24px;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#F5F7FA}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#F5F7FA}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#28A45C}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#4475CC}.token.function,.token.class-name{color:#CC5A74}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}.push{margin-top:70px}.push-sm{margin-top:36px}.block{display:block}.pull-left{float:left}.pull-right{float:right}.no-scroll{overflow:hidden}.sticky{position:-webkit-sticky;position:sticky;top:100px;max-height:calc(100vh - 100px);overflow-y:auto;overflow-x:hidden}.btn{-webkit-transition:all 0.15s ease;transition:all 0.15s ease;text-decoration:none;border:none;outline:none;font-size:13px;font-weight:700;text-transform:uppercase;padding:12px 14px;border-radius:4px;letter-spacing:0.04em;-webkit-box-shadow:var(--button-shadow);box-shadow:var(--button-shadow);cursor:pointer;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}.btn a{text-decoration:none}.btn app-icon{margin-right:8px;opacity:0.8}.btn:hover{text-decoration:none;-webkit-transform:translateY(1px);transform:translateY(1px);-webkit-box-shadow:var(--button-shadow-hover);box-shadow:var(--button-shadow-hover)}.btn--primary{background:var(--color-dodger-blue);color:var(--color-white)}.btn--secondary{background:var(--color-white);color:var(--color-dodger-blue)}.btn--tertiary{background:#F4F4FD;color:var(--color-dodger-blue);-webkit-box-shadow:none;box-shadow:none}.btn--tertiary:hover{background-color:#ececf9;-webkit-box-shadow:none;box-shadow:none;-webkit-transform:none;transform:none}.btn--small{letter-spacing:-0.02em;text-transform:none;font-size:15px;padding:5px 12px 7px;font-weight:500;border-radius:8px;min-height:38px}*{-webkit-box-sizing:border-box;box-sizing:border-box}capacitor-site{min-height:100%;display:block}site-root{-ms-flex:1;flex:1}.page-theme--dark{background:var(--c-carbon-100);color:var(--c-indigo-10)}.page-theme--dark .ui-heading,.page-theme--dark h1,.page-theme--dark h2,.page-theme--dark h3,.page-theme--dark h4,.page-theme--dark h5{color:var(--c-indigo-10)}.page-theme--dark p{color:var(--c-indigo-10)}.no-scroll{overflow:hidden}.left-sidebar-in{-webkit-animation-name:slideIn;animation-name:slideIn;-webkit-animation-duration:0.7s;animation-duration:0.7s;-webkit-animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes slideIn{from{left:0}to{left:calc(100vw - 56px)}}@keyframes slideIn{from{left:0}to{left:calc(100vw - 56px)}}.left-sidebar-out{-webkit-animation-name:slideOut;animation-name:slideOut;-webkit-animation-duration:0.7s;animation-duration:0.7s;-webkit-animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes slideOut{from{left:calc(100vw - 56px)}to{left:0}}@keyframes slideOut{from{left:calc(100vw - 56px)}to{left:0}}.root{position:relative}.row{display:-ms-flexbox;display:flex}.col{-ms-flex:1;flex:1}.container{max-width:1280px;width:100%;margin:auto;padding:0 24px}.container-flex{display:-ms-flexbox;display:flex}document-component>div{display:-ms-flexbox;display:flex}.doc-content{max-width:100%;margin:0 auto}.input-with-button{display:-ms-flexbox;display:flex;height:50px;max-width:460px;-ms-flex:1;flex:1}.input-with-button input{-ms-flex:1;flex:1;height:100%}.input-with-button button{-ms-flex-positive:0;flex-grow:0;-ms-flex-negative:1;flex-shrink:1;margin:0;border:0;border-radius:0px 3px 3px 0;height:100%}.input-with-button button:hover{-webkit-transform:none;transform:none}.measure-lg{max-width:670px}.app{height:100%}::-moz-selection{background:#98d2ff}::selection{background:#98d2ff}::-moz-selection{background:#98d2ff}html,body{font-family:\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";width:100%;height:100%;padding:0;margin:0;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;scroll-padding-top:80px}body{background-color:#fff}h1,h2,h3,h4{color:#16161d;letter-spacing:0px;font-weight:700}h1{font-size:40px;letter-spacing:-0.03em;font-weight:600}h2{font-size:22px;letter-spacing:-0.02em;font-weight:600}h2,h3{margin-top:64px;margin-bottom:8px}h2 code{font-weight:600;font-family:\"Roboto Mono\", \"Source Code Pro\", monospace;font-size:20px;color:#16161D;background:#ecf4fb;margin-left:6px;padding:4px 8px;border-radius:4px}ul li{font-size:14px;margin-top:16px}ol li{color:#4a5568;font-size:15px;line-height:1.8em;margin:16px 0}p,ul{color:#4a5568;font-size:15px;line-height:1.8em;margin:16px 0px}strong,b{font-weight:500}a{-webkit-transition:border 0.3s;transition:border 0.3s;color:#1d9aff;border-bottom:1px solid transparent}a:hover{border-bottom-color:rgba(29, 154, 255, 0.3)}p a{font-weight:500}.intro{font-size:18px;margin-bottom:24px;letter-spacing:-0.01em}.intro code{font-size:18px}blockquote{background:rgba(255, 250, 237, 0.8);border-left:4px solid #ffcc5f;border-radius:2px 4px 4px 2px;color:#736545 !important;font-size:14px;line-height:1.8em;margin:auto;padding:16px 20px}.wrapper{line-height:32px;min-height:100%;padding-top:100px;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:start;align-items:flex-start}.nextButton{background:#5851ff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer;float:right;margin-right:5px}.nextButton:hover{text-decoration:none;-webkit-transform:translateY(1px);transform:translateY(1px);-webkit-box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16);box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16)}.backButton{color:#5851ff;background:white;text-decoration:none;float:left;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer;margin-bottom:15px;margin-left:5px}.backButton:hover{text-decoration:none;-webkit-transform:translateY(1px);transform:translateY(1px);-webkit-box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16);box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16)}pre{word-break:break-all;word-wrap:break-word;display:block;white-space:pre-wrap;margin:24px 0px 28px;border-radius:4px;color:#16161D;background-color:#f8f8f8}pre code{font-weight:500;display:block;overflow-x:auto;word-wrap:normal;white-space:pre-wrap;-webkit-box-sizing:border-box;box-sizing:border-box;font-size:14px;line-height:20px}code{font-weight:400;font-family:\"Roboto Mono\", \"Source Code Pro\", monospace;font-size:14px}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#db00e9}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#2973b7}.hljs-tag{color:#2973b7}.hljs-literal{color:#56b6c2}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#2cc17e}.hljs-built_in,.hljs-class .hljs-title{color:#db00e9}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#d19a66}.hljs-attr{color:#525252}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#2973b7}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}@media screen and (max-width: 355px){.wrapper{padding-top:100px}}@media screen and (max-width: 450px){.wrapper{padding-top:80px}site-header stencil-route-link a{display:initial}}@media screen and (max-width: 590px){.wrapper{margin-right:0;margin-left:0;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.wrapper .pull-right{padding:0 15px;width:100%;min-height:100vh}.wrapper .pull-left{position:relative;padding:15px;width:100%;bottom:0;background-color:#16161d}.wrapper .pull-left *{color:#ffffff}}@media screen and (min-width: 590px){.wrapper .pull-left{min-width:250px;max-width:250px;position:-webkit-sticky;position:sticky;top:50px}.wrapper .pull-right{padding-left:96px;padding-right:32px;-ms-flex:1 1 auto;flex:1 1 auto;overflow:auto;min-height:100vh}}.document .container{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.document plugin-platforms{display:block;float:right}.document plugin-platforms .platform{margin-left:8px}.document img{max-width:100%}.document h1:first-child anchor-link{display:none}.document ul{-webkit-padding-start:0px}.document ul li,.document ul code{font-size:16px;margin-left:18px}.document p a{color:#1d9aff;text-decoration:none}.document p code,.document ul code,.document ol code{padding:0 4px 3px;background-color:#ecf4fb;color:#16161D;border-radius:3px}.document #introButton{background:#1d9aff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:16px 20px;border-radius:2px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer}.document #introButton:hover{-webkit-box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);-webkit-transform:translateY(1px);transform:translateY(1px)}";
+const capacitorSiteCss = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.push{margin-top:70px}.push-sm{margin-top:36px}.block{display:block}.pull-left{float:left}.pull-right{float:right}.no-scroll{overflow:hidden}.sticky{position:-webkit-sticky;position:sticky;top:100px;max-height:calc(100vh - 100px);overflow-y:auto;overflow-x:hidden}.btn{-webkit-transition:all 0.15s ease;transition:all 0.15s ease;text-decoration:none;border:none;outline:none;font-size:13px;font-weight:700;text-transform:uppercase;padding:12px 14px;border-radius:4px;letter-spacing:0.04em;-webkit-box-shadow:var(--button-shadow);box-shadow:var(--button-shadow);cursor:pointer;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}.btn a{text-decoration:none}.btn app-icon{margin-right:8px;opacity:0.8}.btn:hover{text-decoration:none;-webkit-transform:translateY(1px);transform:translateY(1px);-webkit-box-shadow:var(--button-shadow-hover);box-shadow:var(--button-shadow-hover)}.btn--primary{background:var(--color-dodger-blue);color:var(--color-white)}.btn--secondary{background:var(--color-white);color:var(--color-dodger-blue)}.btn--tertiary{background:#F4F4FD;color:var(--color-dodger-blue);-webkit-box-shadow:none;box-shadow:none}.btn--tertiary:hover{background-color:#ececf9;-webkit-box-shadow:none;box-shadow:none;-webkit-transform:none;transform:none}.btn--small{letter-spacing:-0.02em;text-transform:none;font-size:15px;padding:5px 12px 7px;font-weight:500;border-radius:8px;min-height:38px}*{-webkit-box-sizing:border-box;box-sizing:border-box}capacitor-site{min-height:100%;display:block}site-root{-ms-flex:1;flex:1}.page-theme--dark{background:var(--c-carbon-100);color:var(--c-indigo-10)}.page-theme--dark .ui-heading,.page-theme--dark h1,.page-theme--dark h2,.page-theme--dark h3,.page-theme--dark h4,.page-theme--dark h5{color:var(--c-indigo-10)}.page-theme--dark p{color:var(--c-indigo-10)}.no-scroll{overflow:hidden}.left-sidebar-in{-webkit-animation-name:slideIn;animation-name:slideIn;-webkit-animation-duration:0.7s;animation-duration:0.7s;-webkit-animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes slideIn{from{left:0}to{left:calc(100vw - 56px)}}@keyframes slideIn{from{left:0}to{left:calc(100vw - 56px)}}.left-sidebar-out{-webkit-animation-name:slideOut;animation-name:slideOut;-webkit-animation-duration:0.7s;animation-duration:0.7s;-webkit-animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);animation-timing-function:cubic-bezier(0.19, 1, 0.22, 1);-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes slideOut{from{left:calc(100vw - 56px)}to{left:0}}@keyframes slideOut{from{left:calc(100vw - 56px)}to{left:0}}.root{position:relative}.row{display:-ms-flexbox;display:flex}.col{-ms-flex:1;flex:1}.container{max-width:1280px;width:100%;margin:auto;padding:0 24px}.container-flex{display:-ms-flexbox;display:flex}document-component>div{display:-ms-flexbox;display:flex}.doc-content{max-width:100%;margin:0 auto}.input-with-button{display:-ms-flexbox;display:flex;height:50px;max-width:460px;-ms-flex:1;flex:1}.input-with-button input{-ms-flex:1;flex:1;height:100%}.input-with-button button{-ms-flex-positive:0;flex-grow:0;-ms-flex-negative:1;flex-shrink:1;margin:0;border:0;border-radius:0px 3px 3px 0;height:100%}.input-with-button button:hover{-webkit-transform:none;transform:none}.measure-lg{max-width:670px}.app{height:100%}::-moz-selection{background:#98d2ff}::selection{background:#98d2ff}::-moz-selection{background:#98d2ff}html,body{font-family:\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";width:100%;height:100%;padding:0;margin:0;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;scroll-padding-top:80px}body{background-color:#fff}h1,h2,h3,h4{color:#16161d;letter-spacing:0px;font-weight:700}h1{font-size:40px;letter-spacing:-0.03em;font-weight:600}h2{font-size:22px;letter-spacing:-0.02em;font-weight:600}h2,h3{margin-top:64px;margin-bottom:8px}h2 code{font-weight:600;font-family:\"Roboto Mono\", \"Source Code Pro\", monospace;font-size:20px;color:#16161D;background:#ecf4fb;margin-left:6px;padding:4px 8px;border-radius:4px}ul li{font-size:14px;margin-top:16px}ol li{color:#4a5568;font-size:15px;line-height:1.8em;margin:16px 0}p,ul{color:#4a5568;font-size:15px;line-height:1.8em;margin:16px 0px}strong,b{font-weight:500}a{-webkit-transition:border 0.3s;transition:border 0.3s;color:#1d9aff;border-bottom:1px solid transparent}a:hover{border-bottom-color:rgba(29, 154, 255, 0.3)}p a{font-weight:500}.intro{font-size:18px;margin-bottom:24px;letter-spacing:-0.01em}.intro code{font-size:18px}blockquote{background:rgba(255, 250, 237, 0.8);border-left:4px solid #ffcc5f;border-radius:2px 4px 4px 2px;color:#736545 !important;font-size:14px;line-height:1.8em;margin:auto;padding:16px 20px}.wrapper{line-height:32px;min-height:100%;padding-top:100px;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:start;align-items:flex-start}.nextButton{background:#5851ff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer;float:right;margin-right:5px}.nextButton:hover{text-decoration:none;-webkit-transform:translateY(1px);transform:translateY(1px);-webkit-box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16);box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16)}.backButton{color:#5851ff;background:white;text-decoration:none;float:left;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer;margin-bottom:15px;margin-left:5px}.backButton:hover{text-decoration:none;-webkit-transform:translateY(1px);transform:translateY(1px);-webkit-box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16);box-shadow:0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16)}pre{word-break:break-all;word-wrap:break-word;display:block;white-space:pre-wrap;margin:24px 0px 28px;border-radius:4px;color:#16161D;background-color:#f8f8f8}pre code{font-weight:500;display:block;overflow-x:auto;word-wrap:normal;white-space:pre-wrap;-webkit-box-sizing:border-box;box-sizing:border-box;font-size:14px;line-height:20px}code{font-weight:400;font-family:\"Roboto Mono\", \"Source Code Pro\", monospace;font-size:14px}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#db00e9}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#2973b7}.hljs-tag{color:#2973b7}.hljs-literal{color:#56b6c2}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#2cc17e}.hljs-built_in,.hljs-class .hljs-title{color:#db00e9}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#d19a66}.hljs-attr{color:#525252}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#2973b7}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}@media screen and (max-width: 355px){.wrapper{padding-top:100px}}@media screen and (max-width: 450px){.wrapper{padding-top:80px}site-header stencil-route-link a{display:initial}}@media screen and (max-width: 590px){.wrapper{margin-right:0;margin-left:0;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.wrapper .pull-right{padding:0 15px;width:100%;min-height:100vh}.wrapper .pull-left{position:relative;padding:15px;width:100%;bottom:0;background-color:#16161d}.wrapper .pull-left *{color:#ffffff}}@media screen and (min-width: 590px){.wrapper .pull-left{min-width:250px;max-width:250px;position:-webkit-sticky;position:sticky;top:50px}.wrapper .pull-right{padding-left:96px;padding-right:32px;-ms-flex:1 1 auto;flex:1 1 auto;overflow:auto;min-height:100vh}}.document .container{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.document plugin-platforms{display:block;float:right}.document plugin-platforms .platform{margin-left:8px}.document img{max-width:100%}.document h1:first-child anchor-link{display:none}.document ul{-webkit-padding-start:0px}.document ul li,.document ul code{font-size:16px;margin-left:18px}.document p a{color:#1d9aff;text-decoration:none}.document p code,.document ul code,.document ol code{padding:0 4px 3px;background-color:#ecf4fb;color:#16161D;border-radius:3px}.document #introButton{background:#1d9aff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:16px 20px;border-radius:2px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer}.document #introButton:hover{-webkit-box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);-webkit-transform:translateY(1px);transform:translateY(1px)}";
 
 class App {
     constructor(hostRef) {
@@ -8126,7 +8126,6 @@ const BlogPost = ({ post, single = true }) => {
             h(Heading, { level: 2 },
                 h("a", { href: getBlogPostPath(post) }, post.title)),
             h(PostAuthor, { authorName: post.authorName, authorUrl: post.authorUrl, dateString: post.date }),
-            post.featuredImage && h(PostFeaturedImage, { post: post }),
             h(PostContent, { html: content }),
             !single && post.preview ? h(PostContinueReading, { post: post }) : null,
             single && h("disqus-comments", { url: getAbsoluteBlogPostUrl(post), siteId: 'capacitor', id: post.slug }))));
@@ -8157,20 +8156,15 @@ var posts = [
 		authorUrl: "https://twitter.com/maxlynch",
 		slug: "native-react-apps-without-react-native",
 		date: "2020-07-14T08:00:00.000Z",
-		contents: "---\ntitle: Native React Apps Without React Native\ndate: 2020-07-14 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\ndescription: Build app store apps using React web libraries and Capacitor\nfeaturedImage: /assets/img/blog/native-wout-react-native.png\nfeaturedImageAlt: Native React Apps Without React Native\n---\n\nIn the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.\n\nHowever, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.\n\nThe net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.\n\nTo do that, we need to take a look at [Capacitor](https://capacitorjs.com/) -- a native runtime for cross-platform web apps, including any and all React web apps.\n\n<!--more-->\n\n## Capacitor: Native Runtime for Web Apps\n\n[Capacitor](https://capacitorjs.com/) is sort of an “electron for mobile” that provides a native runtime for any modern web app, so it can run natively on iOS, Android, and the web using the same code. Capacitor provides full native API access through a [powerful plugin system](https://capacitorjs.com/docs/plugins), so apps can access the same level of functionality as any other pure native (or React Native) app.\n\nCapacitor is focused on enabling modern web apps to run on multiple platforms, and embraces browser-built apps. Capacitor is not a native UI abstraction like React Native, though native UI can certainly be used alongside a Capacitor app.\n\nCapacitor apps for iOS and Android [are native apps](https://medium.com/@maxlynch/cordova-ionic-apps-are-native-apps-64f9e1a995d9), they just happen to do a large amount of their work in a primary WebView.\n\nAs a side effect of being web-focused, Capacitor provides a standard web development experience where apps can be built largely in the browser, bringing the experience and tooling web developers have come to love.\n\n## Build Native Apps with Material-UI, Chakra, Ant, Prime, and more\n\nBecause Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using [Material-UI](https://material-ui.com/) or [Chakra](https://chakra-ui.com/) or [Prime](https://www.primefaces.org/primereact/) or [Ant](https://ant.design/) or [Ionic Framework](https://ionicframework.com/), or any other React UI library, can be turned into native apps using Capacitor (see our [examples repo](https://github.com/capacitor-community/examples) for real code in a variety of libraries).\n\nThis simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)\n\n## Bonus: Deploy Progressive Web Apps and Native Apps\n\nOne additional bonus feature of Capacitor is that it works on the web for Progressive Web Apps. That means an app using Capacitor can access many of the same APIs on native mobile but on the web instead. For example, the [Camera](https://capacitorjs.com/docs/apis/camera) and [Share](https://capacitorjs.com/docs/apis/share) APIs work across iOS, Android, and the web with the same code.\n\nWith this capability, teams often can build and ship on three platforms on day one, or even embrace [Progressive Web App First Development](https://ionicframework.com/blog/forget-mobile-first-progressive-web-app-first-is-the-future/), by using Capacitor.\n\n## Transform your React Web App into Native with Capacitor\n\nAdding native functionality and deploying to iOS, Android, and PWA with your existing React web app is easy. Just install Capacitor, drop it into to your project, and add a platform:\n\n```shell\nnpm install @capacitor/cli @capacitor/core\nnpx cap init\nnpx cap add ios\n```\n\nThen, to start using in a web app, import from `@capacitor/core`:\n\n```typescript\nimport { Plugins } from '@capacitor/core';\n\nconst { Share } = Plugins;\nawait Share.share({\n  title: 'My awesome thing',\n  text: 'Check out this really awesome thing',\n  url: 'https://capacitorjs.com/'\n});\n```\n\nThen run your web app:\n\n```shell\nnpm start\n```\n\nCapacitor apps can be built primarily in the browser, but to deploy and test on iOS or Android (simulator or device), open the IDE of choice and run directly in the IDE:\n\n```shell\nnpx cap open ios\n```\n\nFor the full getting started instructions, check out the [Capacitor documentation](https://capacitorjs.com/docs/getting-started).\n\n## Conclusion\n\nReact Native is no longer the only option for React devs to build iOS and Android apps. Capacitor provides a web-focused solution for teams building React web apps to enable them to ship to the app stores and the web with the same code base.\n\nAnd, for teams that are building a new app and interested in exploring a mobile-focused UI library for their Capacitor apps, [Ionic React](https://ionicframework.com/) is a great and popular option.\n\nBeyond React, Capacitor can be used with any modern web app technology, so is a good fit for teams with a diversity of frontend technologies in use, which is another challenge with React Native.\n\nWe're excited about Capacitor in the React ecosystem, and many teams are as well. Today, Capacitor is powering React apps with hundreds of millions of users, and for major brands and [enterprise customers](https://ionicframework.com/customers) like Burger King and Popeye's. Capacitor adoption has been [growing quickly](https://twitter.com/maxlynch/status/1280531102650769408) and given that given that web development with React represents the largest area of React development ([> 17x React Native](https://npmcharts.com/compare/react-native,react-dom?interval=7)), we're thrilled about the potential to help more web devs build cross-platform apps.\n\nCheck out Capacitor today and stay tuned for some exciting updates with the project coming soon: [capacitorjs.com](https://capacitorjs.com/)",
-		preview: "<p>In the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.</p>\n<p>However, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.</p>\n<p>The net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.</p>\n<p>To do that, we need to take a look at <a href=\"https://capacitorjs.com/\">Capacitor</a> -- a native runtime for cross-platform web apps, including any and all React web apps.</p>\n",
-		html: "<p>In the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.</p>\n<p>However, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.</p>\n<p>The net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.</p>\n<p>To do that, we need to take a look at <a href=\"https://capacitorjs.com/\">Capacitor</a> -- a native runtime for cross-platform web apps, including any and all React web apps.</p>\n<!--more-->\n\n<h2 id=\"capacitor-native-runtime-for-web-apps\">Capacitor: Native Runtime for Web Apps</h2>\n<p><a href=\"https://capacitorjs.com/\">Capacitor</a> is sort of an “electron for mobile” that provides a native runtime for any modern web app, so it can run natively on iOS, Android, and the web using the same code. Capacitor provides full native API access through a <a href=\"https://capacitorjs.com/docs/plugins\">powerful plugin system</a>, so apps can access the same level of functionality as any other pure native (or React Native) app.</p>\n<p>Capacitor is focused on enabling modern web apps to run on multiple platforms, and embraces browser-built apps. Capacitor is not a native UI abstraction like React Native, though native UI can certainly be used alongside a Capacitor app.</p>\n<p>Capacitor apps for iOS and Android <a href=\"https://medium.com/@maxlynch/cordova-ionic-apps-are-native-apps-64f9e1a995d9\">are native apps</a>, they just happen to do a large amount of their work in a primary WebView.</p>\n<p>As a side effect of being web-focused, Capacitor provides a standard web development experience where apps can be built largely in the browser, bringing the experience and tooling web developers have come to love.</p>\n<h2 id=\"build-native-apps-with-material-ui-chakra-ant-prime-and-more\">Build Native Apps with Material-UI, Chakra, Ant, Prime, and more</h2>\n<p>Because Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using <a href=\"https://material-ui.com/\">Material-UI</a> or <a href=\"https://chakra-ui.com/\">Chakra</a> or <a href=\"https://www.primefaces.org/primereact/\">Prime</a> or <a href=\"https://ant.design/\">Ant</a> or <a href=\"https://ionicframework.com/\">Ionic Framework</a>, or any other React UI library, can be turned into native apps using Capacitor (see our <a href=\"https://github.com/capacitor-community/examples\">examples repo</a> for real code in a variety of libraries).</p>\n<p>This simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)</p>\n<h2 id=\"bonus-deploy-progressive-web-apps-and-native-apps\">Bonus: Deploy Progressive Web Apps and Native Apps</h2>\n<p>One additional bonus feature of Capacitor is that it works on the web for Progressive Web Apps. That means an app using Capacitor can access many of the same APIs on native mobile but on the web instead. For example, the <a href=\"https://capacitorjs.com/docs/apis/camera\">Camera</a> and <a href=\"https://capacitorjs.com/docs/apis/share\">Share</a> APIs work across iOS, Android, and the web with the same code.</p>\n<p>With this capability, teams often can build and ship on three platforms on day one, or even embrace <a href=\"https://ionicframework.com/blog/forget-mobile-first-progressive-web-app-first-is-the-future/\">Progressive Web App First Development</a>, by using Capacitor.</p>\n<h2 id=\"transform-your-react-web-app-into-native-with-capacitor\">Transform your React Web App into Native with Capacitor</h2>\n<p>Adding native functionality and deploying to iOS, Android, and PWA with your existing React web app is easy. Just install Capacitor, drop it into to your project, and add a platform:</p>\n<pre><code class=\"language-shell\"><span class=\"token function\">npm</span> <span class=\"token function\">install</span> @capacitor/cli @capacitor/core\nnpx cap init\nnpx cap <span class=\"token function\">add</span> ios</code></pre>\n<p>Then, to start using in a web app, import from <code>@capacitor/core</code>:</p>\n<pre><code class=\"language-typescript\"><span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> Plugins <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'@capacitor/core'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">const</span> <span class=\"token punctuation\">{</span> Share <span class=\"token punctuation\">}</span> <span class=\"token operator\">=</span> Plugins<span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">await</span> Share<span class=\"token punctuation\">.</span><span class=\"token function\">share</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">{</span>\n  title<span class=\"token punctuation\">:</span> <span class=\"token string\">'My awesome thing'</span><span class=\"token punctuation\">,</span>\n  text<span class=\"token punctuation\">:</span> <span class=\"token string\">'Check out this really awesome thing'</span><span class=\"token punctuation\">,</span>\n  url<span class=\"token punctuation\">:</span> <span class=\"token string\">'https://capacitorjs.com/'</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></code></pre>\n<p>Then run your web app:</p>\n<pre><code class=\"language-shell\"><span class=\"token function\">npm</span> start</code></pre>\n<p>Capacitor apps can be built primarily in the browser, but to deploy and test on iOS or Android (simulator or device), open the IDE of choice and run directly in the IDE:</p>\n<pre><code class=\"language-shell\">npx cap <span class=\"token function\">open</span> ios</code></pre>\n<p>For the full getting started instructions, check out the <a href=\"https://capacitorjs.com/docs/getting-started\">Capacitor documentation</a>.</p>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>React Native is no longer the only option for React devs to build iOS and Android apps. Capacitor provides a web-focused solution for teams building React web apps to enable them to ship to the app stores and the web with the same code base.</p>\n<p>And, for teams that are building a new app and interested in exploring a mobile-focused UI library for their Capacitor apps, <a href=\"https://ionicframework.com/\">Ionic React</a> is a great and popular option.</p>\n<p>Beyond React, Capacitor can be used with any modern web app technology, so is a good fit for teams with a diversity of frontend technologies in use, which is another challenge with React Native.</p>\n<p>We&#39;re excited about Capacitor in the React ecosystem, and many teams are as well. Today, Capacitor is powering React apps with hundreds of millions of users, and for major brands and <a href=\"https://ionicframework.com/customers\">enterprise customers</a> like Burger King and Popeye&#39;s. Capacitor adoption has been <a href=\"https://twitter.com/maxlynch/status/1280531102650769408\">growing quickly</a> and given that given that web development with React represents the largest area of React development (<a href=\"https://npmcharts.com/compare/react-native,react-dom?interval=7\">&gt; 17x React Native</a>), we&#39;re thrilled about the potential to help more web devs build cross-platform apps.</p>\n<p>Check out Capacitor today and stay tuned for some exciting updates with the project coming soon: <a href=\"https://capacitorjs.com/\">capacitorjs.com</a></p>\n",
+		contents: "---\ntitle: Native React Apps Without React Native\ndate: 2020-07-14 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\n![Native React Apps Without React Native](/assets/img/blog/native-wout-react-native.png)\n\nIn the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.\n\nHowever, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.\n\nThe net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.\n\nTo do that, we need to take a look at [Capacitor](https://capacitorjs.com/) -- a native runtime for cross-platform web apps, including any and all React web apps.\n\n<!--more-->\n\n## Capacitor: Native Runtime for Web Apps\n\n[Capacitor](https://capacitorjs.com/) is sort of an “electron for mobile” that provides a native runtime for any modern web app, so it can run natively on iOS, Android, and the web using the same code. Capacitor provides full native API access through a [powerful plugin system](https://capacitorjs.com/docs/plugins), so apps can access the same level of functionality as any other pure native (or React Native) app.\n\nCapacitor is focused on enabling modern web apps to run on multiple platforms, and embraces browser-built apps. Capacitor is not a native UI abstraction like React Native, though native UI can certainly be used alongside a Capacitor app.\n\nCapacitor apps for iOS and Android [are native apps](https://medium.com/@maxlynch/cordova-ionic-apps-are-native-apps-64f9e1a995d9), they just happen to do a large amount of their work in a primary WebView.\n\nAs a side effect of being web-focused, Capacitor provides a standard web development experience where apps can be built largely in the browser, bringing the experience and tooling web developers have come to love.\n\n## Build Native Apps with Material-UI, Chakra, Ant, Prime, and more\n\nBecause Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using [Material-UI](https://material-ui.com/) or [Chakra](https://chakra-ui.com/) or [Prime](https://www.primefaces.org/primereact/) or [Ant](https://ant.design/) or [Ionic Framework](https://ionicframework.com/), or any other React UI library, can be turned into native apps using Capacitor (see our [examples repo](https://github.com/capacitor-community/examples) for real code in a variety of libraries).\n\nThis simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)\n\n## Bonus: Deploy Progressive Web Apps and Native Apps\n\nOne additional bonus feature of Capacitor is that it works on the web for Progressive Web Apps. That means an app using Capacitor can access many of the same APIs on native mobile but on the web instead. For example, the [Camera](https://capacitorjs.com/docs/apis/camera) and [Share](https://capacitorjs.com/docs/apis/share) APIs work across iOS, Android, and the web with the same code.\n\nWith this capability, teams often can build and ship on three platforms on day one, or even embrace [Progressive Web App First Development](https://ionicframework.com/blog/forget-mobile-first-progressive-web-app-first-is-the-future/), by using Capacitor.\n\n## Transform your React Web App into Native with Capacitor\n\nAdding native functionality and deploying to iOS, Android, and PWA with your existing React web app is easy. Just install Capacitor, drop it into to your project, and add a platform:\n\n```shell\nnpm install @capacitor/cli @capacitor/core\nnpx cap init\nnpx cap add ios\n```\n\nThen, to start using in a web app, import from `@capacitor/core`:\n\n```typescript\nimport { Plugins } from '@capacitor/core';\n\nconst { Share } = Plugins;\nawait Share.share({\n  title: 'My awesome thing',\n  text: 'Check out this really awesome thing',\n  url: 'https://capacitorjs.com/'\n});\n```\n\nThen run your web app:\n\n```shell\nnpm start\n```\n\nCapacitor apps can be built primarily in the browser, but to deploy and test on iOS or Android (simulator or device), open the IDE of choice and run directly in the IDE:\n\n```shell\nnpx cap open ios\n```\n\nFor the full getting started instructions, check out the [Capacitor documentation](https://capacitorjs.com/docs/getting-started).\n\n## Conclusion\n\nReact Native is no longer the only option for React devs to build iOS and Android apps. Capacitor provides a web-focused solution for teams building React web apps to enable them to ship to the app stores and the web with the same code base.\n\nAnd, for teams that are building a new app and interested in exploring a mobile-focused UI library for their Capacitor apps, [Ionic React](https://ionicframework.com/) is a great and popular option.\n\nBeyond React, Capacitor can be used with any modern web app technology, so is a good fit for teams with a diversity of frontend technologies in use, which is another challenge with React Native.\n\nWe're excited about Capacitor in the React ecosystem, and many teams are as well. Today, Capacitor is powering React apps with hundreds of millions of users, and for major brands and [enterprise customers](https://ionicframework.com/customers) like Burger King and Popeye's. Capacitor adoption has been [growing quickly](https://twitter.com/maxlynch/status/1280531102650769408) and given that given that web development with React represents the largest area of React development ([> 17x React Native](https://npmcharts.com/compare/react-native,react-dom?interval=7)), we're thrilled about the potential to help more web devs build cross-platform apps.\n\nCheck out Capacitor today and stay tuned for some exciting updates with the project coming soon: [capacitorjs.com](https://capacitorjs.com/)",
+		preview: "<p><img src=\"/assets/img/blog/native-wout-react-native.png\" alt=\"Native React Apps Without React Native\"></p>\n<p>In the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.</p>\n<p>However, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.</p>\n<p>The net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.</p>\n<p>To do that, we need to take a look at <a href=\"https://capacitorjs.com/\">Capacitor</a> -- a native runtime for cross-platform web apps, including any and all React web apps.</p>\n",
+		html: "<p><img src=\"/assets/img/blog/native-wout-react-native.png\" alt=\"Native React Apps Without React Native\"></p>\n<p>In the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.</p>\n<p>However, React Native comes with a number of tradeoffs. First, it requires developers to build in a React Native specific way, using views/JSX for each platform, and using libraries that support react-native (as opposed to most React libraries that support react-dom). But perhaps most importantly, React Native is not a web environment, so it’s not possible for teams to take their web-based React apps and libraries to deploy native apps.</p>\n<p>The net effect is that it’s not possible to take, say, a Material-UI React web app, and deploy it natively to the Apple App Store or Google Play Store with React Native.</p>\n<p>To do that, we need to take a look at <a href=\"https://capacitorjs.com/\">Capacitor</a> -- a native runtime for cross-platform web apps, including any and all React web apps.</p>\n<!--more-->\n\n<h2 id=\"capacitor-native-runtime-for-web-apps\">Capacitor: Native Runtime for Web Apps</h2>\n<p><a href=\"https://capacitorjs.com/\">Capacitor</a> is sort of an “electron for mobile” that provides a native runtime for any modern web app, so it can run natively on iOS, Android, and the web using the same code. Capacitor provides full native API access through a <a href=\"https://capacitorjs.com/docs/plugins\">powerful plugin system</a>, so apps can access the same level of functionality as any other pure native (or React Native) app.</p>\n<p>Capacitor is focused on enabling modern web apps to run on multiple platforms, and embraces browser-built apps. Capacitor is not a native UI abstraction like React Native, though native UI can certainly be used alongside a Capacitor app.</p>\n<p>Capacitor apps for iOS and Android <a href=\"https://medium.com/@maxlynch/cordova-ionic-apps-are-native-apps-64f9e1a995d9\">are native apps</a>, they just happen to do a large amount of their work in a primary WebView.</p>\n<p>As a side effect of being web-focused, Capacitor provides a standard web development experience where apps can be built largely in the browser, bringing the experience and tooling web developers have come to love.</p>\n<h2 id=\"build-native-apps-with-material-ui-chakra-ant-prime-and-more\">Build Native Apps with Material-UI, Chakra, Ant, Prime, and more</h2>\n<p>Because Capacitor provides a native runtime environment for web apps, that means it can be used to turn any React web app into a native app. So apps using <a href=\"https://material-ui.com/\">Material-UI</a> or <a href=\"https://chakra-ui.com/\">Chakra</a> or <a href=\"https://www.primefaces.org/primereact/\">Prime</a> or <a href=\"https://ant.design/\">Ant</a> or <a href=\"https://ionicframework.com/\">Ionic Framework</a>, or any other React UI library, can be turned into native apps using Capacitor (see our <a href=\"https://github.com/capacitor-community/examples\">examples repo</a> for real code in a variety of libraries).</p>\n<p>This simply isn’t possible with React Native. Most popular React UI libraries target the web and react-dom, and most web libraries use web technologies like CSS that aren’t supported in React Native (at least not in their native format)</p>\n<h2 id=\"bonus-deploy-progressive-web-apps-and-native-apps\">Bonus: Deploy Progressive Web Apps and Native Apps</h2>\n<p>One additional bonus feature of Capacitor is that it works on the web for Progressive Web Apps. That means an app using Capacitor can access many of the same APIs on native mobile but on the web instead. For example, the <a href=\"https://capacitorjs.com/docs/apis/camera\">Camera</a> and <a href=\"https://capacitorjs.com/docs/apis/share\">Share</a> APIs work across iOS, Android, and the web with the same code.</p>\n<p>With this capability, teams often can build and ship on three platforms on day one, or even embrace <a href=\"https://ionicframework.com/blog/forget-mobile-first-progressive-web-app-first-is-the-future/\">Progressive Web App First Development</a>, by using Capacitor.</p>\n<h2 id=\"transform-your-react-web-app-into-native-with-capacitor\">Transform your React Web App into Native with Capacitor</h2>\n<p>Adding native functionality and deploying to iOS, Android, and PWA with your existing React web app is easy. Just install Capacitor, drop it into to your project, and add a platform:</p>\n<pre><code class=\"language-shell\"><span class=\"token function\">npm</span> <span class=\"token function\">install</span> @capacitor/cli @capacitor/core\nnpx cap init\nnpx cap <span class=\"token function\">add</span> ios</code></pre>\n<p>Then, to start using in a web app, import from <code>@capacitor/core</code>:</p>\n<pre><code class=\"language-typescript\"><span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> Plugins <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'@capacitor/core'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">const</span> <span class=\"token punctuation\">{</span> Share <span class=\"token punctuation\">}</span> <span class=\"token operator\">=</span> Plugins<span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">await</span> Share<span class=\"token punctuation\">.</span><span class=\"token function\">share</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">{</span>\n  title<span class=\"token punctuation\">:</span> <span class=\"token string\">'My awesome thing'</span><span class=\"token punctuation\">,</span>\n  text<span class=\"token punctuation\">:</span> <span class=\"token string\">'Check out this really awesome thing'</span><span class=\"token punctuation\">,</span>\n  url<span class=\"token punctuation\">:</span> <span class=\"token string\">'https://capacitorjs.com/'</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></code></pre>\n<p>Then run your web app:</p>\n<pre><code class=\"language-shell\"><span class=\"token function\">npm</span> start</code></pre>\n<p>Capacitor apps can be built primarily in the browser, but to deploy and test on iOS or Android (simulator or device), open the IDE of choice and run directly in the IDE:</p>\n<pre><code class=\"language-shell\">npx cap <span class=\"token function\">open</span> ios</code></pre>\n<p>For the full getting started instructions, check out the <a href=\"https://capacitorjs.com/docs/getting-started\">Capacitor documentation</a>.</p>\n<h2 id=\"conclusion\">Conclusion</h2>\n<p>React Native is no longer the only option for React devs to build iOS and Android apps. Capacitor provides a web-focused solution for teams building React web apps to enable them to ship to the app stores and the web with the same code base.</p>\n<p>And, for teams that are building a new app and interested in exploring a mobile-focused UI library for their Capacitor apps, <a href=\"https://ionicframework.com/\">Ionic React</a> is a great and popular option.</p>\n<p>Beyond React, Capacitor can be used with any modern web app technology, so is a good fit for teams with a diversity of frontend technologies in use, which is another challenge with React Native.</p>\n<p>We&#39;re excited about Capacitor in the React ecosystem, and many teams are as well. Today, Capacitor is powering React apps with hundreds of millions of users, and for major brands and <a href=\"https://ionicframework.com/customers\">enterprise customers</a> like Burger King and Popeye&#39;s. Capacitor adoption has been <a href=\"https://twitter.com/maxlynch/status/1280531102650769408\">growing quickly</a> and given that given that web development with React represents the largest area of React development (<a href=\"https://npmcharts.com/compare/react-native,react-dom?interval=7\">&gt; 17x React Native</a>), we&#39;re thrilled about the potential to help more web devs build cross-platform apps.</p>\n<p>Check out Capacitor today and stay tuned for some exciting updates with the project coming soon: <a href=\"https://capacitorjs.com/\">capacitorjs.com</a></p>\n",
 		meta: {
 			title: "Native React Apps Without React Native",
 			date: "2020-07-14T08:00:00.000Z",
 			author: "Max Lynch <max@ionic.io>",
-			authorUrl: "https://twitter.com/maxlynch",
-			description: "Build app store apps using React web libraries and Capacitor",
-			featuredImage: "/assets/img/blog/native-wout-react-native.png",
-			featuredImageAlt: "Native React Apps Without React Native"
-		},
-		featuredImage: "/assets/img/blog/native-wout-react-native.png",
-		featuredImageAlt: "Native React Apps Without React Native"
+			authorUrl: "https://twitter.com/maxlynch"
+		}
 	},
 	{
 		title: "Capacitor announcements at Ioniconf 2020",
@@ -8180,7 +8174,7 @@ var posts = [
 		authorUrl: "https://twitter.com/maxlynch",
 		slug: "capacitor-announcements-at-ioniconf-2020",
 		date: "2020-06-24T08:00:00.000Z",
-		contents: "---\ntitle: Capacitor announcements at Ioniconf 2020\ndescription: All the Capacitor announcements from Ioniconf 2020\ndate: 2020-06-24 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\nToday at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.\n\nIn no particular order, we announced:\n\n* [Capacitor opening up to all modern web technologies]($POST#capacitor-opening-up)\n* [The Capacitor Community project]($POST#capacitor-community)\n* [Capacitor Elements]($POST#capacitor-elements)\n* [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)\n* [Updated site and domain]($POST#updated-site-domain-and-docs)\n\n<!--more-->\n\nThe conference kicks off a new era for Capacitor and for [Ionic](https://ionic.io/), the company behind Capacitor.\n\nIf you'd like to see the announcements live, the [keynote](https://ioniconf.com/) (along with the rest of the conference) is now [up](https://ioniconf.com/).\n\n## Capacitor opening up\n\nOne of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.\n\nWhile technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.\n\nWith this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.\n\nThe new Capacitor mission is to help _all_ web developers build cross-platform apps with their web development skills.\n\n## Capacitor Community\n\nOne of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.\n\nYesterday, web announced a new [Capacitor Community](https://github.com/capacitor-community) GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.\n\nTo start, we have a number of great plugins and many are in development. Check out the [Http](https://github.com/capacitor-community/http), [Contacts](https://github.com/capacitor-community/contacts), and [Apple Sign In](https://github.com/capacitor-community/apple-sign-in) plugins. We've also started moving the [Electron](https://github.com/capacitor-community/electron) platform to the community org.\n\nEvery project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.\n\n## Capacitor Elements\n\nWe announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.\n\nThese components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.\n\nThe goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.\n\nThis makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.\n\nStay tuned for more updates soon!\n\n## Deploy to App Store for Capacitor\n\nWe announced that [Deploy to App Store](https://ionicframework.com/docs/appflow/destinations/intro), a powerful new feature available in Ionic's DevOps service [Appflow](https://useappflow.com/) that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.\n\nThis feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.\n\nAppflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.\n\n## Updated Site, Domain, and Docs\n\nWe've updated the Capacitor site and moved to a new domain ([capacitorjs.com](https://capacitorjs.com)) and Twitter handle ([@capacitorjs](https://twitter.com/capacitorjs)).\n\nWe also rolled out [updated documentation](/docs) as we embark on a documentation overhaul.\n\n## Stay tuned\n\nCapacitor is quickly becoming the focal point of Ionic's open source offering, and we're investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.\n\nStay tuned for a ton more Capacitor updates in the coming months!",
+		contents: "---\ntitle: Capacitor announcements at Ioniconf 2020\ndate: 2020-06-24 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\nToday at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.\n\nIn no particular order, we announced:\n\n* [Capacitor opening up to all modern web technologies]($POST#capacitor-opening-up)\n* [The Capacitor Community project]($POST#capacitor-community)\n* [Capacitor Elements]($POST#capacitor-elements)\n* [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)\n* [Updated site and domain]($POST#updated-site-domain-and-docs)\n\n<!--more-->\n\nThe conference kicks off a new era for Capacitor and for [Ionic](https://ionic.io/), the company behind Capacitor.\n\nIf you'd like to see the announcements live, the [keynote](https://ioniconf.com/) (along with the rest of the conference) is now [up](https://ioniconf.com/).\n\n## Capacitor opening up\n\nOne of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.\n\nWhile technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.\n\nWith this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.\n\nThe new Capacitor mission is to help _all_ web developers build cross-platform apps with their web development skills.\n\n## Capacitor Community\n\nOne of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.\n\nYesterday, web announced a new [Capacitor Community](https://github.com/capacitor-community) GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.\n\nTo start, we have a number of great plugins and many are in development. Check out the [Http](https://github.com/capacitor-community/http), [Contacts](https://github.com/capacitor-community/contacts), and [Apple Sign In](https://github.com/capacitor-community/apple-sign-in) plugins. We've also started moving the [Electron](https://github.com/capacitor-community/electron) platform to the community org.\n\nEvery project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.\n\n## Capacitor Elements\n\nWe announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.\n\nThese components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.\n\nThe goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.\n\nThis makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.\n\nStay tuned for more updates soon!\n\n## Deploy to App Store for Capacitor\n\nWe announced that [Deploy to App Store](https://ionicframework.com/docs/appflow/destinations/intro), a powerful new feature available in Ionic's DevOps service [Appflow](https://useappflow.com/) that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.\n\nThis feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.\n\nAppflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.\n\n## Updated Site, Domain, and Docs\n\nWe've updated the Capacitor site and moved to a new domain ([capacitorjs.com](https://capacitorjs.com)) and Twitter handle ([@capacitorjs](https://twitter.com/capacitorjs)).\n\nWe also rolled out [updated documentation](/docs) as we embark on a documentation overhaul.\n\n## Stay tuned\n\nCapacitor is quickly becoming the focal point of Ionic's open source offering, and we're investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.\n\nStay tuned for a ton more Capacitor updates in the coming months!",
 		preview: "<p>Today at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.</p>\n<p>In no particular order, we announced:</p>\n<ul>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#capacitor-opening-up\">Capacitor opening up to all modern web technologies</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#capacitor-community\">The Capacitor Community project</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#capacitor-elements\">Capacitor Elements</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</a></li>\n<li><a href=\"/blog/capacitor-announcements-at-ioniconf-2020#updated-site-domain-and-docs\">Updated site and domain</a></li>\n</ul>\n",
 		html: "<p>Today at the first ever official Ioniconf, we unveiled a number of exciting updates to Capacitor and the Capacitor community.</p>\n<p>In no particular order, we announced:</p>\n<ul>\n<li><a href=\"$POST#capacitor-opening-up\">Capacitor opening up to all modern web technologies</a></li>\n<li><a href=\"$POST#capacitor-community\">The Capacitor Community project</a></li>\n<li><a href=\"$POST#capacitor-elements\">Capacitor Elements</a></li>\n<li><a href=\"$POST#deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</a></li>\n<li><a href=\"$POST#updated-site-domain-and-docs\">Updated site and domain</a></li>\n</ul>\n<!--more-->\n\n<p>The conference kicks off a new era for Capacitor and for <a href=\"https://ionic.io/\">Ionic</a>, the company behind Capacitor.</p>\n<p>If you&#39;d like to see the announcements live, the <a href=\"https://ioniconf.com/\">keynote</a> (along with the rest of the conference) is now <a href=\"https://ioniconf.com/\">up</a>.</p>\n<h2 id=\"capacitor-opening-up\">Capacitor opening up</h2>\n<p>One of the biggest announcements of the day was that Capacitor will be opening up to embrace every modern web app technology and ecosystem.</p>\n<p>While technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.</p>\n<p>With this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.</p>\n<p>The new Capacitor mission is to help <em>all</em> web developers build cross-platform apps with their web development skills.</p>\n<h2 id=\"capacitor-community\">Capacitor Community</h2>\n<p>One of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.</p>\n<p>Yesterday, web announced a new <a href=\"https://github.com/capacitor-community\">Capacitor Community</a> GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.</p>\n<p>To start, we have a number of great plugins and many are in development. Check out the <a href=\"https://github.com/capacitor-community/http\">Http</a>, <a href=\"https://github.com/capacitor-community/contacts\">Contacts</a>, and <a href=\"https://github.com/capacitor-community/apple-sign-in\">Apple Sign In</a> plugins. We&#39;ve also started moving the <a href=\"https://github.com/capacitor-community/electron\">Electron</a> platform to the community org.</p>\n<p>Every project in the Capacitor Community is _community maintained and supported_, so the Capacitor core team will not be able to provide any kind of community support to any project in here. However, the team is facilitating and in communication with all maintainers.</p>\n<h2 id=\"capacitor-elements\">Capacitor Elements</h2>\n<p>We announced Capacitor Elements, an upcoming project to bring operating-system level UI experiences to every Capacitor app, regardless of the web framework or UI library an app uses.</p>\n<p>These components will be powered by Ionic Framework under the hood, but will be fully compatible and not conflict with any modern UI library.</p>\n<p>The goal is to provide the same types of utility APIs that the operating system would to a traditional native developer, such as Action Sheets, Bottom Drawers, Alerts, Modals, Cameras, and more.</p>\n<p>This makes a Capacitor app feel native right away regardless of whether the app framework provides these controls.</p>\n<p>Stay tuned for more updates soon!</p>\n<h2 id=\"deploy-to-app-store-for-capacitor\">Deploy to App Store for Capacitor</h2>\n<p>We announced that <a href=\"https://ionicframework.com/docs/appflow/destinations/intro\">Deploy to App Store</a>, a powerful new feature available in Ionic&#39;s DevOps service <a href=\"https://useappflow.com/\">Appflow</a> that enables developers to push builds to the Apple App Store and Google Play Store, is now available to all paid Appflow plans.</p>\n<p>This feature is a significant boost to teams frustrated with the manual and tedious app store publishing process, or for teams that wish to automate app store submission as part of their CI/CD pipeline.</p>\n<p>Appflow now fully supports Capacitor, and Capacitor is quickly becoming the preferred native runtime when using Appflow.</p>\n<h2 id=\"updated-site-domain-and-docs\">Updated Site, Domain, and Docs</h2>\n<p>We&#39;ve updated the Capacitor site and moved to a new domain (<a href=\"https://capacitorjs.com\">capacitorjs.com</a>) and Twitter handle (<a href=\"https://twitter.com/capacitorjs\">@capacitorjs</a>).</p>\n<p>We also rolled out <a href=\"/docs\">updated documentation</a> as we embark on a documentation overhaul.</p>\n<h2 id=\"stay-tuned\">Stay tuned</h2>\n<p>Capacitor is quickly becoming the focal point of Ionic&#39;s open source offering, and we&#39;re investing heavily in it. The team itself has grown in the last few weeks and we are truly just getting started on our mission to enable all web developers to build cross-platform apps for the app store and the web.</p>\n<p>Stay tuned for a ton more Capacitor updates in the coming months!</p>\n",
 		meta: {
@@ -8199,7 +8193,7 @@ var posts = [
 		authorUrl: "https://twitter.com/maxlynch",
 		slug: "announcing-capacitor-2-0",
 		date: "2020-04-08T08:00:00.000Z",
-		contents: "---\ntitle: Announcing Capacitor 2.0\ndescription: See what Capacitor 2.0 has to offer for web devs building mobile apps\ndate: 2020-04-08 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\nToday we are excited to announce Capacitor 2.0!\n\nCapacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:\n\n * Swift 5 and Xcode 11+ support\n * Android 10 (SDK 29) and AndroidX support\n * Bug fixes and usability improvements to 23+ core plugins\n * Support for generating splash screens and icons\n\nWe documented the whole update and talked about what's next for Capacitor over on the Ionic blog.\n\nCheck it out:\n\n[https://ionicframework.com/blog/announcing-capacitor-2-0/](https://ionicframework.com/blog/announcing-capacitor-2-0/)",
+		contents: "---\ntitle: Announcing Capacitor 2.0\ndate: 2020-04-08 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\nToday we are excited to announce Capacitor 2.0!\n\nCapacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:\n\n * Swift 5 and Xcode 11+ support\n * Android 10 (SDK 29) and AndroidX support\n * Bug fixes and usability improvements to 23+ core plugins\n * Support for generating splash screens and icons\n\nWe documented the whole update and talked about what's next for Capacitor over on the Ionic blog.\n\nCheck it out:\n\n[https://ionicframework.com/blog/announcing-capacitor-2-0/](https://ionicframework.com/blog/announcing-capacitor-2-0/)",
 		preview: "",
 		html: "<p>Today we are excited to announce Capacitor 2.0!</p>\n<p>Capacitor 2.0 offers some key platform updates as well as security and bug fixes. These include:</p>\n<ul>\n<li>Swift 5 and Xcode 11+ support</li>\n<li>Android 10 (SDK 29) and AndroidX support</li>\n<li>Bug fixes and usability improvements to 23+ core plugins</li>\n<li>Support for generating splash screens and icons</li>\n</ul>\n<p>We documented the whole update and talked about what&#39;s next for Capacitor over on the Ionic blog.</p>\n<p>Check it out:</p>\n<p><a href=\"https://ionicframework.com/blog/announcing-capacitor-2-0/\">https://ionicframework.com/blog/announcing-capacitor-2-0/</a></p>\n",
 		meta: {
@@ -8218,7 +8212,7 @@ var posts = [
 		authorUrl: "https://twitter.com/maxlynch",
 		slug: "announcing-capacitor-1-0",
 		date: "2019-05-22T08:00:00.000Z",
-		contents: "---\ntitle: Announcing Capacitor 1.0\ndescription: Build awesome mobile apps using web technology with Capacitor\ndate: 2019-05-22 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\nToday I’m thrilled to announce the 1.0 release of [Capacitor](/), Ionic’s new Native API Container that makes it easy to build web apps that run on iOS, Android, and the web as Progressive Web Apps—with full access to native functionality on each platform.\n\nWe documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.\n\nTake a look: [https://ionicframework.com/blog/announcing-capacitor-1-0/](https://ionicframework.com/blog/announcing-capacitor-1-0/).",
+		contents: "---\ntitle: Announcing Capacitor 1.0\ndate: 2019-05-22 08:00:00\nauthor: Max Lynch <max@ionic.io>\nauthorUrl: https://twitter.com/maxlynch\n---\n\nToday I’m thrilled to announce the 1.0 release of [Capacitor](/), Ionic’s new Native API Container that makes it easy to build web apps that run on iOS, Android, and the web as Progressive Web Apps—with full access to native functionality on each platform.\n\nWe documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.\n\nTake a look: [https://ionicframework.com/blog/announcing-capacitor-1-0/](https://ionicframework.com/blog/announcing-capacitor-1-0/).",
 		preview: "",
 		html: "<p>Today I’m thrilled to announce the 1.0 release of <a href=\"/\">Capacitor</a>, Ionic’s new Native API Container that makes it easy to build web apps that run on iOS, Android, and the web as Progressive Web Apps—with full access to native functionality on each platform.</p>\n<p>We documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.</p>\n<p>Take a look: <a href=\"https://ionicframework.com/blog/announcing-capacitor-1-0/\">https://ionicframework.com/blog/announcing-capacitor-1-0/</a>.</p>\n",
 		meta: {
@@ -8231,7 +8225,7 @@ var posts = [
 	}
 ];
 
-const blogPageCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}code[class*=language-],pre[class*=language-]{color:black;background:#F5F7FA;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;padding:24px;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#F5F7FA}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#F5F7FA}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#28A45C}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#4475CC}.token.function,.token.class-name{color:#CC5A74}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post img{max-width:100%}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
+const blogPageCss = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post img{max-width:100%}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
 
 class BlogPage {
     constructor(hostRef) {
@@ -8267,120 +8261,7 @@ const AllPosts = ({ posts }) => {
     return (h("div", { class: "blog-posts" }, h("hgroup", { class: "blog-posts__heading" }, h(Heading, { level: 3 }, "Blog")), posts.map(p => h(BlogPost, { post: p, single: false }))));
 };
 
-const isObject = (val) => !Array.isArray(val) && val !== null && typeof val === 'object';
-const hasChildren = ({ vchildren }) => Array.isArray(vchildren);
-const hasAttributes = ({ vattrs }, requiredAttrs = []) => isObject(vattrs) && requiredAttrs.every(vattrs.hasOwnProperty.bind(vattrs));
-const isTextNode = ({ vtext }) => typeof vtext === 'string';
-// Can't use instanceof HTMLElement because MockHTMLElement during pre-rendering isn't
-const isElement = (val) => typeof val === 'object' && val.nodeType === 1 && typeof val.ownerDocument === 'object';
-const isElementArray = (val) => Array.isArray(val) && val.every(isElement);
-const convertToPublic$1 = (node) => ({
-    vattrs: node.$attrs$,
-    vchildren: node.$children$,
-    vkey: node.$key$,
-    vname: node.$name$,
-    vtag: node.$tag$,
-    vtext: node.$text$,
-});
-
-const createElement = ({ vtag, vattrs, vchildren, vtext }) => {
-    if (vtext != null) {
-        return document.createTextNode(vtext);
-    }
-    const element = document.createElement(vtag);
-    if (vattrs != null) {
-        for (const key in vattrs) {
-            element.setAttribute(key, vattrs[key]);
-        }
-    }
-    if (vchildren != null) {
-        for (const child of vchildren) {
-            element.appendChild(createElement(convertToPublic$1(child)));
-        }
-    }
-    return element;
-};
-const shouldApplyToHead = (val) => isElement(val) || (isElementArray(val) && val.length === 2);
-const applyToHead = (element) => {
-    if (Array.isArray(element)) {
-        return document.head.replaceChild(element[0], element[1]);
-    }
-    return document.head.appendChild(element);
-};
-
-function title(node, head) {
-    const firstChild = (node.vchildren || [])[0];
-    if (hasChildren(node) && isTextNode(convertToPublic$1(firstChild))) {
-        return [createElement(node), head.querySelector('title')];
-    }
-}
-function meta(node, head) {
-    var _a, _b, _c;
-    const namePropKey = ((_a = node.vattrs) === null || _a === void 0 ? void 0 : _a.property) ? 'property' : 'name';
-    const namePropValue = ((_b = node.vattrs) === null || _b === void 0 ? void 0 : _b.property) || ((_c = node.vattrs) === null || _c === void 0 ? void 0 : _c.name);
-    const existingElement = head.querySelector(`meta[${namePropKey}="${namePropValue}"]`);
-    if (existingElement !== null) {
-        return [createElement(node), existingElement];
-    }
-    else {
-        return createElement(node);
-    }
-}
-function link(node) {
-    if (!hasChildren(node)) {
-        return createElement(node);
-    }
-}
-function style(node) {
-    const firstChild = (node.vchildren || [])[0];
-    if (hasChildren(node) && isTextNode(convertToPublic$1(firstChild))) {
-        return createElement(node);
-    }
-}
-function script(node) {
-    if (hasChildren(node) || hasAttributes(node)) {
-        return createElement(node);
-    }
-}
-function base(node) {
-    if (!hasChildren(node) && hasAttributes(node)) {
-        return createElement(node);
-    }
-}
-const template = createElement;
-const noscript = createElement; // SSR only
-const types = {
-    title,
-    meta,
-    link,
-    style,
-    script,
-    base,
-    template,
-    noscript,
-};
-
-const headExists = document && document.head;
-const validTagNames = Object.keys(types);
-const isValidNode = (node) => validTagNames.indexOf(node.$tag$) > -1;
-const renderNode = (node) => types[node.vtag](node, document.head);
-const Helmet = (_props, children, utils) => {
-    if (!headExists) {
-        return null;
-    }
-    const validChildren = children.filter(isValidNode);
-    // Build an HTMLElement for each provided virtual child
-    const rendered = [];
-    utils.forEach(validChildren, (n) => {
-        rendered.push(renderNode(n));
-    });
-    rendered
-        .filter(shouldApplyToHead)
-        .forEach(applyToHead);
-    return null;
-};
-
-const blogPageCss$1 = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}code[class*=language-],pre[class*=language-]{color:black;background:#F5F7FA;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;padding:24px;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#F5F7FA}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#F5F7FA}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#28A45C}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#4475CC}.token.function,.token.class-name{color:#CC5A74}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post img{max-width:100%}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
+const blogPageCss$1 = "code[class*=language-],pre[class*=language-]{color:black;background:none;text-shadow:0 1px white;font-family:Consolas, Monaco, \"Andale Mono\", \"Ubuntu Mono\", monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}pre[class*=language-]::selection,pre[class*=language-] ::selection,code[class*=language-]::selection,code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:0.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:0.1em;border-radius:0.3em;white-space:normal}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:0.7}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;background:hsla(0, 0%, 100%, 0.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function,.token.class-name{color:#DD4A68}.token.regex,.token.important,.token.variable{color:#e90}.token.important,.token.bold{font-weight:bold}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}blog-page,blog-post{display:block;background:#F5F5F5;padding-top:100px;height:100%}blog-page .ui-heading,blog-post .ui-heading{font-family:var(--f-family-text)}blog-page h2,blog-post h2{margin-top:0}blog-page a,blog-post a{text-decoration:none}.blog-posts{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-posts__heading{margin-bottom:32px}.blog-posts__heading .ui-heading{font-size:28px;font-weight:600}.blog-posts__heading a{color:inherit;text-decoration:none}.blog-posts__heading a:hover{border-bottom:0}.blog-post{color:#445B78;padding:96px;background:white;border-radius:4px;-webkit-box-shadow:var(--elevation-2);box-shadow:var(--elevation-2)}.blog-post ion-icon{vertical-align:middle}.blog-post .ui-heading{margin:0}.blog-post .ui-heading a{color:var(--c-carbon-90);text-decoration:none;border-bottom:none}.blog-post .ui-heading a:hover{border-bottom:none}.blog-post img{max-width:100%}.blog-post ul{padding-left:16px}.blog-post ul li{margin-top:6px;list-style:none;margin-left:0;padding-left:1em}.blog-post ul li:before{display:inline-block;content:\"-\";width:1em;margin-left:-1em}.blog-post__wrap{margin:0 auto;padding-bottom:96px;max-width:830px}.blog-post__author{color:#92A0B3;margin-top:32px;margin-bottom:56px}.blog-post__author img{display:inline-block;vertical-align:middle;margin-top:-2px;height:28px;border-radius:50%;margin-right:8px}.blog-post__continue-reading{display:block;margin-top:24px}@media (max-width: 480px){.blog-post{padding:64px 24px}}";
 
 class BlogPage$1 {
     constructor(hostRef) {
@@ -8478,7 +8359,7 @@ class CapacitorSiteRoutes {
                 return h("blog-page", null);
             } }), h(Route, { path: match('/blog/:slug'), render: ({ slug }) => {
                 return h("blog-post", { slug: slug });
-            } }), h(Route, { path: "/cordova" }, h("cordova-landing-page", null)), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs" })), h(Route, { path: match('/docs/:pageName*'), render: ({ pageName }) => (h("document-component", { page: `/docs/${pageName}` })) }), h(Route, { path: match('/solution/:solutionId*'), render: ({ solutionId }) => (h("solution-page", { solutionId: `/solution/${solutionId}` })) }))));
+            } }), h(Route, { path: "/cordova" }, h("cordova-landing-page", null)), h(Route, { path: "/enterprise" }, h("capacitor-enterprise", null)), h(Route, { path: "/community" }, h("capacitor-community", null)), h(Route, { path: "/docs" }, h("document-component", { page: "/docs" })), h(Route, { path: match('/docs/:route*'), render: (opts) => (h("document-component", { page: `/docs/${opts.route}` })) }), h(Route, { path: match('/solution/:solutionId*'), render: ({ solutionId }) => (h("solution-page", { solutionId: `/solution/${solutionId}` })) }))));
     }
     static get style() { return capacitorSiteRoutesCss; }
     static get cmpMeta() { return {
@@ -8604,7 +8485,7 @@ npm install -g cordova-res
 
 cordova-res ios --skip-config --copy
 cordova-res android --skip-config --copy
-` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "06"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Audit existing Cordova plugins."), h(Paragraph, null, "Review all of Capacitor's ", h("a", { href: "/docs/apis", target: "_blank" }, "core"), " and ", h("a", { href: "/docs/community/plugins", target: "_blank" }, "community"), " plugins. You may be able to switch to the Capacitor-equivalent Cordova plugin, such as the Camera."), h(Paragraph, null, "Remove unneeded ones to improve performance and reduce app size.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h(Tabs, null, h(TabBar, null, h(TabBarButton, { selected: selectedCodeTab === 'before', tabSelect: () => setSelectedCodeTab('before') }, "Cordova Camera"), h(TabBarButton, { selected: selectedCodeTab === 'after', tabSelect: () => setSelectedCodeTab('after') }, "Capacitor Camera")), h(Tab, { selected: selectedCodeTab === 'before' }, h("code-snippet", { style: { '--border-radius': '0 0 8px 8px' }, language: "typescript", code: `
+` }))), h(Grid, { class: "section--getting-started__step" }, h(Col, { cols: 1 }, "06"), h(Col, { md: 5, sm: 5, xs: 5, cols: 12 }, h(Heading, { level: 3 }, "Audit existing Cordova plugins."), h(Paragraph, null, "Review all of Capacitor's ", h("a", { href: "/docs/apis", target: "_blank" }, "core"), " and ", h("a", { href: "/docs/community", target: "_blank" }, "community"), " plugins. You may be able to switch to the Capacitor-equivalent Cordova plugin, such as the Camera."), h(Paragraph, null, "Remove unneeded ones to improve performance and reduce app size.")), h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h(Tabs, null, h(TabBar, null, h(TabBarButton, { selected: selectedCodeTab === 'before', tabSelect: () => setSelectedCodeTab('before') }, "Cordova Camera"), h(TabBarButton, { selected: selectedCodeTab === 'after', tabSelect: () => setSelectedCodeTab('after') }, "Capacitor Camera")), h(Tab, { selected: selectedCodeTab === 'before' }, h("code-snippet", { style: { '--border-radius': '0 0 8px 8px' }, language: "typescript", code: `
 import { Camera } from '@ionic-native/camera/ngx';
 
 constructor(private camera: Camera) {}
@@ -8758,11 +8639,12 @@ class DocSnippet {
     }; }
 }
 
-const docsHeaderCss = ".sc-docs-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-header-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;position:-webkit-sticky;position:sticky;top:0;background-color:#fff;width:100%;height:64px;color:#98a2ad;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);letter-spacing:0;z-index:1}header.sc-docs-header{display:-ms-flexbox;display:flex;position:absolute;top:0;height:100%;width:100%;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;background:#fff}.docs-header-links.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#fff}.docs-header-links.sc-docs-header a.sc-docs-header{color:#98a2ad;font-size:15px;border-bottom:none}.docs-header-links.sc-docs-header a.sc-docs-header:hover{color:#858e97}.docs-header-links.sc-docs-header a.active.sc-docs-header{font-weight:500;color:#222d3a}.docs-header-links__internal.sc-docs-header{margin-bottom:2px}.docs-header-links__internal.sc-docs-header a.sc-docs-header{margin-right:24px}.docs-header-links__divider.sc-docs-header{width:1px;height:18px;background:#222d3a;opacity:0.2;margin-right:2px;margin-left:2px}.docs-header-links__external.sc-docs-header{margin-top:5px;margin-left:2px;margin-right:30px}.docs-header-links__external.sc-docs-header ion-icon.sc-docs-header{margin-left:22px;font-size:19px}.docs-header-links__external.sc-docs-header span.sc-docs-header{display:none}more-button.sc-docs-header{display:none;height:64px;width:64px}@media screen and (max-width: 768px){more-button.sc-docs-header{display:block}.docs-header-links.sc-docs-header{display:block;width:100%;height:auto;padding-bottom:10px;opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px);-webkit-transition:opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);transition:opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear;transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);-webkit-box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px;box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px}.docs-header-links__internal.sc-docs-header,.docs-header-links__external.sc-docs-header{margin:0}.docs-header-links.sc-docs-header a.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;width:100%;height:44px;margin:0;padding:0 20px;border:none;outline:none;color:#000}.docs-header-links.sc-docs-header a.sc-docs-header>ion-icon.sc-docs-header{display:none}.docs-header-links.sc-docs-header a.sc-docs-header span.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%}.docs-header-links.sc-docs-header a.sc-docs-header span.sc-docs-header ion-icon.sc-docs-header{color:#98a2ad;font-size:14px}.docs-header-links.sc-docs-header a.sc-docs-header:hover{background:rgba(0, 0, 0, 0.03);color:initial}.docs-header-links.sc-docs-header .docs-header-links__divider.sc-docs-header{display:block;width:100%;height:1px;background:rgba(0, 0, 0, 0.3)}.docs-header--expanded.sc-docs-header-h{-webkit-box-shadow:none;box-shadow:none}.docs-header--expanded.sc-docs-header-h .docs-header-links.sc-docs-header{opacity:1;pointer-events:all;-webkit-transform:translateY(-1px);transform:translateY(-1px);-webkit-transition:opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1);transition:opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1);transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear;transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1)}}";
+const docsHeaderCss = ".sc-docs-header:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-header-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;position:-webkit-sticky;position:sticky;top:0;background-color:#fff;width:100%;height:64px;color:#98a2ad;-webkit-box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.06);letter-spacing:0;z-index:1}header.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end;position:absolute;top:0;height:100%;width:100%;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;background:#fff}.docs-search--mobile.sc-docs-header{display:none;-ms-flex:0;flex:0}.docs-header-links.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;width:100%;background:#fff}.docs-header-links.sc-docs-header a.sc-docs-header{color:#98a2ad;font-size:15px;border-bottom:none}.docs-header-links.sc-docs-header a.sc-docs-header:hover{color:#858e97}.docs-header-links.sc-docs-header a.active.sc-docs-header{font-weight:500;color:#222d3a}.docs-header-links__internal.sc-docs-header{margin-bottom:2px;margin-left:24px}.docs-header-links__internal.sc-docs-header a.sc-docs-header{margin-right:24px}.docs-header-links__divider.sc-docs-header{width:1px;height:18px;background:#222d3a;opacity:0.2;margin-right:2px;margin-left:2px}.docs-header-links__external.sc-docs-header{margin-top:5px;margin-left:2px;margin-right:30px}.docs-header-links__external.sc-docs-header ion-icon.sc-docs-header{margin-left:22px;font-size:19px}.docs-header-links__external.sc-docs-header span.sc-docs-header{display:none}more-button.sc-docs-header{display:none;height:64px;width:64px}@media screen and (max-width: 768px){.docs-search--default.sc-docs-header{display:none}.docs-search--mobile.sc-docs-header,more-button.sc-docs-header{display:block}.docs-header-links.sc-docs-header{display:block;width:100%;height:auto;padding-bottom:10px;opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px);-webkit-transition:opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);transition:opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear;transition:transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1), opacity 0.2s linear, -webkit-transform 0.2s cubic-bezier(0.36, 0.66, 0.04, 1);-webkit-box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px;box-shadow:rgba(2, 8, 20, 0.06) 0px 1px 3px, rgba(2, 8, 20, 0.04) 0px 1px 2px}.docs-header-links__internal.sc-docs-header,.docs-header-links__external.sc-docs-header{margin:0}.docs-header-links.sc-docs-header a.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;width:100%;height:44px;margin:0;padding:0 20px;border:none;outline:none;color:#000}.docs-header-links.sc-docs-header a.sc-docs-header>ion-icon.sc-docs-header{display:none}.docs-header-links.sc-docs-header a.sc-docs-header span.sc-docs-header{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;width:100%}.docs-header-links.sc-docs-header a.sc-docs-header span.sc-docs-header ion-icon.sc-docs-header{color:#98a2ad;font-size:14px}.docs-header-links.sc-docs-header a.sc-docs-header:hover{background:rgba(0, 0, 0, 0.03);color:initial}.docs-header-links.sc-docs-header .docs-header-links__divider.sc-docs-header{display:block;width:100%;height:1px;background:rgba(0, 0, 0, 0.3)}.docs-header--expanded.sc-docs-header-h{-webkit-box-shadow:none;box-shadow:none}.docs-header--expanded.sc-docs-header-h .docs-header-links.sc-docs-header{opacity:1;pointer-events:all;-webkit-transform:translateY(-1px);transform:translateY(-1px);-webkit-transition:opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1);transition:opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1);transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear;transition:transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1), opacity 0.1s linear, -webkit-transform 0.25s cubic-bezier(0.17, 0.67, 0.52, 1)}}";
 
 class DocsHeader {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.template = 'guide';
         this.expanded = false;
         this.toggleExpanded = () => this.expanded = !this.expanded;
     }
@@ -8772,16 +8654,17 @@ class DocsHeader {
         return regexRes;
     }
     render() {
-        const { expanded } = this;
+        const { expanded, template } = this;
         return (h(Host, { class: {
                 'docs-header--expanded': expanded
-            } }, h("site-backdrop", { visible: expanded, onClick: () => this.toggleExpanded() }), h("header", null, h("docs-search", null), h("more-button", { onClick: () => this.toggleExpanded() }), h("div", { class: "docs-header-links" }, h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': this.isActive('/docs') } }), "Docs"), h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header-links__divider" }), h("div", { class: "docs-header-links__external" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" }), h("span", null, "Twitter", h("ion-icon", { name: "open-outline" }))), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" }), h("span", null, "GitHub", h("ion-icon", { name: "open-outline" }))))))));
+            } }, h("site-backdrop", { visible: expanded, onClick: () => this.toggleExpanded() }), h("header", null, h("docs-search", { class: "docs-search--mobile" }), h("more-button", { onClick: () => this.toggleExpanded() }), h("div", { class: "docs-header-links" }, h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/docs'), { class: { 'active': template === 'guide' } }), "Guide"), h("a", Object.assign({}, href('/docs/apis'), { class: { 'active': template === 'reference' } }), "Reference")), h("div", { class: "docs-header-links__divider" }), h("docs-search", { class: "docs-search--default" }), h("div", { class: "docs-header-links__internal" }, h("a", Object.assign({}, href('/community')), "Community"), h("a", Object.assign({}, href('/blog')), "Blog")), h("div", { class: "docs-header-links__divider" }), h("div", { class: "docs-header-links__external" }, h("a", { rel: "noopener", target: "_blank", href: "https://twitter.com/capacitorjs", "aria-label": "Twitter" }, h("ion-icon", { name: "logo-twitter" }), h("span", null, "Twitter", h("ion-icon", { name: "open-outline" }))), h("a", { rel: "noopener", target: "_blank", href: "https://github.com/ionic-team/capacitor", "aria-label": "GitHub" }, h("ion-icon", { name: "logo-github" }), h("span", null, "GitHub", h("ion-icon", { name: "open-outline" }))))))));
     }
     static get style() { return docsHeaderCss; }
     static get cmpMeta() { return {
         "$flags$": 2,
         "$tagName$": "docs-header",
         "$members$": {
+            "template": [1],
             "expanded": [32]
         },
         "$listeners$": undefined,
@@ -8810,134 +8693,181 @@ class DocsSearch {
     }; }
 }
 
-var siteStructure = [
+function findItem(siteStructureList, url, foundData = { parent: null }) {
+    for (const item of siteStructureList) {
+        if (item.url === url) {
+            foundData.item = item;
+            if (item.parent) {
+                foundData.parent = item;
+            }
+        }
+        else if (foundData.item != null && item.url != null) {
+            foundData.nextItem = item;
+        }
+        else if (item.url != null && foundData.item == null) {
+            foundData.prevItem = item;
+        }
+        else if (item.children && item.children.length > 0) {
+            if (foundData.item == null) {
+                foundData.parent = item;
+            }
+            foundData = findItem(item.children, url, foundData);
+        }
+        if (foundData.item != null && foundData.nextItem != null) {
+            return foundData;
+        }
+    }
+    return foundData;
+}
+
+var guideStructure = [
 	{
 		text: "Introduction",
-		filePath: "/assets/docs-content/index.json",
+		filePath: "/assets/guide-content/index.json",
+		parent: true,
 		url: "/docs"
 	},
 	{
 		text: "Getting Started",
+		parent: true,
 		children: [
 			{
 				text: "Required Dependencies",
-				filePath: "/assets/docs-content/getting-started/dependencies.json",
+				filePath: "/assets/guide-content/getting-started/dependencies.json",
 				url: "/docs/getting-started/dependencies"
 			},
 			{
 				text: "Installation",
-				filePath: "/assets/docs-content/getting-started/index.json",
+				filePath: "/assets/guide-content/getting-started/index.json",
 				url: "/docs/getting-started"
 			},
 			{
 				text: "Using with Ionic",
-				filePath: "/assets/docs-content/getting-started/with-ionic.json",
+				filePath: "/assets/guide-content/getting-started/with-ionic.json",
 				url: "/docs/getting-started/with-ionic"
 			}
 		]
 	},
 	{
 		text: "Basics",
+		parent: true,
 		children: [
 			{
 				text: "Development Workflow",
-				filePath: "/assets/docs-content/basics/workflow.json",
+				filePath: "/assets/guide-content/basics/workflow.json",
 				url: "/docs/basics/workflow"
 			},
 			{
 				text: "Opening Native IDE",
-				filePath: "/assets/docs-content/basics/opening-native-projects.json",
+				filePath: "/assets/guide-content/basics/opening-native-projects.json",
 				url: "/docs/basics/opening-native-projects"
 			},
 			{
 				text: "Building your App",
-				filePath: "/assets/docs-content/basics/building-your-app.json",
+				filePath: "/assets/guide-content/basics/building-your-app.json",
 				url: "/docs/basics/building-your-app"
 			},
 			{
 				text: "Running your App",
-				filePath: "/assets/docs-content/basics/running-your-app.json",
+				filePath: "/assets/guide-content/basics/running-your-app.json",
 				url: "/docs/basics/running-your-app"
 			},
 			{
 				text: "Using Plugins",
-				filePath: "/assets/docs-content/basics/using-plugins.json",
+				filePath: "/assets/guide-content/basics/using-plugins.json",
 				url: "/docs/basics/using-plugins"
 			},
 			{
 				text: "Native Project Configuration",
-				filePath: "/assets/docs-content/basics/configuring-your-app.json",
+				filePath: "/assets/guide-content/basics/configuring-your-app.json",
 				url: "/docs/basics/configuring-your-app"
 			},
 			{
 				text: "Progressive Web Apps",
-				filePath: "/assets/docs-content/basics/progressive-web-app.json",
+				filePath: "/assets/guide-content/basics/progressive-web-app.json",
 				url: "/docs/basics/progressive-web-app"
 			},
 			{
 				text: "Utilities",
-				filePath: "/assets/docs-content/basics/utilities.json",
+				filePath: "/assets/guide-content/basics/utilities.json",
 				url: "/docs/basics/utilities"
-			},
-			{
-				text: "CLI Reference",
-				filePath: "/assets/docs-content/basics/cli-commands.json",
-				url: "/docs/basics/cli-commands"
 			}
 		]
 	},
 	{
 		text: "Cordova/PhoneGap",
+		parent: true,
 		children: [
 			{
 				text: "Introduction",
-				filePath: "/assets/docs-content/cordova/index.json",
+				filePath: "/assets/guide-content/cordova/index.json",
 				url: "/docs/cordova"
 			},
 			{
 				text: "Migration Strategy",
-				filePath: "/assets/docs-content/cordova/migration-strategy.json",
+				filePath: "/assets/guide-content/cordova/migration-strategy.json",
 				url: "/docs/cordova/migration-strategy"
 			},
 			{
 				text: "Cordova to Capacitor Migration",
-				filePath: "/assets/docs-content/cordova/migrating-from-cordova-to-capacitor.json",
+				filePath: "/assets/guide-content/cordova/migrating-from-cordova-to-capacitor.json",
 				url: "/docs/cordova/migrating-from-cordova-to-capacitor"
 			},
 			{
 				text: "Cordova/Ionic Native Plugins",
-				filePath: "/assets/docs-content/cordova/using-cordova-plugins.json",
+				filePath: "/assets/guide-content/cordova/using-cordova-plugins.json",
 				url: "/docs/cordova/using-cordova-plugins"
 			},
 			{
 				text: "Known Incompatible Plugins",
-				filePath: "/assets/docs-content/cordova/known-incompatible-plugins.json",
+				filePath: "/assets/guide-content/cordova/known-incompatible-plugins.json",
 				url: "/docs/cordova/known-incompatible-plugins"
 			}
 		]
 	},
 	{
-		text: "Concepts",
+		text: "Guides",
+		parent: true,
 		children: [
 			{
-				text: "Ads",
-				filePath: "/assets/docs-content/guides/ads.json",
-				url: "/docs/guides/ads"
-			},
-			{
 				text: "CI/CD",
-				filePath: "/assets/docs-content/guides/ci-cd.json",
+				filePath: "/assets/guide-content/guides/ci-cd.json",
 				url: "/docs/guides/ci-cd"
 			},
 			{
 				text: "Deep Links",
-				filePath: "/assets/docs-content/guides/deep-links.json",
+				filePath: "/assets/guide-content/guides/deep-links.json",
 				url: "/docs/guides/deep-links"
 			},
 			{
 				text: "Deploying and Updating",
-				filePath: "/assets/docs-content/guides/deploying.json",
+				filePath: "/assets/guide-content/guides/deploying.json",
 				url: "/docs/guides/deploying-updates"
+			},
+			{
+				text: "In App Purchases",
+				filePath: "/assets/guide-content/guides/in-app-purchases.json",
+				url: "/docs/guides/in-app-purchases"
+			},
+			{
+				text: "Ionic Photo Gallery App",
+				filePath: "/assets/guide-content/guides/ionic-framework-app.json",
+				url: "/docs/guides/ionic-framework-app"
+			},
+			{
+				text: "Live Reload",
+				filePath: "/assets/guide-content/guides/live-reload.json",
+				url: "/docs/guides/live-reload"
+			},
+			{
+				text: "Push Notifications - Firebase",
+				filePath: "/assets/guide-content/guides/push-notifications-firebase.json",
+				url: "/docs/guides/push-notifications-firebase"
+			},
+			{
+				text: "Screen Orientation",
+				filePath: "/assets/guide-content/guides/screen-orientation.json",
+				url: "/docs/guides/screen-orientation"
 			},
 			{
 				text: "In App Purchases",
@@ -8971,301 +8901,293 @@ var siteStructure = [
 			},
 			{
 				text: "Splash Screens and Icons",
-				filePath: "/assets/docs-content/guides/splash-screens-and-icons.json",
+				filePath: "/assets/guide-content/guides/splash-screens-and-icons.json",
 				url: "/docs/guides/splash-screens-and-icons"
 			},
 			{
 				text: "Storage",
-				filePath: "/assets/docs-content/guides/storage.json",
+				filePath: "/assets/guide-content/guides/storage.json",
 				url: "/docs/guides/storage"
 			},
 			{
 				text: "Community Guides",
-				filePath: "/assets/docs-content/guides/community.json",
+				filePath: "/assets/guide-content/guides/community.json",
 				url: "/docs/guides/community"
 			}
 		]
 	},
 	{
 		text: "iOS",
+		parent: true,
 		children: [
 			{
 				text: "Getting Started",
-				filePath: "/assets/docs-content/ios/index.json",
+				filePath: "/assets/guide-content/ios/index.json",
 				url: "/docs/ios"
 			},
 			{
 				text: "Configuration",
-				filePath: "/assets/docs-content/ios/configuration.json",
+				filePath: "/assets/guide-content/ios/configuration.json",
 				url: "/docs/ios/configuration"
 			},
 			{
 				text: "Updating",
-				filePath: "/assets/docs-content/ios/updating.json",
+				filePath: "/assets/guide-content/ios/updating.json",
 				url: "/docs/ios/updating"
 			},
 			{
 				text: "Custom Native Code",
-				filePath: "/assets/docs-content/ios/custom-code.json",
+				filePath: "/assets/guide-content/ios/custom-code.json",
 				url: "/docs/ios/custom-code"
 			},
 			{
 				text: "Deploying to App Store",
-				filePath: "/assets/docs-content/ios/deploying-to-app-store.json",
+				filePath: "/assets/guide-content/ios/deploying-to-app-store.json",
 				url: "/docs/ios/deploying-to-app-store"
 			},
 			{
 				text: "Troubleshooting",
-				filePath: "/assets/docs-content/ios/troubleshooting.json",
+				filePath: "/assets/guide-content/ios/troubleshooting.json",
 				url: "/docs/ios/troubleshooting"
 			}
 		]
 	},
 	{
 		text: "Android",
+		parent: true,
 		children: [
 			{
 				text: "Getting Started",
-				filePath: "/assets/docs-content/android/index.json",
+				filePath: "/assets/guide-content/android/index.json",
 				url: "/docs/android"
 			},
 			{
 				text: "Configuration",
-				filePath: "/assets/docs-content/android/configuration.json",
+				filePath: "/assets/guide-content/android/configuration.json",
 				url: "/docs/android/configuration"
 			},
 			{
 				text: "Updating",
-				filePath: "/assets/docs-content/android/updating.json",
+				filePath: "/assets/guide-content/android/updating.json",
 				url: "/docs/android/updating"
 			},
 			{
 				text: "Custom Native Code",
-				filePath: "/assets/docs-content/android/custom-code.json",
+				filePath: "/assets/guide-content/android/custom-code.json",
 				url: "/docs/android/custom-code"
 			},
 			{
 				text: "Deploying to Google Play",
-				filePath: "/assets/docs-content/android/deploying-to-google-play.json",
+				filePath: "/assets/guide-content/android/deploying-to-google-play.json",
 				url: "/docs/android/deploying-to-google-play"
 			},
 			{
 				text: "Troubleshooting",
-				filePath: "/assets/docs-content/android/troubleshooting.json",
+				filePath: "/assets/guide-content/android/troubleshooting.json",
 				url: "/docs/android/troubleshooting"
 			}
 		]
 	},
 	{
 		text: "Web/PWA",
+		parent: true,
 		children: [
 			{
 				text: "Getting Started",
-				filePath: "/assets/docs-content/web/index.json",
+				filePath: "/assets/guide-content/web/index.json",
 				url: "/docs/web"
 			},
 			{
 				text: "PWA Elements",
-				filePath: "/assets/docs-content/web/pwa-elements.json",
+				filePath: "/assets/guide-content/web/pwa-elements.json",
 				url: "/docs/pwa-elements"
 			}
 		]
 	},
 	{
+		text: "Community Plugins",
+		filePath: "/assets/guide-content/community/index.json",
+		parent: true,
+		url: "/docs/community"
+	},
+	{
+		text: "Enterprise Plugins",
+		filePath: "/assets/guide-content/enterprise/index.json",
+		parent: true,
+		url: "/docs/enterprise"
+	},
+	{
 		text: "Creating Plugins",
+		parent: true,
 		children: [
 			{
 				text: "Introduction",
-				filePath: "/assets/docs-content/plugins/index.json",
+				filePath: "/assets/guide-content/plugins/index.json",
 				url: "/docs/plugins"
 			},
 			{
 				text: "Development Workflow",
-				filePath: "/assets/docs-content/plugins/workflow.json",
+				filePath: "/assets/guide-content/plugins/workflow.json",
 				url: "/docs/plugins/workflow"
 			},
 			{
 				text: "iOS Guide",
-				filePath: "/assets/docs-content/plugins/ios.json",
+				filePath: "/assets/guide-content/plugins/ios.json",
 				url: "/docs/plugins/ios"
 			},
 			{
 				text: "Android Guide",
-				filePath: "/assets/docs-content/plugins/android.json",
+				filePath: "/assets/guide-content/plugins/android.json",
 				url: "/docs/plugins/android"
 			},
 			{
 				text: "Web/PWA Guide",
-				filePath: "/assets/docs-content/plugins/web.json",
+				filePath: "/assets/guide-content/plugins/web.json",
 				url: "/docs/plugins/web"
 			},
 			{
 				text: "JavaScript Guide",
-				filePath: "/assets/docs-content/plugins/js.json",
+				filePath: "/assets/guide-content/plugins/js.json",
 				url: "/docs/plugins/js"
-			}
-		]
-	},
-	{
-		text: "Plugins",
-		children: [
-			{
-				text: "Introduction",
-				filePath: "/assets/docs-content/apis/index.json",
-				url: "/docs/apis"
-			},
-			{
-				text: "Community Plugins",
-				filePath: "/assets/docs-content/community/plugins.json",
-				url: "/docs/community/plugins"
-			},
-			{
-				text: "Enterprise Plugins",
-				filePath: "/assets/docs-content/enterprise/index.json",
-				url: "/docs/enterprise"
-			},
-			{
-				text: "Accessibility",
-				filePath: "/assets/docs-content/apis/accessibility/index.json",
-				url: "/docs/apis/accessibility"
-			},
-			{
-				text: "App",
-				filePath: "/assets/docs-content/apis/app/index.json",
-				url: "/docs/apis/app"
-			},
-			{
-				text: "Background Task",
-				filePath: "/assets/docs-content/apis/background-task/index.json",
-				url: "/docs/apis/background-task"
-			},
-			{
-				text: "Browser",
-				filePath: "/assets/docs-content/apis/browser/index.json",
-				url: "/docs/apis/browser"
-			},
-			{
-				text: "Camera",
-				filePath: "/assets/docs-content/apis/camera/index.json",
-				url: "/docs/apis/camera"
-			},
-			{
-				text: "Clipboard",
-				filePath: "/assets/docs-content/apis/clipboard/index.json",
-				url: "/docs/apis/clipboard"
-			},
-			{
-				text: "Console",
-				filePath: "/assets/docs-content/apis/console/index.json",
-				url: "/docs/apis/console"
-			},
-			{
-				text: "Device",
-				filePath: "/assets/docs-content/apis/device/index.json",
-				url: "/docs/apis/device"
-			},
-			{
-				text: "Filesystem",
-				filePath: "/assets/docs-content/apis/filesystem/index.json",
-				url: "/docs/apis/filesystem"
-			},
-			{
-				text: "Geolocation",
-				filePath: "/assets/docs-content/apis/geolocation/index.json",
-				url: "/docs/apis/geolocation"
-			},
-			{
-				text: "Haptics",
-				filePath: "/assets/docs-content/apis/haptics/index.json",
-				url: "/docs/apis/haptics"
-			},
-			{
-				text: "Keyboard",
-				filePath: "/assets/docs-content/apis/keyboard/index.json",
-				url: "/docs/apis/keyboard"
-			},
-			{
-				text: "Local Notifications",
-				filePath: "/assets/docs-content/apis/local-notifications/index.json",
-				url: "/docs/apis/local-notifications"
-			},
-			{
-				text: "Modals",
-				filePath: "/assets/docs-content/apis/modals/index.json",
-				url: "/docs/apis/modals"
-			},
-			{
-				text: "Motion",
-				filePath: "/assets/docs-content/apis/motion/index.json",
-				url: "/docs/apis/motion"
-			},
-			{
-				text: "Network",
-				filePath: "/assets/docs-content/apis/network/index.json",
-				url: "/docs/apis/network"
-			},
-			{
-				text: "Permissions",
-				filePath: "/assets/docs-content/apis/permissions/index.json",
-				url: "/docs/apis/permissions"
-			},
-			{
-				text: "Push Notifications",
-				filePath: "/assets/docs-content/apis/push-notifications/index.json",
-				url: "/docs/apis/push-notifications"
-			},
-			{
-				text: "Share",
-				filePath: "/assets/docs-content/apis/share/index.json",
-				url: "/docs/apis/share"
-			},
-			{
-				text: "Splash Screen",
-				filePath: "/assets/docs-content/apis/splash-screen/index.json",
-				url: "/docs/apis/splash-screen"
-			},
-			{
-				text: "Status Bar",
-				filePath: "/assets/docs-content/apis/status-bar/index.json",
-				url: "/docs/apis/status-bar"
-			},
-			{
-				text: "Storage",
-				filePath: "/assets/docs-content/apis/storage/index.json",
-				url: "/docs/apis/storage"
-			},
-			{
-				text: "Toast",
-				filePath: "/assets/docs-content/apis/toast/index.json",
-				url: "/docs/apis/toast"
 			}
 		]
 	}
 ];
 
-function findItem(siteStructureList, url, foundData = { parent: null }) {
-    for (const item of siteStructureList) {
-        if (item.url === url) {
-            foundData.item = item;
-        }
-        else if (foundData.item != null && item.url != null) {
-            foundData.nextItem = item;
-        }
-        else if (item.url != null && foundData.item == null) {
-            foundData.prevItem = item;
-        }
-        else if (item.children && item.children.length > 0) {
-            if (foundData.item == null) {
-                foundData.parent = item;
-            }
-            foundData = findItem(item.children, url, foundData);
-        }
-        if (foundData.item != null && foundData.nextItem != null) {
-            return foundData;
-        }
-    }
-    return foundData;
-}
+var referenceStructure = [
+	{
+		text: "CLI Reference",
+		filePath: "/assets/reference-content/cli/index.json",
+		parent: true,
+		url: "/docs/reference/cli"
+	},
+	{
+		text: "Plugin APIs",
+		parent: true,
+		children: [
+			{
+				text: "Introduction",
+				filePath: "/assets/reference-content/apis/index.json",
+				url: "/docs/apis"
+			},
+			{
+				text: "Accessibility",
+				filePath: "/assets/reference-content/apis/accessibility/index.json",
+				url: "/docs/apis/accessibility"
+			},
+			{
+				text: "App",
+				filePath: "/assets/reference-content/apis/app/index.json",
+				url: "/docs/apis/app"
+			},
+			{
+				text: "Background Task",
+				filePath: "/assets/reference-content/apis/background-task/index.json",
+				url: "/docs/apis/background-task"
+			},
+			{
+				text: "Browser",
+				filePath: "/assets/reference-content/apis/browser/index.json",
+				url: "/docs/apis/browser"
+			},
+			{
+				text: "Camera",
+				filePath: "/assets/reference-content/apis/camera/index.json",
+				url: "/docs/apis/camera"
+			},
+			{
+				text: "Clipboard",
+				filePath: "/assets/reference-content/apis/clipboard/index.json",
+				url: "/docs/apis/clipboard"
+			},
+			{
+				text: "Console",
+				filePath: "/assets/reference-content/apis/console/index.json",
+				url: "/docs/apis/console"
+			},
+			{
+				text: "Device",
+				filePath: "/assets/reference-content/apis/device/index.json",
+				url: "/docs/apis/device"
+			},
+			{
+				text: "Filesystem",
+				filePath: "/assets/reference-content/apis/filesystem/index.json",
+				url: "/docs/apis/filesystem"
+			},
+			{
+				text: "Geolocation",
+				filePath: "/assets/reference-content/apis/geolocation/index.json",
+				url: "/docs/apis/geolocation"
+			},
+			{
+				text: "Haptics",
+				filePath: "/assets/reference-content/apis/haptics/index.json",
+				url: "/docs/apis/haptics"
+			},
+			{
+				text: "Keyboard",
+				filePath: "/assets/reference-content/apis/keyboard/index.json",
+				url: "/docs/apis/keyboard"
+			},
+			{
+				text: "Local Notifications",
+				filePath: "/assets/reference-content/apis/local-notifications/index.json",
+				url: "/docs/apis/local-notifications"
+			},
+			{
+				text: "Modals",
+				filePath: "/assets/reference-content/apis/modals/index.json",
+				url: "/docs/apis/modals"
+			},
+			{
+				text: "Motion",
+				filePath: "/assets/reference-content/apis/motion/index.json",
+				url: "/docs/apis/motion"
+			},
+			{
+				text: "Network",
+				filePath: "/assets/reference-content/apis/network/index.json",
+				url: "/docs/apis/network"
+			},
+			{
+				text: "Permissions",
+				filePath: "/assets/reference-content/apis/permissions/index.json",
+				url: "/docs/apis/permissions"
+			},
+			{
+				text: "Push Notifications",
+				filePath: "/assets/reference-content/apis/push-notifications/index.json",
+				url: "/docs/apis/push-notifications"
+			},
+			{
+				text: "Share",
+				filePath: "/assets/reference-content/apis/share/index.json",
+				url: "/docs/apis/share"
+			},
+			{
+				text: "Splash Screen",
+				filePath: "/assets/reference-content/apis/splash-screen/index.json",
+				url: "/docs/apis/splash-screen"
+			},
+			{
+				text: "Status Bar",
+				filePath: "/assets/reference-content/apis/status-bar/index.json",
+				url: "/docs/apis/status-bar"
+			},
+			{
+				text: "Storage",
+				filePath: "/assets/reference-content/apis/storage/index.json",
+				url: "/docs/apis/storage"
+			},
+			{
+				text: "Toast",
+				filePath: "/assets/reference-content/apis/toast/index.json",
+				url: "/docs/apis/toast"
+			}
+		]
+	}
+];
 
 const handleRoutableLinkClick = (e) => {
     if (e.metaKey || e.ctrlKey) {
@@ -9284,6 +9206,21 @@ const handleRoutableLinkClick = (e) => {
         }
     }
 };
+const getTemplateFromPath = (path) => {
+    const re = /^\/docs\/([^\/]+).*/;
+    const m = re.exec(path);
+    if (m) {
+        const p = m[1];
+        if (['apis', 'reference'].includes(p)) {
+            return 'reference';
+        }
+    }
+    return 'guide';
+};
+const getSiteStructureList = (path) => {
+    const template = getTemplateFromPath(path);
+    return template === 'reference' ? referenceStructure : guideStructure;
+};
 
 const documentComponentCss = ":root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}document-component .container{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;max-width:none;padding:0}document-component .content-container{width:100%;display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column}document-component plugin-platforms{display:block;float:right}document-component plugin-platforms .platform{margin-left:8px}document-component table,document-component td,document-component th{border:1px solid #eee;border-collapse:collapse}document-component table{width:100%}document-component table th{text-align:left;padding:4px}document-component table td{font-size:12px;line-height:18px;vertical-align:top;padding:4px;min-width:150px}document-component table td code{font-size:12px}document-component .heading-link{position:relative;text-decoration:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;color:#2d2d4c}document-component .heading-link:hover{border-bottom:1px solid transparent}document-component .heading-link ion-icon{-webkit-transition:opacity 0.2s;transition:opacity 0.2s;position:absolute;left:-24px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}document-component .heading-link:hover ion-icon{opacity:0.8}document-component img{max-width:100%;margin:8px 0}document-component h1:first-child anchor-link{display:none}document-component ul{-webkit-padding-start:16px}document-component ul li,document-component ul code{font-size:14px;margin-top:16px}document-component p a{color:#1d9aff;text-decoration:none}document-component p code,document-component ul code,document-component ol code{padding:1px 4px 2px;background-color:#ecf4fb;color:#16161D;border-radius:3px}document-component #introButton{background:#1d9aff;color:white;text-decoration:none;border:none;font-size:13px;font-weight:600;text-transform:uppercase;padding:12px 14px;border-radius:4px;-webkit-box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);box-shadow:0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);outline:none;letter-spacing:0.04em;-webkit-transition:all 0.15s ease;transition:all 0.15s ease;cursor:pointer}document-component #introButton:hover{-webkit-box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);box-shadow:0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);-webkit-transform:translateY(1px);transform:translateY(1px)}document-component .btn.pull-left,document-component .btn.pull-right{margin:64px 8px 20px}";
 
@@ -9297,16 +9234,17 @@ class DocumentComponent {
         this.menuEl.toggleOverlayMenu();
     }
     componentWillLoad() {
-        console.log('Hiding topbar', state.showTopBar);
         state.showTopBar = false;
-        return this.fetchNewContent(this.page);
+        this.fetchNewContent(this.page);
     }
     fetchNewContent(page, oldPage) {
         if (page == null || page === oldPage) {
             return;
         }
         state.showTopBar = false;
-        const foundData = findItem(siteStructure, this.page);
+        this.template = getTemplateFromPath(this.page);
+        this.menuStructure = getSiteStructureList(this.page);
+        const foundData = findItem(this.menuStructure, page);
         this.item = foundData.item;
         this.nextItem = foundData.nextItem;
         this.prevItem = foundData.prevItem;
@@ -9316,8 +9254,8 @@ class DocumentComponent {
         if (this.item == null) {
             return h("h1", null, "Page not found");
         }
-        return (h("div", { class: "container" }, h("app-menu-toggle", null), h("docs-menu", { ref: el => this.menuEl = el, selectedParent: this.parent, siteStructureList: siteStructure }), h("div", { class: "content-container" }, h("docs-header", null), h("app-marked", { fetchPath: this.item.filePath, renderer: (docsContent) => [
-                h(Helmet, null, h("title", null, docsContent.title ? `${docsContent.title} - Capacitor` : 'Capacitor'), docsContent.description && h("meta", { name: "description", content: `${docsContent.description} - Official Capacitor Documentation` })),
+        return (h("div", { class: "container" }, h("app-menu-toggle", null), h("docs-menu", { ref: el => this.menuEl = el, template: this.template, selectedParent: this.parent, siteStructureList: this.menuStructure }), h("div", { class: "content-container" }, h("docs-header", { template: this.template }), h("app-marked", { fetchPath: this.item.filePath, renderer: (docsContent) => [
+                h(Helmet, null, h("title", null, docsContent.title ? `${docsContent.title} - Capacitor` : 'Capacitor')),
                 h("div", { class: "doc-content" }, h("div", { class: "measure-lg" }, h("div", { onClick: handleRoutableLinkClick, innerHTML: docsContent.content }), h("h2", null, "Contributors"), h("contributor-list", { contributors: docsContent.contributors }), h("lower-content-nav", { next: this.nextItem, prev: this.prevItem }))),
                 h("in-page-navigation", { pageLinks: docsContent.headings, srcUrl: docsContent.srcPath, currentPageUrl: docsContent.url })
             ] }))));
@@ -9335,7 +9273,8 @@ class DocumentComponent {
             "item": [32],
             "nextItem": [32],
             "prevItem": [32],
-            "parent": [32]
+            "parent": [32],
+            "menuStructure": [32]
         },
         "$listeners$": [[0, "menuToggleClick", "toggleMenu"]],
         "$lazyBundleIds$": "-",
@@ -10223,7 +10162,7 @@ class LandingPage {
         this.selectedCodeTab = 'notifications';
     }
     render() {
-        return (h(Host, null, h(MetaHead$1, null), h("section", { class: "hero" }, h("div", { class: "hero__background" }), h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("hgroup", { class: "hero__heading" }, h("a", { class: "feature__register", href: "https://ionicframework.com/resources/webinars/hybrid-app-development-redefined", target: "_blank", rel: "noopener nofollow" }, h("div", { class: "feature__register__tag" }, "Live demo"), h(Breakpoint, { mobile: true, inlineBlock: true, class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar Wed, July 22nd ", h("span", { style: { 'letter-spacing': '0' } }, "->"))), h(Breakpoint, { mobile: true, tablet: false, inlineBlock: true, class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar ", h("span", { style: { 'letter-spacing': '0' } }, "->")))), h(Heading, { level: 1 }, "A cross-platform native runtime for web apps."), h(Heading, { level: 3 }, "Capacitor turns any web app into a native app so you can run one app across iOS, Android, and the Web with the same code."), h("div", { class: "hero__buttons" }, h(AnchorButton, { href: "/docs/getting-started", id: "get-started" }, "Get Started"), h(AnchorButton, { href: "/docs", id: "explore-docs", class: "btn-white" }, "Explore Docs"))), h("div", { class: "cordova-cta" }, h("a", { href: "/cordova" }, "Migrating from Cordova ", "->")), h("img", { class: "hero__platforms", src: "/assets/img/supported-icons.png", alt: "Supported platforms" })), h(Col, { md: 6, sm: 6, xs: 6, cols: 12, class: "hero__graphic" }, h("img", { src: "/assets/img/landing/hero-graphic.png", alt: "Capacitor Architecture Diagram" }))))), h(GettingStartedSection$1, { selectedCodeTab: this.selectedCodeTab, setSelectedCodeTab: (tab) => { this.selectedCodeTab = tab; } }), h(ResponsiveContainer, null, h("section", { class: "section--web-apps-to-native" }, h("hgroup", null, h(Heading, { level: 3 }, "Connect web apps to", h("br", null), h(FancyUnderline, null, "native functionality."))), h(Grid, null, h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/universal-apps.png", alt: "Universal apps" }), h(Heading, { level: 4 }, "Universal apps"), h(Paragraph, null, "Build web-based applications that run equally well across iOS, Android, and as Progressive Web Apps.")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-access.png", alt: "Native access" }), h(Heading, { level: 4 }, "Native access"), h(Paragraph, null, "Access the full Native SDKs on each platform, and easily deploy to the App Stores (and the web).")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-pwas.png", alt: "Native PWAs" }), h(Heading, { level: 4 }, "Native PWAs"), h(Paragraph, null, "Add custom native functionality with a simple Plugin API, or use existing Cordova plugins with our compatibility layer.")))), h("section", { class: "section--native-features" }, h("hgroup", null, h(Heading, { level: 3 }, "Cross-platform core", h("br", null), h(FancyUnderline, null, "native features"))), h(Grid, null, [
+        return (h(Host, null, h(MetaHead$1, null), h("section", { class: "hero" }, h("div", { class: "hero__background" }), h(ResponsiveContainer, null, h(Grid, null, h(Col, { md: 6, sm: 6, xs: 6, cols: 12 }, h("hgroup", { class: "hero__heading" }, h("a", { class: "feature__register", href: "https://ionicframework.com/resources/webinars/hybrid-app-development-redefined", target: "_blank", rel: "noopener nofollow" }, h("div", { class: "feature__register__tag" }, "Live demo"), h(Breakpoint, { mobile: false, tablet: false, desktop: true, inlineBlock: true, class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar Wed, July 22nd ", h("span", { style: { 'letter-spacing': '0' } }, "->"))), h(Breakpoint, { mobile: false, tablet: true, desktop: false, inlineBlock: true, class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar July 22nd", h("span", { style: { 'letter-spacing': '0' } }, "->"))), h(Breakpoint, { mobile: true, tablet: false, desktop: false, inlineBlock: true, class: "feature__register__text" }, h("span", { class: "text__content" }, "Hybrid vs. Native Webinar ", h("span", { style: { 'letter-spacing': '0' } }, "->")))), h(Heading, { level: 1 }, "A cross-platform native runtime for web apps."), h(Heading, { level: 3 }, "Capacitor turns any web app into a native app so you can run one app across iOS, Android, and the Web with the same code."), h("div", { class: "hero__buttons" }, h(AnchorButton, { href: "/docs/getting-started", id: "get-started" }, "Get Started"), h(AnchorButton, { href: "/docs", id: "explore-docs", class: "btn-white" }, "Explore Docs"))), h("div", { class: "cordova-cta" }, h("a", { href: "/cordova" }, "Migrating from Cordova ", "->")), h("img", { class: "hero__platforms", src: "/assets/img/supported-icons.png", alt: "Supported platforms" })), h(Col, { md: 6, sm: 6, xs: 6, cols: 12, class: "hero__graphic" }, h("img", { src: "/assets/img/landing/hero-graphic.png", alt: "Capacitor Architecture Diagram" }))))), h(GettingStartedSection$1, { selectedCodeTab: this.selectedCodeTab, setSelectedCodeTab: (tab) => { this.selectedCodeTab = tab; } }), h(ResponsiveContainer, null, h("section", { class: "section--web-apps-to-native" }, h("hgroup", null, h(Heading, { id: "features", level: 3 }, "Connect web apps to", h("br", null), h(FancyUnderline, null, "native functionality."))), h(Grid, null, h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/universal-apps.png", alt: "Universal apps" }), h(Heading, { level: 4 }, "Universal apps"), h(Paragraph, null, "Build web-based applications that run equally well across iOS, Android, and as Progressive Web Apps.")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-access.png", alt: "Native access" }), h(Heading, { level: 4 }, "Native access"), h(Paragraph, null, "Access the full Native SDKs on each platform, and easily deploy to the App Stores (and the web).")), h(Col, { md: 4, sm: 4, xs: 12, cols: 12 }, h("img", { src: "/assets/img/landing/native-pwas.png", alt: "Native PWAs" }), h(Heading, { level: 4 }, "Native PWAs"), h(Paragraph, null, "Add custom native functionality with a simple Plugin API, or use existing Cordova plugins with our compatibility layer.")))), h("section", { class: "section--native-features" }, h("hgroup", null, h(Heading, { level: 3 }, "Cross-platform core", h("br", null), h(FancyUnderline, null, "native features"))), h(Grid, null, [
             {
                 key: 'camera',
                 name: 'Camera',
@@ -10810,7 +10749,7 @@ class PluginApi {
             return;
         }
         const url = `api${this.index ? '-index' : ''}.html`;
-        return fetch(`/assets/docs-content/apis/${this.name}/${url}`)
+        return fetch(`/assets/reference-content/apis/${this.name}/${url}`)
             .then(response => {
             return response.text();
         })
@@ -10989,11 +10928,12 @@ const NavLink = ({ path, hovered, onHover, onExit }, children) => {
         } }), children));
 };
 
-const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{--menu-width:280px;display:block;-ms-flex:0 0 auto;flex:0 0 auto;width:var(--menu-width);letter-spacing:0;padding:0 15px 0 18px;-webkit-box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-white);z-index:999;-webkit-transform:translateX(calc(-1 * var(--menu-width)));transform:translateX(calc(-1 * var(--menu-width)));-webkit-transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);height:100%;overflow-y:scroll}.menu-overlay-visible.sc-docs-menu-h{-webkit-transform:none;transform:none;-webkit-transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1)}.menu-overlay-visible.sc-docs-menu-h .menu-header.sc-docs-menu{background:white;position:-webkit-sticky;position:sticky;top:0;z-index:1}.menu-overlay-visible.sc-docs-menu-h .menu-header__logo-link.sc-docs-menu{margin-left:60px}.menu-overlay-visible.sc-docs-menu-h .menu-header__version-link.sc-docs-menu{display:none}}span.sc-docs-menu{display:inline-block}.sticky.sc-docs-menu{top:0;max-height:100vh}.menu-header.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;-webkit-transition:80ms height;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;-webkit-transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s transform ease, 0.2s color ease;transition:0.2s transform ease, 0.2s color ease, 0.2s -webkit-transform ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}";
+const docsMenuCss = ".sc-docs-menu:root{--color-capacitor-blue:#119eff;--button-background:var(--color-capacitor-blue);--color-woodsmoke:#16161d;--color-dolphin:#626177;--color-gunpowder:#505061;--color-manatee:#8888a2;--color-cadet-blue:#abb2bf;--color-whisper:#ebebf7;--color-selago:#f4f4fd;--color-white-lilac:#f8f8fc;--color-white:#fff;--color-grey-blue:#73849a;--color-green-haze:#00ab47;--color-dodger-blue:#1d9aff;--color-dodger-blue-hover:rgba(#1d9aff, 0.2);--color-old-lace:#fdf5e4;--color-wheatfield:#f1e3c5;--color-pirate-gold:#9a6400;--button-shadow:0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);--button-shadow-hover:0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);--ease-out-expo:cubic-bezier(0.19, 1, 0.22, 1)}.sc-docs-menu-h{--menu-width:280px;display:block;-ms-flex:0 0 auto;flex:0 0 auto;width:var(--menu-width);letter-spacing:0;padding:0 15px 0 18px;-webkit-box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);box-shadow:1px 0px 0px rgba(0, 21, 58, 0.06);z-index:2}@media screen and (max-width: 768px){.sc-docs-menu-h{position:fixed;top:0;left:0;background:var(--color-white);z-index:999;-webkit-transform:translateX(calc(-1 * var(--menu-width)));transform:translateX(calc(-1 * var(--menu-width)));-webkit-transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:-webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1);transition:transform 200ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);height:100%;overflow-y:scroll}.menu-overlay-visible.sc-docs-menu-h{-webkit-transform:none;transform:none;-webkit-transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:-webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1);transition:transform 200ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 200ms cubic-bezier(0.4, 0, 0.6, 1)}.menu-overlay-visible.sc-docs-menu-h .menu-header.sc-docs-menu{background:white;position:-webkit-sticky;position:sticky;top:0;z-index:1}.menu-overlay-visible.sc-docs-menu-h .menu-header__logo-link.sc-docs-menu{margin-left:60px}.menu-overlay-visible.sc-docs-menu-h .menu-header__version-link.sc-docs-menu{display:none}}.sticky.sc-docs-menu{top:0;max-height:100vh}.menu-header.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:64px}.menu-header__logo-link.sc-docs-menu,.menu-header__docs-link.sc-docs-menu{border-bottom:none}.menu-header__logo-link.sc-docs-menu{margin-top:7px;max-width:125px}.menu-header__docs-link.sc-docs-menu{color:#92a0b3;text-transform:uppercase;font-family:\"Eina\";font-weight:600;font-size:16px;letter-spacing:-0.02em;margin:6px 7px 0 8px}.menu-header__version-link.sc-docs-menu{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background:#f6f8fb;border-radius:12px;height:24px;font-size:12px;letter-spacing:-0.01em;padding:0 8px;margin:0 0 0 10px;border-bottom:none;cursor:pointer;color:var(--color-grey-blue)}.menu-header__version-link.sc-docs-menu:hover{background:#e9ebee}.section-label.sc-docs-menu{color:var(--color-woodsmoke);margin-bottom:0;font-size:15px;font-weight:500;letter-spacing:-0.01em}.section-active-indicator.sc-docs-menu{position:relative;width:14px;height:14px;margin-right:8px}.section-active-indicator.sc-docs-menu::after{content:\"\";position:absolute;top:7px;left:5px;width:4px;height:4px;background:#000;border-radius:50%}.section-active.sc-docs-menu .section-label.sc-docs-menu{color:var(--color-capacitor-blue)}.section-active.sc-docs-menu .section-active-indicator.sc-docs-menu::after{background:var(--color-capacitor-blue)}.menu-list.sc-docs-menu li.sc-docs-menu,.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{list-style-type:none;margin:0;padding:0}.menu-list.sc-docs-menu{margin-top:0;padding:13px 0 107px 0}.menu-list.sc-docs-menu .section-label.sc-docs-menu:first-of-type{margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu ul.sc-docs-menu{padding:0;margin-top:0;margin-bottom:0}.menu-list.sc-docs-menu li.sc-docs-menu{font-size:14px}.menu-list.sc-docs-menu>li.sc-docs-menu+li.sc-docs-menu{margin-top:18px}.menu-list.sc-docs-menu a.sc-docs-menu{font-weight:500;font-size:13px;color:var(--color-grey-blue);text-decoration:none;border:0;cursor:pointer}.menu-list.sc-docs-menu a.sc-docs-menu:hover{border:0}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu{cursor:pointer}.menu-list.sc-docs-menu>li.sc-docs-menu>a.sc-docs-menu ion-icon.sc-docs-menu{color:var(--c-carbon-90);font-weight:bold;font-size:14px;vertical-align:middle;margin-right:8px}.menu-list.sc-docs-menu .link-active.sc-docs-menu{font-weight:500;color:var(--color-dodger-blue)}.menu-list.sc-docs-menu a.sc-docs-menu:hover:not(.link-active){color:var(--color-woodsmoke)}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu{padding-left:22px;-webkit-transition:80ms height;transition:80ms height;height:29px;display:block;overflow:hidden}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.sc-docs-menu{display:block;-webkit-transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s color ease, 0.2s -webkit-transform ease;transition:0.2s transform ease, 0.2s color ease;transition:0.2s transform ease, 0.2s color ease, 0.2s -webkit-transform ease;margin-top:4px}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu:hover a.sc-docs-menu{color:#2d4665}.menu-list.sc-docs-menu ul.sc-docs-menu li.sc-docs-menu a.link-active.sc-docs-menu{color:#0091fa}.menu-list.sc-docs-menu ul.collapsed.sc-docs-menu li.sc-docs-menu{height:0}";
 
 class SiteMenu {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.template = 'guide';
         this.siteStructureList = [];
         this.selectedParent = null;
         this.closeList = [];
@@ -11008,18 +10948,20 @@ class SiteMenu {
                 else {
                     this.closeList = [...this.closeList, itemNumber];
                 }
-                console.log(e, this.closeList);
             };
         };
     }
     async componentWillLoad() {
-        const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
-        this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
+        this.siteStructureListChange();
         // TODO pull this in from GitHub at build
-        this.version = '2.2.0';
+        this.version = '2.3.0';
     }
     async toggleOverlayMenu() {
         this.showOverlay = !this.showOverlay;
+    }
+    siteStructureListChange() {
+        const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
+        this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
     }
     selectedParentChange() {
         const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
@@ -11049,6 +10991,7 @@ class SiteMenu {
         }))))));
     }
     static get watchers() { return {
+        "siteStructureList": ["siteStructureListChange"],
         "selectedParent": ["selectedParentChange"]
     }; }
     static get style() { return docsMenuCss; }
@@ -11056,6 +10999,7 @@ class SiteMenu {
         "$flags$": 2,
         "$tagName$": "docs-menu",
         "$members$": {
+            "template": [1],
             "siteStructureList": [16],
             "selectedParent": [1040],
             "closeList": [32],
