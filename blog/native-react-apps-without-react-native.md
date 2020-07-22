@@ -3,9 +3,10 @@ title: Native React Apps Without React Native
 date: 2020-07-14 08:00:00
 author: Max Lynch <max@ionic.io>
 authorUrl: https://twitter.com/maxlynch
+description: Build app store apps using React web libraries and Capacitor
+featuredImage: /assets/img/blog/native-wout-react-native.png
+featuredImageAlt: Native React Apps Without React Native
 ---
-
-![Native React Apps Without React Native](/assets/img/blog/native-wout-react-native.png)
 
 In the React world, the primary way to build native iOS and Android apps has been React Native. Created by Facebook in 2015, React Native enables developers to use their React skills to build iOS and Android apps using platform native UI elements. React Native is popular and widely used, and it’s a great solution for many teams.
 

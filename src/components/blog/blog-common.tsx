@@ -21,6 +21,8 @@ export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?:
         <Heading level={2}><a href={getBlogPostPath(post)}>{post.title}</a></Heading>
         <PostAuthor authorName={post.authorName} authorUrl={post.authorUrl} dateString={post.date} />
 
+        {post.featuredImage && <PostFeaturedImage post={post} />}
+
         <PostContent html={content} />
 
         {!single && post.preview ? <PostContinueReading post={post} /> : null}
@@ -30,6 +32,10 @@ export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?:
     </div>
   )
 }
+
+const PostFeaturedImage = ({ post }: { post: RenderedBlog}) => (
+  <img class="blog-post__featured-image" src={post.featuredImage} alt={post.featuredImageAlt} />
+);
 
 const PostContent = ({ html }: { html: string }) => (
   <div innerHTML={html} />
