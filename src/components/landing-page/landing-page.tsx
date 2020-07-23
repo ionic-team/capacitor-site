@@ -24,7 +24,7 @@ export class LandingPage {
                 <hgroup class="hero__heading">
                 <a class="feature__register" href="https://ionicframework.com/resources/webinars/hybrid-app-development-redefined" target="_blank" rel="noopener nofollow">
                   <div class="feature__register__tag">Live demo</div>
-                    <Breakpoint xs={true} inlineBlock={true} class="feature__register__text">
+                    <Breakpoint sm={true} inlineBlock={true} class="feature__register__text">
                       <span class="text__content">
                         Hybrid vs. Native Webinar Wed, July 22nd <span style={{'letter-spacing':'0'}}>-&gt;</span>
                       </span>
