@@ -172,7 +172,7 @@ export class LandingPage {
                 <FancyUnderline>framework.</FancyUnderline>
               </Heading>
               <Paragraph>
-                Drop Capacitor into any existing web app project, framework or library. Convert an existing React, Angular, Svelte, Vue (or your preferred Web Framework) project to native mobile and use any UI library of your choosing.
+                Drop Capacitor into any existing web app project, framework or library. Convert an existing React, Angular, Svelte, Vue, Ember (or your preferred Web Framework) project to native mobile and use any UI library of your choosing.
               </Paragraph>
             </hgroup>
             <Grid>
