@@ -353,7 +353,7 @@ First, add an `import` at the top of the file:
 import Firebase
 ```
 
-... and then add the configuration method for Firebase to initialization code to your `AppDelegate.swift` file, in the `application(didFinishLaunchingWithOptions)` method.
+... and then add the configuration method for Firebase to initialization code to your `AppDelegate.swift` file, in the `application(_ application: UIApplication,didFinishLaunchingWithOptions)` method.
 
 ```swift
 FirebaseApp.configure()
