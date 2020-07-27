@@ -10,7 +10,7 @@ contributors:
 
 # Custom Native Android Code
 
-<p class="intro">Many apps will want to add custom Java code to implement native features, without the overhead of building and publishing a proper Capacitor plugin.</p>
+<p class="intro">Many apps will want to add custom Java or Kotlin code to implement native features, without the overhead of building and publishing a proper Capacitor plugin.</p>
 
 <p class="intro">There are two ways to do this depending on whether or not you need to access that code from the WebView:</p>
 
@@ -84,6 +84,40 @@ CustomNativePlugin.customFunction();
 ```
 
 For more usages of plugin APIs, have a look at [Capacitor Android Plugin Guide](https://capacitorjs.com/docs/plugins/android).
+
+### Kotlin
+
+If you prefer to use Kotlin, Android Studio will prompt to configure Kotlin in the project for you when adding Kotlin code to a Capacitor app. This is the easiest way to enable Kotlin support in the project and will take care of adding Kotlin the project gradle file.
+
+`com/example/myapp/CustomNativePlugin.kt` in `android/app/src/main/java`:
+
+```kotlin
+package com.example.myapp;
+
+import com.getcapacitor.NativePlugin;
+import com.getcapacitor.Plugin;
+import com.getcapacitor.PluginCall;
+import com.getcapacitor.PluginMethod;
+
+@NativePlugin
+class CustomNativePlugin : Plugin() {
+
+  @PluginMethod
+  fun customCall(call: PluginCall) {
+    val message = call.getString("message")
+    // More code here...
+    call.success()
+  }
+
+  @PluginMethod
+  fun customFunction(call: PluginCall) {
+    // More code here...
+    call.resolve()
+  }
+}
+```
+
+You may then register a Kotlin plugin class in your Activity the same way you register a Java plugin class.
 
 ## Private Native Code
 
