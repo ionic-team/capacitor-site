@@ -5,7 +5,7 @@
     { "id": "preact",  "name": "Preact",  "theme": "#673ab8", "logo": "/assets/img/solutions/preact.png"  },
     { "id": "angular", "name": "Angular", "theme": "#DD002E", "logo": "/assets/img/solutions/angular.png"  },
     { "id": "svelte",  "name": "Svelte",  "theme": "#FF3D00", "logo": "/assets/img/solutions/svelte.png"  },
-    { "id": "stencil", "name": "Stencil", "theme": "#03060b", "logo": "/assets/img/solutions/stencil.png"  },
+    { "id": "stencil", "name": "Stencil", "theme": "#4c48ff", "logo": "/assets/img/solutions/stencil.png"  },
     { "id": "ember",   "name": "Ember",   "theme": "#E04E39", "logo": "/assets/img/solutions/ember.png"  }
   ]
 }
