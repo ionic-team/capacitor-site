@@ -12,6 +12,7 @@ const languages = [
   'java',
   'json',
   'json5',
+  'kotlin',
   'markup',
   'objectivec',
   'shell',

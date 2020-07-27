@@ -22,6 +22,8 @@ that inherits from `com.getcapacitor.Plugin` and uses the `@NativePlugin()` and 
 
 Here is a simple example: 
 
+### Java
+
 `com/example/myapp/CustomNativePlugin.java` in `android/app/src/main/java`:
 
 ```java
@@ -50,7 +52,41 @@ public class CustomNativePlugin extends Plugin {
 }
 ```
 
-Finally, register the plugin in your Activity:
+### Kotlin
+
+Capacitor currently uses Java by default, but it is easy to develop custom code with Kotlin. Android Studio will prompt to configure Kotlin in the project when adding Kotlin code to a Capacitor app. This is the easiest way to enable Kotlin support in the project and will take care of adding Kotlin the project gradle file.
+
+`com/example/myapp/CustomNativePlugin.kt` in `android/app/src/main/java`:
+
+```kotlin
+package com.example.myapp;
+
+import com.getcapacitor.NativePlugin;
+import com.getcapacitor.Plugin;
+import com.getcapacitor.PluginCall;
+import com.getcapacitor.PluginMethod;
+
+@NativePlugin
+class CustomNativePlugin : Plugin() {
+
+  @PluginMethod
+  fun customCall(call: PluginCall) {
+    val message = call.getString("message")
+    // More code here...
+    call.success()
+  }
+
+  @PluginMethod
+  fun customFunction(call: PluginCall) {
+    // More code here...
+    call.resolve()
+  }
+}
+```
+
+### Registering Plugin Code
+
+The final step is to register the plugin in your Activity. Registering a Kotlin plugin class in the Activity is the same as regi›stering a Java class:
 
 ```java
 // Other imports...
@@ -84,40 +120,6 @@ CustomNativePlugin.customFunction();
 ```
 
 For more usages of plugin APIs, have a look at [Capacitor Android Plugin Guide](https://capacitorjs.com/docs/plugins/android).
-
-### Kotlin
-
-If you prefer to use Kotlin, Android Studio will prompt to configure Kotlin in the project for you when adding Kotlin code to a Capacitor app. This is the easiest way to enable Kotlin support in the project and will take care of adding Kotlin the project gradle file.
-
-`com/example/myapp/CustomNativePlugin.kt` in `android/app/src/main/java`:
-
-```kotlin
-package com.example.myapp;
-
-import com.getcapacitor.NativePlugin;
-import com.getcapacitor.Plugin;
-import com.getcapacitor.PluginCall;
-import com.getcapacitor.PluginMethod;
-
-@NativePlugin
-class CustomNativePlugin : Plugin() {
-
-  @PluginMethod
-  fun customCall(call: PluginCall) {
-    val message = call.getString("message")
-    // More code here...
-    call.success()
-  }
-
-  @PluginMethod
-  fun customFunction(call: PluginCall) {
-    // More code here...
-    call.resolve()
-  }
-}
-```
-
-You may then register a Kotlin plugin class in your Activity the same way you register a Java plugin class.
 
 ## Private Native Code
 
