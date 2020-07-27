@@ -24,12 +24,12 @@ export class LandingPage {
                 <hgroup class="hero__heading">
                 <a class="feature__register" href="https://ionicframework.com/resources/webinars/hybrid-app-development-redefined" target="_blank" rel="noopener nofollow">
                   <div class="feature__register__tag">Live demo</div>
-                    <Breakpoint sm={true} display="inline-block" class="feature__register__text">
+                    <Breakpoint sm={true} inlineBlock={true} class="feature__register__text">
                       <span class="text__content">
                         Hybrid vs. Native Webinar Wed, July 22nd <span style={{'letter-spacing':'0'}}>-&gt;</span>
                       </span>
                     </Breakpoint>
-                    <Breakpoint xs={true} sm={false} display='inline-block' class="feature__register__text">
+                    <Breakpoint xs={true} sm={false} inlineBlock={true} class="feature__register__text">
                       <span class="text__content">
                         Hybrid vs. Native Webinar <span style={{'letter-spacing':'0'}}>-&gt;</span>
                       </span>
@@ -68,7 +68,7 @@ export class LandingPage {
         <ResponsiveContainer>
           <section class="section--web-apps-to-native">
             <hgroup>
-              <Heading level={3}>
+              <Heading id="features" level={3}>
                 Connect web apps to<br />
                 <FancyUnderline>native functionality.</FancyUnderline>
               </Heading>
@@ -103,7 +103,7 @@ export class LandingPage {
               </Col>
             </Grid>
           </section>
-          <section class="section--native-features">
+          <section class="section--native-features" id="features">
             <hgroup>
               <Heading level={3}>
                 Cross-platform core<br />
@@ -172,7 +172,7 @@ export class LandingPage {
                 <FancyUnderline>framework.</FancyUnderline>
               </Heading>
               <Paragraph>
-                Drop Capacitor into any existing web app project, framework or library. Convert an existing React, Angular, Svelte, Vue (or your preferred Web Framework) project to native mobile and use any UI library of your choosing.
+                Drop Capacitor into any existing web app project, framework or library. Convert an existing React, Angular, Svelte, Vue, Ember (or your preferred Web Framework) project to native mobile and use any UI library of your choosing.
               </Paragraph>
             </hgroup>
             <Grid>

@@ -11,7 +11,7 @@ import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 })
 export class CordovaLandingPage {
   @State() selectedCodeTab: string = 'before' ;
-  
+
   render() {
     return (
       <Host>
@@ -86,7 +86,7 @@ npx cap init [name] [id]
         <Col md={5} sm={5} xs={5} cols={12}>
           <Heading level={3}>Build the Web App.</Heading>
           <Paragraph>
-            The compiled web assets will be copied into each Capacitor native platform 
+            The compiled web assets will be copied into each Capacitor native platform
             during the next step.
           </Paragraph>
         </Col>
@@ -107,7 +107,7 @@ ionic build
           <img src="/assets/img/landing/apple.png" alt="Apple" class="apple" />
           <img src="/assets/img/landing/android.png" alt="Android" class="android" />
           <Paragraph>
-          Capacitor native projects exist in their own top-level folders and should be considered 
+          Capacitor native projects exist in their own top-level folders and should be considered
           part of your app (check them into source control).
           Any existing Cordova plugins are automatically installed into each native project. 🎉
           </Paragraph>
@@ -124,7 +124,7 @@ npx cap add ios
         <Col md={5} sm={5} xs={5} cols={12}>
           <Heading level={3}>Recreate Splash Screens and Icons.</Heading>
           <Paragraph>
-          Reuse the existing splash screen/icon images, located in the top-level `resources` folder of your Cordova project, 
+          Reuse the existing splash screen/icon images, located in the top-level `resources` folder of your Cordova project,
           using the `cordova-res` tool. Images are copied into each native project.
           </Paragraph>
         </Col>
@@ -142,7 +142,7 @@ cordova-res android --skip-config --copy
         <Col md={5} sm={5} xs={5} cols={12}>
           <Heading level={3}>Audit existing Cordova plugins.</Heading>
           <Paragraph>
-          Review all of Capacitor's <a href="/docs/apis" target="_blank">core</a> and <a href="/docs/community/plugins" target="_blank">community</a> plugins. 
+          Review all of Capacitor's <a href="/docs/apis" target="_blank">core</a> and <a href="/docs/community" target="_blank">community</a> plugins.
             You may be able to switch to the Capacitor-equivalent Cordova plugin, such as the Camera.
           </Paragraph>
           <Paragraph>
@@ -227,8 +227,8 @@ rm -R plugins/
         <Col md={5} sm={5} xs={5} cols={12}>
           <Heading level={3}>Continue your Capacitor Journey.</Heading>
           <Paragraph>
-          This is only the beginning. Learn more about <a href="/docs/cordova/using-cordova-plugins" target="_blank">using Cordova plugins</a> in 
-          a Capacitor project, check out the Capacitor <a href="/docs/basics/workflow" target="_blank">development workflow</a>, or 
+          This is only the beginning. Learn more about <a href="/docs/cordova/using-cordova-plugins" target="_blank">using Cordova plugins</a> in
+          a Capacitor project, check out the Capacitor <a href="/docs/basics/workflow" target="_blank">development workflow</a>, or
           create your own <a href="/docs/plugins" target="_blank">native plugin</a>.
           </Paragraph>
         </Col>
