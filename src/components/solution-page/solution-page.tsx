@@ -9,10 +9,11 @@ import {
   AnchorButton,
 } from '@ionic-internal/sites-shared';
 
+import {all as solutions} from '../../../data/solutions.json';
+
 import { SolutionAngular } from './solution-angular';
 import { SolutionReact } from './solution-react';
 import { SolutionPreact } from './solution-preact';
-import {all as solutions} from '../../../data/solutions.json';
 import { SolutionVue } from './solution-vue';
 import { SolutionEmber } from './solution-ember';
 import { SolutionSvelte } from './solution-svelte';

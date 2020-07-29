@@ -78,9 +78,11 @@ export class CapacitorSiteRoutes {
             <document-component page={`/docs/${opts.route}`}/>
           )} />
 
-          <Route path={match('/solution/:solutionId*')} render={({ solutionId }) => (
-            <solution-page solutionId={`${solutionId}`}></solution-page>
-          )} />
+          <Route path={match('/solution/:solutionId*')} render={({solutionId}) => {
+            console.log(solutionId);
+
+           return(<solution-page solutionId={solutionId}></solution-page>)
+          }} />
         </Router.Switch>
       </Host>
     );
