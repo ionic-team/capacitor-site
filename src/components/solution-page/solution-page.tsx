@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, ComponentInterface } from '@stencil/core';
 
 import Helmet from '@stencil/helmet';
 import {
@@ -9,35 +9,44 @@ import {
   AnchorButton,
 } from '@ionic-internal/sites-shared';
 
+import { all as solutions } from '../../../data/solutions.json';
+
 import { SolutionAngular } from './solution-angular';
 import { SolutionReact } from './solution-react';
 import { SolutionPreact } from './solution-preact';
-import {all as solutions} from '../../../data/solutions.json';
 import { SolutionVue } from './solution-vue';
 import { SolutionEmber } from './solution-ember';
 import { SolutionSvelte } from './solution-svelte';
 import { SolutionStencil } from './solution-stencil';
-
 
 @Component({
   tag: 'solution-page',
   styleUrl: 'solution-page.scss',
   scoped: true,
 })
-export class SolutionPage {
+export class SolutionPage implements ComponentInterface {
   @Prop() solutionId: string;
 
-  framework = solutions.find(entry => entry.id === this.solutionId);
-
-  getComponent(){
+  framework: { id: string; name: string; theme: string; logo: string };
+  componentWillLoad() {
+    this.framework = solutions.find((entry) => entry.id === this.solutionId);
+  }
+  getComponent() {
     switch (this.solutionId) {
-      case 'angular': return <SolutionAngular />;
-      case 'react': return <SolutionReact />;
-      case 'preact': return <SolutionPreact />;
-      case 'vue': return <SolutionVue />;
-      case 'ember': return <SolutionEmber />;
-      case 'svelte': return <SolutionSvelte />;
-      case 'stencil': return <SolutionStencil />;
+      case 'angular':
+        return <SolutionAngular />;
+      case 'react':
+        return <SolutionReact />;
+      case 'preact':
+        return <SolutionPreact />;
+      case 'vue':
+        return <SolutionVue />;
+      case 'ember':
+        return <SolutionEmber />;
+      case 'svelte':
+        return <SolutionSvelte />;
+      case 'stencil':
+        return <SolutionStencil />;
     }
   }
   render() {
@@ -54,7 +63,8 @@ export class SolutionPage {
                     {this.framework.name} &amp; Capacitor
                   </Heading>
                   <Heading level={3}>
-                    Build native mobile apps with web technology and {this.framework.name}
+                    Build native mobile apps with web technology and{' '}
+                    {this.framework.name}
                   </Heading>
                   <AnchorButton
                     href="#install"
@@ -79,16 +89,13 @@ export class SolutionPage {
   }
 }
 
-
-const MetaHead = ({framework}) => {
+const MetaHead = ({ framework }) => {
   return (
     <Helmet>
       <title>Capacitor: Cross-platform native runtime for web apps</title>
       <meta
         name="description"
-        content={
-          `Build iOS, Android, and Progressive Web Apps with ${framework.name}`
-        }
+        content={`Build iOS, Android, and Progressive Web Apps with ${framework.name}`}
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@capacitorjs" />
