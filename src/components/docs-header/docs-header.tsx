@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, State, h } from '@stencil/core';
+import { Component, ComponentInterface, Host, Prop, State, h } from '@stencil/core';
 import { href } from 'stencil-router-v2';
 import Router from '../../router';
 
@@ -8,6 +8,8 @@ import Router from '../../router';
   scoped: true
 })
 export class DocsHeader implements ComponentInterface {
+  @Prop() template: 'guide' | 'reference' = 'guide';
+
   @State() expanded = false;
 
   isActive(path: string): boolean {
@@ -20,7 +22,7 @@ export class DocsHeader implements ComponentInterface {
   toggleExpanded = () => this.expanded = !this.expanded;
 
   render() {
-    const { expanded } = this;
+    const { expanded, template } = this;
 
     return (
       <Host class={{
@@ -29,16 +31,26 @@ export class DocsHeader implements ComponentInterface {
         <site-backdrop visible={expanded} onClick={() => this.toggleExpanded()} />
 
         <header>
-          <docs-search></docs-search>
+          <docs-search class="docs-search--mobile"></docs-search>
           <more-button onClick={() => this.toggleExpanded()} />
 
           <div class="docs-header-links">
+            <div class="docs-header-links__internal hide-mobile">
+              <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guide</a>
+              <a {...href('/docs/apis')} class={{ 'active': template === 'reference' }}>Reference</a>
+            </div>
+
+            <div class="docs-header-links__divider hide-mobile"/>
+
+            <docs-search class="docs-search--default"></docs-search>
+
             <div class="docs-header-links__internal">
-              <a {...href('/docs')} class={{ 'active': this.isActive('/docs') }}>Docs</a>
               <a {...href('/community')}>Community</a>
               <a {...href('/blog')}>Blog</a>
             </div>
+
             <div class="docs-header-links__divider"/>
+
             <div class="docs-header-links__external">
               <a rel="noopener" target="_blank" href="https://twitter.com/capacitorjs" aria-label="Twitter">
                 <ion-icon name="logo-twitter"></ion-icon>

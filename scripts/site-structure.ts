@@ -4,34 +4,38 @@ import fs from 'fs';
 import path, { dirname, basename } from 'path';
 import frontMatter from 'front-matter';
 import { generateSiteStructure } from './markdown-renderer';
+import { SITE_FILES } from './common';
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
-const DESTINATION_FILE = './src/assets/docs-structure.json';
-const SOURCE_FILE = './docs-md/README.md';
-const ASSETS_DIR = '/assets/docs-content';
-
 (async function() {
-  const markdownContents = await readFile(SOURCE_FILE, { encoding: 'utf8' });
+  for (const SITE_FILE of SITE_FILES) {
+    const SOURCE_FILE = `${SITE_FILE.source}/README.md`;
+    const DESTINATION_FILE = SITE_FILE.structure;
+    const ASSET_DIR = SITE_FILE.assets;
 
-  const lexer = remark();
-  const nodes: any = lexer.parse(markdownContents);
-  const metadataList = generateSiteStructure(nodes);
+    const markdownContents = await readFile(SOURCE_FILE, { encoding: 'utf8' });
 
-  await walkUpdateChildren(metadataList, SOURCE_FILE);
-  await writeFile(DESTINATION_FILE, JSON.stringify(metadataList, null, 2), {
-    encoding: 'utf8'
-  });
+    const lexer = remark();
+    const nodes: any = lexer.parse(markdownContents);
+    const metadataList = generateSiteStructure(nodes);
+
+    await walkUpdateChildren(metadataList, SOURCE_FILE, ASSET_DIR);
+    await writeFile(DESTINATION_FILE, JSON.stringify(metadataList, null, 2), {
+      encoding: 'utf8'
+    });
+  }
+
 })();
 
-async function walkUpdateChildren(itemList, sourcePath) {
+async function walkUpdateChildren(itemList, sourcePath, assetsPath) {
   for (const item of itemList) {
     if (item.filePath && item.filePath.indexOf('//') === -1) {
       const fullPath = path.join(path.dirname(sourcePath), item.filePath);
       const url = await getMarkdownFileSitePath(fullPath);
       const jsonPath = path.join(
-        ASSETS_DIR,
+        assetsPath,
         dirname(item.filePath),
         basename(item.filePath, '.md') + '.json'
       )
@@ -40,7 +44,7 @@ async function walkUpdateChildren(itemList, sourcePath) {
       item.filePath = jsonPath;
     }
     if (item.children) {
-      await walkUpdateChildren(item.children, sourcePath);
+      await walkUpdateChildren(item.children, sourcePath, assetsPath);
     }
   }
 }

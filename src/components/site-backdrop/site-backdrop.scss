@@ -5,11 +5,12 @@
   height: 100vh;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgb(0, 26, 58, .08);
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
-  transition: 0.4s opacity;
+  transition: 0.4s opacity, 0.4s visibility step-end;
+  visibility: hidden;
 
   z-index: -1;
 }
@@ -18,5 +19,7 @@
   :host(.site-backdrop--visible) {
     opacity: 1;
     pointer-events: all;
+    visibility: visible;
+    transition: 0.4s opacity, 0.4s visibility step-start;
   }
 }

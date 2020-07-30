@@ -42,14 +42,16 @@ export function generateSiteStructure(nodes: any): SiteStructureItem[] {
     const [title, ...items] = listItem.children;
     let heading = title.children[0];
     let headingItem: any = {
-      text: heading.value
+      text: heading.value,
+      parent: true
     };
     if (heading.type === 'link') {
       const filePath = heading.url;
       heading = title.children[0].children[0];
       headingItem = {
         text: heading.value,
-        filePath
+        filePath,
+        parent: true
       };
     }
     let listChildren = [];
@@ -140,7 +142,7 @@ export function changeCodeCreation(renderer: marked.Renderer) {
 
     return `
   <highlight-code-line ${hcl.length > 0 ? `lines="${hcl.join()}"`: ``}>
-    <pre class="language-${escape(lang)}"><code class="language-${escape(lang)}">${(escaped ? code : escape(code))}</code></pre>
+    <pre class="language-${escape(lang)}"><code>${(escaped ? code : escape(code))}</code></pre>
   </highlight-code-line>
   `;
   };

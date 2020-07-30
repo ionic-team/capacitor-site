@@ -12,6 +12,10 @@ export function findItem(siteStructureList: SiteStructureItem[], url: string, fo
   for (const item of siteStructureList) {
     if (item.url === url) {
       foundData.item = item;
+
+      if (item.parent) {
+        foundData.parent = item;
+      }
     } else if (foundData.item != null && item.url != null) {
       foundData.nextItem = item;
     } else if (item.url != null && foundData.item == null) {

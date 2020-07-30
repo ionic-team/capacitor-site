@@ -1,5 +1,6 @@
 import { Component, h, Host, State } from '@stencil/core';
 
+import { href } from 'stencil-router-v2';
 import Helmet from '@stencil/helmet';
 import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph, Breakpoint } from '@ionic-internal/sites-shared';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
@@ -24,17 +25,12 @@ export class LandingPage {
                 <hgroup class="hero__heading">
                 <a class="feature__register" href="https://ionicframework.com/resources/webinars/hybrid-app-development-redefined" target="_blank" rel="noopener nofollow">
                   <div class="feature__register__tag">Live demo</div>
-                    <Breakpoint mobile={false} tablet={false} desktop={true} inlineBlock={true} class="feature__register__text">
+                    <Breakpoint sm={true} inlineBlock={true} class="feature__register__text">
                       <span class="text__content">
                         Hybrid vs. Native Webinar Wed, July 22nd <span style={{'letter-spacing':'0'}}>-&gt;</span>
                       </span>
                     </Breakpoint>
-                    <Breakpoint mobile={false} tablet={true} desktop={false} inlineBlock={true} class="feature__register__text">
-                      <span class="text__content">
-                        Hybrid vs. Native Webinar July 22nd<span style={{'letter-spacing':'0'}}>-&gt;</span>
-                      </span>
-                    </Breakpoint>
-                    <Breakpoint mobile={true} tablet={false} desktop={false} inlineBlock={true} class="feature__register__text">
+                    <Breakpoint xs={true} sm={false} inlineBlock={true} class="feature__register__text">
                       <span class="text__content">
                         Hybrid vs. Native Webinar <span style={{'letter-spacing':'0'}}>-&gt;</span>
                       </span>
@@ -73,7 +69,7 @@ export class LandingPage {
         <ResponsiveContainer>
           <section class="section--web-apps-to-native">
             <hgroup>
-              <Heading level={3}>
+              <Heading id="features" level={3}>
                 Connect web apps to<br />
                 <FancyUnderline>native functionality.</FancyUnderline>
               </Heading>
@@ -108,7 +104,7 @@ export class LandingPage {
               </Col>
             </Grid>
           </section>
-          <section class="section--native-features">
+          <section class="section--native-features" id="features">
             <hgroup>
               <Heading level={3}>
                 Cross-platform core<br />
@@ -177,16 +173,16 @@ export class LandingPage {
                 <FancyUnderline>framework.</FancyUnderline>
               </Heading>
               <Paragraph>
-                Drop Capacitor into any existing web app project, framework or library. Convert an existing React, Angular, Svelte, Vue (or your preferred Web Framework) project to native mobile and use any UI library of your choosing.
+                Drop Capacitor into any existing web app project, framework or library. Convert an existing React, Angular, Svelte, Vue, Ember (or your preferred Web Framework) project to native mobile and use any UI library of your choosing.
               </Paragraph>
             </hgroup>
             <Grid>
               {[
-                { color: '#EDFBFF', key: 'react', name: 'React' },
-                { color: '#FFEDF1', key: 'angular', name: 'Angular' },
-                { color: '#FFF5F2', key: 'svelte', name: 'Svelte' },
-                { color: '#EFFAF5', key: 'vue', name: 'Vue' },
-                { color: '#F6F8FB', key: 'stencil', name: 'Stencil' },
+                { color: '#EDFBFF', key: 'react', name: 'React', link: '/solution/react' },
+                { color: '#FFEDF1', key: 'angular', name: 'Angular', link: '/solution/angular'  },
+                { color: '#FFF5F2', key: 'svelte', name: 'Svelte', link: '/solution/svelte'  },
+                { color: '#EFFAF5', key: 'vue', name: 'Vue', link: '/solution/vue'  },
+                { color: '#F6F8FB', key: 'stencil', name: 'Stencil', link: '/solution/stencil'  },
                 { color: '#F0F8FD', key: 'jquery', name: 'jQuery' },
                 { color: '#F6F1FD', key: 'bootstrap', name: 'Bootstrap' },
                 { color: '#F0F6FF', key: 'ionic', name: 'Ionic' },
@@ -196,7 +192,12 @@ export class LandingPage {
                 { color: '#FEF8EF', key: 'angular-material', name: 'Angular Material' },
               ].map(f => (
                 <Col md={3} sm={3} xs={6} cols={12} key={f.key} style={{ background: f.color }} class="framework">
-                  <img src={`/assets/img/landing/framework-${f.key}.png`} alt={f.name} />
+                  { f.link
+                  ? <a {...href(f.link)}>
+                      <img src={`/assets/img/landing/framework-${f.key}.png`} alt={f.name} />
+                  </a>
+                  : <img src={`/assets/img/landing/framework-${f.key}.png`} alt={f.name} /> }
+
                 </Col>
               ))}
             </Grid>
