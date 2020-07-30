@@ -20,7 +20,7 @@ The easiest way to build custom native code that needs to be accessible in the W
 a local Capacitor plugin for it. In this case, building the plugin is as simple as building a class
 that inherits from `com.getcapacitor.Plugin` and uses the `@NativePlugin()` and `@PluginMethod()` annotations.
 
-Here is a simple example: 
+Here are examples of custom code in Java and Kotlin: 
 
 ### Java
 
@@ -54,7 +54,7 @@ public class CustomNativePlugin extends Plugin {
 
 ### Kotlin
 
-Capacitor currently uses Java by default, but it is easy to develop custom code with Kotlin. Android Studio will prompt to configure Kotlin in the project when adding Kotlin code to a Capacitor app. This is the easiest way to enable Kotlin support in the project and will take care of adding Kotlin the project gradle file.
+It is also possible to develop custom code with Kotlin. When adding new Kotlin files in Android Studio, you will be prompted to configure Kotlin in your project if necessary. When doing this, make sure to only configure Kotlin in your app module, not the Capacitor or third-party modules.
 
 `com/example/myapp/CustomNativePlugin.kt` in `android/app/src/main/java`:
 
