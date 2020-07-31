@@ -36,8 +36,8 @@ export class DocsHeader implements ComponentInterface {
 
           <div class="docs-header-links">
             <div class="docs-header-links__internal hide-mobile">
-              <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guide</a>
-              <a {...href('/docs/apis')} class={{ 'active': template === 'reference' }}>Reference</a>
+              <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guides</a>
+              <a {...href('/docs/apis')} class={{ 'active': template === 'reference' }}>Plugins</a>
             </div>
 
             <div class="docs-header-links__divider hide-mobile"/>

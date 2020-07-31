@@ -19,7 +19,7 @@
     background: var(--color-white);
     z-index: 999;
     transform: translateX(calc(-1 * var(--menu-width)));
-    transition: transform 200ms cubic-bezier(0, 0, .2, 1);
+    transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
     height: 100%;
     overflow-y: scroll;
 
@@ -27,7 +27,7 @@
     // is pressed, opens on small screens only
     &.menu-overlay-visible {
       transform: none;
-      transition: transform 200ms cubic-bezier(.4, 0, .6, 1);
+      transition: transform 200ms cubic-bezier(0.4, 0, 0.6, 1);
 
       .menu-header {
         background: white;
@@ -86,7 +86,7 @@ span {
 
   text-transform: uppercase;
 
-  font-family: "Eina";
+  font-family: 'Eina';
   font-weight: 600;
   font-size: 16px;
 
@@ -139,7 +139,7 @@ span {
 }
 
 .section-active-indicator::after {
-  content: "";
+  content: '';
 
   position: absolute;
 
@@ -223,6 +223,32 @@ span {
 
 .menu-list li {
   font-size: 14px;
+
+  &.menu-footer {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+
+  border-top: 1px solid #dee3ea;
+
+  background: var(--color-white);
+  color: #222d3a;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .arrow {
+    letter-spacing: 0;
+
+    padding-left: 10px;
+  }
+
+  &:hover {
+    color: var(--color-grey-blue);
+  }
+}
+
 }
 
 .menu-list > li + li {
@@ -278,7 +304,7 @@ span {
 
 .menu-list ul li a {
   display: block;
-  transition: .2s transform ease, .2s color ease;
+  transition: 0.2s transform ease, 0.2s color ease;
   margin-top: 4px;
 }
 
