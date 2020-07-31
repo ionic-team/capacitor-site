@@ -1,6 +1,7 @@
 # Table of Contents
 
 * [CLI Reference](cli/index.md)
+* [Configuration](config/index.md)
 * Plugin APIs
   * [Introduction](apis/index.md)
   * [Accessibility](apis/accessibility/index.md)
