@@ -366,9 +366,9 @@ public class MyAwesomePlugin: CAPPlugin {
 const WhitepaperCTA = ({show, hide, shown, submitted}) => [
   <section class="whitepaperCta">
     <ResponsiveContainer>
-      <img  src="/assets/img/landing/book.png"
+      <img  src="/assets/img/landing/book@2x.png"
             srcset="/assets/img/landing/book@1x.png 1x,
-                    /assets/img/landing/book.png 2x"
+                    /assets/img/landing/book@2x.png 2x"
             loading="lazy"
             width="512" height="383"
             alt="Book Cover: Building cross-platform apps with Capacitor"/>
