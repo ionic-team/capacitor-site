@@ -8,7 +8,6 @@ const languages = [
   'bash',
   'diff',
   'css',
-  'html',
   'java',
   'json',
   'json5',
