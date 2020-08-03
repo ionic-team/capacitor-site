@@ -13,6 +13,8 @@ import FancyUnderline from '../FancyUnderline';
 })
 export class LandingPage {
   @State() selectedCodeTab: string = 'notifications' ;
+  @State() showHubspotForm = false;
+  @State() hubspotFormSubmitted = false;
   render() {
     return (
       <Host>
@@ -53,7 +55,7 @@ export class LandingPage {
                   </div>
                 </hgroup>
                 <div class="cordova-cta">
-                  <a href="/cordova">Migrating from Cordova {"->"}</a>
+                  <a href="/cordova">Migrating from Cordova {'->'}</a>
                 </div>
                 <img class="hero__platforms" src="/assets/img/supported-icons.png" alt="Supported platforms" />
               </Col>
@@ -66,6 +68,11 @@ export class LandingPage {
         <GettingStartedSection
           selectedCodeTab={this.selectedCodeTab}
           setSelectedCodeTab={(tab: string) => { this.selectedCodeTab = tab}}/>
+        <WhitepaperCTA 
+          show={() => this.showHubspotForm = true}
+          hide={() => this.showHubspotForm = false}
+          shown={this.showHubspotForm}
+          submitted={this.hubspotFormSubmitted}/>
         <ResponsiveContainer>
           <section class="section--web-apps-to-native">
             <hgroup>
@@ -355,6 +362,39 @@ public class MyAwesomePlugin: CAPPlugin {
     </ResponsiveContainer>
   </section>
 )
+
+const WhitepaperCTA = ({show, hide, shown, submitted}) => [
+  <section class="whitepaperCta">
+    <ResponsiveContainer>
+      <img  src="/assets/img/landing/book.png"
+            srcset="/assets/img/landing/book@1x.png 1x,
+                    /assets/img/landing/book.png 2x"
+            loading="lazy"
+            width="512" height="383"
+            alt="Book Cover: Building cross-platform apps with Capacitor"/>
+      <div class="whitepaperCta__content">
+        <Heading>
+          See when and why to use Capacitor to build cross-platform apps.&nbsp;
+          <span>We wrote a guide to help you get started.</span>
+        </Heading>
+        <AnchorButton onClick={() => show()}>
+          Read our Guide <span style={{letterSpacing: '0'}}>{'->'}</span>
+        </AnchorButton>
+      </div>
+    </ResponsiveContainer>
+  </section>,
+  <site-modal open={shown} modalClose={() => hide()}>
+    <hgroup>
+      <Heading level={2}>Building Cross-Platform  Apps with Capacitor</Heading>
+      <p>Fill out the form below to download our free whitepaper</p>
+    </hgroup>
+    <hubspot-form
+      formId={'9151dc0b-42d9-479f-b7b8-649e0e7bd1bc'}
+      ajax={false}
+      onFormSubmitted={() => submitted()}
+    />
+  </site-modal>
+]
 
 const MetaHead = () => (
   <Helmet>

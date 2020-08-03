@@ -64,6 +64,12 @@ export namespace Components {
         "page": string;
         "pages": string[];
     }
+    interface HubspotForm {
+        "ajax": boolean;
+        "formId"?: string;
+        "goToWebinarKey"?: string;
+        "portalId": string;
+    }
     interface InPageNavigation {
         "currentPageUrl": string;
         "pageLinks": MarkdownHeading[];
@@ -217,6 +223,12 @@ declare global {
         prototype: HTMLDocumentComponentElement;
         new (): HTMLDocumentComponentElement;
     };
+    interface HTMLHubspotFormElement extends Components.HubspotForm, HTMLStencilElement {
+    }
+    var HTMLHubspotFormElement: {
+        prototype: HTMLHubspotFormElement;
+        new (): HTMLHubspotFormElement;
+    };
     interface HTMLInPageNavigationElement extends Components.InPageNavigation, HTMLStencilElement {
     }
     var HTMLInPageNavigationElement: {
@@ -298,6 +310,7 @@ declare global {
         "docs-menu": HTMLDocsMenuElement;
         "docs-search": HTMLDocsSearchElement;
         "document-component": HTMLDocumentComponentElement;
+        "hubspot-form": HTMLHubspotFormElement;
         "in-page-navigation": HTMLInPageNavigationElement;
         "landing-page": HTMLLandingPageElement;
         "lower-content-nav": HTMLLowerContentNavElement;
@@ -369,6 +382,13 @@ declare namespace LocalJSX {
         "page"?: string;
         "pages"?: string[];
     }
+    interface HubspotForm {
+        "ajax"?: boolean;
+        "formId"?: string;
+        "goToWebinarKey"?: string;
+        "onFormSubmitted"?: (event: CustomEvent<any>) => void;
+        "portalId"?: string;
+    }
     interface InPageNavigation {
         "currentPageUrl"?: string;
         "pageLinks"?: MarkdownHeading[];
@@ -421,6 +441,7 @@ declare namespace LocalJSX {
         "docs-menu": DocsMenu;
         "docs-search": DocsSearch;
         "document-component": DocumentComponent;
+        "hubspot-form": HubspotForm;
         "in-page-navigation": InPageNavigation;
         "landing-page": LandingPage;
         "lower-content-nav": LowerContentNav;
@@ -457,6 +478,7 @@ declare module "@stencil/core" {
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
             "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
             "document-component": LocalJSX.DocumentComponent & JSXBase.HTMLAttributes<HTMLDocumentComponentElement>;
+            "hubspot-form": LocalJSX.HubspotForm & JSXBase.HTMLAttributes<HTMLHubspotFormElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;
