@@ -86,7 +86,7 @@ npx cap add ios
           </Col>
           <Col md={6} sm={6} xs={6} cols={12}>
               <code-snippet
-                language="html"
+                language="markup"
                 code={`
 <script>
   import {Plugins} from '@capacitor/core';
