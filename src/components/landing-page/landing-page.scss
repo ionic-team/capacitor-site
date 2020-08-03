@@ -314,6 +314,7 @@ section {
     display: flex;
     flex-direction: row;
     padding: 16px;
+    overflow-x: auto;
 
     &__button {
       cursor: pointer;
