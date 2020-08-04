@@ -5,6 +5,8 @@ import Helmet from '@stencil/helmet';
 import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph, Breakpoint } from '@ionic-internal/sites-shared';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 import FancyUnderline from '../FancyUnderline';
+import state from '../../store';
+import { getPage } from '../../prismic';
 
 @Component({
   tag: 'landing-page',
@@ -15,7 +17,13 @@ export class LandingPage {
   @State() selectedCodeTab: string = 'notifications' ;
   @State() showHubspotForm = false;
   @State() hubspotFormSubmitted = false;
+
+  async componentWillLoad() {
+    await getPage('capacitor_homepage_announcement');
+  }
+  
   render() {
+    const page = state.pageData;
     return (
       <Host>
         <MetaHead />
@@ -25,19 +33,7 @@ export class LandingPage {
             <Grid>
               <Col md={6} sm={6} xs={6} cols={12}>
                 <hgroup class="hero__heading">
-                <a class="feature__register" href="https://ionicframework.com/resources/webinars/hybrid-app-development-redefined" target="_blank" rel="noopener nofollow">
-                  <div class="feature__register__tag">Live demo</div>
-                    <Breakpoint sm={true} inlineBlock={true} class="feature__register__text">
-                      <span class="text__content">
-                        Hybrid vs. Native Webinar Wed, July 22nd <span style={{'letter-spacing':'0'}}>-&gt;</span>
-                      </span>
-                    </Breakpoint>
-                    <Breakpoint xs={true} sm={false} inlineBlock={true} class="feature__register__text">
-                      <span class="text__content">
-                        Hybrid vs. Native Webinar <span style={{'letter-spacing':'0'}}>-&gt;</span>
-                      </span>
-                    </Breakpoint>
-                </a>
+                  <Announcement data={page}/>
                   <Heading level={1}>
                     A cross-platform native runtime for web apps.
                   </Heading>
@@ -395,6 +391,25 @@ const WhitepaperCTA = ({show, hide, shown, submitted}) => [
     />
   </site-modal>
 ]
+
+const Announcement = ({data}) => {
+  if (!data.tag_text) return '';
+  return (
+    <a class="feature__register" href={data.link.url} target="_blank" rel="noopener nofollow">
+      <div class="feature__register__tag">{data.tag_text}</div>
+        <Breakpoint sm={true} inlineBlock={true} class="feature__register__text">
+          <span class="text__content">
+            {data.desktop_text} <span style={{'letter-spacing':'0'}}>-&gt;</span>
+          </span>
+        </Breakpoint>
+        <Breakpoint xs={true} sm={false} inlineBlock={true} class="feature__register__text">
+          <span class="text__content">
+            {data.mobile_text} <span style={{'letter-spacing':'0'}}>-&gt;</span>
+          </span>
+        </Breakpoint>
+    </a>
+  );
+}
 
 const MetaHead = () => (
   <Helmet>
