@@ -26,6 +26,7 @@
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying.md)
   * [In App Purchases](guides/in-app-purchases.md)
+  * [Ionic Photo Gallery App](guides/ionic-framework-app.md)
   * [Live Reload](guides/live-reload.md)
   * [Push Notifications - Firebase](guides/push-notifications-firebase.md)
   * [React Hooks](guides/react-hooks.md)
