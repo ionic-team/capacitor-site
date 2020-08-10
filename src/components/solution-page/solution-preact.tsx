@@ -1,5 +1,5 @@
 import { h } from '@stencil/core';
-import { ResponsiveContainer, Grid, Col, Heading, Paragraph } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col, Heading, Paragraph } from '@ionic-internal/ionic-ds';
 export const SolutionPreact = () => {
   return (
     <section class="section--getting-started">

@@ -1,5 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
-import { Heading, Paragraph, Grid, Col, ResponsiveContainer } from '@ionic-internal/sites-shared';
+import { Heading, Paragraph, Grid, Col, ResponsiveContainer } from '@ionic-internal/ionic-ds';
 
 @Component({
   tag: 'capacitor-community',

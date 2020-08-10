@@ -2,7 +2,7 @@ import { Component, h, Host, State } from '@stencil/core';
 
 import { href } from 'stencil-router-v2';
 import Helmet from '@stencil/helmet';
-import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph, Breakpoint } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col, AnchorButton, Heading, Paragraph, Breakpoint } from '@ionic-internal/ionic-ds';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 import FancyUnderline from '../FancyUnderline';
 import state from '../../store';

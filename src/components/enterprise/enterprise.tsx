@@ -1,7 +1,7 @@
 import { Component, h } from '@stencil/core';
 
 import state from '../../store';
-import { ResponsiveContainer, Grid, Col } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col } from '@ionic-internal/ionic-ds';
 
 declare var window: any;
 

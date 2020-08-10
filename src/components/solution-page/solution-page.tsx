@@ -7,7 +7,7 @@ import {
   Col,
   Heading,
   AnchorButton,
-} from '@ionic-internal/sites-shared';
+} from '@ionic-internal/ionic-ds';
 
 import { all as solutions } from '../../../data/solutions.json';
 

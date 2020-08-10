@@ -1,5 +1,5 @@
 import { Component, State, h } from '@stencil/core';
-import { ResponsiveContainer, Heading, Grid, Col, Button } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Heading, Grid, Col, Button } from '@ionic-internal/ionic-ds';
 
 @Component({
   tag: 'newsletter-signup',

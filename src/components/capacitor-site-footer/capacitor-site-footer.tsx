@@ -1,5 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
-import { ResponsiveContainer, Grid, Col, Heading } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col, Heading } from '@ionic-internal/ionic-ds';
 
 @Component({
   tag: 'capacitor-site-footer',

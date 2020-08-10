@@ -1,6 +1,6 @@
 import { h } from '@stencil/core';
 import { href } from 'stencil-router-v2';
-import { Heading, DateTime } from '@ionic-internal/sites-shared';
+import { Heading, DateTime } from '@ionic-internal/ionic-ds';
 import parseISO from 'date-fns/parseISO';
 
 import Router from '../../router';
