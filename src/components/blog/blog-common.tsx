@@ -27,7 +27,9 @@ export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?:
 
         {!single && post.preview ? <PostContinueReading post={post} /> : null}
 
+        {/*
         {single && <disqus-comments url={getAbsoluteBlogPostUrl(post)} siteId='capacitor' id={post.slug} />}
+        */}
       </div>
     </div>
   )
