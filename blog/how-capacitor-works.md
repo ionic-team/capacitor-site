@@ -12,6 +12,10 @@ At a high level, that means Capacitor takes a typical browser-based web app, and
 
 Capacitor then acts as the _runtime_ facilitating communication between the web app and the underlying OS.
 
+Let's dig in and explore how Capacitor works under the hood.
+
+<!--more-->
+
 ## The basics
 
 At a high level, Capacitor does this:

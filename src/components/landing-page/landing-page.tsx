@@ -384,7 +384,7 @@ const WhitepaperCTA = ({show, hide, shown, submitted}) => [
       <Heading level={2}>Building Cross-Platform  Apps with Capacitor</Heading>
       <p>Fill out the form below to download our free whitepaper</p>
     </hgroup>
-    <hubspot-form
+    <capacitor-hubspot-form
       formId={'9151dc0b-42d9-479f-b7b8-649e0e7bd1bc'}
       ajax={false}
       onFormSubmitted={() => submitted()}

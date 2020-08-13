@@ -3,7 +3,7 @@ import { Component, Host, h, Prop, Event, EventEmitter, Element, State, Listen }
 declare var window: any;
 
 @Component({
-  tag: 'hubspot-form',
+  tag: 'capacitor-hubspot-form',
   styleUrl: 'hubspot-form.scss',
 })
 export class HubspotForm {
