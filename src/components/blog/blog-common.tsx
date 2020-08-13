@@ -8,7 +8,7 @@ import Router from '../../router';
 import { RenderedBlog } from '../../models';
 
 const getBlogPostPath = (doc: RenderedBlog) => `/blog/${doc.slug}`;
-const getAbsoluteBlogPostUrl = (doc: RenderedBlog) => `https://capacitorjs.com/${getBlogPostPath(doc)}`;
+const getAbsoluteBlogPostUrl = (doc: RenderedBlog) => `https://capacitorjs.com${getBlogPostPath(doc)}`;
 
 export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?: boolean }) => {
   const content = single ?
