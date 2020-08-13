@@ -6,13 +6,15 @@ author: Max Lynch <max@ionic.io>
 authorUrl: https://twitter.com/maxlynch
 ---
 
-Capacitor is a cross-platform native runtime for web apps. That's quite a mouthful, what does that mean exactly?
+Capacitor is a cross-platform native runtime for web apps, or hybrid apps, if you prefer. That's quite a mouthful, what does that mean exactly?
 
 At a high level, that means Capacitor takes a typical browser-based web app, and then packages it up to run on iOS, Android, and PWA with access to native platform features and OS-level controls.
 
 Capacitor then acts as the _runtime_ facilitating communication between the web app and the underlying OS.
 
-At a high level, it looks like this:
+## The basics
+
+At a high level, Capacitor does this:
 
 ![Basic Capacitor Diagram](/assets/img/blog/how-capacitor-works/basic.png)
 
@@ -22,19 +24,21 @@ But that's pretty simplistic, if we zoom in a bit and bring in your app code, we
 
 In this diagram, we see that your web app runs inside of a Web View. A Web View is a native OS control that provides a streamlined, chrome-less browser instance. If you imagine a typical web browser, a ton of overhead comes from the chrome and experience around the actual browsing frame. A Web View is just one instance of that browsing frame, so it's very light weight.
 
-### Native Bridge
+Most of the magic happens in the Native Bridge and the Runtime, so let's explore those:
+
+## Native Bridge
 
 ![Bridge](/assets/img/blog/how-capacitor-works/bridge.png)
 
-That WebView needs a way to access native functionality, interact with OS level native controls, and access custom native code or 3rd party plugins. It does that using the Native Bridge inside of Capacitor.
+That Web View needs a way to access native functionality, interact with OS level native controls, and access custom native code or 3rd party plugins. It does that using the Native Bridge inside of Capacitor.
 
-The Native Bridge is where Capacitor's JS API including all known native plugins and their methods, are exported to the Web View.
+The Native Bridge is where Capacitor's *runtime* JS API, including all known native plugins and their methods, are exported to the Web View. The runtime API is different from the `@capacitor/core` API that is imported directly into your web app, but they work together to enable Capacitor APIs to work across all supported platforms.
 
 Capacitor loads all known plugins that have been installed or coded directly into the native project, and then exports `window.Capacitor.Plugins` containing every loaded plugin and every known method that plugin has exported to the Web View.
 
 Finally, the bridge manages message passing and tracking native invocations between the Web View and the native runtime.
 
-### Runtime
+## Runtime
 
 ![Runtime](/assets/img/blog/how-capacitor-works/runtime.png)
 
@@ -48,7 +52,7 @@ All calls in Capacitor are asynchronous, so the runtime manages a set of "active
 
 Once those calls complete, a message is constructed and sent back to the Web View, which ultimately causes the original plugin call in your app to resolve.
 
-### Capacitor apps are native
+## Capacitor apps are native
 
 ![Native](/assets/img/blog/how-capacitor-works/native.png)
 
@@ -64,7 +68,7 @@ Finally, any Capacitor plugins or custom native code will be in the project as w
 
 One note about Progressive Web Apps (PWA): when building a PWA, you simply need to deploy your built web app somewhere to the web. There really is no additional step because the `@capacitor/core` library contains all the functionality needed for Capacitor plugins that have web support, such as [Camera](https://capacitorjs.com/docs/apis/camera), [Filesystem](https://capacitorjs.com/docs/apis/filesystem), or [Share](https://capacitorjs.com/docs/apis/share).
 
-### Conclusion
+## Conclusion
 
 Capacitor provides a runtime for Web Apps, so teams typically spend most of their time building their web app, making sure it works well on mobile form factors and has a mobile UI experience that users expect (UI frameworks like [Ionic Framework](https://ionicframework.com/) provide this experience out of the box).
 
