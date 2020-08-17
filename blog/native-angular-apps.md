@@ -42,6 +42,12 @@ This has some advantages in that system controls are used exclusively, but in th
 
 Capacitor, in contrast, supports any app that runs in the browser and provides a true web development experience.
 
+## Who's using Capacitor?
+
+Capacitor is widely used in startups and the Fortune 1000. Companies like RBI (Burger King/Popeyes), Blue Cross Blue Shield, Aflac, and IBM are all using Capacitor to target iOS and Android with their web development teams.
+
+Capacitor is backed by [Ionic](https://ionic.io/), the leader in cross-platform mobile development. Ionic provides [enterprise security features and support](https://ionicframework.com/native) for teams that need more than what's available in the community version.
+
 ## Get Started
 
 To get started building iOS, Android, and Progressive Web Apps take a look at the [Angular Getting Started](https://capacitorjs.com/solution/angular) guide or follow the standard [Getting Started](https://capacitorjs.com/docs/getting-started) experience.
