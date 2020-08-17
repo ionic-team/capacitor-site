@@ -1,11 +1,9 @@
 ---
 title: Turn your Angular App Native
-date: 2020-07-14 08:00:00
+date: 2020-08-17 08:00:00
 author: Max Lynch <max@ionic.io>
 authorUrl: https://twitter.com/maxlynch
 description: Any Angular app can be turned into a native app with Capacitor
-featuredImage: /assets/img/blog/native-wout-react-native.png
-featuredImageAlt: Native Angular Apps
 ---
 
 Angular is used to build seriously large applications, but did you know you can target iOS and Android (and PWA) from your codebase without many changes to your existing Angular app?
