@@ -106,7 +106,11 @@ async function run() {
     process.exit(1);
   }
 
-  rendered.forEach(r => console.log(chalk.bold.green(`POST`), r.slug));
+  // Nice CLI output
+  console.log(chalk.bold('Discovered posts:'));
+  (rendered as any[])
+    .sort((a: RenderedBlog, b: RenderedBlog) => a.date.localeCompare(b.date))
+    .forEach(r => console.log(chalk.bold.green(r.date.slice(0, r.date.indexOf('T'))), r.slug));
 
   const sorted = rendered.sort((a: RenderedBlog, b: RenderedBlog) => b.date.localeCompare(a.date));
 
