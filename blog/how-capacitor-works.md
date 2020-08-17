@@ -22,7 +22,7 @@ At a high level, Capacitor does this:
 
 ![Basic Capacitor Diagram](/assets/img/blog/how-capacitor-works/basic.png)
 
-But that's pretty simplistic, if we zoom in a bit and bring in your app code, we see that Capacitor is made up up a few individual components:
+But that's pretty simplistic, if we zoom in a bit and bring in your app code, we see that Capacitor is made up of a few individual components:
 
 ![Zoomed Capacitor App](/assets/img/blog/how-capacitor-works/zoomed.png)
 
