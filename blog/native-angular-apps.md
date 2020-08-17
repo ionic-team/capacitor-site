@@ -8,7 +8,7 @@ description: Any Angular app can be turned into a native app with Capacitor
 
 Angular is used to build seriously large applications, but did you know you can target iOS and Android (and PWA) from your codebase without many changes to your existing Angular app?
 
-With Capacitor, any Angular app can be turned into an iOS and Android app with full access to native APIs and OS controls. Capacitor does this by providing a native runtime for web apps with a bridge to communicate from the web app to the native layer.
+With Capacitor, any Angular app can be turned into an iOS and Android app with full access to native APIs and OS controls. Capacitor does this by providing a native runtime for web apps with a bridge to communicate from the web app to the native layer, along with many [Native APIs](https://capacitorjs.com/docs/apis) and access to hundreds more from the community.
 
 Perhaps a surprise to many Angular developers, Angular is already used to power a significant number of app store apps ([at least 15%](https://appfigures.com/top-sdks/development/apps)). This is because [Ionic Framework](https://ionicframework.com/) has been widely used as a mobile UI framework for Angular since the AngularJS days.
 
