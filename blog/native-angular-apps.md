@@ -16,7 +16,7 @@ Perhaps a surprise to many Angular developers, Angular is already used to power 
 
 Capacitor is similar to Cordova (and Electron, for that matter) in that it runs a web app in a native environment and adds Native API access to the web app. 
 
-Compared to Cordova, Capacitor is a relatively new, ground up effort to build a modern native mobile runtime for cross-platform iOS, Android, and PWA apps. Capacitor was built by the team behind [Ionic Framework](https://ionicframework.com/) to provide an alternative to Cordova for this native runtime layer.
+Compared to Cordova, Capacitor is a relatively new, ground up effort to build a modern native mobile runtime for cross-platform iOS, Android, and PWA apps. Capacitor was built by the team behind [Ionic Framework](https://ionicframework.com/) to provide an alternative to Cordova for this native runtime layer. You can read more about the [motivation for creating Capacitor](https://capacitorjs.com/docs/cordova) on the docs.
 
 Capacitor has backwards compatibility with many Cordova plugins so migration is [straightforward](https://capacitorjs.com/cordova).
 
