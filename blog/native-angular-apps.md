@@ -1,6 +1,6 @@
 ---
 title: Turn your Angular App Native
-slug: native-angular-apps
+slug: turn-your-angular-app-native
 date: 2020-08-17 08:00:00
 author: Max Lynch <max@ionic.io>
 authorUrl: https://twitter.com/maxlynch
@@ -12,6 +12,8 @@ Angular is used to build seriously large applications, but did you know you can 
 With Capacitor, any Angular app can be turned into an iOS and Android app with full access to native APIs and OS controls. Capacitor does this by providing a native runtime for web apps with a bridge to communicate from the web app to the native layer, along with many [Native APIs](https://capacitorjs.com/docs/apis) and access to hundreds more from the community.
 
 Perhaps a surprise to many Angular developers, Angular is already used to power a significant number of app store apps ([at least 15%](https://appfigures.com/top-sdks/development/apps)). This is because [Ionic Framework](https://ionicframework.com/) has been widely used as a mobile UI framework for Angular since the AngularJS days and many Cordova apps used Angular over the years.
+
+<!--more-->
 
 ## Is this like Cordova?
 
