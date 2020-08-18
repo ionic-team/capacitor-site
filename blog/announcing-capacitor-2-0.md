@@ -1,5 +1,6 @@
 ---
 title: Announcing Capacitor 2.0
+slug: announcing-capacitor-2-0
 description: See what Capacitor 2.0 has to offer for web devs building mobile apps
 date: 2020-04-08 08:00:00
 author: Max Lynch <max@ionic.io>

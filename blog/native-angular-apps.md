@@ -1,5 +1,6 @@
 ---
 title: Turn your Angular App Native
+slug: native-angular-apps
 date: 2020-08-17 08:00:00
 author: Max Lynch <max@ionic.io>
 authorUrl: https://twitter.com/maxlynch

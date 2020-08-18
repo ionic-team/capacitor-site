@@ -1,5 +1,6 @@
 ---
 title: How Capacitor Works
+slug: how-capacitor-works
 description: How does Capacitor, a cross-platform native runtime for web apps, work on the inside?
 date: 2020-08-13 08:00:00
 author: Max Lynch <max@ionic.io>

@@ -1,5 +1,6 @@
 ---
 title: Announcing Capacitor 1.0
+slug: announcing-capacitor-1-0
 description: Build awesome mobile apps using web technology with Capacitor
 date: 2019-05-22 08:00:00
 author: Max Lynch <max@ionic.io>

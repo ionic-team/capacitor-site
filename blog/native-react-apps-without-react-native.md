@@ -1,5 +1,6 @@
 ---
 title: Native React Apps Without React Native
+slug: native-react-apps-without-react-native
 date: 2020-07-14 08:00:00
 author: Max Lynch <max@ionic.io>
 authorUrl: https://twitter.com/maxlynch

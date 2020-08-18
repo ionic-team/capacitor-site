@@ -1,5 +1,6 @@
 ---
 title: Capacitor announcements at Ioniconf 2020
+slug: ioniconf-announcements
 description: All the Capacitor announcements from Ioniconf 2020
 date: 2020-06-24 08:00:00
 author: Max Lynch <max@ionic.io>
