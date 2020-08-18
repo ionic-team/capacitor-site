@@ -1,6 +1,7 @@
 import { Component, Prop, State, h, Host } from '@stencil/core';
 
-import { RenderedBlog } from '../../models';
+import { RenderedBlog } from '@ionic-internal/markdown-blog/src/models';
+
 import { BlogPost } from './blog-common';
 
 import posts from '../../assets/blog.json';
