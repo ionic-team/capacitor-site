@@ -27,7 +27,12 @@ make sure you update CocoaPods using `pod repo update` before starting a new pro
 
 ## Adding Capacitor to an existing web app
 
-Capacitor was designed to drop into any existing modern JavaScript web app. A valid `package.json` file and a folder containing all web assets are required to get started. In addition, a `<head>` element is needed in the main `index.html` file, as Capacitor is injected there upon app initialization.
+Capacitor was designed to be dropped into an existing modern JavaScript web app, with a few requirements:
+
+- a valid `package.json` file;
+- a folder containing all web assets
+- a `<head>` element is needed in the main `index.html` file, where Capacitor injects itself upon app initialization
+- subdirectories starting with an underscore (`_`) are ignored by default by the Bundler on Android - [see here](https://github.com/ionic-team/capacitor/issues/1750#issuecomment-511785165)
 
 To add Capacitor to your web app, run the following commands:
 
