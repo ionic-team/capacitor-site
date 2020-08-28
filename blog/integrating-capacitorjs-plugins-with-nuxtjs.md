@@ -9,7 +9,9 @@ authorUrl: https://twitter.com/danpastori
 
 > The following is a guest blog post from Dan Pastori of [521 Dimensions](https://521dimensions.com). 521 Dimensions is a consultancy that works with Vuejs, Laravel, Wordpress, and more recently have started with Capacitor to deliver native apps.
 
-Using CapacitorJS with NuxtJS is a perfect combination. NuxtJS allows you to develop powerful, modern fronteneds using VueJS. Combined with CapacitorJS, you can take those modern frontends, compilie them to mobile, and deploy to the platform of your choice. Working with CapacitorJS, the power of native device features is there for you to integrate into your application. These features include GPS, Haptics, Camera, Filesystem, etc. When I structure a NuxtJS frontend, I like to design it in a way that allows me to re-use important modules through-out components, pages, and layouts.
+Using CapacitorJS with NuxtJS is a perfect combination. NuxtJS allows you to develop powerful, modern fronteneds using VueJS. Combined with CapacitorJS, you can take those modern frontends, compilie them to mobile, and deploy to the platform of your choice.
+
+Working with CapacitorJS, the power of native device features is there for you to integrate into your application. These features include GPS, Haptics, Camera, Filesystem, etc. When I structure a NuxtJS frontend, I like to design it in a way that allows me to re-use important modules through-out components, pages, and layouts.
 
 <!--more-->
 
@@ -28,7 +30,7 @@ Then decouple the `Geolocation` plugin from the `Plugins` object:
 const { Geolocation } = Plugins;
 ```
 
-From here, you can make calls to the `Geolocation` plugin within your components. This works really well! However, in a NuxtJS setting I like to make these plugins globaly avaliable by wrapping them in a NuxtJS plugin. Why would you need to do this? Doesn't this add more work? Besides allowing you to access the plugins globally which cleans up how much you need to import, there's one main reason you'd do this; Server-side Rendering.
+From here, you can make calls to the `Geolocation` plugin within your components. This works really well! However, in a NuxtJS setting I like to make these plugins globaly avaliable by wrapping them in a NuxtJS plugin. Why would you need to do this? Doesn't this add more work? Besides allowing you to access the plugins globally which cleans up how much you need to import, there's one main reason you'd do this: Server-side Rendering.
 
 Server-side Rendering is extremely important if you using NuxtJS with CapacitorJS for mobile AND web. Besides the speed of your application, if you don't server-side render, your app won't be optimized for search engines. Since NuxtJS makes the headaches of SSR a thing of the past, let's optimize our app to make use of both SSR and CapcitorJS Plugins.
 
@@ -64,9 +66,9 @@ plugins: [
 }
 ```
 
-The reason we chose this way is so we can use `mode: 'client'`. This is the crucial piece that makes CapacitorJS plugins work in your NuxtJS app without any SSR erros. So most CapacitorJS plugins require a Browser object to work with. When loading up the compiled code in the browser of your choice, this isn't an issue, a Browser object exists. However, when server-side rendering your application, the Browser object does NOT exist. This will cause a variety of errors and your app won't build correctly.
+The reason we chose this way is so we can use `mode: 'client'`. This is the crucial piece that makes CapacitorJS plugins work in your NuxtJS app without any SSR errors. So most CapacitorJS plugins require a Browser object to work with. When loading up the compiled code in the browser of your choice, this isn't an issue, a Browser object exists. However, when server-side rendering your application, the Browser object does NOT exist. This will cause a variety of errors and your app won't build correctly.
 
-The small object taht we included in the `plugins` array includes a `src` key which is the source of the plugin. It also includes a `mode` key which is set to `client`. This will ignore the plugin if you are building it through SSR, but include the plugin in the final package when it's sent to the browser.
+The small object that we included in the `plugins` array includes a `src` key which is the source of the plugin. It also includes a `mode` key which is set to `client`. This will ignore the plugin if you are building it through SSR, but include the plugin in the final package when it's sent to the browser.
 
 If you are just building a mobile application, you are probably just compiling as a Single Page Application. Choosing to compile as an SPA or SSR, the plugin will be included the same. If you are building a web and mobile application from the same code-base, you can swap out the compilation mode and your CapacitorJS plugin will work as expected!
 
@@ -80,7 +82,7 @@ Since we have our plugin registered globally within our NuxtJS app, we can acces
 const coordinates = await this.$CapacitorGeolocation.getCurrentPosition();
 ```
 
-Since the method itself is asynchronous, we can use the `async/await` syntax and grab the coordinates. Let's break down the structure of this method call. First we have `this` which references our NuxtJS application. Next, we reference the injected CapacitorJS Geolcation plugin by the name we provided, `$CapacitorGeolocation`. From there, we have full access to any of the CapacitorJS Geolocation plugin's methods that have been documented! In this example we call the `getCurrentPosition()` method which returns the coordinates of the current user.
+Since the method itself is asynchronous, we can use the `async/await` syntax and grab the coordinates. Let's break down the structure of this method call: First we have `this` which references our NuxtJS application. Next, we reference the injected CapacitorJS Geolcation plugin by the name we provided, `$CapacitorGeolocation`. From there, we have full access to any of the CapacitorJS Geolocation plugin's methods that have been documented! In this example we call the `getCurrentPosition()` method which returns the coordinates of the current user.
 
 By structuring the plugins this way, we can use either SPA/SSR build methods and have access to the CapacitorJS plugins from anywhere within the application. If you want to learn more aobut how to build an API along with your own Web + Mobile Applications, we have [a book available](https://serversideup.net/ultimate-guide-to-building-apis-and-spas-with-laravel-and-vuejs/). In this book we go through the entire process of centralizing front end codebases and developing your own API with secure authentication practices. The book uses Laravel PHP for the API and NuxtJS + CapacitorJS for the frontend. You will learn how to build an app called ROAST which is available on the [web](https://roastandbrew.coffee/), [iOS App Store](https://apps.apple.com/us/app/roast-brew-coffee/id1510419686) and [Android App Store](https://play.google.com/store/apps/details?id=coffee.roastandbrew.mobile) and browse the source code behind it.
 
