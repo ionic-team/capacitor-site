@@ -3,11 +3,11 @@ title: Integrating CapacitorJS Plugins with NuxtJS
 slug: integrating-capacitorjs-plugins-with-nuxtjs
 description: Learn how to integrate Capacitor with NuxtJS
 date: 2020-08-28 08:00:00
-author: Dan Pastori
+author: Dan Pastori <dan@521dimensions.com>
 authorUrl: https://twitter.com/danpastori
 ---
 
-> The following is a guest blog post from Dan Pastori of [521 Dimensions](https://521dimensions.com). 521 Dimensions is a consultancy that works with Vuejs, Laravel, Wordpress, and more recently have started with Capacitor to deliver native apps.
+>The following is a guest blog post from Dan Pastori of [Server Side Up](serversideup.net). Server Side Up is an online community that shares tutorials and resources about Vuejs, Laravel, Wordpress, and more recently have started creating resources on how to deliver native apps with Capacitor.
 
 Using CapacitorJS with NuxtJS is a perfect combination. NuxtJS allows you to develop powerful, modern fronteneds using VueJS. Combined with CapacitorJS, you can take those modern frontends, compilie them to mobile, and deploy to the platform of your choice.
 
