@@ -38,8 +38,8 @@ export class LandingPage {
                     A cross-platform native runtime for web apps.
                   </Heading>
                   <Heading level={3}>
-                    Capacitor turns any web app into a native app so you can run
-                    one app across iOS, Android, and the Web with the same code.
+                    Capacitor enables web developers to build iOS, Android,
+                    and Progressive Web Apps with web technologies in a single code base.
                   </Heading>
                   <div class="hero__buttons">
                     <AnchorButton href="/docs/getting-started" id="get-started">
