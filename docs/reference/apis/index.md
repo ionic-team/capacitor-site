@@ -5,6 +5,7 @@ url: /docs/apis
 contributors:
   - mlynch
   - jcesarmobile
+  - ehorodyski-ionic
 ---
 
 # Capacitor Plugin APIs
@@ -49,3 +50,20 @@ async openBrowser() {
 ```
 
 By using the plugins from the plugin registry (`Plugins` object), the native implementation of the plugin is used (if available), with fallback to the web version.
+
+### Angular Notes
+
+Capacitor plugin event listeners run outside of Angular's `NgZone` execution context. Contain handler logic within an `NgZone.run` block to ensure Angular's change detection is triggered:
+
+```typescript
+constructor(private ngZone: NgZone) { }
+
+async ngOnInit() {
+  Network.addListener("networkStatusChange", (status) => {
+    this.ngZone.run(() => {
+      // This code will run in Angular's execution context
+      this.networkStatus = status.connected ? "Online" : "Offline";
+    });
+  });
+}
+```
