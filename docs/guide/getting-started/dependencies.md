@@ -23,7 +23,7 @@ For specific platforms, follow each guide below to ensure you have the correct d
 
 For building iOS apps, Capacitor requires a **Mac with Xcode 11 or above**. Or you can use [Ionic Appflow](http://ionicframework.com/appflow) to build for iOS even if you're on Windows.
 
-Additionally, you'll need to install **[CocoaPods](https://cocoapods.org/)** (`sudo gem install cocoapods`), and install the **Xcode Command Line tools** (either from Xcode, or running `xcode-select --install`).
+Additionally, you'll need to install **[CocoaPods](https://cocoapods.org/)** (`gem install cocoapods`), and install the **Xcode Command Line tools** (either from Xcode, or running `xcode-select --install`).
 
 As a rule, the latest version of Capacitor always supports at least the last two iOS versions.
 
