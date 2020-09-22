@@ -62,7 +62,7 @@ In `index.html`, import `capacitor.js` before your app's JS:
 
 ## Developing your App
 
-Chances are, you're using a framework like [Ionic](http://ionicframework.com/) for UI components and building. To develop
+Chances are, you're using a framework like [Ionic](https://ionicframework.com/) for UI components and building. To develop
 your Capacitor web app, just use your framework!
 
 If you're not using a framework, Capacitor comes with a small development service with HTML5 routing support. To use it,
