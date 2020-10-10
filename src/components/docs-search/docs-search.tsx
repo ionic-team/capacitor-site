@@ -16,15 +16,13 @@ export class DocsSearch implements ComponentInterface {
   @Prop() placeholder = 'Search';
   @State() backdrop = false;
 
-  private uniqueId = new Date().getTime();
+  private uniqueId = Math.random().toString().replace('.', '');
   private inputEl: HTMLInputElement;
   private clearEl: HTMLElement;
   private algoliaCdn = {
     js: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
     css: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
-  }
-
-  
+  }  
 
   componentWillLoad() {
     const linkEls = document.head.querySelectorAll('link');
@@ -65,13 +63,15 @@ export class DocsSearch implements ComponentInterface {
   }
 
   checkInputState() {
-    console.log('input');
+
     if (this.inputEl.value === '') {
       this.clearEl.style.display = 'none'
       this.backdrop = false;
+      document.body.classList.remove('no-scroll');
     } else {
       this.clearEl.style.display = 'inline-block'
       this.backdrop = true;
+      document.body.classList.add('no-scroll');
     }
   }
 

@@ -52,12 +52,16 @@ docs-search {
 
       min-width: auto;
       max-height: 100vh;
-      overflow-y: auto;
       min-width: 600px;
       right: 0px !important;
 
       .ds-suggestion.ds-cursor .algolia-docsearch-suggestion--content{
         background-color: rgba(29, 154, 255, .05) !important;
+      }
+
+      .ds-suggestions {
+        overflow-y: auto;
+        max-height: calc(100vh - 120px);
       }
 
       &::before {
