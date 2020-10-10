@@ -6,6 +6,7 @@ import { SiteStructureItem } from '../../global/definitions';
 import { handleRoutableLinkClick, getTemplateFromPath, getSiteStructureList } from '../../utils/route-link';
 
 import state from '../../store';
+import { importResource } from '../../utils/common';
 
 @Component({
   tag: 'document-component',
