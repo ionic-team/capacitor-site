@@ -1,7 +1,11 @@
 import { State, Component, ComponentInterface, Element, Prop, Host, h } from '@stencil/core';
 import { importResource } from '../../utils/common';
 
-declare var docsearch: any;
+declare global {
+  interface Window {
+    docsearch: any;
+  }
+}
 
 @Component({
   tag: 'docs-search',
@@ -45,11 +49,11 @@ export class DocsSearch implements ComponentInterface {
   }
 
   setupSearch(){
-    docsearch({
+    window.docsearch({
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
       indexName: `capacitorjs`,
       inputSelector: `#id-${this.uniqueId} input[name="search"]`,
-      debug: true, // Set debug to true if you want to inspect the dropdown
+      debug: false, // Set debug to true if you want to inspect the dropdown
     });
 
     this.inputEl = this.el.querySelector(
