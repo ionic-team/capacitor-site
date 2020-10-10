@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
 
-  padding-left: 64px;
+  padding-left: 32px;  
 
   position: sticky;
 
@@ -37,12 +37,13 @@ header {
   flex-wrap: wrap;
   align-items: center;
 
+  padding-right: 32px;
+
   background: #fff;
 }
 
 .docs-search--mobile {
   display: none;
-
   flex: 1;
 }
 
@@ -74,7 +75,6 @@ header {
 
 .docs-header-links__internal {
   margin-bottom: 2px;
-  margin-left: 24px;
 
   a {
     margin-right: 24px;
@@ -119,6 +119,13 @@ more-button {
 @media screen and (max-width: 768px) {
   :host {
     border-inline-start: none;
+  }
+
+  header {
+    left: 0;
+
+    padding-left: 64px;
+    padding-right: 0px
   }
 
   .docs-search--mobile,

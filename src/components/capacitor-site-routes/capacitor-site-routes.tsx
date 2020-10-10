@@ -6,6 +6,7 @@ import { InternalRouterState } from 'stencil-router-v2/dist/types';
 
 import state from '../../store';
 import Router from '../../router';
+import Helmet from '@stencil/helmet';
 
 @Component({
   tag: 'capacitor-site-routes',

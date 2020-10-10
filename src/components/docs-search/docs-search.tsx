@@ -1,7 +1,5 @@
-import { Build, Component, ComponentInterface, Element, Prop, Host, h } from '@stencil/core';
-import Helmet from '@stencil/helmet';
+import { State, Component, ComponentInterface, Element, Prop, Host, h } from '@stencil/core';
 import { importResource } from '../../utils/common';
-import algoliasearch from 'algoliasearch';
 
 declare var docsearch: any;
 
@@ -12,16 +10,36 @@ declare var docsearch: any;
 export class DocsSearch implements ComponentInterface {
   @Element() el: HTMLElement;
   @Prop() placeholder = 'Search';
+  @State() backdrop = false;
 
-  // private pristine: boolean = true;
   private uniqueId = new Date().getTime();
   private inputEl: HTMLInputElement;
   private clearEl: HTMLElement;
-  private algoliaCdn = 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js';
+  private algoliaCdn = {
+    js: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
+  }
+
+  
 
   componentWillLoad() {
+    const linkEls = document.head.querySelectorAll('link');
+    
+    const hasAlgoliaCss = Array.from(linkEls).some(link => {
+      return link.href === this.algoliaCdn.css;
+    });
+
+    if (!hasAlgoliaCss) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = this.algoliaCdn.css;
+      document.head.append(link);
+    }    
+  }
+
+  componentDidLoad() {
     importResource(
-      { propertyName: 'docsearch', link: this.algoliaCdn },
+      { propertyName: 'docsearch', link: this.algoliaCdn.js },
       () => this.setupSearch(),
     )
   }
@@ -30,32 +48,34 @@ export class DocsSearch implements ComponentInterface {
     docsearch({
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
       indexName: `capacitorjs`,
-      inputSelector: `id-${this.uniqueId} input[name="search"]`,
-      debug: false, // Set debug to true if you want to inspect the dropdown
+      inputSelector: `#id-${this.uniqueId} input[name="search"]`,
+      debug: true, // Set debug to true if you want to inspect the dropdown
     });
 
-    this.inputEl = this.el.querySelector('.algolia-autocomplete input[name="search"]') as HTMLInputElement;
-    console.log(this.inputEl);
-    this.inputEl.oninput = () => this.handleTextInput();
-    // this.pristine = false;
-    this.handleTextInput();
+    this.inputEl = this.el.querySelector(
+      `#id-${this.uniqueId} input[name="search"]`
+    ) as HTMLInputElement;
+
+    this.inputEl.oninput = () => this.checkInputState();
+    this.checkInputState();
   }
 
-  handleTextInput() {
-    
-    this.clearEl.style.display = this.inputEl.value === ''
-      ? 'none'
-      : 'inline-block';   
+  checkInputState() {
+    console.log('input');
+    if (this.inputEl.value === '') {
+      this.clearEl.style.display = 'none'
+      this.backdrop = false;
+    } else {
+      this.clearEl.style.display = 'inline-block'
+      this.backdrop = true;
+    }
   }
 
   render() {
     const { placeholder } = this;
 
     return (
-      <Host class={`id-${this.uniqueId}`}>
-        <Helmet>
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
-        </Helmet>
+      <Host id={`id-${this.uniqueId}`}>
         <ion-icon class="search" icon="search" />
         <input
           name="search"
@@ -66,17 +86,20 @@ export class DocsSearch implements ComponentInterface {
           required
         />
         <ion-icon
-          style={{
-            display: 'none'
-          }}
           class="close"
           icon="close"
           onClick={() => {
             this.inputEl.value = '';
-            this.handleTextInput();
+            this.checkInputState();
           }}
           ref={el => this.clearEl = el}
         />
+        <site-backdrop
+          visible={this.backdrop} 
+          onClick={() => {
+            this.inputEl.value = '';
+            this.checkInputState();
+          }}/>
       </Host>
     );
   }

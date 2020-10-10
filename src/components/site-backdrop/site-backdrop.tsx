@@ -6,7 +6,7 @@ import { Component, Prop, h, Host } from '@stencil/core';
   styleUrl: 'site-backdrop.scss',
   scoped: true
 })
-export class MoreButton {
+export class SiteBackdrop {
   @Prop() visible = false;
 
   render() {
