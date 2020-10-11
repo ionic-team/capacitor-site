@@ -54,7 +54,7 @@ export class DocsSearch implements ComponentInterface {
         body: document.body.offsetWidth,
         search: 600,
       }
-      const searchBarLeft = this.inputEl.getBoundingClientRect().left;
+      const searchBarLeft = this.inputEl?.getBoundingClientRect()?.left;
       
       this.searchLeft = (widths.body - searchBarLeft) / 2 - widths.search + 64;
     });
