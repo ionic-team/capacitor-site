@@ -17,7 +17,8 @@ docs-search {
   ion-icon.search {
     position: absolute;
     left: 12px;
-    top: 16px;
+    top: 50%;
+    transform: translateY(-50%);
 
     font-size: 17px;
 
@@ -31,7 +32,8 @@ docs-search {
     display: inline-block;
 
     right: 18px;
-    top: 16px;
+    top: 50%;
+    transform: translateY(-50%);
 
     font-size: 17px;
 
