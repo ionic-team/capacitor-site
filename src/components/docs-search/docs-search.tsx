@@ -69,7 +69,7 @@ export class DocsSearch implements ComponentInterface {
     window.docsearch({
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
       indexName: `capacitorjs`,
-      inputSelector: `#id-${this.uniqueId} input[name="search"]`,
+      inputSelector: `#input-${this.uniqueId}`,
       debug: false, // Set debug to true if you want to inspect the dropdown
       queryHook: () => {
         console.log('query hook called', this.input);
@@ -115,6 +115,7 @@ export class DocsSearch implements ComponentInterface {
       >
         <ion-icon class="search" icon="search" />
         <input
+          id={`input-${this.uniqueId}`}
           name="search"
           type="search"
           autocomplete="off"
