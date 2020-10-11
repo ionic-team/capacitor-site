@@ -3,7 +3,7 @@ import { importResource } from '../../utils/common';
 
 declare global {
   interface Window {
-    docsearch: (opts: {}) => any;
+    docsearch: (opts?: {}) => any;
   }
 }
 
@@ -73,11 +73,13 @@ export class DocsSearch implements ComponentInterface {
       debug: false, // Set debug to true if you want to inspect the dropdown
       queryHook: () => {
         if (this.input.isPristine) {
-          this.input = { ...this.input, isPristine: false }
+          this.input.isPristine = false;
 
           this.input.el = this.el.querySelector(
             `#id-${this.uniqueId} input[name="search"]`
           ) as HTMLInputElement;
+
+          console.log(this.input.el);
       
           this.input.el.oninput = () => this.handleInput();
           
