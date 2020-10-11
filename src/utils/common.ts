@@ -21,7 +21,7 @@ export const importResource = (
   callback: () => any,
   target: HTMLElement = document.body
 ) => {
-  if (window.hasOwnProperty(propertyName)) return callback;
+  if (window.hasOwnProperty(propertyName)) return callback();
 
   
   const scriptAlreadyLoading = Array.from(document.scripts).some(script => {

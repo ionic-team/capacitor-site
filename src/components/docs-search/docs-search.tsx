@@ -72,7 +72,6 @@ export class DocsSearch implements ComponentInterface {
       inputSelector: `#input-${this.uniqueId}`,
       debug: false, // Set debug to true if you want to inspect the dropdown
       queryHook: () => {
-        console.log('query hook called', this.input);
         if (this.input.isPristine) {
           this.input.isPristine = false;
 
