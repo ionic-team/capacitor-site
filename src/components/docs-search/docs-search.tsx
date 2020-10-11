@@ -1,4 +1,4 @@
-import { State, Component, ComponentInterface, Element, Prop, Host, h } from '@stencil/core';
+import { State, Component, ComponentInterface, Element, Prop, Host, h, Listen } from '@stencil/core';
 import { importResource } from '../../utils/common';
 
 declare global {
@@ -15,6 +15,7 @@ export class DocsSearch implements ComponentInterface {
   @Element() el: HTMLElement;
   @Prop() placeholder = 'Search';
   @State() backdrop = false;
+  @State() searchLeft: number = 0;
 
   private uniqueId = Math.random().toString().replace('.', '');
   private inputEl: HTMLInputElement;
@@ -46,6 +47,19 @@ export class DocsSearch implements ComponentInterface {
     )
   }
 
+  @Listen('resize', { target: 'window' })
+  handleResize() {
+    requestAnimationFrame(() => {
+      const widths = {
+        body: document.body.offsetWidth,
+        search: 600,
+      }
+      const searchBarLeft = this.inputEl.getBoundingClientRect().left;
+      
+      this.searchLeft = (widths.body - searchBarLeft) / 2 - widths.search + 64;
+    });
+  }
+
   setupSearch(){
     window.docsearch({
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
@@ -59,7 +73,9 @@ export class DocsSearch implements ComponentInterface {
     ) as HTMLInputElement;
 
     this.inputEl.oninput = () => this.checkInputState();
+
     this.checkInputState();
+    this.handleResize();
   }
 
   checkInputState() {
@@ -71,15 +87,24 @@ export class DocsSearch implements ComponentInterface {
     } else {
       this.clearEl.style.display = 'inline-block'
       this.backdrop = true;
-      document.body.classList.add('no-scroll');
+
+      if (document.body.offsetWidth < 768) {
+        document.body.classList.add('no-scroll');
+      }
     }
   }
+
 
   render() {
     const { placeholder } = this;
 
     return (
-      <Host id={`id-${this.uniqueId}`}>
+      <Host
+        id={`id-${this.uniqueId}`}
+        style={{
+          '--search-left': this.searchLeft.toString().concat('px')
+        }}
+      >
         <ion-icon class="search" icon="search" />
         <input
           name="search"

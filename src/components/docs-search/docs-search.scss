@@ -53,7 +53,7 @@ docs-search {
       min-width: auto;
       max-height: 100vh;
       min-width: 600px;
-      right: 0px !important;
+      left: var(--search-left) !important;
 
       .ds-suggestion.ds-cursor .algolia-docsearch-suggestion--content{
         background-color: rgba(29, 154, 255, .05) !important;
