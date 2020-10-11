@@ -3,7 +3,7 @@ import { importResource } from '../../utils/common';
 
 declare global {
   interface Window {
-    docsearch: any;
+    docsearch: (opts: {}) => any;
   }
 }
 
@@ -14,12 +14,17 @@ declare global {
 export class DocsSearch implements ComponentInterface {
   @Element() el: HTMLElement;
   @Prop() placeholder = 'Search';
-  @State() backdrop = false;
   @State() searchLeft: number = 0;
+  @State() input: {
+    el?: HTMLInputElement,
+    isPristine: boolean,
+    isEmpty: boolean }
+  = {
+    isPristine: true,
+    isEmpty: true
+  }
 
   private uniqueId = Math.random().toString().replace('.', '');
-  private inputEl: HTMLInputElement;
-  private clearEl: HTMLElement;
   private algoliaCdn = {
     js: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
     css: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
@@ -54,7 +59,7 @@ export class DocsSearch implements ComponentInterface {
         body: document.body.offsetWidth,
         search: 600,
       }
-      const searchBarLeft = this.inputEl?.getBoundingClientRect()?.left;
+      const searchBarLeft = this.input.el?.getBoundingClientRect()?.left;
       
       this.searchLeft = (widths.body - searchBarLeft) / 2 - widths.search + 64;
     });
@@ -66,27 +71,29 @@ export class DocsSearch implements ComponentInterface {
       indexName: `capacitorjs`,
       inputSelector: `#id-${this.uniqueId} input[name="search"]`,
       debug: false, // Set debug to true if you want to inspect the dropdown
-    });
+      queryHook: () => {
+        if (this.input.isPristine) {
+          this.input = { ...this.input, isPristine: false }
 
-    this.inputEl = this.el.querySelector(
-      `#id-${this.uniqueId} input[name="search"]`
-    ) as HTMLInputElement;
-
-    this.inputEl.oninput = () => this.checkInputState();
-
-    this.checkInputState();
-    this.handleResize();
+          this.input.el = this.el.querySelector(
+            `#id-${this.uniqueId} input[name="search"]`
+          ) as HTMLInputElement;
+      
+          this.input.el.oninput = () => this.handleInput();
+          
+          this.handleInput();
+          this.handleResize();
+        }
+      }
+    });    
   }
 
-  checkInputState() {
-
-    if (this.inputEl.value === '') {
-      this.clearEl.style.display = 'none'
-      this.backdrop = false;
+  handleInput() {
+    if (this.input.el.value === '') {
       document.body.classList.remove('no-scroll');
+      this.input = { ...this.input, isEmpty: true };
     } else {
-      this.clearEl.style.display = 'inline-block'
-      this.backdrop = true;
+      this.input = { ...this.input, isEmpty: false };
 
       if (document.body.offsetWidth < 768) {
         document.body.classList.add('no-scroll');
@@ -115,20 +122,29 @@ export class DocsSearch implements ComponentInterface {
           required
         />
         <ion-icon
+          style={{
+            display: this.input.isEmpty ? 'none' : 'block'
+          }}
           class="close"
           icon="close"
           onClick={() => {
-            this.inputEl.value = '';
-            this.checkInputState();
+            this.input.el.value = '';
+            this.input = {
+              ...this.input,
+              isEmpty: true,
+            }
           }}
-          ref={el => this.clearEl = el}
         />
         <site-backdrop
-          visible={this.backdrop} 
+          visible={!this.input.isEmpty}
           onClick={() => {
-            this.inputEl.value = '';
-            this.checkInputState();
-          }}/>
+            this.input.el.value = '';
+            this.input = {
+              ...this.input,
+              isEmpty: true,
+            }
+          }}  
+        />
       </Host>
     );
   }
