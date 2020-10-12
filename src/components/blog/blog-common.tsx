@@ -1,14 +1,15 @@
 import { h } from '@stencil/core';
 import { href } from 'stencil-router-v2';
-import { Heading, DateTime } from '@ionic-internal/sites-shared';
+import { Heading, DateTime } from '@ionic-internal/ionic-ds';
+import { RenderedBlog } from '@ionic-internal/markdown-blog/src/models';
 import parseISO from 'date-fns/parseISO';
 
 import Router from '../../router';
 
-import { RenderedBlog } from '../../models';
+
 
 const getBlogPostPath = (doc: RenderedBlog) => `/blog/${doc.slug}`;
-const getAbsoluteBlogPostUrl = (doc: RenderedBlog) => `https://capacitorjs.com/${getBlogPostPath(doc)}`;
+// const getAbsoluteBlogPostUrl = (doc: RenderedBlog) => `https://capacitorjs.com${getBlogPostPath(doc)}`;
 
 export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?: boolean }) => {
   const content = single ?
@@ -27,7 +28,9 @@ export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?:
 
         {!single && post.preview ? <PostContinueReading post={post} /> : null}
 
+        {/*
         {single && <disqus-comments url={getAbsoluteBlogPostUrl(post)} siteId='capacitor' id={post.slug} />}
+        */}
       </div>
     </div>
   )

@@ -131,7 +131,7 @@ You may be curious about how other elements from `config.xml` work in Capacitor 
 The Author element can be configured in `package.json`, but is not used by Capacitor or within your app:
 
 ```xml
-<author email="email@test.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+<author email="email@test.com" href="https://ionicframework.com/">Ionic Framework Team</author>
 ```
 
 Most of the `allow-intent` values are either not used or there are [configurable alternatives](/docs/basics/configuring-your-app/) in `capacitor.config.json`.

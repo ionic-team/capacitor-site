@@ -1,7 +1,11 @@
 {
   "all": [
-    { "id": "react", "name": "React", "theme": "#3DD3FF" },
-    { "id": "angular", "name": "Angular", "theme": "#DD002E" },
-    { "id": "svelte", "name": "Svelte", "theme": "#FF3D00" }
+    { "id": "react",   "name": "React",   "theme": "#3DD3FF", "logo": "/assets/img/solutions/react.png" },
+    { "id": "vue",     "name": "Vue",     "theme": "#42b983", "logo": "/assets/img/solutions/vue.png" },
+    { "id": "preact",  "name": "Preact",  "theme": "#673ab8", "logo": "/assets/img/solutions/preact.png"  },
+    { "id": "angular", "name": "Angular", "theme": "#DD002E", "logo": "/assets/img/solutions/angular.png"  },
+    { "id": "svelte",  "name": "Svelte",  "theme": "#FF3D00", "logo": "/assets/img/solutions/svelte.png"  },
+    { "id": "stencil", "name": "Stencil", "theme": "#4c48ff", "logo": "/assets/img/solutions/stencil.png"  },
+    { "id": "ember",   "name": "Ember",   "theme": "#E04E39", "logo": "/assets/img/solutions/ember.png"  }
   ]
 }

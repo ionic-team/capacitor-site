@@ -1,7 +1,7 @@
 import { Component, h, Host, State } from '@stencil/core';
 
 import Helmet from '@stencil/helmet';
-import { ResponsiveContainer, Grid, Col, Paragraph, Heading, AnchorButton } from '@ionic-internal/sites-shared';
+import { ResponsiveContainer, Grid, Col, Paragraph, Heading, AnchorButton } from '@ionic-internal/ionic-ds';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 
 @Component({

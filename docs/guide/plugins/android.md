@@ -9,9 +9,8 @@ contributors:
 
 # Capacitor Android Plugin Guide
 
-<p class="intro">Building Capacitor plugins for Android involves writing Java to interface with Android SDKs.</p>
+<p class="intro">Building Capacitor plugins for Android involves writing Java or <a href="https://developer.android.com/kotlin/overview" target="_blank">Kotlin</a> to interface with Android SDKs.</p>
 
-<p class="intro">Capacitor embraces standard Android development tools for building Android plugins. We believe that using Java directly will make it easier to use existing solutions on Stack Overflow, share work with existing native developers, and use platform features as soon as they are made available.</p>
 
 ## Getting Started
 
@@ -20,6 +19,12 @@ To get started, first generate a plugin as shown in the [Getting Started](/docs/
 Next, open `your-plugin/android/` in Android Studio. You then want to navigate to the `.java` file for your plugin, which changes depending on the Plugin ID and Plugin Class Name you used when creating the plugin.
 
 For example, for a plugin with the ID `com.domain.myplugin` and the Plugin Class Name `MyPlugin`, you would find the `.java` file at `android/src/main/java/com/domain/myplugin/MyPlugin.java`.
+
+## Using Kotlin
+
+Capacitor uses Java by default but you can use Kotlin instead, if you prefer.
+
+After generating a plugin, right click the Java plugin class in Android Studio and select the "Convert Java file to Kotlin file" option from the menu. Android Studio will walk you through configuring the project for Kotlin support. Once this is completed, right click the Java class again and re-select the conversion option to convert it to a Kotlin class.
 
 ## Building your Plugin
 
@@ -60,6 +65,38 @@ public class EchoPlugin extends Plugin {
 ```
 
 > In order to make Capacitor aware of your plugin, you have to [export it to capacitor](#export-to-capacitor) in your apps `MainActivity`.
+
+### Kotlin Example
+
+If choosing to use Kotlin instead of Java, the Echo plugin example looks like this:
+
+`EchoPlugin.kt`
+
+```kotlin
+package android.plugin.test;
+
+import com.getcapacitor.JSObject;
+import com.getcapacitor.NativePlugin;
+import com.getcapacitor.Plugin;
+import com.getcapacitor.PluginCall;
+import com.getcapacitor.PluginMethod;
+
+@NativePlugin()
+class EchoPlugin : Plugin() {
+
+  @PluginMethod
+  fun echo(call: PluginCall) {
+    val value = call.getString("value")
+    val ret = JSObject()
+    ret.put("value", value)
+    call.success(ret)
+  }
+}
+```
+
+> In order to make Capacitor aware of your plugin, you have to [export it to capacitor](#export-to-capacitor) in your apps `MainActivity`.
+
+It is recommended for Kotlin files to be in the `android/src/main/java/` directory where Java files might also reside.
 
 ### Accessing Called Data
 

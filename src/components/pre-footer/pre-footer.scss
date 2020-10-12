@@ -1,3 +1,5 @@
+@use '../../global/variables';
+
 :host {
   display: block;
   border-top: 1px solid var(--c-indigo-20);
@@ -36,8 +38,10 @@ a {
   border-right: 1px solid var(--c-indigo-20);
 }
 
-.ui-col:last-child {
-  padding-left: 86px;
+@media (min-width: variables.$breakpoint-md) {
+  .ui-col:last-child {
+    padding-left: 86px;
+  }
 }
 
 .arrow {

@@ -16,6 +16,7 @@
       }
     });
   </script>
+  <script src="https://unpkg.com/prismjs@latest/prism.js"></script>
   <script type="module" src="/build/app.esm.js"></script>
   <script nomodule src="/build/app.js"></script>
 
@@ -26,12 +27,23 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
 </head>
 <body>
 
   <capacitor-site></capacitor-site>
 
-  <script async src="https://unpkg.com/prismjs@latest/prism.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <script>
+    // Thank hubspot for "requiring" jQuery on their form events
+    window.jQuery = window.jQuery || (() => ({
+      // these are all methods required by HubSpot
+      change: () => { },
+      trigger: () => { },
+    }));
+  </script>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44023830-42"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -41,5 +53,10 @@
     gtag('config', 'UA-44023830-42');
   </script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3776657.js"></script>
+  <!-- End of HubSpot Embed Code -->
+
 </body>
 </html>

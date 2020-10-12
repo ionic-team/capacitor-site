@@ -1,10 +1,11 @@
 import { Component, Prop, State, h, Host } from '@stencil/core';
 
-import { RenderedBlog } from '../../models';
+import { RenderedBlog } from '@ionic-internal/markdown-blog/src/models';
+
 import { BlogPost } from './blog-common';
 
 import posts from '../../assets/blog.json';
-import { Heading } from '@ionic-internal/sites-shared';
+import { Heading } from '@ionic-internal/ionic-ds';
 import { href } from 'stencil-router-v2';
 import Helmet from '@stencil/helmet';
 

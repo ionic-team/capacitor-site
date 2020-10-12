@@ -42,4 +42,4 @@ For teams building mission-critical apps, Ionic provides enterprise-grade suppor
 
 Interested? We'd love to talk and see how we can best help your team.
 
-<a href="https://ionicframework.com/native" class="ui-button">Get in touch</a>
+<capacitor-hubspot-form form-id='f8243fb9-b8de-414a-b624-ed586b00d6a9' />

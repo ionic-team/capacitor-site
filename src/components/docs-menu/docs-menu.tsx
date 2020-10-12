@@ -97,10 +97,10 @@ export class SiteMenu implements ComponentInterface{
             </div>
             <ul class="section-list">
                <li>
-                 <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guide</a>
+                 <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guides</a>
                </li>
                <li>
-                 <a {...href('/docs/apis')} class={{ 'active': template === 'reference' }}>Reference</a>
+                 <a {...href('/docs/apis')} class={{ 'active': template === 'reference' }}>Plugins</a>
                </li>
             </ul>
             <ul class="menu-list">
@@ -153,7 +153,23 @@ export class SiteMenu implements ComponentInterface{
                   </li>
                 )
               }) }
+
+              {template === 'guide'
+              ? <li  class="docs-menu menu-footer" >
+                  <a {...href("/docs/apis")}>
+                    <span class="section-label">Plugins</span>
+                    <span class="arrow">-&gt;</span>
+                  </a>
+                </li>
+               : <li  class="menu-footer" >
+                  <a {...href("/docs")}>
+                    <span class="section-label">Guides</span>
+                    <span class="arrow">-&gt;</span>
+                  </a>
+                </li>}
+
             </ul>
+
           </div>
         </div>
       </Host>

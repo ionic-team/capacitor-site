@@ -4,19 +4,28 @@
   padding: 62px 0;
   border-top: 1px solid var(--c-indigo-20);
 
+  .ui-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  hgroup,
+  form {
+    margin: 8px 0;
+  }
+
   .ui-heading {
     font-weight: 500;
     margin: 2px 0 6px;
-  }
-
-  .ui-grid {
-    align-items: center;
   }
 
   hgroup {
     padding-right: 40px;
     display: flex;
     justify-content: center;
+    flex: 0 0 auto;
 
     img {
       width: 64px;
@@ -29,9 +38,11 @@
     div {
       flex: 1;
     }
+
     h2 {
       margin: 0 0 6px;
     }
+
     p {
       margin: 0;
       letter-spacing: 0;
@@ -43,8 +54,9 @@
   form {
     position:relative;
     display: flex;
-    justify-content: flex-end;
     margin-bottom: 2px;
+    justify-content: flex-end;
+    flex: 1 0;
 
     input {
       font-family: 'Inter';
@@ -96,24 +108,18 @@
     color:red;
   }
 
-  @media screen and (max-width: variables.$breakpoint-md) {
-    .container {
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-      justify-content: space-between;
+  @media (max-width: variables.$breakpoint-lg) {
+    hgroup {
+      flex: 0 0 280px;
     }
-    hgroup,
-    form {
+  }
+  @media (max-width: variables.$breakpoint-md) {
+    hgroup {
       flex: 0 0 100%;
     }
-    hgroup {
-      padding: 0;
-    }
+
     form {
-      margin-top: 24px;
-      width: 100%;
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 }
