@@ -31,7 +31,7 @@ export class DocsHeader implements ComponentInterface {
         <site-backdrop visible={expanded} onClick={() => this.toggleExpanded()} />
 
         <header>
-          <docs-search class="docs-search--mobile"></docs-search>
+          <docs-search placeholder="Search docs..." class="docs-search--mobile" />
           <more-button onClick={() => this.toggleExpanded()} />
 
           <div class="docs-header-links">

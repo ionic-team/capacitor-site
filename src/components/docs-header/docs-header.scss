@@ -4,6 +4,8 @@
   display: flex;
   align-items: center;
 
+  padding-left: 32px;  
+
   position: sticky;
 
   top: 0;
@@ -16,10 +18,11 @@
   color: #98a2ad;
 
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
+  border-inline-start: 1px solid rgba(0, 0, 0, 0.06);
 
   letter-spacing: 0;
 
-  z-index: 1;
+  z-index: 3;
 }
 
 header {
@@ -34,13 +37,14 @@ header {
   flex-wrap: wrap;
   align-items: center;
 
+  padding-right: 32px;
+
   background: #fff;
 }
 
 .docs-search--mobile {
   display: none;
-
-  flex: 0;
+  flex: 1;
 }
 
 .docs-header-links {
@@ -71,7 +75,6 @@ header {
 
 .docs-header-links__internal {
   margin-bottom: 2px;
-  margin-left: 24px;
 
   a {
     margin-right: 24px;
@@ -114,6 +117,17 @@ more-button {
 }
 
 @media screen and (max-width: 768px) {
+  :host {
+    border-inline-start: none;
+  }
+
+  header {
+    left: 0;
+
+    padding-left: 64px;
+    padding-right: 0px
+  }
+
   .docs-search--mobile,
   more-button {
     display: block;
