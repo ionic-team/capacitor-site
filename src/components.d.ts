@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MarkdownContent, MarkdownHeading, SiteStructureItem, } from "./global/definitions";
+import { MarkdownContent, MarkdownHeading, SiteStructureItem } from "./global/definitions";
 export namespace Components {
     interface AnchorLink {
         "to": string;
@@ -29,6 +29,12 @@ export namespace Components {
     }
     interface CapacitorEnterprise {
     }
+    interface CapacitorHubspotForm {
+        "ajax": boolean;
+        "formId"?: string;
+        "goToWebinarKey"?: string;
+        "portalId": string;
+    }
     interface CapacitorSite {
     }
     interface CapacitorSiteFooter {
@@ -50,13 +56,16 @@ export namespace Components {
     interface DocSnippet {
     }
     interface DocsHeader {
+        "template": 'guide' | 'reference';
     }
     interface DocsMenu {
         "selectedParent": SiteStructureItem;
         "siteStructureList": SiteStructureItem[];
+        "template": 'guide' | 'reference';
         "toggleOverlayMenu": () => Promise<void>;
     }
     interface DocsSearch {
+        "placeholder": string;
     }
     interface DocumentComponent {
         "page": string;
@@ -142,6 +151,12 @@ declare global {
     var HTMLCapacitorEnterpriseElement: {
         prototype: HTMLCapacitorEnterpriseElement;
         new (): HTMLCapacitorEnterpriseElement;
+    };
+    interface HTMLCapacitorHubspotFormElement extends Components.CapacitorHubspotForm, HTMLStencilElement {
+    }
+    var HTMLCapacitorHubspotFormElement: {
+        prototype: HTMLCapacitorHubspotFormElement;
+        new (): HTMLCapacitorHubspotFormElement;
     };
     interface HTMLCapacitorSiteElement extends Components.CapacitorSite, HTMLStencilElement {
     }
@@ -284,6 +299,7 @@ declare global {
         "blog-post": HTMLBlogPostElement;
         "capacitor-community": HTMLCapacitorCommunityElement;
         "capacitor-enterprise": HTMLCapacitorEnterpriseElement;
+        "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
         "capacitor-site-header": HTMLCapacitorSiteHeaderElement;
@@ -332,6 +348,13 @@ declare namespace LocalJSX {
     }
     interface CapacitorEnterprise {
     }
+    interface CapacitorHubspotForm {
+        "ajax"?: boolean;
+        "formId"?: string;
+        "goToWebinarKey"?: string;
+        "onFormSubmitted"?: (event: CustomEvent<any>) => void;
+        "portalId"?: string;
+    }
     interface CapacitorSite {
     }
     interface CapacitorSiteFooter {
@@ -353,12 +376,16 @@ declare namespace LocalJSX {
     interface DocSnippet {
     }
     interface DocsHeader {
+        "template"?: 'guide' | 'reference';
     }
     interface DocsMenu {
+        "onMenuToggled"?: (event: CustomEvent<any>) => void;
         "selectedParent"?: SiteStructureItem;
         "siteStructureList"?: SiteStructureItem[];
+        "template"?: 'guide' | 'reference';
     }
     interface DocsSearch {
+        "placeholder"?: string;
     }
     interface DocumentComponent {
         "page"?: string;
@@ -404,6 +431,7 @@ declare namespace LocalJSX {
         "blog-post": BlogPost;
         "capacitor-community": CapacitorCommunity;
         "capacitor-enterprise": CapacitorEnterprise;
+        "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
         "capacitor-site-header": CapacitorSiteHeader;
@@ -440,6 +468,7 @@ declare module "@stencil/core" {
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
             "capacitor-community": LocalJSX.CapacitorCommunity & JSXBase.HTMLAttributes<HTMLCapacitorCommunityElement>;
             "capacitor-enterprise": LocalJSX.CapacitorEnterprise & JSXBase.HTMLAttributes<HTMLCapacitorEnterpriseElement>;
+            "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
             "capacitor-site-header": LocalJSX.CapacitorSiteHeader & JSXBase.HTMLAttributes<HTMLCapacitorSiteHeaderElement>;

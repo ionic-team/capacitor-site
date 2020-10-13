@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Host, Method, Prop, State, Watch, h } from '@stencil/core';
+import { Component, ComponentInterface, Event, EventEmitter, Host, Method, Prop, State, Watch, h } from '@stencil/core';
 import { SiteStructureItem } from '../../global/definitions';
 import { href } from 'stencil-router-v2';
 
@@ -13,6 +13,8 @@ import state from '../../store';
 export class SiteMenu implements ComponentInterface{
   version: string;
 
+  @Prop() template: 'guide' | 'reference' = 'guide';
+
   @Prop() siteStructureList: SiteStructureItem[] = [];
   @Prop({ mutable: true }) selectedParent: SiteStructureItem = null;
 
@@ -20,17 +22,29 @@ export class SiteMenu implements ComponentInterface{
 
   @State() showOverlay = false;
 
+  @Event() menuToggled: EventEmitter;
+
   async componentWillLoad() {
-    const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
-    this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
+    this.siteStructureListChange();
 
     // TODO pull this in from GitHub at build
-    this.version = '2.2.0';
+    this.version = '2.3.0';
   }
 
   @Method()
   async toggleOverlayMenu() {
     this.showOverlay = !this.showOverlay;
+  }
+
+  @Watch('showOverlay')
+  showOverlayChange() {
+    this.menuToggled.emit(this.showOverlay);
+  }
+
+  @Watch('siteStructureList')
+  siteStructureListChange() {
+    const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
+    this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
   }
 
   @Watch('selectedParent')
@@ -48,13 +62,11 @@ export class SiteMenu implements ComponentInterface{
       } else {
         this.closeList = [...this.closeList, itemNumber];
       }
-
-      console.log(e, this.closeList)
     }
   }
 
   render() {
-    const { version } = this;
+    const { template, version } = this;
 
     return (
       <Host
@@ -77,12 +89,20 @@ export class SiteMenu implements ComponentInterface{
                 docs
               </a>
               { version ?
-                <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
-                  v{version}
-                </a>
-                : null
-              }
+                  <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
+                    v{version}
+                  </a>
+                  : null
+               }
             </div>
+            <ul class="section-list">
+               <li>
+                 <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guides</a>
+               </li>
+               <li>
+                 <a {...href('/docs/apis')} class={{ 'active': template === 'reference' }}>Plugins</a>
+               </li>
+            </ul>
             <ul class="menu-list">
               { this.siteStructureList.map((item, i) => {
                 const active = item.url === Router.activePath;
@@ -133,7 +153,23 @@ export class SiteMenu implements ComponentInterface{
                   </li>
                 )
               }) }
+
+              {template === 'guide'
+              ? <li  class="docs-menu menu-footer" >
+                  <a {...href("/docs/apis")}>
+                    <span class="section-label">Plugins</span>
+                    <span class="arrow">-&gt;</span>
+                  </a>
+                </li>
+               : <li  class="menu-footer" >
+                  <a {...href("/docs")}>
+                    <span class="section-label">Guides</span>
+                    <span class="arrow">-&gt;</span>
+                  </a>
+                </li>}
+
             </ul>
+
           </div>
         </div>
       </Host>

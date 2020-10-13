@@ -1,2 +1,5 @@
 @use 'variables';
-@use '~prismjs/themes/prism-dark';
+
+.no-scroll {
+  overflow: hidden;
+}

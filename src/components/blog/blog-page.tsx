@@ -1,7 +1,7 @@
 import { Component, State, h } from '@stencil/core';
-import { Heading } from '@ionic-internal/sites-shared';
+import { Heading } from '@ionic-internal/ionic-ds';
 
-import { RenderedBlog } from '../../models';
+import { RenderedBlog } from '@ionic-internal/markdown-blog/src/models';
 import { BlogPost } from './blog-common';
 
 import posts from '../../assets/blog.json';

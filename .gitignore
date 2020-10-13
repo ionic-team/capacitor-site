@@ -3,6 +3,8 @@ node_modules/
 .DS_Store
 www/
 .env
-dist/docs.json
-src/assets/docs-content
-src/assets/docs-structure.json
+dist/
+src/assets/guide-content
+src/assets/reference-content
+src/assets/guide-structure.json
+src/assets/reference-structure.json

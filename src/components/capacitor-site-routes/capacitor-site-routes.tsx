@@ -29,6 +29,16 @@ export class CapacitorSiteRoutes {
 
       // Reset scroll position
       requestAnimationFrame(() => window.scrollTo(0, 0));
+
+      if (newValue.hash) {
+        const id = newValue.hash.slice(1);
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView && el.scrollIntoView();
+          }
+        }, 50);
+      }
     });
   }
 
@@ -64,16 +74,15 @@ export class CapacitorSiteRoutes {
             <document-component page="/docs" />
           </Route>
 
-          <Route path={match('/docs/:pageName*')} render={({ pageName }) => (
-            <document-component page={`/docs/${pageName}`} />
+          <Route path={match('/docs/:route*')} render={( opts ) => (
+            <document-component page={`/docs/${opts.route}`}/>
           )} />
 
-          <Route path={match('/solution/:solutionId*')} render={({ solutionId }) => (
-            <solution-page solutionId={`/solution/${solutionId}`} />
+          <Route path={match('/solution/:solutionId*')} render={({solutionId}) => (
+            <solution-page solutionId={solutionId} />
           )} />
         </Router.Switch>
       </Host>
     );
   }
-
 }

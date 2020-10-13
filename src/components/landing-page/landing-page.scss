@@ -22,14 +22,14 @@ section {
   &__background {
     position: absolute;
     bottom: 100px;
-    
+
     width: 1800px;
     height: 1800px;
     left: calc(calc((1800px - 100%) / -2) - 50px);
-    
+
     background: #F6F9FC;
     transform: rotate(29deg) skewX(-30deg);
-    
+
     z-index: -1;
   }
 
@@ -99,8 +99,6 @@ section {
   box-shadow: 0px 1px 4px rgba(0,0,0,.1);
 
   &__text {
-    display: inline-block;
-
     .text__content {
       padding: 0 8px;
     }
@@ -112,7 +110,7 @@ section {
     padding: 4px 6px;
     color: white;
     background: #FFB762;
-    border-radius: var(--radii-3);
+    border-radius: var(--radius-3);
     font-size: var(--f-size-0);
     font-weight: bold;
     text-transform: uppercase;
@@ -199,7 +197,7 @@ section {
       }
     }
   }
-  
+
   .ui-col {
     .ui-heading {
       font-size: 28px;
@@ -243,6 +241,21 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      a {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+    }
+    a {
+      transition: all .2s ease-in-out;
+      &:hover {
+      border-bottom-color: transparent;
+      text-decoration: none;
+    }
+
+    }
+
     img {
       height: 96px;
       mix-blend-mode: multiply;
@@ -301,6 +314,7 @@ section {
     display: flex;
     flex-direction: row;
     padding: 16px;
+    overflow-x: auto;
 
     &__button {
       cursor: pointer;
@@ -334,7 +348,7 @@ section {
   display: flex;
   align-items: center;
   letter-spacing: 0px;
-  
+
   a {
     color: #33ACFF;
   }
@@ -342,4 +356,62 @@ section {
 
 div.cordova-cta a:hover {
   text-decoration: none;
+}
+
+.whitepaperCta {
+  background: linear-gradient(90deg, #F1FAFF 0%, #B8E3FF 44.999%, #F2F8FD 45%);
+
+  .ui-container {
+    position: relative;
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: calc(45% - 520px);
+
+    @media (max-width: variables.$breakpoint-lg) {
+      left: calc(45% - 460px);
+    }
+  }
+
+  &__content {
+    padding-left: calc(45% + 80px);
+  }
+
+  .ui-heading {
+    margin-bottom: var(--space-6);
+    font-size: 28px;
+    letter-spacing: -0.02em;
+
+
+    span {
+      color: var(--c-carbon-40);
+    }
+  }
+
+  .ui-button {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .1em;
+  }
+
+  @media (max-width: variables.$breakpoint-md) {
+    background: linear-gradient(180deg, #F1FAFF 0%, #B8E3FF 44.999%, #F2F8FD 45%);
+    padding-top: 0;
+
+    &__content {
+      padding-left: 0;
+      padding-top: 260px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    img {
+      bottom: 55%;
+      left: calc(50% - 260px);
+    }
+  }
 }

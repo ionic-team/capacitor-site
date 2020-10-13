@@ -9,6 +9,7 @@ import { collectHeadingMetadata, changeCodeCreation, localizeMarkdownLink } from
 import frontMatter from 'front-matter';
 import fetch from 'node-fetch';
 import { SiteStructureItem, MarkdownContent } from '../src/global/definitions';
+import { SITE_FILES } from './common';
 
 require('dotenv').config();
 
@@ -16,72 +17,73 @@ const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const globAsync = promisify(glob);
 
-const DESTINATION_DIR = './src/assets/docs-content';
-const SOURCE_DIR = './docs-md';
-const SITE_STRUCTURE_FILE= './src/assets/docs-structure.json';
-
-
 (async function() {
-  const siteStructure = await readFile(SITE_STRUCTURE_FILE, { encoding: 'utf8' });
-  const siteStructureJson: SiteStructureItem[] = JSON.parse(siteStructure);
-  console.log(`running glob: ${SOURCE_DIR}/**/*.md`);
-  const files = await globAsync(`${SOURCE_DIR}/**/*.md`, {});
+  for (const SITE_FILE of SITE_FILES) {
+    const SOURCE_DIR = SITE_FILE.source;
+    const STRUCTURE_FILE = SITE_FILE.structure;
+    const ASSET_DIR = `src/${SITE_FILE.assets}`;
 
-  await rimraf(DESTINATION_DIR);
+    const siteStructure = await readFile(STRUCTURE_FILE, { encoding: 'utf8' });
+    const siteStructureJson: SiteStructureItem[] = JSON.parse(siteStructure);
+    console.log(`running glob: ${SOURCE_DIR}/**/*.md`);
+    const files = await globAsync(`${SOURCE_DIR}/**/*.md`, {});
 
-  const filePromises = files.map(async (filePath) => {
-    if (filePath === './docs-md/README.md') {
-      return Promise.resolve();
-    }
-    let htmlContents = '';
-    let markdownMetadata: MarkdownContent = {};
-    const jsonFileName = path.relative(SOURCE_DIR, filePath);
-    const destinationFileName = path.join(
-      DESTINATION_DIR,
-      path.dirname(jsonFileName),
-      path.basename(jsonFileName, '.md') + '.json'
-    );
-    markdownMetadata.headings = [];
+    await rimraf(ASSET_DIR);
 
-    const markdownContents = await readFile(filePath, { encoding: 'utf8' });
+    const filePromises = files.map(async (filePath) => {
+      if (filePath === `${SOURCE_DIR}/README.md`) {
+        return Promise.resolve();
+      }
+      let htmlContents = '';
+      let markdownMetadata: MarkdownContent = {};
+      const jsonFileName = path.relative(SOURCE_DIR, filePath);
+      const destinationFileName = path.join(
+        ASSET_DIR,
+        path.dirname(jsonFileName),
+        path.basename(jsonFileName, '.md') + '.json'
+      );
+      markdownMetadata.headings = [];
 
-    try {
-      let parsedMarkdown = frontMatter(markdownContents);
-      parsedMarkdown = await getGithubData(filePath, parsedMarkdown);
+      const markdownContents = await readFile(filePath, { encoding: 'utf8' });
 
-      const renderer = new marked.Renderer();
+      try {
+        let parsedMarkdown = frontMatter(markdownContents);
+        parsedMarkdown = await getGithubData(filePath, parsedMarkdown);
 
-      collectHeadingMetadata(renderer, markdownMetadata);
-      changeCodeCreation(renderer);
-      localizeMarkdownLink(renderer, destinationFileName.replace('src',''), siteStructureJson);
-      htmlContents = marked(parsedMarkdown.body, {
-        renderer,
-        headerIds: true
-      });
+        const renderer = new marked.Renderer();
 
-      await mkdirp(path.join(
-        DESTINATION_DIR,
-        path.dirname(jsonFileName)
-      ));
+        collectHeadingMetadata(renderer, markdownMetadata);
+        changeCodeCreation(renderer);
+        localizeMarkdownLink(renderer, destinationFileName.replace('src',''), siteStructureJson);
+        htmlContents = marked(parsedMarkdown.body, {
+          renderer,
+          headerIds: true
+        });
 
-      await writeFile(destinationFileName, JSON.stringify({
-        ...parsedMarkdown.attributes as any,
-        ...markdownMetadata,
-        srcPath: filePath,
-        content: htmlContents
-      }), {
-        encoding: 'utf8'
-      });
+        await mkdirp(path.join(
+          ASSET_DIR,
+          path.dirname(jsonFileName)
+        ));
 
-    } catch (e) {
-      console.error(filePath);
-      throw e;
-    }
-  });
+        await writeFile(destinationFileName, JSON.stringify({
+          ...parsedMarkdown.attributes as any,
+          ...markdownMetadata,
+          srcPath: filePath,
+          content: htmlContents
+        }), {
+          encoding: 'utf8'
+        });
 
-  await Promise.all(filePromises);
+      } catch (e) {
+        console.error(filePath);
+        throw e;
+      }
+    });
 
-  console.log(`successfully converted ${filePromises.length} files`);
+    await Promise.all(filePromises);
+
+    console.log(`successfully converted ${filePromises.length} files`);
+  }
 })();
 
 

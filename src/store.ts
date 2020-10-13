@@ -1,8 +1,9 @@
-import { createStore } from "@stencil/store";
+import { createStore } from '@stencil/store';
 
 export interface State {
   isLeftSidebarIn: boolean;
   showTopBar: boolean;
+  pageData: any;
   pageTheme: 'light' | 'dark';
   prismLanguagesLoaded: any;
 }
@@ -10,6 +11,7 @@ export interface State {
 const { state } = createStore({
   isLeftSidebarIn: false,
   showTopBar: true,
+  pageData: {},
   pageTheme: 'light',
   prismLanguagesLoaded: {
   }

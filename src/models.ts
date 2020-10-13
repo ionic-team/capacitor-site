@@ -9,19 +9,3 @@ export interface PrismicDocsResponse {
 export interface BlogPostDocument extends PrismicDocument {}
 
 export interface BlogPostsResponse extends PrismicDocsResponse {};
-
-export interface RenderedBlog {
-  title: string;
-  authorName: string;
-  authorEmail: string;
-  slug: string;
-  date: string;
-  contents: string;
-
-  // The actual rendered HTML (preview and body)
-  preview: string;
-  html: string;
-
-  // All frontmatter attrs just in casesies
-  meta?: any;
-}
