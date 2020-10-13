@@ -17,7 +17,7 @@ export async function getGithubData(repoRootDir: string, filePath: string) {
 
     const githubUrl = new URL(
       results.repoFilePath,
-      `https://github.com/ionic-team/capacitor-site/blob/master/`,
+      `https://github.com/ionic-team/capacitor-site/blob/main/`,
     );
     results.repoFileUrl = githubUrl.href;
 
