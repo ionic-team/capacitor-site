@@ -44,6 +44,11 @@ docs-search {
     cursor: pointer;
   }
 
+  .algolia-autocomplete {
+    appearance: textfield;
+    -webkit-appearance: textfield;
+  }
+
   .algolia-autocomplete[class^='algolia-autocomplete'] {
     flex: 1;
 
