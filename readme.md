@@ -23,7 +23,7 @@ The site will launch in development mode.
 ## Contributing
 
 Thanks for your interest in contributing! Read up on our guidelines for
-[contributing](https://github.com/ionic-team/capacitor-site/blob/master/.github/CONTRIBUTING.md)
+[contributing](https://github.com/ionic-team/capacitor-site/blob/master/CONTRIBUTING.md)
 and then look through our issues with a [docs](https://github.com/ionic-team/capacitor/issues?q=is%3Aopen+is%3Aissue+label%3Adocs)
 label.
 
