@@ -297,12 +297,13 @@ To do this, we need to modify the `Podfile`, which can be found in Xcode under `
 
 ![Podfile Location iOS](/assets/img/docs/guides/firebase-push-notifications/podfile-location-ios.png)
 
-We need to add Firebase to the CocoaPods provided for our App target. To do that, add `pod Firebase/Messaging` to your `target 'App'` section, like so:
+We need to add Firebase to the CocoaPods provided for our App target. To do that, add `pod 'FirebaseCore'` and `pod 'Firebase/Messaging'` to your `target 'App'` section, like so:
 
 ```ruby
 target 'App' do
 capacitor_pods
 # Add your Pods here
+pod 'FirebaseCore' # Add this line
 pod 'Firebase/Messaging' # Add this line
 end
 ```
@@ -329,6 +330,7 @@ end
 target 'App' do
   capacitor_pods
   # Add your Pods here
+  pod 'FirebaseCore'
   pod 'Firebase/Messaging'
 end
 ```
@@ -350,7 +352,7 @@ To connect to Firebase when your iOS app starts up, you need to add the followin
 First, add an `import` at the top of the file:
 
 ```swift
-import Firebase
+import FirebaseCore
 ```
 
 ... and then add the configuration method for Firebase to initialization code to your `AppDelegate.swift` file, in the `application(didFinishLaunchingWithOptions)` method.
@@ -364,7 +366,7 @@ Your completed `AppDelegate.swift` file should look something like this:
 ```swift
 import UIKit
 import Capacitor
-import Firebase
+import FirebaseCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -379,7 +381,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 ```
 
-If you would like to recieve the firebase FCM token from iOS instead of the raw APNS token, you will need to also change your `AppDelegate.didRegisterForRemoteNotificationsWithDeviceToken` code to look like this:
+If you would like to receive the Firebase FCM token from iOS instead of the raw APNS token, you will also need to add two new imports at the top of the file:
+```swift
+import FirebaseInstanceID // Add this line after import FirebaseCore
+import FirebaseMessaging
+```
+
+And change your `AppDelegate.didRegisterForRemoteNotificationsWithDeviceToken` code to look like this:
 
 ```swift
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
