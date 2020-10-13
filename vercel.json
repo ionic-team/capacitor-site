@@ -17,5 +17,16 @@
       "source": "/docs/pwa-elements", 
       "destination": "/docs/web/pwa-elements" 
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)/page.state.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=600"
+        }
+      ]
+    }
   ]
 }
