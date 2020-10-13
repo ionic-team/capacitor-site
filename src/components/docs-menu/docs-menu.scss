@@ -225,47 +225,43 @@ span {
   font-size: 14px;
 
   &.menu-footer {
-  padding-top: 20px !important;
-  padding-bottom: 20px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
 
-  border-top: 1px solid #dee3ea;
+    border-top: 1px solid #dee3ea;
 
-  background: var(--color-white);
-  color: #222d3a;
+    background: var(--color-white);
+    color: #222d3a;
 
-  a {
-    display: flex;
-    justify-content: space-between;
+    a {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .arrow {
+      letter-spacing: 0;
+
+      padding-left: 10px;
+    }
+
+    &:hover {
+      color: var(--color-grey-blue);
+    }
   }
-
-  .arrow {
-    letter-spacing: 0;
-
-    padding-left: 10px;
-  }
-
-  &:hover {
-    color: var(--color-grey-blue);
-  }
-}
-
 }
 
 .menu-list > li + li {
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 .menu-list a {
+  display: block;
   font-weight: 500;
   font-size: 13px;
   color: var(--color-grey-blue);
   text-decoration: none;
   border: 0;
   cursor: pointer;
-}
-
-.menu-list a:not(.link-active) {
-  // transition: color 0.2s;
 }
 
 .menu-list a:hover {
@@ -281,8 +277,6 @@ span {
     vertical-align: middle;
     margin-right: 8px;
   }
-  &.collapsed {
-  }
 }
 
 .menu-list .link-active {
@@ -295,9 +289,9 @@ span {
 }
 
 .menu-list ul li {
-  padding-left: 22px;
+  padding-left: 16px;
   transition: 80ms height;
-  height: 29px;
+  height: 30px;
   display: block;
   overflow: hidden;
 }
@@ -305,7 +299,9 @@ span {
 .menu-list ul li a {
   display: block;
   transition: 0.2s transform ease, 0.2s color ease;
-  margin-top: 4px;
+  margin-top: 3px;
+  border-radius: 4px;
+  padding-left: 10px;
 }
 
 .menu-list ul li:hover a {
@@ -314,8 +310,9 @@ span {
 
 .menu-list ul li a.link-active {
   color: #0091fa;
+  background: #f3faff;
 }
 
-.menu-list ul.collapsed li {
+.menu-list .collapsed li {
   height: 0;
 }

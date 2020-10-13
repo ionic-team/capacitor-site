@@ -13,7 +13,8 @@ Using CapacitorJS with NuxtJS is a perfect combination. NuxtJS allows you to dev
 
 Working with CapacitorJS, the power of native device features is there for you to integrate into your application. These features include GPS, Haptics, Camera, Filesystem, etc. When I structure a NuxtJS frontend, I like to design it in a way that allows me to re-use important modules through-out components, pages, and layouts.
 
-<!--more-->
+<preview-end />
+
 
 
 ## Making CapacitorJS Plugins Globally Availble

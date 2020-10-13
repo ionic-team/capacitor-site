@@ -21,7 +21,13 @@ in-page-navigation h5 {
   margin-bottom: 6px;
   font-weight: 600;
   color: #a0aec0;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
+}
+
+in-page-navigation h5 a {
+  color: #a0aec0;
+  text-decoration: none;
+  border: none !important;
 }
 
 in-page-navigation .heading-links {
@@ -50,7 +56,7 @@ in-page-navigation .heading-links a {
   border: none;
   text-decoration: none;
   border: none !important;
-  transition: .2s color ease;
+  transition: 0.2s color ease;
 }
 
 in-page-navigation .heading-links a:hover {
@@ -69,11 +75,11 @@ in-page-navigation .heading-links .heading-link.selected {
 }
 
 in-page-navigation li.heading-link {
-  padding: 0 11px;
+  padding: 2px 11px 6px;
   margin-top: 0;
   margin-left: 0;
   border-left: 2px solid transparent;
-  transition: .2s transform ease;
+  transition: 0.2s transform ease;
 }
 
 in-page-navigation li.heading-link.selected {
@@ -148,7 +154,6 @@ in-page-navigation .heading-links + .submit-edit-link {
   margin-top: 28px;
   border-bottom: none;
 }
-
 
 @media screen and (max-width: 1024px) {
   in-page-navigation {

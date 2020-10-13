@@ -9,8 +9,6 @@ import {
   AnchorButton,
 } from '@ionic-internal/ionic-ds';
 
-import { all as solutions } from '../../../data/solutions.json';
-
 import { SolutionAngular } from './solution-angular';
 import { SolutionReact } from './solution-react';
 import { SolutionPreact } from './solution-preact';
@@ -58,7 +56,7 @@ export class SolutionPage implements ComponentInterface {
             <Grid>
               <Col md={12} sm={12} xs={12} cols={12}>
                 <hgroup class="hero__heading">
-                  <img src={this.framework.logo} alt="React" class="react" />
+                  <img src={this.framework.logo} alt={this.framework.name} class="react" />
                   <Heading level={2}>
                     {this.framework.name} &amp; Capacitor
                   </Heading>
@@ -111,3 +109,13 @@ const MetaHead = ({ framework }) => {
     </Helmet>
   );
 };
+
+const solutions = [
+  { "id": "react",   "name": "React",   "theme": "#3DD3FF", "logo": "/assets/img/solutions/react.png" },
+  { "id": "vue",     "name": "Vue",     "theme": "#42b983", "logo": "/assets/img/solutions/vue.png" },
+  { "id": "preact",  "name": "Preact",  "theme": "#673ab8", "logo": "/assets/img/solutions/preact.png"  },
+  { "id": "angular", "name": "Angular", "theme": "#DD002E", "logo": "/assets/img/solutions/angular.png"  },
+  { "id": "svelte",  "name": "Svelte",  "theme": "#FF3D00", "logo": "/assets/img/solutions/svelte.png"  },
+  { "id": "stencil", "name": "Stencil", "theme": "#4c48ff", "logo": "/assets/img/solutions/stencil.png"  },
+  { "id": "ember",   "name": "Ember",   "theme": "#E04E39", "logo": "/assets/img/solutions/ember.png"  }
+]

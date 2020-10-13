@@ -4,7 +4,3 @@ node_modules/
 www/
 .env
 dist/
-src/assets/guide-content
-src/assets/reference-content
-src/assets/guide-structure.json
-src/assets/reference-structure.json

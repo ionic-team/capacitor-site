@@ -4,9 +4,9 @@ import { sass } from '@stencil/sass';
 import dotenvPlugin from 'rollup-plugin-dotenv';
 
 export const config: Config = {
-  taskQueue: 'async',
   devServer: {
     openBrowser: false,
+    logRequests: true,
   },
   outputTargets: [
     {
@@ -15,8 +15,11 @@ export const config: Config = {
       baseUrl: 'https://capacitorjs.com/',
       serviceWorker: null,
       copy: [
-        { src: '../node_modules/@ionic-internal/ionic-ds/www/assets/fonts', dest: 'assets/fonts' }
-      ]
+        {
+          src: '../node_modules/@ionic-internal/ionic-ds/www/assets/fonts',
+          dest: 'assets/fonts',
+        },
+      ],
     },
   ],
   plugins: [

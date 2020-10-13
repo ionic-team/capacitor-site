@@ -1,10 +1,9 @@
-
 import { Component, Prop, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'site-backdrop',
   styleUrl: 'site-backdrop.scss',
-  scoped: true
+  scoped: true,
 })
 export class SiteBackdrop {
   @Prop() visible = false;
@@ -14,7 +13,7 @@ export class SiteBackdrop {
       <Host
         tabindex="-1"
         class={{
-          'site-backdrop--visible': this.visible
+          'site-backdrop--visible': this.visible,
         }}
       />
     );

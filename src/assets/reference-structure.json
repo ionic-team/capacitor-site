@@ -1,0 +1,140 @@
+[
+  {
+    "text": "CLI Reference",
+    "filePath": "/assets/reference-content/cli/index.json",
+    "parent": true,
+    "url": "/docs/reference/cli"
+  },
+  {
+    "text": "Configuration",
+    "filePath": "/assets/reference-content/config/index.json",
+    "parent": true,
+    "url": "/docs/reference/config"
+  },
+  {
+    "text": "Plugin APIs",
+    "parent": true,
+    "children": [
+      {
+        "text": "Introduction",
+        "filePath": "/assets/reference-content/apis/index.json",
+        "url": "/docs/apis"
+      },
+      {
+        "text": "Accessibility",
+        "filePath": "/assets/reference-content/apis/accessibility/index.json",
+        "url": "/docs/apis/accessibility"
+      },
+      {
+        "text": "App",
+        "filePath": "/assets/reference-content/apis/app/index.json",
+        "url": "/docs/apis/app"
+      },
+      {
+        "text": "Background Task",
+        "filePath": "/assets/reference-content/apis/background-task/index.json",
+        "url": "/docs/apis/background-task"
+      },
+      {
+        "text": "Browser",
+        "filePath": "/assets/reference-content/apis/browser/index.json",
+        "url": "/docs/apis/browser"
+      },
+      {
+        "text": "Camera",
+        "filePath": "/assets/reference-content/apis/camera/index.json",
+        "url": "/docs/apis/camera"
+      },
+      {
+        "text": "Clipboard",
+        "filePath": "/assets/reference-content/apis/clipboard/index.json",
+        "url": "/docs/apis/clipboard"
+      },
+      {
+        "text": "Console",
+        "filePath": "/assets/reference-content/apis/console/index.json",
+        "url": "/docs/apis/console"
+      },
+      {
+        "text": "Device",
+        "filePath": "/assets/reference-content/apis/device/index.json",
+        "url": "/docs/apis/device"
+      },
+      {
+        "text": "Filesystem",
+        "filePath": "/assets/reference-content/apis/filesystem/index.json",
+        "url": "/docs/apis/filesystem"
+      },
+      {
+        "text": "Geolocation",
+        "filePath": "/assets/reference-content/apis/geolocation/index.json",
+        "url": "/docs/apis/geolocation"
+      },
+      {
+        "text": "Haptics",
+        "filePath": "/assets/reference-content/apis/haptics/index.json",
+        "url": "/docs/apis/haptics"
+      },
+      {
+        "text": "Keyboard",
+        "filePath": "/assets/reference-content/apis/keyboard/index.json",
+        "url": "/docs/apis/keyboard"
+      },
+      {
+        "text": "Local Notifications",
+        "filePath": "/assets/reference-content/apis/local-notifications/index.json",
+        "url": "/docs/apis/local-notifications"
+      },
+      {
+        "text": "Modals",
+        "filePath": "/assets/reference-content/apis/modals/index.json",
+        "url": "/docs/apis/modals"
+      },
+      {
+        "text": "Motion",
+        "filePath": "/assets/reference-content/apis/motion/index.json",
+        "url": "/docs/apis/motion"
+      },
+      {
+        "text": "Network",
+        "filePath": "/assets/reference-content/apis/network/index.json",
+        "url": "/docs/apis/network"
+      },
+      {
+        "text": "Permissions",
+        "filePath": "/assets/reference-content/apis/permissions/index.json",
+        "url": "/docs/apis/permissions"
+      },
+      {
+        "text": "Push Notifications",
+        "filePath": "/assets/reference-content/apis/push-notifications/index.json",
+        "url": "/docs/apis/push-notifications"
+      },
+      {
+        "text": "Share",
+        "filePath": "/assets/reference-content/apis/share/index.json",
+        "url": "/docs/apis/share"
+      },
+      {
+        "text": "Splash Screen",
+        "filePath": "/assets/reference-content/apis/splash-screen/index.json",
+        "url": "/docs/apis/splash-screen"
+      },
+      {
+        "text": "Status Bar",
+        "filePath": "/assets/reference-content/apis/status-bar/index.json",
+        "url": "/docs/apis/status-bar"
+      },
+      {
+        "text": "Storage",
+        "filePath": "/assets/reference-content/apis/storage/index.json",
+        "url": "/docs/apis/storage"
+      },
+      {
+        "text": "Toast",
+        "filePath": "/assets/reference-content/apis/toast/index.json",
+        "url": "/docs/apis/toast"
+      }
+    ]
+  }
+]

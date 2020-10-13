@@ -1,4 +1,44 @@
-lower-content-nav {
-    display: block;
-    overflow: hidden;
+:host {
+  display: block;
+  overflow: hidden;
+  border-color: #ddd;
+  border-style: solid;
+  border-width: 1px 0px 0px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  padding: 12px 0;
+}
+
+a {
+  border: 0;
+}
+
+a:hover {
+  text-decoration: none;
+  border: 0;
+  opacity: 0.7;
+}
+
+.nav-previous {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.nav-next {
+  text-align: right;
+  margin-left: auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.direction {
+  font-size: 12px;
+  color: #98a2ad;
+  padding-bottom: 4px;
+}
+
+svg {
+  display: inline-block;
+  width: 12px;
+  fill: var(--c-ionic-brand);
 }

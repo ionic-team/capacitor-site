@@ -1,4 +1,13 @@
-import { State, Component, ComponentInterface, Element, Prop, Host, h, Listen } from '@stencil/core';
+import {
+  State,
+  Component,
+  ComponentInterface,
+  Element,
+  Prop,
+  Host,
+  h,
+  Listen,
+} from '@stencil/core';
 import { importResource } from '../../utils/common';
 
 declare global {
@@ -9,30 +18,31 @@ declare global {
 
 @Component({
   tag: 'docs-search',
-  styleUrl: 'docs-search.scss'
+  styleUrl: 'docs-search.scss',
 })
 export class DocsSearch implements ComponentInterface {
   @Element() el: HTMLElement;
   @Prop() placeholder = 'Search';
   @State() searchLeft: number = 0;
   @State() input: {
-    el?: HTMLInputElement,
-    isPristine: boolean,
-    isEmpty: boolean }
-  = {
+    el?: HTMLInputElement;
+    isPristine: boolean;
+    isEmpty: boolean;
+  } = {
     isPristine: true,
-    isEmpty: true
-  }
+    isEmpty: true,
+  };
 
   private uniqueId = Math.random().toString().replace('.', '');
   private algoliaCdn = {
     js: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
-    css: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
-  }  
+    css:
+      'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css',
+  };
 
   componentWillLoad() {
     const linkEls = document.head.querySelectorAll('link');
-    
+
     const hasAlgoliaCss = Array.from(linkEls).some(link => {
       return link.href === this.algoliaCdn.css;
     });
@@ -42,14 +52,14 @@ export class DocsSearch implements ComponentInterface {
       link.rel = 'stylesheet';
       link.href = this.algoliaCdn.css;
       document.head.append(link);
-    }    
+    }
   }
 
   componentDidLoad() {
     importResource(
       { propertyName: 'docsearch', link: this.algoliaCdn.js },
       () => this.setupSearch(),
-    )
+    );
   }
 
   @Listen('resize', { target: 'window' })
@@ -58,14 +68,14 @@ export class DocsSearch implements ComponentInterface {
       const widths = {
         body: document.body.offsetWidth,
         search: 600,
-      }
+      };
       const searchBarLeft = this.input.el?.getBoundingClientRect()?.left;
-      
+
       this.searchLeft = (widths.body - searchBarLeft) / 2 - widths.search + 64;
     });
   }
 
-  setupSearch(){
+  setupSearch() {
     window.docsearch({
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
       indexName: `capacitorjs`,
@@ -76,16 +86,16 @@ export class DocsSearch implements ComponentInterface {
           this.input.isPristine = false;
 
           this.input.el = this.el.querySelector(
-            `#id-${this.uniqueId} input[name="search"]`
+            `#id-${this.uniqueId} input[name="search"]`,
           ) as HTMLInputElement;
-      
+
           this.input.el.oninput = () => this.handleInput();
-          
+
           this.handleInput();
           this.handleResize();
         }
-      }
-    });    
+      },
+    });
   }
 
   handleInput() {
@@ -101,7 +111,6 @@ export class DocsSearch implements ComponentInterface {
     }
   }
 
-
   render() {
     const { placeholder } = this;
 
@@ -109,7 +118,7 @@ export class DocsSearch implements ComponentInterface {
       <Host
         id={`id-${this.uniqueId}`}
         style={{
-          '--search-left': this.searchLeft.toString().concat('px')
+          '--search-left': this.searchLeft.toString().concat('px'),
         }}
       >
         <ion-icon class="search" icon="search" />
@@ -124,7 +133,7 @@ export class DocsSearch implements ComponentInterface {
         />
         <ion-icon
           style={{
-            display: this.input.isEmpty ? 'none' : 'block'
+            display: this.input.isEmpty ? 'none' : 'block',
           }}
           class="close"
           icon="close"
@@ -133,7 +142,7 @@ export class DocsSearch implements ComponentInterface {
             this.input = {
               ...this.input,
               isEmpty: true,
-            }
+            };
           }}
         />
         <site-backdrop
@@ -143,8 +152,8 @@ export class DocsSearch implements ComponentInterface {
             this.input = {
               ...this.input,
               isEmpty: true,
-            }
-          }}  
+            };
+          }}
         />
       </Host>
     );

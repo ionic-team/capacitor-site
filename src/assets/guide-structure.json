@@ -1,0 +1,313 @@
+[
+  {
+    "text": "Introduction",
+    "filePath": "/assets/guide-content/index.json",
+    "parent": true,
+    "url": "/docs"
+  },
+  {
+    "text": "Getting Started",
+    "parent": true,
+    "children": [
+      {
+        "text": "Required Dependencies",
+        "filePath": "/assets/guide-content/getting-started/dependencies.json",
+        "url": "/docs/getting-started/dependencies"
+      },
+      {
+        "text": "Installation",
+        "filePath": "/assets/guide-content/getting-started/index.json",
+        "url": "/docs/getting-started"
+      },
+      {
+        "text": "Using with Ionic",
+        "filePath": "/assets/guide-content/getting-started/with-ionic.json",
+        "url": "/docs/getting-started/with-ionic"
+      }
+    ]
+  },
+  {
+    "text": "Basics",
+    "parent": true,
+    "children": [
+      {
+        "text": "Development Workflow",
+        "filePath": "/assets/guide-content/basics/workflow.json",
+        "url": "/docs/basics/workflow"
+      },
+      {
+        "text": "Opening Native IDE",
+        "filePath": "/assets/guide-content/basics/opening-native-projects.json",
+        "url": "/docs/basics/opening-native-projects"
+      },
+      {
+        "text": "Building your App",
+        "filePath": "/assets/guide-content/basics/building-your-app.json",
+        "url": "/docs/basics/building-your-app"
+      },
+      {
+        "text": "Running your App",
+        "filePath": "/assets/guide-content/basics/running-your-app.json",
+        "url": "/docs/basics/running-your-app"
+      },
+      {
+        "text": "Using Plugins",
+        "filePath": "/assets/guide-content/basics/using-plugins.json",
+        "url": "/docs/basics/using-plugins"
+      },
+      {
+        "text": "Native Project Configuration",
+        "filePath": "/assets/guide-content/basics/configuring-your-app.json",
+        "url": "/docs/basics/configuring-your-app"
+      },
+      {
+        "text": "Progressive Web Apps",
+        "filePath": "/assets/guide-content/basics/progressive-web-app.json",
+        "url": "/docs/basics/progressive-web-app"
+      },
+      {
+        "text": "Utilities",
+        "filePath": "/assets/guide-content/basics/utilities.json",
+        "url": "/docs/basics/utilities"
+      }
+    ]
+  },
+  {
+    "text": "Cordova/PhoneGap",
+    "parent": true,
+    "children": [
+      {
+        "text": "Introduction",
+        "filePath": "/assets/guide-content/cordova/index.json",
+        "url": "/docs/cordova"
+      },
+      {
+        "text": "Migration Strategy",
+        "filePath": "/assets/guide-content/cordova/migration-strategy.json",
+        "url": "/docs/cordova/migration-strategy"
+      },
+      {
+        "text": "Cordova to Capacitor Migration",
+        "filePath": "/assets/guide-content/cordova/migrating-from-cordova-to-capacitor.json",
+        "url": "/docs/cordova/migrating-from-cordova-to-capacitor"
+      },
+      {
+        "text": "Cordova/Ionic Native Plugins",
+        "filePath": "/assets/guide-content/cordova/using-cordova-plugins.json",
+        "url": "/docs/cordova/using-cordova-plugins"
+      },
+      {
+        "text": "Known Incompatible Plugins",
+        "filePath": "/assets/guide-content/cordova/known-incompatible-plugins.json",
+        "url": "/docs/cordova/known-incompatible-plugins"
+      }
+    ]
+  },
+  {
+    "text": "Concepts",
+    "parent": true,
+    "children": [
+      {
+        "text": "Ads",
+        "filePath": "/assets/guide-content/guides/ads.json",
+        "url": "/docs/guides/ads"
+      },
+      {
+        "text": "CI/CD",
+        "filePath": "/assets/guide-content/guides/ci-cd.json",
+        "url": "/docs/guides/ci-cd"
+      },
+      {
+        "text": "Deep Links",
+        "filePath": "/assets/guide-content/guides/deep-links.json",
+        "url": "/docs/guides/deep-links"
+      },
+      {
+        "text": "Deploying and Updating",
+        "filePath": "/assets/guide-content/guides/deploying.json",
+        "url": "/docs/guides/deploying-updates"
+      },
+      {
+        "text": "In App Purchases",
+        "filePath": "/assets/guide-content/guides/in-app-purchases.json",
+        "url": "/docs/guides/in-app-purchases"
+      },
+      {
+        "text": "Live Reload",
+        "filePath": "/assets/guide-content/guides/live-reload.json",
+        "url": "/docs/guides/live-reload"
+      },
+      {
+        "text": "Push Notifications - Firebase",
+        "filePath": "/assets/guide-content/guides/push-notifications-firebase.json",
+        "url": "/docs/guides/push-notifications-firebase"
+      },
+      {
+        "text": "React Hooks",
+        "filePath": "/assets/guide-content/guides/react-hooks.json",
+        "url": "/docs/guides/react-hooks"
+      },
+      {
+        "text": "Screen Orientation",
+        "filePath": "/assets/guide-content/guides/screen-orientation.json",
+        "url": "/docs/guides/screen-orientation"
+      },
+      {
+        "text": "Security",
+        "filePath": "/assets/guide-content/guides/security.json",
+        "url": "/docs/guides/security"
+      },
+      {
+        "text": "Splash Screens and Icons",
+        "filePath": "/assets/guide-content/guides/splash-screens-and-icons.json",
+        "url": "/docs/guides/splash-screens-and-icons"
+      },
+      {
+        "text": "Storage",
+        "filePath": "/assets/guide-content/guides/storage.json",
+        "url": "/docs/guides/storage"
+      },
+      {
+        "text": "Community Guides",
+        "filePath": "/assets/guide-content/guides/community.json",
+        "url": "/docs/guides/community"
+      }
+    ]
+  },
+  {
+    "text": "iOS",
+    "parent": true,
+    "children": [
+      {
+        "text": "Getting Started",
+        "filePath": "/assets/guide-content/ios/index.json",
+        "url": "/docs/ios"
+      },
+      {
+        "text": "Configuration",
+        "filePath": "/assets/guide-content/ios/configuration.json",
+        "url": "/docs/ios/configuration"
+      },
+      {
+        "text": "Updating",
+        "filePath": "/assets/guide-content/ios/updating.json",
+        "url": "/docs/ios/updating"
+      },
+      {
+        "text": "Custom Native Code",
+        "filePath": "/assets/guide-content/ios/custom-code.json",
+        "url": "/docs/ios/custom-code"
+      },
+      {
+        "text": "Deploying to App Store",
+        "filePath": "/assets/guide-content/ios/deploying-to-app-store.json",
+        "url": "/docs/ios/deploying-to-app-store"
+      },
+      {
+        "text": "Troubleshooting",
+        "filePath": "/assets/guide-content/ios/troubleshooting.json",
+        "url": "/docs/ios/troubleshooting"
+      }
+    ]
+  },
+  {
+    "text": "Android",
+    "parent": true,
+    "children": [
+      {
+        "text": "Getting Started",
+        "filePath": "/assets/guide-content/android/index.json",
+        "url": "/docs/android"
+      },
+      {
+        "text": "Configuration",
+        "filePath": "/assets/guide-content/android/configuration.json",
+        "url": "/docs/android/configuration"
+      },
+      {
+        "text": "Updating",
+        "filePath": "/assets/guide-content/android/updating.json",
+        "url": "/docs/android/updating"
+      },
+      {
+        "text": "Custom Native Code",
+        "filePath": "/assets/guide-content/android/custom-code.json",
+        "url": "/docs/android/custom-code"
+      },
+      {
+        "text": "Deploying to Google Play",
+        "filePath": "/assets/guide-content/android/deploying-to-google-play.json",
+        "url": "/docs/android/deploying-to-google-play"
+      },
+      {
+        "text": "Troubleshooting",
+        "filePath": "/assets/guide-content/android/troubleshooting.json",
+        "url": "/docs/android/troubleshooting"
+      }
+    ]
+  },
+  {
+    "text": "Web/PWA",
+    "parent": true,
+    "children": [
+      {
+        "text": "Getting Started",
+        "filePath": "/assets/guide-content/web/index.json",
+        "url": "/docs/web"
+      },
+      {
+        "text": "PWA Elements",
+        "filePath": "/assets/guide-content/web/pwa-elements.json",
+        "url": "/docs/pwa-elements"
+      }
+    ]
+  },
+  {
+    "text": "Community Plugins",
+    "filePath": "/assets/guide-content/community/index.json",
+    "parent": true,
+    "url": "/docs/community"
+  },
+  {
+    "text": "Enterprise Plugins",
+    "filePath": "/assets/guide-content/enterprise/index.json",
+    "parent": true,
+    "url": "/docs/enterprise"
+  },
+  {
+    "text": "Creating Plugins",
+    "parent": true,
+    "children": [
+      {
+        "text": "Introduction",
+        "filePath": "/assets/guide-content/plugins/index.json",
+        "url": "/docs/plugins"
+      },
+      {
+        "text": "Development Workflow",
+        "filePath": "/assets/guide-content/plugins/workflow.json",
+        "url": "/docs/plugins/workflow"
+      },
+      {
+        "text": "iOS Guide",
+        "filePath": "/assets/guide-content/plugins/ios.json",
+        "url": "/docs/plugins/ios"
+      },
+      {
+        "text": "Android Guide",
+        "filePath": "/assets/guide-content/plugins/android.json",
+        "url": "/docs/plugins/android"
+      },
+      {
+        "text": "Web/PWA Guide",
+        "filePath": "/assets/guide-content/plugins/web.json",
+        "url": "/docs/plugins/web"
+      },
+      {
+        "text": "JavaScript Guide",
+        "filePath": "/assets/guide-content/plugins/js.json",
+        "url": "/docs/plugins/js"
+      }
+    ]
+  }
+]

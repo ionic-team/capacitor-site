@@ -19,7 +19,7 @@ export class HubspotForm {
 
   scriptEl?: HTMLScriptElement;
 
-  componentDidUnload() {
+  disconnectedCallback() {
     this.scriptEl?.parentNode?.removeChild(this.scriptEl);
   }
 

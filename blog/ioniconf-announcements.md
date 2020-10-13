@@ -17,7 +17,7 @@ In no particular order, we announced:
 * [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)
 * [Updated site and domain]($POST#updated-site-domain-and-docs)
 
-<!--more-->
+<preview-end />
 
 The conference kicks off a new era for Capacitor and for [Ionic](https://ionic.io/), the company behind Capacitor.
 

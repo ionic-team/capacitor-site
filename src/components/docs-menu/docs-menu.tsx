@@ -1,35 +1,40 @@
-import { Component, ComponentInterface, Event, EventEmitter, Host, Method, Prop, State, Watch, h } from '@stencil/core';
-import { SiteStructureItem } from '../../global/definitions';
-import { href } from 'stencil-router-v2';
-
-import Router from '../../router';
+import {
+  Component,
+  ComponentInterface,
+  Event,
+  EventEmitter,
+  Host,
+  Method,
+  Prop,
+  State,
+  Watch,
+  h,
+} from '@stencil/core';
+import { href } from '../../stencil-router-v2';
+import type { TableOfContents } from '@stencil/ssg';
+import { docsVersionHref } from '../../router';
 import state from '../../store';
+import type { DocsTemplate } from '../../data.server/docs';
 
 @Component({
   tag: 'docs-menu',
   styleUrl: 'docs-menu.scss',
-  scoped: true
+  scoped: true,
 })
-export class SiteMenu implements ComponentInterface{
-  version: string;
+export class SiteMenu implements ComponentInterface {
+  @Prop() template: DocsTemplate;
+  @Prop() toc: TableOfContents;
+  @Prop() activePath: string;
 
-  @Prop() template: 'guide' | 'reference' = 'guide';
-
-  @Prop() siteStructureList: SiteStructureItem[] = [];
-  @Prop({ mutable: true }) selectedParent: SiteStructureItem = null;
-
-  @State() closeList = [];
+  @State() expands: { [key: string]: number[] } = {
+    guide: [],
+    plugins: [2],
+    reference: [],
+  };
 
   @State() showOverlay = false;
 
   @Event() menuToggled: EventEmitter;
-
-  async componentWillLoad() {
-    this.siteStructureListChange();
-
-    // TODO pull this in from GitHub at build
-    this.version = '2.3.0';
-  }
 
   @Method()
   async toggleOverlayMenu() {
@@ -41,137 +46,186 @@ export class SiteMenu implements ComponentInterface{
     this.menuToggled.emit(this.showOverlay);
   }
 
-  @Watch('siteStructureList')
-  siteStructureListChange() {
-    const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
-    this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
+  componentWillLoad() {
+    this.expandActive();
   }
 
-  @Watch('selectedParent')
-  selectedParentChange() {
-    const parentIndex = this.siteStructureList.findIndex(item => item === this.selectedParent);
-    this.closeList = this.siteStructureList.map((_item, i) => i).filter(i => i !== parentIndex);
-  }
-
-  toggleParent = (itemNumber) => {
-    return (e: MouseEvent) => {
-      e.preventDefault();
-      if (this.closeList.indexOf(itemNumber) !== -1) {
-        this.closeList.splice(this.closeList.indexOf(itemNumber), 1)
-        this.closeList = [...this.closeList];
-      } else {
-        this.closeList = [...this.closeList, itemNumber];
+  @Watch('template')
+  @Watch('activePath')
+  expandActive() {
+    if (this.toc?.root) {
+      const activeIndex = this.toc.root.findIndex(
+        t => t.children && t.children.some(c => c.url === this.activePath),
+      );
+      if (
+        activeIndex > -1 &&
+        !this.expands[this.template].includes(activeIndex)
+      ) {
+        this.expands = {
+          ...this.expands,
+          [this.template]: [...this.expands[this.template], activeIndex],
+        };
       }
     }
   }
 
-  render() {
-    const { template, version } = this;
+  toggleParent = (itemNumber: number) => {
+    return (e: MouseEvent) => {
+      e.preventDefault();
 
+      if (this.expands[this.template].includes(itemNumber)) {
+        this.expands[this.template].splice(
+          this.expands[this.template].indexOf(itemNumber),
+          1,
+        );
+      } else {
+        this.expands[this.template] = [
+          ...this.expands[this.template],
+          itemNumber,
+        ];
+      }
+      this.expands = { ...this.expands };
+    };
+  };
+
+  render() {
     return (
       <Host
         class={{
-          'menu-overlay-visible': this.showOverlay
+          'menu-overlay-visible': this.showOverlay,
         }}
       >
-        <div class="sticky">
+        <aside class="sticky">
           <div>
             <div class="menu-header">
               <app-menu-toggle icon="close" />
               <a {...href('/')} class="menu-header__logo-link">
                 {state.pageTheme === 'dark' ? (
-                  <img src="/assets/img/heading/logo-white.png" alt="Capacitor Logo" />
+                  <img
+                    src="/assets/img/heading/logo-white.png"
+                    alt="Capacitor Logo"
+                  />
                 ) : (
-                  <img src="/assets/img/heading/logo-black.png" alt="Capacitor Logo" />
+                  <img
+                    src="/assets/img/heading/logo-black.png"
+                    alt="Capacitor Logo"
+                  />
                 )}
               </a>
-              <a {...href('/docs')} class="menu-header__docs-link">
-                docs
+              <a
+                {...href(docsVersionHref('/docs'))}
+                class="menu-header__docs-link"
+              >
+                Docs
               </a>
-              { version ?
-                  <a href={`https://github.com/ionic-team/capacitor/releases/tag/${version}`} rel="noopener" target="_blank" class="menu-header__version-link">
-                    v{version}
-                  </a>
-                  : null
-               }
+              {/* <version-select /> */}
             </div>
             <ul class="section-list">
-               <li>
-                 <a {...href('/docs')} class={{ 'active': template === 'guide' }}>Guides</a>
-               </li>
-               <li>
-                 <a {...href('/docs/apis')} class={{ 'active': template === 'reference' }}>Plugins</a>
-               </li>
+              <li>
+                <a
+                  {...href(docsVersionHref('/docs'))}
+                  class={{ active: this.template === 'guide' }}
+                >
+                  Guides
+                </a>
+              </li>
+              <li>
+                <a
+                  {...href(docsVersionHref('/docs/plugins'))}
+                  class={{ active: this.template === 'plugins' }}
+                >
+                  Plugins
+                </a>
+              </li>
+              <li>
+                <a
+                  {...href(docsVersionHref('/docs/reference/cli'))}
+                  class={{ active: this.template === 'reference' }}
+                >
+                  CLI
+                </a>
+              </li>
             </ul>
             <ul class="menu-list">
-              { this.siteStructureList.map((item, i) => {
-                const active = item.url === Router.activePath;
-                const collapsed = this.closeList.indexOf(i) !== -1;
+              {this.toc?.root.map((item, i) => {
+                const isActive = item.url === this.activePath;
+                const expanded = this.expands[this.template].includes(i);
 
-                if (item.children) {
+                if (item.children && item.children.length > 0) {
                   return (
-                    <li>
-                      <a href="#" onClick={this.toggleParent(i)} class={{ collapsed }}>
-                        { collapsed ? <ion-icon name="chevron-forward" /> : <ion-icon name="chevron-down" /> }
-                        <span class="section-label">
-                          {item.text}
-                        </span>
+                    <li class={{ collapsed: !expanded }}>
+                      <a
+                        href={
+                          /* href only for no-js, otherwise it'll toggle w/out navigating */
+                          item.children[0].url
+                        }
+                        onClick={this.toggleParent(i)}
+                      >
+                        <ion-icon
+                          name={expanded ? 'chevron-down' : 'chevron-forward'}
+                        />
+                        <span class="section-label">{item.text}</span>
                       </a>
-                      <ul class={{ collapsed }}>
-                      { item.children.map((childItem) => {
-                        return (
-                        <li>
-                          { (childItem.url) ?
-                          <a {...href(childItem.url)} class={{'link-active': childItem.url === Router.activePath}}>
-                            {childItem.text}
-                          </a> :
-                          <a rel="noopener" class="link--external" target="_blank" href={childItem.filePath}>
-                            {childItem.text}
-                          </a> }
-                        </li>
-                        )
-                      }) }
+                      <ul>
+                        {item.children.map(childItem => {
+                          return (
+                            <li>
+                              {childItem.url ? (
+                                <a
+                                  {...href(childItem.url)}
+                                  class={{
+                                    'link-active':
+                                      childItem.url === this.activePath,
+                                  }}
+                                >
+                                  {childItem.text}
+                                </a>
+                              ) : (
+                                <a
+                                  rel="noopener"
+                                  class="link--external"
+                                  target="_blank"
+                                  href="#"
+                                >
+                                  {childItem.text}
+                                </a>
+                              )}
+                            </li>
+                          );
+                        })}
                       </ul>
                     </li>
-                  )
+                  );
                 }
 
                 return (
                   <li>
-                    { (item.url) ?
-                    <a {...href(item.url)} class={{
-                      "section-active": active
-                    }}>
-                      <span class="section-active-indicator" />
-                      <span class="section-label">
+                    {item.url ? (
+                      <a
+                        {...href(item.url)}
+                        class={{
+                          'section-active': isActive,
+                        }}
+                      >
+                        <span class="section-active-indicator" />
+                        <span class="section-label">{item.text}</span>
+                      </a>
+                    ) : (
+                      <a
+                        rel="noopener"
+                        class="link--external"
+                        target="_blank"
+                        href="#"
+                      >
                         {item.text}
-                      </span>
-                    </a>:
-                    <a rel="noopener" class="link--external" target="_blank" href={item.filePath}>
-                      {item.text}
-                    </a> }
+                      </a>
+                    )}
                   </li>
-                )
-              }) }
-
-              {template === 'guide'
-              ? <li  class="docs-menu menu-footer" >
-                  <a {...href("/docs/apis")}>
-                    <span class="section-label">Plugins</span>
-                    <span class="arrow">-&gt;</span>
-                  </a>
-                </li>
-               : <li  class="menu-footer" >
-                  <a {...href("/docs")}>
-                    <span class="section-label">Guides</span>
-                    <span class="arrow">-&gt;</span>
-                  </a>
-                </li>}
-
+                );
+              })}
             </ul>
-
           </div>
-        </div>
+        </aside>
       </Host>
     );
   }

@@ -46,7 +46,9 @@
     border: 0;
 
     img {
+      object-fit: contain;
       height: 24px;
+      width: auto;
     }
   }
 

@@ -17,7 +17,7 @@ The net effect is that it’s not possible to take, say, a Material-UI React web
 
 To do that, we need to take a look at [Capacitor](https://capacitorjs.com/) -- a native runtime for cross-platform web apps, including any and all React web apps.
 
-<!--more-->
+<preview-end />
 
 ## Capacitor: Native Runtime for Web Apps
 

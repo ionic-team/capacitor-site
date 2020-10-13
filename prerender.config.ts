@@ -1,15 +1,16 @@
 import { PrerenderConfig } from '@stencil/core';
 
-const fs = require('fs');
- 
-const solutions = JSON.parse(fs.readFileSync('./data/solutions.json', 'utf-8'));
-
-console.log('Rendering', solutions.all.length, 'urls');
-
-const getEntryUrls = (solutions) => {
-  return solutions.map(s => `/solution/${s.id}`);
-}
-
 export const config: PrerenderConfig = {
-  entryUrls: getEntryUrls(solutions.all)
-}
+  hydrateOptions() {
+    return {
+      timeout: 30000,
+    };
+  },
+  filterUrl(url) {
+    if (url.pathname === '/docs/pwa-elements' || url.pathname === '/docs/v3/pwa-elements' || url.pathname === '/docs/v2/pwa-elements') {
+      // gets a redirect in prod  
+      return false;
+    }
+    return true;
+  }
+};

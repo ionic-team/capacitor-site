@@ -1,61 +1,81 @@
 import { h } from '@stencil/core';
-import { href } from 'stencil-router-v2';
+import { href } from '../../stencil-router-v2';
 import { Heading, DateTime } from '@ionic-internal/ionic-ds';
-import { RenderedBlog } from '@ionic-internal/markdown-blog/src/models';
 import parseISO from 'date-fns/parseISO';
+import { BlogData } from '../../data.server/blog';
 
-import Router from '../../router';
+import { RenderJsxAst } from '@stencil/ssg';
 
 
 
-const getBlogPostPath = (doc: RenderedBlog) => `/blog/${doc.slug}`;
+const getBlogPostPath = (data: BlogData) => `/blog/${data.slug}`;
 // const getAbsoluteBlogPostUrl = (doc: RenderedBlog) => `https://capacitorjs.com${getBlogPostPath(doc)}`;
 
-export const BlogPost = ({ post, single = true }: { post: RenderedBlog, single?: boolean }) => {
-  const content = single ?
-                    post.html :
-                    post.preview || post.html;
+export const BlogPost = ({ data, single = true }: { data: BlogData, single?: boolean }) => {
 
   return (
     <div class="blog-post__wrap">
-      <div class="blog-post">
-        <Heading level={2}><a href={getBlogPostPath(post)}>{post.title}</a></Heading>
-        <PostAuthor authorName={post.authorName} authorUrl={post.authorUrl} dateString={post.date} />
+      <article class="blog-post">
+        <Heading level={1} class="ui-heading-2"><a {...href(getBlogPostPath(data))}>{data.title}</a></Heading>
+        <PostAuthor authorName={data.authorName} authorUrl={data.authorUrl} dateISO={data.date} />
 
-        {post.featuredImage && <PostFeaturedImage post={post} />}
+        {data.featuredImage && <PostFeaturedImage data={data} />}
 
-        <PostContent html={content} />
+        <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />
 
-        {!single && post.preview ? <PostContinueReading post={post} /> : null}
+        {!single && data.preview ? <PostContinueReading data={data} /> : null}
 
         {/*
         {single && <disqus-comments url={getAbsoluteBlogPostUrl(post)} siteId='capacitor' id={post.slug} />}
         */}
-      </div>
+      </article>
     </div>
   )
 }
 
-const PostFeaturedImage = ({ post }: { post: RenderedBlog}) => (
-  <img class="blog-post__featured-image" src={post.featuredImage} alt={post.featuredImageAlt} />
+const elementRouterHref = (tagName: string, props: any) => {  
+  if (tagName === 'a' && typeof props.href === 'string') {
+    const currentHost = new URL(document.baseURI).host;
+    const gotoHost = new URL(props.href, document.baseURI).host;
+
+    if (currentHost !== gotoHost) {
+      return {
+        ...props,
+        target: '_blank',
+        class: 'external-link',
+        rel: 'noopener',
+      };
+    }
+
+    return {
+      ...props,
+      ...href(props.href),
+    };
+  }
+  return props;
+};
+
+const PostFeaturedImage = ({ data }: { data: BlogData}) => (
+  <img class="blog-post__featured-image" src={data.featuredImage} alt={data.featuredImageAlt} />
 );
 
-const PostContent = ({ html }: { html: string }) => (
-  <div innerHTML={html} />
-);
+const PostContinueReading = ({ data }: { data: BlogData }) => 
+  <a class="blog-post__continue-reading" {...href(getBlogPostPath(data))}>Continue reading <ion-icon name="arrow-forward" /></a>
 
-const PostContinueReading = ({ post }: { post: RenderedBlog }) => 
-  <a class="blog-post__continue-reading" {...href(getBlogPostPath(post), Router)}>Continue reading <ion-icon name="arrow-forward" /></a>
-
-const PostAuthor = ({ authorName, authorUrl, dateString }: { authorName: string, authorUrl: string, dateString: string }) => {
-  const date = parseISO(dateString);
+const PostAuthor = ({ authorName, authorUrl, dateISO }: { authorName: string, authorUrl: string, dateISO }) => {
+  
+  const date = parseISO(dateISO);
 
   return (
     <div class="blog-post__author">
       {/*<img src={a.author_avatar.url} alt={a.author_name} />*/}
-      <span>By {authorUrl ?
-        <a href={authorUrl} target="_blank">{authorName}</a> :
-        authorName} on <DateTime date={date} /></span>
+      <span>
+        By {' '}
+        {authorUrl
+          ? <a href={authorUrl} target="_blank">{authorName}</a>
+          : authorName}
+        {' '}
+        on <DateTime date={date} /></span>
     </div>
   );
 }

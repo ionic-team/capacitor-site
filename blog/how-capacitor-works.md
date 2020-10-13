@@ -15,7 +15,7 @@ Capacitor then acts as the _runtime_ facilitating communication between the web 
 
 Let's dig in and explore how Capacitor works under the hood.
 
-<!--more-->
+<preview-end />
 
 ## The basics
 

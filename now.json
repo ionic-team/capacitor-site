@@ -1,7 +1,21 @@
 {
   "trailingSlash": false,
   "redirects": [
-    { "source": "/docs/community/plugins", "destination": "/docs/community" },
-    { "source": "/docs/basics/cli-commands", "destination": "/docs/reference/cli" }
+    { 
+      "source": "/docs/basics/cli-commands", 
+      "destination": "/docs/reference/cli" 
+    },
+    {
+      "source": "/docs/community/plugins",
+      "destination": "/docs/plugins/community"
+    },
+    {
+      "source": "/docs/community",
+      "destination": "/docs/plugins/community"
+    },
+    { 
+      "source": "/docs/pwa-elements", 
+      "destination": "/docs/web/pwa-elements" 
+    }
   ]
 }
