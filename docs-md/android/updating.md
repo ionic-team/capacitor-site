@@ -50,7 +50,7 @@ Mandatory change:
   If using Cordova or Capacitor plugins that don't use Android X yet, you can use [jetifier](https://www.npmjs.com/package/jetifier) tool to patch them.
 
 ```bash
-npm install jetifier -D
+npm install -D jetifier
 npx jetifier
 ```
 
