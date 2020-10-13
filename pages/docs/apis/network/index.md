@@ -13,9 +13,9 @@ contributors:
 The Network API provides events for monitoring network status changes, along with querying the current state of the network.
 
 <!--DOCGEN_INDEX_START-->
-* [getStatus()](#getstatus)
-* [addListener()](#addlistener)
-* [removeAllListeners()](#removealllisteners)
+* [`getStatus()`](#getstatus)
+* [`addListener(...)`](#addlistener)
+* [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -56,7 +56,7 @@ This permission allows the app to access information about the current network, 
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### getStatus
+### getStatus()
 
 ```typescript
 getStatus() => Promise<NetworkStatus>
@@ -64,12 +64,12 @@ getStatus() => Promise<NetworkStatus>
 
 Query the current network status
 
-**Returns:** Promise&lt;[NetworkStatus](#networkstatus)&gt;
+**Returns:** <code>Promise&lt;<a href="#networkstatus">NetworkStatus</a>&gt;</code>
 
 --------------------
 
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'networkStatusChange', listenerFunc: (status: NetworkStatus) => void) => PluginListenerHandle
@@ -77,17 +77,17 @@ addListener(eventName: 'networkStatusChange', listenerFunc: (status: NetworkStat
 
 Listen for network status change events
 
-| Param            | Type                            |
-| ---------------- | ------------------------------- |
-| **eventName**    | "networkStatusChange"           |
-| **listenerFunc** | (status: NetworkStatus) => void |
+| Param              | Type                                         |
+| ------------------ | -------------------------------------------- |
+| **`eventName`**    | <code>"networkStatusChange"</code>           |
+| **`listenerFunc`** | <code>(status: NetworkStatus) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### removeAllListeners
+### removeAllListeners()
 
 ```typescript
 removeAllListeners() => void
@@ -95,7 +95,7 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
@@ -105,17 +105,17 @@ Remove all native listeners for this plugin
 
 #### NetworkStatus
 
-| Prop               | Type                                        |
-| ------------------ | ------------------------------------------- |
-| **connected**      | boolean                                     |
-| **connectionType** | "none" \| "unknown" \| "wifi" \| "cellular" |
+| Prop                 | Type                                                     |
+| -------------------- | -------------------------------------------------------- |
+| **`connected`**      | <code>boolean</code>                                     |
+| **`connectionType`** | <code>"none" \| "unknown" \| "wifi" \| "cellular"</code> |
 
 
 #### PluginListenerHandle
 
-| Prop       | Type       |
-| ---------- | ---------- |
-| **remove** | () => void |
+| Prop         | Type                    |
+| ------------ | ----------------------- |
+| **`remove`** | <code>() => void</code> |
 
 
 <!--DOCGEN_API_END-->

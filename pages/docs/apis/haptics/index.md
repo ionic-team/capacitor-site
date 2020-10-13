@@ -13,12 +13,12 @@ contributors:
 The Haptics API provides physical feedback to the user through touch or vibration.
 
 <!--DOCGEN_INDEX_START-->
-* [impact()](#impact)
-* [notification()](#notification)
-* [vibrate()](#vibrate)
-* [selectionStart()](#selectionstart)
-* [selectionChanged()](#selectionchanged)
-* [selectionEnd()](#selectionend)
+* [`impact(...)`](#impact)
+* [`notification(...)`](#notification)
+* [`vibrate()`](#vibrate)
+* [`selectionStart()`](#selectionstart)
+* [`selectionChanged()`](#selectionchanged)
+* [`selectionEnd()`](#selectionend)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 <!--DOCGEN_INDEX_END-->
@@ -78,7 +78,7 @@ export class HapticsExample {
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### impact
+### impact(...)
 
 ```typescript
 impact(options: HapticsImpactOptions) => void
@@ -86,16 +86,16 @@ impact(options: HapticsImpactOptions) => void
 
 Trigger a haptics "impact" feedback
 
-| Param       | Type                                          |
-| ----------- | --------------------------------------------- |
-| **options** | [HapticsImpactOptions](#hapticsimpactoptions) |
+| Param         | Type                                                                  |
+| ------------- | --------------------------------------------------------------------- |
+| **`options`** | <code><a href="#hapticsimpactoptions">HapticsImpactOptions</a></code> |
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
 
-### notification
+### notification(...)
 
 ```typescript
 notification(options: HapticsNotificationOptions) => void
@@ -103,16 +103,16 @@ notification(options: HapticsNotificationOptions) => void
 
 Trigger a haptics "notification" feedback
 
-| Param       | Type                                                      |
-| ----------- | --------------------------------------------------------- |
-| **options** | [HapticsNotificationOptions](#hapticsnotificationoptions) |
+| Param         | Type                                                                              |
+| ------------- | --------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#hapticsnotificationoptions">HapticsNotificationOptions</a></code> |
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
 
-### vibrate
+### vibrate()
 
 ```typescript
 vibrate() => void
@@ -120,12 +120,12 @@ vibrate() => void
 
 Vibrate the device
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
 
-### selectionStart
+### selectionStart()
 
 ```typescript
 selectionStart() => void
@@ -133,12 +133,12 @@ selectionStart() => void
 
 Trigger a selection started haptic hint
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
 
-### selectionChanged
+### selectionChanged()
 
 ```typescript
 selectionChanged() => void
@@ -148,12 +148,12 @@ Trigger a selection changed haptic hint. If a selection was
 started already, this will cause the device to provide haptic
 feedback
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
 
-### selectionEnd
+### selectionEnd()
 
 ```typescript
 selectionEnd() => void
@@ -162,7 +162,7 @@ selectionEnd() => void
 If selectionStart() was called, selectionEnd() ends the selection.
 For example, call this when a user has lifted their finger from a control
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
@@ -172,16 +172,16 @@ For example, call this when a user has lifted their finger from a control
 
 #### HapticsImpactOptions
 
-| Prop      | Type                                      |
-| --------- | ----------------------------------------- |
-| **style** | [HapticsImpactStyle](#hapticsimpactstyle) |
+| Prop        | Type                                                              |
+| ----------- | ----------------------------------------------------------------- |
+| **`style`** | <code><a href="#hapticsimpactstyle">HapticsImpactStyle</a></code> |
 
 
 #### HapticsNotificationOptions
 
-| Prop     | Type                                                |
-| -------- | --------------------------------------------------- |
-| **type** | [HapticsNotificationType](#hapticsnotificationtype) |
+| Prop       | Type                                                                        |
+| ---------- | --------------------------------------------------------------------------- |
+| **`type`** | <code><a href="#hapticsnotificationtype">HapticsNotificationType</a></code> |
 
 
 ### Enums
@@ -189,20 +189,20 @@ For example, call this when a user has lifted their finger from a control
 
 #### HapticsImpactStyle
 
-| Members    | Value    |
-| ---------- | -------- |
-| **Heavy**  | "HEAVY"  |
-| **Medium** | "MEDIUM" |
-| **Light**  | "LIGHT"  |
+| Members      | Value                 |
+| ------------ | --------------------- |
+| **`Heavy`**  | <code>"HEAVY"</code>  |
+| **`Medium`** | <code>"MEDIUM"</code> |
+| **`Light`**  | <code>"LIGHT"</code>  |
 
 
 #### HapticsNotificationType
 
-| Members     | Value     |
-| ----------- | --------- |
-| **SUCCESS** | "SUCCESS" |
-| **WARNING** | "WARNING" |
-| **ERROR**   | "ERROR"   |
+| Members       | Value                  |
+| ------------- | ---------------------- |
+| **`SUCCESS`** | <code>"SUCCESS"</code> |
+| **`WARNING`** | <code>"WARNING"</code> |
+| **`ERROR`**   | <code>"ERROR"</code>   |
 
 
 <!--DOCGEN_API_END-->

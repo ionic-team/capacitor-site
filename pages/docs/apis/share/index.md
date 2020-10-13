@@ -15,7 +15,7 @@ The Share API provides methods for sharing content in any sharing-enabled apps t
 The Share API works on iOS, Android, and the Web (using the new [Web Share API](https://developers.google.com/web/updates/2016/09/navigator-share)), though web support is currently spotty.
 
 <!--DOCGEN_INDEX_START-->
-* [share()](#share)
+* [`share(...)`](#share)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -39,7 +39,7 @@ Each platform uses a different set of fields, but you should supply them all.
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### share
+### share(...)
 
 ```typescript
 share(options: ShareOptions) => Promise<any>
@@ -47,11 +47,11 @@ share(options: ShareOptions) => Promise<any>
 
 Show a Share modal for sharing content in your app with other apps
 
-| Param       | Type                          |
-| ----------- | ----------------------------- |
-| **options** | [ShareOptions](#shareoptions) |
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#shareoptions">ShareOptions</a></code> |
 
-**Returns:** Promise&lt;any&gt;
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -61,12 +61,12 @@ Show a Share modal for sharing content in your app with other apps
 
 #### ShareOptions
 
-| Prop            | Type   | Description                                                               |
-| --------------- | ------ | ------------------------------------------------------------------------- |
-| **title**       | string | Set a title for any message. This will be the subject if sharing to email |
-| **text**        | string | Set some text to share                                                    |
-| **url**         | string | Set a URL to share, can be http, https or file URL                        |
-| **dialogTitle** | string | Set a title for the share modal. Android only                             |
+| Prop              | Type                | Description                                                               |
+| ----------------- | ------------------- | ------------------------------------------------------------------------- |
+| **`title`**       | <code>string</code> | Set a title for any message. This will be the subject if sharing to email |
+| **`text`**        | <code>string</code> | Set some text to share                                                    |
+| **`url`**         | <code>string</code> | Set a URL to share, can be http, https or file URL                        |
+| **`dialogTitle`** | <code>string</code> | Set a title for the share modal. Android only                             |
 
 
 <!--DOCGEN_API_END-->

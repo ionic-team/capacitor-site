@@ -19,11 +19,11 @@ On iOS this plugin will use [UserDefaults](https://developer.apple.com/documenta
 Note: this API is not meant for high-performance data storage applications. Take a look at using SQLite or a separate data engine if your application will store a lot of items, have high read/write load, or require complex querying.
 
 <!--DOCGEN_INDEX_START-->
-* [get()](#get)
-* [set()](#set)
-* [remove()](#remove)
-* [clear()](#clear)
-* [keys()](#keys)
+* [`get(...)`](#get)
+* [`set(...)`](#set)
+* [`remove(...)`](#remove)
+* [`clear()`](#clear)
+* [`keys()`](#keys)
 <!--DOCGEN_INDEX_END-->
 
 ## Working with JSON
@@ -88,7 +88,7 @@ async clear() {
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### get
+### get(...)
 
 ```typescript
 get(options: { key: string; }) => Promise<{ value: string | null; }>
@@ -96,16 +96,16 @@ get(options: { key: string; }) => Promise<{ value: string | null; }>
 
 Get the value with the given key.
 
-| Param       | Type             |
-| ----------- | ---------------- |
-| **options** | { key: string; } |
+| Param         | Type                          |
+| ------------- | ----------------------------- |
+| **`options`** | <code>{ key: string; }</code> |
 
-**Returns:** Promise&lt;{ value: string; }&gt;
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
 
-### set
+### set(...)
 
 ```typescript
 set(options: { key: string; value: string; }) => Promise<void>
@@ -113,16 +113,16 @@ set(options: { key: string; value: string; }) => Promise<void>
 
 Set the value for the given key
 
-| Param       | Type                            |
-| ----------- | ------------------------------- |
-| **options** | { key: string; value: string; } |
+| Param         | Type                                         |
+| ------------- | -------------------------------------------- |
+| **`options`** | <code>{ key: string; value: string; }</code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### remove
+### remove(...)
 
 ```typescript
 remove(options: { key: string; }) => Promise<void>
@@ -130,16 +130,16 @@ remove(options: { key: string; }) => Promise<void>
 
 Remove the value for this key (if any)
 
-| Param       | Type             |
-| ----------- | ---------------- |
-| **options** | { key: string; } |
+| Param         | Type                          |
+| ------------- | ----------------------------- |
+| **`options`** | <code>{ key: string; }</code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### clear
+### clear()
 
 ```typescript
 clear() => Promise<void>
@@ -147,12 +147,12 @@ clear() => Promise<void>
 
 Clear stored keys and values.
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### keys
+### keys()
 
 ```typescript
 keys() => Promise<{ keys: string[]; }>
@@ -160,7 +160,7 @@ keys() => Promise<{ keys: string[]; }>
 
 Return the list of known keys
 
-**Returns:** Promise&lt;{ keys: string[]; }&gt;
+**Returns:** <code>Promise&lt;{ keys: string[]; }&gt;</code>
 
 --------------------
 

@@ -15,8 +15,8 @@ The Clipboard API enables copy and pasting to/from the clipboard. On iOS this AP
 copying images and URLs.
 
 <!--DOCGEN_INDEX_START-->
-* [write()](#write)
-* [read()](#read)
+* [`write(...)`](#write)
+* [`read()`](#read)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -39,7 +39,7 @@ console.log('Got', result.type, 'from clipboard:', result.value);
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### write
+### write(...)
 
 ```typescript
 write(options: ClipboardWrite) => Promise<void>
@@ -47,16 +47,16 @@ write(options: ClipboardWrite) => Promise<void>
 
 Write a value to the clipboard (the "copy" action)
 
-| Param       | Type                              |
-| ----------- | --------------------------------- |
-| **options** | [ClipboardWrite](#clipboardwrite) |
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code><a href="#clipboardwrite">ClipboardWrite</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### read
+### read()
 
 ```typescript
 read() => Promise<ClipboardReadResult>
@@ -64,7 +64,7 @@ read() => Promise<ClipboardReadResult>
 
 Read a value from the clipboard (the "paste" action)
 
-**Returns:** Promise&lt;[ClipboardReadResult](#clipboardreadresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#clipboardreadresult">ClipboardReadResult</a>&gt;</code>
 
 --------------------
 
@@ -74,20 +74,20 @@ Read a value from the clipboard (the "paste" action)
 
 #### ClipboardWrite
 
-| Prop       | Type   |
-| ---------- | ------ |
-| **string** | string |
-| **image**  | string |
-| **url**    | string |
-| **label**  | string |
+| Prop         | Type                |
+| ------------ | ------------------- |
+| **`string`** | <code>string</code> |
+| **`image`**  | <code>string</code> |
+| **`url`**    | <code>string</code> |
+| **`label`**  | <code>string</code> |
 
 
 #### ClipboardReadResult
 
-| Prop      | Type   |
-| --------- | ------ |
-| **value** | string |
-| **type**  | string |
+| Prop        | Type                |
+| ----------- | ------------------- |
+| **`value`** | <code>string</code> |
+| **`type`**  | <code>string</code> |
 
 
 <!--DOCGEN_API_END-->

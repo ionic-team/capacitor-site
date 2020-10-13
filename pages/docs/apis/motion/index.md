@@ -13,9 +13,9 @@ contributors:
 The Motion API tracks accelerometer and device orientation (compass heading, etc.)
 
 <!--DOCGEN_INDEX_START-->
-* [addListener()](#addlistener)
-* [addListener()](#addlistener)
-* [removeAllListeners()](#removealllisteners)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -53,7 +53,7 @@ See the [DeviceMotionEvent](https://developer.mozilla.org/en-US/docs/Web/API/Dev
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'accel', listenerFunc: (event: MotionEventResult) => void) => PluginListenerHandle
@@ -61,17 +61,17 @@ addListener(eventName: 'accel', listenerFunc: (event: MotionEventResult) => void
 
 Listen for accelerometer data
 
-| Param            | Type                               |
-| ---------------- | ---------------------------------- |
-| **eventName**    | "accel"                            |
-| **listenerFunc** | (event: MotionEventResult) => void |
+| Param              | Type                                            |
+| ------------------ | ----------------------------------------------- |
+| **`eventName`**    | <code>"accel"</code>                            |
+| **`listenerFunc`** | <code>(event: MotionEventResult) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'orientation', listenerFunc: (event: MotionOrientationEventResult) => void) => PluginListenerHandle
@@ -79,17 +79,17 @@ addListener(eventName: 'orientation', listenerFunc: (event: MotionOrientationEve
 
 Listen for device orientation change (compass heading, etc.)
 
-| Param            | Type                                          |
-| ---------------- | --------------------------------------------- |
-| **eventName**    | "orientation"                                 |
-| **listenerFunc** | (event: MotionOrientationEventResult) => void |
+| Param              | Type                                                       |
+| ------------------ | ---------------------------------------------------------- |
+| **`eventName`**    | <code>"orientation"</code>                                 |
+| **`listenerFunc`** | <code>(event: MotionOrientationEventResult) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### removeAllListeners
+### removeAllListeners()
 
 ```typescript
 removeAllListeners() => void
@@ -97,7 +97,7 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
@@ -107,28 +107,28 @@ Remove all native listeners for this plugin
 
 #### PluginListenerHandle
 
-| Prop       | Type       |
-| ---------- | ---------- |
-| **remove** | () => void |
+| Prop         | Type                    |
+| ------------ | ----------------------- |
+| **`remove`** | <code>() => void</code> |
 
 
 #### MotionEventResult
 
-| Prop                             | Type                                            |
-| -------------------------------- | ----------------------------------------------- |
-| **acceleration**                 | { x: number; y: number; z: number; }            |
-| **accelerationIncludingGravity** | { x: number; y: number; z: number; }            |
-| **rotationRate**                 | { alpha: number; beta: number; gamma: number; } |
-| **interval**                     | number                                          |
+| Prop                               | Type                                                         |
+| ---------------------------------- | ------------------------------------------------------------ |
+| **`acceleration`**                 | <code>{ x: number; y: number; z: number; }</code>            |
+| **`accelerationIncludingGravity`** | <code>{ x: number; y: number; z: number; }</code>            |
+| **`rotationRate`**                 | <code>{ alpha: number; beta: number; gamma: number; }</code> |
+| **`interval`**                     | <code>number</code>                                          |
 
 
 #### MotionOrientationEventResult
 
-| Prop      | Type   |
-| --------- | ------ |
-| **alpha** | number |
-| **beta**  | number |
-| **gamma** | number |
+| Prop        | Type                |
+| ----------- | ------------------- |
+| **`alpha`** | <code>number</code> |
+| **`beta`**  | <code>number</code> |
+| **`gamma`** | <code>number</code> |
 
 
 <!--DOCGEN_API_END-->

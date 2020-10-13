@@ -15,8 +15,8 @@ supports running a task when the app is backgrounded, and soon will support peri
 fetch operations.
 
 <!--DOCGEN_INDEX_START-->
-* [beforeExit()](#beforeexit)
-* [finish()](#finish)
+* [`beforeExit(...)`](#beforeexit)
+* [`finish(...)`](#finish)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -75,7 +75,7 @@ App.addListener('appStateChange', (state) => {
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### beforeExit
+### beforeExit(...)
 
 ```typescript
 beforeExit(cb: Function) => CallbackID
@@ -93,16 +93,16 @@ being terminated by the OS.
 When you are finished, this callback _must_ call `BackgroundTask.finish({ taskId })`
 where `taskId` is the value returned from `BackgroundTask.beforeExit()`
 
-| Param  | Type                  | Description                                                              |
-| ------ | --------------------- | ------------------------------------------------------------------------ |
-| **cb** | [Function](#function) | the task to run when the app is backgrounded but before it is terminated |
+| Param    | Type                                          | Description                                                              |
+| -------- | --------------------------------------------- | ------------------------------------------------------------------------ |
+| **`cb`** | <code><a href="#function">Function</a></code> | the task to run when the app is backgrounded but before it is terminated |
 
-**Returns:** string
+**Returns:** <code>string</code>
 
 --------------------
 
 
-### finish
+### finish(...)
 
 ```typescript
 finish(options: { taskId: CallbackID; }) => void
@@ -111,11 +111,11 @@ finish(options: { taskId: CallbackID; }) => void
 Notify the OS that the given task is finished and the OS can continue
 backgrounding the app.
 
-| Param       | Type                |
-| ----------- | ------------------- |
-| **options** | { taskId: string; } |
+| Param         | Type                             |
+| ------------- | -------------------------------- |
+| **`options`** | <code>{ taskId: string; }</code> |
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
@@ -127,12 +127,12 @@ backgrounding the app.
 
 Creates a new function.
 
-| Prop          | Type                  |
-| ------------- | --------------------- |
-| **prototype** | any                   |
-| **length**    | number                |
-| **arguments** | any                   |
-| **caller**    | [Function](#function) |
+| Prop            | Type                                          |
+| --------------- | --------------------------------------------- |
+| **`prototype`** | <code>any</code>                              |
+| **`length`**    | <code>number</code>                           |
+| **`arguments`** | <code>any</code>                              |
+| **`caller`**    | <code><a href="#function">Function</a></code> |
 
 | Method       | Signature                                                 | Description                                                                                                                                                                                                              |
 | ------------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

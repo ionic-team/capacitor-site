@@ -14,8 +14,8 @@ contributors:
 The Splash Screen API provides methods for showing or hiding a Splash image.
 
 <!--DOCGEN_INDEX_START-->
-* [show()](#show)
-* [hide()](#hide)
+* [`show(...)`](#show)
+* [`hide(...)`](#hide)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -159,7 +159,7 @@ To use splash screen images named something other than `splash.png`, set `androi
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### show
+### show(...)
 
 ```typescript
 show(options?: SplashScreenShowOptions, callback?: Function) => Promise<void>
@@ -167,17 +167,17 @@ show(options?: SplashScreenShowOptions, callback?: Function) => Promise<void>
 
 Show the splash screen
 
-| Param        | Type                                                |
-| ------------ | --------------------------------------------------- |
-| **options**  | [SplashScreenShowOptions](#splashscreenshowoptions) |
-| **callback** | [Function](#function)                               |
+| Param          | Type                                                                        |
+| -------------- | --------------------------------------------------------------------------- |
+| **`options`**  | <code><a href="#splashscreenshowoptions">SplashScreenShowOptions</a></code> |
+| **`callback`** | <code><a href="#function">Function</a></code>                               |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### hide
+### hide(...)
 
 ```typescript
 hide(options?: SplashScreenHideOptions, callback?: Function) => Promise<void>
@@ -185,12 +185,12 @@ hide(options?: SplashScreenHideOptions, callback?: Function) => Promise<void>
 
 Hide the splash screen
 
-| Param        | Type                                                |
-| ------------ | --------------------------------------------------- |
-| **options**  | [SplashScreenHideOptions](#splashscreenhideoptions) |
-| **callback** | [Function](#function)                               |
+| Param          | Type                                                                        |
+| -------------- | --------------------------------------------------------------------------- |
+| **`options`**  | <code><a href="#splashscreenhideoptions">SplashScreenHideOptions</a></code> |
+| **`callback`** | <code><a href="#function">Function</a></code>                               |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -200,24 +200,24 @@ Hide the splash screen
 
 #### SplashScreenShowOptions
 
-| Prop                | Type    | Description                                                                           |
-| ------------------- | ------- | ------------------------------------------------------------------------------------- |
-| **autoHide**        | boolean | Whether to auto hide the splash after showDuration                                    |
-| **fadeInDuration**  | number  | How long (in ms) to fade in. Default is 200ms                                         |
-| **fadeOutDuration** | number  | How long (in ms) to fade out. Default is 200ms                                        |
-| **showDuration**    | number  | How long to show the splash screen when autoHide is enabled (in ms) Default is 3000ms |
+| Prop                  | Type                 | Description                                                                           |
+| --------------------- | -------------------- | ------------------------------------------------------------------------------------- |
+| **`autoHide`**        | <code>boolean</code> | Whether to auto hide the splash after showDuration                                    |
+| **`fadeInDuration`**  | <code>number</code>  | How long (in ms) to fade in. Default is 200ms                                         |
+| **`fadeOutDuration`** | <code>number</code>  | How long (in ms) to fade out. Default is 200ms                                        |
+| **`showDuration`**    | <code>number</code>  | How long to show the splash screen when autoHide is enabled (in ms) Default is 3000ms |
 
 
 #### Function
 
 Creates a new function.
 
-| Prop          | Type                  |
-| ------------- | --------------------- |
-| **prototype** | any                   |
-| **length**    | number                |
-| **arguments** | any                   |
-| **caller**    | [Function](#function) |
+| Prop            | Type                                          |
+| --------------- | --------------------------------------------- |
+| **`prototype`** | <code>any</code>                              |
+| **`length`**    | <code>number</code>                           |
+| **`arguments`** | <code>any</code>                              |
+| **`caller`**    | <code><a href="#function">Function</a></code> |
 
 | Method       | Signature                                                 | Description                                                                                                                                                                                                              |
 | ------------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -229,9 +229,9 @@ Creates a new function.
 
 #### SplashScreenHideOptions
 
-| Prop                | Type   | Description                                    |
-| ------------------- | ------ | ---------------------------------------------- |
-| **fadeOutDuration** | number | How long (in ms) to fade out. Default is 200ms |
+| Prop                  | Type                | Description                                    |
+| --------------------- | ------------------- | ---------------------------------------------- |
+| **`fadeOutDuration`** | <code>number</code> | How long (in ms) to fade out. Default is 200ms |
 
 
 <!--DOCGEN_API_END-->

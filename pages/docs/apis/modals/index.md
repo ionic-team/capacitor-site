@@ -14,10 +14,10 @@ The Modals API provides methods for triggering native modal windows for alerts, 
 well as Action Sheets.
 
 <!--DOCGEN_INDEX_START-->
-* [alert()](#alert)
-* [prompt()](#prompt)
-* [confirm()](#confirm)
-* [showActions()](#showactions)
+* [`alert(...)`](#alert)
+* [`prompt(...)`](#prompt)
+* [`confirm(...)`](#confirm)
+* [`showActions(...)`](#showactions)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 <!--DOCGEN_INDEX_END-->
@@ -79,7 +79,7 @@ async showActions() {
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### alert
+### alert(...)
 
 ```typescript
 alert(options: AlertOptions) => Promise<void>
@@ -87,16 +87,16 @@ alert(options: AlertOptions) => Promise<void>
 
 Show an alert modal
 
-| Param       | Type                          |
-| ----------- | ----------------------------- |
-| **options** | [AlertOptions](#alertoptions) |
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#alertoptions">AlertOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### prompt
+### prompt(...)
 
 ```typescript
 prompt(options: PromptOptions) => Promise<PromptResult>
@@ -104,16 +104,16 @@ prompt(options: PromptOptions) => Promise<PromptResult>
 
 Show a prompt modal
 
-| Param       | Type                            |
-| ----------- | ------------------------------- |
-| **options** | [PromptOptions](#promptoptions) |
+| Param         | Type                                                    |
+| ------------- | ------------------------------------------------------- |
+| **`options`** | <code><a href="#promptoptions">PromptOptions</a></code> |
 
-**Returns:** Promise&lt;[PromptResult](#promptresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#promptresult">PromptResult</a>&gt;</code>
 
 --------------------
 
 
-### confirm
+### confirm(...)
 
 ```typescript
 confirm(options: ConfirmOptions) => Promise<ConfirmResult>
@@ -121,16 +121,16 @@ confirm(options: ConfirmOptions) => Promise<ConfirmResult>
 
 Show a confirmation modal
 
-| Param       | Type                              |
-| ----------- | --------------------------------- |
-| **options** | [ConfirmOptions](#confirmoptions) |
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code><a href="#confirmoptions">ConfirmOptions</a></code> |
 
-**Returns:** Promise&lt;[ConfirmResult](#confirmresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#confirmresult">ConfirmResult</a>&gt;</code>
 
 --------------------
 
 
-### showActions
+### showActions(...)
 
 ```typescript
 showActions(options: ActionSheetOptions) => Promise<ActionSheetResult>
@@ -139,11 +139,11 @@ showActions(options: ActionSheetOptions) => Promise<ActionSheetResult>
 Show an Action Sheet style modal with various options for the user
 to select.
 
-| Param       | Type                                      |
-| ----------- | ----------------------------------------- |
-| **options** | [ActionSheetOptions](#actionsheetoptions) |
+| Param         | Type                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| **`options`** | <code><a href="#actionsheetoptions">ActionSheetOptions</a></code> |
 
-**Returns:** Promise&lt;[ActionSheetResult](#actionsheetresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#actionsheetresult">ActionSheetResult</a>&gt;</code>
 
 --------------------
 
@@ -153,73 +153,73 @@ to select.
 
 #### AlertOptions
 
-| Prop            | Type   |
-| --------------- | ------ |
-| **title**       | string |
-| **message**     | string |
-| **buttonTitle** | string |
+| Prop              | Type                |
+| ----------------- | ------------------- |
+| **`title`**       | <code>string</code> |
+| **`message`**     | <code>string</code> |
+| **`buttonTitle`** | <code>string</code> |
 
 
 #### PromptResult
 
-| Prop          | Type    |
-| ------------- | ------- |
-| **value**     | string  |
-| **cancelled** | boolean |
+| Prop            | Type                 |
+| --------------- | -------------------- |
+| **`value`**     | <code>string</code>  |
+| **`cancelled`** | <code>boolean</code> |
 
 
 #### PromptOptions
 
-| Prop                  | Type   |
-| --------------------- | ------ |
-| **title**             | string |
-| **message**           | string |
-| **okButtonTitle**     | string |
-| **cancelButtonTitle** | string |
-| **inputPlaceholder**  | string |
-| **inputText**         | string |
+| Prop                    | Type                |
+| ----------------------- | ------------------- |
+| **`title`**             | <code>string</code> |
+| **`message`**           | <code>string</code> |
+| **`okButtonTitle`**     | <code>string</code> |
+| **`cancelButtonTitle`** | <code>string</code> |
+| **`inputPlaceholder`**  | <code>string</code> |
+| **`inputText`**         | <code>string</code> |
 
 
 #### ConfirmResult
 
-| Prop      | Type    |
-| --------- | ------- |
-| **value** | boolean |
+| Prop        | Type                 |
+| ----------- | -------------------- |
+| **`value`** | <code>boolean</code> |
 
 
 #### ConfirmOptions
 
-| Prop                  | Type   |
-| --------------------- | ------ |
-| **title**             | string |
-| **message**           | string |
-| **okButtonTitle**     | string |
-| **cancelButtonTitle** | string |
+| Prop                    | Type                |
+| ----------------------- | ------------------- |
+| **`title`**             | <code>string</code> |
+| **`message`**           | <code>string</code> |
+| **`okButtonTitle`**     | <code>string</code> |
+| **`cancelButtonTitle`** | <code>string</code> |
 
 
 #### ActionSheetResult
 
-| Prop      | Type   |
-| --------- | ------ |
-| **index** | number |
+| Prop        | Type                |
+| ----------- | ------------------- |
+| **`index`** | <code>number</code> |
 
 
 #### ActionSheetOptions
 
-| Prop        | Type                | Description |
-| ----------- | ------------------- | ----------- |
-| **title**   | string              |             |
-| **message** | string              | iOS only    |
-| **options** | ActionSheetOption[] |             |
+| Prop          | Type                             | Description |
+| ------------- | -------------------------------- | ----------- |
+| **`title`**   | <code>string</code>              |             |
+| **`message`** | <code>string</code>              | iOS only    |
+| **`options`** | <code>ActionSheetOption[]</code> |             |
 
 
 #### ActionSheetOption
 
-| Prop      | Type                                              | Description                              |
-| --------- | ------------------------------------------------- | ---------------------------------------- |
-| **title** | string                                            |                                          |
-| **style** | [ActionSheetOptionStyle](#actionsheetoptionstyle) |                                          |
-| **icon**  | string                                            | Icon for web (ionicon naming convention) |
+| Prop        | Type                                                                      | Description                              |
+| ----------- | ------------------------------------------------------------------------- | ---------------------------------------- |
+| **`title`** | <code>string</code>                                                       |                                          |
+| **`style`** | <code><a href="#actionsheetoptionstyle">ActionSheetOptionStyle</a></code> |                                          |
+| **`icon`**  | <code>string</code>                                                       | Icon for web (ionicon naming convention) |
 
 
 ### Enums
@@ -227,11 +227,11 @@ to select.
 
 #### ActionSheetOptionStyle
 
-| Members         | Value         |
-| --------------- | ------------- |
-| **Default**     | "DEFAULT"     |
-| **Destructive** | "DESTRUCTIVE" |
-| **Cancel**      | "CANCEL"      |
+| Members           | Value                      |
+| ----------------- | -------------------------- |
+| **`Default`**     | <code>"DEFAULT"</code>     |
+| **`Destructive`** | <code>"DESTRUCTIVE"</code> |
+| **`Cancel`**      | <code>"CANCEL"</code>      |
 
 
 <!--DOCGEN_API_END-->

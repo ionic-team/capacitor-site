@@ -13,17 +13,17 @@ contributors:
 The Filesystem API provides a NodeJS-like API for working with files on the device.
 
 <!--DOCGEN_INDEX_START-->
-* [readFile()](#readfile)
-* [writeFile()](#writefile)
-* [appendFile()](#appendfile)
-* [deleteFile()](#deletefile)
-* [mkdir()](#mkdir)
-* [rmdir()](#rmdir)
-* [readdir()](#readdir)
-* [getUri()](#geturi)
-* [stat()](#stat)
-* [rename()](#rename)
-* [copy()](#copy)
+* [`readFile(...)`](#readfile)
+* [`writeFile(...)`](#writefile)
+* [`appendFile(...)`](#appendfile)
+* [`deleteFile(...)`](#deletefile)
+* [`mkdir(...)`](#mkdir)
+* [`rmdir(...)`](#rmdir)
+* [`readdir(...)`](#readdir)
+* [`getUri(...)`](#geturi)
+* [`stat(...)`](#stat)
+* [`rename(...)`](#rename)
+* [`copy(...)`](#copy)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 <!--DOCGEN_INDEX_END-->
@@ -169,7 +169,7 @@ async copy() {
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### readFile
+### readFile(...)
 
 ```typescript
 readFile(options: FileReadOptions) => Promise<FileReadResult>
@@ -177,16 +177,16 @@ readFile(options: FileReadOptions) => Promise<FileReadResult>
 
 Read a file from disk
 
-| Param       | Type                                | Description               |
-| ----------- | ----------------------------------- | ------------------------- |
-| **options** | [FileReadOptions](#filereadoptions) | options for the file read |
+| Param         | Type                                                        | Description               |
+| ------------- | ----------------------------------------------------------- | ------------------------- |
+| **`options`** | <code><a href="#filereadoptions">FileReadOptions</a></code> | options for the file read |
 
-**Returns:** Promise&lt;[FileReadResult](#filereadresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#filereadresult">FileReadResult</a>&gt;</code>
 
 --------------------
 
 
-### writeFile
+### writeFile(...)
 
 ```typescript
 writeFile(options: FileWriteOptions) => Promise<FileWriteResult>
@@ -194,16 +194,16 @@ writeFile(options: FileWriteOptions) => Promise<FileWriteResult>
 
 Write a file to disk in the specified location on device
 
-| Param       | Type                                  | Description                |
-| ----------- | ------------------------------------- | -------------------------- |
-| **options** | [FileWriteOptions](#filewriteoptions) | options for the file write |
+| Param         | Type                                                          | Description                |
+| ------------- | ------------------------------------------------------------- | -------------------------- |
+| **`options`** | <code><a href="#filewriteoptions">FileWriteOptions</a></code> | options for the file write |
 
-**Returns:** Promise&lt;[FileWriteResult](#filewriteresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#filewriteresult">FileWriteResult</a>&gt;</code>
 
 --------------------
 
 
-### appendFile
+### appendFile(...)
 
 ```typescript
 appendFile(options: FileAppendOptions) => Promise<FileAppendResult>
@@ -211,16 +211,16 @@ appendFile(options: FileAppendOptions) => Promise<FileAppendResult>
 
 Append to a file on disk in the specified location on device
 
-| Param       | Type                                    | Description                 |
-| ----------- | --------------------------------------- | --------------------------- |
-| **options** | [FileAppendOptions](#fileappendoptions) | options for the file append |
+| Param         | Type                                                            | Description                 |
+| ------------- | --------------------------------------------------------------- | --------------------------- |
+| **`options`** | <code><a href="#fileappendoptions">FileAppendOptions</a></code> | options for the file append |
 
-**Returns:** Promise&lt;[FileAppendResult](#fileappendresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#fileappendresult">FileAppendResult</a>&gt;</code>
 
 --------------------
 
 
-### deleteFile
+### deleteFile(...)
 
 ```typescript
 deleteFile(options: FileDeleteOptions) => Promise<FileDeleteResult>
@@ -228,16 +228,16 @@ deleteFile(options: FileDeleteOptions) => Promise<FileDeleteResult>
 
 Delete a file from disk
 
-| Param       | Type                                    | Description                 |
-| ----------- | --------------------------------------- | --------------------------- |
-| **options** | [FileDeleteOptions](#filedeleteoptions) | options for the file delete |
+| Param         | Type                                                            | Description                 |
+| ------------- | --------------------------------------------------------------- | --------------------------- |
+| **`options`** | <code><a href="#filedeleteoptions">FileDeleteOptions</a></code> | options for the file delete |
 
-**Returns:** Promise&lt;[FileDeleteResult](#filedeleteresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#filedeleteresult">FileDeleteResult</a>&gt;</code>
 
 --------------------
 
 
-### mkdir
+### mkdir(...)
 
 ```typescript
 mkdir(options: MkdirOptions) => Promise<MkdirResult>
@@ -245,16 +245,16 @@ mkdir(options: MkdirOptions) => Promise<MkdirResult>
 
 Create a directory.
 
-| Param       | Type                          | Description           |
-| ----------- | ----------------------------- | --------------------- |
-| **options** | [MkdirOptions](#mkdiroptions) | options for the mkdir |
+| Param         | Type                                                  | Description           |
+| ------------- | ----------------------------------------------------- | --------------------- |
+| **`options`** | <code><a href="#mkdiroptions">MkdirOptions</a></code> | options for the mkdir |
 
-**Returns:** Promise&lt;[MkdirResult](#mkdirresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#mkdirresult">MkdirResult</a>&gt;</code>
 
 --------------------
 
 
-### rmdir
+### rmdir(...)
 
 ```typescript
 rmdir(options: RmdirOptions) => Promise<RmdirResult>
@@ -262,16 +262,16 @@ rmdir(options: RmdirOptions) => Promise<RmdirResult>
 
 Remove a directory
 
-| Param       | Type                          | Description                          |
-| ----------- | ----------------------------- | ------------------------------------ |
-| **options** | [RmdirOptions](#rmdiroptions) | the options for the directory remove |
+| Param         | Type                                                  | Description                          |
+| ------------- | ----------------------------------------------------- | ------------------------------------ |
+| **`options`** | <code><a href="#rmdiroptions">RmdirOptions</a></code> | the options for the directory remove |
 
-**Returns:** Promise&lt;[RmdirResult](#rmdirresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#rmdirresult">RmdirResult</a>&gt;</code>
 
 --------------------
 
 
-### readdir
+### readdir(...)
 
 ```typescript
 readdir(options: ReaddirOptions) => Promise<ReaddirResult>
@@ -279,16 +279,16 @@ readdir(options: ReaddirOptions) => Promise<ReaddirResult>
 
 Return a list of files from the directory (not recursive)
 
-| Param       | Type                              | Description                           |
-| ----------- | --------------------------------- | ------------------------------------- |
-| **options** | [ReaddirOptions](#readdiroptions) | the options for the readdir operation |
+| Param         | Type                                                      | Description                           |
+| ------------- | --------------------------------------------------------- | ------------------------------------- |
+| **`options`** | <code><a href="#readdiroptions">ReaddirOptions</a></code> | the options for the readdir operation |
 
-**Returns:** Promise&lt;[ReaddirResult](#readdirresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#readdirresult">ReaddirResult</a>&gt;</code>
 
 --------------------
 
 
-### getUri
+### getUri(...)
 
 ```typescript
 getUri(options: GetUriOptions) => Promise<GetUriResult>
@@ -296,16 +296,16 @@ getUri(options: GetUriOptions) => Promise<GetUriResult>
 
 Return full File URI for a path and directory
 
-| Param       | Type                            | Description                        |
-| ----------- | ------------------------------- | ---------------------------------- |
-| **options** | [GetUriOptions](#geturioptions) | the options for the stat operation |
+| Param         | Type                                                    | Description                        |
+| ------------- | ------------------------------------------------------- | ---------------------------------- |
+| **`options`** | <code><a href="#geturioptions">GetUriOptions</a></code> | the options for the stat operation |
 
-**Returns:** Promise&lt;[GetUriResult](#geturiresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#geturiresult">GetUriResult</a>&gt;</code>
 
 --------------------
 
 
-### stat
+### stat(...)
 
 ```typescript
 stat(options: StatOptions) => Promise<StatResult>
@@ -313,16 +313,16 @@ stat(options: StatOptions) => Promise<StatResult>
 
 Return data about a file
 
-| Param       | Type                        | Description                        |
-| ----------- | --------------------------- | ---------------------------------- |
-| **options** | [StatOptions](#statoptions) | the options for the stat operation |
+| Param         | Type                                                | Description                        |
+| ------------- | --------------------------------------------------- | ---------------------------------- |
+| **`options`** | <code><a href="#statoptions">StatOptions</a></code> | the options for the stat operation |
 
-**Returns:** Promise&lt;[StatResult](#statresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#statresult">StatResult</a>&gt;</code>
 
 --------------------
 
 
-### rename
+### rename(...)
 
 ```typescript
 rename(options: RenameOptions) => Promise<RenameResult>
@@ -330,16 +330,16 @@ rename(options: RenameOptions) => Promise<RenameResult>
 
 Rename a file or directory
 
-| Param       | Type                            | Description                          |
-| ----------- | ------------------------------- | ------------------------------------ |
-| **options** | [RenameOptions](#renameoptions) | the options for the rename operation |
+| Param         | Type                                                    | Description                          |
+| ------------- | ------------------------------------------------------- | ------------------------------------ |
+| **`options`** | <code><a href="#renameoptions">RenameOptions</a></code> | the options for the rename operation |
 
-**Returns:** Promise&lt;[RenameResult](#renameresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#renameresult">RenameResult</a>&gt;</code>
 
 --------------------
 
 
-### copy
+### copy(...)
 
 ```typescript
 copy(options: CopyOptions) => Promise<CopyResult>
@@ -347,11 +347,11 @@ copy(options: CopyOptions) => Promise<CopyResult>
 
 Copy a file or directory
 
-| Param       | Type                        | Description                        |
-| ----------- | --------------------------- | ---------------------------------- |
-| **options** | [CopyOptions](#copyoptions) | the options for the copy operation |
+| Param         | Type                                                | Description                        |
+| ------------- | --------------------------------------------------- | ---------------------------------- |
+| **`options`** | <code><a href="#copyoptions">CopyOptions</a></code> | the options for the copy operation |
 
-**Returns:** Promise&lt;[CopyResult](#copyresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#copyresult">CopyResult</a>&gt;</code>
 
 --------------------
 
@@ -361,36 +361,36 @@ Copy a file or directory
 
 #### FileReadResult
 
-| Prop     | Type   |
-| -------- | ------ |
-| **data** | string |
+| Prop       | Type                |
+| ---------- | ------------------- |
+| **`data`** | <code>string</code> |
 
 
 #### FileReadOptions
 
-| Prop          | Type                                        | Description                                                                                                                                                        |
-| ------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **path**      | string                                      | The filename to read                                                                                                                                               |
-| **directory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory to read the file from                                                                                                                      |
-| **encoding**  | [FilesystemEncoding](#filesystemencoding)   | The encoding to read the file in, if not provided, data is read as binary and returned as base64 encoded data. Pass FilesystemEncoding.UTF8 to read data as string |
+| Prop            | Type                                                                | Description                                                                                                                                                        |
+| --------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`path`**      | <code>string</code>                                                 | The filename to read                                                                                                                                               |
+| **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to read the file from                                                                                                                      |
+| **`encoding`**  | <code><a href="#filesystemencoding">FilesystemEncoding</a></code>   | The encoding to read the file in, if not provided, data is read as binary and returned as base64 encoded data. Pass FilesystemEncoding.UTF8 to read data as string |
 
 
 #### FileWriteResult
 
-| Prop    | Type   |
-| ------- | ------ |
-| **uri** | string |
+| Prop      | Type                |
+| --------- | ------------------- |
+| **`uri`** | <code>string</code> |
 
 
 #### FileWriteOptions
 
-| Prop          | Type                                        | Description                                                                                                                                      |
-| ------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **path**      | string                                      | The filename to write                                                                                                                            |
-| **data**      | string                                      | The data to write                                                                                                                                |
-| **directory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory to store the file in                                                                                                     |
-| **encoding**  | [FilesystemEncoding](#filesystemencoding)   | The encoding to write the file in. If not provided, data is written as base64 encoded data. Pass FilesystemEncoding.UTF8 to write data as string |
-| **recursive** | boolean                                     | Whether to create any missing parent directories. Defaults to false                                                                              |
+| Prop            | Type                                                                | Description                                                                                                                                      |
+| --------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`path`**      | <code>string</code>                                                 | The filename to write                                                                                                                            |
+| **`data`**      | <code>string</code>                                                 | The data to write                                                                                                                                |
+| **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to store the file in                                                                                                     |
+| **`encoding`**  | <code><a href="#filesystemencoding">FilesystemEncoding</a></code>   | The encoding to write the file in. If not provided, data is written as base64 encoded data. Pass FilesystemEncoding.UTF8 to write data as string |
+| **`recursive`** | <code>boolean</code>                                                | Whether to create any missing parent directories. Defaults to false                                                                              |
 
 
 #### FileAppendResult
@@ -398,12 +398,12 @@ Copy a file or directory
 
 #### FileAppendOptions
 
-| Prop          | Type                                        | Description                                                                                                                                      |
-| ------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **path**      | string                                      | The filename to write                                                                                                                            |
-| **data**      | string                                      | The data to write                                                                                                                                |
-| **directory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory to store the file in                                                                                                     |
-| **encoding**  | [FilesystemEncoding](#filesystemencoding)   | The encoding to write the file in. If not provided, data is written as base64 encoded data. Pass FilesystemEncoding.UTF8 to write data as string |
+| Prop            | Type                                                                | Description                                                                                                                                      |
+| --------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`path`**      | <code>string</code>                                                 | The filename to write                                                                                                                            |
+| **`data`**      | <code>string</code>                                                 | The data to write                                                                                                                                |
+| **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to store the file in                                                                                                     |
+| **`encoding`**  | <code><a href="#filesystemencoding">FilesystemEncoding</a></code>   | The encoding to write the file in. If not provided, data is written as base64 encoded data. Pass FilesystemEncoding.UTF8 to write data as string |
 
 
 #### FileDeleteResult
@@ -411,10 +411,10 @@ Copy a file or directory
 
 #### FileDeleteOptions
 
-| Prop          | Type                                        | Description                                     |
-| ------------- | ------------------------------------------- | ----------------------------------------------- |
-| **path**      | string                                      | The filename to delete                          |
-| **directory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory to delete the file from |
+| Prop            | Type                                                                | Description                                     |
+| --------------- | ------------------------------------------------------------------- | ----------------------------------------------- |
+| **`path`**      | <code>string</code>                                                 | The filename to delete                          |
+| **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to delete the file from |
 
 
 #### MkdirResult
@@ -422,11 +422,11 @@ Copy a file or directory
 
 #### MkdirOptions
 
-| Prop          | Type                                        | Description                                                                 |
-| ------------- | ------------------------------------------- | --------------------------------------------------------------------------- |
-| **path**      | string                                      | The path of the new directory                                               |
-| **directory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory to make the new directory in                        |
-| **recursive** | boolean                                     | Whether to create any missing parent directories as well. Defaults to false |
+| Prop            | Type                                                                | Description                                                                 |
+| --------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| **`path`**      | <code>string</code>                                                 | The path of the new directory                                               |
+| **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to make the new directory in                        |
+| **`recursive`** | <code>boolean</code>                                                | Whether to create any missing parent directories as well. Defaults to false |
 
 
 #### RmdirResult
@@ -434,60 +434,60 @@ Copy a file or directory
 
 #### RmdirOptions
 
-| Prop          | Type                                        | Description                                                                   |
-| ------------- | ------------------------------------------- | ----------------------------------------------------------------------------- |
-| **path**      | string                                      | The path of the directory to remove                                           |
-| **directory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory to remove the directory from                          |
-| **recursive** | boolean                                     | Whether to recursively remove the contents of the directory Defaults to false |
+| Prop            | Type                                                                | Description                                                                   |
+| --------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **`path`**      | <code>string</code>                                                 | The path of the directory to remove                                           |
+| **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to remove the directory from                          |
+| **`recursive`** | <code>boolean</code>                                                | Whether to recursively remove the contents of the directory Defaults to false |
 
 
 #### ReaddirResult
 
-| Prop      | Type     |
-| --------- | -------- |
-| **files** | string[] |
+| Prop        | Type                  |
+| ----------- | --------------------- |
+| **`files`** | <code>string[]</code> |
 
 
 #### ReaddirOptions
 
-| Prop          | Type                                        | Description                                |
-| ------------- | ------------------------------------------- | ------------------------------------------ |
-| **path**      | string                                      | The path of the directory to read          |
-| **directory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory to list files from |
+| Prop            | Type                                                                | Description                                |
+| --------------- | ------------------------------------------------------------------- | ------------------------------------------ |
+| **`path`**      | <code>string</code>                                                 | The path of the directory to read          |
+| **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to list files from |
 
 
 #### GetUriResult
 
-| Prop    | Type   |
-| ------- | ------ |
-| **uri** | string |
+| Prop      | Type                |
+| --------- | ------------------- |
+| **`uri`** | <code>string</code> |
 
 
 #### GetUriOptions
 
-| Prop          | Type                                        | Description                                   |
-| ------------- | ------------------------------------------- | --------------------------------------------- |
-| **path**      | string                                      | The path of the file to get the URI for       |
-| **directory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory to get the file under |
+| Prop            | Type                                                                | Description                                   |
+| --------------- | ------------------------------------------------------------------- | --------------------------------------------- |
+| **`path`**      | <code>string</code>                                                 | The path of the file to get the URI for       |
+| **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to get the file under |
 
 
 #### StatResult
 
-| Prop      | Type   |
-| --------- | ------ |
-| **type**  | string |
-| **size**  | number |
-| **ctime** | number |
-| **mtime** | number |
-| **uri**   | string |
+| Prop        | Type                |
+| ----------- | ------------------- |
+| **`type`**  | <code>string</code> |
+| **`size`**  | <code>number</code> |
+| **`ctime`** | <code>number</code> |
+| **`mtime`** | <code>number</code> |
+| **`uri`**   | <code>string</code> |
 
 
 #### StatOptions
 
-| Prop          | Type                                        | Description                                   |
-| ------------- | ------------------------------------------- | --------------------------------------------- |
-| **path**      | string                                      | The path of the file to get data about        |
-| **directory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory to get the file under |
+| Prop            | Type                                                                | Description                                   |
+| --------------- | ------------------------------------------------------------------- | --------------------------------------------- |
+| **`path`**      | <code>string</code>                                                 | The path of the file to get data about        |
+| **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to get the file under |
 
 
 #### RenameResult
@@ -501,12 +501,12 @@ Copy a file or directory
 
 #### CopyOptions
 
-| Prop            | Type                                        | Description                                                                                                                                 |
-| --------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **from**        | string                                      | The existing file or directory                                                                                                              |
-| **to**          | string                                      | The destination file or directory                                                                                                           |
-| **directory**   | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory containing the existing file or directory                                                                           |
-| **toDirectory** | [FilesystemDirectory](#filesystemdirectory) | The FilesystemDirectory containing the destination file or directory. If not supplied will use the 'directory' parameter as the destination |
+| Prop              | Type                                                                | Description                                                                                                                                 |
+| ----------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`from`**        | <code>string</code>                                                 | The existing file or directory                                                                                                              |
+| **`to`**          | <code>string</code>                                                 | The destination file or directory                                                                                                           |
+| **`directory`**   | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory containing the existing file or directory                                                                           |
+| **`toDirectory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory containing the destination file or directory. If not supplied will use the 'directory' parameter as the destination |
 
 
 ### Enums
@@ -514,22 +514,22 @@ Copy a file or directory
 
 #### FilesystemDirectory
 
-| Members             | Value              | Description                                                                                                                                                                                                                                                                                                                                                                                           |
-| ------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Documents**       | "DOCUMENTS"        | The Documents directory On iOS it's the app's documents directory. Use this directory to store user-generated content. On Android it's the Public Documents folder, so it's accessible from other apps. It's not accesible on Android 10 unless the app enables legacy External Storage by adding `android:requestLegacyExternalStorage="true"` in the `application` tag in the `AndroidManifest.xml` |
-| **Data**            | "DATA"             | The Data directory On iOS it will use the Documents directory On Android it's the directory holding application files. Files will be deleted when the application is uninstalled.                                                                                                                                                                                                                     |
-| **Cache**           | "CACHE"            | The Cache directory Can be deleted in cases of low memory, so use this directory to write app-specific files that your app can re-create easily.                                                                                                                                                                                                                                                      |
-| **External**        | "EXTERNAL"         | The external directory On iOS it will use the Documents directory On Android it's the directory on the primary shared/external storage device where the application can place persistent files it owns. These files are internal to the applications, and not typically visible to the user as media. Files will be deleted when the application is uninstalled.                                      |
-| **ExternalStorage** | "EXTERNAL_STORAGE" | The external storage directory On iOS it will use the Documents directory On Android it's the primary shared/external storage directory. It's not accesible on Android 10 unless the app enables legacy External Storage by adding `android:requestLegacyExternalStorage="true"` in the `application` tag in the `AndroidManifest.xml`                                                                |
+| Members               | Value                           | Description                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`Documents`**       | <code>"DOCUMENTS"</code>        | The Documents directory On iOS it's the app's documents directory. Use this directory to store user-generated content. On Android it's the Public Documents folder, so it's accessible from other apps. It's not accesible on Android 10 unless the app enables legacy External Storage by adding `android:requestLegacyExternalStorage="true"` in the `application` tag in the `AndroidManifest.xml` |
+| **`Data`**            | <code>"DATA"</code>             | The Data directory On iOS it will use the Documents directory On Android it's the directory holding application files. Files will be deleted when the application is uninstalled.                                                                                                                                                                                                                     |
+| **`Cache`**           | <code>"CACHE"</code>            | The Cache directory Can be deleted in cases of low memory, so use this directory to write app-specific files that your app can re-create easily.                                                                                                                                                                                                                                                      |
+| **`External`**        | <code>"EXTERNAL"</code>         | The external directory On iOS it will use the Documents directory On Android it's the directory on the primary shared/external storage device where the application can place persistent files it owns. These files are internal to the applications, and not typically visible to the user as media. Files will be deleted when the application is uninstalled.                                      |
+| **`ExternalStorage`** | <code>"EXTERNAL_STORAGE"</code> | The external storage directory On iOS it will use the Documents directory On Android it's the primary shared/external storage directory. It's not accesible on Android 10 unless the app enables legacy External Storage by adding `android:requestLegacyExternalStorage="true"` in the `application` tag in the `AndroidManifest.xml`                                                                |
 
 
 #### FilesystemEncoding
 
-| Members   | Value   |
-| --------- | ------- |
-| **UTF8**  | "utf8"  |
-| **ASCII** | "ascii" |
-| **UTF16** | "utf16" |
+| Members     | Value                |
+| ----------- | -------------------- |
+| **`UTF8`**  | <code>"utf8"</code>  |
+| **`ASCII`** | <code>"ascii"</code> |
+| **`UTF16`** | <code>"utf16"</code> |
 
 
 <!--DOCGEN_API_END-->

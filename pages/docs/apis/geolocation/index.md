@@ -14,9 +14,9 @@ The Geolocation API provides simple methods for getting and tracking the current
 with altitude, heading, and speed information if available.
 
 <!--DOCGEN_INDEX_START-->
-* [getCurrentPosition()](#getcurrentposition)
-* [watchPosition()](#watchposition)
-* [clearWatch()](#clearwatch)
+* [`getCurrentPosition(...)`](#getcurrentposition)
+* [`watchPosition(...)`](#watchposition)
+* [`clearWatch(...)`](#clearwatch)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -71,7 +71,7 @@ class GeolocationExample {
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### getCurrentPosition
+### getCurrentPosition(...)
 
 ```typescript
 getCurrentPosition(options?: GeolocationOptions) => Promise<GeolocationPosition>
@@ -79,16 +79,16 @@ getCurrentPosition(options?: GeolocationOptions) => Promise<GeolocationPosition>
 
 Get the current GPS location of the device
 
-| Param       | Type                                      |
-| ----------- | ----------------------------------------- |
-| **options** | [GeolocationOptions](#geolocationoptions) |
+| Param         | Type                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| **`options`** | <code><a href="#geolocationoptions">GeolocationOptions</a></code> |
 
-**Returns:** Promise&lt;[GeolocationPosition](#geolocationposition)&gt;
+**Returns:** <code>Promise&lt;<a href="#geolocationposition">GeolocationPosition</a>&gt;</code>
 
 --------------------
 
 
-### watchPosition
+### watchPosition(...)
 
 ```typescript
 watchPosition(options: GeolocationOptions, callback: GeolocationWatchCallback) => CallbackID
@@ -97,17 +97,17 @@ watchPosition(options: GeolocationOptions, callback: GeolocationWatchCallback) =
 Set up a watch for location changes. Note that watching for location changes
 can consume a large amount of energy. Be smart about listening only when you need to.
 
-| Param        | Type                                               |
-| ------------ | -------------------------------------------------- |
-| **options**  | [GeolocationOptions](#geolocationoptions)          |
-| **callback** | (position: GeolocationPosition, err?: any) => void |
+| Param          | Type                                                              |
+| -------------- | ----------------------------------------------------------------- |
+| **`options`**  | <code><a href="#geolocationoptions">GeolocationOptions</a></code> |
+| **`callback`** | <code>(position: GeolocationPosition, err?: any) => void</code>   |
 
-**Returns:** string
+**Returns:** <code>string</code>
 
 --------------------
 
 
-### clearWatch
+### clearWatch(...)
 
 ```typescript
 clearWatch(options: { id: string; }) => Promise<void>
@@ -115,11 +115,11 @@ clearWatch(options: { id: string; }) => Promise<void>
 
 Clear a given watch
 
-| Param       | Type            |
-| ----------- | --------------- |
-| **options** | { id: string; } |
+| Param         | Type                         |
+| ------------- | ---------------------------- |
+| **`options`** | <code>{ id: string; }</code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -129,19 +129,19 @@ Clear a given watch
 
 #### GeolocationPosition
 
-| Prop          | Type                                                                                                                                       | Description                                             |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
-| **timestamp** | number                                                                                                                                     | Creation timestamp for coords                           |
-| **coords**    | { latitude: number; longitude: number; accuracy: number; altitudeAccuracy?: number; altitude?: number; speed?: number; heading?: number; } | The GPS coordinates along with the accuracy of the data |
+| Prop            | Type                                                                                                                                                    | Description                                             |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| **`timestamp`** | <code>number</code>                                                                                                                                     | Creation timestamp for coords                           |
+| **`coords`**    | <code>{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy?: number; altitude?: number; speed?: number; heading?: number; }</code> | The GPS coordinates along with the accuracy of the data |
 
 
 #### GeolocationOptions
 
-| Prop                   | Type    |
-| ---------------------- | ------- |
-| **enableHighAccuracy** | boolean |
-| **timeout**            | number  |
-| **maximumAge**         | number  |
+| Prop                     | Type                 |
+| ------------------------ | -------------------- |
+| **`enableHighAccuracy`** | <code>boolean</code> |
+| **`timeout`**            | <code>number</code>  |
+| **`maximumAge`**         | <code>number</code>  |
 
 
 <!--DOCGEN_API_END-->

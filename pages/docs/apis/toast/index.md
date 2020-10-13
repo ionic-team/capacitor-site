@@ -35,17 +35,17 @@ async show() {
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### show
+### show(...)
 
 ```typescript
 show(options: ToastShowOptions) => Promise<void>
 ```
 
-| Param       | Type                                  |
-| ----------- | ------------------------------------- |
-| **options** | [ToastShowOptions](#toastshowoptions) |
+| Param         | Type                                                          |
+| ------------- | ------------------------------------------------------------- |
+| **`options`** | <code><a href="#toastshowoptions">ToastShowOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -55,11 +55,11 @@ show(options: ToastShowOptions) => Promise<void>
 
 #### ToastShowOptions
 
-| Prop         | Type                          | Description                                                                |
-| ------------ | ----------------------------- | -------------------------------------------------------------------------- |
-| **text**     | string                        |                                                                            |
-| **duration** | "short" \| "long"             | Duration of the toast, either 'short' (2000ms, default) or 'long' (3500ms) |
-| **position** | "center" \| "bottom" \| "top" |                                                                            |
+| Prop           | Type                                       | Description                                                                |
+| -------------- | ------------------------------------------ | -------------------------------------------------------------------------- |
+| **`text`**     | <code>string</code>                        |                                                                            |
+| **`duration`** | <code>"short" \| "long"</code>             | Duration of the toast, either 'short' (2000ms, default) or 'long' (3500ms) |
+| **`position`** | <code>"center" \| "bottom" \| "top"</code> |                                                                            |
 
 
 <!--DOCGEN_API_END-->

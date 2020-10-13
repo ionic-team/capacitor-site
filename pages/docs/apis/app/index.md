@@ -16,16 +16,16 @@ For example, this API emits events when the app enters and leaves the foreground
 deeplinks, opens other apps, and manages persisted plugin state.
 
 <!--DOCGEN_INDEX_START-->
-* [exitApp()](#exitapp)
-* [canOpenUrl()](#canopenurl)
-* [openUrl()](#openurl)
-* [getState()](#getstate)
-* [getLaunchUrl()](#getlaunchurl)
-* [addListener()](#addlistener)
-* [addListener()](#addlistener)
-* [addListener()](#addlistener)
-* [addListener()](#addlistener)
-* [removeAllListeners()](#removealllisteners)
+* [`exitApp()`](#exitapp)
+* [`canOpenUrl(...)`](#canopenurl)
+* [`openUrl(...)`](#openurl)
+* [`getState()`](#getstate)
+* [`getLaunchUrl()`](#getlaunchurl)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -91,7 +91,7 @@ We recommend every Android app using plugins that rely on external Activities (f
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### exitApp
+### exitApp()
 
 ```typescript
 exitApp() => never
@@ -102,12 +102,12 @@ exit the app when navigation is complete.
 
 Ionic handles this itself so you shouldn't need to call this if using Ionic
 
-**Returns:** never
+**Returns:** <code>never</code>
 
 --------------------
 
 
-### canOpenUrl
+### canOpenUrl(...)
 
 ```typescript
 canOpenUrl(options: { url: string; }) => Promise<{ value: boolean; }>
@@ -115,16 +115,16 @@ canOpenUrl(options: { url: string; }) => Promise<{ value: boolean; }>
 
 Check if an app can be opened with the given URL
 
-| Param       | Type             |
-| ----------- | ---------------- |
-| **options** | { url: string; } |
+| Param         | Type                          |
+| ------------- | ----------------------------- |
+| **`options`** | <code>{ url: string; }</code> |
 
-**Returns:** Promise&lt;{ value: boolean; }&gt;
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 --------------------
 
 
-### openUrl
+### openUrl(...)
 
 ```typescript
 openUrl(options: { url: string; }) => Promise<{ completed: boolean; }>
@@ -132,16 +132,16 @@ openUrl(options: { url: string; }) => Promise<{ completed: boolean; }>
 
 Open an app with the given URL
 
-| Param       | Type             |
-| ----------- | ---------------- |
-| **options** | { url: string; } |
+| Param         | Type                          |
+| ------------- | ----------------------------- |
+| **`options`** | <code>{ url: string; }</code> |
 
-**Returns:** Promise&lt;{ completed: boolean; }&gt;
+**Returns:** <code>Promise&lt;{ completed: boolean; }&gt;</code>
 
 --------------------
 
 
-### getState
+### getState()
 
 ```typescript
 getState() => Promise<AppState>
@@ -149,12 +149,12 @@ getState() => Promise<AppState>
 
 Gets the current app state
 
-**Returns:** Promise&lt;[AppState](#appstate)&gt;
+**Returns:** <code>Promise&lt;<a href="#appstate">AppState</a>&gt;</code>
 
 --------------------
 
 
-### getLaunchUrl
+### getLaunchUrl()
 
 ```typescript
 getLaunchUrl() => Promise<AppLaunchUrl>
@@ -162,12 +162,12 @@ getLaunchUrl() => Promise<AppLaunchUrl>
 
 Get the URL the app was launched with, if any
 
-**Returns:** Promise&lt;[AppLaunchUrl](#applaunchurl)&gt;
+**Returns:** <code>Promise&lt;<a href="#applaunchurl">AppLaunchUrl</a>&gt;</code>
 
 --------------------
 
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'appStateChange', listenerFunc: (state: AppState) => void) => PluginListenerHandle
@@ -175,17 +175,17 @@ addListener(eventName: 'appStateChange', listenerFunc: (state: AppState) => void
 
 Listen for changes in the App's active state (whether the app is in the foreground or background)
 
-| Param            | Type                      |
-| ---------------- | ------------------------- |
-| **eventName**    | "appStateChange"          |
-| **listenerFunc** | (state: AppState) => void |
+| Param              | Type                                   |
+| ------------------ | -------------------------------------- |
+| **`eventName`**    | <code>"appStateChange"</code>          |
+| **`listenerFunc`** | <code>(state: AppState) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'appUrlOpen', listenerFunc: (data: AppUrlOpen) => void) => PluginListenerHandle
@@ -194,17 +194,17 @@ addListener(eventName: 'appUrlOpen', listenerFunc: (data: AppUrlOpen) => void) =
 Listen for url open events for the app. This handles both custom URL scheme links as well
 as URLs your app handles (Universal Links on iOS and App Links on Android)
 
-| Param            | Type                       |
-| ---------------- | -------------------------- |
-| **eventName**    | "appUrlOpen"               |
-| **listenerFunc** | (data: AppUrlOpen) => void |
+| Param              | Type                                    |
+| ------------------ | --------------------------------------- |
+| **`eventName`**    | <code>"appUrlOpen"</code>               |
+| **`listenerFunc`** | <code>(data: AppUrlOpen) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'appRestoredResult', listenerFunc: (data: AppRestoredResult) => void) => PluginListenerHandle
@@ -214,17 +214,17 @@ If the app was launched with previously persisted plugin call data, such as on A
 when an activity returns to an app that was closed, this call will return any data
 the app was launched with, converted into the form of a result from a plugin call.
 
-| Param            | Type                              |
-| ---------------- | --------------------------------- |
-| **eventName**    | "appRestoredResult"               |
-| **listenerFunc** | (data: AppRestoredResult) => void |
+| Param              | Type                                           |
+| ------------------ | ---------------------------------------------- |
+| **`eventName`**    | <code>"appRestoredResult"</code>               |
+| **`listenerFunc`** | <code>(data: AppRestoredResult) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'backButton', listenerFunc: (data: AppUrlOpen) => void) => PluginListenerHandle
@@ -234,17 +234,17 @@ Listen for the hardware back button event (Android only). Listening for this eve
 default back button behaviour, so you might want to call `window.history.back()` manually.
 If you want to close the app, call `App.exitApp()`.
 
-| Param            | Type                       |
-| ---------------- | -------------------------- |
-| **eventName**    | "backButton"               |
-| **listenerFunc** | (data: AppUrlOpen) => void |
+| Param              | Type                                    |
+| ------------------ | --------------------------------------- |
+| **`eventName`**    | <code>"backButton"</code>               |
+| **`listenerFunc`** | <code>(data: AppUrlOpen) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### removeAllListeners
+### removeAllListeners()
 
 ```typescript
 removeAllListeners() => void
@@ -252,7 +252,7 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
@@ -262,43 +262,43 @@ Remove all native listeners for this plugin
 
 #### AppState
 
-| Prop         | Type    |
-| ------------ | ------- |
-| **isActive** | boolean |
+| Prop           | Type                 |
+| -------------- | -------------------- |
+| **`isActive`** | <code>boolean</code> |
 
 
 #### AppLaunchUrl
 
-| Prop    | Type   |
-| ------- | ------ |
-| **url** | string |
+| Prop      | Type                |
+| --------- | ------------------- |
+| **`url`** | <code>string</code> |
 
 
 #### PluginListenerHandle
 
-| Prop       | Type       |
-| ---------- | ---------- |
-| **remove** | () => void |
+| Prop         | Type                    |
+| ------------ | ----------------------- |
+| **`remove`** | <code>() => void</code> |
 
 
 #### AppUrlOpen
 
-| Prop                     | Type    | Description                                                                                                                                                                        |
-| ------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **url**                  | string  | The URL the app was opened with                                                                                                                                                    |
-| **iosSourceApplication** | any     | The source application opening the app (iOS only) https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623128-sourceapplication                         |
-| **iosOpenInPlace**       | boolean | Whether the app should open the passed document in-place or must copy it first. https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623123-openinplace |
+| Prop                       | Type                 | Description                                                                                                                                                                        |
+| -------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`url`**                  | <code>string</code>  | The URL the app was opened with                                                                                                                                                    |
+| **`iosSourceApplication`** | <code>any</code>     | The source application opening the app (iOS only) https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623128-sourceapplication                         |
+| **`iosOpenInPlace`**       | <code>boolean</code> | Whether the app should open the passed document in-place or must copy it first. https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623123-openinplace |
 
 
 #### AppRestoredResult
 
-| Prop           | Type                 | Description                                                                                                                                       |
-| -------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **pluginId**   | string               | The pluginId this result corresponds to. For example, `Camera`.                                                                                   |
-| **methodName** | string               | The methodName this result corresponds to. For example, `getPhoto`                                                                                |
-| **data**       | any                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` |
-| **success**    | boolean              | Boolean indicating if the plugin call succeeded                                                                                                   |
-| **error**      | { message: string; } | If the plugin call didn't succeed, it will contain the error message                                                                              |
+| Prop             | Type                              | Description                                                                                                                                       |
+| ---------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`pluginId`**   | <code>string</code>               | The pluginId this result corresponds to. For example, `Camera`.                                                                                   |
+| **`methodName`** | <code>string</code>               | The methodName this result corresponds to. For example, `getPhoto`                                                                                |
+| **`data`**       | <code>any</code>                  | The result data passed from the plugin. This would be the result you'd expect from normally calling the plugin method. For example, `CameraPhoto` |
+| **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded                                                                                                   |
+| **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message                                                                              |
 
 
 <!--DOCGEN_API_END-->

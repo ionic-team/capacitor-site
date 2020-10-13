@@ -18,17 +18,17 @@ first and optionally displaying a custom UI to prepare the user for the permissi
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### query
+### query(...)
 
 ```typescript
 query(options: PermissionsOptions) => Promise<PermissionResult>
 ```
 
-| Param       | Type                                      |
-| ----------- | ----------------------------------------- |
-| **options** | [PermissionsOptions](#permissionsoptions) |
+| Param         | Type                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| **`options`** | <code><a href="#permissionsoptions">PermissionsOptions</a></code> |
 
-**Returns:** Promise&lt;[PermissionResult](#permissionresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#permissionresult">PermissionResult</a>&gt;</code>
 
 --------------------
 
@@ -38,16 +38,16 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 
 #### PermissionResult
 
-| Prop      | Type                              |
-| --------- | --------------------------------- |
-| **state** | "denied" \| "granted" \| "prompt" |
+| Prop        | Type                                           |
+| ----------- | ---------------------------------------------- |
+| **`state`** | <code>"denied" \| "granted" \| "prompt"</code> |
 
 
 #### PermissionsOptions
 
-| Prop     | Type                              |
-| -------- | --------------------------------- |
-| **name** | [PermissionType](#permissiontype) |
+| Prop       | Type                                                      |
+| ---------- | --------------------------------------------------------- |
+| **`name`** | <code><a href="#permissiontype">PermissionType</a></code> |
 
 
 ### Enums
@@ -55,15 +55,15 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 
 #### PermissionType
 
-| Members            | Value             |
-| ------------------ | ----------------- |
-| **Camera**         | "camera"          |
-| **Photos**         | "photos"          |
-| **Geolocation**    | "geolocation"     |
-| **Notifications**  | "notifications"   |
-| **ClipboardRead**  | "clipboard-read"  |
-| **ClipboardWrite** | "clipboard-write" |
-| **Microphone**     | "microphone"      |
+| Members              | Value                          |
+| -------------------- | ------------------------------ |
+| **`Camera`**         | <code>"camera"</code>          |
+| **`Photos`**         | <code>"photos"</code>          |
+| **`Geolocation`**    | <code>"geolocation"</code>     |
+| **`Notifications`**  | <code>"notifications"</code>   |
+| **`ClipboardRead`**  | <code>"clipboard-read"</code>  |
+| **`ClipboardWrite`** | <code>"clipboard-write"</code> |
+| **`Microphone`**     | <code>"microphone"</code>      |
 
 
 <!--DOCGEN_API_END-->

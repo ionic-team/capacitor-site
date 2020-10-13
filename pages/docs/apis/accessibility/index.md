@@ -15,10 +15,10 @@ The Accessibility API makes it easy to know when a user has a screen reader enab
 labels through the connected screen reader.
 
 <!--DOCGEN_INDEX_START-->
-* [isScreenReaderEnabled()](#isscreenreaderenabled)
-* [speak()](#speak)
-* [addListener()](#addlistener)
-* [removeAllListeners()](#removealllisteners)
+* [`isScreenReaderEnabled()`](#isscreenreaderenabled)
+* [`speak(...)`](#speak)
+* [`addListener(...)`](#addlistener)
+* [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -52,7 +52,7 @@ async speak() {
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### isScreenReaderEnabled
+### isScreenReaderEnabled()
 
 ```typescript
 isScreenReaderEnabled() => Promise<ScreenReaderEnabledResult>
@@ -60,12 +60,12 @@ isScreenReaderEnabled() => Promise<ScreenReaderEnabledResult>
 
 Check if a screen reader is enabled on the device
 
-**Returns:** Promise&lt;[ScreenReaderEnabledResult](#screenreaderenabledresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#screenreaderenabledresult">ScreenReaderEnabledResult</a>&gt;</code>
 
 --------------------
 
 
-### speak
+### speak(...)
 
 ```typescript
 speak(options: AccessibilitySpeakOptions) => Promise<void>
@@ -73,16 +73,16 @@ speak(options: AccessibilitySpeakOptions) => Promise<void>
 
 Speak a string with a connected screen reader.
 
-| Param       | Type                                                    |
-| ----------- | ------------------------------------------------------- |
-| **options** | [AccessibilitySpeakOptions](#accessibilityspeakoptions) |
+| Param         | Type                                                                            |
+| ------------- | ------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#accessibilityspeakoptions">AccessibilitySpeakOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'accessibilityScreenReaderStateChange', listenerFunc: ScreenReaderStateChangeCallback) => PluginListenerHandle
@@ -90,17 +90,17 @@ addListener(eventName: 'accessibilityScreenReaderStateChange', listenerFunc: Scr
 
 Listen for screen reader state change (on/off)
 
-| Param            | Type                                       |
-| ---------------- | ------------------------------------------ |
-| **eventName**    | "accessibilityScreenReaderStateChange"     |
-| **listenerFunc** | (state: ScreenReaderEnabledResult) => void |
+| Param              | Type                                                    |
+| ------------------ | ------------------------------------------------------- |
+| **`eventName`**    | <code>"accessibilityScreenReaderStateChange"</code>     |
+| **`listenerFunc`** | <code>(state: ScreenReaderEnabledResult) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### removeAllListeners
+### removeAllListeners()
 
 ```typescript
 removeAllListeners() => void
@@ -108,7 +108,7 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
@@ -118,24 +118,24 @@ Remove all native listeners for this plugin
 
 #### ScreenReaderEnabledResult
 
-| Prop      | Type    |
-| --------- | ------- |
-| **value** | boolean |
+| Prop        | Type                 |
+| ----------- | -------------------- |
+| **`value`** | <code>boolean</code> |
 
 
 #### AccessibilitySpeakOptions
 
-| Prop         | Type   | Description                                                                                                                                                             |
-| ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **value**    | string | The string to speak                                                                                                                                                     |
-| **language** | string | The language to speak the string in, as its [ISO 639-1 Code](https://www.loc.gov/standards/iso639-2/php/code_list.php) (ex: "en"). Currently only supported on Android. |
+| Prop           | Type                | Description                                                                                                                                                             |
+| -------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`value`**    | <code>string</code> | The string to speak                                                                                                                                                     |
+| **`language`** | <code>string</code> | The language to speak the string in, as its [ISO 639-1 Code](https://www.loc.gov/standards/iso639-2/php/code_list.php) (ex: "en"). Currently only supported on Android. |
 
 
 #### PluginListenerHandle
 
-| Prop       | Type       |
-| ---------- | ---------- |
-| **remove** | () => void |
+| Prop         | Type                    |
+| ------------ | ----------------------- |
+| **`remove`** | <code>() => void</code> |
 
 
 <!--DOCGEN_API_END-->

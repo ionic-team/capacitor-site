@@ -13,12 +13,12 @@ contributors:
 The StatusBar API Provides methods for configuring the style of the Status Bar, along with showing or hiding it.
 
 <!--DOCGEN_INDEX_START-->
-* [setStyle()](#setstyle)
-* [setBackgroundColor()](#setbackgroundcolor)
-* [show()](#show)
-* [hide()](#hide)
-* [getInfo()](#getinfo)
-* [setOverlaysWebView()](#setoverlayswebview)
+* [`setStyle(...)`](#setstyle)
+* [`setBackgroundColor(...)`](#setbackgroundcolor)
+* [`show(...)`](#show)
+* [`hide(...)`](#hide)
+* [`getInfo()`](#getinfo)
+* [`setOverlaysWebView(...)`](#setoverlayswebview)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 <!--DOCGEN_INDEX_END-->
@@ -80,7 +80,7 @@ export class StatusBarExample {
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### setStyle
+### setStyle(...)
 
 ```typescript
 setStyle(options: StatusBarStyleOptions) => Promise<void>
@@ -88,16 +88,16 @@ setStyle(options: StatusBarStyleOptions) => Promise<void>
 
 Set the current style of the status bar
 
-| Param       | Type                                            |
-| ----------- | ----------------------------------------------- |
-| **options** | [StatusBarStyleOptions](#statusbarstyleoptions) |
+| Param         | Type                                                                    |
+| ------------- | ----------------------------------------------------------------------- |
+| **`options`** | <code><a href="#statusbarstyleoptions">StatusBarStyleOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### setBackgroundColor
+### setBackgroundColor(...)
 
 ```typescript
 setBackgroundColor(options: StatusBarBackgroundColorOptions) => Promise<void>
@@ -105,16 +105,16 @@ setBackgroundColor(options: StatusBarBackgroundColorOptions) => Promise<void>
 
 Set the background color of the status bar
 
-| Param       | Type                                                                |
-| ----------- | ------------------------------------------------------------------- |
-| **options** | [StatusBarBackgroundColorOptions](#statusbarbackgroundcoloroptions) |
+| Param         | Type                                                                                        |
+| ------------- | ------------------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#statusbarbackgroundcoloroptions">StatusBarBackgroundColorOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### show
+### show(...)
 
 ```typescript
 show(options?: StatusBarAnimationOptions) => Promise<void>
@@ -122,16 +122,16 @@ show(options?: StatusBarAnimationOptions) => Promise<void>
 
 Show the status bar
 
-| Param       | Type                                                    |
-| ----------- | ------------------------------------------------------- |
-| **options** | [StatusBarAnimationOptions](#statusbaranimationoptions) |
+| Param         | Type                                                                            |
+| ------------- | ------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#statusbaranimationoptions">StatusBarAnimationOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### hide
+### hide(...)
 
 ```typescript
 hide(options?: StatusBarAnimationOptions) => Promise<void>
@@ -139,16 +139,16 @@ hide(options?: StatusBarAnimationOptions) => Promise<void>
 
 Hide the status bar
 
-| Param       | Type                                                    |
-| ----------- | ------------------------------------------------------- |
-| **options** | [StatusBarAnimationOptions](#statusbaranimationoptions) |
+| Param         | Type                                                                            |
+| ------------- | ------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#statusbaranimationoptions">StatusBarAnimationOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### getInfo
+### getInfo()
 
 ```typescript
 getInfo() => Promise<StatusBarInfoResult>
@@ -156,12 +156,12 @@ getInfo() => Promise<StatusBarInfoResult>
 
 Get info about the current state of the status bar
 
-**Returns:** Promise&lt;[StatusBarInfoResult](#statusbarinforesult)&gt;
+**Returns:** <code>Promise&lt;<a href="#statusbarinforesult">StatusBarInfoResult</a>&gt;</code>
 
 --------------------
 
 
-### setOverlaysWebView
+### setOverlaysWebView(...)
 
 ```typescript
 setOverlaysWebView(options: StatusBarOverlaysWebviewOptions) => Promise<void>
@@ -170,11 +170,11 @@ setOverlaysWebView(options: StatusBarOverlaysWebviewOptions) => Promise<void>
 Set whether or not the status bar should overlay the webview to allow usage of the space
 around a device "notch"
 
-| Param       | Type                                                                |
-| ----------- | ------------------------------------------------------------------- |
-| **options** | [StatusBarOverlaysWebviewOptions](#statusbaroverlayswebviewoptions) |
+| Param         | Type                                                                                        |
+| ------------- | ------------------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#statusbaroverlayswebviewoptions">StatusBarOverlaysWebviewOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -184,40 +184,40 @@ around a device "notch"
 
 #### StatusBarStyleOptions
 
-| Prop      | Type                              |
-| --------- | --------------------------------- |
-| **style** | [StatusBarStyle](#statusbarstyle) |
+| Prop        | Type                                                      |
+| ----------- | --------------------------------------------------------- |
+| **`style`** | <code><a href="#statusbarstyle">StatusBarStyle</a></code> |
 
 
 #### StatusBarBackgroundColorOptions
 
-| Prop      | Type   |
-| --------- | ------ |
-| **color** | string |
+| Prop        | Type                |
+| ----------- | ------------------- |
+| **`color`** | <code>string</code> |
 
 
 #### StatusBarAnimationOptions
 
-| Prop          | Type                                      | Description                                                             |
-| ------------- | ----------------------------------------- | ----------------------------------------------------------------------- |
-| **animation** | [StatusBarAnimation](#statusbaranimation) | iOS only. The type of status bar animation used when showing or hiding. |
+| Prop            | Type                                                              | Description                                                             |
+| --------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **`animation`** | <code><a href="#statusbaranimation">StatusBarAnimation</a></code> | iOS only. The type of status bar animation used when showing or hiding. |
 
 
 #### StatusBarInfoResult
 
-| Prop         | Type                              |
-| ------------ | --------------------------------- |
-| **visible**  | boolean                           |
-| **style**    | [StatusBarStyle](#statusbarstyle) |
-| **color**    | string                            |
-| **overlays** | boolean                           |
+| Prop           | Type                                                      |
+| -------------- | --------------------------------------------------------- |
+| **`visible`**  | <code>boolean</code>                                      |
+| **`style`**    | <code><a href="#statusbarstyle">StatusBarStyle</a></code> |
+| **`color`**    | <code>string</code>                                       |
+| **`overlays`** | <code>boolean</code>                                      |
 
 
 #### StatusBarOverlaysWebviewOptions
 
-| Prop        | Type    |
-| ----------- | ------- |
-| **overlay** | boolean |
+| Prop          | Type                 |
+| ------------- | -------------------- |
+| **`overlay`** | <code>boolean</code> |
 
 
 ### Enums
@@ -225,19 +225,19 @@ around a device "notch"
 
 #### StatusBarStyle
 
-| Members   | Value   | Description                      |
-| --------- | ------- | -------------------------------- |
-| **Dark**  | "DARK"  | Light text for dark backgrounds. |
-| **Light** | "LIGHT" | Dark text for light backgrounds. |
+| Members     | Value                | Description                      |
+| ----------- | -------------------- | -------------------------------- |
+| **`Dark`**  | <code>"DARK"</code>  | Light text for dark backgrounds. |
+| **`Light`** | <code>"LIGHT"</code> | Dark text for light backgrounds. |
 
 
 #### StatusBarAnimation
 
-| Members   | Value   | Description                       |
-| --------- | ------- | --------------------------------- |
-| **None**  | "NONE"  | No animation during show/hide.    |
-| **Slide** | "SLIDE" | Slide animation during show/hide. |
-| **Fade**  | "FADE"  | Fade animation during show/hide.  |
+| Members     | Value                | Description                       |
+| ----------- | -------------------- | --------------------------------- |
+| **`None`**  | <code>"NONE"</code>  | No animation during show/hide.    |
+| **`Slide`** | <code>"SLIDE"</code> | Slide animation during show/hide. |
+| **`Fade`**  | <code>"FADE"</code>  | Fade animation during show/hide.  |
 
 
 <!--DOCGEN_API_END-->

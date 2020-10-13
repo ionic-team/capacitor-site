@@ -16,7 +16,7 @@ The Photos API provides methods to load photos and albums from the user's photo 
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### getPhotos
+### getPhotos(...)
 
 ```typescript
 getPhotos(options?: PhotosFetchOptions) => Promise<PhotosResult>
@@ -24,16 +24,16 @@ getPhotos(options?: PhotosFetchOptions) => Promise<PhotosResult>
 
 Get photos from the user's photo library
 
-| Param       | Type                                      |
-| ----------- | ----------------------------------------- |
-| **options** | [PhotosFetchOptions](#photosfetchoptions) |
+| Param         | Type                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| **`options`** | <code><a href="#photosfetchoptions">PhotosFetchOptions</a></code> |
 
-**Returns:** Promise&lt;[PhotosResult](#photosresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#photosresult">PhotosResult</a>&gt;</code>
 
 --------------------
 
 
-### getAlbums
+### getAlbums(...)
 
 ```typescript
 getAlbums(options?: PhotosAlbumsFetchOptions) => Promise<PhotosAlbumsResult>
@@ -41,16 +41,16 @@ getAlbums(options?: PhotosAlbumsFetchOptions) => Promise<PhotosAlbumsResult>
 
 Get albums from the user's photo library
 
-| Param       | Type                                                  |
-| ----------- | ----------------------------------------------------- |
-| **options** | [PhotosAlbumsFetchOptions](#photosalbumsfetchoptions) |
+| Param         | Type                                                                          |
+| ------------- | ----------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#photosalbumsfetchoptions">PhotosAlbumsFetchOptions</a></code> |
 
-**Returns:** Promise&lt;[PhotosAlbumsResult](#photosalbumsresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#photosalbumsresult">PhotosAlbumsResult</a>&gt;</code>
 
 --------------------
 
 
-### savePhoto
+### savePhoto(...)
 
 ```typescript
 savePhoto(options?: PhotosSaveOptions) => Promise<PhotosSaveResult>
@@ -58,16 +58,16 @@ savePhoto(options?: PhotosSaveOptions) => Promise<PhotosSaveResult>
 
 Save a photo the the user's photo library
 
-| Param       | Type                                    |
-| ----------- | --------------------------------------- |
-| **options** | [PhotosSaveOptions](#photossaveoptions) |
+| Param         | Type                                                            |
+| ------------- | --------------------------------------------------------------- |
+| **`options`** | <code><a href="#photossaveoptions">PhotosSaveOptions</a></code> |
 
-**Returns:** Promise&lt;[PhotosSaveResult](#photossaveresult)&gt;
+**Returns:** <code>Promise&lt;<a href="#photossaveresult">PhotosSaveResult</a>&gt;</code>
 
 --------------------
 
 
-### createAlbum
+### createAlbum(...)
 
 ```typescript
 createAlbum(options: PhotosCreateAlbumOptions) => Promise<void>
@@ -75,11 +75,11 @@ createAlbum(options: PhotosCreateAlbumOptions) => Promise<void>
 
 Create an album in the user's photo library
 
-| Param       | Type                                                  |
-| ----------- | ----------------------------------------------------- |
-| **options** | [PhotosCreateAlbumOptions](#photoscreatealbumoptions) |
+| Param         | Type                                                                          |
+| ------------- | ----------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#photoscreatealbumoptions">PhotosCreateAlbumOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -89,92 +89,92 @@ Create an album in the user's photo library
 
 #### PhotosResult
 
-| Prop       | Type         | Description                                  |
-| ---------- | ------------ | -------------------------------------------- |
-| **photos** | PhotoAsset[] | The list of photos returned from the library |
+| Prop         | Type                      | Description                                  |
+| ------------ | ------------------------- | -------------------------------------------- |
+| **`photos`** | <code>PhotoAsset[]</code> | The list of photos returned from the library |
 
 
 #### PhotoAsset
 
-| Prop                | Type                            | Description                                                             |
-| ------------------- | ------------------------------- | ----------------------------------------------------------------------- |
-| **identifier**      | string                          | Platform-specific identifier                                            |
-| **data**            | string                          | Data for a photo asset as a base64 encoded string (JPEG only supported) |
-| **creationDate**    | string                          | ISO date string for creation date of asset                              |
-| **fullWidth**       | number                          | Full width of original asset                                            |
-| **fullHeight**      | number                          | Full height of original asset                                           |
-| **thumbnailWidth**  | number                          | Width of thumbnail preview                                              |
-| **thumbnailHeight** | number                          | Height of thumbnail preview                                             |
-| **location**        | [PhotoLocation](#photolocation) | Location metadata for the asset                                         |
+| Prop                  | Type                                                    | Description                                                             |
+| --------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **`identifier`**      | <code>string</code>                                     | Platform-specific identifier                                            |
+| **`data`**            | <code>string</code>                                     | Data for a photo asset as a base64 encoded string (JPEG only supported) |
+| **`creationDate`**    | <code>string</code>                                     | ISO date string for creation date of asset                              |
+| **`fullWidth`**       | <code>number</code>                                     | Full width of original asset                                            |
+| **`fullHeight`**      | <code>number</code>                                     | Full height of original asset                                           |
+| **`thumbnailWidth`**  | <code>number</code>                                     | Width of thumbnail preview                                              |
+| **`thumbnailHeight`** | <code>number</code>                                     | Height of thumbnail preview                                             |
+| **`location`**        | <code><a href="#photolocation">PhotoLocation</a></code> | Location metadata for the asset                                         |
 
 
 #### PhotoLocation
 
-| Prop          | Type   | Description                              |
-| ------------- | ------ | ---------------------------------------- |
-| **latitude**  | number | GPS latitude image was taken at          |
-| **longitude** | number | GPS longitude image was taken at         |
-| **heading**   | number | Heading of user at time image was taken  |
-| **altitude**  | number | Altitude of user at time image was taken |
-| **speed**     | number | Speed of user at time image was taken    |
+| Prop            | Type                | Description                              |
+| --------------- | ------------------- | ---------------------------------------- |
+| **`latitude`**  | <code>number</code> | GPS latitude image was taken at          |
+| **`longitude`** | <code>number</code> | GPS longitude image was taken at         |
+| **`heading`**   | <code>number</code> | Heading of user at time image was taken  |
+| **`altitude`**  | <code>number</code> | Altitude of user at time image was taken |
+| **`speed`**     | <code>number</code> | Speed of user at time image was taken    |
 
 
 #### PhotosFetchOptions
 
-| Prop                 | Type   | Description                                                           |
-| -------------------- | ------ | --------------------------------------------------------------------- |
-| **quantity**         | number | The number of photos to fetch, sorted by last created date descending |
-| **thumbnailWidth**   | number | The width of thumbnail to return                                      |
-| **thumbnailHeight**  | number | The height of thumbnail to return                                     |
-| **thumbnailQuality** | number | The quality of thumbnail to return as JPEG (0-100)                    |
-| **types**            | string | Which types of assets to return (currently only supports "photos")    |
-| **albumIdentifier**  | string | Which album identifier to query in (get identifier with getAlbums())  |
+| Prop                   | Type                | Description                                                           |
+| ---------------------- | ------------------- | --------------------------------------------------------------------- |
+| **`quantity`**         | <code>number</code> | The number of photos to fetch, sorted by last created date descending |
+| **`thumbnailWidth`**   | <code>number</code> | The width of thumbnail to return                                      |
+| **`thumbnailHeight`**  | <code>number</code> | The height of thumbnail to return                                     |
+| **`thumbnailQuality`** | <code>number</code> | The quality of thumbnail to return as JPEG (0-100)                    |
+| **`types`**            | <code>string</code> | Which types of assets to return (currently only supports "photos")    |
+| **`albumIdentifier`**  | <code>string</code> | Which album identifier to query in (get identifier with getAlbums())  |
 
 
 #### PhotosAlbumsResult
 
-| Prop       | Type          | Description                                |
-| ---------- | ------------- | ------------------------------------------ |
-| **albums** | PhotosAlbum[] | The list of albums returned from the query |
+| Prop         | Type                       | Description                                |
+| ------------ | -------------------------- | ------------------------------------------ |
+| **`albums`** | <code>PhotosAlbum[]</code> | The list of albums returned from the query |
 
 
 #### PhotosAlbum
 
-| Prop           | Type                                | Description                    |
-| -------------- | ----------------------------------- | ------------------------------ |
-| **identifier** | string                              | Local identifier for the album |
-| **name**       | string                              | Name of the album              |
-| **count**      | number                              | Number of items in the album   |
-| **type**       | [PhotosAlbumType](#photosalbumtype) | The type of album              |
+| Prop             | Type                                                        | Description                    |
+| ---------------- | ----------------------------------------------------------- | ------------------------------ |
+| **`identifier`** | <code>string</code>                                         | Local identifier for the album |
+| **`name`**       | <code>string</code>                                         | Name of the album              |
+| **`count`**      | <code>number</code>                                         | Number of items in the album   |
+| **`type`**       | <code><a href="#photosalbumtype">PhotosAlbumType</a></code> | The type of album              |
 
 
 #### PhotosAlbumsFetchOptions
 
-| Prop           | Type    | Description                         |
-| -------------- | ------- | ----------------------------------- |
-| **loadShared** | boolean | Whether to load cloud shared albums |
+| Prop             | Type                 | Description                         |
+| ---------------- | -------------------- | ----------------------------------- |
+| **`loadShared`** | <code>boolean</code> | Whether to load cloud shared albums |
 
 
 #### PhotosSaveResult
 
-| Prop        | Type    | Description                   |
-| ----------- | ------- | ----------------------------- |
-| **success** | boolean | Whether the photo was created |
+| Prop          | Type                 | Description                   |
+| ------------- | -------------------- | ----------------------------- |
+| **`success`** | <code>boolean</code> | Whether the photo was created |
 
 
 #### PhotosSaveOptions
 
-| Prop                | Type   | Description                                                                           |
-| ------------------- | ------ | ------------------------------------------------------------------------------------- |
-| **data**            | string | The base64-encoded JPEG data for a photo (note: do not add HTML data-uri type prefix) |
-| **albumIdentifier** | string | The optional album identifier to save this photo in                                   |
+| Prop                  | Type                | Description                                                                           |
+| --------------------- | ------------------- | ------------------------------------------------------------------------------------- |
+| **`data`**            | <code>string</code> | The base64-encoded JPEG data for a photo (note: do not add HTML data-uri type prefix) |
+| **`albumIdentifier`** | <code>string</code> | The optional album identifier to save this photo in                                   |
 
 
 #### PhotosCreateAlbumOptions
 
-| Prop     | Type   |
-| -------- | ------ |
-| **name** | string |
+| Prop       | Type                |
+| ---------- | ------------------- |
+| **`name`** | <code>string</code> |
 
 
 ### Enums
@@ -182,11 +182,11 @@ Create an album in the user's photo library
 
 #### PhotosAlbumType
 
-| Members    | Value    | Description                                                    |
-| ---------- | -------- | -------------------------------------------------------------- |
-| **Smart**  | "smart"  | Album is a "smart" album (such as Favorites or Recently Added) |
-| **Shared** | "shared" | Album is a cloud-shared album                                  |
-| **User**   | "user"   | Album is a user-created album                                  |
+| Members      | Value                 | Description                                                    |
+| ------------ | --------------------- | -------------------------------------------------------------- |
+| **`Smart`**  | <code>"smart"</code>  | Album is a "smart" album (such as Favorites or Recently Added) |
+| **`Shared`** | <code>"shared"</code> | Album is a cloud-shared album                                  |
+| **`User`**   | <code>"user"</code>   | Album is a user-created album                                  |
 
 
 <!--DOCGEN_API_END-->

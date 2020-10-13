@@ -11,12 +11,12 @@ contributors:
 # Browser
 
 <!--DOCGEN_INDEX_START-->
-* [open()](#open)
-* [prefetch()](#prefetch)
-* [close()](#close)
-* [addListener()](#addlistener)
-* [addListener()](#addlistener)
-* [removeAllListeners()](#removealllisteners)
+* [`open(...)`](#open)
+* [`prefetch(...)`](#prefetch)
+* [`close()`](#close)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
@@ -37,7 +37,7 @@ await Browser.open({ url: 'http://capacitorjs.com/' });
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
-### open
+### open(...)
 
 ```typescript
 open(options: BrowserOpenOptions) => Promise<void>
@@ -45,16 +45,16 @@ open(options: BrowserOpenOptions) => Promise<void>
 
 Open a page with the given URL
 
-| Param       | Type                                      |
-| ----------- | ----------------------------------------- |
-| **options** | [BrowserOpenOptions](#browseropenoptions) |
+| Param         | Type                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| **`options`** | <code><a href="#browseropenoptions">BrowserOpenOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### prefetch
+### prefetch(...)
 
 ```typescript
 prefetch(options: BrowserPrefetchOptions) => Promise<void>
@@ -65,16 +65,16 @@ to improve initial loading times.
 
 Only functional on Android, is a no-op on iOS
 
-| Param       | Type                                              |
-| ----------- | ------------------------------------------------- |
-| **options** | [BrowserPrefetchOptions](#browserprefetchoptions) |
+| Param         | Type                                                                      |
+| ------------- | ------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#browserprefetchoptions">BrowserPrefetchOptions</a></code> |
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### close
+### close()
 
 ```typescript
 close() => Promise<void>
@@ -82,44 +82,44 @@ close() => Promise<void>
 
 Close an open browser. Only works on iOS and Web environment, otherwise is a no-op
 
-**Returns:** Promise&lt;void&gt;
+**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'browserFinished', listenerFunc: (info: any) => void) => PluginListenerHandle
 ```
 
-| Param            | Type                |
-| ---------------- | ------------------- |
-| **eventName**    | "browserFinished"   |
-| **listenerFunc** | (info: any) => void |
+| Param              | Type                             |
+| ------------------ | -------------------------------- |
+| **`eventName`**    | <code>"browserFinished"</code>   |
+| **`listenerFunc`** | <code>(info: any) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener
+### addListener(...)
 
 ```typescript
 addListener(eventName: 'browserPageLoaded', listenerFunc: (info: any) => void) => PluginListenerHandle
 ```
 
-| Param            | Type                |
-| ---------------- | ------------------- |
-| **eventName**    | "browserPageLoaded" |
-| **listenerFunc** | (info: any) => void |
+| Param              | Type                             |
+| ------------------ | -------------------------------- |
+| **`eventName`**    | <code>"browserPageLoaded"</code> |
+| **`listenerFunc`** | <code>(info: any) => void</code> |
 
-**Returns:** [PluginListenerHandle](#pluginlistenerhandle)
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### removeAllListeners
+### removeAllListeners()
 
 ```typescript
 removeAllListeners() => void
@@ -127,7 +127,7 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
-**Returns:** void
+**Returns:** <code>void</code>
 
 --------------------
 
@@ -137,26 +137,26 @@ Remove all native listeners for this plugin
 
 #### BrowserOpenOptions
 
-| Prop                  | Type                      | Description                                                                                                   |
-| --------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **url**               | string                    | The URL to open the browser to                                                                                |
-| **windowName**        | string                    | Web only: Optional target for browser open. Follows the `target` property for window.open. Defaults to _blank |
-| **toolbarColor**      | string                    | A hex color to set the toolbar color to.                                                                      |
-| **presentationStyle** | "fullscreen" \| "popover" | iOS only: The presentation style of the browser. Defaults to fullscreen.                                      |
+| Prop                    | Type                                   | Description                                                                                                   |
+| ----------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **`url`**               | <code>string</code>                    | The URL to open the browser to                                                                                |
+| **`windowName`**        | <code>string</code>                    | Web only: Optional target for browser open. Follows the `target` property for window.open. Defaults to _blank |
+| **`toolbarColor`**      | <code>string</code>                    | A hex color to set the toolbar color to.                                                                      |
+| **`presentationStyle`** | <code>"fullscreen" \| "popover"</code> | iOS only: The presentation style of the browser. Defaults to fullscreen.                                      |
 
 
 #### BrowserPrefetchOptions
 
-| Prop     | Type     |
-| -------- | -------- |
-| **urls** | string[] |
+| Prop       | Type                  |
+| ---------- | --------------------- |
+| **`urls`** | <code>string[]</code> |
 
 
 #### PluginListenerHandle
 
-| Prop       | Type       |
-| ---------- | ---------- |
-| **remove** | () => void |
+| Prop         | Type                    |
+| ------------ | ----------------------- |
+| **`remove`** | <code>() => void</code> |
 
 
 <!--DOCGEN_API_END-->
