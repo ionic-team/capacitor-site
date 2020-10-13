@@ -30,3 +30,4 @@ contributors:
 - cordova-plugin-statusbar (not needed, Capacitor has its own)
 - cordova-plugin-wkwebview-engine (not needed, Capacitor uses WKWebView)
 - cordova-plugin-googlemaps (causes build failures on iOS, skipped for iOS only)
+- cordova-plugin-lottie-splashscreen (it's incompatible and some further work is needed)
