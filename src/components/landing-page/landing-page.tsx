@@ -89,7 +89,7 @@ export class LandingPage {
         <ResponsiveContainer>
           <section class="section--web-apps-to-native">
             <hgroup>
-              <Heading id="features" level={3}>
+              <Heading id="webapps" level={3}>
                 Connect web apps to
                 <br />
                 <FancyUnderline>native functionality.</FancyUnderline>
