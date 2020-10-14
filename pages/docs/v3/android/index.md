@@ -14,34 +14,9 @@ Capacitor Android apps are configured and managed through Android Studio.
 
 ## Android Support
 
-API 21+ (Android 5 or later) is supported, which represents over 90% of the Android market.
+API 21+ (Android 5 or later) is supported, which represents [over 95% of the Android market](https://gs.statcounter.com/android-version-market-share/mobile-tablet/worldwide). Capacitor requires an Android WebView with Chrome version 50 or later. On Android 5 and 6, Capacitor uses the [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview). On Android 7+, [Google Chrome](https://play.google.com/store/apps/details?id=com.android.chrome) is used.
 
-Also, Capacitor requires an Android WebView with Chrome version 50 or later. On Android 5 and 6, the Capacitor uses the System WebView. On Android 7+, Google Chrome is used.
-
-## Getting Started
-
-Developing Android apps requires some Android SDK packages to be installed. Make sure to install the Android SDK Tools, and a version of the Android SDK Platforms for API 21 or greater.
-
-In Android Studio open **Tools -> SDK Manager** from the menu and install the platform versions you'd like to test with in the **SDK Platforms** tab:
-
-![SDK Platforms](/assets/img/docs/android/sdk-platforms.png)
-
-In the **SDK Tools** tab, make sure to install at least the following:
-
-* Android SDK Build-Tools
-* Android Emulator
-* Android SDK Platform-Tools
-* Android SDK Tools
-
-![SDK Tools](/assets/img/docs/android/sdk-tools.png)
-
-> You can use [`native-run`](https://github.com/ionic-team/native-run) to check the health of your Android SDK installation and look for missing packages:
->
-> ```bash
-> native-run android --sdk-info
-> ```
-
-### Adding the Android Platform
+## Adding the Android Platform
 
 First, install the `@capacitor/android` package.
 
@@ -56,7 +31,7 @@ npx cap add android
 npx cap sync android
 ```
 
-### Opening the Android Project
+## Opening the Android Project
 
 To open the project in Android Studio, run:
 
@@ -64,13 +39,13 @@ To open the project in Android Studio, run:
 npx cap open android
 ```
 
-### Running Your App
+## Running Your App
 
 You can either run your app on the command-line or with Android Studio.
 
 > To use an Android Emulator you must use an API 24+ system image. The System WebView does not automatically update on emulators. Physical devices should work as low as API 21 as long as their System WebView is updated.
 
-#### Running on the Command-Line
+### Running on the Command-Line
 
 To run the project on a device or emulator, run:
 
@@ -80,17 +55,17 @@ npx cap run android
 
 The command will prompt you to select a target. [Learn more about `run`](/docs/reference/cli#run).
 
-#### Running with Android Studio
+### Running with Android Studio
 
 In Android Studio, first select the device or emulator and then click the run or debug button to run your app. Unless you're debugging Java or Kotlin code, the run button is preferred.
 
 ![Running App](/assets/img/docs/android/running.png)
 
-### Troubleshooting
+## Troubleshooting
 
 If you encountered any issues while getting started, you can consult the [Android Troubleshooting Guide](/docs/android/troubleshooting). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
 
-### Next Steps
+## Next Steps
 
 If your app ran you are now ready to continue developing and building your app. Use the various APIs available, Capacitor or Cordova plugins, or custom native code to build out the rest of your app.
 

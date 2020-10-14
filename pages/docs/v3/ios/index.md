@@ -14,11 +14,9 @@ Capacitor iOS apps are configured and managed through Xcode, with dependencies m
 
 ## iOS Support
 
-The latest version of Capacitor will always support the two latest major versions of iOS.
+iOS 11+ is supported. Xcode 11+ is required (see [Environment Setup](/docs/getting-started/environment-setup#ios-development)). Capacitor uses [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview), not the deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
 
-Capacitor uses [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview), not the deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
-
-### Adding the iOS Platform
+## Adding the iOS Platform
 
 First, install the `@capacitor/ios` package.
 
@@ -33,7 +31,7 @@ npx cap add ios
 npx cap sync ios
 ```
 
-### Opening the iOS Project
+## Opening the iOS Project
 
 To open the project in Xcode, run:
 
@@ -41,11 +39,11 @@ To open the project in Xcode, run:
 npx cap open ios
 ```
 
-### Running Your App
+## Running Your App
 
 You can either run your app on the command-line or with Xcode.
 
-#### Running on the Command-Line
+### Running on the Command-Line
 
 To run the project on a device or simulator, run:
 
@@ -55,13 +53,13 @@ npx cap run ios
 
 The command will prompt you to select a target. [Learn more about `run`](/docs/reference/cli#run).
 
-#### Running in Xcode
+### Running in Xcode
 
 In Xcode, first select the device or simulator and then click the play button to run your app.
 
 ![Running your app](/assets/img/docs/ios/running.png)
 
-### Troubleshooting
+## Troubleshooting
 
 If you encountered any issues while getting started, you can consult the [iOS Troubleshooting Guide](/docs/ios/troubleshooting). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
 

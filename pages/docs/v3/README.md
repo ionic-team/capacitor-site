@@ -2,7 +2,7 @@
 
 * Getting Started
   * [Introduction](index.md)
-  * [Required Dependencies](getting-started/dependencies.md)
+  * [Environment Setup](getting-started/environment-setup.md)
   * [Installation](getting-started/index.md)
   * [Using with Ionic](getting-started/with-ionic.md)
 * Basics
