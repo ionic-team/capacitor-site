@@ -23,6 +23,17 @@ resources/
 └── splash.png
 ```
 
+If you are building an Android application, the files required in order to generate adaptive icons as [noted here](https://github.com/ionic-team/cordova-res#adaptive-icons) may can also be added. In this case, the directory structure will look like this:
+
+```
+resources/
+├── icon.png
+└── splash.png
+└── android/
+    └── icon-background.png
+    └── icon-foreground.png
+```
+
 Next, run the following to generate all images then copy them into the native projects:
 
 ```bash
