@@ -17,7 +17,7 @@ For the purposes of registering and monitoring for push notifications from Fireb
 
 ## Required Dependencies
 
-Building and deploying iOS and Android applications using Capacitor requires a bit of setup. Please [follow the instructions to install the necessary Capacitor dependencies here](/docs/getting-started/dependencies) before continuing.
+Building and deploying iOS and Android applications using Capacitor requires a bit of setup. Please [follow the instructions to install the necessary Capacitor dependencies here](/docs/getting-started/environment-setup) before continuing.
 
 To test push notifications on iOS, Apple requires that you have [a paid Apple Developer account](https://developer.apple.com/) and a *physical* iOS device.
 
