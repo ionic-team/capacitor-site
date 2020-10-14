@@ -15,11 +15,15 @@ The Accessibility API makes it easy to know when a user has a screen reader enab
 labels through the connected screen reader.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`isScreenReaderEnabled()`](#isscreenreaderenabled)
 * [`speak(...)`](#speak)
 * [`addListener(...)`](#addlistener)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## Example
@@ -50,6 +54,8 @@ async speak() {
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### isScreenReaderEnabled()
@@ -137,5 +143,5 @@ Remove all native listeners for this plugin
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
 
-
+</div>
 <!--DOCGEN_API_END-->

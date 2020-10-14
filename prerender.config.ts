@@ -12,5 +12,11 @@ export const config: PrerenderConfig = {
       return false;
     }
     return true;
-  }
+  },
+  entryUrls: [
+    '/',
+
+    // v3 docs not crawlable for now, manually add it as an entry url
+    '/docs/v3'
+  ]
 };

@@ -13,6 +13,8 @@ contributors:
 The StatusBar API Provides methods for configuring the style of the Status Bar, along with showing or hiding it.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`setStyle(...)`](#setstyle)
 * [`setBackgroundColor(...)`](#setbackgroundcolor)
 * [`show(...)`](#show)
@@ -21,6 +23,8 @@ The StatusBar API Provides methods for configuring the style of the Status Bar, 
 * [`setOverlaysWebView(...)`](#setoverlayswebview)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## iOS Note
@@ -78,6 +82,8 @@ export class StatusBarExample {
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### setStyle(...)
@@ -239,5 +245,5 @@ around a device "notch"
 | **`Slide`** | <code>"SLIDE"</code> | Slide animation during show/hide. |
 | **`Fade`**  | <code>"FADE"</code>  | Fade animation during show/hide.  |
 
-
+</div>
 <!--DOCGEN_API_END-->

@@ -53,6 +53,9 @@ export class CodeSnippet {
   }
 
   render() {
+    if (!this.code) {
+      return null;
+    }
     return (
       <Host>
         <pre class={`language-${this.language}`}>

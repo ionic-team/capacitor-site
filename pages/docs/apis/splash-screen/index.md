@@ -14,9 +14,13 @@ contributors:
 The Splash Screen API provides methods for showing or hiding a Splash image.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`show(...)`](#show)
 * [`hide(...)`](#hide)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## Example
@@ -157,6 +161,8 @@ To use splash screen images named something other than `splash.png`, set `androi
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### show(...)
@@ -233,5 +239,5 @@ Creates a new function.
 | --------------------- | ------------------- | ---------------------------------------------- |
 | **`fadeOutDuration`** | <code>number</code> | How long (in ms) to fade out. Default is 200ms |
 
-
+</div>
 <!--DOCGEN_API_END-->

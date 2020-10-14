@@ -15,9 +15,13 @@ supports running a task when the app is backgrounded, and soon will support peri
 fetch operations.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`beforeExit(...)`](#beforeexit)
 * [`finish(...)`](#finish)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## Background Task Guidelines
@@ -73,6 +77,8 @@ App.addListener('appStateChange', (state) => {
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### beforeExit(...)
@@ -141,5 +147,5 @@ Creates a new function.
 | **bind**     | (this: Function, thisArg: any, ...argArray: any[]) => any | For a given function, creates a bound function that has the same body as the original function. The this object of the bound function is associated with the specified object, and has the specified initial parameters. |
 | **toString** | () => string                                              | Returns a string representation of a function.                                                                                                                                                                           |
 
-
+</div>
 <!--DOCGEN_API_END-->

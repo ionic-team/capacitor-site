@@ -16,6 +16,8 @@ For example, this API emits events when the app enters and leaves the foreground
 deeplinks, opens other apps, and manages persisted plugin state.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`exitApp()`](#exitapp)
 * [`canOpenUrl(...)`](#canopenurl)
 * [`openUrl(...)`](#openurl)
@@ -27,6 +29,8 @@ deeplinks, opens other apps, and manages persisted plugin state.
 * [`addListener(...)`](#addlistener)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## Note about `canOpenUrl`
@@ -89,6 +93,8 @@ We recommend every Android app using plugins that rely on external Activities (f
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### exitApp()
@@ -300,5 +306,5 @@ Remove all native listeners for this plugin
 | **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded                                                                                                   |
 | **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message                                                                              |
 
-
+</div>
 <!--DOCGEN_API_END-->

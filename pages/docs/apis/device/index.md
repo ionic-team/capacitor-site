@@ -14,10 +14,14 @@ The Device API exposes internal information about the device, such as the model 
 such as unique ids.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`getInfo()`](#getinfo)
 * [`getBatteryInfo()`](#getbatteryinfo)
 * [`getLanguageCode()`](#getlanguagecode)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## Example
@@ -60,6 +64,8 @@ console.log(info);
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### getInfo()
@@ -139,5 +145,5 @@ Get the device's current language locale code
 | ----------- | ------------------- |
 | **`value`** | <code>string</code> |
 
-
+</div>
 <!--DOCGEN_API_END-->

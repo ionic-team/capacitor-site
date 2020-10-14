@@ -505,7 +505,7 @@ const WhitepaperCTA = ({ show, hide, shown, submitted }) => [
 ];
 
 const Announcement = ({ data }) => {
-  if (!data.tag_text) return '';
+  if (!data?.tag_text) return '';
   return (
     <a
       class="feature__register"

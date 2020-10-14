@@ -14,12 +14,16 @@ The Modals API provides methods for triggering native modal windows for alerts, 
 well as Action Sheets.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`alert(...)`](#alert)
 * [`prompt(...)`](#prompt)
 * [`confirm(...)`](#confirm)
 * [`showActions(...)`](#showactions)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## Example
@@ -77,6 +81,8 @@ async showActions() {
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### alert(...)
@@ -233,5 +239,5 @@ to select.
 | **`Destructive`** | <code>"DESTRUCTIVE"</code> |
 | **`Cancel`**      | <code>"CANCEL"</code>      |
 
-
+</div>
 <!--DOCGEN_API_END-->

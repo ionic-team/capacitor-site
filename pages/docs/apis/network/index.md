@@ -13,10 +13,14 @@ contributors:
 The Network API provides events for monitoring network status changes, along with querying the current state of the network.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`getStatus()`](#getstatus)
 * [`addListener(...)`](#addlistener)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## Example
@@ -54,6 +58,8 @@ This permission allows the app to access information about the current network, 
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### getStatus()
@@ -117,5 +123,5 @@ Remove all native listeners for this plugin
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
 
-
+</div>
 <!--DOCGEN_API_END-->

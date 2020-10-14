@@ -14,9 +14,13 @@ The Camera API allows a user to pick a photo from their photo album or take a pi
 API sends an intent which will be handled by the core Camera app by default.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`getPhoto(...)`](#getphoto)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## iOS Notes
@@ -83,6 +87,8 @@ async takePicture() {
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### getPhoto(...)
@@ -168,5 +174,5 @@ with the camera.
 | **`Rear`**  | <code>"REAR"</code>  |
 | **`Front`** | <code>"FRONT"</code> |
 
-
+</div>
 <!--DOCGEN_API_END-->

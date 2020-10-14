@@ -64,6 +64,8 @@ An empty Array can be provided if none of the previous options are desired. `pus
 ```
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`register()`](#register)
 * [`requestPermission()`](#requestpermission)
 * [`getDeliveredNotifications()`](#getdeliverednotifications)
@@ -78,6 +80,8 @@ An empty Array can be provided if none of the previous options are desired. `pus
 * [`addListener(...)`](#addlistener)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 
@@ -87,6 +91,8 @@ An empty Array can be provided if none of the previous options are desired. `pus
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### register()
@@ -375,5 +381,5 @@ Remove all native listeners for this plugin.
 | **`inputValue`**   | <code>string</code>                                           |
 | **`notification`** | <code><a href="#pushnotification">PushNotification</a></code> |
 
-
+</div>
 <!--DOCGEN_API_END-->

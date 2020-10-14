@@ -16,6 +16,8 @@ first and optionally displaying a custom UI to prepare the user for the permissi
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### query(...)
@@ -65,5 +67,5 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 | **`ClipboardWrite`** | <code>"clipboard-write"</code> |
 | **`Microphone`**     | <code>"microphone"</code>      |
 
-
+</div>
 <!--DOCGEN_API_END-->

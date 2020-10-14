@@ -13,6 +13,8 @@ contributors:
 The Haptics API provides physical feedback to the user through touch or vibration.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`impact(...)`](#impact)
 * [`notification(...)`](#notification)
 * [`vibrate()`](#vibrate)
@@ -21,6 +23,8 @@ The Haptics API provides physical feedback to the user through touch or vibratio
 * [`selectionEnd()`](#selectionend)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## Android Notes
@@ -76,6 +80,8 @@ export class HapticsExample {
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### impact(...)
@@ -204,5 +210,5 @@ For example, call this when a user has lifted their finger from a control
 | **`WARNING`** | <code>"WARNING"</code> |
 | **`ERROR`**   | <code>"ERROR"</code>   |
 
-
+</div>
 <!--DOCGEN_API_END-->
