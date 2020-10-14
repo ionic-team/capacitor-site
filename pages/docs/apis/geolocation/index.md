@@ -14,10 +14,14 @@ The Geolocation API provides simple methods for getting and tracking the current
 with altitude, heading, and speed information if available.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`getCurrentPosition(...)`](#getcurrentposition)
 * [`watchPosition(...)`](#watchposition)
 * [`clearWatch(...)`](#clearwatch)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## iOS Notes
@@ -69,6 +73,8 @@ class GeolocationExample {
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### getCurrentPosition(...)
@@ -143,5 +149,5 @@ Clear a given watch
 | **`timeout`**            | <code>number</code>  |
 | **`maximumAge`**         | <code>number</code>  |
 
-
+</div>
 <!--DOCGEN_API_END-->

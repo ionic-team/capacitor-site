@@ -11,6 +11,8 @@ contributors:
 # Browser
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`open(...)`](#open)
 * [`prefetch(...)`](#prefetch)
 * [`close()`](#close)
@@ -18,6 +20,8 @@ contributors:
 * [`addListener(...)`](#addlistener)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 The Browser API makes it easy to open an in-app browser session to show external web content,
@@ -35,6 +39,8 @@ await Browser.open({ url: 'http://capacitorjs.com/' });
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### open(...)
@@ -158,5 +164,5 @@ Remove all native listeners for this plugin
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
 
-
+</div>
 <!--DOCGEN_API_END-->

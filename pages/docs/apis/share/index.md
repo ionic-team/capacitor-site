@@ -15,8 +15,12 @@ The Share API provides methods for sharing content in any sharing-enabled apps t
 The Share API works on iOS, Android, and the Web (using the new [Web Share API](https://developers.google.com/web/updates/2016/09/navigator-share)), though web support is currently spotty.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`share(...)`](#share)
 * [Interfaces](#interfaces)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 ## Example
@@ -37,6 +41,8 @@ Each platform uses a different set of fields, but you should supply them all.
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### share(...)
@@ -68,5 +74,5 @@ Show a Share modal for sharing content in your app with other apps
 | **`url`**         | <code>string</code> | Set a URL to share, can be http, https or file URL                        |
 | **`dialogTitle`** | <code>string</code> | Set a title for the share modal. Android only                             |
 
-
+</div>
 <!--DOCGEN_API_END-->

@@ -13,6 +13,8 @@ contributors:
 The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
 
 <!--DOCGEN_INDEX_START-->
+<div class="docgen docgen-index">
+
 * [`show()`](#show)
 * [`hide()`](#hide)
 * [`setAccessoryBarVisible(...)`](#setaccessorybarvisible)
@@ -26,6 +28,8 @@ The Keyboard API provides keyboard display and visibility control, along with ev
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
+
+</div>
 <!--DOCGEN_INDEX_END-->
 
 
@@ -115,6 +119,8 @@ Allowed values are
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+<div class="docgen docgen-api">
+
 ## API
 
 ### show()
@@ -340,5 +346,5 @@ Remove all native listeners for this plugin
 | **`Native`** | <code>"native"</code> |
 | **`None`**   | <code>"none"</code>   |
 
-
+</div>
 <!--DOCGEN_API_END-->
