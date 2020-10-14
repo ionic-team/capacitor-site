@@ -12,28 +12,24 @@ Capacitor has a number of dependencies depending on which platforms you're targe
 
 ## Requirements
 
-The base requirements are **[Node v8.6.0](https://nodejs.org) or later**, and **NPM version 5.6.0 or later** (which is usually automatically installed with the required version of Node).
+You will need [NodeJS 10.3.0](https://nodejs.org) or later to get started. For specific platforms, follow each guide below to ensure you have the correct dependencies installed.
 
-Capacitor supports [yarn](https://yarnpkg.com) as well.
+### Running your App
 
-For specific platforms, follow each guide below to ensure you have the correct dependencies installed.
+To run your app on hardware and virtual devices, you will need to install [`native-run`](https://github.com/ionic-team/native-run/):
+
+```bash
+npm install -g native-run
+```
 
 ## iOS Development
 
-For building iOS apps, Capacitor requires a **Mac with Xcode 11 or above**. Or you can use [Ionic Appflow](http://ionicframework.com/appflow) to build for iOS even if you're on Windows.
+To build iOS apps, you will need **macOS**. You will also need to download and set up [Xcode](https://developer.apple.com/xcode/).
 
-Additionally, you'll need to install **[CocoaPods](https://cocoapods.org/)** (`sudo gem install cocoapods`), and install the **Xcode Command Line tools** (either from Xcode, or running `xcode-select --install`).
+Additionally, you'll need to install [CocoaPods](https://cocoapods.org/) (`sudo gem install cocoapods`), and install the **Xcode Command Line tools** (either from Xcode, or running `xcode-select --install`).
 
-As a rule, the latest version of Capacitor always supports at least the last two iOS versions.
-
-Capacitor 2.0 supports iOS 11+.
-
-Capacitor uses the WKWebView.
+> [Ionic Appflow](http://ionicframework.com/appflow) can be used to perform iOS cloud builds if you don't have a Mac.
 
 ## Android Development
 
-Android development requires the **Android SDK** installed with **[Android Studio](https://developer.android.com/studio/index.html)**. Technically, Android Studio isn't required as you can build and run apps using only the Android CLI tools, but it will make building and running your app much easier so we strongly recommend using it.
-
-Android version support for Capacitor is more complex than iOS. Currently, we are targeting API level 21 or greater, meaning Android 5.0 (Lollipop) or above. This represents over 90% of the Android market.
-
-Also, Capacitor requires an Android WebView with Chrome version 50 or later. On Android 5 and 6, the Capacitor uses the System WebView. On Android 7+, Google Chrome is used.
+To build Android apps, you will need to download and set up [Android Studio](https://developer.android.com/studio/index.html).
