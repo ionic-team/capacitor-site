@@ -58,4 +58,4 @@ Then, open `ios/App/Podfile` and rename the current target at the bottom of the 
 
 ## Deeplinks (aka Universal Links)
 
-For a full Deep Links tutorial, [see here](/docs/guides/deep-links).
+For a Deep Links guide, [see here](/docs/guides/deep-links).

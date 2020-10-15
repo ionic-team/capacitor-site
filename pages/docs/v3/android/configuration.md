@@ -43,7 +43,7 @@ It may make sense to change the activity name to match, especially if your app h
 
 ## Deeplinks (aka Android App Links)
 
-> For a full Deep Links tutorial, [see here](/docs/guides/deep-links).
+> For a Deep Links guide, [see here](/docs/guides/deep-links).
 
 To enable deeplinking through Android App Links, follow the official Android guide on [Adding Android App Links](https://developer.android.com/studio/write/app-link-indexing). Android Studio comes with a handy wizard for configuring App Links.
 
