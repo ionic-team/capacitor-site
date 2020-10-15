@@ -14,14 +14,6 @@ Capacitor has a number of dependencies depending on which platforms you're targe
 
 You will need at least [NodeJS 12 LTS](https://nodejs.org) or later to get started. For specific platforms, follow each guide below to ensure you have the correct dependencies installed.
 
-### Running your App
-
-To run your app on hardware and virtual devices, you will need to install [`native-run`](https://github.com/ionic-team/native-run/):
-
-```bash
-npm install -g native-run
-```
-
 ## iOS Development
 
 To build iOS apps, you will need **macOS**. You will also need to download and set up [Xcode](https://developer.apple.com/xcode/).
@@ -63,8 +55,8 @@ In the **SDK Tools** tab, make sure to install at least the following:
 
 ![SDK Tools](/assets/img/docs/android/sdk-tools.png)
 
-> You can use [`native-run`](https://github.com/ionic-team/native-run) to check the health of your Android SDK installation and look for missing packages:
+> You can use [`native-run`](https://github.com/ionic-team/native-run), a dependency of the Capacitor CLI, to check the health of your Android SDK installation and look for missing packages:
 >
 > ```bash
-> native-run android --sdk-info
+> npx native-run android --sdk-info
 > ```
