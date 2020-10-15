@@ -2,6 +2,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 import dotenvPlugin from 'rollup-plugin-dotenv';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 export const config: Config = {
   devServer: {
@@ -28,4 +29,9 @@ export const config: Config = {
     }),
     dotenvPlugin(),
   ],
+  rollupPlugins: {
+    after: [
+      nodePolyfills(),
+    ]
+  }
 };

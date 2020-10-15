@@ -1,21 +1,15 @@
 import { Component, Element, State, h, VNode, Host } from '@stencil/core';
 import {
   ResponsiveContainer,
-  AnchorButton,
   IntersectionHelper,
+  Button,
 } from '@ionic-internal/ionic-ds';
 import { href } from '../../stencil-router-v2';
 
 import Router from '../../router';
 import state from '../../store';
+// import { parseHtmlContent } from '@stencil/ssg/parse'
 
-const formatNumber = n => {
-  if (n > 1000) {
-    return (n / 1000).toFixed(1) + 'K';
-  }
-
-  return n;
-};
 
 @Component({
   tag: 'capacitor-site-header',
@@ -33,11 +27,30 @@ export class SiteHeader {
   @State() forceHovered: string | null = null;
   @State() hovered: string | null = null;
 
-  @State() starCount?: number;
+  @State() starCount?: string;
 
   async componentWillLoad() {
-    // TODO pull this in from GitHub at build
-    this.starCount = formatNumber('4.4K');
+    // if (Build.isServer) {
+    //   var url = 'https://github.com/ionic-team/capacitor'
+    //   const res = await fetch(url, {
+    //     method: 'GET',
+    //     headers: { 'Content-Type': 'text/html' },
+    //   });
+    //   const html = await res.text();
+    //   var data: { stars?: string };
+
+    //   const opts = {
+    //     beforeHtmlSerialize: async (frag: DocumentFragment) => {
+    //       const starsLink = frag.querySelector('a[href="/ionic-team/capacitor/stargazers"].social-count');
+
+    //       data.stars = starsLink?.textContent.trim();
+    //     },
+    //   };
+
+    //   await parseHtmlContent(html, opts);   
+
+    //   staticState(data)
+    // }
 
     // Figure out if we should force hover a nav item
     this.forceHovered = Router.path.replace('/', '').replace('#', '');
@@ -92,6 +105,7 @@ export class SiteHeader {
         }}
       >
         <site-backdrop
+          mobileOnly
           visible={expanded}
           onClick={() => this.toggleExpanded()}
         />
@@ -174,14 +188,16 @@ export class SiteHeader {
             </div>
 
             <div class="site-header-links__buttons">
-              <AnchorButton
+              <Button
+                anchor
                 href="https://github.com/ionic-team/capacitor"
                 class="site-header-links__buttons__github"
               >
                 <ion-icon name="logo-github" />
                 <span>{starCount ? starCount : 'GitHub'}</span>
-              </AnchorButton>
-              <AnchorButton
+              </Button>
+              <Button
+                anchor
                 class="site-header-links__buttons__install"
                 href="/docs/getting-started"
               >
@@ -198,7 +214,7 @@ export class SiteHeader {
                   />
                 </svg>
                 Install
-              </AnchorButton>
+              </Button>
             </div>
           </div>
         </ResponsiveContainer>

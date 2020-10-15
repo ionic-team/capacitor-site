@@ -7,7 +7,7 @@ import {
   Col,
   Paragraph,
   Heading,
-  AnchorButton,
+  Button,
 } from '@ionic-internal/ionic-ds';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 import { href } from '../../stencil-router-v2';
@@ -34,9 +34,9 @@ export class CordovaLandingPage {
                     A modern development experience and 99%
                     backward-compatibility with Cordova.
                   </Heading>
-                  <AnchorButton href="#code-branch" id="get-started">
+                  <Button anchor href="#code-branch" id="get-started">
                     Get Started
-                  </AnchorButton>
+                  </Button>
                 </hgroup>
               </Col>
             </Grid>
@@ -320,7 +320,7 @@ const MoreResourcesSection = () => (
       </Paragraph>
     </hgroup>
     <more-resources
-      resources={[
+      resourceData={[
         {
           uid: 'capacitor-vs-cordova-modern-hybrid-app-development',
           type: 'article',

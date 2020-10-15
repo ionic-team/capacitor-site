@@ -65,7 +65,11 @@ export class DocsComponent implements ComponentInterface {
 
         <app-menu-toggle />
 
-        <site-backdrop visible={showBackdrop} onClick={this.backdropClicked} />
+        <site-backdrop
+          mobileOnly
+          visible={showBackdrop}
+          onClick={this.backdropClicked}
+        />
 
         <docs-menu
           ref={el => (this.menuEl = el)}

@@ -200,6 +200,7 @@ site-backdrop {
 
       padding: 10px 0;
 
+      visibility: hidden;
       opacity: 0;
       transform: translateY(-10px);
       transition:
@@ -243,6 +244,7 @@ site-backdrop {
   :host(.site-header--expanded) {
     .site-header-links {
       opacity: 1;
+      visibility: visible;
       pointer-events: all;
       transform: translateY(-1px);
       transition:

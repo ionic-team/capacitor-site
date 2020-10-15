@@ -96,9 +96,6 @@ export namespace Components {
     }
     interface PreFooter {
     }
-    interface SiteBackdrop {
-        "visible": boolean;
-    }
     interface SolutionPage {
         "solutionId": string;
     }
@@ -274,12 +271,6 @@ declare global {
         prototype: HTMLPreFooterElement;
         new (): HTMLPreFooterElement;
     };
-    interface HTMLSiteBackdropElement extends Components.SiteBackdrop, HTMLStencilElement {
-    }
-    var HTMLSiteBackdropElement: {
-        prototype: HTMLSiteBackdropElement;
-        new (): HTMLSiteBackdropElement;
-    };
     interface HTMLSolutionPageElement extends Components.SolutionPage, HTMLStencilElement {
     }
     var HTMLSolutionPageElement: {
@@ -321,7 +312,6 @@ declare global {
         "plugin-api-index": HTMLPluginApiIndexElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
         "pre-footer": HTMLPreFooterElement;
-        "site-backdrop": HTMLSiteBackdropElement;
         "solution-page": HTMLSolutionPageElement;
         "version-select": HTMLVersionSelectElement;
     }
@@ -416,9 +406,6 @@ declare namespace LocalJSX {
     }
     interface PreFooter {
     }
-    interface SiteBackdrop {
-        "visible"?: boolean;
-    }
     interface SolutionPage {
         "solutionId"?: string;
     }
@@ -453,7 +440,6 @@ declare namespace LocalJSX {
         "plugin-api-index": PluginApiIndex;
         "plugin-platforms": PluginPlatforms;
         "pre-footer": PreFooter;
-        "site-backdrop": SiteBackdrop;
         "solution-page": SolutionPage;
         "version-select": VersionSelect;
     }
@@ -490,7 +476,6 @@ declare module "@stencil/core" {
             "plugin-api-index": LocalJSX.PluginApiIndex & JSXBase.HTMLAttributes<HTMLPluginApiIndexElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
-            "site-backdrop": LocalJSX.SiteBackdrop & JSXBase.HTMLAttributes<HTMLSiteBackdropElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
             "version-select": LocalJSX.VersionSelect & JSXBase.HTMLAttributes<HTMLVersionSelectElement>;
         }

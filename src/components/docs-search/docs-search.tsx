@@ -146,6 +146,7 @@ export class DocsSearch implements ComponentInterface {
           }}
         />
         <site-backdrop
+          mobileOnly
           visible={!this.input.isEmpty}
           onClick={() => {
             this.input.el.value = '';

@@ -39,6 +39,7 @@ export class DocsHeader implements ComponentInterface {
         }}
       >
         <site-backdrop
+          mobileOnly
           visible={expanded}
           onClick={() => this.toggleExpanded()}
         />

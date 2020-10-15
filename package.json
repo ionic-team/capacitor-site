@@ -18,7 +18,7 @@
   "devDependencies": {
     "@capacitor/core": "^2.4.2",
     "@capacitor/docgen": "^0.0.8",
-    "@ionic-internal/ionic-ds": "2.1.2",
+    "@ionic-internal/ionic-ds": "4.0.0-3",
     "@ionic/prettier-config": "^1.0.1",
     "@stencil/core": "^2.1.0-2",
     "@stencil/helmet": "^0.3.2",
@@ -46,6 +46,7 @@
     "puppeteer": "^5.3.1",
     "read-pkg-up": "^7.0.1",
     "rollup-plugin-dotenv": "^0.3.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
     "stencil-router-v2": "^0.5.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"

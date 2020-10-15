@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import url from 'url';
 import path from 'path';
 
+
 export async function getGithubData(repoRootDir: string, filePath: string) {
   const since = new Date('2018-06-01').toISOString();
 

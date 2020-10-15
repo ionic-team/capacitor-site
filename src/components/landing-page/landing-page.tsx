@@ -5,10 +5,10 @@ import {
   ResponsiveContainer,
   Grid,
   Col,
-  AnchorButton,
   Heading,
   Paragraph,
   Breakpoint,
+  Button,
 } from '@ionic-internal/ionic-ds';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 import FancyUnderline from '../FancyUnderline';
@@ -44,16 +44,17 @@ export class LandingPage {
                     base.
                   </Heading>
                   <div class="hero__buttons">
-                    <AnchorButton href="/docs/getting-started" id="get-started">
+                    <Button anchor href="/docs/getting-started" id="get-started">
                       Get Started
-                    </AnchorButton>
-                    <AnchorButton
+                    </Button>
+                    <Button
+                      anchor
                       href="/docs"
                       id="explore-docs"
                       class="btn-white"
                     >
                       Explore Docs
-                    </AnchorButton>
+                    </Button>
                   </div>
                 </hgroup>
                 <div class="cordova-cta">
@@ -485,9 +486,9 @@ const WhitepaperCTA = ({ show, hide, shown, submitted }) => [
           See when and why to use Capacitor to build cross-platform apps.&nbsp;
           <span>We wrote a guide to help you get started.</span>
         </Heading>
-        <AnchorButton onClick={() => show()}>
+        <Button anchor onClick={() => show()}>
           Read our Guide <span style={{ letterSpacing: '0' }}>{'->'}</span>
-        </AnchorButton>
+        </Button>
       </div>
     </ResponsiveContainer>
   </section>,
@@ -514,7 +515,7 @@ const Announcement = ({ data }) => {
       rel="noopener nofollow"
     >
       <div class="feature__register__tag">{data.tag_text}</div>
-      <Breakpoint sm={true} inlineBlock={true} class="feature__register__text">
+      <Breakpoint sm={true} display='inline-block' class="feature__register__text">
         <span class="text__content">
           {data.desktop_text}{' '}
           <span style={{ 'letter-spacing': '0' }}>-&gt;</span>
@@ -523,7 +524,7 @@ const Announcement = ({ data }) => {
       <Breakpoint
         xs={true}
         sm={false}
-        inlineBlock={true}
+        display='inline-block'
         class="feature__register__text"
       >
         <span class="text__content">
