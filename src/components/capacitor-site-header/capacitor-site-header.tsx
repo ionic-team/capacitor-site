@@ -37,7 +37,7 @@ export class SiteHeader {
 
   async componentWillLoad() {
     // TODO pull this in from GitHub at build
-    this.starCount = formatNumber('4.4K');
+    this.starCount = formatNumber('4.6K');
 
     // Figure out if we should force hover a nav item
     this.forceHovered = Router.path.replace('/', '').replace('#', '');
