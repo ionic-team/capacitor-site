@@ -10,21 +10,19 @@ contributors:
 
 ## Configuring `Info.plist`
 
-iOS developers should get used to working with the `Info.plist` file, the main configuration file for their app. This file will be updated frequently with new settings that a Capacitor Plugin might require, additional configuration for your app, and for permissions your app will ask for.
+The `Info.plist` file is the main configuration file for iOS apps. You may need to edit it whenever a Capacitor plugin requires new settings or permissions.
 
-In general, the easiest way to modify this file is to open your project in Xcode (`npx cap open ios`), and edit the file in Xcode's property list editor. Each settings in `Info.plist` has a low-level parameter name, and a high level name. By default, the property list editor shows the high level names, but it's often useful to switch to showing the raw, low level names. To do this, right click anywhere in the property list editor and toggle "Show Raw Keys/Values."
+To modify it, open your project in Xcode (`npx cap open ios`), select the **App** project and the **App** target, and click the **Info** tab.
 
-Underneath the hood, `Info.plist` is actually a plain XML file and can be edited directly if you desire. In this case, make sure to use the low-level parameter name for the XML `<key>` values in `Info.plist`.
+![Xcode info editor](/assets/img/docs/ios/xcode-info-editor.png)
 
-Some plugins and SDKs will show settings using the low-level key, and others will use the high level key. Get used to mapping between them.
-
-This list of [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html) shows many possible configuration options that can be set in `Info.plist`.
+> You can show the true key names by right-clicking in the table and checking **Raw Keys & Values** in the context menu.
+>
+> You can also open and edit the `ios/App/App/Info.plist` file manually to inspect the raw keys. Use [this reference documentation](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html) for a list of possible keys.
 
 ## Managing Permissions
 
-Unlike Android, permissions for iOS do not have to be specified in advance. Instead, they are prompted for when using a certain Plugin or SDK.
-
-However, many iOS permissions require what are known as "Usage Descriptions" defined in `Info.plist`. These settings are human-readable descriptions of each permission the app will ask for.
+iOS permissions do not need to be specified explicitly like they are in Android. However, iOS requires "Usage Descriptions" to be defined in `Info.plist`. These settings are human-readable descriptions that will be presented to the end user when permission is requested for a particular device API.
 
 Consult the [Cocoa Keys](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html) list for keys containing `UsageDescription` to see the various usage description settings that may be required for your app.
 
@@ -32,30 +30,32 @@ For more information, Apple has provided a guide to [Resolving the Privacy-Sensi
 
 ## Setting Entitlements
 
-Entitlements are used to enable key features that your app may need.
+Entitlements are used to enable key features that your app may need. You may need to configure them whenever a Capacitor plugin requires it.
 
-Unlike certain configuration options or usage descriptions, entitlements are configured in a special area inside of Xcode, rather than in `Info.plist`.
+Unlike other configuration options and usage descriptions, entitlements are _not_ configured in `Info.plist`.
 
-If a plugin requires certain entitlements, open your app in Xcode, click on the name of your project in the left project menu, and select `Capabilities` in the tab bar.
+To add a new entitlement, open your app in Xcode (`npx cap open ios`), select the **App** project and the **App** target, click **Signing & Capabilities** in the tab bar, and then click the **+ Capability** button. See [this article](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) for more information about iOS capabilities.
 
-## Renaming the application's default `App` name
+![Xcode Capabilities](/assets/img/docs/ios/xcode-capabilities.png)
 
-You can't rename the App folder, but you can set the name of your app by renaming the "target" called "App".
+## Renaming your App
 
-In XCode you will see something like this:
+You can't rename the `App` directory, but you can set the name of your app by renaming the **App** target.
+
+To rename the **App** target, open your project in Xcode (`npx cap open ios`), select the **App** project, and double-click the **App** target.
+
+![Xcode Target](/assets/img/docs/ios/xcode-target.png)
+
+Then, open `ios/App/Podfile` and rename the current target at the bottom of the file:
+
+```diff
+-target 'App' do
++target 'MyRenamedApp' do
+   capacitor_pods
+   # Add your Pods here
+ end
 ```
-PROJECT
-  App
--------
-TARGET
-  App
-```
-Here you can click on the name "App" under TARGET to rename your app.
-
-You then also have to modify the Podfile to rename the current target accordingly:
-
-The default Podfile has an `'App'` target, which needs to be replaced with <a href="https://github.com/ionic-team/capacitor/blob/master/ios-template/App/Podfile#L16" target="_blank">your new name here.</a>
 
 ## Deeplinks (aka Universal Links)
 
-For a complete Deep Links guide, [see here](/docs/guides/deep-links).
+For a full Deep Links tutorial, [see here](/docs/guides/deep-links).

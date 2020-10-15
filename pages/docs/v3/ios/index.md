@@ -10,7 +10,7 @@ contributors:
 
 Capacitor features a native iOS runtime that enables developers to communicate between JavaScript and Native Swift or Objective-C code.
 
-Capacitor iOS apps are configured and managed through Xcode, with dependencies managed by CocoaPods.
+Capacitor iOS apps are configured and managed with Xcode and [CocoaPods](https://cocoapods.org/).
 
 ## iOS Support
 
