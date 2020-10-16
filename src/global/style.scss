@@ -1,5 +1,30 @@
 @use 'variables';
+@use 'vars';
+
+span, a {
+  display: inline-block;
+}
+
+img {
+  display: block;
+  object-fit: contain;
+  height: auto;
+}
 
 .no-scroll {
   overflow: hidden;
+}
+
+.arrow {
+  letter-spacing: 0;
+  margin-inline-start: 3px;
+}
+
+.link, p a {
+  color: var(--c-capacitor-blue);
+  transition: opacity .2s ease-out;
+
+  &:hover, &:active, &:focus {
+    opacity: .7;    
+  }
 }

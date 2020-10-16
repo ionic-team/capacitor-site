@@ -1,7 +1,6 @@
 @use '../../global/variables';
 @use '../../global/prism';
 @use '../../global/shared/utils';
-@use '../../global/shared/buttons';
 
 * {
   box-sizing: border-box;
@@ -17,25 +16,7 @@ site-root {
 }
 
 .page-theme--dark {
-  background: var(--c-carbon-100);
-
-  color: var(--c-indigo-10);
-
-  .ui-heading,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: var(--c-indigo-10);
-  }
-  p {
-    color: var(--c-indigo-10);
-  }
-}
-
-.no-scroll {
-  overflow: hidden;
+  
 }
 
 .left-sidebar-in {
@@ -171,33 +152,6 @@ body {
   background-color: #fff;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  color: #16161d;
-  letter-spacing: 0px;
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 40px;
-  letter-spacing: -0.03em;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 22px;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-}
-
-h2,
-h3 {
-  margin-top: -6px;
-  padding-top: 52px;
-  margin-bottom: 8px;
-}
 
 h2 code {
   font-weight: 600;
@@ -210,29 +164,6 @@ h2 code {
   border-radius: 4px;
 }
 
-ul {
-  li {
-    font-size: 14px;
-    margin-top: 16px;
-  }
-}
-
-ol {
-  li {
-    color: #4a5568;
-    font-size: 15px;
-    line-height: 1.8em;
-    margin: 16px 0;
-  }
-}
-
-p,
-ul {
-  color: #4a5568;
-  font-size: 15px;
-  line-height: 1.8em;
-  margin: 16px 0px;
-}
 
 strong,
 b {

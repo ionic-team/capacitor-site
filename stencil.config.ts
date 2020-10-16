@@ -7,8 +7,10 @@ import nodePolyfills from 'rollup-plugin-node-polyfills';
 export const config: Config = {
   devServer: {
     openBrowser: false,
-    logRequests: true,
+    // logRequests: true,
   },
+  globalStyle: './src/global/style.scss',
+  namespace: 'site',
   outputTargets: [
     {
       type: 'www',

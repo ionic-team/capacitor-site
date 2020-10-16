@@ -9,6 +9,8 @@ import {
   Paragraph,
   Breakpoint,
   Button,
+  PrismicRichText,
+  PrismicResponsiveImage,
 } from '@ionic-internal/ionic-ds';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
 import FancyUnderline from '../FancyUnderline';
@@ -24,57 +26,71 @@ export class LandingPage {
   @State() showHubspotForm = false;
   @State() hubspotFormSubmitted = false;
 
+
+
+  Top = () => {
+    const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
+    const { primary, secondary } = top__ctas[0];
+
+    return (
+      <section id="top">
+        <div class="background"></div>
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <Announcement data={this.data} />
+            <PrismicRichText richText={top} paragraphLevel={2} />
+            <div class="buttons">
+              <Button 
+                kind="round"
+                anchor
+                href="/docs/getting-started"
+                class="primary"
+              >
+                {primary} <span class="arrow">-&gt;</span>
+              </Button>
+              <Button
+                kind="round"
+                variation="light"
+                anchor
+                href="/docs"
+                class="secondary"
+              >
+                {secondary}
+              </Button>
+            </div>
+            <a class="link | ui-paragraph-4" href="/cordova">
+              {top__link}
+              <span class="arrow">-&gt;</span>
+            </a>
+            <PrismicResponsiveImage
+              loading="eager"
+              image={top__icons}
+              params = {{
+                w: '91',
+                h: '16'
+              }}
+            />
+          </div>
+          <div class="image-wrapper">
+            <PrismicResponsiveImage
+              loading="eager"
+              image={top__hero}
+            />
+          </div>          
+        </ResponsiveContainer>
+      </section>
+    );
+  }
+
   render() {
+    const { Top } = this;
+
+    console.log(this.data);
+
     return (
       <Host>
         <MetaHead />
-        <section class="hero">
-          <div class="hero__background"></div>
-          <ResponsiveContainer>
-            <Grid>
-              <Col md={6} sm={6} xs={6} cols={12}>
-                <hgroup class="hero__heading">
-                  <Announcement data={this.data} />
-                  <Heading level={1}>
-                    A cross-platform native runtime for web apps.
-                  </Heading>
-                  <Heading level={3}>
-                    Capacitor enables web developers to build iOS, Android, and
-                    Progressive Web Apps with web technologies in a single code
-                    base.
-                  </Heading>
-                  <div class="hero__buttons">
-                    <Button anchor href="/docs/getting-started" id="get-started">
-                      Get Started
-                    </Button>
-                    <Button
-                      anchor
-                      href="/docs"
-                      id="explore-docs"
-                      class="btn-white"
-                    >
-                      Explore Docs
-                    </Button>
-                  </div>
-                </hgroup>
-                <div class="cordova-cta">
-                  <a href="/cordova">Migrating from Cordova {'->'}</a>
-                </div>
-                <img
-                  class="hero__platforms"
-                  src="/assets/img/supported-icons.png"
-                  alt="Supported platforms"
-                />
-              </Col>
-              <Col md={6} sm={6} xs={6} cols={12} class="hero__graphic">
-                <img
-                  src="/assets/img/landing/hero-graphic.png"
-                  alt="Capacitor Architecture Diagram"
-                />
-              </Col>
-            </Grid>
-          </ResponsiveContainer>
-        </section>
+        <Top />
         <GettingStartedSection
           selectedCodeTab={this.selectedCodeTab}
           setSelectedCodeTab={(tab: string) => {

@@ -26,7 +26,7 @@ export const getPage: MapParamData = async (_params, url) => {
   let prismicId: string;
 
   if (url.pathname === '/') {
-    prismicId = 'capacitor_homepage_announcement';
+    prismicId = 'capacitor_homepage';
   }
 
   try {

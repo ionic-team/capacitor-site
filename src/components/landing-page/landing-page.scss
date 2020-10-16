@@ -1,25 +1,44 @@
-@use '../../global/variables';
+@use '../../global/vars' as *;
 
+//#region -------------------------------- VARIABLES --------------------------------------- 
+$section-space: 200px;
+
+:host {
+  --h1-color: var(--c-carbon-100);
+  --h2-color: var(--c-carbon-100);
+  --h3-color: var(--c-carbon-100);
+  --h4-color: #010610;
+
+  --p2-color: var(--c-carbon-80);
+}
+//#region -------------------------------- VARIABLES --------------------------------------- 
 
 :host {
   overflow-x: hidden;
   display: block;
 }
 
-section {
-  margin-bottom: 196px;
-}
-
-.hero {
+#top {
   overflow-x: hidden;
   position:relative;
   margin-bottom: 96px;
 
-  hgroup {
-    position: relative;
+  .ui-container {
+    display: flex;
+    // flex-wrap: wrap;
+    margin-block-start: clamp(64px, 17vh, 154px);
+
+    > * {
+      flex-grow: 1;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      margin-block-start: 240px;
+      flex-direction: column-reverse;
+    }    
   }
 
-  &__background {
+  .background {
     position: absolute;
     bottom: 100px;
 
@@ -33,53 +52,72 @@ section {
     z-index: -1;
   }
 
-  img {
-    max-width: 100%;
-  }
-  &__heading {
-    padding-top: 120px;
-    h1 {
-      font-size: 64px;
-      line-height: 100%;
-      letter-spacing: var(--f-tracking-dense);
-      color: var(--c-carbon-100);
-      margin-bottom: 16px;
-      font-family: var(--f-family-display);
+  .heading-group {
+
+    .ui-heading {
+      font-size: clamp(48px, 6vw, 64px);
+      max-width: 480px;
     }
-    h3 {
-      margin-top: 12px;
-      margin-bottom: 16px;
-      font-size: 22px;
-      line-height: 160%;
-      font-family: var(--f-family-text);
-      letter-spacing: var(--f-tracking-tight);
-      color: #2D4665;
-      font-weight: normal;
+    .ui-paragraph {
+      font-size: clamp(16px, 2vw, 20px);
+      margin-block-end: var(--space-6);
+      max-width: 448px;
     }
   }
 
-  &__platforms {
-    height: 16px;
-    margin-top: 16px;
-  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline-start: -15px;
+    margin-block-start: -16px;
 
-  &__graphic {
-    padding-top: 96px;
-  }
-
-  &__buttons {
     .ui-button {
-      box-shadow: 0px 1px 2px rgba(2, 8, 20, 0.1);
+      margin-inline-start: 15px;
+      margin-block-start: 16px;
+
+      &.primary {
+        --c-background: var(--c-capacitor-blue);
+        --c-background--hover: #24a7ff;
+        --c-background--active: #0090f0;
+        --c-focus: #bde4ff;
+      }
+      &.secondary {
+        --c-text: var(--c-capacitor-blue);
+        --c-focus: #80caff;
+      }
     }
-    .ui-button:first-child {
-      margin-right: 16px;
+  }
+
+  .link {
+    margin-block-start: var(--space-2);
+    margin-block-end: var(--space-4);
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    top: -64px;
+    right: -32px;
+
+    img {
+      width: 100%;
+
+      @media screen and (max-width: $screen-xs) {
+        --width: 200px;
+        max-width: var(--width);
+        left: min(calc(480px / 2 - var(--width) / 2), 100% / 2 - var(--width) / 2);
+        top: -220px;
+        position: absolute;
+      }  
     }
 
-    .btn-white {
-      background: white;
-      box-shadow: 0px 1px 2px rgba(2, 8, 20, 0.1);
-      color: var(--color-capacitor-blue);
-    }
+    @media screen and (max-width: $screen-xs) {
+      justify-content: center;
+      right: initial;
+      top: initial;
+    }  
   }
 }
 
@@ -161,7 +199,7 @@ section {
       height: 26px;
     }
 
-    @media (max-width: variables.$breakpoint-md) {
+    @media (max-width: $screen-xs-max) {
       // Hide the numbers and lines on small screens
       .ui-col:first-child:after {
         display: none !important;
@@ -336,7 +374,7 @@ section {
 }
 
 .cordova-cta {
-  padding-top: 10px;
+  margin-block-start: var(--space-2);
   text-decoration: none;
 
   font-family: Inter;
@@ -372,7 +410,7 @@ div.cordova-cta a:hover {
     bottom: 0;
     left: calc(45% - 520px);
 
-    @media (max-width: variables.$breakpoint-lg) {
+    @media (max-width: $screen-lg) {
       left: calc(45% - 460px);
     }
   }
@@ -398,7 +436,7 @@ div.cordova-cta a:hover {
     letter-spacing: .1em;
   }
 
-  @media (max-width: variables.$breakpoint-md) {
+  @media (max-width: $screen-xs-max) {
     background: linear-gradient(180deg, #F1FAFF 0%, #B8E3FF 44.999%, #F2F8FD 45%);
     padding-top: 0;
 
