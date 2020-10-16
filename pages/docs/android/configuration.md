@@ -85,4 +85,4 @@ Generally, the plugin you choose to use will ask you to set a permission. Add it
 
 ## Default Permissions
 
-By default, the entire initial permissions requested for the latest version of Capacitor with the standard plugins can be found in the android-template's [AndroidManifest.xml](https://github.com/ionic-team/capacitor/blob/master/android-template/app/src/main/AndroidManifest.xml)
+By default, the entire initial permissions requested for the latest version of Capacitor with the standard plugins can be found in the android-template's [AndroidManifest.xml](https://github.com/ionic-team/capacitor/blob/main/android-template/app/src/main/AndroidManifest.xml)
