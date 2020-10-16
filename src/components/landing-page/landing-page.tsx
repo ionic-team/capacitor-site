@@ -207,6 +207,8 @@ public class MyAwesomePlugin: CAPPlugin {
         </Tab>
       </Tabs>
     ]
+
+    const dimensions = [ '22x26', '27x23']
     
   
     return (
@@ -224,10 +226,8 @@ public class MyAwesomePlugin: CAPPlugin {
                   {started__icons.map(({ icon }, i) => (
                     <PrismicResponsiveImage
                       image={icon}
-                      params={{
-                        w: i === 0 ? '22' : '27',
-                        h: i === 0 ? '26' : '23'
-                      }}
+                      width={dimensions[i].split('x')[0]}
+                      height={dimensions[i].split('x')[1]}
                     />
                   ))}
                 </div>
@@ -243,8 +243,92 @@ public class MyAwesomePlugin: CAPPlugin {
     )
   };
 
+  Native = () => {
+    const { native, native__list } = this.data;
+
+    const dimensions = ['48x64', '60x64', '60x64'];
+
+    return (
+      <ResponsiveContainer id="native" as="section">
+        <div class="heading-group">
+          <PrismicRichText richText={native} />
+        </div>
+        <Grid>
+          {native__list.map(({ icon, item }, i: number) => (
+            <Col xs={6} sm={4} cols={12}>
+              <PrismicResponsiveImage
+                image={icon}
+                width={dimensions[i].split('x')[0]}
+                height={dimensions[i].split('x')[1]}
+              />
+              <PrismicRichText richText={item} />
+            </Col>
+          ))}
+        </Grid>
+      </ResponsiveContainer>
+    );
+  }
+
+  Features = () => {
+    const { features, features__list, features__link } = this.data;
+
+    const dimensions = [
+      '40x32', '40x32', '32x32', '33x32', '28x32', '32x32', '32x32', '32x30',
+    ]
+
+    return (
+      <section id="features">
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <PrismicRichText richText={features} />
+            <a href="/docs/api" class="link">
+              {features__link}
+              <span class="arrow">-&gt;</span>
+            </a>
+          </div>
+          <Grid>
+            {features__list.map(({ icon, item }, i: number) => (
+              <Col xs={6} sm={4} md={3} cols={12}>
+                <PrismicResponsiveImage
+                  image={icon}
+                  width={dimensions[i].split('x')[0]}
+                  height={dimensions[i].split('x')[1]}
+                />
+                <PrismicRichText richText={item} />
+              </Col>
+            ))}
+          </Grid>
+        </ResponsiveContainer>
+      </section>
+    );
+  }
+
+  Framework = () => {
+    const { framework, framework__list } = this.data;
+
+
+    return (
+      <ResponsiveContainer id="framework" as="section">
+        <div class="heading-group">
+          <PrismicRichText richText={framework} paragraphLevel={2} />
+        </div>
+        <Grid>
+          {framework__list.map(({ logo }) => (
+            <Col sm={3} cols={6}>
+              <PrismicResponsiveImage
+                image={logo}
+                width={272}
+                height={200}
+              />
+            </Col>
+          ))}
+        </Grid>
+      </ResponsiveContainer>
+    );
+  }
+
   render() {
-    const { Top, Started } = this;
+    const { Top, Started, Native, Features, Framework } = this;
 
     console.log(this.data);
 
@@ -264,209 +348,10 @@ public class MyAwesomePlugin: CAPPlugin {
           shown={this.showHubspotForm}
           submitted={this.hubspotFormSubmitted}
         />
-        <ResponsiveContainer>
-          <section class="section--web-apps-to-native">
-            <hgroup>
-              <Heading id="webapps" level={3}>
-                Connect web apps to
-                <br />
-                <FancyUnderline>native functionality.</FancyUnderline>
-              </Heading>
-            </hgroup>
-            <Grid>
-              <Col md={4} sm={4} xs={12} cols={12}>
-                <img
-                  src="/assets/img/landing/universal-apps.png"
-                  alt="Universal apps"
-                />
-                <Heading level={4}>Universal apps</Heading>
-                <Paragraph>
-                  Build web-based applications that run equally well across iOS,
-                  Android, and as Progressive Web Apps.
-                </Paragraph>
-              </Col>
-              <Col md={4} sm={4} xs={12} cols={12}>
-                <img
-                  src="/assets/img/landing/native-access.png"
-                  alt="Native access"
-                />
-                <Heading level={4}>Native access</Heading>
-                <Paragraph>
-                  Access the full Native SDKs on each platform, and easily
-                  deploy to the App Stores (and the web).
-                </Paragraph>
-              </Col>
-              <Col md={4} sm={4} xs={12} cols={12}>
-                <img
-                  src="/assets/img/landing/native-pwas.png"
-                  alt="Native PWAs"
-                />
-                <Heading level={4}>Native PWAs</Heading>
-                <Paragraph>
-                  Add custom native functionality with a simple Plugin API, or
-                  use existing Cordova plugins with our compatibility layer.
-                </Paragraph>
-              </Col>
-            </Grid>
-          </section>
-          <section class="section--native-features" id="features">
-            <hgroup>
-              <Heading level={3}>
-                Cross-platform core
-                <br />
-                <FancyUnderline>native features</FancyUnderline>
-              </Heading>
-            </hgroup>
-            <Grid>
-              {[
-                {
-                  key: 'camera',
-                  name: 'Camera',
-                  desc:
-                    'Capture, save photos, and configure hardware parameters like focus and white balance.',
-                },
-                {
-                  key: 'filesystem',
-                  name: 'File System',
-                  desc:
-                    'Save and read assets, documents, and other data your users need by accessing native file systems',
-                },
-                {
-                  key: 'geolocation',
-                  name: 'Geolocation',
-                  desc:
-                    'Build location-aware apps by polling for the current device location or subscribing to location updates.',
-                },
-                {
-                  key: 'accelerometer',
-                  name: 'Accelerometer',
-                  desc:
-                    'Access the device accelerometer sensors to respond to changes in device motion in 3d space.',
-                },
-                {
-                  key: 'notifications',
-                  name: 'Notifications',
-                  desc:
-                    'Build applications that send and respond to local and server-pushed notifications',
-                },
-                {
-                  key: 'haptics',
-                  name: 'Haptics',
-                  desc:
-                    'Use haptic hardware to provide physical feedback for user actions',
-                },
-                {
-                  key: 'accessibility',
-                  name: 'Accessibility',
-                  desc:
-                    'Respond to changes in accessibility states and extend your app with a11y features',
-                },
-                {
-                  key: 'custom',
-                  name: 'Your Own Plugin',
-                  desc:
-                    'Extend your app with custom native and web code to provide consistent APIs across platforms.',
-                },
-              ].map(f => (
-                <Col md={3} sm={3} xs={6} cols={12} key={f.key}>
-                  <img
-                    src={`/assets/img/landing/native-${f.key}.png`}
-                    alt={f.name}
-                    loading="lazy"
-                  />
-                  <Heading level={4}>{f.name}</Heading>
-                  <Paragraph>{f.desc}</Paragraph>
-                </Col>
-              ))}
-            </Grid>
-          </section>
-          <section class="section--your-framework">
-            <hgroup>
-              <Heading level={3}>
-                Bring your own web
-                <br />
-                <FancyUnderline>framework.</FancyUnderline>
-              </Heading>
-              <Paragraph>
-                Drop Capacitor into any existing web app project, framework or
-                library. Convert an existing React, Angular, Svelte, Vue, Ember
-                (or your preferred Web Framework) project to native mobile and
-                use any UI library of your choosing.
-              </Paragraph>
-            </hgroup>
-            <Grid>
-              {[
-                {
-                  color: '#EDFBFF',
-                  key: 'react',
-                  name: 'React',
-                  link: '/solution/react',
-                },
-                {
-                  color: '#FFEDF1',
-                  key: 'angular',
-                  name: 'Angular',
-                  link: '/solution/angular',
-                },
-                {
-                  color: '#FFF5F2',
-                  key: 'svelte',
-                  name: 'Svelte',
-                  link: '/solution/svelte',
-                },
-                {
-                  color: '#EFFAF5',
-                  key: 'vue',
-                  name: 'Vue',
-                  link: '/solution/vue',
-                },
-                {
-                  color: '#F6F8FB',
-                  key: 'stencil',
-                  name: 'Stencil',
-                  link: '/solution/stencil',
-                },
-                { color: '#F0F8FD', key: 'jquery', name: 'jQuery' },
-                { color: '#F6F1FD', key: 'bootstrap', name: 'Bootstrap' },
-                { color: '#F0F6FF', key: 'ionic', name: 'Ionic' },
-                { color: '#EDF9FF', key: 'material-ui', name: 'Material UI' },
-                { color: '#FFF5F3', key: 'framework-7', name: 'Framework7' },
-                { color: '#F0F7FC', key: 'quasar', name: 'Quasar' },
-                {
-                  color: '#FEF8EF',
-                  key: 'angular-material',
-                  name: 'Angular Material',
-                },
-              ].map(f => (
-                <Col
-                  md={3}
-                  sm={3}
-                  xs={6}
-                  cols={12}
-                  key={f.key}
-                  style={{ background: f.color }}
-                  class="framework"
-                >
-                  {f.link ? (
-                    <a {...href(f.link)}>
-                      <img
-                        src={`/assets/img/landing/framework-${f.key}.png`}
-                        alt={f.name}
-                        loading="lazy"
-                      />
-                    </a>
-                  ) : (
-                    <img
-                      src={`/assets/img/landing/framework-${f.key}.png`}
-                      alt={f.name}
-                      loading="lazy"
-                    />
-                  )}
-                </Col>
-              ))}
-            </Grid>
-          </section>
-        </ResponsiveContainer>
+        <Native />
+        <Features />
+        <Framework />
+      
         <pre-footer />
         <newsletter-signup />
         <capacitor-site-footer />
