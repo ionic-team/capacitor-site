@@ -20,7 +20,7 @@ This article covers the basic modifications you'll need to make to your app. Rea
 
 To change your app's Package ID (aka **Application ID** for Android), edit `<manifest>` at the top of `AndroidManifest.xml`:
 
-```diff
+```diff-xml
  <?xml version="1.0" encoding="utf-8"?>
  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 -    package="com.capacitorjs.app">

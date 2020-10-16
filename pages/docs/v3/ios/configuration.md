@@ -48,7 +48,7 @@ To rename the **App** target, open your project in Xcode (`npx cap open ios`), s
 
 Then, open `ios/App/Podfile` and rename the current target at the bottom of the file:
 
-```diff
+```diff-ruby
 -target 'App' do
 +target 'MyRenamedApp' do
    capacitor_pods
