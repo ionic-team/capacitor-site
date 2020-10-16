@@ -82,8 +82,169 @@ export class LandingPage {
     );
   }
 
+  Started = ({
+    selectedCodeTab,
+    setSelectedCodeTab,
+  }: {
+    selectedCodeTab: string;
+    setSelectedCodeTab: (tab: string) => void;
+  }) => {
+    const { started, started__list, started__icons } = this.data;
+
+    const panels = [
+      <code-snippet
+        language="shell-session"
+        code={`npm install @capacitor/cli @capacitor/core\nnpx cap init`}
+      />,
+      <code-snippet
+        language="shell-session"
+        code={`npx cap add ios\nnpx cap add android`}
+      />,
+      <Tabs>
+        <TabBar>
+          <TabBarButton
+            selected={selectedCodeTab === 'notifications'}
+            tabSelect={() => setSelectedCodeTab('notifications')}
+          >
+            Notifications
+          </TabBarButton>
+          <TabBarButton
+            selected={selectedCodeTab === 'geolocation'}
+            tabSelect={() => setSelectedCodeTab('geolocation')}
+          >
+            Geolocation
+          </TabBarButton>
+          <TabBarButton
+            selected={selectedCodeTab === 'camera'}
+            tabSelect={() => setSelectedCodeTab('camera')}
+          >
+            Camera
+          </TabBarButton>
+          <TabBarButton
+            selected={selectedCodeTab === 'custom'}
+            tabSelect={() => setSelectedCodeTab('custom')}
+          >
+            Custom
+          </TabBarButton>
+        </TabBar>
+        <Tab selected={selectedCodeTab === 'notifications'}>
+          <code-snippet
+            style={{ '--border-radius': '0 0 8px 8px' }}
+            language="typescript"
+            code={`
+import { Plugins } from '@capacitor/core';
+const { LocalNotifications } = Plugins;
+
+LocalNotifications.schedule({
+  notifications: [
+    {
+      title: "On sale",
+      body: "Widgets are 10% off. Act fast!",
+      id: 1,
+      schedule: { at: new Date(Date.now() + 1000 * 5) },
+      sound: null,
+      attachments: null,
+      actionTypeId: "",
+      extra: null
+    }
+  ]
+});
+`}
+          />
+        </Tab>
+        <Tab selected={selectedCodeTab === 'geolocation'}>
+          <code-snippet
+            style={{ '--border-radius': '0 0 8px 8px' }}
+            language="typescript"
+            code={`
+import { Plugins } from '@capacitor/core';
+const { Geolocation } = Plugins;
+// get the users current position
+const position = await Geolocation.getCurrentPosition();
+
+// grab latitude & longitude
+const latitude = position.coords.latitude;
+const longitude = position.coords.longitude;
+`}
+          />
+        </Tab>
+        <Tab selected={selectedCodeTab === 'camera'}>
+          <code-snippet
+            style={{ '--border-radius': '0 0 8px 8px' }}
+            language="typescript"
+            code={`
+import { Plugins } from '@capacitor/core';
+const { Camera } = Plugins;
+// Take a picture or video, or load from the library
+const picture = await Camera.getPicture({
+  encodingType: this.camera.EncodingType.JPEG
+});
+`}
+          />
+        </Tab>
+        <Tab selected={selectedCodeTab === 'custom'}>
+          <code-snippet
+            style={{ '--border-radius': '0 0 8px 8px' }}
+            language="typescript"
+            code={`
+import Foundation
+import Capacitor
+
+// Custom platform code, easily exposed to your web app
+// through Capacitor plugin APIs. Build APIs that work
+// across iOS, Android, and the web!
+@objc(MyAwesomePlugin)
+public class MyAwesomePlugin: CAPPlugin {
+
+  @objc public func doNative(_ call: CAPPluginCall) {
+  let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
+
+  // ....
+  }
+}
+`}
+          />
+        </Tab>
+      </Tabs>
+    ]
+    
+  
+    return (
+      <ResponsiveContainer id="started" as="section">
+        <div class="heading-group">
+          <PrismicRichText richText={started} />
+        </div>
+        {started__list.map(({ number, title }, i) => (
+          <div class="step">
+            <sup class="ui-heading-6">{number}</sup>
+            <div class="heading-wrapper">
+              <Heading>{title}</Heading>
+              {i === 1
+              ? <div class="platforms">
+                  {started__icons.map(({ icon }, i) => (
+                    <PrismicResponsiveImage
+                      image={icon}
+                      params={{
+                        w: i === 0 ? '22' : '27',
+                        h: i === 0 ? '26' : '23'
+                      }}
+                    />
+                  ))}
+                </div>
+              : null
+              }
+            </div>
+            <div class="panel">
+              {panels[i]}
+            </div>
+          </div>
+        ))}
+      </ResponsiveContainer>
+    )
+  };
+
   render() {
-    const { Top } = this;
+    const { Top, Started } = this;
 
     console.log(this.data);
 
@@ -91,7 +252,7 @@ export class LandingPage {
       <Host>
         <MetaHead />
         <Top />
-        <GettingStartedSection
+        <Started
           selectedCodeTab={this.selectedCodeTab}
           setSelectedCodeTab={(tab: string) => {
             this.selectedCodeTab = tab;
@@ -314,176 +475,7 @@ export class LandingPage {
   }
 }
 
-const GettingStartedSection = ({
-  selectedCodeTab,
-  setSelectedCodeTab,
-}: {
-  selectedCodeTab: string;
-  setSelectedCodeTab: (tab: string) => void;
-}) => (
-  <section class="section--getting-started">
-    <ResponsiveContainer>
-      <hgroup>
-        <Heading level={2}>Getting started is easy.</Heading>
-      </hgroup>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>01</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
-          <Heading level={3}>Drop Capacitor into any existing web app.</Heading>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
-          <code-snippet
-            language="shell-session"
-            code={`
-npm install @capacitor/cli @capacitor/core
-npx cap init
-`}
-          />
-        </Col>
-      </Grid>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>02</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
-          <Heading level={3}>
-            Install the native platforms you want to target.
-          </Heading>
-          <img src="/assets/img/landing/apple.png" alt="Apple" class="apple" />
-          <img
-            src="/assets/img/landing/android.png"
-            alt="Android"
-            class="android"
-            loading="lazy"
-          />
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
-          <code-snippet
-            language="shell-session"
-            code={`
-npx cap add ios
-npx cap add android
-`}
-          />
-        </Col>
-      </Grid>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>03</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
-          <Heading level={3}>
-            Access APIs on both native and web, or extend with your own.
-          </Heading>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
-          <Tabs>
-            <TabBar>
-              <TabBarButton
-                selected={selectedCodeTab === 'notifications'}
-                tabSelect={() => setSelectedCodeTab('notifications')}
-              >
-                Notifications
-              </TabBarButton>
-              <TabBarButton
-                selected={selectedCodeTab === 'geolocation'}
-                tabSelect={() => setSelectedCodeTab('geolocation')}
-              >
-                Geolocation
-              </TabBarButton>
-              <TabBarButton
-                selected={selectedCodeTab === 'camera'}
-                tabSelect={() => setSelectedCodeTab('camera')}
-              >
-                Camera
-              </TabBarButton>
-              <TabBarButton
-                selected={selectedCodeTab === 'custom'}
-                tabSelect={() => setSelectedCodeTab('custom')}
-              >
-                Custom
-              </TabBarButton>
-            </TabBar>
-            <Tab selected={selectedCodeTab === 'notifications'}>
-              <code-snippet
-                style={{ '--border-radius': '0 0 8px 8px' }}
-                language="typescript"
-                code={`
-import { Plugins } from '@capacitor/core';
-const { LocalNotifications } = Plugins;
 
-LocalNotifications.schedule({
-  notifications: [
-    {
-      title: "On sale",
-      body: "Widgets are 10% off. Act fast!",
-      id: 1,
-      schedule: { at: new Date(Date.now() + 1000 * 5) },
-      sound: null,
-      attachments: null,
-      actionTypeId: "",
-      extra: null
-    }
-  ]
-});
-`}
-              />
-            </Tab>
-            <Tab selected={selectedCodeTab === 'geolocation'}>
-              <code-snippet
-                style={{ '--border-radius': '0 0 8px 8px' }}
-                language="typescript"
-                code={`
-import { Plugins } from '@capacitor/core';
-const { Geolocation } = Plugins;
-// get the users current position
-const position = await Geolocation.getCurrentPosition();
-
-// grab latitude & longitude
-const latitude = position.coords.latitude;
-const longitude = position.coords.longitude;
-`}
-              />
-            </Tab>
-            <Tab selected={selectedCodeTab === 'camera'}>
-              <code-snippet
-                style={{ '--border-radius': '0 0 8px 8px' }}
-                language="typescript"
-                code={`
-import { Plugins } from '@capacitor/core';
-const { Camera } = Plugins;
-// Take a picture or video, or load from the library
-const picture = await Camera.getPicture({
-  encodingType: this.camera.EncodingType.JPEG
-});
-`}
-              />
-            </Tab>
-            <Tab selected={selectedCodeTab === 'custom'}>
-              <code-snippet
-                style={{ '--border-radius': '0 0 8px 8px' }}
-                language="typescript"
-                code={`
-import Foundation
-import Capacitor
-
-// Custom platform code, easily exposed to your web app
-// through Capacitor plugin APIs. Build APIs that work
-// across iOS, Android, and the web!
-@objc(MyAwesomePlugin)
-public class MyAwesomePlugin: CAPPlugin {
-
-  @objc public func doNative(_ call: CAPPluginCall) {
-    let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
-
-    // ....
-  }
-}
-`}
-              />
-            </Tab>
-          </Tabs>
-        </Col>
-      </Grid>
-    </ResponsiveContainer>
-  </section>
-);
 
 const WhitepaperCTA = ({ show, hide, shown, submitted }) => [
   <section class="whitepaperCta">

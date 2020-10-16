@@ -1,7 +1,7 @@
 @use 'variables';
 @use 'vars';
 
-span, a {
+span, a, sup {
   display: inline-block;
 }
 
@@ -9,6 +9,10 @@ img {
   display: block;
   object-fit: contain;
   height: auto;
+}
+
+code {
+  font-family: 'Roboto Mono', 'Source Code Pro', monospace;
 }
 
 .no-scroll {
