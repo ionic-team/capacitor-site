@@ -22,10 +22,6 @@ export class SiteHeader {
 
   @State() sticky = false;
 
-  // Hovered nav items
-  @State() forceHovered: string | null = null;
-  @State() hovered: string | null = null;
-
   @State() starCount?: string;
 
   async componentWillLoad() {
