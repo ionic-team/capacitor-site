@@ -7,7 +7,7 @@ import {
 import { href } from '../../stencil-router-v2';
 
 import state from '../../store';
-// import { parseHtmlContent } from '@stencil/ssg/parse'
+import Router from '../../router';
 
 
 @Component({
@@ -19,42 +19,27 @@ export class SiteHeader {
   @Element() el: HTMLElement;
 
   @State() expanded = false;
-
   @State() sticky = false;
-
   @State() starCount?: string;
 
-  async componentWillLoad() {
-    // if (Build.isServer) {
-    //   var url = 'https://github.com/ionic-team/capacitor'
-    //   const res = await fetch(url, {
-    //     method: 'GET',
-    //     headers: { 'Content-Type': 'text/html' },
-    //   });
-    //   const html = await res.text();
-    //   var data: { stars?: string };
+  private links: { [key: string]: HTMLElement } = {};
 
-    //   const opts = {
-    //     beforeHtmlSerialize: async (frag: DocumentFragment) => {
-    //       const starsLink = frag.querySelector('a[href="/ionic-team/capacitor/stargazers"].social-count');
-
-    //       data.stars = starsLink?.textContent.trim();
-    //     },
-    //   };
-
-    //   await parseHtmlContent(html, opts);   
-
-    //   staticServerState(data)
+  componentWillLoad() {
+    // if (Build.isServer) {     
+    //   staticServerState({}, new URL(globalThis.location.href), this.getStars);
+    // } else {
+    //   staticClientState({}, new URL(window.location.href));
     // }
 
+    Router.on('change', (newRoute) => {
+      this.handleActive(newRoute.pathname);
+    })
 
     IntersectionHelper.addListener(({ entries }) => {
       const e = entries.find(e => (e.target as HTMLElement) === this.el);
       if (!e) {
         return;
       }
-
-      console.log('got here', e.intersectionRatio);
 
       if (e.intersectionRatio < 1) {
         this.sticky = true;
@@ -63,6 +48,47 @@ export class SiteHeader {
       }
     });
     IntersectionHelper.observe(this.el!);
+  }
+
+  // async getStars() {
+  //   global.console.log('debug', globalThis.location.href);
+  //   const url = 'https://github.com/ionic-team/capacitor'
+  //   const res = await fetch(url, {
+  //     method: 'GET',
+  //     headers: { 'Content-Type': 'text/html' },
+  //   });
+  //   const html = await res.text();
+  //   let data: { stars?: string };
+
+  //   const opts = {
+  //     beforeHtmlSerialize: async (frag: DocumentFragment) => {
+  //       const starsLink = frag.querySelector('a[href="/ionic-team/capacitor/stargazers"].social-count');
+
+  //       data.stars = starsLink?.textContent.trim();
+  //     },
+  //   };
+
+  //   await parseHtmlContent(html, opts);
+
+  //   return data;
+  // }
+
+  componentDidLoad() {    
+    this.handleActive(window.location.pathname);
+  }
+
+  handleActive = (path: string) => {
+    const activeRoute = path.split('/')[1];
+
+    if (this.links.hasOwnProperty(activeRoute)) {
+      for (const [key, value] of Object.entries(this.links)) {
+        if (key === activeRoute) {
+          value.classList.add('active');
+        } else {
+          value.classList.remove('active');
+        }
+      }      
+    }
   }
 
   toggleExpanded = () => (this.expanded = !this.expanded);
@@ -119,9 +145,22 @@ export class SiteHeader {
               }}
             >
               <nav onClick={() => this.expanded = false}>
-                <a {...href('/docs')}>Docs</a>
-                <a {...href('/community')}>Community</a>
-                <a {...href('/blog')}>Blog</a>
+                <a
+                  {...href('/docs')}
+                >
+                  Docs
+                </a>
+                <a
+                  ref={el => this.links.community = el}
+                  {...href('/community')}
+                >
+                  Community</a>
+                <a
+                  ref={el => this.links.blog = el}
+                  {...href('/blog')}
+                >
+                  Blog
+                </a>
                 <a
                   href="https://ionicframework.com/native"
                   target="_blank"
@@ -140,7 +179,7 @@ export class SiteHeader {
                 class="site-header-links__buttons__github"
               >
                 <ion-icon name="logo-github" />
-                <span>{starCount ? starCount : 'GitHub'}</span>
+                <span>{starCount ? starCount : '4.6K'}</span>
               </Button>
               <Button
                 anchor

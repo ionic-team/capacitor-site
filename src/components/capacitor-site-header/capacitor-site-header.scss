@@ -74,7 +74,7 @@
 
       a {
         border-bottom: 0;
-        transition: color, opacity .4s;
+        transition: color, opacity .2s ease-out;
         font-size: 14px;
         line-height: 18px;
         font-family: var(--f-family-text);
@@ -84,7 +84,7 @@
         letter-spacing: 0;
         margin: 0 32px 0 0;
 
-        &.link--active {
+        &.active {
           opacity: .5;
         }
 
