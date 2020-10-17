@@ -1,4 +1,4 @@
-import { Component, Element, State, h, VNode, Host } from '@stencil/core';
+import { Component, Element, State, h, Host } from '@stencil/core';
 import {
   ResponsiveContainer,
   IntersectionHelper,
@@ -6,7 +6,6 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { href } from '../../stencil-router-v2';
 
-import Router from '../../router';
 import state from '../../store';
 // import { parseHtmlContent } from '@stencil/ssg/parse'
 
@@ -49,28 +48,17 @@ export class SiteHeader {
 
     //   await parseHtmlContent(html, opts);   
 
-    //   staticState(data)
+    //   staticServerState(data)
     // }
 
-    // Figure out if we should force hover a nav item
-    this.forceHovered = Router.path.replace('/', '').replace('#', '');
-
-    Router.on('change', (v: any) => {
-      // TODO: Make this an object and share it w/ render
-      if (
-        ['/#features', '/docs', '/blog', '/enterprise', '/community'].findIndex(
-          x => x === v,
-        ) >= 0
-      ) {
-        this.forceHovered = v.replace('/', '').replace('#', '');
-      }
-    });
 
     IntersectionHelper.addListener(({ entries }) => {
       const e = entries.find(e => (e.target as HTMLElement) === this.el);
       if (!e) {
         return;
       }
+
+      console.log('got here', e.intersectionRatio);
 
       if (e.intersectionRatio < 1) {
         this.sticky = true;
@@ -81,18 +69,11 @@ export class SiteHeader {
     IntersectionHelper.observe(this.el!);
   }
 
-  setHovered = (h: string) => () => (this.hovered = h);
-
-  clearHover = () => (this.hovered = null);
-
   toggleExpanded = () => (this.expanded = !this.expanded);
 
   render() {
     const {
-      clearHover,
       expanded,
-      forceHovered,
-      hovered,
       starCount,
       sticky,
     } = this;
@@ -111,7 +92,11 @@ export class SiteHeader {
         />
 
         <ResponsiveContainer class="site-header">
-          <a {...href('/')} class="site-header__logo-link">
+          <a
+            {...href('/')}
+            onClick={() => this.expanded = false}
+            class="site-header__logo-link"
+          >
             {state.pageTheme === 'dark' ? (
               <img
                 src="/assets/img/heading/logo-white.png"
@@ -135,52 +120,15 @@ export class SiteHeader {
             <div
               class={{
                 'site-header-links__menu': true,
-                'site-header-links__menu--hovered': !!hovered || !!forceHovered,
               }}
             >
-              <nav>
-                <NavLink
-                  path="/#features"
-                  hovered={(hovered || forceHovered) === 'features'}
-                  onHover={this.setHovered('features')}
-                  onExit={clearHover}
-                >
-                  Features
-                </NavLink>
-                <NavLink
-                  path="/docs"
-                  hovered={hovered === 'docs'}
-                  onHover={this.setHovered('docs')}
-                  onExit={clearHover}
-                >
-                  Docs
-                </NavLink>
-                <NavLink
-                  path="/community"
-                  hovered={
-                    hovered === 'community' || forceHovered === 'community'
-                  }
-                  onHover={this.setHovered('community')}
-                  onExit={clearHover}
-                >
-                  Community
-                </NavLink>
-                <NavLink
-                  path="/blog"
-                  hovered={hovered === 'blog'}
-                  onHover={this.setHovered('blog')}
-                  onExit={clearHover}
-                >
-                  Blog
-                </NavLink>
+              <nav onClick={() => this.expanded = false}>
+                <a {...href('/docs')}>Docs</a>
+                <a {...href('/community')}>Community</a>
+                <a {...href('/blog')}>Blog</a>
                 <a
                   href="https://ionicframework.com/native"
                   target="_blank"
-                  onMouseOver={this.setHovered('enterprise')}
-                  onMouseOut={clearHover}
-                  class={{
-                    'link--hovered': hovered === 'enterprise',
-                  }}
                 >
                   Enterprise
                 </a>
@@ -190,6 +138,8 @@ export class SiteHeader {
             <div class="site-header-links__buttons">
               <Button
                 anchor
+                size="md"
+                kind="regular"
                 href="https://github.com/ionic-team/capacitor"
                 class="site-header-links__buttons__github"
               >
@@ -198,6 +148,8 @@ export class SiteHeader {
               </Button>
               <Button
                 anchor
+                size="md"
+                kind="regular"
                 class="site-header-links__buttons__install"
                 href="/docs/getting-started"
               >
@@ -222,33 +174,3 @@ export class SiteHeader {
     );
   }
 }
-
-interface NavLinkProps {
-  hovered: boolean;
-  path: string;
-  onHover: () => void;
-  onExit: () => void;
-}
-
-const NavLink = (
-  { path, hovered, onHover, onExit }: NavLinkProps,
-  children: VNode,
-) => {
-  // Detect active if path equals the route path or the current active path plus
-  // the route hash equals the path, to support links like /#features
-  const active = Router.path === path || Router.path + Router.hash === path;
-
-  return (
-    <a
-      {...href(path)}
-      onMouseOver={onHover}
-      onMouseOut={onExit}
-      class={{
-        'link--active': active,
-        'link--hovered': hovered,
-      }}
-    >
-      {children}
-    </a>
-  );
-};

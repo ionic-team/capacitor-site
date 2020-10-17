@@ -13,6 +13,7 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { Tabs, Tab, TabBar, TabBarButton } from '../../tabs';
 import { Fragment, JSXBase } from '@stencil/core/internal';
+import { href } from '../../../stencil-router-v2';
 
 @Component({
   tag: 'landing-page',
@@ -86,6 +87,7 @@ export class LandingPage {
   );
 
   Top = () => {
+    const { Announcement } = this;
     const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
     const { primary, secondary } = top__ctas[0];
 
@@ -94,13 +96,13 @@ export class LandingPage {
         <div class="background"></div>
         <ResponsiveContainer>
           <div class="heading-group">
-            <Announcement data={this.data} />
+            <Announcement />
             <PrismicRichText richText={top} paragraphLevel={2} />
             <div class="buttons">
               <Button 
                 kind="round"
                 anchor
-                href="/docs/getting-started"
+                {...href('/docs/getting-started')}
                 class="primary"
               >
                 {primary} <span class="arrow">-&gt;</span>
@@ -109,7 +111,7 @@ export class LandingPage {
                 kind="round"
                 variation="light"
                 anchor
-                href="/docs"
+                {...href('docs/plugins')}
                 class="secondary"
               >
                 {secondary}
@@ -138,6 +140,43 @@ export class LandingPage {
       </section>
     );
   }
+
+  Announcement = () => {
+    const { announcement: { tag_text, link: { target, url },
+            desktop_text, mobile_text } } = this.data;
+
+    
+    const newUrl = url.replace(window.location.origin, '');
+
+    return (
+      <a
+        id="announcement"
+        class="feature__register"
+        {...href(newUrl)}
+        target={target}
+        rel={target ? 'noopener' : undefined}
+      >
+        <div class="tag">{tag_text}</div>
+        <Breakpoint sm={true} display='inline-block' class="text">
+          <span class="text__content">
+            {desktop_text}{' '}
+            <span class="arrow">-&gt;</span>
+          </span>
+        </Breakpoint>
+        <Breakpoint
+          xs={true}
+          sm={false}
+          display='inline-block'
+          class="text"
+        >
+          <span class="text__content">
+            {mobile_text}{' '}
+            <span class="arrow">-&gt;</span>
+          </span>
+        </Breakpoint>
+      </a>
+    );
+  };
 
   Started = () => {
     const { started, started__list, started__icons } = this.data;
@@ -308,10 +347,14 @@ public class MyAwesomePlugin: CAPPlugin {
             </div>
             <div class="info">
               <Heading>
-                <span>{line1}</span>
+                <span>{line1}</span>{' '}
                 <span>{line2}</span>
               </Heading>
-              <Button kind="round" anchor>
+              <Button
+                kind="round"
+                anchor
+                onClick={() => {this.showHubspotForm = true}}
+              >
                 {cta}
                 <span class="arrow">-&gt;</span>  
               </Button>
@@ -406,8 +449,8 @@ public class MyAwesomePlugin: CAPPlugin {
             <Col sm={3} cols={6}>
               <PrismicResponsiveImage
                 image={logo}
-                width={272}
-                height={200}
+                width="272"
+                height="200"
               />
             </Col>
           ))}
@@ -532,35 +575,6 @@ public class MyAwesomePlugin: CAPPlugin {
 
 
 
-const Announcement = ({ data }) => {
-  if (!data?.tag_text) return '';
-  return (
-    <a
-      class="feature__register"
-      href={data.link.url}
-      target="_blank"
-      rel="noopener nofollow"
-    >
-      <div class="feature__register__tag">{data.tag_text}</div>
-      <Breakpoint sm={true} display='inline-block' class="feature__register__text">
-        <span class="text__content">
-          {data.desktop_text}{' '}
-          <span style={{ 'letter-spacing': '0' }}>-&gt;</span>
-        </span>
-      </Breakpoint>
-      <Breakpoint
-        xs={true}
-        sm={false}
-        display='inline-block'
-        class="feature__register__text"
-      >
-        <span class="text__content">
-          {data.mobile_text}{' '}
-          <span style={{ 'letter-spacing': '0' }}>-&gt;</span>
-        </span>
-      </Breakpoint>
-    </a>
-  );
-};
+
 
 

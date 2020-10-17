@@ -1,5 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
-import { Grid, Col, ResponsiveContainer, Heading, Paragraph } from '@ionic-internal/ionic-ds';
+import { ResponsiveContainer, Heading, Paragraph } from '@ionic-internal/ionic-ds';
 
 @Component({
   tag: 'pre-footer',

@@ -27,6 +27,7 @@ export const getPage: MapParamData = async (_params, url) => {
     return {
       ...await queryPrismic('capacitor_homepage'),
       whitepaper_ad: await queryPrismic('capacitor_whitepaper_ad'),
+      announcement: await queryPrismic('capacitor_homepage_announcement'),
     }
   }
 };

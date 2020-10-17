@@ -5,20 +5,21 @@
   position: sticky;
   z-index: 1000;
   top: -1px;
-  background: #fff;
+  background: rgba(255, 255, 255, .992);
   display: block;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+
 
   --link-color: var(--c-carbon-90);
 
   &.site-header--sticky {
-    background: #fff;
+    box-shadow: var(--elevation-2);
+    transition: box-shadow .2s ease-out;
   }
 }
 
 .ui-container {
-  background: #fff;
+  background: transparent;
   padding: 14px 0 13px;
 }
 
@@ -63,44 +64,35 @@
       align-items: center;
       justify-content: center;
 
-      &--hovered {
-        a {
-          opacity: 0.4;
-        }
-        a.link--active {
-          opacity: 0.4;
-        }
-      }
-
       nav {
         flex: 1;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
-        max-width: 550px;
+        justify-content: flex-end;
         margin-left: 15px;
       }
 
       a {
         border-bottom: 0;
         transition: color, opacity .4s;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 18px;
         font-family: var(--f-family-text);
-        color: #222d3a;
+        color: var(--c-indigo-80);
         text-decoration: none;
         font-weight: normal;
         letter-spacing: 0;
-        margin: 0 2px 0 0;
+        margin: 0 32px 0 0;
+
+        &.link--active {
+          opacity: .5;
+        }
+
 
         &:hover {
-          opacity: 1;
+          opacity: .5;
           border: 0;
         }
-      }
-
-      a.link--active {
-        opacity: 1
       }
 
       .link,
@@ -128,16 +120,14 @@
 
     &__buttons {
       min-width: 130px;
-      margin-top: 2px;
 
       .ui-button {
-        font-size: 15px;
-        letter-spacing: var(--f-tracking-tight);
-        line-height: 18px;
-        padding: 8px 10px;
-        margin-left: 13px;
-        margin-right: -2px;
-        margin-top: -1px;
+        font-weight: 500;
+        height: 33px;
+
+        + .ui-button {
+          margin-left: 8px;
+        }
       }
 
       &__github {
@@ -145,6 +135,7 @@
         border: 1px solid #ebeff4;
         color: var(--c-indigo-80);
         line-height: 0;
+        --c-focus: #80caff;
 
         ion-icon {
           vertical-align: middle;
@@ -156,7 +147,11 @@
         }
       }
       &__install {
-        background: var(--color-capacitor-blue);
+        --c-background: var(--c-capacitor-blue);
+        --c-background--hover: #24a7ff;
+        --c-background--active: #0090f0;
+        --c-focus: #bde4ff;
+
         svg {
           margin-right: 6px;
           margin-bottom: -2px;
