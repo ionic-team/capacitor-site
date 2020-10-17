@@ -1,19 +1,18 @@
 import { Component, h, Host, Prop, State } from '@stencil/core';
-import { href } from '../../stencil-router-v2';
 import Helmet from '@stencil/helmet';
 import {
   ResponsiveContainer,
   Grid,
   Col,
   Heading,
-  Paragraph,
   Breakpoint,
   Button,
   PrismicRichText,
   PrismicResponsiveImage,
+  Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
-import FancyUnderline from '../FancyUnderline';
+import { Tabs, Tab, TabBar, TabBarButton } from '../../tabs';
+import { Fragment, JSXBase } from '@stencil/core/internal';
 
 @Component({
   tag: 'landing-page',
@@ -27,6 +26,64 @@ export class LandingPage {
   @State() hubspotFormSubmitted = false;
 
 
+  render() {    
+    const { Top, Started, Native, Features, Framework,
+            Companies, GetStarted, WhitepaperAd, MetaHead } = this;
+
+    return (
+      <Host>
+        <MetaHead />
+        <Top />
+        <Started />
+        <WhitepaperAd />
+        <Native />
+        <Features />
+        <Framework />
+        <Companies />
+        <GetStarted />
+        <pre-footer />
+        <newsletter-signup />
+        <capacitor-site-footer />
+      </Host>
+    );
+  }
+
+  MetaHead = () => (
+    <Helmet>
+      <title>Capacitor: Cross-platform native runtime for web apps</title>
+      <meta
+        name="description"
+        content={
+          'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript'
+        }
+      />
+      <meta
+        property="og:description"
+        content="Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript"
+      />
+      <meta property="og:site_name" content="Capacitor" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@capacitorjs" />
+      <meta name="twitter:creator" content="capacitorjs" />
+      <meta
+        name="twitter:title"
+        content="Build cross-platform apps with web technologies"
+      />
+      <meta
+        name="twitter:description"
+        content="Build cross-platform apps with web technologies"
+      />
+      <meta
+        name="twitter:image"
+        content="https://capacitorjs.com/assets/img/og.png"
+      />
+      <meta
+        property="og:image"
+        content="https://capacitorjs.com/assets/img/og.png"
+      />
+      <meta property="og:url" content="https://capacitorjs.com/" />
+    </Helmet>
+  );
 
   Top = () => {
     const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
@@ -82,13 +139,7 @@ export class LandingPage {
     );
   }
 
-  Started = ({
-    selectedCodeTab,
-    setSelectedCodeTab,
-  }: {
-    selectedCodeTab: string;
-    setSelectedCodeTab: (tab: string) => void;
-  }) => {
+  Started = () => {
     const { started, started__list, started__icons } = this.data;
 
     const panels = [
@@ -103,31 +154,31 @@ export class LandingPage {
       <Tabs>
         <TabBar>
           <TabBarButton
-            selected={selectedCodeTab === 'notifications'}
-            tabSelect={() => setSelectedCodeTab('notifications')}
+            selected={this.selectedCodeTab === 'notifications'}
+            tabSelect={() => this.selectedCodeTab = 'notifications'}
           >
             Notifications
           </TabBarButton>
           <TabBarButton
-            selected={selectedCodeTab === 'geolocation'}
-            tabSelect={() => setSelectedCodeTab('geolocation')}
+            selected={this.selectedCodeTab === 'geolocation'}
+            tabSelect={() => this.selectedCodeTab = 'geolocation'}
           >
             Geolocation
           </TabBarButton>
           <TabBarButton
-            selected={selectedCodeTab === 'camera'}
-            tabSelect={() => setSelectedCodeTab('camera')}
+            selected={this.selectedCodeTab === 'camera'}
+            tabSelect={() => this.selectedCodeTab = 'camera'}
           >
             Camera
           </TabBarButton>
           <TabBarButton
-            selected={selectedCodeTab === 'custom'}
-            tabSelect={() => setSelectedCodeTab('custom')}
+            selected={this.selectedCodeTab === 'custom'}
+            tabSelect={() => this.selectedCodeTab = 'custom'}
           >
             Custom
           </TabBarButton>
         </TabBar>
-        <Tab selected={selectedCodeTab === 'notifications'}>
+        <Tab selected={this.selectedCodeTab === 'notifications'}>
           <code-snippet
             style={{ '--border-radius': '0 0 8px 8px' }}
             language="typescript"
@@ -152,7 +203,7 @@ LocalNotifications.schedule({
 `}
           />
         </Tab>
-        <Tab selected={selectedCodeTab === 'geolocation'}>
+        <Tab selected={this.selectedCodeTab === 'geolocation'}>
           <code-snippet
             style={{ '--border-radius': '0 0 8px 8px' }}
             language="typescript"
@@ -168,7 +219,7 @@ const longitude = position.coords.longitude;
 `}
           />
         </Tab>
-        <Tab selected={selectedCodeTab === 'camera'}>
+        <Tab selected={this.selectedCodeTab === 'camera'}>
           <code-snippet
             style={{ '--border-radius': '0 0 8px 8px' }}
             language="typescript"
@@ -182,7 +233,7 @@ const picture = await Camera.getPicture({
 `}
           />
         </Tab>
-        <Tab selected={selectedCodeTab === 'custom'}>
+        <Tab selected={this.selectedCodeTab === 'custom'}>
           <code-snippet
             style={{ '--border-radius': '0 0 8px 8px' }}
             language="typescript"
@@ -243,9 +294,48 @@ public class MyAwesomePlugin: CAPPlugin {
     )
   };
 
+
+  WhitepaperAd = () => {
+    const { image, text, cta } = this.data.whitepaper_ad;
+    const { line1, line2 } = text[0];
+  
+    return (
+      <Fragment>
+        <ResponsiveContainer id="whitepaper" as="section">
+          <div class="content-wrapper">
+            <div class="image-wrapper">
+              <PrismicResponsiveImage image={image} />
+            </div>
+            <div class="info">
+              <Heading>
+                <span>{line1}</span>
+                <span>{line2}</span>
+              </Heading>
+              <Button kind="round" anchor>
+                {cta}
+                <span class="arrow">-&gt;</span>  
+              </Button>
+            </div>
+          </div>
+        </ResponsiveContainer>
+        <site-modal open={this.showHubspotForm} modalClose={() =>  this.showHubspotForm = false}>
+          <hgroup>
+            <Heading level={2}>Building Cross-Platform Apps with Capacitor</Heading>
+            <p>Fill out the form below to download our free whitepaper</p>
+          </hgroup>
+          <capacitor-hubspot-form
+            formId={'9151dc0b-42d9-479f-b7b8-649e0e7bd1bc'}
+            ajax={false}
+            onFormSubmitted={() => this.hubspotFormSubmitted}
+          />
+        </site-modal>,
+      </Fragment>
+    )
+  }
+
+
   Native = () => {
     const { native, native__list } = this.data;
-
     const dimensions = ['48x64', '60x64', '60x64'];
 
     return (
@@ -271,7 +361,6 @@ public class MyAwesomePlugin: CAPPlugin {
 
   Features = () => {
     const { features, features__list, features__link } = this.data;
-
     const dimensions = [
       '40x32', '40x32', '32x32', '33x32', '28x32', '32x32', '32x32', '32x30',
     ]
@@ -327,76 +416,121 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   }
 
-  render() {
-    const { Top, Started, Native, Features, Framework } = this;
+  Companies = () => {
+    const { companies, companies__list } = this.data;
 
-    console.log(this.data);
+    //array structure matches css div placement
+    const dimensions = [
+      //groups of 4 (2 groups of 2)
+      [
+        //groups of 2
+        ['38x40', '62x32'],
+        ['102x30', '82x28'],
+      ],
+      [
+        ['41x40', '152x26'],
+        ['40x40', '79x32'],
+      ]
+    ];
 
     return (
-      <Host>
-        <MetaHead />
-        <Top />
-        <Started
-          selectedCodeTab={this.selectedCodeTab}
-          setSelectedCodeTab={(tab: string) => {
-            this.selectedCodeTab = tab;
-          }}
-        />
-        <WhitepaperCTA
-          show={() => (this.showHubspotForm = true)}
-          hide={() => (this.showHubspotForm = false)}
-          shown={this.showHubspotForm}
-          submitted={this.hubspotFormSubmitted}
-        />
-        <Native />
-        <Features />
-        <Framework />
-      
-        <pre-footer />
-        <newsletter-signup />
-        <capacitor-site-footer />
-      </Host>
+      <ResponsiveContainer id="companies" as="section">
+        <div class="heading-group">
+          <Paragraph level={2}>{companies}</Paragraph>
+        </div>
+        <div class="images">
+          {dimensions.map((_, i1: number) => (
+            //row of 4 images (2 groups of 2)
+            <div class="image-row">
+              {dimensions[i1].map((_, i2: number) => (
+                //group of 2 images
+                <div class="image-group">
+                  {dimensions[i1][i2].map((dimensions, i3) => (
+                    <PrismicResponsiveImage
+                      image={companies__list[(i1 * 4) + (i2 * 2) + i3].logo}
+                      width={dimensions.split('x')[0]}
+                      height={dimensions.split('x')[1]}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>           
+          ))}
+        </div>
+      </ResponsiveContainer>
     );
   }
+
+  GetStarted = () => {
+    const Background = this.getStartedBackground;
+    const { get_started, get_started__ctas } = this.data;
+    const { primary, secondary } = get_started__ctas[0];
+
+    return (
+      <section id="get-started">
+        <Background class="background" />
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <PrismicRichText richText={get_started} paragraphLevel={2} />
+          </div>
+          <div class="ctas">
+            <Button
+              anchor
+              variation="light"
+              class="primary"
+              size="xl"
+            >
+              {primary}
+            </Button>
+            <Button
+              anchor
+              class="secondary"
+              size="xl"
+            >
+              {secondary}
+            </Button>           
+          </div>
+        </ResponsiveContainer>
+      </section>
+    );
+  }
+
+  getStartedBackground = (props?: JSXBase.SVGAttributes) => (
+    <svg viewBox="0 0 1800 492" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin slice" {...props}>
+      <mask id="get_started_background_mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1800" height="492">
+      <rect width="1800" height="492" fill="#119EFF"/>
+      </mask>
+      <g mask="url(#get_started_background_mask0)">
+      <rect width="1800" height="492" fill="url(#paint0_linear)"/>
+      <path opacity="0.1" d="M359 -288H1825V-155.138L985.613 338L359 -31.7071V-288Z" fill="url(#paint1_linear)"/>
+      <path opacity="0.1" d="M-211 619H812V526.251L226.261 182L-211 440.086V619Z" fill="url(#paint2_linear)"/>
+      <path opacity="0.1" d="M1192 686H2215V593.251L1629.26 249L1192 507.086V686Z" fill="url(#paint3_linear)"/>
+      </g>
+      <defs>
+      <linearGradient id="paint0_linear" x1="-6.6919e-06" y1="246" x2="1809" y2="246" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#37B3FF"/>
+      <stop offset="1" stop-color="#0097FF"/>
+      </linearGradient>
+      <linearGradient id="paint1_linear" x1="1092" y1="-288" x2="1092" y2="338" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0"/>
+      <stop offset="1" stop-color="white"/>
+      </linearGradient>
+      <linearGradient id="paint2_linear" x1="300.5" y1="619" x2="300.5" y2="182" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0"/>
+      <stop offset="1" stop-color="white"/>
+      </linearGradient>
+      <linearGradient id="paint3_linear" x1="1703.5" y1="686" x2="1703.5" y2="249" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0"/>
+      <stop offset="1" stop-color="white"/>
+      </linearGradient>
+      </defs>
+    </svg>
+  )
 }
 
 
 
-const WhitepaperCTA = ({ show, hide, shown, submitted }) => [
-  <section class="whitepaperCta">
-    <ResponsiveContainer>
-      <img
-        src="/assets/img/landing/book@2x.png"
-        srcset="/assets/img/landing/book@1x.png 1x,
-                    /assets/img/landing/book@2x.png 2x"
-        loading="lazy"
-        width="512"
-        height="383"
-        alt="Book Cover: Building cross-platform apps with Capacitor"
-      />
-      <div class="whitepaperCta__content">
-        <Heading>
-          See when and why to use Capacitor to build cross-platform apps.&nbsp;
-          <span>We wrote a guide to help you get started.</span>
-        </Heading>
-        <Button anchor onClick={() => show()}>
-          Read our Guide <span style={{ letterSpacing: '0' }}>{'->'}</span>
-        </Button>
-      </div>
-    </ResponsiveContainer>
-  </section>,
-  <site-modal open={shown} modalClose={() => hide()}>
-    <hgroup>
-      <Heading level={2}>Building Cross-Platform Apps with Capacitor</Heading>
-      <p>Fill out the form below to download our free whitepaper</p>
-    </hgroup>
-    <capacitor-hubspot-form
-      formId={'9151dc0b-42d9-479f-b7b8-649e0e7bd1bc'}
-      ajax={false}
-      onFormSubmitted={() => submitted()}
-    />
-  </site-modal>,
-];
+
 
 const Announcement = ({ data }) => {
   if (!data?.tag_text) return '';
@@ -429,39 +563,4 @@ const Announcement = ({ data }) => {
   );
 };
 
-const MetaHead = () => (
-  <Helmet>
-    <title>Capacitor: Cross-platform native runtime for web apps</title>
-    <meta
-      name="description"
-      content={
-        'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript'
-      }
-    />
-    <meta
-      property="og:description"
-      content="Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript"
-    />
-    <meta property="og:site_name" content="Capacitor" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@capacitorjs" />
-    <meta name="twitter:creator" content="capacitorjs" />
-    <meta
-      name="twitter:title"
-      content="Build cross-platform apps with web technologies"
-    />
-    <meta
-      name="twitter:description"
-      content="Build cross-platform apps with web technologies"
-    />
-    <meta
-      name="twitter:image"
-      content="https://capacitorjs.com/assets/img/og.png"
-    />
-    <meta
-      property="og:image"
-      content="https://capacitorjs.com/assets/img/og.png"
-    />
-    <meta property="og:url" content="https://capacitorjs.com/" />
-  </Helmet>
-);
+

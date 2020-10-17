@@ -23,12 +23,15 @@ export const getBlogPosts = async (_page: number = 0, pageSize = 10): Promise<Pr
 };
 
 export const getPage: MapParamData = async (_params, url) => {
-  let prismicId: string;
-
   if (url.pathname === '/') {
-    prismicId = 'capacitor_homepage';
+    return {
+      ...await queryPrismic('capacitor_homepage'),
+      whitepaper_ad: await queryPrismic('capacitor_whitepaper_ad'),
+    }
   }
+};
 
+const queryPrismic = async (prismicId: string) => {
   try {
     const prismicClient = Client();
     const response: PrismicDocument = await prismicClient.getSingle(prismicId, {});
@@ -37,4 +40,4 @@ export const getPage: MapParamData = async (_params, url) => {
   } catch (e) {
     console.warn(e);
   }
-};
+}  
