@@ -1,4 +1,4 @@
-@use '../../global/variables';
+@use '../../global/vars' as *;
 
 docs-component {
   .container {
@@ -22,8 +22,14 @@ docs-component {
   plugin-platforms {
     display: block;
     float: right;
-    .platform {
+
+    .platform {      
       margin-left: 8px;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      float: none;
+      margin-block-end: -24px;
     }
   }
 
@@ -93,7 +99,7 @@ docs-component {
   }
 
   p a {
-    color: variables.$link-color;
+    color: var(--c-capacitor-blue);
     text-decoration: none;
     border: 0;
 
@@ -114,7 +120,7 @@ docs-component {
   }
 
   #introButton {
-    background: variables.$link-color;
+    background: var(--c-capacitor-blue);
     color: white;
     text-decoration: none;
 

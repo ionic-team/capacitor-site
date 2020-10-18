@@ -1,5 +1,6 @@
 import { Component, Prop, Listen, State, Watch, h } from '@stencil/core';
 import type { HeadingData } from '@stencil/ssg';
+import { Heading } from '@ionic-internal/ionic-ds';
 
 interface ItemOffset {
   id: string;
@@ -101,11 +102,11 @@ export class InPageNavigtion {
     return (
       <nav class="sticky" ref={e => (this.stickyEl = e)}>
         {h1 ? (
-          <h5>
-            <a href={`#${h1.id}`}>Contents</a>
-          </h5>
+          <a href={`#${h1.id}`}>
+            <Heading level={6} class="title">Contents</Heading>
+          </a>
         ) : (
-          <h5>Contents</h5>
+          <Heading level={6} class="title">Contents</Heading>
         )}
 
         <ul class="heading-links">
