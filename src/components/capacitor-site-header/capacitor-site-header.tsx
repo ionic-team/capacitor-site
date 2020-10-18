@@ -50,6 +50,7 @@ export class SiteHeader {
     IntersectionHelper.observe(this.el!);
   }
 
+  // my failed attempt at getting static state outside of the router -Jared
   // async getStars() {
   //   global.console.log('debug', globalThis.location.href);
   //   const url = 'https://github.com/ionic-team/capacitor'

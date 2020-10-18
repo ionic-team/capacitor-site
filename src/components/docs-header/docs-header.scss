@@ -25,6 +25,7 @@
   z-index: 3;
 }
 
+
 header {
   display: flex;
   justify-content: flex-end;
@@ -61,14 +62,15 @@ header {
 
     border-bottom: none;
 
+    transition: color .2s ease-out;
+
     &:hover {
       color: #858e97;
     }
 
     &.active {
       font-weight: 500;
-
-      color: #222d3a;
+      color: var(--c-cyan-100);
     }
   }
 }
