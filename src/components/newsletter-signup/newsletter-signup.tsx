@@ -46,18 +46,6 @@ export class NewsletterSignup {
       formId: 'c8d355e3-a5ad-4f91-a2c0-c9dc93e10658',
       cssClass: '',
       target: `#${this.uniqueFormId}`,
-      // locale: 'en',
-      // translations: {
-      //   en: {
-      //     submitText: ' ',
-      //   }
-      // },
-      // onFormSubmit: () => {
-      //   this.textEl.style.display = 'none'
-      // },
-      // onFormReady: () => {
-      //   console.log('form ready');
-      // } 
     });
   }
   

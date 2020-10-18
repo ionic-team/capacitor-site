@@ -24,7 +24,7 @@ code {
   margin-inline-start: 3px;
 }
 
-.link, p a {
+a.link, p a {
   color: var(--c-capacitor-blue);
   transition: opacity .2s ease-out;
 

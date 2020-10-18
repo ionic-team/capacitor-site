@@ -1,17 +1,66 @@
 import { Component, Host, h } from '@stencil/core';
-import { ResponsiveContainer, Grid, Col, Heading } from '@ionic-internal/ionic-ds';
+import { ResponsiveContainer, Grid, Col, Heading, Paragraph } from '@ionic-internal/ionic-ds';
+import { importResource } from '../../utils/common';
+
+declare global {
+  interface Window {
+    hbspt: {
+      forms: {
+        create : ({}) => any
+      }
+    },
+    jQuery: (() => ({
+      // these are methods required by HubSpot
+      change: () => void,
+      trigger: () => void,
+    }));
+  }
+}
 
 @Component({
   tag: 'capacitor-site-footer',
   styleUrl: 'capacitor-site-footer.scss',
-  scoped: true,
 })
 export class CapacitorSiteFooter {
+  private uniqueFormId = `id-${Math.random().toString().replace('.', '')}`;
+  private hubspotCdn = '//js.hsforms.net/forms/v2.js'
+
+
+  componentWillLoad() {
+    importResource(
+      { propertyName: 'hbspt', link: this.hubspotCdn },
+      this.createForm
+    );
+  }
+
+  disconnectedCallback() {
+    const scripts = document.head.querySelectorAll('script');
+    scripts.forEach((script) => {
+      if (script.src = this.hubspotCdn) script.remove();
+    })
+  }
+
+  createForm = () => {
+    window.hbspt.forms.create({
+      portalId: '3776657',
+      formId: 'c8d355e3-a5ad-4f91-a2c0-c9dc93e10658',
+      cssClass: '',
+      target: `#${this.uniqueFormId}`,
+    });
+  }
+
   render() {
     return (
       <Host>
         <footer>
           <ResponsiveContainer>
+            <div class="newsletter">
+              <div>
+                <Heading level={4}>Join our Newsletter</Heading>
+                <Paragraph level={4}>Keep up to date with all the latest Capacitor news and updates</Paragraph>
+              </div>
+              <div class="form-group" id={this.uniqueFormId}></div>
+            </div>
             <Grid>
               <Col md={6} sm={4} xs={12} cols={12} class="copyright">
                 <img src="/assets/img/logo-white2.png" alt="Capacitor Logo" class="logo" />
@@ -24,26 +73,26 @@ export class CapacitorSiteFooter {
                 <Grid>
                   <Col md={4} sm={3} xs={4} cols={4}>
                     <Heading level={5}>Developers</Heading>
-                    <ul>
-                      <li><a href="/docs/getting-started">Install</a></li>
-                      <li><a href="/docs">Docs</a></li>
-                      <li><a href="/docs/apis">Plugins</a></li>
+                    <ul class="routes">
+                      <li><a class="link | ui-paragraph-4" href="/docs/getting-started">Install</a></li>
+                      <li><a class="link | ui-paragraph-4" href="/docs">Docs</a></li>
+                      <li><a class="link | ui-paragraph-4" href="/docs/apis">Plugins</a></li>
                     </ul>
                   </Col>
                   <Col md={4} sm={3} xs={4} cols={4}>
                     <Heading level={5}>Resources</Heading>
-                    <ul>
-                      <li><a href="/community">Community</a></li>
-                      <li><a href="/blog">Blog</a></li>
-                      <li><a href="https://github.com/ionic-team/capacitor/discussions">Discussions</a></li>
+                    <ul class="routes">
+                      <li><a class="link | ui-paragraph-4" href="/community">Community</a></li>
+                      <li><a class="link | ui-paragraph-4" href="/blog">Blog</a></li>
+                      <li><a class="link | ui-paragraph-4" href="https://github.com/ionic-team/capacitor/discussions">Discussions</a></li>
                     </ul>
                   </Col>
                   <Col md={4} sm={3} xs={4} cols={4}>
                     <Heading level={5}>Connect</Heading>
-                    <ul>
-                      <li><a href="https://github.com/ionic-team/capacitor">GitHub</a></li>
-                      <li><a href="https://twitter.com/capacitorjs">Twitter</a></li>
-                      <li><a href="https://ionic.io">Ionic</a></li>
+                    <ul class="routes">
+                      <li><a class="link | ui-paragraph-4" href="https://github.com/ionic-team/capacitor">GitHub</a></li>
+                      <li><a class="link | ui-paragraph-4" href="https://twitter.com/capacitorjs">Twitter</a></li>
+                      <li><a class="link | ui-paragraph-4" href="https://ionic.io">Ionic</a></li>
                     </ul>
                   </Col>
                 </Grid>

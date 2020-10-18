@@ -23,7 +23,7 @@ import { SolutionStencil } from './solution-stencil';
 export class SolutionPage implements ComponentInterface {
   @Prop() solutionId: string;
 
-  framework: { id: string; name: string; theme: string; logo: string };
+  framework: { id: string; name: string; theme: string; logo: string, dimensions: string };
   componentWillLoad() {
     this.framework = solutions.find((entry) => entry.id === this.solutionId);
   }
@@ -51,7 +51,14 @@ export class SolutionPage implements ComponentInterface {
         <MetaHead framework={this.framework} />
         <ResponsiveContainer id="top" as="section">
           <div class="heading-group">
-            <img src={this.framework.logo} alt={this.framework.name} class="react" />
+            <img
+              width={this.framework.dimensions?.split('x')[0]}
+              height={this.framework.dimensions?.split('x')[1]}
+              loading="eager"
+              src={this.framework.logo}
+              alt={this.framework.name}
+              class="react"
+            />
             <Heading level={2} as="h1">
               {this.framework.name} &amp; Capacitor
             </Heading>
@@ -104,11 +111,11 @@ const MetaHead = ({ framework }) => {
 };
 
 const solutions = [
-  { "id": "react",   "name": "React",   "theme": "#3DD3FF", "logo": "/assets/img/solutions/react.png" },
-  { "id": "vue",     "name": "Vue",     "theme": "#42b983", "logo": "/assets/img/solutions/vue.png" },
-  { "id": "preact",  "name": "Preact",  "theme": "#673ab8", "logo": "/assets/img/solutions/preact.png"  },
-  { "id": "angular", "name": "Angular", "theme": "#DD002E", "logo": "/assets/img/solutions/angular.png"  },
-  { "id": "svelte",  "name": "Svelte",  "theme": "#FF3D00", "logo": "/assets/img/solutions/svelte.png"  },
-  { "id": "stencil", "name": "Stencil", "theme": "#4c48ff", "logo": "/assets/img/solutions/stencil.png"  },
-  { "id": "ember",   "name": "Ember",   "theme": "#E04E39", "logo": "/assets/img/solutions/ember.png"  }
+  { "id": "react",   "name": "React",   "theme": "#3DD3FF", "logo": "/assets/img/solutions/react.png", "dimensions": "252x224" },
+  { "id": "vue",     "name": "Vue",     "theme": "#42b983", "logo": "/assets/img/solutions/vue.png", "dimensions": "222x196" },
+  { "id": "preact",  "name": "Preact",  "theme": "#673ab8", "logo": "/assets/img/solutions/preact.png", "dimensions": "256x256"  },
+  { "id": "angular", "name": "Angular", "theme": "#DD002E", "logo": "/assets/img/solutions/angular.png", "dimensions": "276x276"  },
+  { "id": "svelte",  "name": "Svelte",  "theme": "#FF3D00", "logo": "/assets/img/solutions/svelte.png", "dimensions": "228x212"  },
+  { "id": "stencil", "name": "Stencil", "theme": "#4c48ff", "logo": "/assets/img/solutions/stencil.png", "dimensions": "228x172"  },
+  { "id": "ember",   "name": "Ember",   "theme": "#E04E39", "logo": "/assets/img/solutions/ember.png", "dimensions": "297x284"  }
 ]

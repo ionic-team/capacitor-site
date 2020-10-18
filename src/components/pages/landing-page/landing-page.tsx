@@ -43,7 +43,6 @@ export class LandingPage {
         <Companies />
         <GetStarted />
         <pre-footer />
-        <newsletter-signup />
         <capacitor-site-footer />
       </Host>
     );
@@ -144,8 +143,9 @@ export class LandingPage {
 
 
   Announcement = () => {
-    const { announcement: { tag_text, link: { target, url },
-            desktop_text, mobile_text } } = this.data;
+    const { announcement, desktop_text, mobile_text } = this.data;
+    const { tag_text, link } = announcement;
+    const { target, url } = link;
 
     
     const newUrl = url.replace(window.location.origin, '');
