@@ -6,7 +6,7 @@ import {
   Grid,
   Col,
   Heading,
-  Button,
+  Paragraph,
 } from '@ionic-internal/ionic-ds';
 
 import { SolutionAngular } from './solution-angular';
@@ -51,32 +51,26 @@ export class SolutionPage implements ComponentInterface {
     return (
       <Host>
         <MetaHead framework={this.framework} />
-        <section class="hero">
-          <ResponsiveContainer>
-            <Grid>
-              <Col md={12} sm={12} xs={12} cols={12}>
-                <hgroup class="hero__heading">
-                  <img src={this.framework.logo} alt={this.framework.name} class="react" />
-                  <Heading level={2}>
-                    {this.framework.name} &amp; Capacitor
-                  </Heading>
-                  <Heading level={3}>
-                    Build native mobile apps with web technology and{' '}
-                    {this.framework.name}
-                  </Heading>
-                  <Button
-                    anchor
-                    href="#install"
-                    id="get-started"
-                    style={{ '--button-background': this.framework.theme }}
-                  >
-                    Get Started
-                  </Button>
-                </hgroup>
-              </Col>
-            </Grid>
-          </ResponsiveContainer>
-        </section>
+        <ResponsiveContainer id="top" as="section">
+          <div class="heading-group">
+            <img src={this.framework.logo} alt={this.framework.name} class="react" />
+            <Heading level={2} as="h1">
+              {this.framework.name} &amp; Capacitor
+            </Heading>
+            <Paragraph level={2}>
+              Build native mobile apps with web technology and{' '}
+              {this.framework.name}
+            </Paragraph>
+            {/* <Button
+              anchor
+              href="#install"
+              id="get-started"
+              style={{ '--button-background': this.framework.theme }}
+            >
+              Get Started
+            </Button> */}
+          </div>
+        </ResponsiveContainer>
 
         {this.getComponent()}
 
