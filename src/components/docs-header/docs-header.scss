@@ -56,13 +56,14 @@ header {
   background: #fff;
 
   a {
+    position: relative;
+
     color: #98a2ad;
 
     font-size: 15px;
 
     border-bottom: none;
 
-    transition: color .2s ease-out;
 
     &:hover {
       color: #858e97;
@@ -77,6 +78,24 @@ header {
 
 .docs-header-links__internal {
   margin-bottom: 2px;
+
+  &-section {
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: -21px;
+      left: 0;
+      height: 2px;
+      background: var(--c-cyan-100);
+      opacity: 0;
+    }
+
+    &.active::after {
+      opacity: 1;
+    }
+  }
 
   a {
     margin-right: 24px;

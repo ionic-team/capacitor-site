@@ -55,19 +55,28 @@ export class DocsHeader implements ComponentInterface {
             <div class="docs-header-links__internal hide-mobile">
               <a
                 {...href(docsVersionHref('/docs'))}
-                class={{ active: template === 'guide' }}
+                class={{
+                  'docs-header-links__internal-section': true,
+                  active: template === 'guide'
+                }}
               >
                 Guides
               </a>
               <a
                 {...href(docsVersionHref('/docs/plugins'))}
-                class={{ active: template === 'plugins' }}
+                class={{
+                  'docs-header-links__internal-section': true,
+                  active: template === 'plugins'
+                }}
               >
                 Plugins
               </a>
               <a
                 {...href(docsVersionHref('/docs/reference/cli'))}
-                class={{ active: template === 'reference' }}
+                class={{
+                  'docs-header-links__internal-section': true,
+                  active: template === 'reference'
+                }}
               >
                 CLI
               </a>
