@@ -77,6 +77,20 @@ const getTableOfContents = async (template: DocsTemplate) => {
 };
 
 const getTemplateFromPath = (path: string): DocsTemplate => {
+
+  const isDevServer = globalThis.location.origin.includes('https://');
+
+  if (!isDevServer) {
+    const path = globalThis.location.href;
+
+    if (path.includes('/plugins') || path.includes('/apis')) {
+      return 'plugins';
+    }
+    if (path.includes('/reference')) {
+      return 'reference';
+    }
+  }
+
   if (typeof path === 'string') {
     if (path.includes('/plugins') || path.includes('/apis')) {
       return 'plugins';
