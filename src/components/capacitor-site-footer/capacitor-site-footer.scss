@@ -1,6 +1,10 @@
 :host {
   display: block;
-  padding: 0 0 80px;
+  border-block-start: 1px solid var(--c-indigo-20);
+  padding-block-start: 64px;
+  padding-block-end: 72px;
+  position: relative;
+  top: -1px;
 }
 
 .copyright {

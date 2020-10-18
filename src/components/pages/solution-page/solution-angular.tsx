@@ -110,8 +110,6 @@ export class GeolocationPage {
 }
 `}
               />
-
-
           </div>
         </article>
       </ResponsiveContainer>
