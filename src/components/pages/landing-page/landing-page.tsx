@@ -298,7 +298,7 @@ public class MyAwesomePlugin: CAPPlugin {
       </Tabs>
     ]
 
-    const dimensions = [ '22x26', '27x23']
+    const dimensions = ['22x26', '27x23']
     
   
     return (
@@ -413,7 +413,7 @@ public class MyAwesomePlugin: CAPPlugin {
         <ResponsiveContainer>
           <div class="heading-group">
             <PrismicRichText richText={features} />
-            <a href="/docs/api" class="link">
+            <a {...href('/docs/apis')} class="link | ui-heading-4">
               {features__link}
               <span class="arrow">-&gt;</span>
             </a>
@@ -438,6 +438,14 @@ public class MyAwesomePlugin: CAPPlugin {
   Framework = () => {
     const { framework, framework__list } = this.data;
 
+    const logoTile = (logo: any) => (
+      <PrismicResponsiveImage
+        image={logo}
+        width="272"
+        height="200"
+      />
+    )
+
 
     return (
       <ResponsiveContainer id="framework" as="section">
@@ -445,13 +453,13 @@ public class MyAwesomePlugin: CAPPlugin {
           <PrismicRichText richText={framework} paragraphLevel={2} />
         </div>
         <Grid>
-          {framework__list.map(({ logo }) => (
+          {framework__list.map(({ logo, link }) => (
             <Col sm={3} cols={6}>
-              <PrismicResponsiveImage
-                image={logo}
-                width="272"
-                height="200"
-              />
+              {link 
+              ? <a {...href(link)}>
+                  {logoTile(logo)}
+                </a>
+              : logoTile(logo)}
             </Col>
           ))}
         </Grid>
@@ -518,6 +526,7 @@ public class MyAwesomePlugin: CAPPlugin {
           </div>
           <div class="ctas">
             <Button
+              {...href('/docs/getting-started')}
               anchor
               variation="light"
               class="primary"
@@ -526,6 +535,7 @@ public class MyAwesomePlugin: CAPPlugin {
               {primary}
             </Button>
             <Button
+              {...href('/docs/plugins')}
               anchor
               class="secondary"
               size="xl"
