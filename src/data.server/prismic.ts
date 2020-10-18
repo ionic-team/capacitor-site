@@ -31,7 +31,6 @@ export const getPage: MapParamData = async (_params, url) => {
         announcement: await queryPrismic('capacitor_homepage_announcement'),
       }
     case '/community':
-      global.console.log('got here')
       return await queryPrismic('capacitor_community');
   }
 };

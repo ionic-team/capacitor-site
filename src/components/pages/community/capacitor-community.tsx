@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-import { ResponsiveContainer, PrismicRichText, Grid, Col, PrismicResponsiveImage } from '@ionic-internal/ionic-ds';
+import { ResponsiveContainer, PrismicRichText, PrismicResponsiveImage } from '@ionic-internal/ionic-ds';
 
 
 @Component({

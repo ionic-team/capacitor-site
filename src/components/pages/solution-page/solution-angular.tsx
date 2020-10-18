@@ -1,5 +1,5 @@
 import { Fragment, h } from '@stencil/core';
-import { ResponsiveContainer, Grid, Col, Heading, Paragraph } from '@ionic-internal/ionic-ds';
+import { ResponsiveContainer, Heading, Paragraph } from '@ionic-internal/ionic-ds';
 export const SolutionAngular = () => {
   return (
     <Fragment>

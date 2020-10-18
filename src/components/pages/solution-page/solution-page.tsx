@@ -3,8 +3,6 @@ import { Component, Host, h, Prop, ComponentInterface } from '@stencil/core';
 import Helmet from '@stencil/helmet';
 import {
   ResponsiveContainer,
-  Grid,
-  Col,
   Heading,
   Paragraph,
 } from '@ionic-internal/ionic-ds';

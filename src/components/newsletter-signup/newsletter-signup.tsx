@@ -1,5 +1,5 @@
-import { Component, Host, h, Build } from '@stencil/core';
-import { ResponsiveContainer, Heading, Button, Paragraph } from '@ionic-internal/ionic-ds';
+import { Component, Host, h } from '@stencil/core';
+import { Heading, Paragraph } from '@ionic-internal/ionic-ds';
 import { importResource } from '../../utils/common';
 
 declare global {
