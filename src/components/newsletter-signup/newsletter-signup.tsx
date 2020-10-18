@@ -1,86 +1,77 @@
-import { Component, State, h } from '@stencil/core';
-import { ResponsiveContainer, Heading, Button } from '@ionic-internal/ionic-ds';
+import { Component, Host, h, Build } from '@stencil/core';
+import { ResponsiveContainer, Heading, Button, Paragraph } from '@ionic-internal/ionic-ds';
+import { importResource } from '../../utils/common';
+
+declare global {
+  interface Window {
+    hbspt: {
+      forms: {
+        create : ({}) => any
+      }
+    },
+    jQuery: (() => ({
+      // these are methods required by HubSpot
+      change: () => void,
+      trigger: () => void,
+    }));
+  }
+}
 
 @Component({
   tag: 'newsletter-signup',
   styleUrl: 'newsletter-signup.scss',
-  scoped: true
 })
 export class NewsletterSignup {
-  private emailForm: HTMLFormElement;
+  private uniqueFormId = `id-${Math.random().toString().replace('.', '')}`;
+  private hubspotCdn = '//js.hsforms.net/forms/v2.js'
 
-  @State() emailInvalid: boolean = false;
-  @State() emailSuccess: boolean = false;
 
-  sendToHubspot = async (e: UIEvent) => {
-    e.preventDefault();
-    const url: string = "https://api.hsforms.com/submissions/v3/integration/submit/3776657/c8d355e3-a5ad-4f91-a2c0-c9dc93e10658"
-    let cookie = document.cookie.match(/(hubspotutk=).*?(?=;)/g);
-
-    const context: {pageUri: string, pageName: string, hutk?: string} = {
-      "pageUri": "https://capacitorjs.com/",
-      "pageName": "Capacitor Home"
-    }
-
-    cookie ? context['hutk'] = cookie[0].split("hubspotutk=")[1] : '';
-
-    const data = {
-      "submittedAt": Date.now(),
-      "fields": [
-        {
-          "name": "email",
-          "value": this.emailForm.email.value
-        },
-        {
-          "name": "first_campaign_conversion",
-          "value": "Ionic Newsletter"
-        }
-      ],
-      "context": context
-    }
-
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(data)
-    });
-
-    response.status == 200 ? this.emailSuccess = true : this.emailInvalid = true;
+  componentWillLoad() {
+    importResource(
+      { propertyName: 'hbspt', link: this.hubspotCdn },
+      this.createForm
+    );
   }
 
+  disconnectedCallback() {
+    const scripts = document.head.querySelectorAll('script');
+    scripts.forEach((script) => {
+      if (script.src = this.hubspotCdn) script.remove();
+    })
+  }
+
+  createForm = () => {
+    window.hbspt.forms.create({
+      portalId: '3776657',
+      formId: 'c8d355e3-a5ad-4f91-a2c0-c9dc93e10658',
+      cssClass: '',
+      target: `#${this.uniqueFormId}`,
+      // locale: 'en',
+      // translations: {
+      //   en: {
+      //     submitText: ' ',
+      //   }
+      // },
+      // onFormSubmit: () => {
+      //   this.textEl.style.display = 'none'
+      // },
+      // onFormReady: () => {
+      //   console.log('form ready');
+      // } 
+    });
+  }
+  
   render() {
     return (
-      <section class="newsletter">
-        <ResponsiveContainer>
-          <hgroup>
-            <div>
-              <Heading level={4}>Join our Newsletter</Heading>
-              <p>Keep up to date with all the latest Capacitor news and updates</p>
-            </div>
-          </hgroup>
-          { !this.emailSuccess &&
-          <form onSubmit={this.sendToHubspot}
-                ref={e => this.emailForm = e}
-                class="sc-newsletter-signup">
-              <input class="sc-newsletter-signup" aria-label="Email address" type="email" placeholder="Your email address" name="email" required />
-              { this.emailInvalid && <div class="error__message">invalid email address</div> }
-              <Button>Subscribe</Button>
-          </form> }
-
-          { this.emailSuccess &&
-          <div class="success__message">
-            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 42c11.598 0 21-9.402 21-21S32.598 0 21 0 0 9.402 0 21s9.402 21 21 21z" fill="#D3F3DB"/>
-              <path d="M13.87 20.97a1.75 1.75 0 00-2.54 2.408l2.54-2.407zm3.588 6.33l-1.27 1.204a1.75 1.75 0 002.54 0l-1.27-1.204zM30.67 15.904a1.75 1.75 0 00-2.54-2.408l2.54 2.408zm-19.34 7.474l4.858 5.126 2.54-2.408-4.858-5.125-2.54 2.407zm7.398 5.126l11.942-12.6-2.54-2.408-11.942 12.6 2.54 2.408z" fill="#43C465"/>
-            </svg>
-            <p>Success! You will now receive our email newsletter.</p>
-          </div> }
-        </ResponsiveContainer>
-      </section>
-    );
+      <Host>
+        <div class="wrapper">
+          <div class="heading-group">
+            <Heading>The latest updates. Delivered monthly.</Heading>
+            <Paragraph>Capacitor is getting better every day. Sign up for a monthly email on the latest updates, releases, articles, and news!</Paragraph>
+          </div>
+          <div class="form-group" id={this.uniqueFormId}></div>
+        </div>
+      </Host>
+    )
   }
 }

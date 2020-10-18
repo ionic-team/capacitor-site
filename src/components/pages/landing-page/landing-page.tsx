@@ -86,6 +86,7 @@ export class LandingPage {
     </Helmet>
   );
 
+  
   Top = () => {
     const { Announcement } = this;
     const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
@@ -141,6 +142,7 @@ export class LandingPage {
     );
   }
 
+
   Announcement = () => {
     const { announcement: { tag_text, link: { target, url },
             desktop_text, mobile_text } } = this.data;
@@ -177,6 +179,7 @@ export class LandingPage {
       </a>
     );
   };
+
 
   Started = () => {
     const { started, started__list, started__icons } = this.data;
@@ -402,6 +405,7 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   }
 
+
   Features = () => {
     const { features, features__list, features__link } = this.data;
     const dimensions = [
@@ -435,6 +439,7 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   }
 
+
   Framework = () => {
     const { framework, framework__list } = this.data;
 
@@ -466,6 +471,7 @@ public class MyAwesomePlugin: CAPPlugin {
       </ResponsiveContainer>
     );
   }
+
 
   Companies = () => {
     const { companies, companies__list } = this.data;
@@ -512,6 +518,7 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   }
 
+
   GetStarted = () => {
     const Background = this.getStartedBackground;
     const { get_started, get_started__ctas } = this.data;
@@ -547,6 +554,7 @@ public class MyAwesomePlugin: CAPPlugin {
       </section>
     );
   }
+
 
   getStartedBackground = (props?: JSXBase.SVGAttributes) => (
     <svg viewBox="0 0 1800 492" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin slice" {...props}>

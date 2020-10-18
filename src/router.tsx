@@ -51,6 +51,17 @@ export const Routes = () => (
       )}
     />
 
+    <Route
+      path="/community"
+      mapParams={staticState(getPage)}
+      render={(_, data) => (
+        <Fragment>
+          <SiteHeader />
+          <capacitor-community data={data} />
+        </Fragment>
+      )}
+    />
+
     <Route path="/cordova">
       <SiteHeader />
       <cordova-landing-page />
@@ -59,12 +70,7 @@ export const Routes = () => (
     <Route path="/enterprise">
       <SiteHeader />
       <capacitor-enterprise />
-    </Route>
-
-    <Route path="/community">
-      <SiteHeader />
-      <capacitor-community />
-    </Route>
+    </Route>    
 
     <Route
       path={matchAny(['/docs/v3/:id*', '/docs/v3'])}

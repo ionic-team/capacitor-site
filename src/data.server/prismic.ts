@@ -23,12 +23,16 @@ export const getBlogPosts = async (_page: number = 0, pageSize = 10): Promise<Pr
 };
 
 export const getPage: MapParamData = async (_params, url) => {
-  if (url.pathname === '/') {
-    return {
-      ...await queryPrismic('capacitor_homepage'),
-      whitepaper_ad: await queryPrismic('capacitor_whitepaper_ad'),
-      announcement: await queryPrismic('capacitor_homepage_announcement'),
-    }
+  switch(url.pathname) {
+    case '/':
+      return {
+        ...await queryPrismic('capacitor_homepage'),
+        whitepaper_ad: await queryPrismic('capacitor_whitepaper_ad'),
+        announcement: await queryPrismic('capacitor_homepage_announcement'),
+      }
+    case '/community':
+      global.console.log('got here')
+      return await queryPrismic('capacitor_community');
   }
 };
 

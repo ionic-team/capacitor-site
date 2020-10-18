@@ -25,6 +25,7 @@ export namespace Components {
         "data": BlogData;
     }
     interface CapacitorCommunity {
+        "data": any;
     }
     interface CapacitorEnterprise {
     }
@@ -334,6 +335,7 @@ declare namespace LocalJSX {
         "data"?: BlogData;
     }
     interface CapacitorCommunity {
+        "data"?: any;
     }
     interface CapacitorEnterprise {
     }

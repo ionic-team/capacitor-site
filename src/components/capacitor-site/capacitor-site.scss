@@ -211,19 +211,6 @@ blockquote p {
   padding: 0;
 }
 
-.wrapper {
-  line-height: 32px;
-  min-height: 100%;
-  padding-top: 100px;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-content: stretch;
-  align-items: flex-start;
-}
-
 .nextButton {
   background: #5851ff;
   color: white;
@@ -383,71 +370,12 @@ code {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 355px) {
-  .wrapper {
-    padding-top: 100px;
-  }
-}
-
 @media screen and (max-width: 450px) {
-  .wrapper {
-    padding-top: 80px;
-  }
-
   site-header stencil-route-link a {
     display: initial;
   }
 }
 
-@media screen and (max-width: 590px) {
-  .wrapper {
-    margin-right: 0;
-    margin-left: 0;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-
-    -webkit-flex-direction: column-reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-    .pull-right {
-      padding: 0 15px;
-      width: 100%;
-      min-height: 100vh;
-    }
-    .pull-left {
-      position: relative;
-      padding: 15px;
-      width: 100%;
-      bottom: 0;
-      background-color: #16161d;
-
-      * {
-        color: #ffffff;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 590px) {
-  .wrapper {
-    .pull-left {
-      min-width: 250px;
-      max-width: 250px;
-      position: -webkit-sticky;
-      position: sticky;
-      top: 50px;
-    }
-
-    .pull-right {
-      padding-left: 96px;
-      padding-right: 32px;
-      flex: 1 1 auto;
-      overflow: auto;
-      min-height: 100vh;
-    }
-  }
-}
 
 .document {
   .container {
