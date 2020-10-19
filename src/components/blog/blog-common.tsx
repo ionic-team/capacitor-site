@@ -1,5 +1,5 @@
 import { h } from '@stencil/core';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 import { Heading, DateTime } from '@ionic-internal/ionic-ds';
 import parseISO from 'date-fns/parseISO';
 import { BlogData } from '../../data.server/blog';

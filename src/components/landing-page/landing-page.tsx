@@ -1,5 +1,5 @@
 import { Component, h, Host, Prop, State } from '@stencil/core';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 import Helmet from '@stencil/helmet';
 import {
   ResponsiveContainer,
