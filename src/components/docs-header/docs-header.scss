@@ -1,4 +1,4 @@
-@use '../../global/variables';
+@use '../../global/vars' as *;
 
 :host {
   display: flex;
@@ -137,9 +137,10 @@ more-button {
   width: 64px;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: $screen-sm-max) {
   :host {
-    border-inline-start: none;
+    // border-inline-start: none;
   }
 
   header {
@@ -175,6 +176,12 @@ more-button {
     &__internal,
     &__external {
       margin: 0;
+    }
+
+    &__internal-section {
+      &.active::after {
+        opacity: 0;
+      }
     }
 
     a {

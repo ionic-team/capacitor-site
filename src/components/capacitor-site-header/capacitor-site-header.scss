@@ -1,4 +1,4 @@
-@use '../../global/variables';
+@use '../../global/vars' as *;
 
 
 :host {
@@ -172,7 +172,7 @@ site-backdrop {
 }
 
 /* Small width / mobile screens */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $screen-xs-max) {
   .site-header {
     display: flex;
     flex-wrap: wrap;

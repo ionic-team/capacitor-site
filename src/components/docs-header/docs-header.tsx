@@ -52,7 +52,7 @@ export class DocsHeader implements ComponentInterface {
           <more-button onClick={() => this.toggleExpanded()} />
 
           <nav class="docs-header-links">
-            <div class="docs-header-links__internal hide-mobile">
+            <div class="docs-header-links__internal docs-header-links__internal-sections">
               <a
                 {...href(docsVersionHref('/docs'))}
                 class={{
