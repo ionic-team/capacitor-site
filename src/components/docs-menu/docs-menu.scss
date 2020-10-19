@@ -272,6 +272,7 @@ span {
 }
 
 .menu-list > li > a {
+  margin-block-end: 6px;
   cursor: pointer;
   ion-icon {
     color: var(--c-carbon-90);
