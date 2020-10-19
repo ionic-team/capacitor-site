@@ -30,3 +30,4 @@ If you find an issue with an existing Cordova plugin, please [let us know](https
 - cordova-plugin-wkwebview-engine (not needed, Capacitor uses WKWebView)
 - cordova-plugin-googlemaps (causes build failures on iOS, skipped for iOS only)
 - cordova-plugin-lottie-splashscreen (it's incompatible and some further work is needed)
+- cc.fovea.cordova.openwith ([see details](https://github.com/ionic-team/capacitor/issues/2416))
