@@ -80,7 +80,7 @@ export class DocsSearch implements ComponentInterface {
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
       indexName: `capacitorjs`,
       inputSelector: `#input-${this.uniqueId}`,
-      debug: false, // Set debug to true if you want to inspect the dropdown
+      debug: true, // Set debug to true if you want to inspect the dropdown
       queryHook: () => {
         if (this.input.isPristine) {
           this.input.isPristine = false;
