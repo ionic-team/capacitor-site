@@ -71,7 +71,7 @@ export class DocsSearch implements ComponentInterface {
   }
 
   disconnectedCallback() {
-    this.algolia.linkEl.remove();
+    this.algolia.linkEl?.remove();
 
     const scripts = document.head.querySelectorAll('script');
     scripts.forEach((script) => {
@@ -98,7 +98,7 @@ export class DocsSearch implements ComponentInterface {
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
       indexName: `capacitorjs`,
       inputSelector: `#input-${this.uniqueId}`,
-      debug: true, // Set debug to true if you want to inspect the dropdown
+      debug: false, // Set debug to true if you want to inspect the dropdown
       queryHook: () => {
         if (this.input.isPristine) {
           this.input.isPristine = false;
@@ -113,11 +113,21 @@ export class DocsSearch implements ComponentInterface {
           this.getContentStats();
         }
       },
-      handleSelected: function(_, __, suggestion) {
+      handleSelected: (_, __, suggestion) => {
         const url = suggestion.url.replace('https://capacitorjs.com', '')
         Router.push(url);
+
+        this.clearSearch();
       },
     });
+  }
+
+  clearSearch = () => {
+    this.input.el.value = '';
+    this.input = {
+      ...this.input,
+      isEmpty: true,
+    };
   }
 
   handleInput() {
@@ -160,24 +170,12 @@ export class DocsSearch implements ComponentInterface {
           }}
           class="close"
           icon="close"
-          onClick={() => {
-            this.input.el.value = '';
-            this.input = {
-              ...this.input,
-              isEmpty: true,
-            };
-          }}
+          onClick={() => this.clearSearch()}
         />
         <site-backdrop
           mobileOnly
           visible={!this.input.isEmpty}
-          onClick={() => {
-            this.input.el.value = '';
-            this.input = {
-              ...this.input,
-              isEmpty: true,
-            };
-          }}
+          onClick={() => this.clearSearch()}
         />
       </Host>
     );

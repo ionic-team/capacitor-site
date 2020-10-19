@@ -26,6 +26,10 @@ export class LandingPage {
   @State() showHubspotForm = false;
   @State() hubspotFormSubmitted = false;
 
+  componentWillLoad() {
+    console.log(this.data);
+  }
+
 
   render() {    
     const { Top, Started, Native, Features, Framework,
@@ -143,10 +147,8 @@ export class LandingPage {
 
 
   Announcement = () => {
-    const { announcement, desktop_text, mobile_text } = this.data;
-    const { tag_text, link } = announcement;
+    const { tag_text, desktop_text, mobile_text, link } = this.data.announcement;
     const { target, url } = link;
-
     
     const newUrl = url.replace(window.location.origin, '');
 
