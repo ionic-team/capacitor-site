@@ -8,6 +8,7 @@ import {
   h,
   Listen,
 } from '@stencil/core';
+import Router from '../../router';
 import { importResource } from '../../utils/common';
 
 declare global {
@@ -21,9 +22,10 @@ declare global {
   styleUrl: 'docs-search.scss',
 })
 export class DocsSearch implements ComponentInterface {
+  private docsContent: HTMLElement;
+
   @Element() el: HTMLElement;
-  @Prop() placeholder = 'Search';
-  @State() searchLeft: number = 0;
+  @Prop() placeholder = 'Search';  
   @State() input: {
     el?: HTMLInputElement;
     isPristine: boolean;
@@ -32,9 +34,13 @@ export class DocsSearch implements ComponentInterface {
     isPristine: true,
     isEmpty: true,
   };
+  @State() searchStats: {
+    width?: string,
+    left?: string,
+  } = {}
 
   private uniqueId = Math.random().toString().replace('.', '');
-  private algoliaCdn = {
+  private algolia: { linkEl?: HTMLLinkElement, js: string, css: string } = {
     js: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
     css:
       'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css',
@@ -44,36 +50,48 @@ export class DocsSearch implements ComponentInterface {
     const linkEls = document.head.querySelectorAll('link');
 
     const hasAlgoliaCss = Array.from(linkEls).some(link => {
-      return link.href === this.algoliaCdn.css;
+      return link.href === this.algolia.css;
     });
 
     if (!hasAlgoliaCss) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = this.algoliaCdn.css;
-      document.head.append(link);
+      this.algolia.linkEl = document.createElement('link');
+      this.algolia.linkEl.rel = 'stylesheet';
+      this.algolia.linkEl.href = this.algolia.css;
+      document.head.append(this.algolia.linkEl);
     }
   }
 
   componentDidLoad() {
     importResource(
-      { propertyName: 'docsearch', link: this.algoliaCdn.js },
+      { propertyName: 'docsearch', link: this.algolia.js },
       () => this.setupSearch(),
     );
+
+    this.docsContent = document.querySelector('.doc-content .measure-lg');
+  }
+
+  disconnectedCallback() {
+    this.algolia.linkEl.remove();
+
+    const scripts = document.head.querySelectorAll('script');
+    scripts.forEach((script) => {
+      if (script.src = this.algolia.js) script.remove();
+    });
   }
 
   @Listen('resize', { target: 'window' })
-  handleResize() {
+  getContentStats() {    
     requestAnimationFrame(() => {
-      const widths = {
-        body: document.body.offsetWidth,
-        search: 600,
-      };
-      const searchBarLeft = this.input.el?.getBoundingClientRect()?.left;
+      const left = this.docsContent.getBoundingClientRect().left -
+                   this.el.getBoundingClientRect().left;
 
-      this.searchLeft = (widths.body - searchBarLeft) / 2 - widths.search + 64;
-    });
+      this.searchStats = {
+        width: this.docsContent.offsetWidth.toString().concat('px'),
+        left: left.toString().concat('px'),
+      }
+    });     
   }
+
 
   setupSearch() {
     window.docsearch({
@@ -92,8 +110,12 @@ export class DocsSearch implements ComponentInterface {
           this.input.el.oninput = () => this.handleInput();
 
           this.handleInput();
-          this.handleResize();
+          this.getContentStats();
         }
+      },
+      handleSelected: function(_, __, suggestion) {
+        const url = suggestion.url.replace('https://capacitorjs.com', '')
+        Router.push(url);
       },
     });
   }
@@ -118,7 +140,8 @@ export class DocsSearch implements ComponentInterface {
       <Host
         id={`id-${this.uniqueId}`}
         style={{
-          '--search-left': this.searchLeft.toString().concat('px'),
+          '--search-left': this.searchStats.left,
+          '--search-width': this.searchStats.width
         }}
       >
         <ion-icon class="search" icon="search" />
