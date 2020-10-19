@@ -8,9 +8,13 @@ contributors:
 
 # Installing Capacitor
 
-This guide will help you install Capacitor into an existing frontend web app. You can also start a new app with `npm init @capacitor/app`.
+This guide will help you install Capacitor into an existing frontend web app.
 
-Capacitor provides a native mobile runtime and API layer for web apps. It does not come with any specific set of UI controls, which you will most likely need unless you're building a game or something similar. We recommend you start a Capacitor project with your mobile frontend framework of choice (such as [Ionic Framework](https://ionicframework.com/)).
+> If starting a new app, we recommend using the documentation from your JavaScript framework of choice and then following this guide to integrate Capacitor.
+>
+> You can also create a new basic app with `npm init @capacitor/app`.
+
+Capacitor provides a native mobile runtime and API layer for web apps. It does not come with any specific set of UI controls. We recommend you use a mobile component framework (such as [Ionic Framework](https://ionicframework.com/)).
 
 ## Before you start
 
