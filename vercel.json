@@ -20,6 +20,14 @@
     {
       "source": "/docs/v3/getting-started/dependencies",
       "destination": "/docs/v3/getting-started/environment-setup"
+    },
+    {
+      "source": "/docs/v3/basics/opening-native-projects",
+      "destination": "/docs/v3/basics/workflow"
+    },
+    {
+      "source": "/docs/v3/basics/running-your-app",
+      "destination": "/docs/v3/basics/workflow"
     }
   ],
   "headers": [

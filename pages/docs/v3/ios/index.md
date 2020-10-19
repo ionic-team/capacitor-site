@@ -39,6 +39,12 @@ To open the project in Xcode, run:
 npx cap open ios
 ```
 
+Alternatively, you can open Xcode manually by running:
+
+```bash
+open ios/App/App.xcworkspace
+```
+
 ## Running Your App
 
 You can either run your app on the command-line or with Xcode.

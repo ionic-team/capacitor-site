@@ -39,6 +39,8 @@ To open the project in Android Studio, run:
 npx cap open android
 ```
 
+Alternatively, you can open Android Studio and import the `android/` directory as an Android Studio project.
+
 ## Running Your App
 
 You can either run your app on the command-line or with Android Studio.
