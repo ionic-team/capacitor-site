@@ -78,8 +78,11 @@ export class SolutionPage implements ComponentInterface {
         </ResponsiveContainer>
 
         {this.getComponent()}
+        
+        <ResponsiveContainer id="newsletter">
+          <newsletter-signup />
+        </ResponsiveContainer>
 
-        <newsletter-signup />
         <pre-footer />
         <capacitor-site-footer />
       </Host>
