@@ -22,6 +22,21 @@
         "${workspaceFolder}/stencil.config.ts"
       ],
       "protocol": "inspector"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Prerender",
+      "args": [
+        "${workspaceFolder}/node_modules/@stencil/core/bin/stencil",
+        "build",
+        "--dev",
+        "--prerender",
+        "--max-workers=0",
+        "--config",
+        "${workspaceFolder}/stencil.config.ts"
+      ],
+      "protocol": "inspector"
     }
   ]
 }
