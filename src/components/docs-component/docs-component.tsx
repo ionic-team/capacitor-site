@@ -10,7 +10,7 @@ import Helmet from '@stencil/helmet';
 import { RenderJsxAst } from '@stencil/ssg';
 import { DocsData } from '../../data.server/docs';
 import Router, { docsVersionHref } from '../../router';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 
 @Component({
   tag: 'docs-component',
