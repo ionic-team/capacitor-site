@@ -18,47 +18,43 @@ A Progressive Web App is, for all practical purposes, just another term for a we
 
 ## Capacitor and Progressive Web Apps
 
-Capacitor has first-class support for Progressive Web Apps *and* native apps. That means that Capacitor's plugin bridge supports running in either a native context or in the web, with many core plugins available *in both contexts* with the exact same API and calling conventions.
+Capacitor has first-class support for Progressive Web Apps _and_ native apps. That means that Capacitor's bridge supports running in either a native context or in the web, with many plugins available _in both contexts_ with the exact same API and calling conventions.
 
-This means you use `@capacitor/core` as a dependency for both your native app *and* your Progressive Web App, and Capacitor seamlessly calls web code when required and native code when available.
+This means you use `@capacitor/core` and Capacitor plugins as dependencies for both your native app _and_ your Progressive Web App, and Capacitor seamlessly calls web code when required and native code when available.
 
 Additionally, Capacitor offers a number of utilities for querying the current platform to provide customized experiences when running natively or on the web.
 
 ## Adding Progressive Web App Support to your app
 
-Adding PWA support to any existing frontend project is easy. Just add an App Manifest file and configure a service worker:
+Progressive Web Apps should have an App Manifest and a Service Worker.
 
 ### App Manifest
 
-First, you'll need an [App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) file ([manifest.json](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json))
-that sits alongside your `index.html` file and provides metadata about your app, such as its name, theme colors, and icons. This information will be used
-when your app is installed on the home screen, for example.
+First, you'll need an [App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) file ([manifest.json](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json)) that sits alongside your `index.html` file and provides metadata about your app, such as its name, theme colors, and icons. This information will be used when your app is installed on the home screen, for example.
 
 ### Service Worker
 
-Next, in order to send push notifications and store data offline, a [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) will
-enable your web app to proxy network requests and perform background tasks needed to process and sync data.
+Next, in order to send push notifications and store data offline, a [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) will enable your web app to proxy network requests and perform background tasks needed to process and sync data.
 
-Service Workers are powerful, but complicated. Generally, writing them from scratch is not recommended. Instead, take a look at tools like [Workbox](https://developers.google.com/web/tools/workbox/) that
-provide common Service Worker recipes that you can easily incorporate into your app.
+Service Workers are powerful, but complicated. Generally, writing them from scratch is not recommended. Instead, take a look at tools like [Workbox](https://developers.google.com/web/tools/workbox/) that provide common Service Worker recipes that you can easily incorporate into your app.
 
 Read more about using Service Workers, including how to register them, on the [Using Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers) page on MDN.
 
 ## Progressive Web App Performance
 
-Progressive Web Apps are judged by several performance standards, including [Time to Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive) and [First Meaningful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint). 
+Progressive Web Apps are judged by several performance standards, including [Time to Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive) and [First Meaningful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint).
 
 Follow the [Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist) before going live, and use [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to audit and test your app.
 
-If you're struggling to meet Progressive Web App performance standards with your existing frontend stack, take a look at [Ionic Framework](http://ionicframework.com/) version 4 or greater as an option for getting fast PWA support with nearly zero configuration. Ionic 4.x or above is a web component library that works in several popular frontend frameworks, not just Angular.
+If you're struggling to meet Progressive Web App performance standards with your existing frontend stack, take a look at [Ionic Framework](http://ionicframework.com/) as an option for getting fast PWA support with nearly zero configuration.
 
 ## Running Natively and on the Web
 
-One of the key features of Capacitor is the ability to build one app that runs both natively (in the app stores), _and_ on the web. Capacitor does this by providing a layer between the underlying platform and the APIs/Plugins you'd like to use. 
+One of the key features of Capacitor is the ability to build one app that runs both natively (in the app stores), _and_ on the web. Capacitor does this by providing a layer between the underlying platform and the APIs/Plugins you'd like to use.
 
 If your app makes native plugin calls that don't have a web substitute, such as `SplashScreen.show()`, the app will allow those calls without crashing. Calls that return a promise will return a rejected promise, which you should be handling in your app anyways.
 
-Additionally, Capacitor's JavaScript API has a number of utilities that make it possible to programmatically check whether certain APIs are available. 
+Additionally, Capacitor's JavaScript API has a number of utilities that make it possible to programmatically check whether certain APIs are available.
 
 For example, if your app would normally rely on the Camera app being used to take a photo, you could check if the Camera is available, and if not, ask the user to upload a file instead:
 
@@ -71,6 +67,6 @@ if (!isAvailable) {
   // Have the user upload a file instead
 } else {
   // Otherwise, make the call:
-  Camera.getPhoto()
+  Camera.getPhoto();
 }
 ```
