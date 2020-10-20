@@ -23,14 +23,45 @@ export interface DocsData extends MarkdownResults {
   template?: DocsTemplate;
 }
 
-export type DocsTemplate = 'docs' | 'plugins' | 'cli';
+export type DocsTemplate = 'docs' | 'plugins' | 'reference';
 
 export const getDocsData: MapParamData = async ({ id }) => {
   if (!id) {
     id = 'index.md';
   }
 
-  const results: DocsData = await parseMarkdown(join(docsDir, id));
+  const results: DocsData = await parseMarkdown(join(docsDir, id), {
+    headingAnchors: true,
+    beforeHtmlSerialize(frag: DocumentFragment) {
+      const headings = frag.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      const paragraphs = frag.querySelectorAll(
+        'p:not(:first-of-type):not([class*="ui-paragraph"]):not([class*="ui-heading"])'
+      );
+      const introParagraphs = frag.querySelectorAll(
+        'p:first-of-type:not([class*="ui-paragraph"]):not([class*="ui-heading"])'
+      );
+
+      headings.forEach(heading => {
+        const level = heading.nodeName?.split('')[1];
+
+        heading.classList.add(`ui-heading`);
+        heading.classList.add(`ui-heading-${level}`);
+        heading.classList.add(`ui-theme--editorial`);
+      });
+
+      paragraphs.forEach(paragraph => {
+        paragraph.classList.add(`ui-paragraph`);
+        paragraph.classList.add(`ui-paragraph--prose`);
+        paragraph.classList.add(`ui-paragraph-3`);    
+      });
+
+      introParagraphs.forEach(paragraph => {
+        paragraph.classList.add(`ui-paragraph`);
+        paragraph.classList.add(`ui-paragraph--prose`);
+        paragraph.classList.add(`ui-paragraph-2`);    
+      });
+    }
+  });
 
   results.template = getTemplateFromPath(results.filePath);
 
@@ -63,7 +94,7 @@ const getTableOfContents = async (template: DocsTemplate) => {
   let toc = cachedToc.get(template);
   if (!toc) {
     let tocPath: string;
-    if (template === 'cli' || template === 'plugins') {
+    if (template === 'reference' || template === 'plugins') {
       tocPath = join(docsDir, template, 'README.md');
     } else {
       tocPath = join(docsDir, 'README.md');
@@ -75,16 +106,16 @@ const getTableOfContents = async (template: DocsTemplate) => {
 };
 
 const getTemplateFromPath = (path: string): DocsTemplate => {
-  const isDevServer = globalThis.location.origin.includes('https://');
+  const isDev = !globalThis.location.origin.includes('https://');
 
-  if (!isDevServer) {
+  if (isDev) {
     const path = globalThis.location.href;
 
     if (path.includes('/plugins') || path.includes('/apis')) {
       return 'plugins';
     }
     if (path.includes('/reference/cli')) {
-      return 'cli';
+      return 'reference';
     }
   }
 
@@ -93,7 +124,7 @@ const getTemplateFromPath = (path: string): DocsTemplate => {
       return 'plugins';
     }
     if (path.includes('/reference/cli')) {
-      return 'cli';
+      return 'reference';
     }
   }
   return 'docs';

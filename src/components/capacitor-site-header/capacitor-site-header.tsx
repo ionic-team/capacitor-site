@@ -163,7 +163,7 @@ export class DocsHeader implements ComponentInterface {
                 {...href(docsVersionHref('/docs/reference/cli'))}
                 class={{
                   'ui-paragraph-4': true,
-                  active: template === 'cli'
+                  active: template === 'reference'
                 }}
               >
                 CLI

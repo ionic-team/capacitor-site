@@ -9,7 +9,8 @@
   --p2-color: var(--c-indigo-80);
 
   .ui-heading-1 {
-    margin-block-start: 64px;
+    margin-block-start: var(--space-9);
+    margin-block-end: var(--space-3);
   }
 
   .ui-heading-2,

@@ -28,7 +28,7 @@ export class SiteMenu implements ComponentInterface {
   @State() expands: { [key: string]: number[] } = {
     docs: [],
     plugins: [2],
-    cli: [],
+    reference: [],
   };
 
   @State() showOverlay = false;
@@ -129,7 +129,7 @@ export class SiteMenu implements ComponentInterface {
               <li>
                 <a
                   {...href(docsVersionHref('/docs/reference/cli'))}
-                  class={{ active: this.template === 'cli' }}
+                  class={{ active: this.template === 'reference' }}
                 >
                   CLI
                 </a>
