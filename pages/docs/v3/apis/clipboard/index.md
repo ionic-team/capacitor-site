@@ -14,11 +14,11 @@ contributors:
 The Clipboard API enables copy and pasting to/from the clipboard. On iOS this API also allows 
 copying images and URLs.
 
-<!--DOCGEN_INDEX_START-->
+<docgen-index>
 * [write()](#write)
 * [read()](#read)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Example
 
@@ -37,7 +37,7 @@ console.log('Got', result.type, 'from clipboard:', result.value);
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -92,4 +92,4 @@ Read a value from the clipboard (the "paste" action)
 | **type**  | string |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

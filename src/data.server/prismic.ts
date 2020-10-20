@@ -2,7 +2,7 @@ import { Document as PrismicDocument } from 'prismic-javascript/d.ts/documents';
 import { Client } from './prismic-configuration';
 import { PrismicDocsResponse } from './models';
 import Prismic from 'prismic-javascript';
-import { MapParamData } from '../stencil-router-v2';
+import { MapParamData } from '@stencil/router';
 
 export const getBlogPost = async (slug: string): Promise<PrismicDocument> => {
   const prismicClient = Client();

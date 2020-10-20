@@ -18,8 +18,7 @@ On iOS this plugin will use [UserDefaults](https://developer.apple.com/documenta
 
 Note: this API is not meant for high-performance data storage applications. Take a look at using SQLite or a separate data engine if your application will store a lot of items, have high read/write load, or require complex querying.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`get(...)`](#get)
 * [`set(...)`](#set)
@@ -27,8 +26,7 @@ Note: this API is not meant for high-performance data storage applications. Take
 * [`clear()`](#clear)
 * [`keys()`](#keys)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Working with JSON
 
@@ -88,9 +86,8 @@ async clear() {
 }
 ```
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -123,8 +120,6 @@ Set the value for the given key
 | ------------- | -------------------------------------------- |
 | **`options`** | <code>{ key: string; value: string; }</code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -140,8 +135,6 @@ Remove the value for this key (if any)
 | ------------- | ----------------------------- |
 | **`options`** | <code>{ key: string; }</code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -152,8 +145,6 @@ clear() => Promise<void>
 ```
 
 Clear stored keys and values.
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -170,5 +161,4 @@ Return the list of known keys
 
 --------------------
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

@@ -1,0 +1,14 @@
+tasks:
+  - name: add-comment
+    on:
+      issues:
+        types: [labeled]
+    condition: 'payload.label.name == "wrong repo"'
+    config:
+      close: true
+      lock: true
+      comment: |
+        This issue doesn't appear to be an issue with the Capacitor site or documentation. Please [use this form](https://github.com/ionic-team/capacitor/issues/new/choose) to refile your issue elsewhere.
+
+        Thanks!
+        Ionitron 💙

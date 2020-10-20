@@ -10,7 +10,7 @@ import {
   Watch,
   h,
 } from '@stencil/core';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 import type { TableOfContents } from '@stencil/ssg';
 import { docsVersionHref } from '../../router';
 import type { DocsTemplate } from '../../data.server/docs';
@@ -28,7 +28,7 @@ export class SiteMenu implements ComponentInterface {
   @State() expands: { [key: string]: number[] } = {
     docs: [],
     plugins: [2],
-    reference: [],
+    cli: [],
   };
 
   @State() showOverlay = false;

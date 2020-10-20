@@ -1,6 +1,6 @@
 import { Component, Prop, Host, h } from '@stencil/core';
 import type { PageNavigation } from '@stencil/ssg';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 
 @Component({
   tag: 'lower-content-nav',

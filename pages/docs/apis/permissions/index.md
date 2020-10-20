@@ -14,9 +14,8 @@ The Permissions API provides methods to check if certain permissions have been g
 This can be useful, for example, to avoid a user denying a permission request due to lack of context behind why the app is requesting the permission. Instead, checking the permission
 first and optionally displaying a custom UI to prepare the user for the permission check could increase permission allow rates and improve user experience.
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -67,5 +66,4 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 | **`ClipboardWrite`** | <code>"clipboard-write"</code> |
 | **`Microphone`**     | <code>"microphone"</code>      |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

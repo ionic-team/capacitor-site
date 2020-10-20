@@ -13,7 +13,7 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { Tabs, Tab, TabBar, TabBarButton } from '../../components/tabs';
 import { Fragment, JSXBase } from '@stencil/core/internal';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 
 @Component({
   tag: 'landing-page',

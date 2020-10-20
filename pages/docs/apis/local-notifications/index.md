@@ -14,8 +14,7 @@ The Local Notification API provides a way to schedule "local" notifications - no
 
 Local Notifications are great for reminding the user about a change in the app since they last visited, providing reminder features, and delivering offline information with the app being in the foreground.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`schedule(...)`](#schedule)
 * [`getPending()`](#getpending)
@@ -31,8 +30,7 @@ Local Notifications are great for reminding the user about a change in the app s
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Example
 
@@ -75,9 +73,8 @@ The local notification plugin allows the following configuration values to be ad
   }
 ```
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -117,8 +114,6 @@ registerActionTypes(options: { types: LocalNotificationActionType[]; }) => Promi
 | ------------- | ------------------------------------------------------ |
 | **`options`** | <code>{ types: LocalNotificationActionType[]; }</code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -131,8 +126,6 @@ cancel(pending: LocalNotificationPendingList) => Promise<void>
 | Param         | Type                                                                                  |
 | ------------- | ------------------------------------------------------------------------------------- |
 | **`pending`** | <code><a href="#localnotificationpendinglist">LocalNotificationPendingList</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -158,8 +151,6 @@ createChannel(channel: NotificationChannel) => Promise<void>
 | ------------- | ------------------------------------------------------------------- |
 | **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -172,8 +163,6 @@ deleteChannel(channel: NotificationChannel) => Promise<void>
 | Param         | Type                                                                |
 | ------------- | ------------------------------------------------------------------- |
 | **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -239,8 +228,6 @@ removeAllListeners() => void
 ```
 
 Remove all native listeners for this plugin
-
-**Returns:** <code>void</code>
 
 --------------------
 
@@ -447,5 +434,4 @@ Enables basic storage and retrieval of dates and times.
 | **`inputValue`**   | <code>string</code>                                             |
 | **`notification`** | <code><a href="#localnotification">LocalNotification</a></code> |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

@@ -12,8 +12,7 @@ contributors:
 
 The Haptics API provides physical feedback to the user through touch or vibration.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`impact(...)`](#impact)
 * [`notification(...)`](#notification)
@@ -24,8 +23,7 @@ The Haptics API provides physical feedback to the user through touch or vibratio
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Android Notes
 
@@ -78,9 +76,8 @@ export class HapticsExample {
 }
 ```
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -95,8 +92,6 @@ Trigger a haptics "impact" feedback
 | Param         | Type                                                                  |
 | ------------- | --------------------------------------------------------------------- |
 | **`options`** | <code><a href="#hapticsimpactoptions">HapticsImpactOptions</a></code> |
-
-**Returns:** <code>void</code>
 
 --------------------
 
@@ -113,8 +108,6 @@ Trigger a haptics "notification" feedback
 | ------------- | --------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#hapticsnotificationoptions">HapticsNotificationOptions</a></code> |
 
-**Returns:** <code>void</code>
-
 --------------------
 
 
@@ -126,8 +119,6 @@ vibrate() => void
 
 Vibrate the device
 
-**Returns:** <code>void</code>
-
 --------------------
 
 
@@ -138,8 +129,6 @@ selectionStart() => void
 ```
 
 Trigger a selection started haptic hint
-
-**Returns:** <code>void</code>
 
 --------------------
 
@@ -154,8 +143,6 @@ Trigger a selection changed haptic hint. If a selection was
 started already, this will cause the device to provide haptic
 feedback
 
-**Returns:** <code>void</code>
-
 --------------------
 
 
@@ -167,8 +154,6 @@ selectionEnd() => void
 
 If selectionStart() was called, selectionEnd() ends the selection.
 For example, call this when a user has lifted their finger from a control
-
-**Returns:** <code>void</code>
 
 --------------------
 
@@ -210,5 +195,4 @@ For example, call this when a user has lifted their finger from a control
 | **`WARNING`** | <code>"WARNING"</code> |
 | **`ERROR`**   | <code>"ERROR"</code>   |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

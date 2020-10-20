@@ -8,7 +8,7 @@ import {
   h,  
   Listen,
 } from '@stencil/core';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router'
 import Router, { docsVersionHref } from '../../router';
 import { DocsTemplate } from '../../data.server/docs';
 import { Button } from '@ionic-internal/ionic-ds';
@@ -160,10 +160,10 @@ export class DocsHeader implements ComponentInterface {
                 Plugins
               </a>
               <a
-                {...href(docsVersionHref('/docs/reference/cli'))}
+                {...href(docsVersionHref('/docs/cli'))}
                 class={{
                   'ui-paragraph-4': true,
-                  active: template === 'reference'
+                  active: template === 'cli'
                 }}
               >
                 CLI

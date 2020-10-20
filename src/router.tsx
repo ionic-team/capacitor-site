@@ -5,7 +5,7 @@ import {
   staticState,
   match,
   matchAny,
-} from './stencil-router-v2';
+} from '@stencil/router';
 import { getPage } from './data.server/prismic';
 import state from './store';
 import { getDocsData } from './data.server/docs';

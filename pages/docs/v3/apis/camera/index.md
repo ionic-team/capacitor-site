@@ -13,11 +13,11 @@ contributors:
 The Camera API allows a user to pick a photo from their photo album or take a picture. On iOS, this uses `UIImagePickerController`, and on Android this
 API sends an intent which will be handled by the core Camera app by default.
 
-<!--DOCGEN_INDEX_START-->
+<docgen-index>
 * [getPhoto()](#getphoto)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## iOS Notes
 
@@ -83,7 +83,7 @@ async takePicture() {
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -171,4 +171,4 @@ with the camera.
 | **Front** | "FRONT" |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

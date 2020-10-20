@@ -1,4 +1,4 @@
-import type { MapParamData } from '../stencil-router-v2';
+import type { MapParamData } from '@stencil/router';
 import {
   getPageNavigation,
   parseMarkdown,
@@ -23,7 +23,7 @@ export interface DocsData extends MarkdownResults {
   template?: DocsTemplate;
 }
 
-export type DocsTemplate = 'docs' | 'plugins' | 'reference';
+export type DocsTemplate = 'docs' | 'plugins' | 'cli';
 
 export const getDocsData: MapParamData = async ({ id }) => {
   if (!id) {
@@ -94,7 +94,7 @@ const getTableOfContents = async (template: DocsTemplate) => {
   let toc = cachedToc.get(template);
   if (!toc) {
     let tocPath: string;
-    if (template === 'reference' || template === 'plugins') {
+    if (template === 'cli' || template === 'plugins') {
       tocPath = join(docsDir, template, 'README.md');
     } else {
       tocPath = join(docsDir, 'README.md');
@@ -114,8 +114,8 @@ const getTemplateFromPath = (path: string): DocsTemplate => {
     if (path.includes('/plugins') || path.includes('/apis')) {
       return 'plugins';
     }
-    if (path.includes('/reference')) {
-      return 'reference';
+    if (path.includes('/cli')) {
+      return 'cli';
     }
   }
 
@@ -123,8 +123,8 @@ const getTemplateFromPath = (path: string): DocsTemplate => {
     if (path.includes('/plugins') || path.includes('/apis')) {
       return 'plugins';
     }
-    if (path.includes('/reference')) {
-      return 'reference';
+    if (path.includes('/cli')) {
+      return 'cli';
     }
   }
   return 'docs';
