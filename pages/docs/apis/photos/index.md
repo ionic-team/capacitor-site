@@ -12,9 +12,8 @@ contributors:
 
 The Photos API provides methods to load photos and albums from the user's photo library, along with saving photos.
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -80,8 +79,6 @@ Create an album in the user's photo library
 | Param         | Type                                                                          |
 | ------------- | ----------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#photoscreatealbumoptions">PhotosCreateAlbumOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -190,5 +187,4 @@ Create an album in the user's photo library
 | **`Shared`** | <code>"shared"</code> | Album is a cloud-shared album                                  |
 | **`User`**   | <code>"user"</code>   | Album is a user-created album                                  |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

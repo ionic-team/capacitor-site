@@ -31,9 +31,8 @@ async show() {
 }
 ```
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -46,8 +45,6 @@ show(options: ToastShowOptions) => Promise<void>
 | Param         | Type                                                          |
 | ------------- | ------------------------------------------------------------- |
 | **`options`** | <code><a href="#toastshowoptions">ToastShowOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -63,5 +60,4 @@ show(options: ToastShowOptions) => Promise<void>
 | **`duration`** | <code>"short" \| "long"</code>             | Duration of the toast, either 'short' (2000ms, default) or 'long' (3500ms) |
 | **`position`** | <code>"center" \| "bottom" \| "top"</code> |                                                                            |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

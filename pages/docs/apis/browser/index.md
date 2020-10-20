@@ -10,8 +10,7 @@ contributors:
 
 # Browser
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`open(...)`](#open)
 * [`prefetch(...)`](#prefetch)
@@ -21,8 +20,7 @@ contributors:
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 The Browser API makes it easy to open an in-app browser session to show external web content,
 handle authentication flows, and more.
@@ -37,9 +35,8 @@ const { Browser } = Plugins;
 await Browser.open({ url: 'http://capacitorjs.com/' });
 ```
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -54,8 +51,6 @@ Open a page with the given URL
 | Param         | Type                                                              |
 | ------------- | ----------------------------------------------------------------- |
 | **`options`** | <code><a href="#browseropenoptions">BrowserOpenOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -75,8 +70,6 @@ Only functional on Android, is a no-op on iOS
 | ------------- | ------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#browserprefetchoptions">BrowserPrefetchOptions</a></code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -87,8 +80,6 @@ close() => Promise<void>
 ```
 
 Close an open browser. Only works on iOS and Web environment, otherwise is a no-op
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -133,8 +124,6 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
-**Returns:** <code>void</code>
-
 --------------------
 
 
@@ -164,5 +153,4 @@ Remove all native listeners for this plugin
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

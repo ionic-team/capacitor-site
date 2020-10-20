@@ -13,16 +13,14 @@ contributors:
 The Geolocation API provides simple methods for getting and tracking the current position of the device using GPS, along
 with altitude, heading, and speed information if available.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`getCurrentPosition(...)`](#getcurrentposition)
 * [`watchPosition(...)`](#watchposition)
 * [`clearWatch(...)`](#clearwatch)
 * [Interfaces](#interfaces)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## iOS Notes
 
@@ -71,9 +69,8 @@ class GeolocationExample {
 }
 ```
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -125,8 +122,6 @@ Clear a given watch
 | ------------- | ---------------------------- |
 | **`options`** | <code>{ id: string; }</code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -149,5 +144,4 @@ Clear a given watch
 | **`timeout`**            | <code>number</code>  |
 | **`maximumAge`**         | <code>number</code>  |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

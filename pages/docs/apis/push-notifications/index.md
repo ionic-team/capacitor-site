@@ -63,8 +63,7 @@ An empty Array can be provided if none of the previous options are desired. `pus
 }
 ```
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`register()`](#register)
 * [`requestPermission()`](#requestpermission)
@@ -81,17 +80,15 @@ An empty Array can be provided if none of the previous options are desired. `pus
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 
 ## Example Guides
 
 [Using Push Notifications with Firebase in an Ionic Angular App](/docs/guides/push-notifications-firebase)
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -105,8 +102,6 @@ Register the app to receive push notifications.
 Will trigger registration event with the push token
 or registrationError if there was some problem.
 Doesn't prompt the user for notification permissions, use requestPermission() first.
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -151,8 +146,6 @@ Removes the specified notifications from the notifications screen.
 | --------------- | --------------------------------------------------------------------------------------- | -------------------------------- |
 | **`delivered`** | <code><a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a></code> | list of delivered notifications. |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -163,8 +156,6 @@ removeAllDeliveredNotifications() => Promise<void>
 ```
 
 Removes all the notifications from the notifications screen.
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -181,8 +172,6 @@ On Android O or newer (SDK 26+) creates a notification channel.
 | ------------- | ------------------------------------------------------------------- | ----------- |
 | **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> | to create.  |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -197,8 +186,6 @@ On Android O or newer (SDK 26+) deletes a notification channel.
 | Param         | Type                                                                | Description |
 | ------------- | ------------------------------------------------------------------- | ----------- |
 | **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> | to delete.  |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -298,8 +285,6 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin.
 
-**Returns:** <code>void</code>
-
 --------------------
 
 
@@ -381,5 +366,4 @@ Remove all native listeners for this plugin.
 | **`inputValue`**   | <code>string</code>                                           |
 | **`notification`** | <code><a href="#pushnotification">PushNotification</a></code> |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

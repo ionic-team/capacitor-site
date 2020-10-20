@@ -12,7 +12,7 @@ contributors:
 
 The Filesystem API provides a NodeJS-like API for working with files on the device.
 
-<!--DOCGEN_INDEX_START-->
+<docgen-index>
 * [readFile()](#readfile)
 * [writeFile()](#writefile)
 * [appendFile()](#appendfile)
@@ -26,7 +26,7 @@ The Filesystem API provides a NodeJS-like API for working with files on the devi
 * [copy()](#copy)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Understanding Directories and Files
 
@@ -167,7 +167,7 @@ async copy() {
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -534,4 +534,4 @@ Copy a file or directory
 | **UTF16** | "utf16" |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

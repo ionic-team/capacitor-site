@@ -12,8 +12,7 @@ contributors:
 
 The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`show()`](#show)
 * [`hide()`](#hide)
@@ -29,8 +28,7 @@ The Keyboard API provides keyboard display and visibility control, along with ev
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 
 ## Window Events for cordova-plugin-ionic-keyboard compatibility
@@ -117,9 +115,8 @@ Allowed values are
 }
 ```
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -131,8 +128,6 @@ show() => Promise<void>
 
 Show the keyboard. This method is alpha and may have issues
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -143,8 +138,6 @@ hide() => Promise<void>
 ```
 
 Hide the keyboard.
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -162,8 +155,6 @@ the accessory bar for short forms (login, signup, etc.) to provide a cleaner UI
 | ------------- | ------------------------------------ |
 | **`options`** | <code>{ isVisible: boolean; }</code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -178,8 +169,6 @@ Programmatically enable or disable the WebView scroll
 | Param         | Type                                  |
 | ------------- | ------------------------------------- |
 | **`options`** | <code>{ isDisabled: boolean; }</code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -196,8 +185,6 @@ Programmatically set the keyboard style
 | ------------- | --------------------------------------------------------------------- |
 | **`options`** | <code><a href="#keyboardstyleoptions">KeyboardStyleOptions</a></code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -212,8 +199,6 @@ Programmatically set the resize mode
 | Param         | Type                                                                    |
 | ------------- | ----------------------------------------------------------------------- |
 | **`options`** | <code><a href="#keyboardresizeoptions">KeyboardResizeOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -290,8 +275,6 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
-**Returns:** <code>void</code>
-
 --------------------
 
 
@@ -346,5 +329,4 @@ Remove all native listeners for this plugin
 | **`Native`** | <code>"native"</code> |
 | **`None`**   | <code>"none"</code>   |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

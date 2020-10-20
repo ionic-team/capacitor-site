@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@capacitor/core": "^2.4.2",
-    "@capacitor/docgen": "^0.0.8",
+    "@capacitor/docgen": "^0.0.9",
     "@ionic-internal/ionic-ds": "2.1.2",
     "@ionic/prettier-config": "^1.0.1",
     "@stencil/core": "^2.1.0-5",
@@ -30,7 +30,6 @@
     "@types/node-fetch": "^2.5.7",
     "@types/prismjs": "^1.16.1",
     "@types/puppeteer": "^3.0.2",
-    "copy-text-to-clipboard": "^1.0.4",
     "date-fns": "^2.14.0",
     "dotenv": "^8.0.0",
     "fs-extra": "^9.0.0",

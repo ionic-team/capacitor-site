@@ -12,7 +12,7 @@ contributors:
 
 The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
 
-<!--DOCGEN_INDEX_START-->
+<docgen-index>
 * [show()](#show)
 * [hide()](#hide)
 * [setAccessoryBarVisible()](#setaccessorybarvisible)
@@ -26,7 +26,7 @@ The Keyboard API provides keyboard display and visibility control, along with ev
 * [removeAllListeners()](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 
 ## Window Events for cordova-plugin-ionic-keyboard compatibility
@@ -115,7 +115,7 @@ Allowed values are
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -343,4 +343,4 @@ Remove all native listeners for this plugin
 | **None**   | "none"   |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

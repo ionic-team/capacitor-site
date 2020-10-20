@@ -12,16 +12,14 @@ contributors:
 
 The Network API provides events for monitoring network status changes, along with querying the current state of the network.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`getStatus()`](#getstatus)
 * [`addListener(...)`](#addlistener)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Example
 
@@ -56,9 +54,8 @@ The Network API requires the following permission be added to your `AndroidManif
 
 This permission allows the app to access information about the current network, such as whether it is connected to wifi or cellular.
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -101,8 +98,6 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
-**Returns:** <code>void</code>
-
 --------------------
 
 
@@ -123,5 +118,4 @@ Remove all native listeners for this plugin
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>
