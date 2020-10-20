@@ -10,7 +10,7 @@ import {
   AnchorButton,
 } from '@ionic-internal/ionic-ds';
 import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 
 @Component({
   tag: 'cordova-landing-page',

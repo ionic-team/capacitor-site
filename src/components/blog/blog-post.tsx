@@ -1,9 +1,7 @@
 import { Component, Prop, h, Host } from '@stencil/core';
-
 import { BlogPost } from './blog-common';
-
 import { Heading } from '@ionic-internal/ionic-ds';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 import Helmet from '@stencil/helmet';
 import { BlogData } from '../../data.server/blog';
 import Router from '../../router';

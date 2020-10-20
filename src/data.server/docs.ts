@@ -1,4 +1,4 @@
-import type { MapParamData } from '../stencil-router-v2';
+import type { MapParamData } from '@stencil/router';
 import {
   getPageNavigation,
   parseMarkdown,

@@ -4,7 +4,7 @@ import {
   AnchorButton,
   IntersectionHelper,
 } from '@ionic-internal/ionic-ds';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 
 import Router from '../../router';
 import state from '../../store';

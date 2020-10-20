@@ -1,6 +1,6 @@
 import { Component, Host, h, State, Listen } from '@stencil/core';
 import Router from '../../router';
-import { href } from '../../stencil-router-v2';
+import { href } from '@stencil/router';
 
 @Component({
   tag: 'version-select',
