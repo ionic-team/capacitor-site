@@ -1,24 +1,26 @@
 
-:host {
+more-button {
   height: 32px;
   width: 32px;
-}
 
-button {
-  height: 100%;
-  width: 100%;
+    
+  button {
+    height: 100%;
+    width: 100%;
 
-  font-size: 20px;
+    font-size: 20px;
 
-  background: transparent;
-  border: none;
-  outline: none;
+    background: transparent;
+    border: none;
+    outline: none;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  transition: opacity .2s ease-out;
+    transition: opacity .2s ease-out;
 
-  &:hover {
-    opacity: .4;
+    &:hover {
+      opacity: .4;
+    }
   }
 }
+

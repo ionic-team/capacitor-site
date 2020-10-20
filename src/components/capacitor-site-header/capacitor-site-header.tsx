@@ -12,6 +12,7 @@ import { href } from '../../stencil-router-v2';
 import Router, { docsVersionHref } from '../../router';
 import { DocsTemplate } from '../../data.server/docs';
 import { Button } from '@ionic-internal/ionic-ds';
+import { JSXBase } from '@stencil/core/internal';
 
 @Component({
   tag: 'site-header',
@@ -37,6 +38,7 @@ export class DocsHeader implements ComponentInterface {
       this.handleActive(newRoute.pathname);
     });    
     this.createObserver();
+    this.handleResize();
   }
 
   componentDidLoad() {    
@@ -52,7 +54,6 @@ export class DocsHeader implements ComponentInterface {
         .replace('px', '');
 
       this.collapsed = !(window.innerWidth > +breakpoint);
-      console.log(this.collapsed);
     })
   }
 
@@ -100,6 +101,7 @@ export class DocsHeader implements ComponentInterface {
       <Host
         class={{
           scrolled: this.scrolled,
+          collapsed: this.collapsed
         }}
       >
         <site-backdrop
@@ -126,10 +128,19 @@ export class DocsHeader implements ComponentInterface {
             class={{
               routes: true,
               expanded: this.expanded,
-              collapsed: this.collapsed
+              
             }}          
           >                   
             <nav class="docs-sections">
+              <div class="header">
+                <a {...href('/')}>{capacitorLogo()}</a>
+                <button class="close" aria-label="close">
+                  <svg onClick={this.toggleExpanded} width="10" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 9L1 1M9 1L1 9" stroke="#B2BECD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+
               <a
                 {...href(docsVersionHref('/docs'))}
                 class={{
@@ -205,8 +216,8 @@ export class DocsHeader implements ComponentInterface {
   }
 }
 
-const capacitorLogo = () => (
-  <svg width="126" height="24" viewBox="0 0 126 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+const capacitorLogo = (props?: JSXBase.SVGAttributes) => (
+  <svg width="126" height="24" viewBox="0 0 126 24" class="capacitor-logo" {...props} xmlns="http://www.w3.org/2000/svg">
     <path d="M30 11.8186C30 16.0223 33.0403 19.4133 37.4287 19.4133C41.8457 19.4133 44.0829 16.4147 44.4844 13.8083H41.0885C40.687 15.3777 39.2356 16.4707 37.4 16.4707C34.962 16.4707 33.2066 14.537 33.2066 11.8186C33.2066 9.07214 34.962 7.13842 37.4 7.13842C39.2356 7.13842 40.687 8.23139 41.0885 9.80078H44.4844C44.0829 7.19447 41.8457 4.1958 37.4287 4.1958C33.0403 4.1958 30 7.58682 30 11.8186Z" fill="black"/>
     <path d="M57.1749 7.67557V19.127H54.2309V17.7297C53.4928 18.7757 52.1612 19.3924 50.5007 19.3924C47.0834 19.3924 45.0859 16.7227 45.0859 13.4052C45.0859 10.0798 47.0834 7.41797 50.5007 7.41797C52.1612 7.41797 53.4848 8.02684 54.2309 9.08065V7.68337H57.1749V7.67557ZM51.1745 10.1501C49.4017 10.1501 48.2786 11.5474 48.2786 13.4052C48.2786 15.263 49.4017 16.6603 51.1745 16.6603C52.9474 16.6603 54.0704 15.263 54.0704 13.4052C54.0784 11.5474 52.9554 10.1501 51.1745 10.1501Z" fill="black"/>
     <path d="M61.7701 23H58.5774V7.68337H61.5214V9.08065C62.2594 8.03464 63.591 7.41797 65.2516 7.41797C68.6689 7.41797 70.6663 10.0876 70.6663 13.4052C70.6663 16.7305 68.6689 19.3924 65.2516 19.3924C63.591 19.3924 62.3798 18.6899 61.7701 17.9093V23ZM64.5777 16.6603C66.3506 16.6603 67.4736 15.263 67.4736 13.4052C67.4736 11.5474 66.3506 10.1501 64.5777 10.1501C62.8049 10.1501 61.6818 11.5474 61.6818 13.4052C61.6738 15.263 62.7969 16.6603 64.5777 16.6603Z" fill="black"/>

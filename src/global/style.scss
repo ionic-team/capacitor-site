@@ -1,6 +1,6 @@
 @use 'vars';
 
-span, a, sup {
+span, a, sup, svg {
   display: inline-block;
 }
 
@@ -20,7 +20,7 @@ img {
 }
 
 button {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 0;

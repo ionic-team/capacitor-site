@@ -91,6 +91,7 @@ export class DocsComponent implements ComponentInterface {
               template={data.template}
               includeLogo={false}
               includeBurger
+              collapsePoint="lg"
             />
             <div class="app-marked  docs-container">
               <div class="doc-content">

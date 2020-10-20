@@ -24,8 +24,12 @@ platform-bar .docs-container {
   }
 }
 
-site-header.scrolled {
-  box-shadow: none;
+site-header {
+  --spacing-x: var(--docs-space-x);
+  
+  &.scrolled {
+    box-shadow: none;
+  }
 }
 
 .container {

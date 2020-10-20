@@ -3,6 +3,7 @@
 :host {
   --link-hover-opacity: .7;
   --c-background: #fff;
+  --spacing-x: 20px;
 
   display: block;
   height: 64px;
@@ -15,6 +16,7 @@
 
   transition: box-shadow .2s ease-out;
 }
+
 
 .docs-search-wrapper {
   flex-grow: 1;
@@ -29,26 +31,54 @@
 header {  
   display: flex;
   align-items: center;
-
   height: 100%;
+
+  > a > .capacitor-logo {
+    margin-inline-end: 20px;
+  }
+}
+
+app-menu-toggle {
+  margin-inline-end: var(--spacing-x);  
 }
 
 .routes {
   display: flex;
-}
-.routes.collapsed {
-  display: none;
 
-  ~ .ctas {
-    display: none;
-  }
-  ~ more-button {
-    display: block;
-  }
+  transition: transform .2s ease-out,
+              opacity .2s ease-out,
+              box-shadow .2s ease-out;
 }
+
 
 nav.docs-sections {
   display: flex;
+
+  .header {
+    display: none;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-block-end: var(--space-3);
+
+    button.close {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      outline: 2px solid rgba(0,0,0,0);
+
+      transition: opacity .2s ease-out;
+
+      &:hover, &:active, &:focus {
+        opacity: .7;
+      }
+    }
+
+    .capacitor-logo {
+      width: 105px;
+    }    
+  }
 
   a {
     display: flex;
@@ -104,5 +134,91 @@ nav.docs-sections {
 
 more-button {
   display: none;
-  margin-inline-start: 24px;  
+  margin-inline-start: var(--spacing-x);  
+}
+
+:host(.collapsed) {
+  .routes {
+    background: var(--c-background);
+    width: calc(100% - 24px);
+    max-width: 353px;
+    position: absolute;  
+    z-index: 1000; 
+    right: 12px;
+    top: 12px;
+    padding: 20px;
+
+    box-shadow: var(--elevation-7);
+    border-radius: var(--radius-2);
+
+    transform: translateY(-10px);
+    opacity: 0;
+
+    pointer-events: none;
+    
+    
+    nav.docs-sections {
+      width: 100%;
+      flex-direction: column;
+
+      .header {
+        display: flex;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        left: 0;
+        right: 0;
+        background: var(--c-indigo-20);
+        bottom: 154px;
+      }
+
+      a {
+        display: block;
+        
+        margin-inline-start: 0px;
+        padding: 7px 10px 8px;
+
+        border-radius: var(--radius-1);
+
+        + a {
+          margin-block-start: var(--space-0);
+        }
+
+        &:nth-of-type(3) {
+          margin-block-end: 25px;
+
+          &::after {
+            content: '';
+            display: none;
+          }
+        }
+    
+        &.active {
+          color: var(--c-capacitor-blue);
+          background: var(--c-cyan-0);
+          font-weight: 500;
+        }
+    
+        // &:hover, &:active, &:focus {
+        //   opacity: var(--link-hover-opacity);
+        // }
+      }
+    }    
+  }
+  .routes.expanded {
+    transform: translateY(0px);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .ctas {
+    display: none;
+  }
+
+  more-button {
+    display: block;
+  }
 }
