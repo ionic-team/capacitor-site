@@ -70,14 +70,14 @@ If you've previously created icon and splash screen images, they can be found in
 First, install `cordova-res`:
 
 ```bash
-$ npm install -g cordova-res
+npm install -g cordova-res
 ```
 
 Next, run the following to regenerate the images and copy them into the native projects:
 
 ```bash
-$ cordova-res ios --skip-config --copy
-$ cordova-res android --skip-config --copy
+cordova-res ios --skip-config --copy
+cordova-res android --skip-config --copy
 ```
 
 [Complete details here](https://github.com/ionic-team/cordova-res#capacitor).

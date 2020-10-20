@@ -12,7 +12,7 @@ Initial support for splash screen and icon generation is now available. For comp
 First, install `cordova-res`:
 
 ```bash
-$ npm install -g cordova-res
+npm install -g cordova-res
 ```
 
 `cordova-res` expects a Cordova-like structure: place one icon and one splash screen file in a top-level `resources` folder within your project, like so:
@@ -26,6 +26,6 @@ resources/
 Next, run the following to generate all images then copy them into the native projects:
 
 ```bash
-$ cordova-res ios --skip-config --copy
-$ cordova-res android --skip-config --copy
+cordova-res ios --skip-config --copy
+cordova-res android --skip-config --copy
 ```
