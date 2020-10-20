@@ -1,6 +1,6 @@
 # CLI Table of Contents (v2)
 
-* Commands (CLI)
+* Command Reference
   * [CLI Overview](index.md)
   * [Add](add.md)
   * [Cap](cap.md)
