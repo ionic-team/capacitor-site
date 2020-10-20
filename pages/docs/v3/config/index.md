@@ -70,14 +70,14 @@ Here is a full example of available configuration options for `capacitor.config.
   // unless also declared inside ios or android objects. Only if overrideUserAgent is not set.
   "appendUserAgent": "string to append",
   // Background color of Capacitor WebView for both iOS and Android unless also declared inside ios or android objects
-  "backgroundColor": "#ffffffff",
+  "backgroundColor": "#ffffff",
   "android": {
     // User agent of Capacitor WebView for Android
     "overrideUserAgent": "my custom user agent for Android",
     // String to append to the original user agent of Capacitor WebView for Android.
     "appendUserAgent": "string to append for Android",
     // Background color of Capacitor WebView for Android only
-    "backgroundColor": "#ffffffff",
+    "backgroundColor": "#ffffff",
     // On Android, if you are loading the app from a remote/testing server from https
     // protocol, you need to enable mixed content mode to allow the WebView to load
     // files from different schemes such as capacitor-content:// or capacitor-file://
@@ -102,7 +102,7 @@ Here is a full example of available configuration options for `capacitor.config.
     // String to append to the original user agent of Capacitor WebView for iOS.
     "appendUserAgent": "string to append for iOS",
     // Background color of Capacitor WebView for iOS only
-    "backgroundColor": "#ffffffff",
+    "backgroundColor": "#ffffff",
     // Configure the WebView's UIScrollView's content inset behavior
     // Default is never
     // Possible values are "automatic", "scrollableAxes", "never" and "always"

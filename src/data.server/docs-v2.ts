@@ -23,7 +23,7 @@ export interface DocsData extends MarkdownResults {
   template?: DocsTemplate;
 }
 
-export type DocsTemplate = 'guide' | 'plugins' | 'reference';
+export type DocsTemplate = 'guide' | 'plugins' | 'cli';
 
 export const getDocsDataV2: MapParamData = async ({ id }) => {
   if (!id) {
@@ -65,7 +65,7 @@ const getTableOfContents = async (template: DocsTemplate) => {
   let toc = cachedToc.get(template);
   if (!toc) {
     let tocPath: string;
-    if (template === 'reference' || template === 'plugins') {
+    if (template === 'cli' || template === 'plugins') {
       tocPath = join(docsDir, template, 'README.md');
     } else {
       tocPath = join(docsDir, 'README.md');
@@ -81,8 +81,8 @@ const getTemplateFromPath = (path: string): DocsTemplate => {
     if (path.includes('/plugins') || path.includes('/apis')) {
       return 'plugins';
     }
-    if (path.includes('/reference')) {
-      return 'reference';
+    if (path.includes('/cli') || path.includes('/config')) {
+      return 'cli';
     }
   }
   return 'guide';

@@ -1,9 +1,17 @@
 {
   "trailingSlash": false,
   "redirects": [
-    { 
-      "source": "/docs/basics/cli-commands", 
-      "destination": "/docs/reference/cli" 
+    {
+      "source": "/docs/basics/cli-commands",
+      "destination": "/docs/cli"
+    },
+    {
+      "source": "/docs/reference/cli",
+      "destination": "/docs/cli"
+    },
+    {
+      "source": "/docs/reference/config",
+      "destination": "/docs/config"
     },
     {
       "source": "/docs/community/plugins",
