@@ -18,6 +18,7 @@
   * [Cordova to Capacitor Migration](cordova/migrating-from-cordova-to-capacitor.md)
 * Concepts
   * [Ads](guides/ads.md)
+  * [Angular](guides/angular.md)
   * [CI/CD](guides/ci-cd.md)
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying-updates.md)

@@ -12,7 +12,7 @@ The Web View and the native app communicate through the use of Capacitor or Cord
 
 ## Capacitor Plugins
 
-The Capacitor team maintains [a set of Capacitor plugins](https://github.com/ionic-team/capacitor-plugins) for commonly used APIs. There is also a large set of Capacitor plugins available from [the Capacitor Community](https://github.com/capacitor-community/).
+The Capacitor team maintains [a set of Capacitor plugins](/docs/apis) for commonly used APIs. There is also a large set of Capacitor plugins available from [the Capacitor Community](https://github.com/capacitor-community/).
 
 [Learn more about Capacitor plugins &#8250;](/docs/plugins)
 
