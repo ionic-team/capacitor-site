@@ -52,6 +52,6 @@
   * [Getting Started](web/index.md)
   * [PWA Elements](web/pwa-elements.md)
 * Reference
+  * [Config](config/index.md)
   * [CLI ->](cli/index.md)
-  * [Config ->](config/index.md)
   * [Plugins ->](plugins/index.md)

@@ -12,4 +12,3 @@
   * [Serve](serve.md)
   * [Sync](sync.md)
   * [Update](update.md)
-* [Config](../config/index.md)
