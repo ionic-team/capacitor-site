@@ -13,15 +13,13 @@ contributors:
 
 The Splash Screen API provides methods for showing or hiding a Splash image.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`show(...)`](#show)
 * [`hide(...)`](#hide)
 * [Interfaces](#interfaces)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Example
 
@@ -159,9 +157,8 @@ To use splash screen images named something other than `splash.png`, set `androi
 
 [Creating a Dynamic/Adaptable Splash Screen for Capacitor (Android) &#8250;](https://www.joshmorony.com/creating-a-dynamic-universal-splash-screen-for-capacitor-android/)
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -178,8 +175,6 @@ Show the splash screen
 | **`options`**  | <code><a href="#splashscreenshowoptions">SplashScreenShowOptions</a></code> |
 | **`callback`** | <code><a href="#function">Function</a></code>                               |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -195,8 +190,6 @@ Hide the splash screen
 | -------------- | --------------------------------------------------------------------------- |
 | **`options`**  | <code><a href="#splashscreenhideoptions">SplashScreenHideOptions</a></code> |
 | **`callback`** | <code><a href="#function">Function</a></code>                               |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -239,5 +232,4 @@ Creates a new function.
 | --------------------- | ------------------- | ---------------------------------------------- |
 | **`fadeOutDuration`** | <code>number</code> | How long (in ms) to fade out. Default is 200ms |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

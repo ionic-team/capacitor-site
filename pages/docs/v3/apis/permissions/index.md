@@ -16,7 +16,7 @@ first and optionally displaying a custom UI to prepare the user for the permissi
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -68,4 +68,4 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 | **Microphone**     | "microphone"      |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

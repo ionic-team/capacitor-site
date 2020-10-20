@@ -14,7 +14,7 @@ The Photos API provides methods to load photos and albums from the user's photo 
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -191,4 +191,4 @@ Create an album in the user's photo library
 | **User**   | "user"   | Album is a user-created album                                  |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

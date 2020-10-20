@@ -33,7 +33,7 @@ async show() {
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -64,4 +64,4 @@ show(options: ToastShowOptions) => Promise<void>
 | **position** | "center" \| "bottom" \| "top" |                                                                            |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

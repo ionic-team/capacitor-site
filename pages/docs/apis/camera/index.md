@@ -13,15 +13,13 @@ contributors:
 The Camera API allows a user to pick a photo from their photo album or take a picture. On iOS, this uses `UIImagePickerController`, and on Android this
 API sends an intent which will be handled by the core Camera app by default.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`getPhoto(...)`](#getphoto)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## iOS Notes
 
@@ -85,9 +83,8 @@ async takePicture() {
 
 [Building an Ionic Framework Camera App](/docs/guides/ionic-framework-app)
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -174,5 +171,4 @@ with the camera.
 | **`Rear`**  | <code>"REAR"</code>  |
 | **`Front`** | <code>"FRONT"</code> |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

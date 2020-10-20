@@ -15,8 +15,7 @@ The App API handles high level App state and events.
 For example, this API emits events when the app enters and leaves the foreground, handles
 deeplinks, opens other apps, and manages persisted plugin state.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`exitApp()`](#exitapp)
 * [`canOpenUrl(...)`](#canopenurl)
@@ -30,8 +29,7 @@ deeplinks, opens other apps, and manages persisted plugin state.
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Note about `canOpenUrl`
 
@@ -91,9 +89,8 @@ Once you have that result (if any), you can update the UI to restore a logical e
 
 We recommend every Android app using plugins that rely on external Activities (for example, Camera) to have this event and process handled.
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -258,8 +255,6 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
-**Returns:** <code>void</code>
-
 --------------------
 
 
@@ -306,5 +301,4 @@ Remove all native listeners for this plugin
 | **`success`**    | <code>boolean</code>              | Boolean indicating if the plugin call succeeded                                                                                                   |
 | **`error`**      | <code>{ message: string; }</code> | If the plugin call didn't succeed, it will contain the error message                                                                              |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

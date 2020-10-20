@@ -13,14 +13,14 @@ contributors:
 The Modals API provides methods for triggering native modal windows for alerts, confirmations, and input prompts, as
 well as Action Sheets.
 
-<!--DOCGEN_INDEX_START-->
+<docgen-index>
 * [alert()](#alert)
 * [prompt()](#prompt)
 * [confirm()](#confirm)
 * [showActions()](#showactions)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Example
 
@@ -75,7 +75,7 @@ async showActions() {
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -234,4 +234,4 @@ to select.
 | **Cancel**      | "CANCEL"      |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

@@ -14,7 +14,7 @@ The Local Notification API provides a way to schedule "local" notifications - no
 
 Local Notifications are great for reminding the user about a change in the app since they last visited, providing reminder features, and delivering offline information with the app being in the foreground.
 
-<!--DOCGEN_INDEX_START-->
+<docgen-index>
 * [schedule()](#schedule)
 * [getPending()](#getpending)
 * [registerActionTypes()](#registeractiontypes)
@@ -28,7 +28,7 @@ Local Notifications are great for reminding the user about a change in the app s
 * [addListener()](#addlistener)
 * [removeAllListeners()](#removealllisteners)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Example
 
@@ -73,7 +73,7 @@ The local notification plugin allows the following configuration values to be ad
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -444,4 +444,4 @@ Enables basic storage and retrieval of dates and times.
 | **notification** | [LocalNotification](#localnotification) |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

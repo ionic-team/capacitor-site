@@ -18,13 +18,13 @@ On iOS this plugin will use [UserDefaults](https://developer.apple.com/documenta
 
 Note: this API is not meant for high-performance data storage applications. Take a look at using SQLite or a separate data engine if your application will store a lot of items, have high read/write load, or require complex querying.
 
-<!--DOCGEN_INDEX_START-->
+<docgen-index>
 * [get()](#get)
 * [set()](#set)
 * [remove()](#remove)
 * [clear()](#clear)
 * [keys()](#keys)
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Working with JSON
 
@@ -86,7 +86,7 @@ async clear() {
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -167,4 +167,4 @@ Return the list of known keys
 --------------------
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

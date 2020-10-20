@@ -12,8 +12,7 @@ contributors:
 
 The StatusBar API Provides methods for configuring the style of the Status Bar, along with showing or hiding it.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`setStyle(...)`](#setstyle)
 * [`setBackgroundColor(...)`](#setbackgroundcolor)
@@ -24,8 +23,7 @@ The StatusBar API Provides methods for configuring the style of the Status Bar, 
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## iOS Note
 
@@ -80,9 +78,8 @@ export class StatusBarExample {
 }
 ```
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -97,8 +94,6 @@ Set the current style of the status bar
 | Param         | Type                                                                    |
 | ------------- | ----------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbarstyleoptions">StatusBarStyleOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -115,8 +110,6 @@ Set the background color of the status bar
 | ------------- | ------------------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbarbackgroundcoloroptions">StatusBarBackgroundColorOptions</a></code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -132,8 +125,6 @@ Show the status bar
 | ------------- | ------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbaranimationoptions">StatusBarAnimationOptions</a></code> |
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 --------------------
 
 
@@ -148,8 +139,6 @@ Hide the status bar
 | Param         | Type                                                                            |
 | ------------- | ------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbaranimationoptions">StatusBarAnimationOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -179,8 +168,6 @@ around a device "notch"
 | Param         | Type                                                                                        |
 | ------------- | ------------------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbaroverlayswebviewoptions">StatusBarOverlaysWebviewOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 --------------------
 
@@ -245,5 +232,4 @@ around a device "notch"
 | **`Slide`** | <code>"SLIDE"</code> | Slide animation during show/hide. |
 | **`Fade`**  | <code>"FADE"</code>  | Fade animation during show/hide.  |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

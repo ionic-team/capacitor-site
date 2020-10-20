@@ -14,13 +14,13 @@ contributors:
 The Accessibility API makes it easy to know when a user has a screen reader enabled, as well as programmatically speaking
 labels through the connected screen reader.
 
-<!--DOCGEN_INDEX_START-->
+<docgen-index>
 * [isScreenReaderEnabled()](#isscreenreaderenabled)
 * [speak()](#speak)
 * [addListener()](#addlistener)
 * [removeAllListeners()](#removealllisteners)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Example
 
@@ -50,7 +50,7 @@ async speak() {
 
 ## API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -140,4 +140,4 @@ Remove all native listeners for this plugin
 | **remove** | () => void |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>

@@ -14,15 +14,13 @@ The Background Task API makes it easy to run background tasks. Currently, this p
 supports running a task when the app is backgrounded, and soon will support periodic background
 fetch operations.
 
-<!--DOCGEN_INDEX_START-->
-<div class="docgen docgen-index">
+<docgen-index>
 
 * [`beforeExit(...)`](#beforeexit)
 * [`finish(...)`](#finish)
 * [Interfaces](#interfaces)
 
-</div>
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Background Task Guidelines
 
@@ -75,9 +73,8 @@ App.addListener('appStateChange', (state) => {
 })
 ```
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-<div class="docgen docgen-api">
 
 ## API
 
@@ -121,8 +118,6 @@ backgrounding the app.
 | ------------- | -------------------------------- |
 | **`options`** | <code>{ taskId: string; }</code> |
 
-**Returns:** <code>void</code>
-
 --------------------
 
 
@@ -147,5 +142,4 @@ Creates a new function.
 | **bind**     | (this: Function, thisArg: any, ...argArray: any[]) => any | For a given function, creates a bound function that has the same body as the original function. The this object of the bound function is associated with the specified object, and has the specified initial parameters. |
 | **toString** | () => string                                              | Returns a string representation of a function.                                                                                                                                                                           |
 
-</div>
-<!--DOCGEN_API_END-->
+</docgen-api>

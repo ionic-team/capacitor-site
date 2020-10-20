@@ -12,12 +12,12 @@ contributors:
 
 The Motion API tracks accelerometer and device orientation (compass heading, etc.)
 
-<!--DOCGEN_INDEX_START-->
+<docgen-index>
 * [addListener()](#addlistener)
 * [addListener()](#addlistener)
 * [removeAllListeners()](#removealllisteners)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
+</docgen-index>
 
 ## Permissions
 
@@ -51,7 +51,7 @@ See the [DeviceMotionEvent](https://developer.mozilla.org/en-US/docs/Web/API/Dev
 
 ### API
 
-<!--DOCGEN_API_START-->
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 ## API
 
@@ -133,4 +133,4 @@ Remove all native listeners for this plugin
 | **gamma** | number |
 
 
-<!--DOCGEN_API_END-->
+</docgen-api>
