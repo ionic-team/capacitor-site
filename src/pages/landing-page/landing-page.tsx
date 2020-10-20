@@ -11,9 +11,9 @@ import {
   PrismicResponsiveImage,
   Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { Tabs, Tab, TabBar, TabBarButton } from '../../tabs';
+import { Tabs, Tab, TabBar, TabBarButton } from '../../components/tabs';
 import { Fragment, JSXBase } from '@stencil/core/internal';
-import { href } from '../../../stencil-router-v2';
+import { href } from '../../stencil-router-v2';
 
 @Component({
   tag: 'landing-page',
@@ -537,17 +537,20 @@ public class MyAwesomePlugin: CAPPlugin {
             <Button
               {...href('/docs/getting-started')}
               anchor
+              kind="round"
               variation="light"
               class="primary"
-              size="xl"
+              color="cyan"
             >
               {primary}
+              <span class="arrow">-&gt;</span>
             </Button>
             <Button
               {...href('/docs/plugins')}
+              kind="round"
               anchor
               class="secondary"
-              size="xl"
+              color="cyan"
             >
               {secondary}
             </Button>           

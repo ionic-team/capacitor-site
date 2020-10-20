@@ -115,7 +115,7 @@ const getTemplateFromPath = (path: string): DocsTemplate => {
     if (path.includes('/plugins') || path.includes('/apis')) {
       return 'plugins';
     }
-    if (path.includes('/reference/cli')) {
+    if (path.includes('/reference')) {
       return 'reference';
     }
   }
@@ -124,7 +124,7 @@ const getTemplateFromPath = (path: string): DocsTemplate => {
     if (path.includes('/plugins') || path.includes('/apis')) {
       return 'plugins';
     }
-    if (path.includes('/reference/cli')) {
+    if (path.includes('/reference')) {
       return 'reference';
     }
   }

@@ -8,9 +8,13 @@
 
   --p2-color: var(--c-indigo-80);
 
+  .paragraph-intro {
+    margin-block-end: var(--space-9);
+  }
+
   .ui-heading-1 {
     margin-block-start: var(--space-9);
-    margin-block-end: var(--space-3);
+    margin-block-end: var(--space-5);
   }
 
   .ui-heading-2,

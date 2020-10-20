@@ -97,7 +97,6 @@ export class SiteMenu implements ComponentInterface {
         <aside class="sticky">
           <div>
             <div class="menu-header">
-              <app-menu-toggle icon="close" />
               <a {...href('/')} class="menu-header__logo-link">
                 {capacitorLogo()}
               </a>
@@ -109,32 +108,6 @@ export class SiteMenu implements ComponentInterface {
               </a>
               {/* <version-select /> */}
             </div>
-            <ul class="section-list">
-              <li>
-                <a
-                  {...href(docsVersionHref('/docs'))}
-                  class={{ active: this.template === 'docs' }}
-                >
-                  Docs
-                </a>
-              </li>
-              <li>
-                <a
-                  {...href(docsVersionHref('/docs/plugins'))}
-                  class={{ active: this.template === 'plugins' }}
-                >
-                  Plugins
-                </a>
-              </li>
-              <li>
-                <a
-                  {...href(docsVersionHref('/docs/reference/cli'))}
-                  class={{ active: this.template === 'reference' }}
-                >
-                  CLI
-                </a>
-              </li>
-            </ul>
             <ul class="menu-list">
               {this.toc?.root.map((item, i) => {
                 const isActive = item.url === this.activePath;

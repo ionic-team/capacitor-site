@@ -1,5 +1,5 @@
 @use '../../global/vars' as *;
-@use 'doc-content' as *;
+@use '_doc-content' as *;
 
 :host {
   display: block;
@@ -32,15 +32,12 @@ site-header {
   }
 }
 
-.container {
-  display: flex;
-  justify-content: space-between;
+site-backdrop {
+  z-index: 2;
+}
 
-  max-width: none;
-
-  > site-backdrop {
-    z-index: 2 !important;
-  }
+.content-wrapper {
+  width: 100%;
 }
 
 .app-marked {

@@ -57,7 +57,7 @@ export const Routes = () => (
       render={(_, data) => (
         <Fragment>
           <SiteHeader />
-          <capacitor-community data={data} />
+          <community-page data={data} />
         </Fragment>
       )}
     />

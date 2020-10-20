@@ -3,11 +3,11 @@ import { ResponsiveContainer, PrismicRichText, PrismicResponsiveImage } from '@i
 
 
 @Component({
-  tag: 'capacitor-community',
-  styleUrl: 'capacitor-community.scss',
+  tag: 'community-page',
+  styleUrl: 'community-page.scss',
   scoped: true,
 })
-export class CapacitorCommunity {
+export class CommunityPage {
   @Prop() data: any;
 
   render() {

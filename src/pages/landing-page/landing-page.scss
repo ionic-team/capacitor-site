@@ -1,4 +1,4 @@
-@use '../../../global/vars' as *;
+@use '../../global/vars' as *;
 
 //#region -------------------------------- VARIABLES --------------------------------------- 
 $section-space: 200px;
@@ -595,7 +595,7 @@ em {
       --c-text: var(--c-capacitor-blue);
     }
     .secondary {
-      --c-background:	#48b6ff;
+      --c-background:	#49B6FF;
       --c-background--hover: #5cbeff;
       --c-background--active: #33adff;
       --c-focus: rgba(255, 255, 255, .7);

@@ -24,9 +24,6 @@ export namespace Components {
     interface BlogPost {
         "data": BlogData;
     }
-    interface CapacitorCommunity {
-        "data": any;
-    }
     interface CapacitorEnterprise {
     }
     interface CapacitorHubspotForm {
@@ -42,6 +39,9 @@ export namespace Components {
     interface CodeSnippet {
         "code": string;
         "language": string;
+    }
+    interface CommunityPage {
+        "data": any;
     }
     interface ContributorList {
         "contributors": string[];
@@ -135,12 +135,6 @@ declare global {
         prototype: HTMLBlogPostElement;
         new (): HTMLBlogPostElement;
     };
-    interface HTMLCapacitorCommunityElement extends Components.CapacitorCommunity, HTMLStencilElement {
-    }
-    var HTMLCapacitorCommunityElement: {
-        prototype: HTMLCapacitorCommunityElement;
-        new (): HTMLCapacitorCommunityElement;
-    };
     interface HTMLCapacitorEnterpriseElement extends Components.CapacitorEnterprise, HTMLStencilElement {
     }
     var HTMLCapacitorEnterpriseElement: {
@@ -170,6 +164,12 @@ declare global {
     var HTMLCodeSnippetElement: {
         prototype: HTMLCodeSnippetElement;
         new (): HTMLCodeSnippetElement;
+    };
+    interface HTMLCommunityPageElement extends Components.CommunityPage, HTMLStencilElement {
+    }
+    var HTMLCommunityPageElement: {
+        prototype: HTMLCommunityPageElement;
+        new (): HTMLCommunityPageElement;
     };
     interface HTMLContributorListElement extends Components.ContributorList, HTMLStencilElement {
     }
@@ -285,12 +285,12 @@ declare global {
         "avc-code-type": HTMLAvcCodeTypeElement;
         "blog-page": HTMLBlogPageElement;
         "blog-post": HTMLBlogPostElement;
-        "capacitor-community": HTMLCapacitorCommunityElement;
         "capacitor-enterprise": HTMLCapacitorEnterpriseElement;
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
         "code-snippet": HTMLCodeSnippetElement;
+        "community-page": HTMLCommunityPageElement;
         "contributor-list": HTMLContributorListElement;
         "cordova-landing-page": HTMLCordovaLandingPageElement;
         "doc-snippet": HTMLDocSnippetElement;
@@ -328,9 +328,6 @@ declare namespace LocalJSX {
     interface BlogPost {
         "data"?: BlogData;
     }
-    interface CapacitorCommunity {
-        "data"?: any;
-    }
     interface CapacitorEnterprise {
     }
     interface CapacitorHubspotForm {
@@ -347,6 +344,9 @@ declare namespace LocalJSX {
     interface CodeSnippet {
         "code"?: string;
         "language"?: string;
+    }
+    interface CommunityPage {
+        "data"?: any;
     }
     interface ContributorList {
         "contributors"?: string[];
@@ -414,12 +414,12 @@ declare namespace LocalJSX {
         "avc-code-type": AvcCodeType;
         "blog-page": BlogPage;
         "blog-post": BlogPost;
-        "capacitor-community": CapacitorCommunity;
         "capacitor-enterprise": CapacitorEnterprise;
         "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
         "code-snippet": CodeSnippet;
+        "community-page": CommunityPage;
         "contributor-list": ContributorList;
         "cordova-landing-page": CordovaLandingPage;
         "doc-snippet": DocSnippet;
@@ -449,12 +449,12 @@ declare module "@stencil/core" {
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
-            "capacitor-community": LocalJSX.CapacitorCommunity & JSXBase.HTMLAttributes<HTMLCapacitorCommunityElement>;
             "capacitor-enterprise": LocalJSX.CapacitorEnterprise & JSXBase.HTMLAttributes<HTMLCapacitorEnterpriseElement>;
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
+            "community-page": LocalJSX.CommunityPage & JSXBase.HTMLAttributes<HTMLCommunityPageElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
             "cordova-landing-page": LocalJSX.CordovaLandingPage & JSXBase.HTMLAttributes<HTMLCordovaLandingPageElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;

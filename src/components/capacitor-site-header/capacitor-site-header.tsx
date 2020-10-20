@@ -131,9 +131,9 @@ export class DocsHeader implements ComponentInterface {
               
             }}          
           >                   
-            <nav class="docs-sections">
+            <nav class="links">
               <div class="header">
-                <a {...href('/')}>{capacitorLogo()}</a>
+                <a class="logo-wrapper" {...href('/')}>{capacitorLogo()}</a>
                 <button class="close" aria-label="close">
                   <svg onClick={this.toggleExpanded} width="10" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 9L1 1M9 1L1 9" stroke="#B2BECD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -168,8 +168,16 @@ export class DocsHeader implements ComponentInterface {
               >
                 CLI
               </a>
-              <a {...href('/community')} class="ui-paragraph-4">Community</a>
-              <a {...href('/blog')}  class="ui-paragraph-4">Blog</a>
+              <a
+                {...href('/community')}
+                class="ui-paragraph-4"
+                ref={el => this.links.community = el}
+              >Community</a>
+              <a
+                {...href('/blog')}
+                class="ui-paragraph-4"
+                ref={el => this.links.blog = el}
+              >Blog</a>
               <a 
                 class="ui-paragraph-4"
                 target="_blank"

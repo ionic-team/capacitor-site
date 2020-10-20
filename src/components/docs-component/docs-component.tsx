@@ -72,7 +72,7 @@ export class DocsComponent implements ComponentInterface {
           containerClass="sc-docs-component docs-container"
           productName="Capacitor"
         />
-        <div class="container">
+        <div class="row">
           <site-backdrop
             mobileOnly
             visible={showBackdrop}

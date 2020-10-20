@@ -32,10 +32,6 @@ header {
   display: flex;
   align-items: center;
   height: 100%;
-
-  > a > .capacitor-logo {
-    margin-inline-end: 20px;
-  }
 }
 
 app-menu-toggle {
@@ -51,7 +47,7 @@ app-menu-toggle {
 }
 
 
-nav.docs-sections {
+nav.links {
   display: flex;
 
   .header {
@@ -157,12 +153,26 @@ more-button {
     pointer-events: none;
     
     
-    nav.docs-sections {
+    nav.links {
       width: 100%;
       flex-direction: column;
 
       .header {
         display: flex;
+
+        a.logo-wrapper {  
+          padding: 0;
+          display: flex;
+    
+          .capacitor-logo {
+            margin-inline-start: 10px;
+            margin-inline-end: 20px;
+          }
+
+          &:hover, &:active, &:focus {
+            opacity: 1;
+          }
+        }
       }
 
       &::before {
