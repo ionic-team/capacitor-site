@@ -49,8 +49,11 @@ site-backdrop {
 
   .doc-content {
     width: 100%;
+    display: flex;
 
     .measure-lg {
+      max-width: 736px;
+      flex-grow: 1;
       margin-inline-start: auto;
       margin-inline-end: auto;
     }
@@ -178,11 +181,6 @@ ol {
 #introButton:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   transform: translateY(1px);
-}
-
-
-.measure-lg {
-  max-width: 736px;
 }
 
 .btn.pull-left,

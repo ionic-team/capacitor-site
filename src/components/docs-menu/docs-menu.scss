@@ -291,19 +291,22 @@ span {
 }
 
 .menu-list ul li {
-  padding-left: 16px;
+  display: flex;
+  border-radius: var(--radius-1);
+  align-items: center;
+  margin-inline-start: var(--space-3);
+  margin-inline-end: var(--space-2);
   transition: 80ms height;
   height: 30px;
-  display: block;
   overflow: hidden;
 }
 
-.menu-list ul li a {
+.menu-list ul li a {  
+  flex-grow: 1;
+  padding: 9px 12px;
   display: block;
   transition: 0.2s transform ease, 0.2s color ease;
-  margin-top: 3px;
   border-radius: 4px;
-  padding-left: 10px;
 }
 
 .menu-list ul li:hover a {
@@ -312,7 +315,7 @@ span {
 
 .menu-list ul li a.link-active {
   color: #0091fa;
-  background: #f3faff;
+  background: var(--c-cyan-0);
 }
 
 .menu-list .collapsed li {
