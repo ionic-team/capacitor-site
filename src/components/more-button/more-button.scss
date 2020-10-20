@@ -16,6 +16,8 @@ button {
 
   cursor: pointer;
 
+  transition: opacity .2s ease-out;
+
   &:hover {
     opacity: .4;
   }

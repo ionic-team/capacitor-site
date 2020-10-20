@@ -39,8 +39,6 @@ export namespace Components {
     }
     interface CapacitorSiteFooter {
     }
-    interface CapacitorSiteHeader {
-    }
     interface CodeSnippet {
         "code": string;
         "language": string;
@@ -54,9 +52,6 @@ export namespace Components {
     }
     interface DocsComponent {
         "data": DocsData;
-    }
-    interface DocsHeader {
-        "template": DocsTemplate;
     }
     interface DocsMenu {
         "activePath": string;
@@ -96,6 +91,12 @@ export namespace Components {
         "platforms": string;
     }
     interface PreFooter {
+    }
+    interface SiteHeader {
+        "collapsePoint": 'xs' | 'sm' | 'md' | 'lg';
+        "includeBurger": boolean;
+        "includeLogo": boolean;
+        "template": DocsTemplate;
     }
     interface SolutionPage {
         "solutionId": string;
@@ -164,12 +165,6 @@ declare global {
         prototype: HTMLCapacitorSiteFooterElement;
         new (): HTMLCapacitorSiteFooterElement;
     };
-    interface HTMLCapacitorSiteHeaderElement extends Components.CapacitorSiteHeader, HTMLStencilElement {
-    }
-    var HTMLCapacitorSiteHeaderElement: {
-        prototype: HTMLCapacitorSiteHeaderElement;
-        new (): HTMLCapacitorSiteHeaderElement;
-    };
     interface HTMLCodeSnippetElement extends Components.CodeSnippet, HTMLStencilElement {
     }
     var HTMLCodeSnippetElement: {
@@ -199,12 +194,6 @@ declare global {
     var HTMLDocsComponentElement: {
         prototype: HTMLDocsComponentElement;
         new (): HTMLDocsComponentElement;
-    };
-    interface HTMLDocsHeaderElement extends Components.DocsHeader, HTMLStencilElement {
-    }
-    var HTMLDocsHeaderElement: {
-        prototype: HTMLDocsHeaderElement;
-        new (): HTMLDocsHeaderElement;
     };
     interface HTMLDocsMenuElement extends Components.DocsMenu, HTMLStencilElement {
     }
@@ -272,6 +261,12 @@ declare global {
         prototype: HTMLPreFooterElement;
         new (): HTMLPreFooterElement;
     };
+    interface HTMLSiteHeaderElement extends Components.SiteHeader, HTMLStencilElement {
+    }
+    var HTMLSiteHeaderElement: {
+        prototype: HTMLSiteHeaderElement;
+        new (): HTMLSiteHeaderElement;
+    };
     interface HTMLSolutionPageElement extends Components.SolutionPage, HTMLStencilElement {
     }
     var HTMLSolutionPageElement: {
@@ -295,13 +290,11 @@ declare global {
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
-        "capacitor-site-header": HTMLCapacitorSiteHeaderElement;
         "code-snippet": HTMLCodeSnippetElement;
         "contributor-list": HTMLContributorListElement;
         "cordova-landing-page": HTMLCordovaLandingPageElement;
         "doc-snippet": HTMLDocSnippetElement;
         "docs-component": HTMLDocsComponentElement;
-        "docs-header": HTMLDocsHeaderElement;
         "docs-menu": HTMLDocsMenuElement;
         "docs-search": HTMLDocsSearchElement;
         "in-page-navigation": HTMLInPageNavigationElement;
@@ -313,6 +306,7 @@ declare global {
         "plugin-api-index": HTMLPluginApiIndexElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
         "pre-footer": HTMLPreFooterElement;
+        "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
         "version-select": HTMLVersionSelectElement;
     }
@@ -350,8 +344,6 @@ declare namespace LocalJSX {
     }
     interface CapacitorSiteFooter {
     }
-    interface CapacitorSiteHeader {
-    }
     interface CodeSnippet {
         "code"?: string;
         "language"?: string;
@@ -365,9 +357,6 @@ declare namespace LocalJSX {
     }
     interface DocsComponent {
         "data"?: DocsData;
-    }
-    interface DocsHeader {
-        "template"?: DocsTemplate;
     }
     interface DocsMenu {
         "activePath"?: string;
@@ -408,6 +397,12 @@ declare namespace LocalJSX {
     }
     interface PreFooter {
     }
+    interface SiteHeader {
+        "collapsePoint"?: 'xs' | 'sm' | 'md' | 'lg';
+        "includeBurger"?: boolean;
+        "includeLogo"?: boolean;
+        "template"?: DocsTemplate;
+    }
     interface SolutionPage {
         "solutionId"?: string;
     }
@@ -424,13 +419,11 @@ declare namespace LocalJSX {
         "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
-        "capacitor-site-header": CapacitorSiteHeader;
         "code-snippet": CodeSnippet;
         "contributor-list": ContributorList;
         "cordova-landing-page": CordovaLandingPage;
         "doc-snippet": DocSnippet;
         "docs-component": DocsComponent;
-        "docs-header": DocsHeader;
         "docs-menu": DocsMenu;
         "docs-search": DocsSearch;
         "in-page-navigation": InPageNavigation;
@@ -442,6 +435,7 @@ declare namespace LocalJSX {
         "plugin-api-index": PluginApiIndex;
         "plugin-platforms": PluginPlatforms;
         "pre-footer": PreFooter;
+        "site-header": SiteHeader;
         "solution-page": SolutionPage;
         "version-select": VersionSelect;
     }
@@ -460,13 +454,11 @@ declare module "@stencil/core" {
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
-            "capacitor-site-header": LocalJSX.CapacitorSiteHeader & JSXBase.HTMLAttributes<HTMLCapacitorSiteHeaderElement>;
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
             "cordova-landing-page": LocalJSX.CordovaLandingPage & JSXBase.HTMLAttributes<HTMLCordovaLandingPageElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
             "docs-component": LocalJSX.DocsComponent & JSXBase.HTMLAttributes<HTMLDocsComponentElement>;
-            "docs-header": LocalJSX.DocsHeader & JSXBase.HTMLAttributes<HTMLDocsHeaderElement>;
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
             "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
@@ -478,6 +470,7 @@ declare module "@stencil/core" {
             "plugin-api-index": LocalJSX.PluginApiIndex & JSXBase.HTMLAttributes<HTMLPluginApiIndexElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
+            "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
             "version-select": LocalJSX.VersionSelect & JSXBase.HTMLAttributes<HTMLVersionSelectElement>;
         }

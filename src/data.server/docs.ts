@@ -23,7 +23,7 @@ export interface DocsData extends MarkdownResults {
   template?: DocsTemplate;
 }
 
-export type DocsTemplate = 'guide' | 'plugins' | 'reference';
+export type DocsTemplate = 'docs' | 'plugins' | 'cli';
 
 export const getDocsData: MapParamData = async ({ id }) => {
   if (!id) {
@@ -63,7 +63,7 @@ const getTableOfContents = async (template: DocsTemplate) => {
   let toc = cachedToc.get(template);
   if (!toc) {
     let tocPath: string;
-    if (template === 'reference' || template === 'plugins') {
+    if (template === 'cli' || template === 'plugins') {
       tocPath = join(docsDir, template, 'README.md');
     } else {
       tocPath = join(docsDir, 'README.md');
@@ -75,13 +75,26 @@ const getTableOfContents = async (template: DocsTemplate) => {
 };
 
 const getTemplateFromPath = (path: string): DocsTemplate => {
+  const isDevServer = globalThis.location.origin.includes('https://');
+
+  if (!isDevServer) {
+    const path = globalThis.location.href;
+
+    if (path.includes('/plugins') || path.includes('/apis')) {
+      return 'plugins';
+    }
+    if (path.includes('/reference/cli')) {
+      return 'cli';
+    }
+  }
+
   if (typeof path === 'string') {
     if (path.includes('/plugins') || path.includes('/apis')) {
       return 'plugins';
     }
-    if (path.includes('/reference')) {
-      return 'reference';
+    if (path.includes('/reference/cli')) {
+      return 'cli';
     }
   }
-  return 'guide';
+  return 'docs';
 };

@@ -11,8 +11,17 @@ capacitor-site {
   display: block;
 }
 
+.heading-container {
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+}
+
 site-root {
   flex: 1;
+}
+
+site-header.scrolled {
+  box-shadow: var(--elevation-2);
 }
 
 .page-theme--dark {
@@ -62,16 +71,6 @@ site-root {
   flex: 1;
 }
 
-.container {
-  max-width: 1280px;
-  width: 100%;
-  margin: auto;
-  padding: 0 24px;
-}
-
-.container-flex {
-  display: flex;
-}
 
 docs-component {
   > div {
@@ -120,22 +119,6 @@ docs-component {
   background: #98d2ff;
 }
 
-html,
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  scroll-padding-top: 80px;
-}
-body {
-  background-color: #fff;
-}
-
 
 h2 code {
   font-weight: 600;
@@ -171,12 +154,6 @@ blockquote p {
   padding: 0;
 }
 
-
-// code {
-//   font-weight: 400;
-//   font-family: 'Roboto Mono', 'Source Code Pro', monospace;
-//   font-size: 14px;
-// }
 .hljs-comment,
 .hljs-quote {
   color: #5c6370;

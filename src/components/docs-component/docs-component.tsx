@@ -68,10 +68,11 @@ export class DocsComponent implements ComponentInterface {
     return (
       <Fragment>
         <Helmet />
-        <site-platform-bar productName="Capacitor" />
+        <platform-bar
+          containerClass="sc-docs-component docs-container"
+          productName="Capacitor"
+        />
         <div class="container">
-          <app-menu-toggle />
-
           <site-backdrop
             mobileOnly
             visible={showBackdrop}
@@ -83,11 +84,15 @@ export class DocsComponent implements ComponentInterface {
             template={data.template}
             toc={data.tableOfContents}
             activePath={Router.path}
-          />
-
-          <div class="content-container">
-            <docs-header template={data.template} />
-            <div class="app-marked">
+          />          
+          <div class="content-wrapper">
+            <site-header
+              class="docs-container"
+              template={data.template}
+              includeLogo={false}
+              includeBurger
+            />
+            <div class="app-marked  docs-container">
               <div class="doc-content">
                 <div class="measure-lg">
                   <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />

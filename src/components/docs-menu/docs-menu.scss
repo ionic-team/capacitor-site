@@ -8,16 +8,16 @@
   width: var(--menu-width);
   letter-spacing: 0;
 
-  box-shadow: 1px 0px 0px rgba(0, 21, 58, 0.06);
+  // box-shadow: 1px 0px 0px rgba(0, 21, 58, 0.06);
+  border-inline-end: 1px solid #f0f0f0;
 
-  z-index: 2;
+  z-index: 999;
 
   @media screen and (max-width: 768px) {
     position: fixed;
     top: 0;
     left: 0;
     background: var(--color-white);
-    z-index: 999;
     transform: translateX(calc(-1 * var(--menu-width)));
     transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
     height: 100%;
@@ -38,7 +38,7 @@
       }
 
       .menu-header__logo-link {
-        margin-left: 60px;
+        margin-left: var(--space-3);
       }
 
       .menu-header__version-link {
@@ -70,6 +70,7 @@ span {
   align-items: center;
 
   height: 64px;
+  width: calc(100% + 1px);
 
   padding: 0 15px 0 18px;
 }
@@ -95,7 +96,7 @@ span {
 
   letter-spacing: -0.02em;
 
-  margin: 6px 7px 0 8px;
+  margin: 3px 7px 0 8px;
 }
 
 .menu-header__version-link {

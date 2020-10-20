@@ -1,14 +1,16 @@
 @use '../../global/variables' as *;
 
 docs-search {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   position: relative;
 
   flex: 1;
 
-  min-width: 120px;
+  border: 1px solid var(--c-indigo-30);
+  border-radius: var(--radius-2);
+  height: 36px;
 
 
   ion-icon.search {
@@ -41,11 +43,37 @@ docs-search {
     cursor: pointer;
   }
 
+  .algolia-autocomplete {
+    width: 100%;
+  }
+
   .algolia-autocomplete input {
     appearance: textfield;
     -webkit-appearance: textfield;
 
+    padding: 0;
+    padding-inline-start: 40px;
+    padding-inline-end: 16px;
+
+    font-family: 'Inter';
+    font-size: 14px;
+
+    line-height: 17px;
+    letter-spacing: -0.01em;    
+
+    width: 100%;
+
     border: none;
+
+    top: 1px;
+
+    &::placeholder {
+      color: #92a0b3;
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .algolia-autocomplete[class^='algolia-autocomplete'] {
@@ -298,28 +326,6 @@ docs-search {
           }
         }
       }
-    }
-  }
-
-  input {
-    font-family: 'Inter';
-    font-size: 15px;
-
-    line-height: 18px;
-    letter-spacing: -0.01em;
-
-    padding: 15px 15px 15px 40px;
-
-    width: 100%;
-
-    border: none;
-
-    &::placeholder {
-      color: #92a0b3;
-    }
-
-    &:focus {
-      outline: none;
     }
   }
 }

@@ -114,10 +114,9 @@ export class DocsSearch implements ComponentInterface {
         }
       },
       handleSelected: (_, __, suggestion) => {
-        const url = suggestion.url.replace('https://capacitorjs.com', '')
-        Router.push(url);
-
+        const url = suggestion.url.replace('https://capacitorjs.com', '');
         this.clearSearch();
+        Router.push(url);
       },
     });
   }

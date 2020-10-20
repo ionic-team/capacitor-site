@@ -125,8 +125,11 @@ Router.on('change', (newUrl, _oldUrl) => {
 
 const SiteHeader = () => (
   <Fragment>
-    <site-platform-bar productName="Capacitor" />
-    <capacitor-site-header />
+    <platform-bar
+      containerClass="heading-container"
+      productName="Capacitor"
+    />
+    <site-header class="heading-container" />
   </Fragment>
 );
 

@@ -2,7 +2,30 @@
 @use 'doc-content' as *;
 
 :host {
-  --padding-x: clamp(12px, 3.6vw, 32px);
+  display: block;
+  --docs-space-x: clamp(8px, 2.5vw, 32px);
+}
+
+.content-wrapper {
+  flex-grow: 1;
+}
+
+.docs-container {
+  padding-inline-start: var(--docs-space-x);
+  padding-inline-end: var(--docs-space-x);
+}
+platform-bar .docs-container {
+  padding-inline-start: 20px;
+  padding-inline-start: 20px;
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-inline-start: var(--docs-space-x);
+    padding-inline-end: var(--docs-space-x);
+  }
+}
+
+site-header.scrolled {
+  box-shadow: none;
 }
 
 .container {
@@ -10,7 +33,6 @@
   justify-content: space-between;
 
   max-width: none;
-  padding: 0;
 
   > site-backdrop {
     z-index: 2 !important;
@@ -23,8 +45,15 @@
   flex: 1;
   min-width: 0;
   width: 100%;
-  padding-inline-start: var(--padding-x);
-  padding-inline-end: var(--padding-x);
+
+  .doc-content {
+    width: 100%;
+
+    .measure-lg {
+      margin-inline-start: auto;
+      margin-inline-end: auto;
+    }
+  }
 }
 
 plugin-platforms {
