@@ -22,4 +22,4 @@ Though Capacitor plugins are preferred, Cordova plugins are an option. Capacitor
 
 > If you use a Cordova plugin because you weren't able to find a suitable Capacitor plugin, would you mind [creating a proposal for the Capacitor Community](https://github.com/capacitor-community/proposals/)?
 
-[Learn more about using Cordova plugins in Capacitor apps &#8250;](/docs/cordova/using-cordova-plugins)
+[Learn more about using Cordova plugins in Capacitor apps &#8250;](/docs/plugins/cordova)

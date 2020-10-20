@@ -50,7 +50,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
   <ui-card class="ui-col ui-col-12 ui-col-xs-12 ui-col-sm-6 ui-col-md-6">
     <img src="/assets/img/docs/community-plugins.png">
     <p class="title"><a href="/docs/plugins/community">Community Plugins</a></p>
-    <p>Community Plugins are maintained by the <a href="https://github.com/capacitor-community">Capacitor Community</a></p>
+    <p>Community Plugins are maintained by the <a href="https://github.com/capacitor-community">Capacitor Community</a>.</p>
   </ui-card>
 </ui-grid>
 

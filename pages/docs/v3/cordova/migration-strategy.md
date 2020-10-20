@@ -41,6 +41,6 @@ Some plugins may not match functionality entirely, but based on the features you
 
 ### Continue to Use Cordova or Ionic Native if Needed
 
-To leverage Cordova and/or Ionic Native plugins in your Capacitor app, [see here.](/docs/cordova/using-cordova-plugins) If a replacement plugin doesn't exist, continue to use the Cordova plugin as-is. If there's a plugin you'd like to see supported, [please let us know.](https://github.com/ionic-team/capacitor/issues/new)
+To leverage Cordova and/or Ionic Native plugins in your Capacitor app, [see here.](/docs/plugins/cordova) If a replacement plugin doesn't exist, continue to use the Cordova plugin as-is. If there's a plugin you'd like to see supported, [please let us know.](https://github.com/ionic-team/capacitor/issues/new)
 
 Ready to [migrate to Capacitor?](/docs/cordova/migrating-from-cordova-to-capacitor)
