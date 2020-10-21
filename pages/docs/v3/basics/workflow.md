@@ -44,6 +44,7 @@ npx cap sync
 There are a few ways to deploy your project on native devices, depending on your use case. Most common is on the command-line with `npx cap run`.
 
 [Learn more about running your app on iOS &#8250;](/docs/ios#running-your-app)
+
 [Learn more about running your app on Android &#8250;](/docs/android#running-your-app)
 
 ## Open your Native IDE
@@ -56,6 +57,7 @@ You may wish to open your project in a Native IDE in the following circumstances
 * When you want to compile a release build for the app store.
 
 [Learn more about opening your app in Xcode &#8250;](/docs/ios#opening-the-ios-project)
+
 [Learn more about opening your app in Android Studio &#8250;](/docs/android#opening-the-android-project)
 
 ## Updating Capacitor
