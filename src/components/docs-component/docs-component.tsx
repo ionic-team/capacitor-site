@@ -98,23 +98,16 @@ export class DocsComponent implements ComponentInterface {
                   <lower-content-nav navigation={data.navigation} />
                   <contributor-list
                     contributors={data.contributors}
-                    repoFileUrl={data.repoFileUrl}
+                    repoFileUrl={data.editUrl}
                   />
                 </div>
               </div>
 
-<<<<<<< HEAD
               <in-page-navigation
                 headings={data.headings}
-                repoFileUrl={data.repoFileUrl}
+                editUrl={data.editUrl}
               />
             </div>
-=======
-            <in-page-navigation
-              headings={data.headings}
-              editUrl={data.editUrl}
-            />
->>>>>>> f961e580e2dad48de3f263cf495388aeee3c3c52
           </div>
         </div>
       </Fragment>

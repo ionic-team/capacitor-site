@@ -13,7 +13,7 @@ const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
 const docsDir = join(pagesDir, 'docs');
 
-export type DocsTemplate = 'docs' | 'plugins' | 'reference';
+export type DocsTemplate = 'docs' | 'plugins' | 'cli';
 
 export const getDocsDataV2: MapParamData = async ({ id }) => {
   if (!id) {
