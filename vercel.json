@@ -36,6 +36,18 @@
     {
       "source": "/docs/v3/cordova/known-incompatible-plugins",
       "destination": "/docs/v3/plugins/cordova"
+    },
+    {
+      "source": "/docs/v3/apis/accessibility",
+      "destination": "/docs/v3/apis/screen-reader"
+    },
+    {
+      "source": "/docs/v3/apis/push-notifications",
+      "destination": "/docs/v3/apis/notifications"
+    },
+    {
+      "source": "/docs/v3/apis/local-notifications",
+      "destination": "/docs/v3/apis/notifications"
     }
   ],
   "headers": [
