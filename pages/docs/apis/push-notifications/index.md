@@ -46,6 +46,52 @@ In case you don't want to receive the mail, you can disable the Push Notificatio
 
 ## Push notifications appearance in foreground
 
+### Android
+
+On Android, push notifications received while the app is in foreground are not shown. While there is no way to change this behavior, a clever workaround is to create a local notification in the `pushNotificationReceived` listener.
+
+```
+PushNotifications.addListener(
+  "pushNotificationReceived",
+  (notification) => {
+    const isPushNotification = !!notification.title || !!notification.body;
+    // We check if we received a push notification and if the platform is android
+    if (Capacitor.platform == "android" && isPushNotificationisPushNotification) {
+      // We schedule a local notification a second later 
+      LocalNotifications.schedule({
+        notifications: [
+          {
+            title: notification.title,
+            body: notification.body,
+            id: new Date().getUTCMilliseconds(),
+            schedule: {
+              at: new Date(Date.now() + 1000),
+            },
+            extra: notification.data,
+            channelId: "urgent-notifications",
+          },
+        ],
+      });
+    }
+  }
+);
+```
+
+You can then handle notification actions by adding a `localNotificationActionPerformed` listener:
+
+```
+LocalNotifications.addListener(
+  "localNotificationActionPerformed",
+  ({ notification }) => {
+    console.log(
+      "Local action performed: " + JSON.stringify(notification.extra)
+    );
+  }
+);
+```
+
+### iOS
+
 On iOS you can configure the way the push notifications are displayed when the app is in foreground by providing the `presentationOptions` in your `capacitor.config.json` as an Array of Strings you can combine.
 
 Possible values are:
