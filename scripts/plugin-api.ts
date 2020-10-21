@@ -61,8 +61,18 @@ async function getPkgJsonData(pluginId: string) {
   return rsp.json();
 }
 
+async function writeListToIndex(pluginIds: string[]) {
+  const indexPath = path.join(API_DIR, 'index.md');
+  const content = fs.readFileSync(indexPath, 'utf-8');
+  const re = /## List of Official Plugins[\s\S]+?(?=^#)/gm;
+  const result = content.replace(re, '## List of Official Plugins\n\n' + pluginIds.map(id => `* [${toTitleCase(id)}](/docs/apis/${id})`).join('\n') + '\n\n');
+
+  fs.writeFileSync(indexPath, result);
+}
+
 async function main() {
   await Promise.all(pluginApis.map(buildPluginApiDocs));
+  await writeListToIndex(pluginApis);
   console.log(`Plugin API Files Updated 🎸`);
 }
 
