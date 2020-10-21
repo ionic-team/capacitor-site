@@ -27,6 +27,13 @@
   }
 }
 
+site-backdrop {    
+  @media screen and (min-width: $screen-md) {
+    z-index: 100000;
+    background: rgba(0,0,0,0);
+  }
+}
+
 
 header {  
   display: flex;
@@ -82,19 +89,6 @@ nav.links {
     margin-inline-start: 24px;
     transition: opacity .2s ease-out;
 
-    &:last-of-type {
-      margin-inline-end: 24px;
-    }
-
-    &:nth-of-type(3)::after {
-      content: '';
-      display:inline-block;
-      width: 1px;
-      height: 28px;
-      background: var(--c-indigo-30);
-      margin-inline-start: var(--space-5);
-    }
-
     &.active {
       color: var(--c-cyan-100);
       font-weight: 500;
@@ -103,27 +97,50 @@ nav.links {
     &:hover, &:active, &:focus {
       opacity: var(--link-hover-opacity);
     }
+  }  
+
+  .external {
+    svg {
+      margin-inline-start: 6px;
+      margin-block-start: 2px;
+    }
   }
+}
+
+.separator {
+  display:inline-block;
+  width: 1px;
+  height: 28px;
+  background: var(--c-indigo-30);
+  margin-inline-start: var(--space-5);
 }
 
 
 .ctas {
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
 
-  .ui-button {
+  white-space: nowrap;
+  margin-inline-start: var(--space-1);
+
+  > * {
+    margin-inline-start: var(--space-3);
+  }
+
+  .ui-button.primary {
+    --c-background: var(--c-capacitor-blue);
+    color: #fff;
 
     svg {
       margin-inline-end: 6px;
     }
+  }
 
-    &.secondary {
-      color: var(--c-indigo-80);
-      font-weight: 500;
-    }
-    &.primary {
-      --c-background: var(--c-capacitor-blue);
-      color: #fff;
-      margin-inline-start: var(--space-1);
+  .social {
+    transition: opacity .2s ease-out;
+
+    &:hover, &:active, &:focus {
+      opacity: .7;
     }
   }
 }

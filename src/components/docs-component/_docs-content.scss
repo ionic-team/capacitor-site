@@ -8,8 +8,15 @@
 
   --p2-color: var(--c-indigo-80);
 
-  .paragraph-intro {
-    margin-block-end: var(--space-9);
+  .paragraph-intro { 
+    font-family: var(--p2-font);
+    font-size: var(--p2-size);
+    line-height: var(--p2-leading);
+    letter-spacing: var(--p2-tracking);
+    font-weight: var(--p2-weight);
+    color: var(--p2-color);
+    text-transform: var(--p2-transform);
+    
   }
 
   .ui-heading-1 {
@@ -21,7 +28,7 @@
   .ui-heading-3 {
     margin-top: -6px;
     padding-top: 52px;
-    margin-bottom: 24px;
+    margin-block-end: var(--space-3);
   }
 
   .ui-heading-2 code {
@@ -87,59 +94,6 @@
     justify-content: flex-start;
     align-content: stretch;
     align-items: flex-start;
-  }
-
-  .nextButton {
-    background: #5851ff;
-    color: white;
-    text-decoration: none;
-
-    border: none;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 12px 14px;
-    border-radius: 4px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-    outline: none;
-    letter-spacing: 0.04em;
-    transition: all 0.15s ease;
-    cursor: pointer;
-    float: right;
-    margin-right: 5px;
-
-    &:hover {
-      text-decoration: none;
-      transform: translateY(1px);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16);
-    }
-  }
-
-  .backButton {
-    color: #5851ff;
-    background: white;
-    text-decoration: none;
-    float: left;
-
-    border: none;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 12px 14px;
-    border-radius: 4px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-    outline: none;
-    letter-spacing: 0.04em;
-    transition: all 0.15s ease;
-    cursor: pointer;
-    margin-bottom: 15px;
-    margin-left: 5px;
-
-    &:hover {
-      text-decoration: none;
-      transform: translateY(1px);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16);
-    }
   }
 
   pre {

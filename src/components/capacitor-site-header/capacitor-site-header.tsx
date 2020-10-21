@@ -105,7 +105,6 @@ export class DocsHeader implements ComponentInterface {
         }}
       >
         <site-backdrop
-          mobileOnly
           visible={expanded}
           onClick={() => this.toggleExpanded()}
         />
@@ -168,6 +167,7 @@ export class DocsHeader implements ComponentInterface {
               >
                 CLI
               </a>
+              <div class="separator"></div>
               <a
                 {...href('/community')}
                 class="ui-paragraph-4"
@@ -179,32 +179,34 @@ export class DocsHeader implements ComponentInterface {
                 ref={el => this.links.blog = el}
               >Blog</a>
               <a 
-                class="ui-paragraph-4"
+                class="external | ui-paragraph-4"
                 target="_blank"
                 href="https://ionicframework.com/native"
                 rel="noopener"
               >
                 Enterprise
+                <svg width="8" height="9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M.5 8l7-7m0 0H2.95M7.5 1v4.55" stroke="#73849A" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </a>
             </nav>               
           </div>  
 
+          <div class="separator"></div>
+
           <more-button onClick={() => this.toggleExpanded()} />  
 
-          <div class="ctas">
-            <Button
-              class="secondary | ui-paragraph-4"
-              anchor
-              kind="regular"
-              color="cyan"
-              variation="light"
-              size="md"
-            >
-              <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 0a7.1 7.1 0 00-7 7.18c0 3.17 2 5.86 4.79 6.8.04.02.08.02.12.02.26 0 .36-.2.36-.36l-.01-1.22a3.2 3.2 0 01-.71.09c-1.35 0-1.65-1.05-1.65-1.05-.32-.83-.78-1.05-.78-1.05-.61-.43 0-.44.04-.44.7.06 1.08.74 1.08.74.35.61.82.79 1.23.79.28 0 .55-.07.8-.2.07-.45.25-.77.45-.95-1.55-.18-3.19-.8-3.19-3.55 0-.78.27-1.42.72-1.92-.07-.18-.31-.91.07-1.9l.16-.02c.25 0 .82.1 1.76.76a6.5 6.5 0 013.51 0c.94-.66 1.52-.76 1.77-.76.05 0 .1 0 .16.02.38.99.14 1.72.06 1.9.45.5.72 1.14.72 1.92 0 2.76-1.64 3.37-3.2 3.54.26.23.48.66.48 1.33v1.97c0 .17.09.36.35.36a.6.6 0 00.12-.01A7.16 7.16 0 0014 7.18 7.1 7.1 0 007 0z" fill="#73849A"/>
+          <div class="ctas">    
+            <a href="https://github.com/ionic-team/capacitor" target="_blank">     
+              <svg class="social" width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0a7.1 7.1 0 00-7 7.18c0 3.17 2 5.86 4.79 6.8.04.02.08.02.12.02.26 0 .36-.2.36-.36l-.01-1.22a3.2 3.2 0 01-.71.09c-1.35 0-1.65-1.05-1.65-1.05-.32-.83-.78-1.05-.78-1.05-.61-.43 0-.44.04-.44.7.06 1.08.74 1.08.74.35.61.82.79 1.23.79.28 0 .55-.07.8-.2.07-.45.25-.77.45-.95-1.55-.18-3.19-.8-3.19-3.55 0-.78.27-1.42.72-1.92-.07-.18-.31-.91.07-1.9l.16-.02c.25 0 .82.1 1.76.76a6.5 6.5 0 013.51 0c.94-.66 1.52-.76 1.77-.76.05 0 .1 0 .16.02.38.99.14 1.72.06 1.9.45.5.72 1.14.72 1.92 0 2.76-1.64 3.37-3.2 3.54.26.23.48.66.48 1.33v1.97c0 .17.09.36.35.36a.6.6 0 00.12-.01A7.16 7.16 0 0014 7.18 7.1 7.1 0 007 0z" fill="#B2BECD"/>
               </svg>
-              4.1K
-            </Button>
+            </a>   
+            <a href="https://twitter.com/capacitorjs" target="_blank" rel="noopener">   
+            <svg class="social" width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.5 1.65885C15.91 1.93958 15.2794 2.12917 14.6149 2.21667C15.293 1.77917 15.8151 1.08646 16.0592 0.2625C15.4252 0.667187 14.7234 0.9625 13.974 1.11927C13.3739 0.430208 12.5195 0 11.5769 0C9.76298 0 8.29487 1.58229 8.29487 3.53281C8.29487 3.8099 8.322 4.07969 8.37963 4.33854C5.65024 4.19271 3.22939 2.78542 1.6121 0.645312C1.33068 1.16667 1.16794 1.77552 1.16794 2.42083C1.16794 3.64583 1.75111 4.72865 2.63266 5.36302C2.09017 5.34844 1.58159 5.18802 1.14081 4.92188V4.96562C1.14081 6.67917 2.27326 8.10469 3.77527 8.42917C3.50064 8.50938 3.20905 8.55313 2.91068 8.55313C2.70047 8.55313 2.49364 8.53125 2.2936 8.4875C2.71064 9.89114 3.92445 10.912 5.36205 10.9411C4.23978 11.8891 2.82253 12.4542 1.28322 12.4542C1.01875 12.4542 0.757682 12.4359 0.5 12.4031C1.94776 13.4167 3.67355 14 5.52479 14C11.5701 14 14.8725 8.6151 14.8725 3.94479C14.8725 3.79167 14.8691 3.63854 14.8624 3.48906C15.5032 2.98958 16.0592 2.36979 16.5 1.65885Z" fill="#B2BECD"/>
+            </svg>
+            </a>   
             <Button
               class="primary | ui-paragraph-4"
               anchor

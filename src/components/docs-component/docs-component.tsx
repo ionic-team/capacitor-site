@@ -74,7 +74,6 @@ export class DocsComponent implements ComponentInterface {
         />
         <div class="row">
           <site-backdrop
-            mobileOnly
             visible={showBackdrop}
             onClick={this.backdropClicked}
           />
@@ -96,9 +95,9 @@ export class DocsComponent implements ComponentInterface {
             <div class="app-marked  docs-container">
               <div class="doc-content">
                 <div class="measure-lg">
-                  <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />
-                  <contributor-list contributors={data.contributors} />
+                  <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />                  
                   <lower-content-nav navigation={data.navigation} />
+                  <contributor-list contributors={data.contributors} />
                 </div>
               </div>
 

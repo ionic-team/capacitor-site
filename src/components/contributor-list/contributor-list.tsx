@@ -1,3 +1,4 @@
+import { Button } from '@ionic-internal/ionic-ds';
 import { Component, Prop, Host, h } from '@stencil/core';
 
 @Component({
@@ -15,7 +16,6 @@ export class ContributorList {
 
     return (
       <Host>
-        <h2>Contributors</h2>
         <ul class="img-list">
           {c.reverse().map(contributor => (
             <li>
@@ -33,6 +33,15 @@ export class ContributorList {
             </li>
           ))}
         </ul>
+        <Button
+          size="md"
+          kind="round"
+          color="cyan"
+          variation="muted"
+        >
+          Contribute
+          <span class="arrow"> -&gt;</span>
+        </Button>
       </Host>
     );
   }

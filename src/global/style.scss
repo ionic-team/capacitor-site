@@ -40,10 +40,11 @@ code {
 
 .arrow {
   letter-spacing: 0;
-  margin-inline-start: 3px;
+  white-space: pre;
+  display: inline-flex;
 }
 
-a.link, p a {
+a.link, p a, li a {
   color: var(--c-capacitor-blue);
   transition: opacity .2s ease-out;
 
