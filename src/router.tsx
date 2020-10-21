@@ -95,8 +95,6 @@ Router.on('change', (newUrl, _oldUrl) => {
     page_path: newUrl.pathname + newUrl.search,
   });
 
-  state.showTopBar = !newUrl.pathname.includes('/docs');
-
   // if (!oldUrl || oldUrl.pathname !== newUrl.pathname) {
   //   state.isLeftSidebarIn = false;
   //   state.showTopBar = true;
