@@ -1,9 +1,26 @@
 # Plugins Table of Contents (v3)
 
-* Getting Started
-  * [Introduction](index.md)
-  * [Community Plugins](community.md)
-  * [Enterprise Plugins](enterprise.md)
+* [Introduction](index.md)
+* Official Plugins
+  * [Introduction](../apis/index.md)
+  * [Action Sheet](../apis/action-sheet.md)
+  * [Browser](../apis/browser.md)
+  * [Clipboard](../apis/clipboard.md)
+  * [Device](../apis/device.md)
+  * [Dialog](../apis/dialog.md)
+  * [Haptics](../apis/haptics.md)
+  * [Keyboard](../apis/keyboard.md)
+  * [Motion](../apis/motion.md)
+  * [Network](../apis/network.md)
+  * [Screen Reader](../apis/screen-reader.md)
+  * [Share](../apis/share.md)
+  * [Status Bar](../apis/status-bar.md)
+  * [Storage](../apis/storage.md)
+  * [Text Zoom](../apis/text-zoom.md)
+  * [Toast](../apis/toast.md)
+* [Community Plugins](community.md)
+* [Cordova Plugins](cordova.md)
+* [Enterprise Plugins](enterprise.md)
 * Creating Plugins
   * [Overview](creating-plugins.md)
   * [Development Workflow](workflow.md)
@@ -11,6 +28,3 @@
   * [Android Guide](android.md)
   * [Web/PWA Guide](web.md)
   * [JavaScript Guide](js.md)
-* Official Plugins
-  * [Introduction](../apis/index.md)
-  * [Haptics](../apis/haptics/index.md)

@@ -7,7 +7,6 @@ import {
   matchAny,
 } from '@stencil/router';
 import { getPage } from './data.server/prismic';
-import state from './store';
 import { getDocsData } from './data.server/docs';
 import { getBlogData, getAllBlogData } from './data.server/blog';
 import { getDocsDataV2 } from './data.server/docs-v2';
@@ -100,8 +99,6 @@ Router.on('change', (newUrl, _oldUrl) => {
   (window as any).gtag('config', 'UA-44023830-42', {
     page_path: newUrl.pathname + newUrl.search,
   });
-
-  state.showTopBar = !newUrl.pathname.includes('/docs');
 
   // if (!oldUrl || oldUrl.pathname !== newUrl.pathname) {
   //   state.isLeftSidebarIn = false;

@@ -218,6 +218,7 @@ plugin-platforms {
     }
   }
 
+<<<<<<< HEAD
   td,
   th {
     border: 1px solid #eee;
@@ -231,11 +232,18 @@ plugin-platforms {
     min-width: 0;
     max-width: 100%;
     overflow-x: auto;
+=======
+  table {
+    border-collapse: collapse;
+    width: 100%;
+>>>>>>> f961e580e2dad48de3f263cf495388aeee3c3c52
 
     th {
+      font-size: 14px;
       text-align: left;
       padding: 4px;
     }
+
     td {
       font-size: 12px;
       line-height: 18px;
@@ -246,6 +254,13 @@ plugin-platforms {
 
       code {
         font-size: 12px;
+      }
+    }
+
+    tbody {
+      td,
+      th {
+        border-top: 1px solid #eee;
       }
     }
   }
@@ -280,6 +295,7 @@ plugin-platforms {
     min-height: 100%;
     padding-top: 100px;
 
+<<<<<<< HEAD
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -316,5 +332,26 @@ plugin-platforms {
 
   :not(pre) > code[class*="language-"], pre[class*="language-"] {
     background: rgb(245, 247, 250);
+=======
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  p,
+  ul,
+  ol,
+  table {
+    code {
+      padding: 1px 4px 2px;
+      background-color: #ecf4fb;
+      border-radius: 3px;
+    }
+  }
+
+  .btn.pull-left,
+  .btn.pull-right {
+    margin: 64px 8px 20px;
+>>>>>>> f961e580e2dad48de3f263cf495388aeee3c3c52
   }
 }

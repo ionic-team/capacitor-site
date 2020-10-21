@@ -13,7 +13,7 @@ interface ItemOffset {
 })
 export class InPageNavigtion {
   @Prop() headings: HeadingData[] = [];
-  @Prop() repoFileUrl: string = '';
+  @Prop() editUrl: string = '';
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
@@ -30,8 +30,8 @@ export class InPageNavigtion {
 
     const h1 = this.headings.find(heading => heading.level === 1);
 
-    const submitEditLink = this.repoFileUrl ? (
-      <a class="submit-edit-link" target="_blank" href={this.repoFileUrl}>
+    const submitEditLink = this.editUrl ? (
+      <a class="submit-edit-link" target="_blank" href={this.editUrl}>
         {ghIcon()}
         <span>Submit an edit</span>
       </a>

@@ -18,6 +18,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
     margin-inline-start: -16px;
     margin-block-end: 40px;
   }
+<<<<<<< HEAD
 
   plugin-cards .card {
     margin-block-start: var(--space-6);
@@ -29,6 +30,20 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
     box-shadow: var(--elevation-5);    
 
     transition: transform .2s ease-out, box-shadow .2s ease-out;
+=======
+  .ui-card p {
+    padding: 0;
+    margin: 10px 20px 20px 20px;
+  }
+  .ui-card p.title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 20px 0 20px;
+  }
+  .ui-card .title a {
+    color: black !important;
+    border: 0;
+>>>>>>> f961e580e2dad48de3f263cf495388aeee3c3c52
   }
   plugin-cards .card p {
     margin-block-end: 0;
@@ -44,6 +59,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
     }   
   }
 </style>
+<<<<<<< HEAD
 <plugin-cards>
   <a class="card" href="/docs/apis">
     <img
@@ -62,9 +78,23 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
     <p class="ui-paragraph-5">Dive into Ionic Framework’s beautifylly designed UI component library.</p>
   </a>
 </plugin-cards>
+=======
+<ui-grid>
+  <ui-card class="ui-col ui-col-12 ui-col-xs-12 ui-col-sm-6 ui-col-md-6">
+    <img src="/assets/img/docs/core-plugins.png">
+    <p class="title"><a href="/docs/apis">Official Plugins</a></p>
+    <p>Official Plugins are maintained by the Capacitor team.</p>
+  </ui-card>
+  <ui-card class="ui-col ui-col-12 ui-col-xs-12 ui-col-sm-6 ui-col-md-6">
+    <img src="/assets/img/docs/community-plugins.png">
+    <p class="title"><a href="/docs/plugins/community">Community Plugins</a></p>
+    <p>Community Plugins are maintained by the <a href="https://github.com/capacitor-community">Capacitor Community</a>.</p>
+  </ui-card>
+</ui-grid>
+>>>>>>> f961e580e2dad48de3f263cf495388aeee3c3c52
 
-With Plugins, a web app can access the full power of the Native APIs, doing everything a traditional native app can. Plugins are especially great for wrapping common native operations that might use very different APIs across platforms, while exposing a consistent, cross-platform API to JavaScript.
+Web apps can access the full power of Native APIs with plugins. Plugins wrap common native operations that might use very different APIs across platforms while exposing a consistent, cross-platform API to JavaScript.
 
-Additionally, the Plugin capability in Capacitor makes it possible for teams with a mix of traditional native developers and web developers to work together on different parts of the app.
+Additionally, the plugin capability in Capacitor makes it possible for teams with a mix of traditional native developers and web developers to work together on different parts of the app.
 
-Capacitor auto generates JavaScript hooks on the client, so most plugins only need to build a native Swift/Obj-C plugin for iOS, and/or a Java one for Android. Of course, adding custom JavaScript for a plugin is possible, and is just like providing a JavaScript npm package.
+Capacitor automatically generates JavaScript hooks on the client, so most plugins only need to use Swift/Obj-C for iOS and/or Java/Kotlin for Android. Of course, adding custom JavaScript for a plugin is also possible.

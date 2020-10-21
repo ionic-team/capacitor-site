@@ -64,8 +64,8 @@ export namespace Components {
         "placeholder": string;
     }
     interface InPageNavigation {
+        "editUrl": string;
         "headings": HeadingData[];
-        "repoFileUrl": string;
     }
     interface LandingPage {
         "data": any;
@@ -369,8 +369,8 @@ declare namespace LocalJSX {
         "placeholder"?: string;
     }
     interface InPageNavigation {
+        "editUrl"?: string;
         "headings"?: HeadingData[];
-        "repoFileUrl"?: string;
     }
     interface LandingPage {
         "data"?: any;

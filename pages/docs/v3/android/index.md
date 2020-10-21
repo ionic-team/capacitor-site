@@ -8,39 +8,30 @@ contributors:
 
 # Capacitor Android Documentation
 
-Capacitor features a native Android runtime that enables developers to communicate between JavaScript and Native Java for Android code. 
+Capacitor features a native Android runtime that enables developers to communicate between JavaScript and Native Java or Kotlin code.
 
-Capacitor Android apps are configured and managed through Android Studio (generally). Follow these guides for more information on each topic:
+Capacitor Android apps are configured and managed through Android Studio.
 
-## Getting Started
+## Android Support
 
-Developing Android apps requires some Android SDK dependencies to be installed. Make sure to install the Android SDK Tools (26.0.1 or greater required), and a version of
-the Android SDK Platforms for API 21 or greater.
+API 21+ (Android 5 or later) is supported, which represents [over 95% of the Android market](https://gs.statcounter.com/android-version-market-share/mobile-tablet/worldwide). Capacitor requires an Android WebView with Chrome version 50 or later. On Android 5 and 6, Capacitor uses the [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview). On Android 7+, [Google Chrome](https://play.google.com/store/apps/details?id=com.android.chrome) is used.
 
-You can install these easily by opening Android Studio, and going to Tools -> Android -> SDK Manager from the top menu bar:
+## Adding the Android Platform
 
-![SDK Platforms](/assets/img/docs/android/sdk-platforms.png)
-![SDK Tools](/assets/img/docs/android/sdk-tools.png)
+First, install the `@capacitor/android` package.
 
-### Creating Android Project
+```bash
+npm install @capacitor/android
+```
 
-By default, an Android project is created for every Capacitor project. If you are adding Capacitor to an existing
-project, you can manually add the Android project using:
+Then, add the Android platform and sync your app. [Learn more about `sync`](/docs/reference/cli#sync).
 
 ```bash
 npx cap add android
-npx cap sync
+npx cap sync android
 ```
 
-The `sync` command updates dependencies, and copies any web assets to your project. You can also run:
-
-```bash
-npx cap copy
-```
-
-To copy web assets only, which is faster if you know you don't need to update native dependencies.
-
-### Opening Android Project
+## Opening the Android Project
 
 To open the project in Android Studio, run:
 
@@ -48,25 +39,41 @@ To open the project in Android Studio, run:
 npx cap open android
 ```
 
-### Running Your App
-> __Note:__ Currently to use an Android Emulator you must use a system image of at least Android version 7.0 on API 24. This is due to the System WebView version not being able to be updated on emulators. Physical devices should work as low as Android 5.0 (API 21) as long as their System WebView is updated.
+Alternatively, you can open Android Studio and import the `android/` directory as an Android Studio project.
 
-Once Android Studio is open, you should be able to run your app on a device or emulator. Go to Run or Debug in the Run menu:
+## Running Your App
+
+You can either run your app on the command-line or with Android Studio.
+
+> To use an Android Emulator you must use an API 24+ system image. The System WebView does not automatically update on emulators. Physical devices should work as low as API 21 as long as their System WebView is updated.
+
+### Running on the Command-Line
+
+To run the project on a device or emulator, run:
+
+```bash
+npx cap run android
+```
+
+The command will prompt you to select a target. [Learn more about `run`](/docs/reference/cli#run).
+
+### Running with Android Studio
+
+In Android Studio, first select the device or emulator and then click the run or debug button to run your app. Unless you're debugging Java or Kotlin code, the run button is preferred.
 
 ![Running App](/assets/img/docs/android/running.png)
 
-### Troubleshooting
+## Troubleshooting
 
-If you encountered any issue above, please let us know by filing an issue on the repo, and then consult the [Troubleshooting Android](/docs/android/troubleshooting) page for solutions to common Android problems.
+If you encountered any issues while getting started, you can consult the [Android Troubleshooting Guide](/docs/android/troubleshooting). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
 
-### Next Steps
+## Next Steps
 
 If your app ran you are now ready to continue developing and building your app. Use the various APIs available, Capacitor or Cordova plugins, or custom native code to build out the rest of your app.
 
 ## Further Reading
 
-Follow these Android-specific guides for more information on setting permissions for your app, updating dependencies, building
-plugins, and more:
+Follow these Android-specific guides for more information on setting permissions for your app, updating dependencies, building plugins, and more:
 
 [Configuring and setting permissions for Android &#8250;](/docs/android/configuration)
 

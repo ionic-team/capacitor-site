@@ -37,7 +37,7 @@ The new Capacitor mission is to help _all_ web developers build cross-platform a
 
 One of the biggest challenges with an ecosystem like Capacitor (and like any other popular open source ecosystem) is making sure the community can fill in all the gaps left by the core team with plugins, add-ons, and more.
 
-Yesterday, web announced a new [Capacitor Community](https://github.com/capacitor-community) GitHub org and NPM scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.
+Yesterday, web announced a new [Capacitor Community](https://github.com/capacitor-community) GitHub org and npm scope to curate the best community-supported Capacitor plugins and encourage more developers to build plugins.
 
 To start, we have a number of great plugins and many are in development. Check out the [Http](https://github.com/capacitor-community/http), [Contacts](https://github.com/capacitor-community/contacts), and [Apple Sign In](https://github.com/capacitor-community/apple-sign-in) plugins. We've also started moving the [Electron](https://github.com/capacitor-community/electron) platform to the community org.
 

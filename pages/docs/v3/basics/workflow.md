@@ -8,69 +8,70 @@ contributors:
 
 # Capacitor Workflow
 
-The Capacitor workflow involves a few consistent tasks:
+Working with Capacitor involves several key additions to your workflow.
 
-## 1. Develop and build your Web App
+## Develop and build your Web App
 
 Capacitor turns your web app into a native binary for each platform. Thus, much of your work will consist of developing and then building a mobile-focused web app.
 
 You will interact with the native platform underneath using Capacitor's plugins (such as [Camera](/docs/apis/camera)), or by using existing Cordova plugins with Capacitor's [Cordova Compatibility](/docs/cordova).
 
-As a final step, you will build your application using a command similar to:
+To deploy your web app to native devices, you will first need to build the web assets into an output directory. Consult your JavaScript framework's documentation for the exact command. For most, it's `npm run build`.
+
+[Learn more about building your app &#8250;](/docs/basics/building-your-app)
+
+## Sync your Project
+
+You may wish to sync your web app with your native project(s) in the following circumstances:
+
+* After you install a new Capacitor plugin.
+* Before you run your project using a Native IDE.
+* When you want to manually copy web assets into your native project(s).
+* When you clone your project.
+* When you want to setup or reconfigure the native project(s) for Capacitor.
+* When you want to install or update native dependencies.
+
+To sync your project, run:
 
 ```bash
-npm run build
+npx cap sync
 ```
 
-If you are using a framework, follow your framework's build process. If, for example, you are using [Ionic](https://ionicframework.com/), this would be:
+[Learn more about `sync` &#8250;](/docs/reference/cli#sync)
 
-```bash
-ionic build
-```
+## Run your Project
 
-## 2. Copy your Web Assets
+There are a few ways to deploy your project on native devices, depending on your use case. Most common is on the command-line with `npx cap run`.
 
-When you are ready to run your app natively on a device or in a simulator, copy your built web assets using:
+[Learn more about running your app on iOS &#8250;](/docs/ios#running-your-app)
+[Learn more about running your app on Android &#8250;](/docs/android#running-your-app)
 
-```bash
-npx cap copy
-```
+## Open your Native IDE
 
-## 3. Open your Native IDE
+You may wish to open your project in a Native IDE in the following circumstances:
 
-Capacitor uses the Native IDEs to build, simulate, and run your app. To open one, run:
+* When you want to run your project on a native device using the IDE.
+* When you want to debug native Java/Kotlin or Swift/Objective-C code.
+* When you want to work on the native side of your app.
+* When you want to compile a release build for the app store.
 
-```bash
-npx cap open
-```
+[Learn more about opening your app in Xcode &#8250;](/docs/ios#opening-the-ios-project)
+[Learn more about opening your app in Android Studio &#8250;](/docs/android#opening-the-android-project)
 
-## 4. Update the native project
-
-In some cases, the Capacitor app needs to be updated, such as when installing new plugins.
-
-To install new plugins (including Cordova ones), run:
-
-```bash
-npm install really-cool-plugin
-npx cap update
-```
-
-## 5. Updating Capacitor
-
-To check if there are any new updates to Capacitor itself, run `npx cap doctor` to print out the current installed dependencies as well view the latest available.
+## Updating Capacitor
 
 To update Capacitor Core and CLI:
 
 ```bash
-npm install @capacitor/cli@latest
-npm install @capacitor/core@latest
+npm install @capacitor/cli@3
+npm install @capacitor/core@3
 ```
 
 To update any or all of the platforms you are using:
 
 ```bash
-npm install @capacitor/ios@latest
-npm install @capacitor/android@latest
+npm install @capacitor/ios@3
+npm install @capacitor/android@3
 ```
 
-Note: If you don't want to risk introducing breaking changes, use `npm update @capacitor/package-name` instead of `@latest` as `update` respects semantic versioning.
+> You can subscribe to the [Capacitor repo](https://github.com/ionic-team/capacitor) to be notified of new releases. At the top of the repository index, click **Watch** -> **Releases only**.

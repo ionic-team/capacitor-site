@@ -49,7 +49,7 @@ npx cap add ios
 npx cap add android
 ```
 
-Both android and ios folders at the root of the project are created. These are entirely separate native project artifacts that should be considered part of your app (i.e., check them into source control, edit them in their own IDEs, etc.). Additionally, any Cordova plugins that were previously added to the project via `npm install` (located under `dependencies` in `package.json`) are automatically installed by Capacitor into each new native project (minus any [incompatible ones](/docs/cordova/known-incompatible-plugins)):
+Both android and ios folders at the root of the project are created. These are entirely separate native project artifacts that should be considered part of your app (i.e., check them into source control, edit them in their own IDEs, etc.). Additionally, any Cordova plugins that were previously added to the project via `npm install` (located under `dependencies` in `package.json`) are automatically installed by Capacitor into each new native project (minus any [incompatible ones](/docs/plugins/cordova#known-incompatible-plugins)):
 
 ```json
 "dependencies": {
@@ -70,14 +70,14 @@ If you've previously created icon and splash screen images, they can be found in
 First, install `cordova-res`:
 
 ```bash
-$ npm install -g cordova-res
+npm install -g cordova-res
 ```
 
 Next, run the following to regenerate the images and copy them into the native projects:
 
 ```bash
-$ cordova-res ios --skip-config --copy
-$ cordova-res android --skip-config --copy
+cordova-res ios --skip-config --copy
+cordova-res android --skip-config --copy
 ```
 
 [Complete details here](https://github.com/ionic-team/cordova-res#capacitor).
@@ -90,7 +90,7 @@ Next, review all of Capacitor's [core plugins](/docs/apis) as well as [community
 
 Some plugins may not match functionality entirely, but based on the features you need that may not matter.
 
-Note that any plugins that are [incompatible or cause build issues](/docs/cordova/known-incompatible-plugins) are automatically skipped.
+Note that any plugins that are [incompatible or cause build issues](/docs/plugins/cordova#known-incompatible-plugins) are automatically skipped.
 
 ### Remove Cordova Plugin
 
@@ -170,4 +170,4 @@ Once you've tested that all migration changes have been applied and the app is w
 
 ## Next Steps
 
-This is just the beginning of your Capacitor journey. Learn more about [using Cordova plugins](/docs/cordova/using-cordova-plugins) in a Capacitor project or more details on the Capacitor [development workflow](/docs/basics/workflow).
+This is just the beginning of your Capacitor journey. Learn more about [using Cordova plugins](/docs/plugins/cordova) in a Capacitor project or more details on the Capacitor [development workflow](/docs/basics/workflow).

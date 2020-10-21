@@ -11,11 +11,11 @@ Apache Cordova (and Adobe PhoneGap), created in 2008, is an open source project 
 
 For more details on the history of Cordova and more details on how it works, [please see here](https://ionicframework.com/resources/articles/what-is-apache-cordova).
 
-## Why Create a New Project?
+## Why was Capacitor created?
 
-The open source space is filled with new projects that build on top of older projects, making tangible improvements that can't be done without radically changing the original product. This is what Capacitor would have required. The Ionic team felt like this wasn't possible with Cordova for technical and political reasons. Whether that is right or wrong, that is the conclusion the team came to. That said, Ionic still uses Cordova heavily and will continue to invest in the platform for a long time to come.
+The open source space is filled with new projects that build on top of the ideas of older projects, making tangible improvements that can't be done without radically changing the original product. The Ionic team didn't want to try to force these radical changes into Cordova for technical and political reasons.
 
-On the plus side, Ionic now controls almost all of its stack. When you build an Ionic app and use Capacitor, we control the native runtime layer, the UI controls, and the “framework” used to build the controls ([Stencil](https://stenciljs.com/)). The only part we don’t control is the frontend framework you use on top (Angular, React, Vue, or nothing). This is significant: If there’s an issue in any part of the stack that we control, we can fix it right away. Capacitor has already proven to be a worthwhile investment - it’s enabling us to build a stronger Ionic and focus on what we do uniquely well.
+One benefit of the Capacitor project is that the Ionic team has more control over the stack. When you build an app with Ionic Framework and Capacitor, the Ionic team are the maintainers of the native runtime layer, the UI components, and the toolchain that created the components ([Stencil](https://stenciljs.com/)). This is significant because the Ionic team can make fixes much quicker and offer a much more cohesive stack.
 
 ## Differences between Capacitor and Cordova
 
