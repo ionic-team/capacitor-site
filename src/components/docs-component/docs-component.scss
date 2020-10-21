@@ -39,7 +39,7 @@ site-header {
 }
 
 site-backdrop {
-  z-index: 2;
+  z-index: 1001;
 }
 
 .content-wrapper {
@@ -108,7 +108,7 @@ plugin-platforms {
   }
 }
 
-.doc-content {  
+.measure-lg {  
   --h1-color: var(--c-carbon-100);
   --h2-color: var(--c-carbon-100);
   --h3-color: var(--c-carbon-100);
@@ -144,7 +144,7 @@ plugin-platforms {
     }
   }
 
-  img {
+  > img {
     max-width: 100%;
     margin: 1.6em 0;
   }
@@ -168,28 +168,42 @@ plugin-platforms {
     padding: 0;
   }
 
-  .ui-heading-1 {
+  > .ui-heading-1 {
     margin-block-start: var(--space-9);
+  }
+  .ui-heading-1 {    
     margin-block-end: var(--space-5);
   }
 
+  > .ui-heading-2,
+  > .ui-heading-3 {
+    padding-block-start: 52px;
+  }
+
   .ui-heading-2,
-  .ui-heading-3 {
-    margin-top: -6px;
-    padding-top: 52px;
+  .ui-heading-3 {    
     margin-block-end: var(--space-3);
   }
 
+  > .ui-heading-4 {
+    padding-block-start: 32px;
+  }
   .ui-heading-4 {
-    padding-top: 32px;
+    
   }
 
-  .ui-heading-5 {
+  > .ui-heading-5 {
     padding-top: 24px;
   }
+  .ui-heading-5 {
+    
+  }
 
-  .ui-heading-6 {
+  > .ui-heading-6 {
     padding-top: 16px;
+  }
+  .ui-heading-6 {
+
   }
 
 

@@ -42,7 +42,7 @@ Then, initialize Capacitor using the CLI questionnaire:
 npx cap init
 ```
 
-> The `npx cap` command is how Capacitor is executed locally on the command-line in your project. [Learn more about the Capacitor CLI](/docs/reference/cli).
+> The `npx cap` command is how Capacitor is executed locally on the command-line in your project. [Learn more about the Capacitor CLI](/docs/cli).
 
 ## Where to go next
 
