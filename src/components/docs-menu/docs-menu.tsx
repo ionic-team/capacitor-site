@@ -140,7 +140,7 @@ export class SiteMenu implements ComponentInterface {
                                       childItem.url === this.activePath,
                                   }}
                                 >
-                                  {childItem.text}
+                                  <span class="bump-up">{childItem.text}</span>
                                 </a>
                               ) : (
                                 <a

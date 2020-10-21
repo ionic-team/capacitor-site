@@ -109,7 +109,7 @@ export class LandingPage {
                 {...href('/docs/getting-started')}
                 class="primary"
               >
-                {primary} <span class="arrow">-&gt;</span>
+                {primary} <span class="arrow"> -&gt;</span>
               </Button>
               <Button
                 kind="round"
@@ -123,7 +123,7 @@ export class LandingPage {
             </div>
             <a class="link | ui-paragraph-4" href="/cordova">
               {top__link}
-              <span class="arrow">-&gt;</span>
+              <span class="arrow"> -&gt;</span>
             </a>
             <PrismicResponsiveImage
               loading="eager"
@@ -543,7 +543,7 @@ public class MyAwesomePlugin: CAPPlugin {
               color="cyan"
             >
               {primary}
-              <span class="arrow">-&gt;</span>
+              <span class="arrow"> -&gt;</span>
             </Button>
             <Button
               {...href('/docs/plugins')}

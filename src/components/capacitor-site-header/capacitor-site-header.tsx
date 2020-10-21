@@ -6,7 +6,6 @@ import {
   Prop,
   State,
   h,  
-  Listen,
 } from '@stencil/core';
 import { href } from '@stencil/router'
 import Router, { docsVersionHref } from '../../router';
@@ -24,38 +23,22 @@ export class DocsHeader implements ComponentInterface {
   @Prop() template: DocsTemplate;
   @Prop() includeLogo = true;
   @Prop() includeBurger = false;
-  @Prop() collapsePoint: 'xs' | 'sm' | 'md' | 'lg' = 'md';
 
   @State() collapsed = false;
   @State() expanded = false;
   @State() scrolled = false;
-
-  private collapsePointList = ['xs', 'sm', 'md', 'lg'];
+  
   private links: { [key: string]: HTMLElement } = {};
 
   componentWillLoad() {
-    Router.on('change', (newRoute) => {
-      this.handleActive(newRoute.pathname);
-    });    
+    this.handleActive(globalThis.location.pathname);
     this.createObserver();
-    this.handleResize();
   }
 
-  componentDidLoad() {    
-    this.handleActive(window.location.pathname);
+  componentWillUpdate() {
+    this.handleActive(globalThis.location.pathname);
   }
 
-  @Listen('resize', { target: 'window' })
-  handleResize() {
-    requestAnimationFrame(() => {
-      const style = window.getComputedStyle(this.elm);
-      const index = this.collapsePointList.indexOf(this.collapsePoint);
-      const breakpoint = style.getPropertyValue(`--breakpoint-${index}`)
-        .replace('px', '');
-
-      this.collapsed = !(window.innerWidth > +breakpoint);
-    })
-  }
 
   createObserver() {
     const opts = {
@@ -95,13 +78,13 @@ export class DocsHeader implements ComponentInterface {
   toggleExpanded = () => (this.expanded = !this.expanded);
 
   render() {
+    console.log('rendered');
     const { expanded, template, includeLogo, includeBurger } = this;
 
     return (
       <Host
         class={{
           scrolled: this.scrolled,
-          collapsed: this.collapsed
         }}
       >
         <site-backdrop

@@ -93,7 +93,6 @@ export namespace Components {
     interface PreFooter {
     }
     interface SiteHeader {
-        "collapsePoint": 'xs' | 'sm' | 'md' | 'lg';
         "includeBurger": boolean;
         "includeLogo": boolean;
         "template": DocsTemplate;
@@ -398,7 +397,6 @@ declare namespace LocalJSX {
     interface PreFooter {
     }
     interface SiteHeader {
-        "collapsePoint"?: 'xs' | 'sm' | 'md' | 'lg';
         "includeBurger"?: boolean;
         "includeLogo"?: boolean;
         "template"?: DocsTemplate;

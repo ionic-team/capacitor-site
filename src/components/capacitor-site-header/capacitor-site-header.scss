@@ -11,7 +11,7 @@
   top: 0;
   background: #fff;
   transform: translate(0px);
-  z-index: 998;
+  z-index: 1001;
   border-block-end: 1px solid rgba(0, 21, 58, 0.06);
 
   transition: box-shadow .2s ease-out;
@@ -29,7 +29,7 @@
 
 site-backdrop {    
   @media screen and (min-width: $screen-md) {
-    z-index: 100000;
+    z-index: 1000;
     background: rgba(0,0,0,0);
   }
 }
@@ -42,7 +42,7 @@ header {
 }
 
 app-menu-toggle {
-  margin-inline-end: var(--spacing-x);  
+  margin-inline-end: var(--space-3);  
 }
 
 .routes {
@@ -150,7 +150,10 @@ more-button {
   margin-inline-start: var(--spacing-x);  
 }
 
-:host(.collapsed) {
+@media screen and (max-width: $screen-md-max) {
+  .separator {
+    display: none;
+  }
   .routes {
     background: var(--c-background);
     width: calc(100% - 24px);

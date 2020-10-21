@@ -264,6 +264,12 @@ docs-search {
 
       .ds-dropdown-menu {
 
+        .ds-suggestions {
+          border-inline-start: 14px solid #fff;
+          border-inline-end: 12px solid #fff;
+          border-block-start: 24px solid #fff;
+        }
+
         .ds-suggestion {      
           + .ds-suggestion {
             margin-block-start: 24px;
