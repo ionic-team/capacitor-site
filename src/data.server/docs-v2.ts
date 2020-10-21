@@ -3,25 +3,15 @@ import {
   getPageNavigation,
   parseMarkdown,
   parseTableOfContents,
-  PageNavigation,
-  MarkdownResults,
   TableOfContents,
 } from '@stencil/ssg/parse';
 import { join } from 'path';
 import { getGithubData } from './github';
+import type { DocsData } from './docs'
 
 const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
 const docsDir = join(pagesDir, 'docs');
-
-export interface DocsData extends MarkdownResults {
-  contributors?: string[];
-  lastUpdated?: string;
-  navigation?: PageNavigation;
-  repoFileUrl?: string;
-  tableOfContents?: TableOfContents;
-  template?: DocsTemplate;
-}
 
 export type DocsTemplate = 'guide' | 'plugins' | 'reference';
 
@@ -45,7 +35,7 @@ export const getDocsDataV2: MapParamData = async ({ id }) => {
   const githubData = await getGithubData(repoRootDir, results.filePath);
 
   results.lastUpdated = githubData.lastUpdated;
-  results.repoFileUrl = githubData.repoFileUrl;
+  results.editUrl = githubData.repoFileUrl;
 
   results.contributors = [];
   if (Array.isArray(githubData.contributors)) {

@@ -18,7 +18,7 @@ export interface DocsData extends MarkdownResults {
   contributors?: string[];
   lastUpdated?: string;
   navigation?: PageNavigation;
-  repoFileUrl?: string;
+  editUrl?: string;
   tableOfContents?: TableOfContents;
   template?: DocsTemplate;
 }
@@ -43,7 +43,11 @@ export const getDocsData: MapParamData = async ({ id }) => {
   const githubData = await getGithubData(repoRootDir, results.filePath);
 
   results.lastUpdated = githubData.lastUpdated;
-  results.repoFileUrl = githubData.repoFileUrl;
+  results.editUrl = githubData.repoFileUrl;
+
+  if (results.attributes?.editUrl) {
+    results.editUrl = results.attributes.editUrl;
+  }
 
   results.contributors = [];
   if (Array.isArray(githubData.contributors)) {
