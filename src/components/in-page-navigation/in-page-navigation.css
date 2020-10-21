@@ -2,13 +2,9 @@ in-page-navigation {
   flex: 0 0 240px;
   padding-top: 26px;
   padding-left: 16px;
-  overflow: visible;
   letter-spacing: 0;
 }
 
-in-page-navigation .sticky {
-  overflow: hidden;
-}
 
 in-page-navigation internal-ad {
   visibility: hidden;

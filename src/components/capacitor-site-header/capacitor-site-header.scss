@@ -27,13 +27,6 @@
   }
 }
 
-site-backdrop {    
-  @media screen and (min-width: $screen-md) {
-    z-index: 1000;
-    background: rgba(0,0,0,0);
-  }
-}
-
 
 header {  
   display: flex;
@@ -49,19 +42,15 @@ app-menu-toggle {
   margin-inline-end: var(--space-3);  
 }
 
+
 .routes {
   display: flex;
 
   transition: transform .2s ease-out,
               opacity .2s ease-out,
               box-shadow .2s ease-out;
-}
 
-
-nav.links {
-  display: flex;
-
-  .header {
+  &__header {
     display: none;
 
     justify-content: space-between;
@@ -159,6 +148,8 @@ more-button {
     display: none;
   }
   .routes {
+    flex-direction: column;
+
     background: var(--c-background);
     width: calc(100% - 24px);
     max-width: 353px;
@@ -173,74 +164,67 @@ more-button {
 
     transform: translateY(-10px);
     opacity: 0;
-
     pointer-events: none;
-    
-    
-    nav.links {
-      width: 100%;
-      flex-direction: column;
 
-      .header {
+    &__header {
+      display: flex;
+
+      a.logo-wrapper {  
+        padding: 0;
         display: flex;
+  
+        .capacitor-logo {
+          margin-inline-start: 10px;
+          margin-inline-end: 20px;
+        }
 
-        a.logo-wrapper {  
-          padding: 0;
-          display: flex;
-    
-          .capacitor-logo {
-            margin-inline-start: 10px;
-            margin-inline-end: 20px;
-          }
-
-          &:hover, &:active, &:focus {
-            opacity: 1;
-          }
+        &:hover, &:active, &:focus {
+          opacity: 1;
         }
       }
+    }
 
-      &::before {
-        content: '';
-        position: absolute;
-        height: 1px;
-        left: 0;
-        right: 0;
-        background: var(--c-indigo-20);
-        bottom: 154px;
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      left: 0;
+      right: 0;
+      background: var(--c-indigo-20);
+      bottom: 154px;
+    }
+
+    a {
+      display: block;
+      
+      margin-inline-start: 0px;
+      padding: 7px 10px 8px;
+
+      border-radius: var(--radius-1);
+
+      + a {
+        margin-block-start: var(--space-0);
       }
 
-      a {
-        display: block;
-        
-        margin-inline-start: 0px;
-        padding: 7px 10px 8px;
+      &:nth-of-type(3) {
+        margin-block-end: 25px;
 
-        border-radius: var(--radius-1);
-
-        + a {
-          margin-block-start: var(--space-0);
+        &::after {
+          content: '';
+          display: none;
         }
-
-        &:nth-of-type(3) {
-          margin-block-end: 25px;
-
-          &::after {
-            content: '';
-            display: none;
-          }
-        }
-    
-        &.active {
-          color: var(--c-capacitor-blue);
-          background: var(--c-cyan-0);
-          font-weight: 500;
-        }
-    
-        // &:hover, &:active, &:focus {
-        //   opacity: var(--link-hover-opacity);
-        // }
       }
-    }    
+  
+      &.active {
+        color: var(--c-capacitor-blue);
+        background: var(--c-cyan-0);
+        font-weight: 500;
+      }
+  
+      // &:hover, &:active, &:focus {
+      //   opacity: var(--link-hover-opacity);
+      // }
+    }
   }
   .routes.expanded {
     transform: translateY(0px);

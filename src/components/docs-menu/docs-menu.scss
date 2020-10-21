@@ -1,4 +1,4 @@
-@use '../../global/variables';
+@use '../../global/vars' as *;
 
 :host {
   --menu-width: 280px;
@@ -13,7 +13,7 @@
 
   z-index: 999;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $screen-xs-max) {
     position: fixed;
     top: 0;
     left: 0;
@@ -69,9 +69,8 @@ span {
   border-block-end: 1px solid rgba(0, 21, 58, 0.06);
 
   height: 64px;
-  width: calc(100% + 1px);
 
-  padding: 0 15px 0 18px;
+  padding: 0 var(--docs-container);
 }
 
 .menu-header__logo-link,
@@ -306,6 +305,10 @@ span {
   overflow: hidden;
 }
 
+.menu-list li ul {
+  transition: 80ms height;
+}
+
 .menu-list ul li + li{
   margin-block-start: 2px;
 }
@@ -333,5 +336,9 @@ span {
 }
 
 .menu-list .collapsed li {
+  height: 0;
+}
+
+.menu-list .collapsed ul {
   height: 0;
 }

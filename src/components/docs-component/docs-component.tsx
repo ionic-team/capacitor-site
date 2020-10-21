@@ -96,7 +96,10 @@ export class DocsComponent implements ComponentInterface {
                 <div class="measure-lg">
                   <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />                  
                   <lower-content-nav navigation={data.navigation} />
-                  <contributor-list contributors={data.contributors} />
+                  <contributor-list
+                    contributors={data.contributors}
+                    repoFileUrl={data.repoFileUrl}
+                  />
                 </div>
               </div>
 

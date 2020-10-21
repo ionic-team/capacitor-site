@@ -35,10 +35,10 @@ export const getDocsData: MapParamData = async ({ id }) => {
     beforeHtmlSerialize(frag: DocumentFragment) {
       const headings = frag.querySelectorAll('h1, h2, h3, h4, h5, h6');
       const paragraphs = frag.querySelectorAll(
-        'p:not(:first-of-type):not([class*="ui-paragraph"]):not([class*="ui-heading"])'
+        'p:not([class*="ui-paragraph"]):not([class*="ui-heading"])'
       );
-      const introParagraphs = frag.querySelectorAll(
-        'p:first-of-type:not([class*="ui-paragraph"]):not([class*="ui-heading"])'
+      const listsItems = frag.querySelectorAll(
+        'ul li, ol li'
       );
 
       headings.forEach(heading => {
@@ -55,10 +55,10 @@ export const getDocsData: MapParamData = async ({ id }) => {
         paragraph.classList.add(`ui-paragraph-3`);    
       });
 
-      introParagraphs.forEach(paragraph => {
+      listsItems.forEach(paragraph => {
         paragraph.classList.add(`ui-paragraph`);
         paragraph.classList.add(`ui-paragraph--prose`);
-        paragraph.classList.add(`ui-paragraph-2`);    
+        paragraph.classList.add(`ui-paragraph-3`);    
       });
     }
   });

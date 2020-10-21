@@ -1,4 +1,5 @@
 @use 'vars';
+@use 'prism' as *;
 
 span, a, sup, svg {
   display: inline-block;
@@ -11,6 +12,10 @@ a {
 body {
   font-family: var(--f-family-text);
   margin: 0;
+}
+
+html, body {
+  scroll-padding-top: 80px;
 }
 
 img {

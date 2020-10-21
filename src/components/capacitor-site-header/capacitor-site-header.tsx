@@ -89,6 +89,7 @@ export class DocsHeader implements ComponentInterface {
         <site-backdrop
           visible={expanded}
           onClick={() => this.toggleExpanded()}
+          mobileOnly
         />
 
         <header>
@@ -104,75 +105,74 @@ export class DocsHeader implements ComponentInterface {
           <div class="docs-search-wrapper">
             <docs-search />
           </div>
-          
-          <div
+                          
+          <nav
             class={{
               routes: true,
               expanded: this.expanded,
-              
-            }}          
-          >                   
-            <nav class="links">
-              <div class="header">
-                <a class="logo-wrapper" {...href('/')}>{capacitorLogo()}</a>
-                <button class="close" aria-label="close">
-                  <svg onClick={this.toggleExpanded} width="10" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 9L1 1M9 1L1 9" stroke="#B2BECD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-
-              <a
-                {...href(docsVersionHref('/docs'))}
-                class={{
-                  'ui-paragraph-4': true,
-                  active: template === 'docs'
-                }}
-              >
-                Docs
+            }}
+          >
+            <div class="routes__header">
+              <a class="logo-wrapper" {...href('/')}>
+                {capacitorLogo()}
               </a>
-              <a
-                {...href(docsVersionHref('/docs/plugins'))}
-                class={{
-                  'ui-paragraph-4': true,
-                  active: template === 'plugins'
-                }}
-              >
-                Plugins
-              </a>
-              <a
-                {...href(docsVersionHref('/docs/cli'))}
-                class={{
-                  'ui-paragraph-4': true,
-                  active: template === 'cli'
-                }}
-              >
-                CLI
-              </a>
-              <div class="separator"></div>
-              <a
-                {...href('/community')}
-                class="ui-paragraph-4"
-                ref={el => this.links.community = el}
-              >Community</a>
-              <a
-                {...href('/blog')}
-                class="ui-paragraph-4"
-                ref={el => this.links.blog = el}
-              >Blog</a>
-              <a 
-                class="external | ui-paragraph-4"
-                target="_blank"
-                href="https://ionicframework.com/native"
-                rel="noopener"
-              >
-                Enterprise
-                <svg width="8" height="9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M.5 8l7-7m0 0H2.95M7.5 1v4.55" stroke="#73849A" stroke-linecap="round" stroke-linejoin="round"/>
+              <button class="close" aria-label="close">
+                <svg onClick={this.toggleExpanded} width="10" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 9L1 1M9 1L1 9" stroke="#B2BECD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-              </a>
-            </nav>               
-          </div>  
+              </button>
+            </div>
+
+            <a
+              {...href(docsVersionHref('/docs'))}
+              class={{
+                'ui-paragraph-4': true,
+                active: template === 'docs'
+              }}
+            >
+              Docs
+            </a>
+            <a
+              {...href(docsVersionHref('/docs/plugins'))}
+              class={{
+                'ui-paragraph-4': true,
+                active: template === 'plugins'
+              }}
+            >
+              Plugins
+            </a>
+            <a
+              {...href(docsVersionHref('/docs/cli'))}
+              class={{
+                'ui-paragraph-4': true,
+                active: template === 'cli'
+              }}
+            >
+              CLI
+            </a>
+            <div class="separator"></div>
+            <a
+              {...href('/community')}
+              class="ui-paragraph-4"
+              ref={el => this.links.community = el}
+            >Community</a>
+            <a
+              {...href('/blog')}
+              class="ui-paragraph-4"
+              ref={el => this.links.blog = el}
+            >Blog</a>
+            <a 
+              class="external | ui-paragraph-4"
+              target="_blank"
+              href="https://ionicframework.com/native"
+              rel="noopener"
+            >
+              Enterprise
+              <svg width="8" height="9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M.5 8l7-7m0 0H2.95M7.5 1v4.55" stroke="#73849A" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </nav>               
 
           <div class="separator"></div>
 
@@ -192,6 +192,7 @@ export class DocsHeader implements ComponentInterface {
             <Button
               class="primary | ui-paragraph-4"
               anchor
+              {...href('/docs/getting-started')}
               kind="regular"
               color="cyan"
               size="md"

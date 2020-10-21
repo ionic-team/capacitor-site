@@ -37,8 +37,8 @@ export const getDocsDataV2: MapParamData = async ({ id }) => {
       const paragraphs = frag.querySelectorAll(
         'p:not(:first-of-type):not([class*="ui-paragraph"]):not([class*="ui-heading"])'
       );
-      const introParagraphs = frag.querySelectorAll(
-        'p:first-of-type:not([class*="ui-paragraph"]):not([class*="ui-heading"])'
+      const listsItems = frag.querySelectorAll(
+        'ul li, ol li'
       );
 
       headings.forEach(heading => {
@@ -55,10 +55,10 @@ export const getDocsDataV2: MapParamData = async ({ id }) => {
         paragraph.classList.add(`ui-paragraph-3`);    
       });
 
-      introParagraphs.forEach(paragraph => {
+      listsItems.forEach(paragraph => {
         paragraph.classList.add(`ui-paragraph`);
         paragraph.classList.add(`ui-paragraph--prose`);
-        paragraph.classList.add(`ui-paragraph-2`);    
+        paragraph.classList.add(`ui-paragraph-3`);    
       });
     }
   });

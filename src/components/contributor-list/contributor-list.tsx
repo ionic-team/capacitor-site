@@ -7,6 +7,7 @@ import { Component, Prop, Host, h } from '@stencil/core';
 })
 export class ContributorList {
   @Prop() contributors: string[];
+  @Prop() repoFileUrl: string;
 
   render() {
     const c = this.contributors;
@@ -34,6 +35,9 @@ export class ContributorList {
           ))}
         </ul>
         <Button
+          anchor
+          href={this.repoFileUrl}
+          target="_blank" rel="noopener"
           size="md"
           kind="round"
           color="cyan"

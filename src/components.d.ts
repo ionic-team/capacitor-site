@@ -45,6 +45,7 @@ export namespace Components {
     }
     interface ContributorList {
         "contributors": string[];
+        "repoFileUrl": string;
     }
     interface CordovaLandingPage {
     }
@@ -349,6 +350,7 @@ declare namespace LocalJSX {
     }
     interface ContributorList {
         "contributors"?: string[];
+        "repoFileUrl"?: string;
     }
     interface CordovaLandingPage {
     }
