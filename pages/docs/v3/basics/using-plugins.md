@@ -1,25 +1,25 @@
 ---
-title: Using Capacitor Plugins
-description: How to use Capacitor Plugins
+title: Using Plugins
+description: How to use plugins in Capacitor
 contributors:
   - jcesarmobile
   - dotNetkow
 ---
 
-# Using Capacitor Plugins
+# Using Plugins
 
-Capacitor ships with a number of built-in plugins, such as [Camera](/docs/apis/camera) and [Filesystem](/docs/apis/filesystem). 
+The Web View and the native app communicate through the use of Capacitor or Cordova plugins. Plugins provide native APIs such as camera, geolocation, and filesystem access to your web app.
 
-However, chances are your app will need to access more native functionality than provided out of the box in Capacitor. 
+## Capacitor Plugins
 
-Fortunately, you can quickly add your own native functionality by writing a small amount of native code then exposing it as a Capacitor plugin by following the [Plugin Guide](/docs/plugins).
+The Capacitor team maintains [a set of Capacitor plugins](/docs/apis) for commonly used APIs. There is also a large set of Capacitor plugins available from [the Capacitor Community](https://github.com/capacitor-community/).
 
-## Finding Plugins
+[Learn more about Capacitor plugins &#8250;](/docs/plugins)
 
-The community has built a number of plugins for various native functionality and you can easily add them to your app.
+## Cordova Plugins
 
-See our [Community Plugins](/docs/plugins/community) list for some options.
+Though Capacitor plugins are preferred, Cordova plugins are an option. Capacitor has compatibility with most Cordova plugins, but there may be additional steps when installing them.
 
-## Using Cordova and Ionic Native Plugins
+> If you use a Cordova plugin because you weren't able to find a suitable Capacitor plugin, would you mind [creating a proposal for the Capacitor Community](https://github.com/capacitor-community/proposals/)?
 
-Capacitor also supports a wide range of [Cordova plugins](/docs/cordova/using-cordova-plugins), so there are a lot to choose from.
+[Learn more about using Cordova plugins in Capacitor apps &#8250;](/docs/plugins/cordova)

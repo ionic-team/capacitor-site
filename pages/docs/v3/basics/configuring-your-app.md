@@ -8,12 +8,11 @@ contributors:
 
 # Configuring Your App
 
-Capacitor embraces the idea of "Code once, configure everywhere": configuration is
-managed per-platform instead of in an abstracted system like `config.xml` in Cordova.
+Much of Capacitor is configured per-platform instead of in an abstracted system like Cordova's `config.xml`.
 
 ## Per-platform Management
 
-Capacitor requires you to be more involved in the native project configuration than with Cordova. We think this is the right approach because it makes it easy to follow existing native iOS/Android guides, get help on Stack Overflow, and have complete control over your project.
+Capacitor requires you to be more involved in the native project configuration than with Cordova. We think this approach makes it easy to follow existing iOS/Android guides, get help on Stack Overflow, and have complete control over your project.
 
 Additionally, since configuring a Capacitor project is no different from configuring any iOS or Android project, existing native development teams can easily work alongside web developers, with each side using the tools and SDKs they are familiar with. Of course, we believe web developers can handle all the required native configuration on their own, and the Capacitor documentation exists to help web developers do just that.
 

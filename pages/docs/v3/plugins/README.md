@@ -1,16 +1,6 @@
 # Plugins Table of Contents (v3)
 
-* Getting Started
-  * [Introduction](index.md)
-  * [Community Plugins](community.md)
-  * [Enterprise Plugins](enterprise.md)
-* Creating Plugins
-  * [Overview](creating-plugins.md)
-  * [Development Workflow](workflow.md)
-  * [iOS Guide](ios.md)
-  * [Android Guide](android.md)
-  * [Web/PWA Guide](web.md)
-  * [JavaScript Guide](js.md)
+* [Introduction](index.md)
 * Official Plugins
   * [Introduction](../apis/index.md)
   * [Action Sheet](../apis/action-sheet.md)
@@ -28,3 +18,13 @@
   * [Storage](../apis/storage.md)
   * [Text Zoom](../apis/text-zoom.md)
   * [Toast](../apis/toast.md)
+* [Community Plugins](community.md)
+* [Cordova Plugins](cordova.md)
+* [Enterprise Plugins](enterprise.md)
+* Creating Plugins
+  * [Overview](creating-plugins.md)
+  * [Development Workflow](workflow.md)
+  * [iOS Guide](ios.md)
+  * [Android Guide](android.md)
+  * [Web/PWA Guide](web.md)
+  * [JavaScript Guide](js.md)

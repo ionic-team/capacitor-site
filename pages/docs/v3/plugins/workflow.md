@@ -48,7 +48,7 @@ async openMap(location: { latitude: number, longitude: number}): Promise<void> {
 To compile the plugin, navigate into the plugin directory then run: 
 
 ```bash
-$ npm run build
+npm run build
 ```
 
 Implement [Android functionality](./android) in `android/src/main/[nested folders]/PluginName.java`:
@@ -85,8 +85,8 @@ First, within the plugin folder, run: `npm link`.
 Then, within the project that will test the plugin, run: 
 
 ```bash 
-$ npm link plugin-name
-$ npm install plugin-name
+npm link plugin-name
+npm install plugin-name
 ``` 
 
 The project's `package.json` file now shows the plugin package link in the dependencies list:

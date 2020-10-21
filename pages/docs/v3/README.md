@@ -2,14 +2,12 @@
 
 * Getting Started
   * [Introduction](index.md)
-  * [Required Dependencies](getting-started/dependencies.md)
+  * [Environment Setup](getting-started/environment-setup.md)
   * [Installation](getting-started/index.md)
   * [Using with Ionic](getting-started/with-ionic.md)
 * Basics
   * [Development Workflow](basics/workflow.md)
-  * [Opening Native IDE](basics/opening-native-projects.md)
   * [Building your App](basics/building-your-app.md)
-  * [Running your App](basics/running-your-app.md)
   * [Using Plugins](basics/using-plugins.md)
   * [Native Project Configuration](basics/configuring-your-app.md)
   * [Progressive Web Apps](basics/progressive-web-app.md)
@@ -18,10 +16,9 @@
   * [Overview](cordova/index.md)
   * [Migration Strategy](cordova/migration-strategy.md)
   * [Cordova to Capacitor Migration](cordova/migrating-from-cordova-to-capacitor.md)
-  * [Cordova/Ionic Native Plugins](cordova/using-cordova-plugins.md)
-  * [Known Incompatible Plugins](cordova/known-incompatible-plugins.md)
 * Concepts
   * [Ads](guides/ads.md)
+  * [Angular](guides/angular.md)
   * [CI/CD](guides/ci-cd.md)
   * [Deep Links](guides/deep-links.md)
   * [Deploying and Updating](guides/deploying-updates.md)

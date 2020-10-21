@@ -1,9 +1,9 @@
 {
   "trailingSlash": false,
   "redirects": [
-    { 
-      "source": "/docs/basics/cli-commands", 
-      "destination": "/docs/reference/cli" 
+    {
+      "source": "/docs/basics/cli-commands",
+      "destination": "/docs/reference/cli"
     },
     {
       "source": "/docs/community/plugins",
@@ -13,9 +13,29 @@
       "source": "/docs/community",
       "destination": "/docs/plugins/community"
     },
-    { 
-      "source": "/docs/pwa-elements", 
-      "destination": "/docs/web/pwa-elements" 
+    {
+      "source": "/docs/pwa-elements",
+      "destination": "/docs/web/pwa-elements"
+    },
+    {
+      "source": "/docs/v3/getting-started/dependencies",
+      "destination": "/docs/v3/getting-started/environment-setup"
+    },
+    {
+      "source": "/docs/v3/basics/opening-native-projects",
+      "destination": "/docs/v3/basics/workflow"
+    },
+    {
+      "source": "/docs/v3/basics/running-your-app",
+      "destination": "/docs/v3/basics/workflow"
+    },
+    {
+      "source": "/docs/v3/cordova/using-cordova-plugins",
+      "destination": "/docs/v3/plugins/cordova"
+    },
+    {
+      "source": "/docs/v3/cordova/known-incompatible-plugins",
+      "destination": "/docs/v3/plugins/cordova"
     }
   ],
   "headers": [
