@@ -66,6 +66,8 @@ span {
   display: flex;
   align-items: center;
 
+  border-block-end: 1px solid rgba(0, 21, 58, 0.06);
+
   height: 64px;
   width: calc(100% + 1px);
 
@@ -78,8 +80,11 @@ span {
 }
 
 .menu-header__logo-link {
-  margin-top: 7px;
   max-width: 125px;
+
+  svg {
+    display: block;
+  }
 }
 
 .menu-header__docs-link {
@@ -93,7 +98,7 @@ span {
 
   letter-spacing: -0.02em;
 
-  margin: 3px 7px 0 8px;
+  margin: 0px 7px 0 8px;
 }
 
 .menu-header__version-link {

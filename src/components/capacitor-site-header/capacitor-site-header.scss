@@ -39,6 +39,10 @@ header {
   display: flex;
   align-items: center;
   height: 100%;
+
+  .capacitor-logo {
+    display: block;
+  }
 }
 
 app-menu-toggle {

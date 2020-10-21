@@ -78,7 +78,6 @@ export class DocsHeader implements ComponentInterface {
   toggleExpanded = () => (this.expanded = !this.expanded);
 
   render() {
-    console.log('rendered');
     const { expanded, template, includeLogo, includeBurger } = this;
 
     return (
