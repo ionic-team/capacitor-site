@@ -87,7 +87,7 @@ export class DocsComponent implements ComponentInterface {
 
             <in-page-navigation
               headings={data.headings}
-              repoFileUrl={data.repoFileUrl}
+              editUrl={data.editUrl}
             />
           </div>
         </div>

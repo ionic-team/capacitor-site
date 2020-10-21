@@ -2,7 +2,6 @@ import {
   parse, 
   outputReadme 
 } from '@capacitor/docgen';
-// import { parseMarkdown } from '@stencil/ssg/parse';
 import { readdirSync } from 'fs';
 import path from 'path';
 
@@ -47,7 +46,7 @@ async function main() {
     })
   );
 
-  console.log(`Plugin V2 API Files Updated 🏄‍♂️`);
+  console.log(`Plugin V2 API Files Updated 🤖`);
 }
 
 function listPlugins() {
