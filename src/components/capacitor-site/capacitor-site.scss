@@ -1,4 +1,5 @@
 @use '../../global/variables';
+@use '../../global/vars' as *;
 @use '../../global/prism';
 @use '../../global/shared/utils';
 
@@ -7,13 +8,15 @@
 }
 
 capacitor-site {
+  --container: clamp(8px, 2.5vw, 20px);
+  
   min-height: 100%;
   display: block;
 }
 
 .heading-container {
-  padding-inline-start: 20px;
-  padding-inline-end: 20px;
+  padding-inline-start: clamp(8px, 2.5vw, 20px);
+  padding-inline-end: clamp(8px, 2.5vw, 20px);
 }
 
 site-root {

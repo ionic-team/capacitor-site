@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  --docs-container: clamp(8px, 2.5vw, 20px);
+  
 }
 
 .row {
@@ -17,21 +17,21 @@
 }
 
 .docs-container {
-  padding-inline-start: var(--docs-container);
-  padding-inline-end: var(--docs-container);
+  padding-inline-start: var(--container);
+  padding-inline-end: var(--container);
 }
 platform-bar .docs-container {
   padding-inline-start: 20px;
   padding-inline-end: 20px;
 
   @media screen and (max-width: $screen-xs-max) {
-    padding-inline-start: var(--docs-container);
-    padding-inline-end: var(--docs-container);
+    padding-inline-start: var(--container);
+    padding-inline-end: var(--container);
   }
 }
 
 site-header {
-  --spacing-x: var(--docs-container);
+  --spacing-x: var(--container);
   
   &.scrolled {
     box-shadow: none;

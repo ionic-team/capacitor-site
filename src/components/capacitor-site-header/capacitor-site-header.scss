@@ -34,6 +34,7 @@ header {
   height: 100%;
 
   .capacitor-logo {
+    margin-inline-end: var(--container);
     display: block;
   }
 }
@@ -140,7 +141,7 @@ app-menu-toggle {
 
 more-button {
   display: none;
-  margin-inline-start: var(--spacing-x);  
+  margin-inline-start: var(--container);  
 }
 
 @media screen and (max-width: $screen-md-max) {
