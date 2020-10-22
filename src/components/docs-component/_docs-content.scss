@@ -74,6 +74,10 @@
     margin-block-start: 64px;
   }
 
+  p {
+    word-wrap: break-word;
+  }
+
   .ui-heading-1,
   .ui-heading-2,
   .ui-heading-3,
