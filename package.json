@@ -19,7 +19,7 @@
   "devDependencies": {
     "@capacitor/core": "^2.4.2",
     "@capacitor/docgen": "^0.0.9",
-    "@ionic-internal/ionic-ds": "4.0.0-8",
+    "@ionic-internal/ionic-ds": "4.0.0-9",
     "@ionic/prettier-config": "^1.0.1",
     "@stencil/core": "^2.0.3",
     "@stencil/helmet": "^0.3.2",

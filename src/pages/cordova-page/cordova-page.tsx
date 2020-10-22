@@ -18,7 +18,7 @@ export class CordovaPage {
   @State() selectedCodeTab: string = 'before';
 
   render() {
-    const { Top, GettingStarted } = this;
+    const { Top, GettingStarted, MoreResources } = this;
 
     return (
       <Host>
@@ -27,7 +27,7 @@ export class CordovaPage {
         <Top />
         <GettingStarted />
 
-        <MoreResourcesSection />
+        <MoreResources />
 
         <ResponsiveContainer id="newsletter">
           <newsletter-signup />
@@ -305,40 +305,42 @@ npx @capacitor/cli plugin:generate
       </article>
     </ResponsiveContainer>
   );
+
+  MoreResources = () => (
+    <ResponsiveContainer id="more-resources">
+      <div class="heading-group">
+        <Heading level={3}>More Resources</Heading>
+        <Paragraph>
+          Explore these resources to learn more about Capacitor
+          <br />
+          and make your Cordova migration easier.
+        </Paragraph>
+      </div>
+      <more-resources
+        resourceData={[
+          {
+            uid: 'capacitor-vs-cordova-modern-hybrid-app-development',
+            type: 'article',
+          },
+          { uid: 'capacitor-2-launch', type: 'webinar' },
+          { uid: 'migrating-from-phonegap-build-to-ionic-appflow', type: 'blog' },
+          {
+            uid: 'thanks-to-capacitor-ive-fallen-in-love-with-mobile-again',
+            type: 'blog',
+          },
+          { uid: 'the-modern-hybrid-app-developer', type: 'blog' },
+        ]}
+        routing={{
+          base: "https://ionicframework.com/resources"
+        }}
+      />
+    </ResponsiveContainer>
+  );
 }
 
 
 
-const MoreResourcesSection = () => (
-  <ResponsiveContainer class="section--more-resources">
-    <div>
-      <Heading level={3}>More Resources</Heading>
-      <Paragraph>
-        Explore these resources to learn more about Capacitor
-        <br />
-        and make your Cordova migration easier.
-      </Paragraph>
-    </div>
-    <more-resources
-      resourceData={[
-        {
-          uid: 'capacitor-vs-cordova-modern-hybrid-app-development',
-          type: 'article',
-        },
-        { uid: 'capacitor-2-launch', type: 'webinar' },
-        { uid: 'migrating-from-phonegap-build-to-ionic-appflow', type: 'blog' },
-        {
-          uid: 'thanks-to-capacitor-ive-fallen-in-love-with-mobile-again',
-          type: 'blog',
-        },
-        { uid: 'the-modern-hybrid-app-developer', type: 'blog' },
-      ]}
-      routing={{
-        base: "https://ionicframework.com/resources"
-      }}
-    />
-  </ResponsiveContainer>
-);
+
 
 const MetaHead = () => (
   <Helmet>
