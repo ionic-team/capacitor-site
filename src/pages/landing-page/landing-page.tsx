@@ -18,6 +18,7 @@ import { href } from '@stencil/router';
 @Component({
   tag: 'landing-page',
   styleUrl: 'landing-page.scss',
+  scoped: true,
 })
 export class LandingPage {
   @Prop() data: any;
