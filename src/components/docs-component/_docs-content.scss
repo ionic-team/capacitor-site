@@ -70,6 +70,15 @@
     margin: 1.6em 0;
   }
 
+  .ui-heading-1,
+  .ui-heading-2,
+  .ui-heading-3,
+  .ui-heading-4,
+  .ui-heading-5,
+  .ui-heading-6 {
+    word-wrap: break-word;
+  }
+
   //Top level styles vs. all styles
   > .ui-heading-1 {
     margin-block-start: var(--space-9);
