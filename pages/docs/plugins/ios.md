@@ -39,6 +39,10 @@ import Capacitor
 
 @objc(MyPlugin)
 public class MyPlugin: CAPPlugin {
+  @objc override public func load() {
+    // Called when the plugin is first constructed in the bridge
+  }
+
   @objc func echo(_ call: CAPPluginCall) {
     let value = call.getString("value") ?? ""
     call.resolve([
@@ -98,6 +102,19 @@ To fail, or reject a call, call `call.reject`, passing an error string and (opti
 call.reject(error.localizedDescription, error, [
   "item1": true
 ])
+```
+
+### Adding Initialization Logic
+
+Plugins can override the `load` method to run some code when the plugin is first initialized:
+
+```java
+@objc(MyPlugin)
+public class MyPlugin: CAPPlugin {
+  @objc override public func load() {
+    // Called when the plugin is first constructed in the bridge
+  }
+}
 ```
 
 ### Presenting Native Screens

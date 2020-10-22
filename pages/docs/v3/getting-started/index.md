@@ -47,5 +47,7 @@ npx cap init
 ## Where to go next
 
 [Get started with iOS &#8250;](/docs/ios)
+
 [Get started with Android &#8250;](/docs/android)
+
 [Developer Workflow Guide &#8250;](/docs/basics/workflow)
