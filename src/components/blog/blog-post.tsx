@@ -1,6 +1,6 @@
 import { Component, Prop, h, Host } from '@stencil/core';
 import { BlogPost } from './blog-common';
-import { Heading } from '@ionic-internal/ionic-ds';
+import { Heading, ResponsiveContainer } from '@ionic-internal/ionic-ds';
 import Helmet from '@stencil/helmet';
 import { BlogData } from '../../data.server/blog';
 
@@ -34,8 +34,12 @@ export class BlogPage {
             </hgroup>
             <BlogPost data={this.data} />
           </div>
+
+          <ResponsiveContainer>
+            <newsletter-signup />
+          </ResponsiveContainer>
+
           <pre-footer />
-          <newsletter-signup />
           <capacitor-site-footer />
         </Host>
       )
