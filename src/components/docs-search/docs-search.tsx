@@ -150,14 +150,9 @@ export class DocsSearch implements ComponentInterface {
 
   handleInput() {
     if (this.input.el.value === '') {
-      document.body.classList.remove('no-scroll');
       this.input = { ...this.input, isEmpty: true };
     } else {
       this.input = { ...this.input, isEmpty: false };
-
-      if (document.body.offsetWidth < 768) {
-        document.body.classList.add('no-scroll');
-      }
     }
   }
 
