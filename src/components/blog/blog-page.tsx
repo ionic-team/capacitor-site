@@ -1,5 +1,5 @@
-import { Component, Prop, h } from '@stencil/core';
-import { Heading } from '@ionic-internal/ionic-ds';
+import { Component, Prop, h, Fragment } from '@stencil/core';
+import { Heading, ResponsiveContainer } from '@ionic-internal/ionic-ds';
 
 import { BlogPost } from './blog-common';
 import { BlogData } from '../../data.server/blog';
@@ -17,12 +17,18 @@ export class BlogPage {
     const { AllPosts } = this;
 
     if (this.data) {
-      return [
-        <AllPosts posts={this.data} />,
-        <pre-footer />,
-        <newsletter-signup />,
-        <capacitor-site-footer />
-      ]
+      return (
+        <Fragment>
+          <AllPosts posts={this.data} />
+          
+          <ResponsiveContainer>
+            <newsletter-signup />            
+          </ResponsiveContainer>
+
+          <pre-footer />
+          <capacitor-site-footer />
+        </Fragment>
+      )
     }
 
     return null;

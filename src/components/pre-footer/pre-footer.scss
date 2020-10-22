@@ -3,10 +3,11 @@
 :host {
   display: block;
   position: relative;
+
+  background: #fff;
 }
 
 .squares {
-  z-index: -1;
   position: absolute;
   display: flex;
   height: 100%;
@@ -22,7 +23,6 @@
     flex-basis: 50%;
     border-inline-end: 1px solid var(--c-indigo-20);
     border-block-start: 1px solid var(--c-indigo-20);    
-    width: calc(100% + 1px);
   }
   &::after {
     content: '';
@@ -32,6 +32,8 @@
 }
 
 .ui-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   
   @media screen and (max-width: $screen-xs) {

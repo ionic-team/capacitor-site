@@ -4,7 +4,9 @@ capacitor-site-footer {
   padding-block-start: 64px;
   padding-block-end: 72px;
   position: relative;
-  top: -1px;
+
+  background: #fff;
+  border-block-start: 1px solid var(--c-indigo-20);
 
   ul {
     padding: 0;
@@ -23,6 +25,11 @@ capacitor-site-footer {
     > * {
       margin-block-start: 16px;
     }
+  }
+
+  .routes-group {
+    display: flex;
+    justify-content: space-between;
   }
 
   a.link {

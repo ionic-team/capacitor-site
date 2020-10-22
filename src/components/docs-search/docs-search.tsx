@@ -89,6 +89,8 @@ export class DocsSearch implements ComponentInterface {
   @Listen('resize', { target: 'window' })
   getContentStats() {    
     requestAnimationFrame(() => {
+      if (!this.siteContent) return;
+      
       let left = this.siteContent.getBoundingClientRect().left -
                    this.el.getBoundingClientRect().left;
       let width = this.siteContent.offsetWidth;

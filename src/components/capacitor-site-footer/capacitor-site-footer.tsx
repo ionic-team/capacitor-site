@@ -70,32 +70,32 @@ export class CapacitorSiteFooter {
                 <p><a href="https://ionic.io">Ionic Open Source</a> | Released under <span id="mit">MIT License</span></p>
               </Col>
               <Col md={6} sm={8} xs={12} cols={12}>
-                <Grid>
-                  <Col md={4} sm={3} xs={4} cols={4}>
+                <div class="routes-group">
+                  <div>
                     <Heading level={5}>Developers</Heading>
                     <ul class="routes">
-                      <li><a class="link | ui-paragraph-4" href="/docs/getting-started">Install</a></li>
-                      <li><a class="link | ui-paragraph-4" href="/docs">Docs</a></li>
-                      <li><a class="link | ui-paragraph-4" href="/docs/apis">Plugins</a></li>
+                      <li><a class="ui-paragraph-4" href="/docs/getting-started">Install</a></li>
+                      <li><a class="ui-paragraph-4" href="/docs">Docs</a></li>
+                      <li><a class="ui-paragraph-4" href="/docs/apis">Plugins</a></li>
                     </ul>
-                  </Col>
-                  <Col md={4} sm={3} xs={4} cols={4}>
+                  </div>
+                  <div>
                     <Heading level={5}>Resources</Heading>
                     <ul class="routes">
-                      <li><a class="link | ui-paragraph-4" href="/community">Community</a></li>
-                      <li><a class="link | ui-paragraph-4" href="/blog">Blog</a></li>
-                      <li><a class="link | ui-paragraph-4" href="https://github.com/ionic-team/capacitor/discussions">Discussions</a></li>
+                      <li><a class="ui-paragraph-4" href="/community">Community</a></li>
+                      <li><a class="ui-paragraph-4" href="/blog">Blog</a></li>
+                      <li><a class="ui-paragraph-4" href="https://github.com/ionic-team/capacitor/discussions">Discussions</a></li>
                     </ul>
-                  </Col>
-                  <Col md={4} sm={3} xs={4} cols={4}>
+                  </div>
+                  <div>
                     <Heading level={5}>Connect</Heading>
                     <ul class="routes">
-                      <li><a class="link | ui-paragraph-4" href="https://github.com/ionic-team/capacitor">GitHub</a></li>
-                      <li><a class="link | ui-paragraph-4" href="https://twitter.com/capacitorjs">Twitter</a></li>
-                      <li><a class="link | ui-paragraph-4" href="https://ionic.io">Ionic</a></li>
+                      <li><a class="ui-paragraph-4" href="https://github.com/ionic-team/capacitor">GitHub</a></li>
+                      <li><a class="ui-paragraph-4" href="https://twitter.com/capacitorjs">Twitter</a></li>
+                      <li><a class="ui-paragraph-4" href="https://ionic.io">Ionic</a></li>
                     </ul>
-                  </Col>
-                </Grid>
+                  </div>
+                </div>
               </Col>
             </Grid>
           </ResponsiveContainer>

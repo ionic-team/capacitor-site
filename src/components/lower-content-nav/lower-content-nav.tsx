@@ -21,7 +21,7 @@ export class LowerContentNav {
           <a {...href(n.previous.url)} class="nav-previous link">
             <div class="direction">Previous</div>
             <div>
-              <span class="arrow">&lt;-</span>
+              <span class="arrow">&lt;- </span>
               <span>{n.previous.title}</span>
             </div>
           </a>
@@ -31,7 +31,7 @@ export class LowerContentNav {
             <div class="direction">Next</div>
             <div>
               <span>{n.next.title}</span>
-              <span class="arrow">-&gt;</span>
+              <span class="arrow"> -&gt;</span>
             </div>
           </a>
         ) : null}

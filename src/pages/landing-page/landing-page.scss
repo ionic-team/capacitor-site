@@ -28,7 +28,7 @@ $section-space: 200px;
 
 em {
   position: relative;
-  font-style: normal;
+  font-style: normal !important;
 
   &::after {
     position: absolute;
@@ -43,7 +43,7 @@ em {
 }
 
 :host {
-  overflow-x: hidden;
+  overflow: hidden;
   display: block;
 }
 
@@ -553,6 +553,8 @@ em {
 
 
 #get-started {
+  overflow: hidden;
+  
   padding-block-start: $section-space;
   padding-block-end: $section-space;
   position: relative;
