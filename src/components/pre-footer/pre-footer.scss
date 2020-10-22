@@ -6,6 +6,7 @@
 }
 
 .squares {
+  z-index: -1;
   position: absolute;
   display: flex;
   height: 100%;

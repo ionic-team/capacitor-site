@@ -63,7 +63,7 @@ export const Routes = () => (
 
     <Route path="/cordova">
       <SiteHeader />
-      <cordova-landing-page />
+      <cordova-page />
     </Route>
 
     <Route path="/enterprise">

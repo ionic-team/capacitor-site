@@ -47,7 +47,7 @@ export namespace Components {
         "contributors": string[];
         "repoFileUrl": string;
     }
-    interface CordovaLandingPage {
+    interface CordovaPage {
     }
     interface DocSnippet {
     }
@@ -177,11 +177,11 @@ declare global {
         prototype: HTMLContributorListElement;
         new (): HTMLContributorListElement;
     };
-    interface HTMLCordovaLandingPageElement extends Components.CordovaLandingPage, HTMLStencilElement {
+    interface HTMLCordovaPageElement extends Components.CordovaPage, HTMLStencilElement {
     }
-    var HTMLCordovaLandingPageElement: {
-        prototype: HTMLCordovaLandingPageElement;
-        new (): HTMLCordovaLandingPageElement;
+    var HTMLCordovaPageElement: {
+        prototype: HTMLCordovaPageElement;
+        new (): HTMLCordovaPageElement;
     };
     interface HTMLDocSnippetElement extends Components.DocSnippet, HTMLStencilElement {
     }
@@ -292,7 +292,7 @@ declare global {
         "code-snippet": HTMLCodeSnippetElement;
         "community-page": HTMLCommunityPageElement;
         "contributor-list": HTMLContributorListElement;
-        "cordova-landing-page": HTMLCordovaLandingPageElement;
+        "cordova-page": HTMLCordovaPageElement;
         "doc-snippet": HTMLDocSnippetElement;
         "docs-component": HTMLDocsComponentElement;
         "docs-menu": HTMLDocsMenuElement;
@@ -352,7 +352,7 @@ declare namespace LocalJSX {
         "contributors"?: string[];
         "repoFileUrl"?: string;
     }
-    interface CordovaLandingPage {
+    interface CordovaPage {
     }
     interface DocSnippet {
     }
@@ -421,7 +421,7 @@ declare namespace LocalJSX {
         "code-snippet": CodeSnippet;
         "community-page": CommunityPage;
         "contributor-list": ContributorList;
-        "cordova-landing-page": CordovaLandingPage;
+        "cordova-page": CordovaPage;
         "doc-snippet": DocSnippet;
         "docs-component": DocsComponent;
         "docs-menu": DocsMenu;
@@ -456,7 +456,7 @@ declare module "@stencil/core" {
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
             "community-page": LocalJSX.CommunityPage & JSXBase.HTMLAttributes<HTMLCommunityPageElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
-            "cordova-landing-page": LocalJSX.CordovaLandingPage & JSXBase.HTMLAttributes<HTMLCordovaLandingPageElement>;
+            "cordova-page": LocalJSX.CordovaPage & JSXBase.HTMLAttributes<HTMLCordovaPageElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
             "docs-component": LocalJSX.DocsComponent & JSXBase.HTMLAttributes<HTMLDocsComponentElement>;
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;

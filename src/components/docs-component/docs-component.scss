@@ -177,7 +177,7 @@ plugin-platforms {
 
   > .ui-heading-2,
   > .ui-heading-3 {
-    padding-block-start: 52px;
+    padding-block-start: 44px;
   }
 
   .ui-heading-2,
@@ -327,10 +327,10 @@ plugin-platforms {
     }
 
     code {
+      width: 100%;
       display: block;
       min-width: 0;
       padding-inline-end: 1em;
-      width: max-content;
       font-weight: 500;
       font-size: 14px;
       line-height: 20px;      

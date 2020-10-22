@@ -3,79 +3,67 @@ import { Component, h, Host, State } from '@stencil/core';
 import Helmet from '@stencil/helmet';
 import {
   ResponsiveContainer,
-  Grid,
-  Col,
   Paragraph,
   Heading,
-  Button,
 } from '@ionic-internal/ionic-ds';
-import { Tabs, Tab, TabBar, TabBarButton } from '../tabs';
+import { Tabs, Tab, TabBar, TabBarButton } from '../../components/tabs';
 import { href } from '@stencil/router';
 
 @Component({
-  tag: 'cordova-landing-page',
-  styleUrl: 'cordova-landing-page.scss',
+  tag: 'cordova-page',
+  styleUrl: 'cordova-page.scss',
   scoped: true,
 })
-export class CordovaLandingPage {
+export class CordovaPage {
   @State() selectedCodeTab: string = 'before';
 
   render() {
+    const { Top, GettingStarted } = this;
+
     return (
       <Host>
         <MetaHead />
-        <section class="hero">
-          <ResponsiveContainer>
-            <Grid>
-              <Col md={12} sm={12} xs={12} cols={12}>
-                <hgroup class="hero__heading">
-                  <Heading level={2}>Cordova to Capacitor Migration</Heading>
-                  <Heading level={3}>
-                    A modern development experience and 99%
-                    backward-compatibility with Cordova.
-                  </Heading>
-                  <Button anchor href="#code-branch" id="get-started">
-                    Get Started
-                  </Button>
-                </hgroup>
-              </Col>
-            </Grid>
-          </ResponsiveContainer>
-        </section>
-        <GettingStartedSection
-          selectedCodeTab={this.selectedCodeTab}
-          setSelectedCodeTab={(tab: string) => {
-            this.selectedCodeTab = tab;
-          }}
-        />
+        
+        <Top />
+        <GettingStarted />
 
         <MoreResourcesSection />
-        <newsletter-signup />
+
+        <ResponsiveContainer id="newsletter">
+          <newsletter-signup />
+        </ResponsiveContainer>
         <pre-footer />
         <capacitor-site-footer />
       </Host>
     );
   }
-}
 
-const GettingStartedSection = ({
-  selectedCodeTab,
-  setSelectedCodeTab,
-}: {
-  selectedCodeTab: string;
-  setSelectedCodeTab: (tab: string) => void;
-}) => (
-  <section class="section--getting-started">
-    <ResponsiveContainer>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>01</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
+  Top = () => (
+    <ResponsiveContainer id="top" as="section">
+      <div class="heading-group">
+        <Heading level={2} as="h1">Cordova to Capacitor Migration</Heading>
+        <Paragraph level={2}>
+          A modern development experience and 99%
+          backward-compatibility with Cordova.
+        </Paragraph>
+        {/* <Button anchor href="#code-branch" id="get-started">
+          Get Started
+        </Button> */}
+      </div>
+    </ResponsiveContainer>
+  )
+
+  GettingStarted = () => (
+    <ResponsiveContainer id="getting-started" as="section">
+      <article class="step">
+        <sup class="ui-heading-6">01</sup>
+        <div class="heading-group">
           <Heading level={3} id="code-branch">
             Create a new code branch.
           </Heading>
           <Paragraph>Recommended, but not required.</Paragraph>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
+        </div>
+        <div class="code-panel">
           <code-snippet
             language="shell-session"
             code={`
@@ -83,18 +71,18 @@ cd my-app
 git checkout -b cap-migration
           `}
           />
-        </Col>
-      </Grid>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>02</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
+        </div>
+      </article>
+      <article class="step">
+        <sup class="ui-heading-6">02</sup>
+        <div class="heading-group">
           <Heading level={3}>Install Capacitor.</Heading>
           <Paragraph>
             Create the Capacitor app using the Cordova app's name and id found
             in `config.xml`.
           </Paragraph>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
+        </div>
+        <div class="code-panel">
           <code-snippet
             language="shell-session"
             code={`
@@ -102,18 +90,18 @@ npm install @capacitor/cli @capacitor/core
 npx cap init [name] [id]
 `}
           />
-        </Col>
-      </Grid>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>03</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
+        </div>
+      </article>
+      <article class="step">
+        <sup class="ui-heading-6">03</sup>
+        <div class="heading-group">
           <Heading level={3}>Build the Web App.</Heading>
           <Paragraph>
             The compiled web assets will be copied into each Capacitor native
             platform during the next step.
           </Paragraph>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
+        </div>
+        <div class="code-panel">
           <code-snippet
             language="shell-session"
             code={`
@@ -124,28 +112,38 @@ npm run build
 ionic build
 `}
           />
-        </Col>
-      </Grid>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>04</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
+        </div>
+      </article>
+      <article class="step">
+        <sup class="ui-heading-6">04</sup>
+        <div class="heading-group">
           <Heading level={3}>
             Install the native platforms you want to target.
           </Heading>
-          <img src="/assets/img/landing/apple.png" alt="Apple" class="apple" />
-          <img
-            src="/assets/img/landing/android.png"
-            alt="Android"
-            class="android"
-          />
+          <div class="platforms">
+            <img
+              loading="lazy"
+              src="/assets/img/landing/apple.png"
+              alt="Apple"
+              class="apple"
+              width="22" height="26"
+            />
+            <img
+              loading="lazy"
+              src="/assets/img/landing/android.png"
+              alt="Android"
+              class="android"
+              width="27" height="23"
+            />
+          </div>
           <Paragraph>
             Capacitor native projects exist in their own top-level folders and
             should be considered part of your app (check them into source
             control). Any existing Cordova plugins are automatically installed
             into each native project. 🎉
           </Paragraph>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
+        </div>
+        <div class="code-panel">
           <code-snippet
             language="shell-session"
             code={`
@@ -153,19 +151,19 @@ npx cap add android
 npx cap add ios
 `}
           />
-        </Col>
-      </Grid>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>05</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
+        </div>
+      </article>
+      <article class="step">
+        <sup class="ui-heading-6">05</sup>
+        <div class="heading-group">
           <Heading level={3}>Recreate Splash Screens and Icons.</Heading>
           <Paragraph>
             Reuse the existing splash screen/icon images, located in the
             top-level `resources` folder of your Cordova project, using the
             `cordova-res` tool. Images are copied into each native project.
           </Paragraph>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
+        </div>
+        <div class="code-panel">
           <code-snippet
             language="shell-session"
             code={`
@@ -175,11 +173,11 @@ cordova-res ios --skip-config --copy
 cordova-res android --skip-config --copy
 `}
           />
-        </Col>
-      </Grid>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>06</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
+        </div>
+      </article>
+      <article class="step">
+        <sup class="ui-heading-6">06</sup>
+        <div class="heading-group">
           <Heading level={3}>Audit existing Cordova plugins.</Heading>
           <Paragraph>
             Review all of Capacitor's{' '}
@@ -196,24 +194,24 @@ cordova-res android --skip-config --copy
           <Paragraph>
             Remove unneeded ones to improve performance and reduce app size.
           </Paragraph>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
+        </div>
+        <div class="code-panel">
           <Tabs>
             <TabBar>
               <TabBarButton
-                selected={selectedCodeTab === 'before'}
-                tabSelect={() => setSelectedCodeTab('before')}
+                selected={this.selectedCodeTab === 'before'}
+                tabSelect={() => this.selectedCodeTab = 'before'}
               >
                 Cordova Camera
               </TabBarButton>
               <TabBarButton
-                selected={selectedCodeTab === 'after'}
-                tabSelect={() => setSelectedCodeTab('after')}
+                selected={this.selectedCodeTab === 'after'}
+                tabSelect={() => this.selectedCodeTab = 'after'}
               >
                 Capacitor Camera
               </TabBarButton>
             </TabBar>
-            <Tab selected={selectedCodeTab === 'before'}>
+            <Tab selected={this.selectedCodeTab === 'before'}>
               <code-snippet
                 style={{ '--border-radius': '0 0 8px 8px' }}
                 language="typescript"
@@ -231,7 +229,7 @@ const photo = await this.camera.getPicture({
 `}
               />
             </Tab>
-            <Tab selected={selectedCodeTab === 'after'}>
+            <Tab selected={this.selectedCodeTab === 'after'}>
               <code-snippet
                 style={{ '--border-radius': '0 0 8px 8px' }}
                 language="typescript"
@@ -250,18 +248,18 @@ const photo = await Camera.getPhoto({
               />
             </Tab>
           </Tabs>
-        </Col>
-      </Grid>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>07</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
+        </div>
+      </article>
+      <article class="step">
+        <sup class="ui-heading-6">07</sup>
+        <div class="heading-group">
           <Heading level={3}>Remove Cordova from your project.</Heading>
           <Paragraph>
             After successful migration testing, Cordova can be removed from the
             project.
           </Paragraph>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
+        </div>
+        <div class="code-panel">
           <code-snippet
             language="shell-session"
             code={`
@@ -275,11 +273,11 @@ rm -R platforms/
 rm -R plugins/
 `}
           />
-        </Col>
-      </Grid>
-      <Grid class="section--getting-started__step">
-        <Col cols={1}>08</Col>
-        <Col md={5} sm={5} xs={5} cols={12}>
+        </div>
+      </article>
+      <article class="step">
+        <sup class="ui-heading-6">08</sup>
+        <div class="heading-group">
           <Heading level={3}>Continue your Capacitor Journey.</Heading>
           <Paragraph>
             This is only the beginning. Learn more about{' '}
@@ -290,8 +288,8 @@ rm -R plugins/
             <a {...href('/docs/basics/workflow')}>development workflow</a>, or
             create your own <a {...href('/docs/plugins')}>native plugin</a>.
           </Paragraph>
-        </Col>
-        <Col md={6} sm={6} xs={6} cols={12}>
+        </div>
+        <div class="code-panel">
           <code-snippet
             language="shell-session"
             code={`
@@ -303,22 +301,24 @@ npx cap sync
 npx @capacitor/cli plugin:generate
 `}
           />
-        </Col>
-      </Grid>
+        </div>
+      </article>
     </ResponsiveContainer>
-  </section>
-);
+  );
+}
+
+
 
 const MoreResourcesSection = () => (
   <ResponsiveContainer class="section--more-resources">
-    <hgroup>
+    <div>
       <Heading level={3}>More Resources</Heading>
       <Paragraph>
         Explore these resources to learn more about Capacitor
         <br />
         and make your Cordova migration easier.
       </Paragraph>
-    </hgroup>
+    </div>
     <more-resources
       resourceData={[
         {
@@ -333,6 +333,9 @@ const MoreResourcesSection = () => (
         },
         { uid: 'the-modern-hybrid-app-developer', type: 'blog' },
       ]}
+      routing={{
+        base: "https://ionicframework.com/resources"
+      }}
     />
   </ResponsiveContainer>
 );

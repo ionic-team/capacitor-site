@@ -6,6 +6,10 @@ capacitor-site-footer {
   position: relative;
   top: -1px;
 
+  ul {
+    padding: 0;
+  }
+
   .newsletter {
     display: flex;
     flex-wrap: wrap;
