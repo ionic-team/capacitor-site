@@ -1,9 +1,12 @@
 contributor-list {
-  display: block;
+  display: flex;
+  align-items: center;
+  padding-block-start: var(--space-6);
+  padding-block-end: var(--space-6);
 }
 
 contributor-list ul.img-list {
-  display: flex;
+  display: inline-flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
   list-style: none;
@@ -30,11 +33,17 @@ contributor-list img {
 contributor-list a.contributor-img {
   display: block;
   border: none;
-  transition: transform 50ms ease-out;
+  /* transition: transform 200ms cubic-bezier(0.32, 0.72, 0, 1); */
+}
+
+contributor-list .ui-button {
+  margin-inline-start: var(--space-3);
+
 }
 
 @media (hover: hover) {
-  contributor-list a:hover {
+  contributor-list li a:hover {
+    opacity: 1;
     transform: scale(1.125);
     z-index: 1;
   }

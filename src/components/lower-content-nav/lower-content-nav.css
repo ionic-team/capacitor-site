@@ -1,16 +1,22 @@
 :host {
   display: block;
   overflow: hidden;
-  border-color: #ddd;
+  border-color: var(--c-indigo-20);
   border-style: solid;
-  border-width: 1px 0px 0px;
+  border-width: 0px 0px 1px;
   display: flex;
   flex-wrap: wrap-reverse;
-  padding: 12px 0;
+
+  padding: 20px 0;
+  margin-block-start: 65px;
 }
 
 a {
   border: 0;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 200%;
 }
 
 a:hover {
@@ -32,13 +38,9 @@ a:hover {
 }
 
 .direction {
-  font-size: 12px;
-  color: #98a2ad;
+  font-size: 14px;
+  color: var(--c-indigo-60);
+  letter-spacing: -.03em;
+  line-height: 190.94%;
   padding-bottom: 4px;
-}
-
-svg {
-  display: inline-block;
-  width: 12px;
-  fill: var(--c-ionic-brand);
 }

@@ -12,52 +12,56 @@ contributors:
 Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
 
 <style>
-  .ui-grid {
-    column-gap: 20px;
-    margin: 30px 0;
+  plugin-cards {
+    display: flex;
+    margin-block-start: -32px;
+    margin-inline-start: -16px;
+    margin-block-end: 40px;
   }
-  .ui-card p {
-    padding: 0;
-    margin: 10px 20px 20px 20px;
+
+  plugin-cards .card {
+    margin-block-start: var(--space-6);
+    margin-inline-start: var(--space-3);;
+    padding: var(--space-6) var(--space-5);
+
+    flex-basis: 100%;
+    border-radius: var(--radius-2);
+    box-shadow: var(--elevation-5);    
+
+    transition: transform .2s ease-out, box-shadow .2s ease-out;
   }
-  .ui-card p.title {
-    font-size: 18px;
-    font-weight: 700;
-    margin: 20px 20px 0 20px;
+  plugin-cards .card p {
+    margin-block-end: 0;
   }
-  .ui-card a {
-    display: inline-block;
-    color: black !important;
-    border: 0;
+  plugin-cards .card:hover, .card:active, .card:focus {
+    transform: translateY(-2px);
+    box-shadow: var(--elevation-6);
   }
-  .ui-card {
-    margin: 0;
-    overflow: hidden;
-    min-height: 200px;
-  }
-  .ui-card img {
-    margin: 0;
-  }
-  .ui-card .heading-anchor {
-    display: none;
+
+  @media screen and (max-width: 500px) {
+    plugin-cards {
+      flex-direction: column;
+    }   
   }
 </style>
-<ui-grid>
-  <ui-card class="ui-col ui-col-12 ui-col-xs-12 ui-col-sm-6 ui-col-md-6">
-    <a href="/docs/apis">
-      <img src="/assets/img/docs/core-plugins.png">
-      <p class="title">Official Plugins</p>
-      <p>Step-by-step guides to setting up your system and installing the framework.</p>
-    </a>
-  </ui-card>
-  <ui-card class="ui-col ui-col-12 ui-col-xs-12 ui-col-sm-6 ui-col-md-6">
-    <a href="/docs/plugins/community">
-      <img src="/assets/img/docs/community-plugins.png">
-      <p class="title">Community Plugins</p>
-      <p>Dive into Ionic Framework’s beautifylly designed UI component library.</p>
-    </a>
-  </ui-card>
-</ui-grid>
+<plugin-cards>
+  <a class="card" href="/docs/apis">
+    <img
+      src="/assets/img/docs/core-plugins.png"
+      width="40" height="40"
+    >
+    <p class="ui-heading-5">Core Plugins</p>
+    <p class="ui-paragraph-5">Step-by-step guides to setting up your system and installing the framework.</p>
+  </a>
+  <a class="card" href="/docs/plugins/community">
+    <img
+      src="/assets/img/docs/community-plugins.png"
+      width="40" height="40"
+    >
+    <p class="ui-heading-5">Community Plugins</p>
+    <p class="ui-paragraph-5">Dive into Ionic Framework’s beautifylly designed UI component library.</p>
+  </a>
+</plugin-cards>
 
 With Plugins, a web app can access the full power of the Native APIs, doing everything a traditional native app can. Plugins are especially great for wrapping common native operations that might use very different APIs across platforms, while exposing a consistent, cross-platform API to JavaScript.
 

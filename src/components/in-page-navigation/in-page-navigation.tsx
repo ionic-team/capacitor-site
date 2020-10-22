@@ -1,5 +1,6 @@
-import { Component, Prop, Listen, State, Watch, h } from '@stencil/core';
+import { Component, Prop, State, h } from '@stencil/core';
 import type { HeadingData } from '@stencil/ssg';
+import { Heading } from '@ionic-internal/ionic-ds';
 
 interface ItemOffset {
   id: string;
@@ -11,64 +12,11 @@ interface ItemOffset {
   styleUrl: 'in-page-navigation.css',
 })
 export class InPageNavigtion {
-  private adEl: HTMLInternalAdElement;
-  private stickyEl: HTMLElement;
-
   @Prop() headings: HeadingData[] = [];
   @Prop() editUrl: string = '';
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
-  @Listen('scroll', { target: 'window' })
-  function() {
-    // const itemIndex = this.itemOffsets.findIndex(item => item.topOffset > window.scrollY);
-    // if (itemIndex === 0 || this.itemOffsets[this.itemOffsets.length - 1] === undefined) {
-    //   this.selectedId = null;
-    // } else if (itemIndex === -1) {
-    //   this.selectedId = this.itemOffsets[this.itemOffsets.length - 1].id;
-    // } else {
-    //   this.selectedId = this.itemOffsets[itemIndex - 1].id;
-    // }
-  }
-
-  @Watch('headings')
-  @Listen('resize', { target: 'window' })
-  updateItemOffsets() {
-    // requestAnimationFrame(() => {
-    //   this.itemOffsets = this.pageLinks.map(pl => {
-    //     const item = document.getElementById(pl.id);
-    //     return {
-    //       id: pl.id,
-    //       topOffset: item.getBoundingClientRect().top + window.scrollY,
-    //     };
-    //   });
-    // });
-  }
-
-  @Watch('headings')
-  handleNavChange() {
-    this.checkHeight();
-  }
-
-  checkHeight = async () => {
-    if (!this.stickyEl || this.adEl.offsetHeight === 0) return;
-    this.stickyEl.getBoundingClientRect().bottom > window.innerHeight
-      ? (this.stickyEl.style.overflow = 'visible')
-      : '';
-
-    if (!this.adEl) return;
-    this.adEl.style.visibility = 'hidden';
-
-    this.adEl.getBoundingClientRect().bottom < window.innerHeight
-      ? (this.adEl.style.visibility = 'visible')
-      : '';
-    this.adEl.update();
-  };
-
-  componentDidLoad() {
-    this.updateItemOffsets();
-    this.checkHeight();
-  }
 
   render() {
     const headings = this.headings
@@ -93,19 +41,19 @@ export class InPageNavigtion {
       return (
         <nav class="sticky">
           {submitEditLink}
-          <internal-ad ref={e => (this.adEl = e)} />
+          <internal-ad />
         </nav>
       );
     }
 
     return (
-      <nav class="sticky" ref={e => (this.stickyEl = e)}>
+      <nav class="sticky">
         {h1 ? (
-          <h5>
-            <a href={`#${h1.id}`}>Contents</a>
-          </h5>
+          <a href={`#${h1.id}`}>
+            <Heading level={6} class="title">Contents</Heading>
+          </a>
         ) : (
-          <h5>Contents</h5>
+          <Heading level={6} class="title">Contents</Heading>
         )}
 
         <ul class="heading-links">
@@ -122,7 +70,7 @@ export class InPageNavigtion {
           ))}
         </ul>
         {submitEditLink}
-        <internal-ad ref={e => (this.adEl = e)} />
+        <internal-ad />
       </nav>
     );
   }

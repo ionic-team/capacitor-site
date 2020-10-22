@@ -8,6 +8,7 @@ import {
   h,
   Listen,
 } from '@stencil/core';
+import Router from '../../router';
 import { importResource } from '../../utils/common';
 
 declare global {
@@ -21,9 +22,11 @@ declare global {
   styleUrl: 'docs-search.scss',
 })
 export class DocsSearch implements ComponentInterface {
+  private siteContent: HTMLElement;
+  private contentWidth = 736;
+
   @Element() el: HTMLElement;
-  @Prop() placeholder = 'Search';
-  @State() searchLeft: number = 0;
+  @Prop() placeholder = 'Search';  
   @State() input: {
     el?: HTMLInputElement;
     isPristine: boolean;
@@ -32,9 +35,13 @@ export class DocsSearch implements ComponentInterface {
     isPristine: true,
     isEmpty: true,
   };
+  @State() searchStats: {
+    width?: string,
+    left?: string,
+  } = {}
 
   private uniqueId = Math.random().toString().replace('.', '');
-  private algoliaCdn = {
+  private algolia: { linkEl?: HTMLLinkElement, js: string, css: string } = {
     js: 'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
     css:
       'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css',
@@ -44,39 +51,69 @@ export class DocsSearch implements ComponentInterface {
     const linkEls = document.head.querySelectorAll('link');
 
     const hasAlgoliaCss = Array.from(linkEls).some(link => {
-      return link.href === this.algoliaCdn.css;
+      return link.href === this.algolia.css;
     });
 
     if (!hasAlgoliaCss) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = this.algoliaCdn.css;
-      document.head.append(link);
+      this.algolia.linkEl = document.createElement('link');
+      this.algolia.linkEl.rel = 'stylesheet';
+      this.algolia.linkEl.href = this.algolia.css;
+      document.head.append(this.algolia.linkEl);
     }
   }
 
   componentDidLoad() {
     importResource(
-      { propertyName: 'docsearch', link: this.algoliaCdn.js },
+      { propertyName: 'docsearch', link: this.algolia.js },
       () => this.setupSearch(),
     );
+
+    this.el.addEventListener('focus', () => {
+      this.siteContent = 
+        document.querySelector('docs-component .measure-lg') ||
+        document.querySelector('section.ui-container');
+        this.getContentStats();
+    }, true)
   }
 
-  @Listen('resize', { target: 'window' })
-  handleResize() {
-    requestAnimationFrame(() => {
-      const widths = {
-        body: document.body.offsetWidth,
-        search: 600,
-      };
-      const searchBarLeft = this.input.el?.getBoundingClientRect()?.left;
 
-      this.searchLeft = (widths.body - searchBarLeft) / 2 - widths.search + 64;
+  disconnectedCallback() {
+    this.algolia.linkEl?.remove();
+
+    const scripts = document.head.querySelectorAll('script');
+    scripts.forEach((script) => {
+      if (script.src = this.algolia.js) script.remove();
     });
   }
 
+  @Listen('resize', { target: 'window' })
+  getContentStats() {    
+    requestAnimationFrame(() => {
+      if (!this.siteContent) return;
+      
+      let left = this.siteContent.getBoundingClientRect().left -
+                   this.el.getBoundingClientRect().left;
+      let width = this.siteContent.offsetWidth;
+
+      if (width > this.contentWidth) {
+        left -= (this.contentWidth - width) / 2;
+
+        this.searchStats = {
+          width: this.contentWidth.toString().concat('px'),
+          left: left.toString().concat('px'),
+        }
+      } else {
+        this.searchStats = {
+          width: width.toString().concat('px'),
+          left: left.toString().concat('px'),
+        }
+      } 
+    });     
+  }
+
+
   setupSearch() {
-    window.docsearch({
+    console.log(window.docsearch({
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
       indexName: `capacitorjs`,
       inputSelector: `#input-${this.uniqueId}`,
@@ -92,22 +129,30 @@ export class DocsSearch implements ComponentInterface {
           this.input.el.oninput = () => this.handleInput();
 
           this.handleInput();
-          this.handleResize();
+          this.getContentStats();
         }
       },
-    });
+      handleSelected: (_, __, suggestion) => {
+        const url = suggestion.url.replace('https://capacitorjs.com', '');
+        this.clearSearch();
+        Router.push(url);
+      },
+    }));
+  }
+
+  clearSearch = () => {
+    this.input.el.value = '';
+    this.input = {
+      ...this.input,
+      isEmpty: true,
+    };
   }
 
   handleInput() {
     if (this.input.el.value === '') {
-      document.body.classList.remove('no-scroll');
       this.input = { ...this.input, isEmpty: true };
     } else {
       this.input = { ...this.input, isEmpty: false };
-
-      if (document.body.offsetWidth < 768) {
-        document.body.classList.add('no-scroll');
-      }
     }
   }
 
@@ -118,10 +163,13 @@ export class DocsSearch implements ComponentInterface {
       <Host
         id={`id-${this.uniqueId}`}
         style={{
-          '--search-left': this.searchLeft.toString().concat('px'),
+          '--search-left': this.searchStats.left,
+          '--search-width': this.searchStats.width
         }}
       >
-        <ion-icon class="search" icon="search" />
+        <svg class="search-icon" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.7854 12.5947L10.6117 9.421a5.8626 5.8626 0 001.1752-3.5276C11.7869 2.6438 9.1431 0 5.8934 0 2.6438 0 0 2.6438 0 5.8934c0 3.2497 2.6438 5.8935 5.8934 5.8935a5.8626 5.8626 0 003.5276-1.1752l3.1737 3.1737a.8436.8436 0 001.1583-.0324.8436.8436 0 00.0324-1.1583zM1.6838 5.8934a4.2096 4.2096 0 114.2096 4.2096 4.2145 4.2145 0 01-4.2096-4.2096z" fill="#B2BECD" />
+        </svg>
         <input
           id={`input-${this.uniqueId}`}
           name="search"
@@ -130,6 +178,9 @@ export class DocsSearch implements ComponentInterface {
           placeholder={placeholder}
           aria-label={placeholder}
           required
+          style={{
+            visibility: 'hidden',
+          }}
         />
         <ion-icon
           style={{
@@ -137,23 +188,12 @@ export class DocsSearch implements ComponentInterface {
           }}
           class="close"
           icon="close"
-          onClick={() => {
-            this.input.el.value = '';
-            this.input = {
-              ...this.input,
-              isEmpty: true,
-            };
-          }}
+          onClick={() => this.clearSearch()}
         />
         <site-backdrop
+          mobileOnly
           visible={!this.input.isEmpty}
-          onClick={() => {
-            this.input.el.value = '';
-            this.input = {
-              ...this.input,
-              isEmpty: true,
-            };
-          }}
+          onClick={() => this.clearSearch()}
         />
       </Host>
     );

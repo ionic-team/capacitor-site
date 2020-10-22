@@ -5,6 +5,7 @@ import {
   ComponentInterface,
   State,
   h,
+  Fragment,
 } from '@stencil/core';
 import Helmet from '@stencil/helmet';
 import { RenderJsxAst } from '@stencil/ssg';
@@ -15,6 +16,7 @@ import { href } from '@stencil/router';
 @Component({
   tag: 'docs-component',
   styleUrl: 'docs-component.scss',
+  scoped: true,
 })
 export class DocsComponent implements ComponentInterface {
   menuEl!: HTMLDocsMenuElement;
@@ -38,8 +40,22 @@ export class DocsComponent implements ComponentInterface {
     this.menuEl.toggleOverlayMenu();
   };
 
+  Helmet = () => (
+    <Helmet>
+      <title>
+        {this.data.title ? `${this.data.title} - Capacitor` : 'Capacitor'}
+      </title>
+      {this.data.description && (
+        <meta
+          name="description"
+          content={`${this.data.description} - Official Capacitor Documentation`}
+        />
+      )}
+    </Helmet>
+  )
+
   render() {
-    const { data, showBackdrop } = this;
+    const { data, showBackdrop, Helmet } = this;
 
     if (!data) {
       return (
@@ -50,48 +66,51 @@ export class DocsComponent implements ComponentInterface {
     }
 
     return (
-      <div class="container">
-        <Helmet>
-          <title>
-            {data.title ? `${data.title} - Capacitor` : 'Capacitor'}
-          </title>
-          {data.description && (
-            <meta
-              name="description"
-              content={`${data.description} - Official Capacitor Documentation`}
-            />
-          )}
-        </Helmet>
-
-        <app-menu-toggle />
-
-        <site-backdrop visible={showBackdrop} onClick={this.backdropClicked} />
-
-        <docs-menu
-          ref={el => (this.menuEl = el)}
-          template={data.template}
-          toc={data.tableOfContents}
-          activePath={Router.path}
+      <Fragment>
+        <Helmet />
+        <platform-bar
+          containerClass="sc-docs-component docs-container"
+          productName="Capacitor"
         />
+        <div class="row">
+          <site-backdrop
+            visible={showBackdrop}
+            onClick={this.backdropClicked}
+          />
 
-        <div class="content-container">
-          <docs-header template={data.template} />
-          <div class="app-marked">
-            <div class="doc-content">
-              <div class="measure-lg">
-                <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />
-                <contributor-list contributors={data.contributors} />
-                <lower-content-nav navigation={data.navigation} />
-              </div>
-            </div>
-
-            <in-page-navigation
-              headings={data.headings}
-              editUrl={data.editUrl}
+          <docs-menu
+            ref={el => (this.menuEl = el)}
+            template={data.template}
+            toc={data.tableOfContents}
+            activePath={Router.path}
+          />          
+          <div class="content-wrapper">
+            <site-header
+              class="docs-container"
+              template={data.template}
+              includeLogo={false}
+              includeBurger
             />
+            <div class="app-marked  docs-container">
+              <div class="doc-content">
+                <div class="measure-lg">
+                  <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />                  
+                  <lower-content-nav navigation={data.navigation} />
+                  <contributor-list
+                    contributors={data.contributors}
+                    repoFileUrl={data.editUrl}
+                  />
+                </div>
+              </div>
+
+              <in-page-navigation
+                headings={data.headings}
+                editUrl={data.editUrl}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

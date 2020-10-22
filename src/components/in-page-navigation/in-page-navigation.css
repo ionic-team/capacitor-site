@@ -2,26 +2,23 @@ in-page-navigation {
   flex: 0 0 240px;
   padding-top: 26px;
   padding-left: 16px;
-  overflow: visible;
   letter-spacing: 0;
 }
 
-in-page-navigation .sticky {
-  overflow: hidden;
-}
 
 in-page-navigation internal-ad {
   visibility: hidden;
 }
 
-in-page-navigation h5 {
-  text-transform: uppercase;
-  font-size: 11px;
-  margin-top: 0;
-  margin-bottom: 6px;
+in-page-navigation .title {
+  margin-block-end: var(--space-1);
+  color: var(--c-indigo-50);
+  font-size: 10px;
   font-weight: 600;
-  color: #a0aec0;
-  letter-spacing: 0.05em;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.08em;
+  font-family: var(--f-family-text);
 }
 
 in-page-navigation h5 a {
@@ -46,6 +43,9 @@ in-page-navigation .heading-links li {
   text-overflow: ellipsis;
   cursor: pointer;
 }
+in-page-navigation .heading-links li:hover a {
+  opacity: .7;
+}
 
 in-page-navigation .heading-links a {
   font-weight: 400;
@@ -56,11 +56,11 @@ in-page-navigation .heading-links a {
   border: none;
   text-decoration: none;
   border: none !important;
-  transition: 0.2s color ease;
+  transition: 0.2s color ease-out, .2s opacity ease-out;
 }
 
-in-page-navigation .heading-links a:hover {
-  color: var(--color-woodsmoke);
+in-page-navigation .heading-links a:hover {  
+  opacity: 1;
 }
 
 in-page-navigation .heading-links a:hover {

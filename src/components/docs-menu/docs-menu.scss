@@ -1,27 +1,27 @@
-@use '../../global/variables';
+@use '../../global/vars' as *;
 
 :host {
   --menu-width: 280px;
 
+  position: relative;
   display: block;
   flex: 0 0 auto;
   width: var(--menu-width);
   letter-spacing: 0;
 
-  box-shadow: 1px 0px 0px rgba(0, 21, 58, 0.06);
+  // box-shadow: 1px 0px 0px rgba(0, 21, 58, 0.06);
+  border-inline-end: 1px solid #f0f0f0;
 
-  z-index: 2;
+  z-index: 1002;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $screen-xs-max) {
     position: fixed;
     top: 0;
     left: 0;
     background: var(--color-white);
-    z-index: 999;
     transform: translateX(calc(-1 * var(--menu-width)));
     transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
     height: 100%;
-    overflow-y: scroll;
 
     // Overlay is visible only when menu toggle
     // is pressed, opens on small screens only
@@ -38,10 +38,6 @@
         border-bottom: 1px solid #e9edf3;
       }
 
-      .menu-header__logo-link {
-        margin-left: 60px;
-      }
-
       .menu-header__version-link {
         display: none;
       }
@@ -51,6 +47,10 @@
       }
     }
   }
+}
+
+li {
+  list-style-type: none;
 }
 
 span {
@@ -66,9 +66,11 @@ span {
   display: flex;
   align-items: center;
 
+  border-block-end: 1px solid rgba(0, 21, 58, 0.06);
+
   height: 64px;
 
-  padding: 0 15px 0 18px;
+  padding: 0 var(--container);
 }
 
 .menu-header__logo-link,
@@ -77,8 +79,11 @@ span {
 }
 
 .menu-header__logo-link {
-  margin-top: 7px;
   max-width: 125px;
+
+  svg {
+    display: block;
+  }
 }
 
 .menu-header__docs-link {
@@ -86,13 +91,13 @@ span {
 
   text-transform: uppercase;
 
-  font-family: 'Eina';
+  font-family: var(--f-family-display);
   font-weight: 600;
   font-size: 16px;
 
   letter-spacing: -0.02em;
 
-  margin: 6px 7px 0 8px;
+  margin: 3px 7px 0 8px;
 }
 
 .menu-header__version-link {
@@ -176,28 +181,6 @@ span {
   margin: 16px 0;
 }
 
-.section-list a {
-  font-weight: 500;
-  font-size: 16px;
-
-  letter-spacing: -0.01em;
-
-  color: var(--color-grey-blue);
-
-  border: none;
-
-  cursor: pointer;
-
-  &.active {
-    color: #222d3a;
-    font-weight: 600;
-  }
-
-  &:hover {
-    color: var(--color-woodsmoke);
-  }
-}
-
 .menu-list li,
 .menu-list ul li {
   list-style-type: none;
@@ -245,7 +228,7 @@ span {
     }
 
     &:hover {
-      color: var(--color-grey-blue);
+      // color: var(--color-grey-blue);
     }
   }
 }
@@ -269,14 +252,18 @@ span {
 }
 
 .menu-list > li > a {
+  margin-block-end: 6px;
   cursor: pointer;
   ion-icon {
     color: var(--c-carbon-90);
     font-weight: bold;
     font-size: 14px;
     vertical-align: middle;
+    margin-block-end: 2px;
     margin-right: 8px;
   }
+
+  transition: opacity .2s ease-out;
 }
 
 .menu-list .link-active {
@@ -284,35 +271,56 @@ span {
   color: var(--color-dodger-blue);
 }
 
-.menu-list a:hover:not(.link-active) {
-  color: var(--color-woodsmoke);
-}
-
 .menu-list ul li {
-  padding-left: 16px;
-  transition: 80ms height;
-  height: 30px;
-  display: block;
+  display: flex;
+  border-radius: var(--radius-1);
+  align-items: center;
+  margin-inline-start: var(--space-3);
+  margin-inline-end: var(--space-2);
+  transition: height 8000ms ease-out;
   overflow: hidden;
 }
 
-.menu-list ul li a {
-  display: block;
-  transition: 0.2s transform ease, 0.2s color ease;
-  margin-top: 3px;
-  border-radius: 4px;
-  padding-left: 10px;
+.menu-list li ul {
+  transition: height 2s;
 }
 
-.menu-list ul li:hover a {
-  color: #2d4665;
+.menu-list ul li + li{
+  margin-block-start: 2px;
+}
+
+.menu-list ul li a {  
+  flex-grow: 1;
+  padding: 5px 12px;
+  display: block;
+  transition: 0.2s transform ease-out, 0.2s color ease-out;
+  border-radius: 4px;
+}
+
+.menu-list ul li a:hover,
+.menu-list ul li a:focus {
+  opacity: 1;
+}
+
+.menu-list ul li a:not(.link-active):hover,
+.menu-list ul li a:not(.link-active):focus {
+  color: var(--c-carbon-70);
+}
+
+.menu-list ul li a .bump-up{
+  margin-block-end: 2px;
+  height: calc(100% - 2px);
 }
 
 .menu-list ul li a.link-active {
   color: #0091fa;
-  background: #f3faff;
+  background: var(--c-cyan-0);
 }
 
-.menu-list .collapsed li {
+.menu-list .collapsed ul li {
+  height: 0;
+}
+
+.menu-list .collapsed ul {
   height: 0;
 }

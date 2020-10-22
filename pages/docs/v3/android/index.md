@@ -24,7 +24,7 @@ First, install the `@capacitor/android` package.
 npm install @capacitor/android
 ```
 
-Then, add the Android platform and sync your app. [Learn more about `sync`](/docs/reference/cli#sync).
+Then, add the Android platform and sync your app. [Learn more about `sync`](/docs/cli#sync).
 
 ```bash
 npx cap add android
@@ -55,7 +55,7 @@ To run the project on a device or emulator, run:
 npx cap run android
 ```
 
-The command will prompt you to select a target. [Learn more about `run`](/docs/reference/cli#run).
+The command will prompt you to select a target. [Learn more about `run`](/docs/cli#run).
 
 ### Running with Android Studio
 

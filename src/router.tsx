@@ -50,20 +50,26 @@ export const Routes = () => (
       )}
     />
 
+    <Route
+      path="/community"
+      mapParams={staticState(getPage)}
+      render={(_, data) => (
+        <Fragment>
+          <SiteHeader />
+          <community-page data={data} />
+        </Fragment>
+      )}
+    />
+
     <Route path="/cordova">
       <SiteHeader />
-      <cordova-landing-page />
+      <cordova-page />
     </Route>
 
     <Route path="/enterprise">
       <SiteHeader />
       <capacitor-enterprise />
-    </Route>
-
-    <Route path="/community">
-      <SiteHeader />
-      <capacitor-community />
-    </Route>
+    </Route>    
 
     <Route
       path={matchAny(['/docs/v3/:id*', '/docs/v3'])}
@@ -116,8 +122,11 @@ Router.on('change', (newUrl, _oldUrl) => {
 
 const SiteHeader = () => (
   <Fragment>
-    <site-platform-bar productName="Capacitor" />
-    <capacitor-site-header />
+    <platform-bar
+      containerClass="heading-container"
+      productName="Capacitor"
+    />
+    <site-header class="heading-container" />
   </Fragment>
 );
 

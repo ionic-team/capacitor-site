@@ -8,12 +8,13 @@ import {
 import { join } from 'path';
 import { getGithubData } from './github';
 import type { DocsData } from './docs'
+import { hookUpDesignSystem } from './blog';
 
 const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
 const docsDir = join(pagesDir, 'docs');
 
-export type DocsTemplate = 'guide' | 'plugins' | 'reference';
+export type DocsTemplate = 'docs' | 'plugins' | 'cli';
 
 export const getDocsDataV2: MapParamData = async ({ id }) => {
   if (!id) {
@@ -22,6 +23,9 @@ export const getDocsDataV2: MapParamData = async ({ id }) => {
 
   const results: DocsData = await parseMarkdown(join(docsDir, id), {
     headingAnchors: true,
+    beforeHtmlSerialize(frag: DocumentFragment) {
+      hookUpDesignSystem(frag);
+    }
   });
 
   results.template = getTemplateFromPath(results.filePath);
@@ -55,7 +59,7 @@ const getTableOfContents = async (template: DocsTemplate) => {
   let toc = cachedToc.get(template);
   if (!toc) {
     let tocPath: string;
-    if (template === 'reference' || template === 'plugins') {
+    if (template === 'cli' || template === 'plugins') {
       tocPath = join(docsDir, template, 'README.md');
     } else {
       tocPath = join(docsDir, 'README.md');
@@ -67,13 +71,27 @@ const getTableOfContents = async (template: DocsTemplate) => {
 };
 
 const getTemplateFromPath = (path: string): DocsTemplate => {
+  // For when I'm testing on my windows boot -Jared
+  // const isDev = !globalThis.location.origin.includes('https://');
+
+  // if (isDev) {
+  //   const path = globalThis.location.href;
+
+  //   if (path.includes('/plugins') || path.includes('/apis')) {
+  //     return 'plugins';
+  //   }
+  //   if (path.includes('/cli')) {
+  //     return 'cli';
+  //   }
+  // }
+
   if (typeof path === 'string') {
     if (path.includes('/plugins') || path.includes('/apis')) {
       return 'plugins';
     }
-    if (path.includes('/reference')) {
-      return 'reference';
+    if (path.includes('/cli')) {
+      return 'cli';
     }
   }
-  return 'guide';
+  return 'docs';
 };

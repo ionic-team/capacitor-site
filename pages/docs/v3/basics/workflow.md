@@ -37,7 +37,7 @@ To sync your project, run:
 npx cap sync
 ```
 
-[Learn more about `sync` &#8250;](/docs/reference/cli#sync)
+[Learn more about `sync` &#8250;](/docs/cli#sync)
 
 ## Run your Project
 

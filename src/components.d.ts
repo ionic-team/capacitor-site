@@ -24,8 +24,6 @@ export namespace Components {
     interface BlogPost {
         "data": BlogData;
     }
-    interface CapacitorCommunity {
-    }
     interface CapacitorEnterprise {
     }
     interface CapacitorHubspotForm {
@@ -38,24 +36,23 @@ export namespace Components {
     }
     interface CapacitorSiteFooter {
     }
-    interface CapacitorSiteHeader {
-    }
     interface CodeSnippet {
         "code": string;
         "language": string;
     }
+    interface CommunityPage {
+        "data": any;
+    }
     interface ContributorList {
         "contributors": string[];
+        "repoFileUrl": string;
     }
-    interface CordovaLandingPage {
+    interface CordovaPage {
     }
     interface DocSnippet {
     }
     interface DocsComponent {
         "data": DocsData;
-    }
-    interface DocsHeader {
-        "template": DocsTemplate;
     }
     interface DocsMenu {
         "activePath": string;
@@ -96,8 +93,10 @@ export namespace Components {
     }
     interface PreFooter {
     }
-    interface SiteBackdrop {
-        "visible": boolean;
+    interface SiteHeader {
+        "includeBurger": boolean;
+        "includeLogo": boolean;
+        "template": DocsTemplate;
     }
     interface SolutionPage {
         "solutionId": string;
@@ -136,12 +135,6 @@ declare global {
         prototype: HTMLBlogPostElement;
         new (): HTMLBlogPostElement;
     };
-    interface HTMLCapacitorCommunityElement extends Components.CapacitorCommunity, HTMLStencilElement {
-    }
-    var HTMLCapacitorCommunityElement: {
-        prototype: HTMLCapacitorCommunityElement;
-        new (): HTMLCapacitorCommunityElement;
-    };
     interface HTMLCapacitorEnterpriseElement extends Components.CapacitorEnterprise, HTMLStencilElement {
     }
     var HTMLCapacitorEnterpriseElement: {
@@ -166,17 +159,17 @@ declare global {
         prototype: HTMLCapacitorSiteFooterElement;
         new (): HTMLCapacitorSiteFooterElement;
     };
-    interface HTMLCapacitorSiteHeaderElement extends Components.CapacitorSiteHeader, HTMLStencilElement {
-    }
-    var HTMLCapacitorSiteHeaderElement: {
-        prototype: HTMLCapacitorSiteHeaderElement;
-        new (): HTMLCapacitorSiteHeaderElement;
-    };
     interface HTMLCodeSnippetElement extends Components.CodeSnippet, HTMLStencilElement {
     }
     var HTMLCodeSnippetElement: {
         prototype: HTMLCodeSnippetElement;
         new (): HTMLCodeSnippetElement;
+    };
+    interface HTMLCommunityPageElement extends Components.CommunityPage, HTMLStencilElement {
+    }
+    var HTMLCommunityPageElement: {
+        prototype: HTMLCommunityPageElement;
+        new (): HTMLCommunityPageElement;
     };
     interface HTMLContributorListElement extends Components.ContributorList, HTMLStencilElement {
     }
@@ -184,11 +177,11 @@ declare global {
         prototype: HTMLContributorListElement;
         new (): HTMLContributorListElement;
     };
-    interface HTMLCordovaLandingPageElement extends Components.CordovaLandingPage, HTMLStencilElement {
+    interface HTMLCordovaPageElement extends Components.CordovaPage, HTMLStencilElement {
     }
-    var HTMLCordovaLandingPageElement: {
-        prototype: HTMLCordovaLandingPageElement;
-        new (): HTMLCordovaLandingPageElement;
+    var HTMLCordovaPageElement: {
+        prototype: HTMLCordovaPageElement;
+        new (): HTMLCordovaPageElement;
     };
     interface HTMLDocSnippetElement extends Components.DocSnippet, HTMLStencilElement {
     }
@@ -201,12 +194,6 @@ declare global {
     var HTMLDocsComponentElement: {
         prototype: HTMLDocsComponentElement;
         new (): HTMLDocsComponentElement;
-    };
-    interface HTMLDocsHeaderElement extends Components.DocsHeader, HTMLStencilElement {
-    }
-    var HTMLDocsHeaderElement: {
-        prototype: HTMLDocsHeaderElement;
-        new (): HTMLDocsHeaderElement;
     };
     interface HTMLDocsMenuElement extends Components.DocsMenu, HTMLStencilElement {
     }
@@ -274,11 +261,11 @@ declare global {
         prototype: HTMLPreFooterElement;
         new (): HTMLPreFooterElement;
     };
-    interface HTMLSiteBackdropElement extends Components.SiteBackdrop, HTMLStencilElement {
+    interface HTMLSiteHeaderElement extends Components.SiteHeader, HTMLStencilElement {
     }
-    var HTMLSiteBackdropElement: {
-        prototype: HTMLSiteBackdropElement;
-        new (): HTMLSiteBackdropElement;
+    var HTMLSiteHeaderElement: {
+        prototype: HTMLSiteHeaderElement;
+        new (): HTMLSiteHeaderElement;
     };
     interface HTMLSolutionPageElement extends Components.SolutionPage, HTMLStencilElement {
     }
@@ -298,18 +285,16 @@ declare global {
         "avc-code-type": HTMLAvcCodeTypeElement;
         "blog-page": HTMLBlogPageElement;
         "blog-post": HTMLBlogPostElement;
-        "capacitor-community": HTMLCapacitorCommunityElement;
         "capacitor-enterprise": HTMLCapacitorEnterpriseElement;
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
-        "capacitor-site-header": HTMLCapacitorSiteHeaderElement;
         "code-snippet": HTMLCodeSnippetElement;
+        "community-page": HTMLCommunityPageElement;
         "contributor-list": HTMLContributorListElement;
-        "cordova-landing-page": HTMLCordovaLandingPageElement;
+        "cordova-page": HTMLCordovaPageElement;
         "doc-snippet": HTMLDocSnippetElement;
         "docs-component": HTMLDocsComponentElement;
-        "docs-header": HTMLDocsHeaderElement;
         "docs-menu": HTMLDocsMenuElement;
         "docs-search": HTMLDocsSearchElement;
         "in-page-navigation": HTMLInPageNavigationElement;
@@ -321,7 +306,7 @@ declare global {
         "plugin-api-index": HTMLPluginApiIndexElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
         "pre-footer": HTMLPreFooterElement;
-        "site-backdrop": HTMLSiteBackdropElement;
+        "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
         "version-select": HTMLVersionSelectElement;
     }
@@ -343,8 +328,6 @@ declare namespace LocalJSX {
     interface BlogPost {
         "data"?: BlogData;
     }
-    interface CapacitorCommunity {
-    }
     interface CapacitorEnterprise {
     }
     interface CapacitorHubspotForm {
@@ -358,24 +341,23 @@ declare namespace LocalJSX {
     }
     interface CapacitorSiteFooter {
     }
-    interface CapacitorSiteHeader {
-    }
     interface CodeSnippet {
         "code"?: string;
         "language"?: string;
     }
+    interface CommunityPage {
+        "data"?: any;
+    }
     interface ContributorList {
         "contributors"?: string[];
+        "repoFileUrl"?: string;
     }
-    interface CordovaLandingPage {
+    interface CordovaPage {
     }
     interface DocSnippet {
     }
     interface DocsComponent {
         "data"?: DocsData;
-    }
-    interface DocsHeader {
-        "template"?: DocsTemplate;
     }
     interface DocsMenu {
         "activePath"?: string;
@@ -416,8 +398,10 @@ declare namespace LocalJSX {
     }
     interface PreFooter {
     }
-    interface SiteBackdrop {
-        "visible"?: boolean;
+    interface SiteHeader {
+        "includeBurger"?: boolean;
+        "includeLogo"?: boolean;
+        "template"?: DocsTemplate;
     }
     interface SolutionPage {
         "solutionId"?: string;
@@ -430,18 +414,16 @@ declare namespace LocalJSX {
         "avc-code-type": AvcCodeType;
         "blog-page": BlogPage;
         "blog-post": BlogPost;
-        "capacitor-community": CapacitorCommunity;
         "capacitor-enterprise": CapacitorEnterprise;
         "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
-        "capacitor-site-header": CapacitorSiteHeader;
         "code-snippet": CodeSnippet;
+        "community-page": CommunityPage;
         "contributor-list": ContributorList;
-        "cordova-landing-page": CordovaLandingPage;
+        "cordova-page": CordovaPage;
         "doc-snippet": DocSnippet;
         "docs-component": DocsComponent;
-        "docs-header": DocsHeader;
         "docs-menu": DocsMenu;
         "docs-search": DocsSearch;
         "in-page-navigation": InPageNavigation;
@@ -453,7 +435,7 @@ declare namespace LocalJSX {
         "plugin-api-index": PluginApiIndex;
         "plugin-platforms": PluginPlatforms;
         "pre-footer": PreFooter;
-        "site-backdrop": SiteBackdrop;
+        "site-header": SiteHeader;
         "solution-page": SolutionPage;
         "version-select": VersionSelect;
     }
@@ -467,18 +449,16 @@ declare module "@stencil/core" {
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
-            "capacitor-community": LocalJSX.CapacitorCommunity & JSXBase.HTMLAttributes<HTMLCapacitorCommunityElement>;
             "capacitor-enterprise": LocalJSX.CapacitorEnterprise & JSXBase.HTMLAttributes<HTMLCapacitorEnterpriseElement>;
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
-            "capacitor-site-header": LocalJSX.CapacitorSiteHeader & JSXBase.HTMLAttributes<HTMLCapacitorSiteHeaderElement>;
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
+            "community-page": LocalJSX.CommunityPage & JSXBase.HTMLAttributes<HTMLCommunityPageElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
-            "cordova-landing-page": LocalJSX.CordovaLandingPage & JSXBase.HTMLAttributes<HTMLCordovaLandingPageElement>;
+            "cordova-page": LocalJSX.CordovaPage & JSXBase.HTMLAttributes<HTMLCordovaPageElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
             "docs-component": LocalJSX.DocsComponent & JSXBase.HTMLAttributes<HTMLDocsComponentElement>;
-            "docs-header": LocalJSX.DocsHeader & JSXBase.HTMLAttributes<HTMLDocsHeaderElement>;
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
             "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
@@ -490,7 +470,7 @@ declare module "@stencil/core" {
             "plugin-api-index": LocalJSX.PluginApiIndex & JSXBase.HTMLAttributes<HTMLPluginApiIndexElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
-            "site-backdrop": LocalJSX.SiteBackdrop & JSXBase.HTMLAttributes<HTMLSiteBackdropElement>;
+            "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
             "version-select": LocalJSX.VersionSelect & JSXBase.HTMLAttributes<HTMLVersionSelectElement>;
         }

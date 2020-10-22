@@ -10,8 +10,14 @@
   background: #0B2231;
   border-radius: var(--border-radius);
   margin-top: 0;
+
   code {
+    font-family: 'Roboto Mono', 'Source Code Pro', monospace;
     font-size: 14px;
     color: var(--c-carbon-10);
   }
 }
+
+// pre[class*="language-shell"] code::before {
+//   content: '$ '
+// }

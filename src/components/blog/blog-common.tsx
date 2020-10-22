@@ -60,7 +60,13 @@ const PostFeaturedImage = ({ data }: { data: BlogData}) => (
 );
 
 const PostContinueReading = ({ data }: { data: BlogData }) => 
-  <a class="blog-post__continue-reading" {...href(getBlogPostPath(data))}>Continue reading <ion-icon name="arrow-forward" /></a>
+  <a
+    class="blog-post__continue-reading | link"
+    {...href(getBlogPostPath(data))}
+  >
+    Continue reading
+    <span class="arrow"> -&gt;</span>
+  </a>
 
 const PostAuthor = ({ authorName, authorUrl, dateISO }: { authorName: string, authorUrl: string, dateISO }) => {
   
@@ -69,13 +75,14 @@ const PostAuthor = ({ authorName, authorUrl, dateISO }: { authorName: string, au
   return (
     <div class="blog-post__author">
       {/*<img src={a.author_avatar.url} alt={a.author_name} />*/}
-      <span>
+      <p>
         By {' '}
         {authorUrl
           ? <a href={authorUrl} target="_blank">{authorName}</a>
           : authorName}
         {' '}
-        on <DateTime date={date} /></span>
+        on <DateTime date={date} />
+      </p>
     </div>
   );
 }

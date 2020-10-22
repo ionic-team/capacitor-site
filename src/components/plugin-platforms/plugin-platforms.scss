@@ -3,13 +3,14 @@ $link-color: #5EB6FC;
 plugin-platforms {
   display: block;
   .platforms {
+    display: inline-flex;
+
     .platform {
       display: inline-block;
     }
     
-    img {
+    img + img {
       margin-left: 12px;
-      height: 26px;
     }
   }
 }

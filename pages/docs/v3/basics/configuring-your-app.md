@@ -18,7 +18,7 @@ Additionally, since configuring a Capacitor project is no different from configu
 
 ## Common Configuration
 
-Capacitor has some high-level configuration options that are set in the [Capacitor configuration file](/docs/reference/config). These generally don't modify native functionality, but control Capacitor's tooling.
+Capacitor has some high-level configuration options that are set in the [Capacitor configuration file](/docs/config). These generally don't modify native functionality, but control Capacitor's tooling.
 
 ## Native Configuration
 

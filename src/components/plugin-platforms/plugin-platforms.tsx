@@ -1,7 +1,8 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, getAssetPath } from '@stencil/core';
 @Component({
   tag: 'plugin-platforms',
-  styleUrl: 'plugin-platforms.scss'
+  styleUrl: 'plugin-platforms.scss',
+  assetsDirs: ['assets']
 })
 export class PluginPlatforms {
   @Prop() platforms: string = "";
@@ -12,7 +13,12 @@ export class PluginPlatforms {
     <div class="platforms">
       {platforms.map(platform => {
         return (
-          <img src={`/assets/img/landing/${platform}.png`} alt={`${platform}`} title={`${platform}`}  />
+          <img
+            src={`${getAssetPath('./assets/plugin-platforms/img/')}${platform}@2x.png`}
+            alt={`${platform}`}
+            title={`${platform}`}
+            width="32" height="32"
+          />
         )
       })}
     </div>

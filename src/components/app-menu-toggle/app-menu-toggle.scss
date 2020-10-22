@@ -2,20 +2,14 @@
 
 app-menu-toggle {
   display: none;
-
-  position: fixed;
-
   top: 0px;
   left: 0px;
-
-  z-index: 999;
 
   .menu-toggle-button {
     display: flex;
     align-items: flex-start;
     justify-content: center;
 
-    padding: 10px;
     border: none;
 
     background: transparent;
@@ -24,12 +18,8 @@ app-menu-toggle {
 
     outline: none;
 
-    ion-icon {
-      padding: 8px;
-    }
-
     &:hover ion-icon {
-      opacity: 0.4;
+      opacity: 0.7;
     }
 
     &:active ion-icon {
@@ -38,7 +28,7 @@ app-menu-toggle {
   }
 
   ion-icon {
-    transition: opacity 0.3s;
+    transition: opacity 0.2s ease-out;
     opacity: 0.7;
     cursor: pointer;
   }
