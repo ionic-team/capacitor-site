@@ -65,6 +65,10 @@
     padding: 0;
   }
 
+  > docgen-api {
+    margin: 1.6em 0;
+  }
+
   //Top level styles vs. all styles
   > .ui-heading-1 {
     margin-block-start: var(--space-9);
