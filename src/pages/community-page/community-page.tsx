@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-import { ResponsiveContainer, PrismicRichText, PrismicResponsiveImage } from '@ionic-internal/ionic-ds';
+import { ResponsiveContainer, PrismicRichText, PrismicResponsiveImage, Grid, Col } from '@ionic-internal/ionic-ds';
 
 
 @Component({
@@ -11,11 +11,12 @@ export class CommunityPage {
   @Prop() data: any;
 
   render() {
-    const { Top } = this;
+    const { Top, Websites } = this;
 
     return (
       <Host>
         <Top />
+        <Websites />
         <ResponsiveContainer id="newsletter" as="section">
           <newsletter-signup />
         </ResponsiveContainer>        
@@ -46,5 +47,39 @@ export class CommunityPage {
       </ResponsiveContainer>
     )
   }
+
+  Websites = () => {
+    const { websites__list } = this.data;
+
+    const dimensions = [
+      '40x32', '40x34', '34x40', '40x40'
+    ]
+
+
+    return (
+      <ResponsiveContainer id="websites" as="section">
+        <Grid>
+          {websites__list.map(({ icon, text, link }, i) => {
+            const [width, height] = dimensions[i].split('x');
+
+            return (
+              <Col cols={12} xs={6} md={3}>
+                <div class="image-wrapper">
+                  <PrismicResponsiveImage
+                    width={width} height={height}
+                    image={icon}
+                  />
+                </div>
+                <PrismicRichText richText={text} />
+                <PrismicRichText class="link" richText={link}/>
+              </Col>
+            )
+          })}
+        </Grid>
+      </ResponsiveContainer>
+    )
+  }
+
+
 
 }

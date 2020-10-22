@@ -96,18 +96,19 @@ const getTableOfContents = async (template: DocsTemplate) => {
 };
 
 const getTemplateFromPath = (path: string): DocsTemplate => {
-  const isDev = !globalThis.location.origin.includes('https://');
+  // For when I'm testing on my windows boot -Jared
+  // const isDev = !globalThis.location.origin.includes('https://');
 
-  if (isDev) {
-    const path = globalThis.location.href;
+  // if (isDev) {
+  //   const path = globalThis.location.href;
 
-    if (path.includes('/plugins') || path.includes('/apis')) {
-      return 'plugins';
-    }
-    if (path.includes('/cli')) {
-      return 'cli';
-    }
-  }
+  //   if (path.includes('/plugins') || path.includes('/apis')) {
+  //     return 'plugins';
+  //   }
+  //   if (path.includes('/cli')) {
+  //     return 'cli';
+  //   }
+  // }
 
   if (typeof path === 'string') {
     if (path.includes('/plugins') || path.includes('/apis')) {

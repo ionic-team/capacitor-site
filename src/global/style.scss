@@ -53,7 +53,7 @@ a.link, p a, li a {
   color: var(--c-capacitor-blue);
   transition: opacity .2s ease-out;
 
-  &:hover, &:active, &:focus {
+  &:hover {
     opacity: .7;
   }
 }

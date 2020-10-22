@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, Event, EventEmitter, Element, State, Listen } from '@stencil/core';
+import { importResource } from 'src/utils/common';
 
 declare var window: any;
 
@@ -19,18 +20,11 @@ export class HubspotForm {
 
   scriptEl?: HTMLScriptElement;
 
-  disconnectedCallback() {
-    this.scriptEl?.parentNode?.removeChild(this.scriptEl);
-  }
-
   componentDidLoad() {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.charset = 'utf-8';
-    script.src = '//js.hsforms.net/forms/v2.js';
-    script.addEventListener('load', this.handleScriptLoad);
-    this.scriptEl = script;
-    document.body.appendChild(script);
+    importResource(
+      { propertyName: 'hbspt', link: '//js.hsforms.net/forms/v2.js' },
+      this.handleScriptLoad,
+    );
   }
 
   @Listen('message', { target: 'window' })

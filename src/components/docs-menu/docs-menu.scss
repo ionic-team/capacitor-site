@@ -291,10 +291,6 @@ span {
   color: var(--color-dodger-blue);
 }
 
-.menu-list a:hover:not(.link-active) {
-  color: var(--color-woodsmoke);
-}
-
 .menu-list ul li {
   display: flex;
   border-radius: var(--radius-1);
@@ -321,8 +317,14 @@ span {
   border-radius: 4px;
 }
 
-.menu-list ul li:hover a {
-  color: #2d4665;
+.menu-list ul li a:hover,
+.menu-list ul li a:focus {
+  opacity: 1;
+}
+
+.menu-list ul li a:not(.link-active):hover,
+.menu-list ul li a:not(.link-active):focus {
+  color: var(--color-woodsmoke);
 }
 
 .menu-list ul li a .bump-up{
