@@ -121,7 +121,7 @@ export class LandingPage {
                 {secondary}
               </Button>
             </div>
-            <a class="link | ui-paragraph-4" href="/cordova">
+            <a class="link | ui-paragraph-4" {...href('/cordova')}>
               {top__link}
               <span class="arrow"> -&gt;</span>
             </a>
