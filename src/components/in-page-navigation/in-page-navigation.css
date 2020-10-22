@@ -43,6 +43,9 @@ in-page-navigation .heading-links li {
   text-overflow: ellipsis;
   cursor: pointer;
 }
+in-page-navigation .heading-links li:hover a {
+  opacity: .7;
+}
 
 in-page-navigation .heading-links a {
   font-weight: 400;
@@ -53,11 +56,11 @@ in-page-navigation .heading-links a {
   border: none;
   text-decoration: none;
   border: none !important;
-  transition: 0.2s color ease;
+  transition: 0.2s color ease-out, .2s opacity ease-out;
 }
 
-in-page-navigation .heading-links a:hover {
-  color: var(--color-woodsmoke);
+in-page-navigation .heading-links a:hover {  
+  opacity: 1;
 }
 
 in-page-navigation .heading-links a:hover {

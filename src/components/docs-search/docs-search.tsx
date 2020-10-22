@@ -62,19 +62,20 @@ export class DocsSearch implements ComponentInterface {
     }
   }
 
-  connectedCallback() {
-    console.log('connectedCallback')
-    this.siteContent = document.querySelector('docs-component .measure-lg') ||
-                       document.querySelector('section.ui-container');
-    console.log(this.siteContent);
-  }
-
   componentDidLoad() {
     importResource(
       { propertyName: 'docsearch', link: this.algolia.js },
       () => this.setupSearch(),
     );
+
+    this.el.addEventListener('focus', () => {
+      this.siteContent = 
+        document.querySelector('docs-component .measure-lg') ||
+        document.querySelector('section.ui-container');
+        this.getContentStats();
+    }, true)
   }
+
 
   disconnectedCallback() {
     this.algolia.linkEl?.remove();
@@ -104,16 +105,13 @@ export class DocsSearch implements ComponentInterface {
           width: width.toString().concat('px'),
           left: left.toString().concat('px'),
         }
-      }
-
-      
+      } 
     });     
   }
 
 
   setupSearch() {
-    console.log('setupSearch method')
-    window.docsearch({
+    console.log(window.docsearch({
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
       indexName: `capacitorjs`,
       inputSelector: `#input-${this.uniqueId}`,
@@ -137,7 +135,7 @@ export class DocsSearch implements ComponentInterface {
         this.clearSearch();
         Router.push(url);
       },
-    });
+    }));
   }
 
   clearSearch = () => {

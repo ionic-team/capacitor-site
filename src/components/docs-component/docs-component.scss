@@ -170,6 +170,7 @@ plugin-platforms {
     padding: 0;
   }
 
+  //Top level styles vs. all styles
   > .ui-heading-1 {
     margin-block-start: var(--space-9);
   }
@@ -218,6 +219,28 @@ plugin-platforms {
     margin-left: 6px;
     padding: 4px 8px;
     border-radius: 4px;
+  }
+
+  h2 .heading-anchor, h3 .heading-anchor, h4 .heading-anchor, h5 .heading-anchor, h6 .heading-anchor {
+    opacity: 0;
+    transition: opacity 0.2s ease 0s;
+    display: block;
+    position: absolute;
+    left: -25px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewBox='0 0 512 512'%3E%3Ctitle%3Eionicons-v5-o%3C/title%3E%3Cpath d='M208,352H144a96,96,0,0,1,0-192h64' style='fill:none;stroke:%23000;stroke-linecap:round;stroke-linejoin:round;stroke-width:36px'/%3E%3Cpath d='M304,160h64a96,96,0,0,1,0,192H304' style='fill:none;stroke:%23000;stroke-linecap:round;stroke-linejoin:round;stroke-width:36px'/%3E%3Cline x1='163.29' y1='256' x2='350.71' y2='256' style='fill:none;stroke:%23000;stroke-linecap:round;stroke-linejoin:round;stroke-width:36px'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0px 6px;
+    width: 28px;
+    height: 34px;
+    border: 0px;
+  }
+
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor {
+    opacity: 0.8;
   }
   
   p,
