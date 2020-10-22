@@ -101,6 +101,19 @@ call.reject(error.localizedDescription, error, [
 ])
 ```
 
+### Adding Initialization Logic
+
+Plugins can override the `load` method to run some code when the plugin is first initialized:
+
+```java
+@objc(MyPlugin)
+public class MyPlugin: CAPPlugin {
+  @objc override public func load() {
+    // Called when the plugin is first constructed in the bridge
+  }
+}
+```
+
 ### Presenting Native Screens
 
 To present a Native Screen over the Capacitor screen we need to acces the Capacitor's View Controller.

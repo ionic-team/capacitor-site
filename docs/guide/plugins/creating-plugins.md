@@ -36,6 +36,10 @@ import Capacitor
 
 @objc(Todo)
 class Todo : Plugin {
+  @objc override public func load() {
+    // Called when the plugin is first constructed in the bridge
+  }
+
   @objc func create(_ call: PluginCall) {
     // Grab the call arguments, guarding to ensure they exist
     guard let title = call.get("title", String.self) else {
@@ -85,6 +89,9 @@ import com.getcapacitor.JSObject;
 
 @NativePlugin()
 public class Todo extends Plugin {
+  public void load() {
+    // Called when the plugin is first constructed in the bridge
+  }
 
   @PluginMethod()
   public void create(PluginCall call) {

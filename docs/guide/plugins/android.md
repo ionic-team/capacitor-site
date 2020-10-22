@@ -47,6 +47,9 @@ import com.getcapacitor.PluginMethod;
 
 @NativePlugin()
 public class EchoPlugin extends Plugin {
+    public void load() {
+        // Called when the plugin is first constructed in the bridge
+    }
 
     @PluginMethod()
     public void echo(PluginCall call) {
@@ -108,6 +111,17 @@ To fail, or reject a call, use `call.reject`, passing an error string and (optio
 
 ```java
 call.reject(exception.getLocalizedMessage(), exception);
+```
+
+### Adding Initialization Logic
+
+Plugins can override the `load` method to run some code when the plugin is first initialized:
+
+```java
+public class MyPlugin extends Plugin {
+    public void load() {
+    }
+}
 ```
 
 ### Presenting Native Screens
