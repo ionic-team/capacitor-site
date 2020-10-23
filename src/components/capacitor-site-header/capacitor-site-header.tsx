@@ -179,7 +179,7 @@ export class DocsHeader implements ComponentInterface {
           <more-button onClick={() => this.toggleExpanded()} />  
 
           <div class="ctas">    
-            <a href="https://github.com/ionic-team/capacitor" target="_blank">     
+            <a href="https://github.com/ionic-team/capacitor" target="_blank" rel="noopener">     
               <svg class="social" width="14" height="14" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 0a7.1 7.1 0 00-7 7.18c0 3.17 2 5.86 4.79 6.8.04.02.08.02.12.02.26 0 .36-.2.36-.36l-.01-1.22a3.2 3.2 0 01-.71.09c-1.35 0-1.65-1.05-1.65-1.05-.32-.83-.78-1.05-.78-1.05-.61-.43 0-.44.04-.44.7.06 1.08.74 1.08.74.35.61.82.79 1.23.79.28 0 .55-.07.8-.2.07-.45.25-.77.45-.95-1.55-.18-3.19-.8-3.19-3.55 0-.78.27-1.42.72-1.92-.07-.18-.31-.91.07-1.9l.16-.02c.25 0 .82.1 1.76.76a6.5 6.5 0 013.51 0c.94-.66 1.52-.76 1.77-.76.05 0 .1 0 .16.02.38.99.14 1.72.06 1.9.45.5.72 1.14.72 1.92 0 2.76-1.64 3.37-3.2 3.54.26.23.48.66.48 1.33v1.97c0 .17.09.36.35.36a.6.6 0 00.12-.01A7.16 7.16 0 0014 7.18 7.1 7.1 0 007 0z" fill="#B2BECD"/>
               </svg>
