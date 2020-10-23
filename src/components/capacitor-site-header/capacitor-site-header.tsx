@@ -94,7 +94,7 @@ export class DocsHeader implements ComponentInterface {
 
         <header>
           {includeLogo
-          ? <a {...href('/')}>{capacitorLogo()}</a>
+          ? <a {...href('/')} aria-label="homepage link">{capacitorLogo()}</a>
           : null}
 
           {includeBurger
@@ -113,7 +113,7 @@ export class DocsHeader implements ComponentInterface {
             }}
           >
             <div class="routes__header">
-              <a class="logo-wrapper" {...href('/')}>
+              <a  aria-label="homepage link" class="logo-wrapper" {...href('/')}>
                 {capacitorLogo()}
               </a>
               <button class="close" aria-label="close">
@@ -208,6 +208,7 @@ export class DocsHeader implements ComponentInterface {
     );
   }
 }
+
 
 const capacitorLogo = (props?: JSXBase.SVGAttributes) => (
   <svg width="126" height="24" viewBox="0 0 126 24" class="capacitor-logo" {...props} xmlns="http://www.w3.org/2000/svg">
