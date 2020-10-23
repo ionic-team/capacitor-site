@@ -50,7 +50,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
       src="/assets/img/docs/core-plugins.png"
       width="40" height="40"
     >
-    <p class="ui-heading-5">Core Plugins</p>
+    <p class="ui-heading-5">Official Plugins</p>
     <p class="ui-paragraph-5">Step-by-step guides to setting up your system and installing the framework.</p>
   </a>
   <a class="card" href="/docs/plugins/community">
