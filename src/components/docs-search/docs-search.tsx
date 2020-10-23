@@ -113,7 +113,7 @@ export class DocsSearch implements ComponentInterface {
 
 
   setupSearch() {
-    console.log(window.docsearch({
+    window.docsearch({
       apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
       indexName: `capacitorjs`,
       inputSelector: `#input-${this.uniqueId}`,
@@ -137,7 +137,7 @@ export class DocsSearch implements ComponentInterface {
         this.clearSearch();
         Router.push(url);
       },
-    }));
+    });
   }
 
   clearSearch = () => {
