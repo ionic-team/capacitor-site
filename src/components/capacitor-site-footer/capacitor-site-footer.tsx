@@ -63,7 +63,11 @@ export class CapacitorSiteFooter {
             </div>
             <Grid>
               <Col md={6} sm={4} xs={12} cols={12} class="copyright">
-                <img src="/assets/img/logo-white2.png" alt="Capacitor Logo" class="logo" />
+                <img
+                  src="/assets/img/logo-white2.png" alt="Capacitor Logo" 
+                  class="logo"
+                  width="212" height="40" 
+                  loading="lazy"/>
                 <p>
                   © {(new Date()).getFullYear()} Capacitor
                 </p>
