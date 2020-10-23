@@ -78,16 +78,6 @@ export namespace Components {
     }
     interface NewsletterSignup {
     }
-    interface PluginApi {
-        "api": string;
-        "index": boolean;
-        "name": string;
-    }
-    interface PluginApiIndex {
-        "api": string;
-        "index": boolean;
-        "name": string;
-    }
     interface PluginPlatforms {
         "platforms": string;
     }
@@ -237,18 +227,6 @@ declare global {
         prototype: HTMLNewsletterSignupElement;
         new (): HTMLNewsletterSignupElement;
     };
-    interface HTMLPluginApiElement extends Components.PluginApi, HTMLStencilElement {
-    }
-    var HTMLPluginApiElement: {
-        prototype: HTMLPluginApiElement;
-        new (): HTMLPluginApiElement;
-    };
-    interface HTMLPluginApiIndexElement extends Components.PluginApiIndex, HTMLStencilElement {
-    }
-    var HTMLPluginApiIndexElement: {
-        prototype: HTMLPluginApiIndexElement;
-        new (): HTMLPluginApiIndexElement;
-    };
     interface HTMLPluginPlatformsElement extends Components.PluginPlatforms, HTMLStencilElement {
     }
     var HTMLPluginPlatformsElement: {
@@ -302,8 +280,6 @@ declare global {
         "lower-content-nav": HTMLLowerContentNavElement;
         "more-button": HTMLMoreButtonElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
-        "plugin-api": HTMLPluginApiElement;
-        "plugin-api-index": HTMLPluginApiIndexElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
         "pre-footer": HTMLPreFooterElement;
         "site-header": HTMLSiteHeaderElement;
@@ -383,16 +359,6 @@ declare namespace LocalJSX {
     }
     interface NewsletterSignup {
     }
-    interface PluginApi {
-        "api"?: string;
-        "index"?: boolean;
-        "name"?: string;
-    }
-    interface PluginApiIndex {
-        "api"?: string;
-        "index"?: boolean;
-        "name"?: string;
-    }
     interface PluginPlatforms {
         "platforms"?: string;
     }
@@ -431,8 +397,6 @@ declare namespace LocalJSX {
         "lower-content-nav": LowerContentNav;
         "more-button": MoreButton;
         "newsletter-signup": NewsletterSignup;
-        "plugin-api": PluginApi;
-        "plugin-api-index": PluginApiIndex;
         "plugin-platforms": PluginPlatforms;
         "pre-footer": PreFooter;
         "site-header": SiteHeader;
@@ -466,8 +430,6 @@ declare module "@stencil/core" {
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;
             "more-button": LocalJSX.MoreButton & JSXBase.HTMLAttributes<HTMLMoreButtonElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
-            "plugin-api": LocalJSX.PluginApi & JSXBase.HTMLAttributes<HTMLPluginApiElement>;
-            "plugin-api-index": LocalJSX.PluginApiIndex & JSXBase.HTMLAttributes<HTMLPluginApiIndexElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
