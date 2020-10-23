@@ -46,7 +46,8 @@ newsletter-signup {
       max-width: 276px;
       
       label {
-        display: none;
+        position: absolute;
+        opacity: 0;
       }
     }
   
