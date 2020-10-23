@@ -115,10 +115,10 @@ Allowed values are
 }
 ```
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### show()
 
@@ -209,10 +209,10 @@ Programmatically set the resize mode
 addListener(eventName: 'keyboardWillShow', listenerFunc: (info: KeyboardInfo) => void) => PluginListenerHandle
 ```
 
-| Param              | Type                                      |
-| ------------------ | ----------------------------------------- |
-| **`eventName`**    | <code>"keyboardWillShow"</code>           |
-| **`listenerFunc`** | <code>(info: KeyboardInfo) => void</code> |
+| Param              | Type                                                                     |
+| ------------------ | ------------------------------------------------------------------------ |
+| **`eventName`**    | <code>"keyboardWillShow"</code>                                          |
+| **`listenerFunc`** | <code>(info: <a href="#keyboardinfo">KeyboardInfo</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -225,10 +225,10 @@ addListener(eventName: 'keyboardWillShow', listenerFunc: (info: KeyboardInfo) =>
 addListener(eventName: 'keyboardDidShow', listenerFunc: (info: KeyboardInfo) => void) => PluginListenerHandle
 ```
 
-| Param              | Type                                      |
-| ------------------ | ----------------------------------------- |
-| **`eventName`**    | <code>"keyboardDidShow"</code>            |
-| **`listenerFunc`** | <code>(info: KeyboardInfo) => void</code> |
+| Param              | Type                                                                     |
+| ------------------ | ------------------------------------------------------------------------ |
+| **`eventName`**    | <code>"keyboardDidShow"</code>                                           |
+| **`listenerFunc`** | <code>(info: <a href="#keyboardinfo">KeyboardInfo</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -244,7 +244,7 @@ addListener(eventName: 'keyboardWillHide', listenerFunc: () => void) => PluginLi
 | Param              | Type                            |
 | ------------------ | ------------------------------- |
 | **`eventName`**    | <code>"keyboardWillHide"</code> |
-| **`listenerFunc`** | <code>() => void</code>         |
+| **`listenerFunc`** | <code>() =&gt; void</code>      |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -260,7 +260,7 @@ addListener(eventName: 'keyboardDidHide', listenerFunc: () => void) => PluginLis
 | Param              | Type                           |
 | ------------------ | ------------------------------ |
 | **`eventName`**    | <code>"keyboardDidHide"</code> |
-| **`listenerFunc`** | <code>() => void</code>        |
+| **`listenerFunc`** | <code>() =&gt; void</code>     |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -297,9 +297,9 @@ Remove all native listeners for this plugin
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
 
 #### KeyboardInfo

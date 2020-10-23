@@ -37,10 +37,10 @@ let shareRet = await Share.share({
 
 Each platform uses a different set of fields, but you should supply them all.
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### share(...)
 

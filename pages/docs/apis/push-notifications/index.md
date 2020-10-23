@@ -87,10 +87,10 @@ An empty Array can be provided if none of the previous options are desired. `pus
 
 [Using Push Notifications with Firebase in an Ionic Angular App](/docs/guides/push-notifications-firebase)
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### register()
 
@@ -212,10 +212,10 @@ addListener(eventName: 'registration', listenerFunc: (token: PushNotificationTok
 Event called when the push notification registration finished without problems.
 Provides the push notification token.
 
-| Param              | Type                                                | Description                   |
-| ------------------ | --------------------------------------------------- | ----------------------------- |
-| **`eventName`**    | <code>"registration"</code>                         | registration.                 |
-| **`listenerFunc`** | <code>(token: PushNotificationToken) => void</code> | callback with the push token. |
+| Param              | Type                                                                                        | Description                   |
+| ------------------ | ------------------------------------------------------------------------------------------- | ----------------------------- |
+| **`eventName`**    | <code>"registration"</code>                                                                 | registration.                 |
+| **`listenerFunc`** | <code>(token: <a href="#pushnotificationtoken">PushNotificationToken</a>) =&gt; void</code> | callback with the push token. |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -231,10 +231,10 @@ addListener(eventName: 'registrationError', listenerFunc: (error: any) => void) 
 Event called when the push notification registration finished with problems.
 Provides an error with the registration problem.
 
-| Param              | Type                              | Description                           |
-| ------------------ | --------------------------------- | ------------------------------------- |
-| **`eventName`**    | <code>"registrationError"</code>  | registrationError.                    |
-| **`listenerFunc`** | <code>(error: any) => void</code> | callback with the registration error. |
+| Param              | Type                                 | Description                           |
+| ------------------ | ------------------------------------ | ------------------------------------- |
+| **`eventName`**    | <code>"registrationError"</code>     | registrationError.                    |
+| **`listenerFunc`** | <code>(error: any) =&gt; void</code> | callback with the registration error. |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -249,10 +249,10 @@ addListener(eventName: 'pushNotificationReceived', listenerFunc: (notification: 
 
 Event called when the device receives a push notification.
 
-| Param              | Type                                                  | Description                              |
-| ------------------ | ----------------------------------------------------- | ---------------------------------------- |
-| **`eventName`**    | <code>"pushNotificationReceived"</code>               | pushNotificationReceived.                |
-| **`listenerFunc`** | <code>(notification: PushNotification) => void</code> | callback with the received notification. |
+| Param              | Type                                                                                     | Description                              |
+| ------------------ | ---------------------------------------------------------------------------------------- | ---------------------------------------- |
+| **`eventName`**    | <code>"pushNotificationReceived"</code>                                                  | pushNotificationReceived.                |
+| **`listenerFunc`** | <code>(notification: <a href="#pushnotification">PushNotification</a>) =&gt; void</code> | callback with the received notification. |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -267,10 +267,10 @@ addListener(eventName: 'pushNotificationActionPerformed', listenerFunc: (notific
 
 Event called when an action is performed on a pusn notification.
 
-| Param              | Type                                                                 | Description                            |
-| ------------------ | -------------------------------------------------------------------- | -------------------------------------- |
-| **`eventName`**    | <code>"pushNotificationActionPerformed"</code>                       | pushNotificationActionPerformed.       |
-| **`listenerFunc`** | <code>(notification: PushNotificationActionPerformed) => void</code> | callback with the notification action. |
+| Param              | Type                                                                                                                   | Description                            |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| **`eventName`**    | <code>"pushNotificationActionPerformed"</code>                                                                         | pushNotificationActionPerformed.       |
+| **`listenerFunc`** | <code>(notification: <a href="#pushnotificationactionperformed">PushNotificationActionPerformed</a>) =&gt; void</code> | callback with the notification action. |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -346,9 +346,9 @@ Remove all native listeners for this plugin.
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
 
 #### PushNotificationToken

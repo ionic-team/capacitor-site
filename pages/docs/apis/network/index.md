@@ -54,10 +54,10 @@ The Network API requires the following permission be added to your `AndroidManif
 
 This permission allows the app to access information about the current network, such as whether it is connected to wifi or cellular.
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### getStatus()
 
@@ -80,10 +80,10 @@ addListener(eventName: 'networkStatusChange', listenerFunc: (status: NetworkStat
 
 Listen for network status change events
 
-| Param              | Type                                         |
-| ------------------ | -------------------------------------------- |
-| **`eventName`**    | <code>"networkStatusChange"</code>           |
-| **`listenerFunc`** | <code>(status: NetworkStatus) => void</code> |
+| Param              | Type                                                                         |
+| ------------------ | ---------------------------------------------------------------------------- |
+| **`eventName`**    | <code>"networkStatusChange"</code>                                           |
+| **`listenerFunc`** | <code>(status: <a href="#networkstatus">NetworkStatus</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -114,8 +114,8 @@ Remove all native listeners for this plugin
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
 </docgen-api>

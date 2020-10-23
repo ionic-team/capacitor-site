@@ -50,10 +50,10 @@ async speak() {
 }
 ```
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### isScreenReaderEnabled()
 
@@ -91,10 +91,10 @@ addListener(eventName: 'accessibilityScreenReaderStateChange', listenerFunc: Scr
 
 Listen for screen reader state change (on/off)
 
-| Param              | Type                                                    |
-| ------------------ | ------------------------------------------------------- |
-| **`eventName`**    | <code>"accessibilityScreenReaderStateChange"</code>     |
-| **`listenerFunc`** | <code>(state: ScreenReaderEnabledResult) => void</code> |
+| Param              | Type                                                                                                |
+| ------------------ | --------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>"accessibilityScreenReaderStateChange"</code>                                                 |
+| **`listenerFunc`** | <code>(state: <a href="#screenreaderenabledresult">ScreenReaderEnabledResult</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -132,8 +132,8 @@ Remove all native listeners for this plugin
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
 </docgen-api>

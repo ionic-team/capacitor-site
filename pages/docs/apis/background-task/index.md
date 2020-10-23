@@ -73,10 +73,10 @@ App.addListener('appStateChange', (state) => {
 })
 ```
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### beforeExit(...)
 
@@ -135,11 +135,11 @@ Creates a new function.
 | **`arguments`** | <code>any</code>                              |
 | **`caller`**    | <code><a href="#function">Function</a></code> |
 
-| Method       | Signature                                                 | Description                                                                                                                                                                                                              |
-| ------------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **apply**    | (this: Function, thisArg: any, argArray?: any) => any     | Calls the function, substituting the specified object for the this value of the function, and the specified array for the arguments of the function.                                                                     |
-| **call**     | (this: Function, thisArg: any, ...argArray: any[]) => any | Calls a method of an object, substituting another object for the current object.                                                                                                                                         |
-| **bind**     | (this: Function, thisArg: any, ...argArray: any[]) => any | For a given function, creates a bound function that has the same body as the original function. The this object of the bound function is associated with the specified object, and has the specified initial parameters. |
-| **toString** | () => string                                              | Returns a string representation of a function.                                                                                                                                                                           |
+| Method       | Signature                                                                            | Description                                                                                                                                                                                                              |
+| ------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **apply**    | (this: <a href="#function">Function</a>, thisArg: any, argArray?: any) =&gt; any     | Calls the function, substituting the specified object for the this value of the function, and the specified array for the arguments of the function.                                                                     |
+| **call**     | (this: <a href="#function">Function</a>, thisArg: any, ...argArray: any[]) =&gt; any | Calls a method of an object, substituting another object for the current object.                                                                                                                                         |
+| **bind**     | (this: <a href="#function">Function</a>, thisArg: any, ...argArray: any[]) =&gt; any | For a given function, creates a bound function that has the same body as the original function. The this object of the bound function is associated with the specified object, and has the specified initial parameters. |
+| **toString** | () =&gt; string                                                                      | Returns a string representation of a function.                                                                                                                                                                           |
 
 </docgen-api>

@@ -35,10 +35,10 @@ const { Browser } = Plugins;
 await Browser.open({ url: 'http://capacitorjs.com/' });
 ```
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### open(...)
 
@@ -90,10 +90,10 @@ Close an open browser. Only works on iOS and Web environment, otherwise is a no-
 addListener(eventName: 'browserFinished', listenerFunc: (info: any) => void) => PluginListenerHandle
 ```
 
-| Param              | Type                             |
-| ------------------ | -------------------------------- |
-| **`eventName`**    | <code>"browserFinished"</code>   |
-| **`listenerFunc`** | <code>(info: any) => void</code> |
+| Param              | Type                                |
+| ------------------ | ----------------------------------- |
+| **`eventName`**    | <code>"browserFinished"</code>      |
+| **`listenerFunc`** | <code>(info: any) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -106,10 +106,10 @@ addListener(eventName: 'browserFinished', listenerFunc: (info: any) => void) => 
 addListener(eventName: 'browserPageLoaded', listenerFunc: (info: any) => void) => PluginListenerHandle
 ```
 
-| Param              | Type                             |
-| ------------------ | -------------------------------- |
-| **`eventName`**    | <code>"browserPageLoaded"</code> |
-| **`listenerFunc`** | <code>(info: any) => void</code> |
+| Param              | Type                                |
+| ------------------ | ----------------------------------- |
+| **`eventName`**    | <code>"browserPageLoaded"</code>    |
+| **`listenerFunc`** | <code>(info: any) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -149,8 +149,8 @@ Remove all native listeners for this plugin
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
 </docgen-api>

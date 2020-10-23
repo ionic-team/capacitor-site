@@ -80,8 +80,6 @@ async showActions() {
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-## API
-
 ### alert(...)
 
 ```typescript

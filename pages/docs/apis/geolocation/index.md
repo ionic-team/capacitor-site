@@ -69,10 +69,10 @@ class GeolocationExample {
 }
 ```
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### getCurrentPosition(...)
 
@@ -100,10 +100,10 @@ watchPosition(options: GeolocationOptions, callback: GeolocationWatchCallback) =
 Set up a watch for location changes. Note that watching for location changes
 can consume a large amount of energy. Be smart about listening only when you need to.
 
-| Param          | Type                                                              |
-| -------------- | ----------------------------------------------------------------- |
-| **`options`**  | <code><a href="#geolocationoptions">GeolocationOptions</a></code> |
-| **`callback`** | <code>(position: GeolocationPosition, err?: any) => void</code>   |
+| Param          | Type                                                                                                  |
+| -------------- | ----------------------------------------------------------------------------------------------------- |
+| **`options`**  | <code><a href="#geolocationoptions">GeolocationOptions</a></code>                                     |
+| **`callback`** | <code>(position: <a href="#geolocationposition">GeolocationPosition</a>, err?: any) =&gt; void</code> |
 
 **Returns:** <code>string</code>
 

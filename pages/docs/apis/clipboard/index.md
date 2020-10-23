@@ -37,10 +37,10 @@ let result = await Clipboard.read();
 console.log('Got', result.type, 'from clipboard:', result.value);
 ```
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### write(...)
 

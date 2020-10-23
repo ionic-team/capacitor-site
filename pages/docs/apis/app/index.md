@@ -89,10 +89,10 @@ Once you have that result (if any), you can update the UI to restore a logical e
 
 We recommend every Android app using plugins that rely on external Activities (for example, Camera) to have this event and process handled.
 
+## API
+
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### exitApp()
 
@@ -178,10 +178,10 @@ addListener(eventName: 'appStateChange', listenerFunc: (state: AppState) => void
 
 Listen for changes in the App's active state (whether the app is in the foreground or background)
 
-| Param              | Type                                   |
-| ------------------ | -------------------------------------- |
-| **`eventName`**    | <code>"appStateChange"</code>          |
-| **`listenerFunc`** | <code>(state: AppState) => void</code> |
+| Param              | Type                                                              |
+| ------------------ | ----------------------------------------------------------------- |
+| **`eventName`**    | <code>"appStateChange"</code>                                     |
+| **`listenerFunc`** | <code>(state: <a href="#appstate">AppState</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -197,10 +197,10 @@ addListener(eventName: 'appUrlOpen', listenerFunc: (data: AppUrlOpen) => void) =
 Listen for url open events for the app. This handles both custom URL scheme links as well
 as URLs your app handles (Universal Links on iOS and App Links on Android)
 
-| Param              | Type                                    |
-| ------------------ | --------------------------------------- |
-| **`eventName`**    | <code>"appUrlOpen"</code>               |
-| **`listenerFunc`** | <code>(data: AppUrlOpen) => void</code> |
+| Param              | Type                                                                 |
+| ------------------ | -------------------------------------------------------------------- |
+| **`eventName`**    | <code>"appUrlOpen"</code>                                            |
+| **`listenerFunc`** | <code>(data: <a href="#appurlopen">AppUrlOpen</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -217,10 +217,10 @@ If the app was launched with previously persisted plugin call data, such as on A
 when an activity returns to an app that was closed, this call will return any data
 the app was launched with, converted into the form of a result from a plugin call.
 
-| Param              | Type                                           |
-| ------------------ | ---------------------------------------------- |
-| **`eventName`**    | <code>"appRestoredResult"</code>               |
-| **`listenerFunc`** | <code>(data: AppRestoredResult) => void</code> |
+| Param              | Type                                                                               |
+| ------------------ | ---------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>"appRestoredResult"</code>                                                   |
+| **`listenerFunc`** | <code>(data: <a href="#apprestoredresult">AppRestoredResult</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -237,10 +237,10 @@ Listen for the hardware back button event (Android only). Listening for this eve
 default back button behaviour, so you might want to call `window.history.back()` manually.
 If you want to close the app, call `App.exitApp()`.
 
-| Param              | Type                                    |
-| ------------------ | --------------------------------------- |
-| **`eventName`**    | <code>"backButton"</code>               |
-| **`listenerFunc`** | <code>(data: AppUrlOpen) => void</code> |
+| Param              | Type                                                                 |
+| ------------------ | -------------------------------------------------------------------- |
+| **`eventName`**    | <code>"backButton"</code>                                            |
+| **`listenerFunc`** | <code>(data: <a href="#appurlopen">AppUrlOpen</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -277,9 +277,9 @@ Remove all native listeners for this plugin
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
 
 #### AppUrlOpen
