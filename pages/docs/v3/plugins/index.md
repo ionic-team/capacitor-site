@@ -51,7 +51,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
       width="40" height="40"
     >
     <p class="ui-heading-5">Core Plugins</p>
-    <p class="ui-paragraph-5">Step-by-step guides to setting up your system and installing the framework.</p>
+    <p class="ui-paragraph-5">Official Plugins are maintained by the Capacitor team.</p>
   </a>
   <a class="card" href="/docs/plugins/community">
     <img
@@ -59,7 +59,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
       width="40" height="40"
     >
     <p class="ui-heading-5">Community Plugins</p>
-    <p class="ui-paragraph-5">Dive into Ionic Framework’s beautifylly designed UI component library.</p>
+    <p class="ui-paragraph-5">Community Plugins are maintained by the Capacitor Community.</p>
   </a>
 </plugin-cards>
 
