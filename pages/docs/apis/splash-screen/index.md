@@ -15,9 +15,9 @@ The Splash Screen API provides methods for showing or hiding a Splash image.
 
 <docgen-index>
 
-- [`show(...)`](#show)
-- [`hide(...)`](#hide)
-- [Interfaces](#interfaces)
+* [`show(...)`](#show)
+* [`hide(...)`](#hide)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -32,13 +32,13 @@ SplashScreen.hide();
 
 // Show the splash for an indefinite amount of time:
 SplashScreen.show({
-  autoHide: false,
+  autoHide: false
 });
 
 // Show the splash for two seconds and then auto hide:
 SplashScreen.show({
   showDuration: 2000,
-  autoHide: true,
+  autoHide: true
 });
 ```
 
@@ -98,7 +98,6 @@ If you want to show a spinner on top of the splash screen, set `showSpinner` to 
 You can customize the appearance of the spinner with the following configuration.
 
 For Android, `androidSpinnerStyle` has the following options:
-
 - horizontal
 - small
 - large (default)
@@ -107,7 +106,6 @@ For Android, `androidSpinnerStyle` has the following options:
 - largeInverse
 
 For iOS, `iosSpinnerStyle` has the following options:
-
 - large (default)
 - small
 
@@ -177,7 +175,8 @@ Show the splash screen
 | **`options`**  | <code><a href="#splashscreenshowoptions">SplashScreenShowOptions</a></code> |
 | **`callback`** | <code><a href="#function">Function</a></code>                               |
 
----
+--------------------
+
 
 ### hide(...)
 
@@ -192,9 +191,11 @@ Hide the splash screen
 | **`options`**  | <code><a href="#splashscreenhideoptions">SplashScreenHideOptions</a></code> |
 | **`callback`** | <code><a href="#function">Function</a></code>                               |
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### SplashScreenShowOptions
 
@@ -204,6 +205,7 @@ Hide the splash screen
 | **`fadeInDuration`**  | <code>number</code>  | How long (in ms) to fade in. Default is 200ms                                         |
 | **`fadeOutDuration`** | <code>number</code>  | How long (in ms) to fade out. Default is 200ms                                        |
 | **`showDuration`**    | <code>number</code>  | How long to show the splash screen when autoHide is enabled (in ms) Default is 3000ms |
+
 
 #### Function
 
@@ -222,6 +224,7 @@ Creates a new function.
 | **call**     | (this: <a href="#function">Function</a>, thisArg: any, ...argArray: any[]) =&gt; any | Calls a method of an object, substituting another object for the current object.                                                                                                                                         |
 | **bind**     | (this: <a href="#function">Function</a>, thisArg: any, ...argArray: any[]) =&gt; any | For a given function, creates a bound function that has the same body as the original function. The this object of the bound function is associated with the specified object, and has the specified initial parameters. |
 | **toString** | () =&gt; string                                                                      | Returns a string representation of a function.                                                                                                                                                                           |
+
 
 #### SplashScreenHideOptions
 

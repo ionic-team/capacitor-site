@@ -9,16 +9,14 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/device/src/de
 The Device API exposes internal information about the device, such as the model and operating system version, along with user information such as unique ids.
 
 <!--DOCGEN_INDEX_START-->
-
-- [`getInfo()`](#getinfo)
-- [`getBatteryInfo()`](#getbatteryinfo)
-- [`getLanguageCode()`](#getlanguagecode)
-- [Interfaces](#interfaces)
+* [`getInfo()`](#getinfo)
+* [`getBatteryInfo()`](#getbatteryinfo)
+* [`getLanguageCode()`](#getlanguagecode)
+* [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
 ## API
 
 ### getInfo()
@@ -33,7 +31,8 @@ Return information about the underlying device/os/platform.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### getBatteryInfo()
 
@@ -47,7 +46,8 @@ Return information about the battery.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### getLanguageCode()
 
@@ -61,9 +61,11 @@ Get the device's current language locale code.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### DeviceInfo
 
@@ -81,6 +83,7 @@ Get the device's current language locale code.
 | **`diskFree`**        | <code>number</code>                                                | How much free disk space is available on the the normal data storage. path for the os, in bytes                                              | 1.0.0 |
 | **`diskTotal`**       | <code>number</code>                                                | The total size of the normal data storage path for the OS, in bytes.                                                                         | 1.0.0 |
 
+
 #### DeviceBatteryInfo
 
 | Prop               | Type                 | Description                                                       | Since |
@@ -88,10 +91,12 @@ Get the device's current language locale code.
 | **`batteryLevel`** | <code>number</code>  | A percentage (0 to 1) indicating how much the battery is charged. | 1.0.0 |
 | **`isCharging`**   | <code>boolean</code> | Whether the device is charging.                                   | 1.0.0 |
 
+
 #### DeviceLanguageCodeResult
 
 | Prop        | Type                | Description                  | Since |
 | ----------- | ------------------- | ---------------------------- | ----- |
 | **`value`** | <code>string</code> | Two character language code. | 1.0.0 |
+
 
 <!--DOCGEN_API_END-->

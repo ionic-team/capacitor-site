@@ -14,10 +14,10 @@ The Motion API tracks accelerometer and device orientation (compass heading, etc
 
 <docgen-index>
 
-- [`addListener(...)`](#addlistener)
-- [`addListener(...)`](#addlistener)
-- [`removeAllListeners()`](#removealllisteners)
-- [Interfaces](#interfaces)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`removeAllListeners()`](#removealllisteners)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -36,7 +36,8 @@ myButton.addEventListener('click', async () => {
 
   // Once the user approves, can start listening:
   const { Motion } = Capacitor.Plugins;
-  Capacitor.Plugins.Motion.addListener('accel', event => {});
+  Capacitor.Plugins.Motion.addListener('accel', (event) => {
+  });
 });
 ```
 
@@ -44,7 +45,8 @@ myButton.addEventListener('click', async () => {
 
 ```typescript
 const { Motion } = Capacitor.Plugins;
-Motion.addListener('accel', event => {});
+Motion.addListener('accel', (event) => {
+});
 ```
 
 See the [DeviceMotionEvent](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent) API to understand the data supplied in `event`.
@@ -69,7 +71,8 @@ Listen for accelerometer data
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -86,7 +89,8 @@ Listen for device orientation change (compass heading, etc.)
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
----
+--------------------
+
 
 ### removeAllListeners()
 
@@ -96,15 +100,18 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### PluginListenerHandle
 
 | Prop         | Type                       |
 | ------------ | -------------------------- |
 | **`remove`** | <code>() =&gt; void</code> |
+
 
 #### MotionEventResult
 
@@ -114,6 +121,7 @@ Remove all native listeners for this plugin
 | **`accelerationIncludingGravity`** | <code>{ x: number; y: number; z: number; }</code>            |
 | **`rotationRate`**                 | <code>{ alpha: number; beta: number; gamma: number; }</code> |
 | **`interval`**                     | <code>number</code>                                          |
+
 
 #### MotionOrientationEventResult
 

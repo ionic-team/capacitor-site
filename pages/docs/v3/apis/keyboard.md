@@ -10,19 +10,19 @@ The Keyboard API provides keyboard display and visibility control, along with ev
 
 <docgen-index>
 
-- [`show()`](#show)
-- [`hide()`](#hide)
-- [`setAccessoryBarVisible(...)`](#setaccessorybarvisible)
-- [`setScroll(...)`](#setscroll)
-- [`setStyle(...)`](#setstyle)
-- [`setResizeMode(...)`](#setresizemode)
-- [`addListener(...)`](#addlistener)
-- [`addListener(...)`](#addlistener)
-- [`addListener(...)`](#addlistener)
-- [`addListener(...)`](#addlistener)
-- [`removeAllListeners()`](#removealllisteners)
-- [Interfaces](#interfaces)
-- [Enums](#enums)
+* [`show()`](#show)
+* [`hide()`](#hide)
+* [`setAccessoryBarVisible(...)`](#setaccessorybarvisible)
+* [`setScroll(...)`](#setscroll)
+* [`setStyle(...)`](#setstyle)
+* [`setResizeMode(...)`](#setresizemode)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`removeAllListeners()`](#removealllisteners)
+* [Interfaces](#interfaces)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -43,7 +43,8 @@ This method is only supported on Android.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### hide()
 
@@ -55,7 +56,8 @@ Hide the keyboard.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### setAccessoryBarVisible(...)
 
@@ -74,7 +76,8 @@ This method is only supported on iPhone devices.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### setScroll(...)
 
@@ -92,7 +95,8 @@ This method is only supported on iOS.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### setStyle(...)
 
@@ -110,7 +114,8 @@ This method is only supported on iOS.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### setResizeMode(...)
 
@@ -128,7 +133,8 @@ This method is only supported on iOS.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -147,7 +153,8 @@ Listen for when the keyboard is about to be shown.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -166,7 +173,8 @@ Listen for when the keyboard is shown.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -185,7 +193,8 @@ Listen for when the keyboard is about to be hidden.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -204,7 +213,8 @@ Listen for when the keyboard is hidden.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### removeAllListeners()
 
@@ -216,9 +226,11 @@ Remove all native listeners for this plugin.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### KeyboardStyleOptions
 
@@ -226,11 +238,13 @@ Remove all native listeners for this plugin.
 | ----------- | ------------------------------------------------------- | ---------------------- | ----- |
 | **`style`** | <code><a href="#keyboardstyle">KeyboardStyle</a></code> | Style of the keyboard. | 1.0.0 |
 
+
 #### KeyboardResizeOptions
 
 | Prop       | Type                                                      | Description                                             | Since |
 | ---------- | --------------------------------------------------------- | ------------------------------------------------------- | ----- |
 | **`mode`** | <code><a href="#keyboardresize">KeyboardResize</a></code> | Mode used to resize elements when the keyboard appears. | 1.0.0 |
+
 
 #### PluginListenerHandle
 
@@ -238,13 +252,16 @@ Remove all native listeners for this plugin.
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
 
+
 #### KeyboardInfo
 
 | Prop                 | Type                | Description             | Since |
 | -------------------- | ------------------- | ----------------------- | ----- |
 | **`keyboardHeight`** | <code>number</code> | Height of the heyboard. | 1.0.0 |
 
+
 ### Enums
+
 
 #### KeyboardStyle
 
@@ -252,6 +269,7 @@ Remove all native listeners for this plugin.
 | ----------- | -------------------- | --------------- | ----- |
 | **`Dark`**  | <code>'DARK'</code>  | Dark keyboard.  | 1.0.0 |
 | **`Light`** | <code>'LIGHT'</code> | Light keyboard. | 1.0.0 |
+
 
 #### KeyboardResize
 

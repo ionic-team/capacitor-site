@@ -15,10 +15,10 @@ such as unique ids.
 
 <docgen-index>
 
-- [`getInfo()`](#getinfo)
-- [`getBatteryInfo()`](#getbatteryinfo)
-- [`getLanguageCode()`](#getlanguagecode)
-- [Interfaces](#interfaces)
+* [`getInfo()`](#getinfo)
+* [`getBatteryInfo()`](#getbatteryinfo)
+* [`getLanguageCode()`](#getlanguagecode)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -75,7 +75,8 @@ Return information about the underlying device/os/platform
 
 **Returns:** <code>Promise&lt;<a href="#deviceinfo">DeviceInfo</a>&gt;</code>
 
----
+--------------------
+
 
 ### getBatteryInfo()
 
@@ -87,7 +88,8 @@ Return information about the battery
 
 **Returns:** <code>Promise&lt;<a href="#devicebatteryinfo">DeviceBatteryInfo</a>&gt;</code>
 
----
+--------------------
+
 
 ### getLanguageCode()
 
@@ -99,9 +101,11 @@ Get the device's current language locale code
 
 **Returns:** <code>Promise&lt;<a href="#devicelanguagecoderesult">DeviceLanguageCodeResult</a>&gt;</code>
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### DeviceInfo
 
@@ -123,12 +127,14 @@ Get the device's current language locale code
 | **`diskFree`**        | <code>number</code>                                                | How much free disk space is available on the the normal data storage path for the os, in bytes                                               |
 | **`diskTotal`**       | <code>number</code>                                                | The total size of the normal data storage path for the OS, in bytes                                                                          |
 
+
 #### DeviceBatteryInfo
 
 | Prop               | Type                 | Description                                                      |
 | ------------------ | -------------------- | ---------------------------------------------------------------- |
 | **`batteryLevel`** | <code>number</code>  | A percentage (0 to 1) indicating how much the battery is charged |
 | **`isCharging`**   | <code>boolean</code> | Whether the device is charging                                   |
+
 
 #### DeviceLanguageCodeResult
 

@@ -18,7 +18,7 @@ It can be disabled by using `hideLogs` entry in `capacitor.config.json`, check [
 ## Example
 
 ```typescript
-console.log("I really enjoy Avocado Toast, and I'm not ashamed to admit it");
+console.log('I really enjoy Avocado Toast, and I\'m not ashamed to admit it');
 ```
 
 The string will show up in your Xcode or Android Studio log stream.

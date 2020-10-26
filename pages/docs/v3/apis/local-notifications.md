@@ -16,19 +16,19 @@ Local Notifications are great for reminding the user about a change in the app s
 
 <docgen-index>
 
-- [`schedule(...)`](#schedule)
-- [`getPending()`](#getpending)
-- [`registerActionTypes(...)`](#registeractiontypes)
-- [`cancel(...)`](#cancel)
-- [`areEnabled()`](#areenabled)
-- [`createChannel(...)`](#createchannel)
-- [`deleteChannel(...)`](#deletechannel)
-- [`listChannels()`](#listchannels)
-- [`requestPermission()`](#requestpermission)
-- [`addListener(...)`](#addlistener)
-- [`addListener(...)`](#addlistener)
-- [`removeAllListeners()`](#removealllisteners)
-- [Interfaces](#interfaces)
+* [`schedule(...)`](#schedule)
+* [`getPending()`](#getpending)
+* [`registerActionTypes(...)`](#registeractiontypes)
+* [`cancel(...)`](#cancel)
+* [`areEnabled()`](#areenabled)
+* [`createChannel(...)`](#createchannel)
+* [`deleteChannel(...)`](#deletechannel)
+* [`listChannels()`](#listchannels)
+* [`requestPermission()`](#requestpermission)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`removeAllListeners()`](#removealllisteners)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -41,16 +41,16 @@ const { LocalNotifications } = Plugins;
 const notifs = await LocalNotifications.schedule({
   notifications: [
     {
-      title: 'Title',
-      body: 'Body',
+      title: "Title",
+      body: "Body",
       id: 1,
       schedule: { at: new Date(Date.now() + 1000 * 5) },
       sound: null,
       attachments: null,
-      actionTypeId: '',
-      extra: null,
-    },
-  ],
+      actionTypeId: "",
+      extra: null
+    }
+  ]
 });
 console.log('scheduled notifications', notifs);
 ```
@@ -90,7 +90,8 @@ schedule(options: { notifications: LocalNotification[]; }) => Promise<LocalNotif
 
 **Returns:** <code>Promise&lt;<a href="#localnotificationscheduleresult">LocalNotificationScheduleResult</a>&gt;</code>
 
----
+--------------------
+
 
 ### getPending()
 
@@ -100,7 +101,8 @@ getPending() => Promise<LocalNotificationPendingList>
 
 **Returns:** <code>Promise&lt;<a href="#localnotificationpendinglist">LocalNotificationPendingList</a>&gt;</code>
 
----
+--------------------
+
 
 ### registerActionTypes(...)
 
@@ -112,7 +114,8 @@ registerActionTypes(options: { types: LocalNotificationActionType[]; }) => Promi
 | ------------- | ------------------------------------------------------ |
 | **`options`** | <code>{ types: LocalNotificationActionType[]; }</code> |
 
----
+--------------------
+
 
 ### cancel(...)
 
@@ -124,7 +127,8 @@ cancel(pending: LocalNotificationPendingList) => Promise<void>
 | ------------- | ------------------------------------------------------------------------------------- |
 | **`pending`** | <code><a href="#localnotificationpendinglist">LocalNotificationPendingList</a></code> |
 
----
+--------------------
+
 
 ### areEnabled()
 
@@ -134,7 +138,8 @@ areEnabled() => Promise<LocalNotificationEnabledResult>
 
 **Returns:** <code>Promise&lt;<a href="#localnotificationenabledresult">LocalNotificationEnabledResult</a>&gt;</code>
 
----
+--------------------
+
 
 ### createChannel(...)
 
@@ -146,7 +151,8 @@ createChannel(channel: NotificationChannel) => Promise<void>
 | ------------- | ------------------------------------------------------------------- |
 | **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> |
 
----
+--------------------
+
 
 ### deleteChannel(...)
 
@@ -158,7 +164,8 @@ deleteChannel(channel: NotificationChannel) => Promise<void>
 | ------------- | ------------------------------------------------------------------- |
 | **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> |
 
----
+--------------------
+
 
 ### listChannels()
 
@@ -168,7 +175,8 @@ listChannels() => Promise<NotificationChannelList>
 
 **Returns:** <code>Promise&lt;<a href="#notificationchannellist">NotificationChannelList</a>&gt;</code>
 
----
+--------------------
+
 
 ### requestPermission()
 
@@ -178,7 +186,8 @@ requestPermission() => Promise<NotificationPermissionResponse>
 
 **Returns:** <code>Promise&lt;<a href="#notificationpermissionresponse">NotificationPermissionResponse</a>&gt;</code>
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -193,7 +202,8 @@ addListener(eventName: 'localNotificationReceived', listenerFunc: (notification:
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -208,7 +218,8 @@ addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notifi
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
----
+--------------------
+
 
 ### removeAllListeners()
 
@@ -218,11 +229,14 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
----
+--------------------
+
 
 ### Interfaces
 
+
 #### LocalNotificationScheduleResult
+
 
 #### LocalNotification
 
@@ -246,6 +260,7 @@ Remove all native listeners for this plugin
 | **`ongoing`**          | <code>boolean</code>                                                            | Android only: set the notification ongoing. If set to true the notification can't be swiped away.                                                                                                                                                                      |
 | **`autoCancel`**       | <code>boolean</code>                                                            | Android only: set the notification to be removed automatically when the user clicks on it                                                                                                                                                                              |
 
+
 #### LocalNotificationSchedule
 
 | Prop          | Type                                                                                               |
@@ -255,6 +270,7 @@ Remove all native listeners for this plugin
 | **`every`**   | <code>"year" \| "month" \| "two-weeks" \| "week" \| "day" \| "hour" \| "minute" \| "second"</code> |
 | **`count`**   | <code>number</code>                                                                                |
 | **`on`**      | <code>{ year?: number; month?: number; day?: number; hour?: number; minute?: number; }</code>      |
+
 
 #### Date
 
@@ -306,6 +322,7 @@ Enables basic storage and retrieval of dates and times.
 | **toISOString**        | () => string                                                       | Returns a date as a string value in ISO format.                                                                                         |
 | **toJSON**             | (key?: any) => string                                              | Used by the JSON.stringify method to enable the transformation of an object's data for JavaScript Object Notation (JSON) serialization. |
 
+
 #### LocalNotificationAttachment
 
 | Prop          | Type                                                                                              |
@@ -313,6 +330,7 @@ Enables basic storage and retrieval of dates and times.
 | **`id`**      | <code>string</code>                                                                               |
 | **`url`**     | <code>string</code>                                                                               |
 | **`options`** | <code><a href="#localnotificationattachmentoptions">LocalNotificationAttachmentOptions</a></code> |
+
 
 #### LocalNotificationAttachmentOptions
 
@@ -323,17 +341,20 @@ Enables basic storage and retrieval of dates and times.
 | **`iosUNNotificationAttachmentOptionsThumbnailClippingRectKey`** | <code>string</code> |
 | **`iosUNNotificationAttachmentOptionsThumbnailTimeKey`**         | <code>string</code> |
 
+
 #### LocalNotificationPendingList
 
 | Prop                | Type                                    |
 | ------------------- | --------------------------------------- |
 | **`notifications`** | <code>LocalNotificationRequest[]</code> |
 
+
 #### LocalNotificationRequest
 
 | Prop     | Type                |
 | -------- | ------------------- |
 | **`id`** | <code>string</code> |
+
 
 #### LocalNotificationActionType
 
@@ -346,6 +367,7 @@ Enables basic storage and retrieval of dates and times.
 | **`iosAllowInCarPlay`**                | <code>boolean</code>                   |
 | **`iosHiddenPreviewsShowTitle`**       | <code>boolean</code>                   |
 | **`iosHiddenPreviewsShowSubtitle`**    | <code>boolean</code>                   |
+
 
 #### LocalNotificationAction
 
@@ -360,11 +382,13 @@ Enables basic storage and retrieval of dates and times.
 | **`inputButtonTitle`**       | <code>string</code>  |
 | **`inputPlaceholder`**       | <code>string</code>  |
 
+
 #### LocalNotificationEnabledResult
 
 | Prop        | Type                 | Description                                               |
 | ----------- | -------------------- | --------------------------------------------------------- |
 | **`value`** | <code>boolean</code> | Whether the device has Local Notifications enabled or not |
+
 
 #### NotificationChannel
 
@@ -380,11 +404,13 @@ Enables basic storage and retrieval of dates and times.
 | **`lightColor`**  | <code>string</code>                |
 | **`vibration`**   | <code>boolean</code>               |
 
+
 #### NotificationChannelList
 
 | Prop           | Type                               |
 | -------------- | ---------------------------------- |
 | **`channels`** | <code>NotificationChannel[]</code> |
+
 
 #### NotificationPermissionResponse
 
@@ -392,11 +418,13 @@ Enables basic storage and retrieval of dates and times.
 | ------------- | -------------------- |
 | **`granted`** | <code>boolean</code> |
 
+
 #### PluginListenerHandle
 
 | Prop         | Type                    |
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
+
 
 #### LocalNotificationActionPerformed
 

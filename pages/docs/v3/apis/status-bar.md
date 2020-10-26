@@ -10,14 +10,14 @@ The StatusBar API Provides methods for configuring the style of the Status Bar, 
 
 <docgen-index>
 
-- [`setStyle(...)`](#setstyle)
-- [`setBackgroundColor(...)`](#setbackgroundcolor)
-- [`show(...)`](#show)
-- [`hide(...)`](#hide)
-- [`getInfo()`](#getinfo)
-- [`setOverlaysWebView(...)`](#setoverlayswebview)
-- [Interfaces](#interfaces)
-- [Enums](#enums)
+* [`setStyle(...)`](#setstyle)
+* [`setBackgroundColor(...)`](#setbackgroundcolor)
+* [`show(...)`](#show)
+* [`hide(...)`](#hide)
+* [`getInfo()`](#getinfo)
+* [`setOverlaysWebView(...)`](#setoverlayswebview)
+* [Interfaces](#interfaces)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -40,7 +40,8 @@ Set the current style of the status bar.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### setBackgroundColor(...)
 
@@ -58,7 +59,8 @@ This method is only supported on Android.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### show(...)
 
@@ -74,7 +76,8 @@ Show the status bar.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### hide(...)
 
@@ -90,7 +93,8 @@ Hide the status bar.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### getInfo()
 
@@ -104,7 +108,8 @@ Get info about the current state of the status bar.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### setOverlaysWebView(...)
 
@@ -123,9 +128,11 @@ This method is only supported on Android.
 
 **Since:** 1.0.0
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### StatusBarStyleOptions
 
@@ -133,17 +140,20 @@ This method is only supported on Android.
 | ----------- | --------------------------------------------------------- | ------------------------------------ | ----- |
 | **`style`** | <code><a href="#statusbarstyle">StatusBarStyle</a></code> | Style of the text of the status bar. | 1.0.0 |
 
+
 #### StatusBarBackgroundColorOptions
 
 | Prop        | Type                | Description                                                                                 | Since |
 | ----------- | ------------------- | ------------------------------------------------------------------------------------------- | ----- |
 | **`color`** | <code>string</code> | A hex color to which the status bar color is set. This option is only supported on Android. | 1.0.0 |
 
+
 #### StatusBarAnimationOptions
 
 | Prop            | Type                                                              | Description                                                                                         | Since |
 | --------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----- |
 | **`animation`** | <code><a href="#statusbaranimation">StatusBarAnimation</a></code> | The type of status bar animation used when showing or hiding. This option is only supported on iOS. | 1.0.0 |
+
 
 #### StatusBarInfoResult
 
@@ -154,13 +164,16 @@ This method is only supported on Android.
 | **`color`**    | <code>string</code>                                       | The current status bar color. This option is only supported on Android.             | 1.0.0 |
 | **`overlays`** | <code>boolean</code>                                      | Whether the statusbar is overlaid or not. This option is only supported on Android. | 1.0.0 |
 
+
 #### StatusBarOverlaysWebviewOptions
 
 | Prop          | Type                 | Description                               | Since |
 | ------------- | -------------------- | ----------------------------------------- | ----- |
 | **`overlay`** | <code>boolean</code> | Whether to overlay the status bar or not. | 1.0.0 |
 
+
 ### Enums
+
 
 #### StatusBarStyle
 
@@ -169,6 +182,7 @@ This method is only supported on Android.
 | **`Dark`**    | <code>'DARK'</code>    | Light text for dark backgrounds.                                                                                                                                                                                                                                                                                                | 1.0.0 |
 | **`Light`**   | <code>'LIGHT'</code>   | Dark text for light backgrounds.                                                                                                                                                                                                                                                                                                | 1.0.0 |
 | **`Default`** | <code>'DEFAULT'</code> | On iOS 13 and newer the style is based on the device appearance. If the device is using Dark mode, the statusbar text will be light. If the device is using Light mode, the statusbar text will be dark. On iOS 12 and older the statusbar text will be dark. On Android the default will be the one the app was launched with. | 1.0.0 |
+
 
 #### StatusBarAnimation
 

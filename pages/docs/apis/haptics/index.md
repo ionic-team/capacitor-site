@@ -14,14 +14,14 @@ The Haptics API provides physical feedback to the user through touch or vibratio
 
 <docgen-index>
 
-- [`impact(...)`](#impact)
-- [`notification(...)`](#notification)
-- [`vibrate()`](#vibrate)
-- [`selectionStart()`](#selectionstart)
-- [`selectionChanged()`](#selectionchanged)
-- [`selectionEnd()`](#selectionend)
-- [Interfaces](#interfaces)
-- [Enums](#enums)
+* [`impact(...)`](#impact)
+* [`notification(...)`](#notification)
+* [`vibrate()`](#vibrate)
+* [`selectionStart()`](#selectionstart)
+* [`selectionChanged()`](#selectionchanged)
+* [`selectionEnd()`](#selectionend)
+* [Interfaces](#interfaces)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -36,14 +36,17 @@ To use vibration, you must add this permission to your `AndroidManifest.xml` fil
 ## Example
 
 ```typescript
-import { Plugins, HapticsImpactStyle } from '@capacitor/core';
+import {
+  Plugins,
+  HapticsImpactStyle
+} from '@capacitor/core';
 
 const { Haptics } = Plugins;
 
 export class HapticsExample {
   hapticsImpact(style = HapticsImpactStyle.Heavy) {
     Haptics.impact({
-      style: style,
+      style: style
     });
   }
 
@@ -90,7 +93,8 @@ Trigger a haptics "impact" feedback
 | ------------- | --------------------------------------------------------------------- |
 | **`options`** | <code><a href="#hapticsimpactoptions">HapticsImpactOptions</a></code> |
 
----
+--------------------
+
 
 ### notification(...)
 
@@ -104,7 +108,8 @@ Trigger a haptics "notification" feedback
 | ------------- | --------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#hapticsnotificationoptions">HapticsNotificationOptions</a></code> |
 
----
+--------------------
+
 
 ### vibrate()
 
@@ -114,7 +119,8 @@ vibrate() => void
 
 Vibrate the device
 
----
+--------------------
+
 
 ### selectionStart()
 
@@ -124,7 +130,8 @@ selectionStart() => void
 
 Trigger a selection started haptic hint
 
----
+--------------------
+
 
 ### selectionChanged()
 
@@ -136,7 +143,8 @@ Trigger a selection changed haptic hint. If a selection was
 started already, this will cause the device to provide haptic
 feedback
 
----
+--------------------
+
 
 ### selectionEnd()
 
@@ -147,9 +155,11 @@ selectionEnd() => void
 If selectionStart() was called, selectionEnd() ends the selection.
 For example, call this when a user has lifted their finger from a control
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### HapticsImpactOptions
 
@@ -157,13 +167,16 @@ For example, call this when a user has lifted their finger from a control
 | ----------- | ----------------------------------------------------------------- |
 | **`style`** | <code><a href="#hapticsimpactstyle">HapticsImpactStyle</a></code> |
 
+
 #### HapticsNotificationOptions
 
 | Prop       | Type                                                                        |
 | ---------- | --------------------------------------------------------------------------- |
 | **`type`** | <code><a href="#hapticsnotificationtype">HapticsNotificationType</a></code> |
 
+
 ### Enums
+
 
 #### HapticsImpactStyle
 
@@ -172,6 +185,7 @@ For example, call this when a user has lifted their finger from a control
 | **`Heavy`**  | <code>"HEAVY"</code>  |
 | **`Medium`** | <code>"MEDIUM"</code> |
 | **`Light`**  | <code>"LIGHT"</code>  |
+
 
 #### HapticsNotificationType
 

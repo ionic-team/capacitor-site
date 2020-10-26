@@ -12,17 +12,17 @@ deeplinks, opens other apps, and manages persisted plugin state.
 
 <docgen-index>
 
-- [`exitApp()`](#exitapp)
-- [`canOpenUrl(...)`](#canopenurl)
-- [`openUrl(...)`](#openurl)
-- [`getState()`](#getstate)
-- [`getLaunchUrl()`](#getlaunchurl)
-- [`addListener(...)`](#addlistener)
-- [`addListener(...)`](#addlistener)
-- [`addListener(...)`](#addlistener)
-- [`addListener(...)`](#addlistener)
-- [`removeAllListeners()`](#removealllisteners)
-- [Interfaces](#interfaces)
+* [`exitApp()`](#exitapp)
+* [`canOpenUrl(...)`](#canopenurl)
+* [`openUrl(...)`](#openurl)
+* [`getState()`](#getstate)
+* [`getLaunchUrl()`](#getlaunchurl)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`addListener(...)`](#addlistener)
+* [`removeAllListeners()`](#removealllisteners)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -52,19 +52,17 @@ App.addListener('pluginError', (info: any) => {
 var ret = await App.canOpenUrl({ url: 'com.getcapacitor.myapp' });
 console.log('Can open url: ', ret.value);
 
-ret = await App.openUrl({
-  url: 'com.getcapacitor.myapp://page?id=ionicframework',
-});
+ret = await App.openUrl({ url: 'com.getcapacitor.myapp://page?id=ionicframework' });
 console.log('Open url response: ', ret);
 
 ret = await App.getLaunchUrl();
-if (ret && ret.url) {
+if(ret && ret.url) {
   console.log('App opened with URL: ' + ret.url);
 }
 console.log('Launch url: ', ret);
 
 App.addListener('appUrlOpen', (data: any) => {
-  console.log('App opened with URL: ' + data.url);
+  console.log('App opened with URL: ' +  data.url);
 });
 
 App.addListener('appRestoredResult', (data: any) => {
@@ -75,11 +73,11 @@ App.addListener('appRestoredResult', (data: any) => {
 ## Android: Use appRestoredResult
 
 On Android, due to memory constraints on low-end devices, it's possible that, if your app launches a new activity, your app will be terminated by the operating system
-in order to reduce memory consumption.
+in order to reduce memory consumption. 
 
 For example, that means the `Camera` API, which launches a new Activity to take a photo, may not be able to return data back to your app.
 
-To avoid this, Capacitor stores all restored activity results on launch. You should add a listener for `appRestoredResult` in order to handle any
+To avoid this, Capacitor stores all restored activity results on launch. You should add a listener for `appRestoredResult` in order to handle any 
 plugin call results that were delivered when your app was not running.
 
 Once you have that result (if any), you can update the UI to restore a logical experience for the user, such as navigating or selecting the proper tab.
@@ -104,7 +102,8 @@ Ionic handles this itself so you shouldn't need to call this if using Ionic
 
 **Returns:** <code>never</code>
 
----
+--------------------
+
 
 ### canOpenUrl(...)
 
@@ -120,7 +119,8 @@ Check if an app can be opened with the given URL
 
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### openUrl(...)
 
@@ -136,7 +136,8 @@ Open an app with the given URL
 
 **Returns:** <code>Promise&lt;{ completed: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### getState()
 
@@ -148,7 +149,8 @@ Gets the current app state
 
 **Returns:** <code>Promise&lt;<a href="#appstate">AppState</a>&gt;</code>
 
----
+--------------------
+
 
 ### getLaunchUrl()
 
@@ -160,7 +162,8 @@ Get the URL the app was launched with, if any
 
 **Returns:** <code>Promise&lt;<a href="#applaunchurl">AppLaunchUrl</a>&gt;</code>
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -177,7 +180,8 @@ Listen for changes in the App's active state (whether the app is in the foregrou
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -195,7 +199,8 @@ as URLs your app handles (Universal Links on iOS and App Links on Android)
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -214,7 +219,8 @@ the app was launched with, converted into the form of a result from a plugin cal
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
----
+--------------------
+
 
 ### addListener(...)
 
@@ -233,7 +239,8 @@ If you want to close the app, call `App.exitApp()`.
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
----
+--------------------
+
 
 ### removeAllListeners()
 
@@ -243,9 +250,11 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### AppState
 
@@ -253,17 +262,20 @@ Remove all native listeners for this plugin
 | -------------- | -------------------- |
 | **`isActive`** | <code>boolean</code> |
 
+
 #### AppLaunchUrl
 
 | Prop      | Type                |
 | --------- | ------------------- |
 | **`url`** | <code>string</code> |
 
+
 #### PluginListenerHandle
 
 | Prop         | Type                    |
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
+
 
 #### AppUrlOpen
 
@@ -272,6 +284,7 @@ Remove all native listeners for this plugin
 | **`url`**                  | <code>string</code>  | The URL the app was opened with                                                                                                                                                    |
 | **`iosSourceApplication`** | <code>any</code>     | The source application opening the app (iOS only) https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623128-sourceapplication                         |
 | **`iosOpenInPlace`**       | <code>boolean</code> | Whether the app should open the passed document in-place or must copy it first. https://developer.apple.com/documentation/uikit/uiapplicationopenurloptionskey/1623123-openinplace |
+
 
 #### AppRestoredResult
 

@@ -14,14 +14,14 @@ The StatusBar API Provides methods for configuring the style of the Status Bar, 
 
 <docgen-index>
 
-- [`setStyle(...)`](#setstyle)
-- [`setBackgroundColor(...)`](#setbackgroundcolor)
-- [`show(...)`](#show)
-- [`hide(...)`](#hide)
-- [`getInfo()`](#getinfo)
-- [`setOverlaysWebView(...)`](#setoverlayswebview)
-- [Interfaces](#interfaces)
-- [Enums](#enums)
+* [`setStyle(...)`](#setstyle)
+* [`setBackgroundColor(...)`](#setbackgroundcolor)
+* [`show(...)`](#show)
+* [`hide(...)`](#hide)
+* [`getInfo()`](#getinfo)
+* [`setOverlaysWebView(...)`](#setoverlayswebview)
+* [Interfaces](#interfaces)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -35,33 +35,36 @@ The status bar visibility defaults to visible and the style defaults to `StatusB
 
 ## Events
 
-- statusTap
+* statusTap
 
 ## Example
 
 ```typescript
 // Events (iOS only)
 window.addEventListener('statusTap', function () {
-  console.log('statusbar tapped');
+  console.log("statusbar tapped");
 });
 
 //API
-import { Plugins, StatusBarStyle } from '@capacitor/core';
+import {
+  Plugins,
+  StatusBarStyle,
+} from '@capacitor/core';
 
 const { StatusBar } = Plugins;
 
 export class StatusBarExample {
-  isStatusBarLight = true;
+  isStatusBarLight = true
 
   changeStatusBar() {
     StatusBar.setStyle({
-      style: this.isStatusBarLight ? StatusBarStyle.Dark : StatusBarStyle.Light,
+      style: this.isStatusBarLight ? StatusBarStyle.Dark : StatusBarStyle.Light
     });
     this.isStatusBarLight = !this.isStatusBarLight;
 
     // Display content under transparent status bar (Android only)
     StatusBar.setOverlaysWebView({
-      overlay: true,
+      overlay: true
     });
   }
 
@@ -92,7 +95,8 @@ Set the current style of the status bar
 | ------------- | ----------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbarstyleoptions">StatusBarStyleOptions</a></code> |
 
----
+--------------------
+
 
 ### setBackgroundColor(...)
 
@@ -106,7 +110,8 @@ Set the background color of the status bar
 | ------------- | ------------------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbarbackgroundcoloroptions">StatusBarBackgroundColorOptions</a></code> |
 
----
+--------------------
+
 
 ### show(...)
 
@@ -120,7 +125,8 @@ Show the status bar
 | ------------- | ------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbaranimationoptions">StatusBarAnimationOptions</a></code> |
 
----
+--------------------
+
 
 ### hide(...)
 
@@ -134,7 +140,8 @@ Hide the status bar
 | ------------- | ------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbaranimationoptions">StatusBarAnimationOptions</a></code> |
 
----
+--------------------
+
 
 ### getInfo()
 
@@ -146,7 +153,8 @@ Get info about the current state of the status bar
 
 **Returns:** <code>Promise&lt;<a href="#statusbarinforesult">StatusBarInfoResult</a>&gt;</code>
 
----
+--------------------
+
 
 ### setOverlaysWebView(...)
 
@@ -161,9 +169,11 @@ around a device "notch"
 | ------------- | ------------------------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#statusbaroverlayswebviewoptions">StatusBarOverlaysWebviewOptions</a></code> |
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### StatusBarStyleOptions
 
@@ -171,17 +181,20 @@ around a device "notch"
 | ----------- | --------------------------------------------------------- |
 | **`style`** | <code><a href="#statusbarstyle">StatusBarStyle</a></code> |
 
+
 #### StatusBarBackgroundColorOptions
 
 | Prop        | Type                |
 | ----------- | ------------------- |
 | **`color`** | <code>string</code> |
 
+
 #### StatusBarAnimationOptions
 
 | Prop            | Type                                                              | Description                                                             |
 | --------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | **`animation`** | <code><a href="#statusbaranimation">StatusBarAnimation</a></code> | iOS only. The type of status bar animation used when showing or hiding. |
+
 
 #### StatusBarInfoResult
 
@@ -192,13 +205,16 @@ around a device "notch"
 | **`color`**    | <code>string</code>                                       |
 | **`overlays`** | <code>boolean</code>                                      |
 
+
 #### StatusBarOverlaysWebviewOptions
 
 | Prop          | Type                 |
 | ------------- | -------------------- |
 | **`overlay`** | <code>boolean</code> |
 
+
 ### Enums
+
 
 #### StatusBarStyle
 
@@ -206,6 +222,7 @@ around a device "notch"
 | ----------- | -------------------- | -------------------------------- |
 | **`Dark`**  | <code>"DARK"</code>  | Light text for dark backgrounds. |
 | **`Light`** | <code>"LIGHT"</code> | Dark text for light backgrounds. |
+
 
 #### StatusBarAnimation
 
