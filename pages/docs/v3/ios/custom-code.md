@@ -8,12 +8,11 @@ contributors:
 
 # Custom Native iOS Code
 
-Many apps will want to add custom Swift (or Objective-C) code to implement native features, without the overhead of building and publishing a proper Capacitor plugin. 
+Many apps will want to add custom Swift (or Objective-C) code to implement native features, without the overhead of building and publishing a proper Capacitor plugin.
 
-We strongly recommend using Swift to build plugins, as the iOS ecosystem has embraced Swift and you'll be able to find help and developers more easily, but Objective-C works just as well. 
+We strongly recommend using Swift to build plugins, as the iOS ecosystem has embraced Swift and you'll be able to find help and developers more easily, but Objective-C works just as well.
 
 There are two ways to add custom code depending on whether or not you need to access that code from the WebView:
-
 
 ## WebView Accessible Native Code
 
@@ -54,11 +53,11 @@ CAP_PLUGIN(MyPlugin, "MyPlugin",
 This makes `MyPlugin`, and the `echo` method available to the Capacitor web runtime like this:
 
 ```typescript
-import { Plugins } from "@capacitor/core"
-const { MyPlugin } = Plugins
+import { Plugins } from '@capacitor/core';
+const { MyPlugin } = Plugins;
 
-const result = await MyPlugin.echo({ value: "Hello World!" })
-console.log(result.value)
+const result = await MyPlugin.echo({ value: 'Hello World!' });
+console.log(result.value);
 ```
 
 ## Private Native Code

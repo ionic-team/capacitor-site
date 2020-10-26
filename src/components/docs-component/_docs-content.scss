@@ -1,5 +1,5 @@
 //Styles for docs article content
-@mixin docsStyles {  
+@mixin docsStyles {
   --h1-color: var(--c-carbon-100);
   --h2-color: var(--c-carbon-100);
   --h3-color: var(--c-carbon-100);
@@ -9,21 +9,22 @@
 
   --p2-color: var(--c-indigo-80);
 
-  .paragraph-intro { 
+  .paragraph-intro {
     font-family: var(--p2-font);
     font-size: var(--p2-size);
     line-height: var(--f-leading-prose);
     letter-spacing: var(--p2-tracking);
     font-weight: var(--p2-weight);
     color: var(--p2-color);
-    text-transform: var(--p2-transform);    
+    text-transform: var(--p2-transform);
   }
 
   .paragraph-intro code {
     font-size: 18px;
   }
 
-  .paragraph-intro + ul, .paragraph-intro + ol {
+  .paragraph-intro + ul,
+  .paragraph-intro + ol {
     li {
       font-family: var(--p2-font);
       font-size: var(--p2-size);
@@ -47,7 +48,8 @@
   }
 
   blockquote {
-    strong, b {
+    strong,
+    b {
       color: #403826 !important;
     }
     background: rgba(255, 250, 237, 0.8);
@@ -91,7 +93,7 @@
   > .ui-heading-1 {
     margin-block-start: var(--space-9);
   }
-  .ui-heading-1 {    
+  .ui-heading-1 {
     margin-block-end: var(--space-5);
   }
 
@@ -104,7 +106,7 @@
   }
 
   .ui-heading-2,
-  .ui-heading-3 {    
+  .ui-heading-3 {
     margin-block-end: var(--space-3);
   }
 
@@ -112,23 +114,19 @@
     padding-block-start: 28px;
   }
   .ui-heading-4 {
-    
   }
 
   > .ui-heading-5 {
     padding-top: 24px;
   }
   .ui-heading-5 {
-    
   }
 
   > .ui-heading-6 {
     padding-top: 16px;
   }
   .ui-heading-6 {
-
   }
-
 
   .ui-heading-2 code {
     font-weight: 600;
@@ -141,7 +139,11 @@
     border-radius: 4px;
   }
 
-  h2 .heading-anchor, h3 .heading-anchor, h4 .heading-anchor, h5 .heading-anchor, h6 .heading-anchor {
+  h2 .heading-anchor,
+  h3 .heading-anchor,
+  h4 .heading-anchor,
+  h5 .heading-anchor,
+  h6 .heading-anchor {
     opacity: 0;
     transition: opacity 0.2s ease 0s;
     display: block;
@@ -162,7 +164,7 @@
   h6:hover .heading-anchor {
     opacity: 0.8;
   }
-  
+
   p,
   ul,
   ol {
@@ -204,7 +206,6 @@
       padding: 4px;
       min-width: 150px;
 
-
       code {
         font-size: 12px;
       }
@@ -222,7 +223,8 @@
     margin: 1.6em 0;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: 1.6em 0;
 
     li.ui-paragraph {
@@ -239,7 +241,8 @@
     font-weight: 500;
   }
 
-  p strong, p b {
+  p strong,
+  p b {
     color: var(--c-carbon-100);
   }
 
@@ -256,8 +259,6 @@
     align-items: flex-start;
   }
 
-  
-
   pre {
     min-width: 0;
     overflow-x: auto;
@@ -266,7 +267,7 @@
     color: #16161d;
     background-color: #f8f8f8;
 
-    &[class*=language-] {
+    &[class*='language-'] {
       margin: 1.6em 0;
     }
 
@@ -282,11 +283,12 @@
       padding-inline-end: 1em;
       font-weight: 500;
       font-size: 14px;
-      line-height: 20px;      
+      line-height: 20px;
     }
   }
 
-  :not(pre) > code[class*="language-"], pre[class*="language-"] {
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
     background: rgb(245, 247, 250);
   }
 }

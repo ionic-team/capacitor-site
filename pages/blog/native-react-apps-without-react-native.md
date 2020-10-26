@@ -60,7 +60,7 @@ const { Share } = Plugins;
 await Share.share({
   title: 'My awesome thing',
   text: 'Check out this really awesome thing',
-  url: 'https://capacitorjs.com/'
+  url: 'https://capacitorjs.com/',
 });
 ```
 

@@ -17,7 +17,6 @@ export class InPageNavigtion {
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
-
   render() {
     const headings = this.headings
       .filter(heading => heading.level !== 1)
@@ -50,10 +49,14 @@ export class InPageNavigtion {
       <nav class="sticky">
         {h1 ? (
           <a href={`#${h1.id}`}>
-            <Heading level={6} class="title">Contents</Heading>
+            <Heading level={6} class="title">
+              Contents
+            </Heading>
           </a>
         ) : (
-          <Heading level={6} class="title">Contents</Heading>
+          <Heading level={6} class="title">
+            Contents
+          </Heading>
         )}
 
         <ul class="heading-links">

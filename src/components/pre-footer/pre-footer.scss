@@ -16,13 +16,12 @@
   @media screen and (max-width: $screen-xs) {
     flex-direction: column;
   }
-  
 
   &::before {
     content: '';
     flex-basis: 50%;
     border-inline-end: 1px solid var(--c-indigo-20);
-    border-block-start: 1px solid var(--c-indigo-20);    
+    border-block-start: 1px solid var(--c-indigo-20);
   }
   &::after {
     content: '';
@@ -35,7 +34,7 @@
   position: relative;
   z-index: 1;
   display: flex;
-  
+
   @media screen and (max-width: $screen-xs) {
     flex-direction: column;
   }

@@ -8,7 +8,7 @@ contributors:
 
 # Troubleshooting Android Issues
 
-Creating a 100% perfect native management tool is nearly impossible, and sooner or later you'll run into various issues with some part of the Android workflow. 
+Creating a 100% perfect native management tool is nearly impossible, and sooner or later you'll run into various issues with some part of the Android workflow.
 
 This guide attempts to document common Android issues with possible solutions.
 
@@ -38,7 +38,7 @@ That can be done easily from the File menu:
 
 ![Android Invalidate Caches](/assets/img/docs/android/invalidate-caches.png)
 
-## Error: "package android.support.* does not exist"
+## Error: "package android.support.\* does not exist"
 
 This error occurs when some Cordova or Capacitor plugin has old android support dependencies instead of using the new AndroidX equivalent.
 You should report the issue in the plugin repository so the maintainers can update the plugin to use AndroidX dependencies.

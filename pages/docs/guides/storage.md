@@ -13,7 +13,7 @@ Most apps need to persist and read local data. Depending on the specific use cas
 
 Since Capacitor apps run primarily in a web view or browser, Web APIs for storage are available to Capacitor developers. However, there are some major caveats to keep in mind with these APIs.
 
-Local Storage can be used for small amounts of temporary data, such as a user id, but *must be considered transient*, meaning your app needs to expect that the data will be lost eventually. This is because the OS will reclaim local storage from Web Views if a device is running low on space. The same can be said for IndexedDB at least on iOS (on Android, the [persisted storage API](https://web.dev/persistent-storage/) is available to mark IndexedDB as persisted). Read more on [data storage eviction policies](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria) in the browser.
+Local Storage can be used for small amounts of temporary data, such as a user id, but _must be considered transient_, meaning your app needs to expect that the data will be lost eventually. This is because the OS will reclaim local storage from Web Views if a device is running low on space. The same can be said for IndexedDB at least on iOS (on Android, the [persisted storage API](https://web.dev/persistent-storage/) is available to mark IndexedDB as persisted). Read more on [data storage eviction policies](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria) in the browser.
 
 ## Capacitor Storage API
 
@@ -50,4 +50,3 @@ For storing large amounts of data and accessing it in a high performance way, th
 The most widely supported option is SQLite. There are a number of community-maintained SQLite plugins that should work in Capacitor, including [capacitor-sqlite](https://github.com/jepiqueau/capacitor-sqlite) and [cordova-plugin-sqlite](https://github.com/xpbrew/cordova-sqlite-storage).
 
 The Capacitor team also offers an [enterprise SQLite storage solution](https://ionicframework.com/enterprise/offline-storage) with encryption support and integration with [secure key management APIs](https://ionicframework.com/enterprise/identity-vault) on device.
-

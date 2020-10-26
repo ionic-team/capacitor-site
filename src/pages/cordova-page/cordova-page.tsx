@@ -23,7 +23,7 @@ export class CordovaPage {
     return (
       <Host>
         <MetaHead />
-        
+
         <Top />
         <GettingStarted />
 
@@ -41,17 +41,19 @@ export class CordovaPage {
   Top = () => (
     <ResponsiveContainer id="top" as="section">
       <div class="heading-group">
-        <Heading level={2} as="h1">Cordova to Capacitor Migration</Heading>
+        <Heading level={2} as="h1">
+          Cordova to Capacitor Migration
+        </Heading>
         <Paragraph level={2}>
-          A modern development experience and 99%
-          backward-compatibility with Cordova.
+          A modern development experience and 99% backward-compatibility with
+          Cordova.
         </Paragraph>
         {/* <Button anchor href="#code-branch" id="get-started">
           Get Started
         </Button> */}
       </div>
     </ResponsiveContainer>
-  )
+  );
 
   GettingStarted = () => (
     <ResponsiveContainer id="getting-started" as="section">
@@ -126,14 +128,16 @@ ionic build
               src="/assets/img/landing/apple.png"
               alt="Apple"
               class="apple"
-              width="22" height="26"
+              width="22"
+              height="26"
             />
             <img
               loading="lazy"
               src="/assets/img/landing/android.png"
               alt="Android"
               class="android"
-              width="27" height="23"
+              width="27"
+              height="23"
             />
           </div>
           <Paragraph>
@@ -200,13 +204,13 @@ cordova-res android --skip-config --copy
             <TabBar>
               <TabBarButton
                 selected={this.selectedCodeTab === 'before'}
-                tabSelect={() => this.selectedCodeTab = 'before'}
+                tabSelect={() => (this.selectedCodeTab = 'before')}
               >
                 Cordova Camera
               </TabBarButton>
               <TabBarButton
                 selected={this.selectedCodeTab === 'after'}
-                tabSelect={() => this.selectedCodeTab = 'after'}
+                tabSelect={() => (this.selectedCodeTab = 'after')}
               >
                 Capacitor Camera
               </TabBarButton>
@@ -323,7 +327,10 @@ npx @capacitor/cli plugin:generate
             type: 'article',
           },
           { uid: 'capacitor-2-launch', type: 'webinar' },
-          { uid: 'migrating-from-phonegap-build-to-ionic-appflow', type: 'blog' },
+          {
+            uid: 'migrating-from-phonegap-build-to-ionic-appflow',
+            type: 'blog',
+          },
           {
             uid: 'thanks-to-capacitor-ive-fallen-in-love-with-mobile-again',
             type: 'blog',
@@ -331,16 +338,12 @@ npx @capacitor/cli plugin:generate
           { uid: 'the-modern-hybrid-app-developer', type: 'blog' },
         ]}
         routing={{
-          base: "https://ionicframework.com/resources"
+          base: 'https://ionicframework.com/resources',
         }}
       />
     </ResponsiveContainer>
   );
 }
-
-
-
-
 
 const MetaHead = () => (
   <Helmet>

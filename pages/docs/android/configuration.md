@@ -8,9 +8,9 @@ contributors:
 
 # Configuring Android
 
-Android apps manage permissions, device features, and other settings by modifying `AndroidManifest.xml`. 
+Android apps manage permissions, device features, and other settings by modifying `AndroidManifest.xml`.
 
-This file references values from other files in `res/values/`, to make it easy to update them separately, including `styles.xml` and `strings.xml`. 
+This file references values from other files in `res/values/`, to make it easy to update them separately, including `styles.xml` and `strings.xml`.
 
 This article covers the basic modifications you'll need to make to your app. Read the [Android Manifest](https://developer.android.com/guide/topics/manifest/manifest-intro.html) docs to learn a whole lot more.
 

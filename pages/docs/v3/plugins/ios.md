@@ -8,7 +8,7 @@ contributors:
 
 # Capacitor iOS Plugin Guide
 
-Building Capacitor plugins for iOS involves writing Swift (or Objective-C) to interface with Apple's iOS SDKs. 
+Building Capacitor plugins for iOS involves writing Swift (or Objective-C) to interface with Apple's iOS SDKs.
 
 ## Getting Started
 
@@ -25,10 +25,10 @@ Once your plugin is generated, you can start editing it by opening `Plugin.swift
 
 ### Simple Example
 
- In the generated example, there is a simple echo plugin with an `echo` function that simply returns a value that it was given.
+In the generated example, there is a simple echo plugin with an `echo` function that simply returns a value that it was given.
 
- This example demonstrates a few core components of Capacitor plugins: receiving data from a Plugin Call, and returning
- data back to the caller:
+This example demonstrates a few core components of Capacitor plugins: receiving data from a Plugin Call, and returning
+data back to the caller:
 
 `Plugin.swift`
 
@@ -151,8 +151,8 @@ self.bridge.triggerDocumentJSEvent(eventName: "myCustomEvent", data: "my custom 
 And to listen for it, just use regular javascript:
 
 ```typescript
-window.addEventListener("myCustomEvent", function() {
-  console.log("myCustomEvent was fired")
+window.addEventListener('myCustomEvent', function () {
+  console.log('myCustomEvent was fired');
 });
 ```
 
@@ -173,9 +173,12 @@ To emit the event from the Swift plugin class you can do it like this:
 To remove a listener from the plugin object:
 
 ```typescript
-const myPluginEventListener = Plugins.MyPlugin.addListener("myPluginEvent", (info: any) => {
-  console.log("myPluginEvent was fired");
-});
+const myPluginEventListener = Plugins.MyPlugin.addListener(
+  'myPluginEvent',
+  (info: any) => {
+    console.log('myPluginEvent was fired');
+  },
+);
 
 myPluginEventListener.remove();
 ```

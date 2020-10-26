@@ -19,7 +19,7 @@ For the purposes of registering and monitoring for push notifications from Fireb
 
 Building and deploying iOS and Android applications using Capacitor requires a bit of setup. Please [follow the instructions to install the necessary Capacitor dependencies here](/docs/getting-started/environment-setup) before continuing.
 
-To test push notifications on iOS, Apple requires that you have [a paid Apple Developer account](https://developer.apple.com/) and a *physical* iOS device.
+To test push notifications on iOS, Apple requires that you have [a paid Apple Developer account](https://developer.apple.com/) and a _physical_ iOS device.
 
 If you are running into issues or your console throws warnings about outdated or deprecated packages, make sure that you're on the latest stable versions of Node, Android Studio, and Xcode.
 
@@ -58,6 +58,7 @@ npx cap init
 ```
 
 ## Building the App & Adding Platforms
+
 Before adding any native platforms to this project, the app must be built at least once. A web build creates the web assets directory that Capacitor needs (`www` folder in Ionic Angular projects).
 
 ```bash
@@ -84,7 +85,8 @@ import {
   Plugins,
   PushNotification,
   PushNotificationToken,
-  PushNotificationActionPerformed } from '@capacitor/core';
+  PushNotificationActionPerformed,
+} from '@capacitor/core';
 
 const { PushNotifications } = Plugins;
 ```
@@ -148,7 +150,8 @@ import {
   Plugins,
   PushNotification,
   PushNotificationToken,
-  PushNotificationActionPerformed } from '@capacitor/core';
+  PushNotificationActionPerformed,
+} from '@capacitor/core';
 
 const { PushNotifications } = Plugins;
 
@@ -157,16 +160,14 @@ const { PushNotifications } = Plugins;
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-
 export class HomePage implements OnInit {
-
   ngOnInit() {
     console.log('Initializing HomePage');
 
     // Request permission to use push notifications
     // iOS will prompt user and return if they granted permission or not
     // Android will just grant without prompting
-    PushNotifications.requestPermission().then( result => {
+    PushNotifications.requestPermission().then(result => {
       if (result.granted) {
         // Register with Apple / Google to receive push via APNS/FCM
         PushNotifications.register();
@@ -175,28 +176,29 @@ export class HomePage implements OnInit {
       }
     });
 
-    PushNotifications.addListener('registration',
+    PushNotifications.addListener(
+      'registration',
       (token: PushNotificationToken) => {
         alert('Push registration success, token: ' + token.value);
-      }
+      },
     );
 
-    PushNotifications.addListener('registrationError',
-      (error: any) => {
-        alert('Error on registration: ' + JSON.stringify(error));
-      }
-    );
+    PushNotifications.addListener('registrationError', (error: any) => {
+      alert('Error on registration: ' + JSON.stringify(error));
+    });
 
-    PushNotifications.addListener('pushNotificationReceived',
+    PushNotifications.addListener(
+      'pushNotificationReceived',
       (notification: PushNotification) => {
         alert('Push received: ' + JSON.stringify(notification));
-      }
+      },
     );
 
-    PushNotifications.addListener('pushNotificationActionPerformed',
+    PushNotifications.addListener(
+      'pushNotificationActionPerformed',
       (notification: PushNotificationActionPerformed) => {
         alert('Push action performed: ' + JSON.stringify(notification));
-      }
+      },
     );
   }
 }
@@ -243,13 +245,13 @@ Download the `google-services.json` file to your local machine. Then move the fi
 
 ![Google Services JSON Location for Android](/assets/img/docs/guides/firebase-push-notifications/google-services-location-android.png)
 
-We don't need to *add* any dependencies to our project because Capacitor projects automatically include a version of `firebase-messaging` in it's `build.gradle` file.
+We don't need to _add_ any dependencies to our project because Capacitor projects automatically include a version of `firebase-messaging` in it's `build.gradle` file.
 
 ## iOS
 
 ### Prerequisites
 
-iOS push notifications are significantly more complicated to set up than Android. You must have a [paid Apple Developer account](https://developer.apple.com/) *and* take care of the following items prior to being able to test push notifications with your iOS application:
+iOS push notifications are significantly more complicated to set up than Android. You must have a [paid Apple Developer account](https://developer.apple.com/) _and_ take care of the following items prior to being able to test push notifications with your iOS application:
 
 1. [Setup the proper Development or Production certificates & provisioning profiles](https://help.apple.com/xcode/mac/current/#/dev60b6fbbc7) for your iOS application in the Apple Developer Portal
 2. [Create an APNS certificate or key](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns) for either Development or Production in the Apple Developer Portal
@@ -274,7 +276,7 @@ Then click the **Register app** button.
 
 ### Add the `GoogleService-Info.plist` file to your iOS app
 
-*Note: This is **not** the same file used for your Android app.*
+_Note: This is **not** the same file used for your Android app._
 
 Download the `GoogleService-Info.plist` provided to your local machine.
 
@@ -336,7 +338,7 @@ end
 
 Now we'll need to ensure that our iOS project is updated with the proper Firebase CocoaPod installed.
 
-*Note: This part can take a while as CocoaPods needs to download all the appropriate files/dependencies.*
+_Note: This part can take a while as CocoaPods needs to download all the appropriate files/dependencies._
 
 ```bash
 npx cap update ios
@@ -423,7 +425,7 @@ npx cap open ios
 
 Once the project is open, side-load the application on your device using the Run feature of either Android Studio or Xcode. The app should start up on the home page.
 
-*Note: On iOS, you will see a popup asking you to allow notifications for your app - make sure you choose to **Allow notifications**!*
+_Note: On iOS, you will see a popup asking you to allow notifications for your app - make sure you choose to **Allow notifications**!_
 
 If your app successfully registers and you followed the code above, you should see an alert with a success message!
 

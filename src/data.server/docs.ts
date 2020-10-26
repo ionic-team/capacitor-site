@@ -35,7 +35,7 @@ export const getDocsData: MapParamData = async ({ id }) => {
     headingAnchors: true,
     beforeHtmlSerialize(frag: DocumentFragment) {
       hookUpDesignSystem(frag);
-    }
+    },
   });
 
   results.template = getTemplateFromPath(results.filePath);

@@ -14,4 +14,5 @@ npx cap add <platform>
 ```
 
 <strong>Inputs:</strong>
+
 - `platform` (required): `android`, `ios`

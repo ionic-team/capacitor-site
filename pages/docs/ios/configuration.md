@@ -43,6 +43,7 @@ If a plugin requires certain entitlements, open your app in Xcode, click on the 
 You can't rename the App folder, but you can set the name of your app by renaming the "target" called "App".
 
 In XCode you will see something like this:
+
 ```
 PROJECT
   App
@@ -50,6 +51,7 @@ PROJECT
 TARGET
   App
 ```
+
 Here you can click on the name "App" under TARGET to rename your app.
 
 You then also have to modify the Podfile to rename the current target accordingly:

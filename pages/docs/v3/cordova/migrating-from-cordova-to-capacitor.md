@@ -9,7 +9,7 @@ contributors:
 
 There are several steps required to fully migrate a web app using Cordova over to Capacitor.
 
->Note that it's recommended to work in a separate code branch when applying these changes.
+> Note that it's recommended to work in a separate code branch when applying these changes.
 
 ## Add Capacitor
 
@@ -36,6 +36,7 @@ npx cap init [appName] [appId]
 In this example, it would be `npx cap init MyApp io.ionic.myapp`. These values can be found in the newly created `capacitor.config.json` file.
 
 ### Build your Web App
+
 You must build your web project at least once before adding any native platforms.
 
 This ensures that the `www` folder that Capacitor has been [automatically configured](/docs/basics/configuring-your-app/) to use as the `webDir` in `capacitor.config.json` actually exists.
@@ -119,7 +120,6 @@ When `npx cap init` is run, Capacitor reads all the preferences in `config.xml` 
   }
 }
 ```
-
 
 ## Additional Config.xml Fields
 

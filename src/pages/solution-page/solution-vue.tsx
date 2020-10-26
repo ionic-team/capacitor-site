@@ -1,5 +1,9 @@
 import { Fragment, h } from '@stencil/core';
-import { ResponsiveContainer, Heading, Paragraph } from '@ionic-internal/ionic-ds';
+import {
+  ResponsiveContainer,
+  Heading,
+  Paragraph,
+} from '@ionic-internal/ionic-ds';
 export const SolutionVue = () => {
   return (
     <Fragment>
@@ -45,23 +49,23 @@ npm run build
         <article class="step">
           <sup class="ui-heading-6">03</sup>
           <div class="heading-group">
-            <Heading>
-              Install the native platforms you want to target.
-            </Heading>
+            <Heading>Install the native platforms you want to target.</Heading>
             <div class="platforms">
               <img
                 loading="lazy"
                 src="/assets/img/landing/apple.png"
                 alt="Apple"
                 class="apple"
-                width="22" height="26"
+                width="22"
+                height="26"
               />
               <img
                 loading="lazy"
                 src="/assets/img/landing/android.png"
                 alt="Android"
                 class="android"
-                width="27" height="23"
+                width="27"
+                height="23"
               />
             </div>
             <Paragraph>
@@ -91,9 +95,9 @@ npx cap add ios
             </Paragraph>
           </div>
           <div class="code-panel">
-              <code-snippet
-                language="markup"
-                code={`
+            <code-snippet
+              language="markup"
+              code={`
 <template>
 <div>
   <h1>Geolocation</h1>
@@ -124,23 +128,27 @@ export default {
 }
 </script>
 `}
-              />
+            />
           </div>
         </article>
-
-        
       </ResponsiveContainer>
       <section id="continue">
         <ResponsiveContainer>
           <Heading level={3}>Continue your Capacitor Journey.</Heading>
           <Paragraph>
             This is only the beginning. Learn more about the Capacitor{' '}
-            <a href="/docs/basics/workflow" target="_blank">development workflow</a>{' '}
-            or using more <a href="/docs/apis" target="_blank"> native APIs</a> .
+            <a href="/docs/basics/workflow" target="_blank">
+              development workflow
+            </a>{' '}
+            or using more{' '}
+            <a href="/docs/apis" target="_blank">
+              {' '}
+              native APIs
+            </a>{' '}
+            .
           </Paragraph>
         </ResponsiveContainer>
       </section>
     </Fragment>
-    );
+  );
 };
-

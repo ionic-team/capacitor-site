@@ -10,18 +10,19 @@ import { Component, Prop, h } from '@stencil/core';
     font-weight: 500;
   }
   `,
-  shadow: true
+  shadow: true,
 })
 export class AvcCodeType {
-
   @Prop() typeId: string;
 
   render() {
-    if(this.typeId) {
-      return (<anchor-link to={`type-${this.typeId}`}><slot></slot></anchor-link>);
+    if (this.typeId) {
+      return (
+        <anchor-link to={`type-${this.typeId}`}>
+          <slot></slot>
+        </anchor-link>
+      );
     }
-    return (
-      <slot></slot>
-    )
+    return <slot></slot>;
   }
 }

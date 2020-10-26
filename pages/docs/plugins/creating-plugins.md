@@ -32,14 +32,14 @@ npx @capacitor/cli plugin:generate
 ? package.json will be created, do you want to continue? (Y/n)
 ```
 
- - `Plugin NPM name`: a kebab-case name of a package that will be available on npm (not a strict requirement if your package will be on a private npm repo).
- - `Plugin ID`: a domain-style identifier. It is primarily used for the package name in Java.
- - `Plugin Class Name`: the initial name of the class used in Java and Swift. See the additional note about class names in the [iOS Plugin](./ios) section of this guide.
- - `description`: a brief introduction about the plugin.
- - `git repository`: the URL to a git repository where the source code of the plugin will be hosted.
- - `author` (optional): the name of the plugin creator in `package.json`.
- - `license` (optional): the license under which the plugin is bound. MIT license is the default.
- - `package.json will be created`: enter "Y" and/or hit Enter/Return to finish plugin setup.
+- `Plugin NPM name`: a kebab-case name of a package that will be available on npm (not a strict requirement if your package will be on a private npm repo).
+- `Plugin ID`: a domain-style identifier. It is primarily used for the package name in Java.
+- `Plugin Class Name`: the initial name of the class used in Java and Swift. See the additional note about class names in the [iOS Plugin](./ios) section of this guide.
+- `description`: a brief introduction about the plugin.
+- `git repository`: the URL to a git repository where the source code of the plugin will be hosted.
+- `author` (optional): the name of the plugin creator in `package.json`.
+- `license` (optional): the license under which the plugin is bound. MIT license is the default.
+- `package.json will be created`: enter "Y" and/or hit Enter/Return to finish plugin setup.
 
 ## Next steps
 

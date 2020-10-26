@@ -21,7 +21,7 @@ To limit the allowed orientations for iOS, open Xcode and open the general setti
 
 ### Android Configuration
 
-On Android, orientation can be set by modifying the `AndroidManifest.xml` and setting `android:screenOrientation` on the `<activity>` entry for your main app activity. See the [Android Manifest Documentation](https://developer.android.com/guide/topics/manifest/activity-element#screen) for details on the possible entries. 
+On Android, orientation can be set by modifying the `AndroidManifest.xml` and setting `android:screenOrientation` on the `<activity>` entry for your main app activity. See the [Android Manifest Documentation](https://developer.android.com/guide/topics/manifest/activity-element#screen) for details on the possible entries.
 
 ## Dynamic Orientation Settings
 

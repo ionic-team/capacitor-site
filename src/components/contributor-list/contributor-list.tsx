@@ -37,7 +37,8 @@ export class ContributorList {
         <Button
           anchor
           href={this.repoFileUrl}
-          target="_blank" rel="noopener"
+          target="_blank"
+          rel="noopener"
           size="md"
           kind="round"
           color="cyan"

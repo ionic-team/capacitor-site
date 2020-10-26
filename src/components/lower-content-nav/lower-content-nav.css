@@ -40,7 +40,7 @@ a:hover {
 .direction {
   font-size: 14px;
   color: var(--c-indigo-60);
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   line-height: 190.94%;
   padding-bottom: 4px;
 }

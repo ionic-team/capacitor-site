@@ -1,5 +1,5 @@
 ---
-title: Capacitor Plugin Generate 
+title: Capacitor Plugin Generate
 description: Capacitor Plugin Generate
 contributors:
   - dotNetkow

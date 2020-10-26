@@ -77,7 +77,7 @@ if (!isAvailable) {
 } else {
   // Otherwise, make the call:
   const image = await Camera.getPhoto({
-    resultType: CameraResultType.Uri
+    resultType: CameraResultType.Uri,
   });
 }
 ```

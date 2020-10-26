@@ -24,12 +24,12 @@ To deploy your web app to native devices, you will first need to build the web a
 
 You may wish to sync your web app with your native project(s) in the following circumstances:
 
-* After you install a new Capacitor plugin.
-* Before you run your project using a Native IDE.
-* When you want to manually copy web assets into your native project(s).
-* When you clone your project.
-* When you want to setup or reconfigure the native project(s) for Capacitor.
-* When you want to install or update native dependencies.
+- After you install a new Capacitor plugin.
+- Before you run your project using a Native IDE.
+- When you want to manually copy web assets into your native project(s).
+- When you clone your project.
+- When you want to setup or reconfigure the native project(s) for Capacitor.
+- When you want to install or update native dependencies.
 
 To sync your project, run:
 
@@ -51,10 +51,10 @@ There are a few ways to deploy your project on native devices, depending on your
 
 You may wish to open your project in a Native IDE in the following circumstances:
 
-* When you want to run your project on a native device using the IDE.
-* When you want to debug native Java/Kotlin or Swift/Objective-C code.
-* When you want to work on the native side of your app.
-* When you want to compile a release build for the app store.
+- When you want to run your project on a native device using the IDE.
+- When you want to debug native Java/Kotlin or Swift/Objective-C code.
+- When you want to work on the native side of your app.
+- When you want to compile a release build for the app store.
 
 [Learn more about opening your app in Xcode &#8250;](/docs/ios#opening-the-ios-project)
 

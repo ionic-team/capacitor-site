@@ -4,9 +4,6 @@ import { Component, h } from '@stencil/core';
 })
 export class DocSnippet {
   render() {
-    return (
-      <div class="snippet">
-      </div>
-    );
+    return <div class="snippet"></div>;
   }
 }

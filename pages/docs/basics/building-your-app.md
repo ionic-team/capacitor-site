@@ -1,5 +1,5 @@
 ---
-title: Building your App 
+title: Building your App
 description: Building your App
 contributors:
   - dotNetkow
@@ -24,7 +24,6 @@ build command:
   }
 }
 ```
-
 
 ```bash
 npm run build

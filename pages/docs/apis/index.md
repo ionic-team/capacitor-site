@@ -41,6 +41,7 @@ async openBrowser() {
 ```
 
 A common mistake is to import a plugin directly, then use the plugin API immediately, resulting in the web implementation being used:
+
 ```typescript
 import { Browser } from '@capacitor/core';
 

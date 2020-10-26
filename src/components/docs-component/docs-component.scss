@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  
 }
 
 .row {
@@ -32,7 +31,7 @@ platform-bar .docs-container {
 
 site-header {
   --spacing-x: var(--container);
-  
+
   &.scrolled {
     box-shadow: none;
   }
@@ -51,9 +50,9 @@ site-backdrop {
   justify-content: space-between;
   flex: 1;
 
-  .doc-content {    
+  .doc-content {
     min-width: 0;
-    flex-grow: 1;    
+    flex-grow: 1;
     display: flex;
 
     margin-inline-start: 12px;
@@ -82,7 +81,7 @@ plugin-platforms {
   display: block;
   float: right;
 
-  .platform {      
+  .platform {
     margin-left: 8px;
   }
 

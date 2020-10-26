@@ -7,7 +7,7 @@ import {
 } from '@stencil/ssg/parse';
 import { join } from 'path';
 import { getGithubData } from './github';
-import type { DocsData } from './docs'
+import type { DocsData } from './docs';
 import { hookUpDesignSystem } from './blog';
 
 const repoRootDir = join(__dirname, '..', '..');
@@ -25,7 +25,7 @@ export const getDocsDataV2: MapParamData = async ({ id }) => {
     headingAnchors: true,
     beforeHtmlSerialize(frag: DocumentFragment) {
       hookUpDesignSystem(frag);
-    }
+    },
   });
 
   results.template = getTemplateFromPath(results.filePath);

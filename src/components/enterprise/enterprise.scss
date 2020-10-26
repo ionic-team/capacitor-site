@@ -6,7 +6,6 @@ capacitor-enterprise {
   margin: 76px 0;
 
   .cta {
-
     h1 {
       margin-top: 0;
     }
@@ -66,7 +65,7 @@ capacitor-enterprise {
       // padding: 15px 5px 15px 18px;
       font-weight: 500;
       border-radius: 4px;
-      transition: border-color .2s;
+      transition: border-color 0.2s;
       box-shadow: none;
       outline: none;
       height: 30px;
@@ -120,12 +119,12 @@ capacitor-enterprise {
       background: #3880ff;
       border: 0;
       outline: 0;
-      transition: all .2s linear;
-      box-shadow: 0 1px 3px rgba(0,0,0,.12);
+      transition: all 0.2s linear;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 
       &:hover {
         border: 0;
-        box-shadow: 0 4px 8px rgba(0,0,0,.12);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
         background: #5995fc;
         color: #fff;
         outline: 0;
@@ -136,7 +135,7 @@ capacitor-enterprise {
       &:focus:not(.inactive) {
         border: 0;
         color: #fff;
-        box-shadow: inset 0 1px 4px rgba(0,0,0,.2);
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
         background: #5995fc;
         outline: 0;
       }
@@ -199,8 +198,8 @@ capacitor-enterprise {
 
     .hs-form-required {
       display: inline;
-      color: #F45454;
-      margin-left: 4px
+      color: #f45454;
+      margin-left: 4px;
     }
 
     .hs-richtext {
@@ -222,13 +221,13 @@ capacitor-enterprise {
       color: #505863;
     }
 
-    input.hs-input[type="number"] {
+    input.hs-input[type='number'] {
       float: none;
     }
 
-    input.hs-input[type="text"],
-    input.hs-input[type="email"],
-    input.hs-input[type="tel"]  {
+    input.hs-input[type='text'],
+    input.hs-input[type='email'],
+    input.hs-input[type='tel'] {
       height: auto;
       width: 100%;
       float: none;
@@ -238,8 +237,8 @@ capacitor-enterprise {
       }
     }
 
-    input.hs-input[type="radio"],
-    input.hs-input[type="checkbox"] {
+    input.hs-input[type='radio'],
+    input.hs-input[type='checkbox'] {
       height: auto;
       margin-right: 8px;
     }
@@ -251,19 +250,12 @@ capacitor-enterprise {
     select.hs-input {
       height: 44px;
 
-
       appearance: none;
       -moz-appearance: none;
-      background-image:
-        linear-gradient(45deg, transparent 50%, gray 50%),
+      background-image: linear-gradient(45deg, transparent 50%, gray 50%),
         linear-gradient(135deg, gray 50%, transparent 50%);
-      background-position:
-        calc(100% - 20px) 50%,
-        calc(100% - 15px) 50%;
-      background-size:
-        5px 5px,
-        5px 5px,
-        1px 1.5em;
+      background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
       background-repeat: no-repeat;
     }
 
@@ -292,13 +284,13 @@ capacitor-enterprise {
     .inputs-list.multi-container {
       overflow: hidden;
 
-      li:nth-last-child(n+6):first-child,
-      li:nth-last-child(n+6):first-child ~ li {
+      li:nth-last-child(n + 6):first-child,
+      li:nth-last-child(n + 6):first-child ~ li {
         width: 50%;
         float: left;
         padding-right: 11px;
       }
-      li:nth-last-child(n+6):first-child ~ li:nth-child(even) {
+      li:nth-last-child(n + 6):first-child ~ li:nth-child(even) {
         padding-right: 0;
         padding-left: 11px;
       }
@@ -309,7 +301,7 @@ capacitor-enterprise {
       display: flex;
     }
 
-    .hs-form-checkbox-display .hs-input[type="checkbox"]{
+    .hs-form-checkbox-display .hs-input[type='checkbox'] {
       margin-right: 10px;
     }
 
@@ -318,11 +310,10 @@ capacitor-enterprise {
       color: #505863;
     }
 
-
     .hs-error-msgs {
       padding: 5px 0 0;
       font-size: 11px;
-      color: #F45454;
+      color: #f45454;
     }
 
     .hs_submit {
@@ -330,7 +321,7 @@ capacitor-enterprise {
     }
 
     .hs_submit input.hs-button {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       margin: 0;
       float: none;
       font-size: 16px;
@@ -345,7 +336,8 @@ capacitor-enterprise {
       letter-spacing: -0.01em;
 
       &:hover {
-        box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12),
+          0 3px 6px rgba(0, 0, 0, 0.08);
         background: #4d8dfd;
         color: #fff;
         outline: none;
@@ -363,13 +355,13 @@ capacitor-enterprise {
         }
       }
       .inputs-list.multi-container {
-        li:nth-last-child(n+6):first-child,
-        li:nth-last-child(n+6):first-child ~ li {
+        li:nth-last-child(n + 6):first-child,
+        li:nth-last-child(n + 6):first-child ~ li {
           width: 100%;
           float: none;
           padding-right: 0;
         }
-        li:nth-last-child(n+6):first-child ~ li:nth-child(even) {
+        li:nth-last-child(n + 6):first-child ~ li:nth-child(even) {
           padding-left: 0;
         }
       }
@@ -446,5 +438,4 @@ capacitor-enterprise {
     margin-left: auto;
     margin-right: auto;
   }
-
 }

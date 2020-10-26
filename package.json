@@ -11,10 +11,18 @@
     "start": "stencil build --dev --watch --serve --ssr",
     "generate": "stencil generate",
     "serve": "stencil build --dev --watch",
+    "lint": "npm run prettier -- --check",
+    "fmt": "npm run prettier -- --write",
+    "prettier": "prettier \"{src,pages}/**/*.{css,scss,html,ts,tsx,md}\"",
     "test": "stencil test --spec",
     "test.watch": "stencil test --spec --watch",
     "docs.plugins": "ts-node --project scripts/tsconfig.json scripts/plugin-api.ts",
     "docs.plugins.v2": "ts-node --project scripts/tsconfig.json scripts/plugin-api-v2.ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "devDependencies": {
     "@capacitor/core": "^2.4.2",
@@ -33,6 +41,7 @@
     "@types/puppeteer": "^3.0.2",
     "date-fns": "^2.14.0",
     "dotenv": "^8.0.0",
+    "husky": "^4.3.0",
     "ionicons": "^5.2.3",
     "jest": "^26.6.0",
     "jest-cli": "^26.6.0",

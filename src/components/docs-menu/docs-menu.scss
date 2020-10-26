@@ -263,7 +263,7 @@ span {
     margin-right: 8px;
   }
 
-  transition: opacity .2s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
 .menu-list .link-active {
@@ -285,11 +285,11 @@ span {
   transition: height 2s;
 }
 
-.menu-list ul li + li{
+.menu-list ul li + li {
   margin-block-start: 2px;
 }
 
-.menu-list ul li a {  
+.menu-list ul li a {
   flex-grow: 1;
   padding: 5px 12px;
   display: block;
@@ -307,7 +307,7 @@ span {
   color: var(--c-carbon-70);
 }
 
-.menu-list ul li a .bump-up{
+.menu-list ul li a .bump-up {
   margin-block-end: 2px;
   height: calc(100% - 2px);
 }

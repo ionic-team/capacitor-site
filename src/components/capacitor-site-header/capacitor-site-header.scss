@@ -1,7 +1,7 @@
 @use '../../global/vars' as *;
 
 :host {
-  --link-hover-opacity: .7;
+  --link-hover-opacity: 0.7;
   --c-background: #fff;
   --spacing-x: 20px;
 
@@ -14,9 +14,8 @@
   z-index: 1000;
   border-block-end: 1px solid rgba(0, 21, 58, 0.06);
 
-  transition: box-shadow .2s ease-out;
+  transition: box-shadow 0.2s ease-out;
 }
-
 
 .docs-search-wrapper {
   flex-grow: 1;
@@ -27,8 +26,7 @@
   }
 }
 
-
-header {  
+header {
   display: flex;
   align-items: center;
   height: 100%;
@@ -40,16 +38,14 @@ header {
 }
 
 app-menu-toggle {
-  margin-inline-end: var(--space-3);  
+  margin-inline-end: var(--space-3);
 }
-
 
 .routes {
   display: flex;
 
-  transition: transform .2s ease-out,
-              opacity .2s ease-out,
-              box-shadow .2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out,
+    box-shadow 0.2s ease-out;
 
   &__header {
     display: none;
@@ -63,35 +59,39 @@ app-menu-toggle {
       background: transparent;
       border: none;
       cursor: pointer;
-      outline: 2px solid rgba(0,0,0,0);
+      outline: 2px solid rgba(0, 0, 0, 0);
 
-      transition: opacity .2s ease-out;
+      transition: opacity 0.2s ease-out;
 
-      &:hover, &:active, &:focus {
-        opacity: .7;
+      &:hover,
+      &:active,
+      &:focus {
+        opacity: 0.7;
       }
     }
 
     .capacitor-logo {
       width: 105px;
-    }    
+    }
   }
 
   a {
     display: flex;
     align-items: center;
     margin-inline-start: 24px;
-    transition: opacity .2s ease-out;
+    transition: opacity 0.2s ease-out;
 
     &.active {
       color: var(--c-cyan-100);
       // font-weight: 500;
     }
 
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       opacity: var(--link-hover-opacity);
     }
-  }  
+  }
 
   .external {
     svg {
@@ -102,13 +102,12 @@ app-menu-toggle {
 }
 
 .separator {
-  display:inline-block;
+  display: inline-block;
   width: 1px;
   height: 28px;
   background: var(--c-indigo-30);
   margin-inline-start: var(--space-5);
 }
-
 
 .ctas {
   display: flex;
@@ -131,17 +130,19 @@ app-menu-toggle {
   }
 
   .social {
-    transition: opacity .2s ease-out;
+    transition: opacity 0.2s ease-out;
 
-    &:hover, &:active, &:focus {
-      opacity: .7;
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 0.7;
     }
   }
 }
 
 more-button {
   display: none;
-  margin-inline-start: var(--container);  
+  margin-inline-start: var(--container);
 }
 
 @media screen and (max-width: $screen-md-max) {
@@ -154,8 +155,8 @@ more-button {
     background: var(--c-background);
     width: calc(100% - 24px);
     max-width: 353px;
-    position: absolute;  
-    z-index: 1000; 
+    position: absolute;
+    z-index: 1000;
     right: 12px;
     top: 12px;
     padding: 20px;
@@ -170,16 +171,18 @@ more-button {
     &__header {
       display: flex;
 
-      a.logo-wrapper {  
+      a.logo-wrapper {
         padding: 0;
         display: flex;
-  
+
         .capacitor-logo {
           margin-inline-start: 10px;
           margin-inline-end: 20px;
         }
 
-        &:hover, &:active, &:focus {
+        &:hover,
+        &:active,
+        &:focus {
           opacity: 1;
         }
       }
@@ -197,7 +200,7 @@ more-button {
 
     a {
       display: block;
-      
+
       margin-inline-start: 0px;
       padding: 7px 10px 8px;
 
@@ -215,13 +218,13 @@ more-button {
           display: none;
         }
       }
-  
+
       &.active {
         color: var(--c-capacitor-blue);
         background: var(--c-cyan-0);
         font-weight: 500;
       }
-  
+
       // &:hover, &:active, &:focus {
       //   opacity: var(--link-hover-opacity);
       // }

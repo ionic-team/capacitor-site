@@ -1,5 +1,5 @@
 ---
-title: Running your App 
+title: Running your App
 description: Running your App
 contributors:
   - dotNetkow
