@@ -17,14 +17,14 @@ Starting with the TypeScript interface is a good way to build out the API for yo
 here's the default interface for our Plugin located in `src/definitions.ts`:
 
 ```typescript
-declare module "@capacitor/core" {
+declare module '@capacitor/core' {
   interface PluginRegistry {
     Echo: EchoPlugin;
   }
 }
 
 export interface EchoPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
+  echo(options: { value: string }): Promise<{ value: string }>;
 }
 ```
 
@@ -32,8 +32,8 @@ To implement new functionality in your plugin, begin by defining a new function 
 
 ```typescript
 export interface EchoPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
-  openMap(location: { latitude: number, longitude: number}): Promise<void>;
+  echo(options: { value: string }): Promise<{ value: string }>;
+  openMap(location: { latitude: number; longitude: number }): Promise<void>;
 }
 ```
 
@@ -45,7 +45,7 @@ async openMap(location: { latitude: number, longitude: number}): Promise<void> {
 }
 ```
 
-To compile the plugin, navigate into the plugin directory then run: 
+To compile the plugin, navigate into the plugin directory then run:
 
 ```bash
 npm run build
@@ -82,12 +82,12 @@ To test the plugin locally while developing it, link the plugin folder to your a
 
 First, within the plugin folder, run: `npm link`.
 
-Then, within the project that will test the plugin, run: 
+Then, within the project that will test the plugin, run:
 
-```bash 
+```bash
 npm link plugin-name
 npm install plugin-name
-``` 
+```
 
 The project's `package.json` file now shows the plugin package link in the dependencies list:
 
@@ -95,13 +95,13 @@ The project's `package.json` file now shows the plugin package link in the depen
 "my-plugin": "file:my-plugin",
 ```
 
-Finally, run `npx cap sync` to make the native projects aware of your plugin. If it was detected correctly, it will print something similar to: 
+Finally, run `npx cap sync` to make the native projects aware of your plugin. If it was detected correctly, it will print something similar to:
 
 > Found 1 Capacitor plugin for android: my-plugin (0.0.1)
 
 ### Unlinking the Plugin
 
-Once you're done with local testing, be sure to unlink the plugin. Otherwise, subsequent `npm install`s  will install the local plugin, not the published version on npm (assuming you publish it).
+Once you're done with local testing, be sure to unlink the plugin. Otherwise, subsequent `npm install`s will install the local plugin, not the published version on npm (assuming you publish it).
 
 First, run `npm unlink --no-save plugin-name` in the app project folder.
 

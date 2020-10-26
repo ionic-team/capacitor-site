@@ -46,11 +46,9 @@ show(options: ToastShowOptions) => Promise<void>
 | ------------- | ------------------------------------------------------------- |
 | **`options`** | <code><a href="#toastshowoptions">ToastShowOptions</a></code> |
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### ToastShowOptions
 

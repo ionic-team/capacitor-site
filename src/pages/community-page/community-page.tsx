@@ -1,6 +1,11 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-import { ResponsiveContainer, PrismicRichText, PrismicResponsiveImage, Grid, Col } from '@ionic-internal/ionic-ds';
-
+import {
+  ResponsiveContainer,
+  PrismicRichText,
+  PrismicResponsiveImage,
+  Grid,
+  Col,
+} from '@ionic-internal/ionic-ds';
 
 @Component({
   tag: 'community-page',
@@ -19,7 +24,7 @@ export class CommunityPage {
         <Websites />
         <ResponsiveContainer id="newsletter" as="section">
           <newsletter-signup />
-        </ResponsiveContainer>        
+        </ResponsiveContainer>
         <pre-footer />
         <capacitor-site-footer />
       </Host>
@@ -45,16 +50,13 @@ export class CommunityPage {
           ))}
         </div>
       </ResponsiveContainer>
-    )
-  }
+    );
+  };
 
   Websites = () => {
     const { websites__list } = this.data;
 
-    const dimensions = [
-      '40x32', '40x34', '34x40', '40x40'
-    ]
-
+    const dimensions = ['40x32', '40x34', '34x40', '40x40'];
 
     return (
       <ResponsiveContainer id="websites" as="section">
@@ -66,20 +68,18 @@ export class CommunityPage {
               <Col cols={12} xs={6} md={3}>
                 <div class="image-wrapper">
                   <PrismicResponsiveImage
-                    width={width} height={height}
+                    width={width}
+                    height={height}
                     image={icon}
                   />
                 </div>
                 <PrismicRichText richText={text} />
-                <PrismicRichText class="link" richText={link}/>
+                <PrismicRichText class="link" richText={link} />
               </Col>
-            )
+            );
           })}
         </Grid>
       </ResponsiveContainer>
-    )
-  }
-
-
-
+    );
+  };
 }

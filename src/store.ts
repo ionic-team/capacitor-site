@@ -5,7 +5,7 @@ export interface State {
 }
 
 const { state } = createStore<State>({
-  pageTheme: 'light'
+  pageTheme: 'light',
 });
 
 export default state;

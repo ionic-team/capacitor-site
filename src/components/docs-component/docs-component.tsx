@@ -52,7 +52,7 @@ export class DocsComponent implements ComponentInterface {
         />
       )}
     </Helmet>
-  )
+  );
 
   render() {
     const { data, showBackdrop, Helmet } = this;
@@ -83,7 +83,7 @@ export class DocsComponent implements ComponentInterface {
             template={data.template}
             toc={data.tableOfContents}
             activePath={Router.path}
-          />          
+          />
           <div class="content-wrapper">
             <site-header
               class="docs-container"
@@ -94,7 +94,10 @@ export class DocsComponent implements ComponentInterface {
             <div class="app-marked  docs-container">
               <div class="doc-content">
                 <div class="measure-lg">
-                  <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />                  
+                  <RenderJsxAst
+                    ast={data.ast}
+                    elementProps={elementRouterHref}
+                  />
                   <lower-content-nav navigation={data.navigation} />
                   <contributor-list
                     contributors={data.contributors}

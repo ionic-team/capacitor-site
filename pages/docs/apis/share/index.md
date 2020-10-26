@@ -16,8 +16,8 @@ The Share API works on iOS, Android, and the Web (using the new [Web Share API](
 
 <docgen-index>
 
-* [`share(...)`](#share)
-* [Interfaces](#interfaces)
+- [`share(...)`](#share)
+- [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -31,7 +31,7 @@ let shareRet = await Share.share({
   title: 'See cool stuff',
   text: 'Really awesome thing you need to see right meow',
   url: 'http://ionicframework.com/',
-  dialogTitle: 'Share with buddies'
+  dialogTitle: 'Share with buddies',
 });
 ```
 
@@ -56,11 +56,9 @@ Show a Share modal for sharing content in your app with other apps
 
 **Returns:** <code>Promise&lt;any&gt;</code>
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### ShareOptions
 

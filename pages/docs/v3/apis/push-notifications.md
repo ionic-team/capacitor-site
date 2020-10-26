@@ -20,7 +20,7 @@ This change adds the push capabilites to the app and creates an entitlements fil
 
 ![Enabling Push Notifications Capabilities](/assets/img/docs/ios/enable-push-capabilities.png)
 
-On Android just download the app project's `google-services.json` file from the Firebase console, and place it in the  `projectName/android/app` folder.
+On Android just download the app project's `google-services.json` file from the Firebase console, and place it in the `projectName/android/app` folder.
 
 ## Push Notifications icon
 
@@ -49,9 +49,10 @@ In case you don't want to receive the mail, you can disable the Push Notificatio
 On iOS you can configure the way the push notifications are displayed when the app is in foreground by providing the `presentationOptions` in your `capacitor.config.json` as an Array of Strings you can combine.
 
 Possible values are:
-* `badge`: badge count on the app icon is updated (default value)
-* `sound`: the device will ring/vibrate when the push notification is received
-* `alert`: the push notification is displayed in a native dialog
+
+- `badge`: badge count on the app icon is updated (default value)
+- `sound`: the device will ring/vibrate when the push notification is received
+- `alert`: the push notification is displayed in a native dialog
 
 An empty Array can be provided if none of the previous options are desired. `pushNotificationReceived` event will still be fired with the push notification information.
 
@@ -65,23 +66,22 @@ An empty Array can be provided if none of the previous options are desired. `pus
 
 <docgen-index>
 
-* [`register()`](#register)
-* [`requestPermission()`](#requestpermission)
-* [`getDeliveredNotifications()`](#getdeliverednotifications)
-* [`removeDeliveredNotifications(...)`](#removedeliverednotifications)
-* [`removeAllDeliveredNotifications()`](#removealldeliverednotifications)
-* [`createChannel(...)`](#createchannel)
-* [`deleteChannel(...)`](#deletechannel)
-* [`listChannels()`](#listchannels)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
+- [`register()`](#register)
+- [`requestPermission()`](#requestpermission)
+- [`getDeliveredNotifications()`](#getdeliverednotifications)
+- [`removeDeliveredNotifications(...)`](#removedeliverednotifications)
+- [`removeAllDeliveredNotifications()`](#removealldeliverednotifications)
+- [`createChannel(...)`](#createchannel)
+- [`deleteChannel(...)`](#deletechannel)
+- [`listChannels()`](#listchannels)
+- [`addListener(...)`](#addlistener)
+- [`addListener(...)`](#addlistener)
+- [`addListener(...)`](#addlistener)
+- [`addListener(...)`](#addlistener)
+- [`removeAllListeners()`](#removealllisteners)
+- [Interfaces](#interfaces)
 
 </docgen-index>
-
 
 ## Example Guides
 
@@ -103,8 +103,7 @@ Will trigger registration event with the push token
 or registrationError if there was some problem.
 Doesn't prompt the user for notification permissions, use requestPermission() first.
 
---------------------
-
+---
 
 ### requestPermission()
 
@@ -118,8 +117,7 @@ On Android there is no such prompt, so just return as granted.
 
 **Returns:** <code>Promise&lt;<a href="#notificationpermissionresponse">NotificationPermissionResponse</a>&gt;</code>
 
---------------------
-
+---
 
 ### getDeliveredNotifications()
 
@@ -131,8 +129,7 @@ Returns the notifications that are visible on the notifications screen.
 
 **Returns:** <code>Promise&lt;<a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a>&gt;</code>
 
---------------------
-
+---
 
 ### removeDeliveredNotifications(...)
 
@@ -146,8 +143,7 @@ Removes the specified notifications from the notifications screen.
 | --------------- | --------------------------------------------------------------------------------------- | -------------------------------- |
 | **`delivered`** | <code><a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a></code> | list of delivered notifications. |
 
---------------------
-
+---
 
 ### removeAllDeliveredNotifications()
 
@@ -157,8 +153,7 @@ removeAllDeliveredNotifications() => Promise<void>
 
 Removes all the notifications from the notifications screen.
 
---------------------
-
+---
 
 ### createChannel(...)
 
@@ -172,8 +167,7 @@ On Android O or newer (SDK 26+) creates a notification channel.
 | ------------- | ------------------------------------------------------------------- | ----------- |
 | **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> | to create.  |
 
---------------------
-
+---
 
 ### deleteChannel(...)
 
@@ -187,8 +181,7 @@ On Android O or newer (SDK 26+) deletes a notification channel.
 | ------------- | ------------------------------------------------------------------- | ----------- |
 | **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> | to delete.  |
 
---------------------
-
+---
 
 ### listChannels()
 
@@ -200,8 +193,7 @@ On Android O or newer (SDK 26+) list the available notification channels.
 
 **Returns:** <code>Promise&lt;<a href="#notificationchannellist">NotificationChannelList</a>&gt;</code>
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -219,8 +211,7 @@ Provides the push notification token.
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -238,8 +229,7 @@ Provides an error with the registration problem.
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -256,8 +246,7 @@ Event called when the device receives a push notification.
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -274,8 +263,7 @@ Event called when an action is performed on a pusn notification.
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### removeAllListeners()
 
@@ -285,11 +273,9 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin.
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### NotificationPermissionResponse
 
@@ -297,13 +283,11 @@ Remove all native listeners for this plugin.
 | ------------- | -------------------- |
 | **`granted`** | <code>boolean</code> |
 
-
 #### PushNotificationDeliveredList
 
 | Prop                | Type                            |
 | ------------------- | ------------------------------- |
 | **`notifications`** | <code>PushNotification[]</code> |
-
 
 #### PushNotification
 
@@ -321,7 +305,6 @@ Remove all native listeners for this plugin.
 | **`group`**        | <code>string</code>  | Android only: set the group identifier for notification grouping, like threadIdentifier on iOS.                  |
 | **`groupSummary`** | <code>boolean</code> | Android only: designate this notification as the summary for a group (should be used with the `group` property). |
 
-
 #### NotificationChannel
 
 | Prop              | Type                               |
@@ -336,13 +319,11 @@ Remove all native listeners for this plugin.
 | **`lightColor`**  | <code>string</code>                |
 | **`vibration`**   | <code>boolean</code>               |
 
-
 #### NotificationChannelList
 
 | Prop           | Type                               |
 | -------------- | ---------------------------------- |
 | **`channels`** | <code>NotificationChannel[]</code> |
-
 
 #### PluginListenerHandle
 
@@ -350,13 +331,11 @@ Remove all native listeners for this plugin.
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
 
-
 #### PushNotificationToken
 
 | Prop        | Type                |
 | ----------- | ------------------- |
 | **`value`** | <code>string</code> |
-
 
 #### PushNotificationActionPerformed
 

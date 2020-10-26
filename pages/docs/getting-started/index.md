@@ -35,7 +35,7 @@ npm install @capacitor/core @capacitor/cli
 
 Then, initialize Capacitor with your app information.
 
-*Note: `npx` is a new utility available in npm 5 or above that executes local binaries/scripts to avoid global installs.*
+_Note: `npx` is a new utility available in npm 5 or above that executes local binaries/scripts to avoid global installs._
 
 ```bash
 npx cap init

@@ -8,9 +8,9 @@ contributors:
 
 # Using Capacitor Plugins
 
-Capacitor ships with a number of built-in plugins, such as [Camera](/docs/apis/camera) and [Filesystem](/docs/apis/filesystem). 
+Capacitor ships with a number of built-in plugins, such as [Camera](/docs/apis/camera) and [Filesystem](/docs/apis/filesystem).
 
-However, chances are your app will need to access more native functionality than provided out of the box in Capacitor. 
+However, chances are your app will need to access more native functionality than provided out of the box in Capacitor.
 
 Fortunately, you can quickly add your own native functionality by writing a small amount of native code then exposing it as a Capacitor plugin by following the [Plugin Guide](/docs/plugins).
 

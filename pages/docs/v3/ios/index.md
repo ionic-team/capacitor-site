@@ -1,5 +1,5 @@
 ---
-title: Capacitor iOS Documentation 
+title: Capacitor iOS Documentation
 description: Communicate between JavaScript and Native Swift or Objective-C code
 contributors:
   - dotNetkow

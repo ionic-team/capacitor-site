@@ -6,7 +6,7 @@ contributors:
 ---
 
 # Building an Ionic Photo Gallery App
- 
+
 **Platforms**: Web, iOS, Android
 
 Capacitor makes it easy to build web apps that run natively on iOS, Android, desktop, and the web. In this guide, we'll build a complete Photo Gallery app that works on all platforms.

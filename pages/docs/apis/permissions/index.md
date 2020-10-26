@@ -31,11 +31,9 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 
 **Returns:** <code>Promise&lt;<a href="#permissionresult">PermissionResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### PermissionResult
 
@@ -43,16 +41,13 @@ query(options: PermissionsOptions) => Promise<PermissionResult>
 | ----------- | ---------------------------------------------- |
 | **`state`** | <code>"denied" \| "granted" \| "prompt"</code> |
 
-
 #### PermissionsOptions
 
 | Prop       | Type                                                      |
 | ---------- | --------------------------------------------------------- |
 | **`name`** | <code><a href="#permissiontype">PermissionType</a></code> |
 
-
 ### Enums
-
 
 #### PermissionType
 

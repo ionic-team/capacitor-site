@@ -11,26 +11,32 @@ import { BlogData } from '../../data.server/blog';
 export class BlogPage {
   @Prop() data: BlogData;
 
-
   render() {
     console.log(this.data);
     if (this.data) {
       return (
         <Host>
           <Helmet>
-            <title>{this.data.title} - Capacitor Blog - Cross-platform native runtime for web apps</title>
+            <title>
+              {this.data.title} - Capacitor Blog - Cross-platform native runtime
+              for web apps
+            </title>
+            <meta name="description" content={this.data.description} />
             <meta
-              name="description"
-              content={this.data.description}
+              name="twitter:description"
+              content={`${this.data.description} - Capacitor Blog`}
             />
-            <meta name="twitter:description" content={`${this.data.description} - Capacitor Blog`} />
-            <meta property="og:image" content={this.data.featuredImage || 'https://capacitorjs.com/assets/img/og.png'} />
+            <meta
+              property="og:image"
+              content={
+                this.data.featuredImage ||
+                'https://capacitorjs.com/assets/img/og.png'
+              }
+            />
           </Helmet>
           <div class="blog-posts">
             <hgroup class="blog-posts__heading">
-              <Heading level={3}>
-                  Blog
-              </Heading>
+              <Heading level={3}>Blog</Heading>
             </hgroup>
             <BlogPost data={this.data} />
           </div>
@@ -42,7 +48,7 @@ export class BlogPage {
           <pre-footer />
           <capacitor-site-footer />
         </Host>
-      )
+      );
     }
     return null;
   }

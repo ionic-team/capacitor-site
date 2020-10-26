@@ -9,18 +9,20 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/storage/src/d
 The Storage API provides a simple key/value persistent store for lightweight data.
 
 <!--DOCGEN_INDEX_START-->
-* [`configure(...)`](#configure)
-* [`get(...)`](#get)
-* [`set(...)`](#set)
-* [`remove(...)`](#remove)
-* [`clear()`](#clear)
-* [`keys()`](#keys)
-* [`migrate()`](#migrate)
-* [Interfaces](#interfaces)
+
+- [`configure(...)`](#configure)
+- [`get(...)`](#get)
+- [`set(...)`](#set)
+- [`remove(...)`](#remove)
+- [`clear()`](#clear)
+- [`keys()`](#keys)
+- [`migrate()`](#migrate)
+- [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
 ## API
 
 ### configure(...)
@@ -41,8 +43,7 @@ Options that are `undefined` will not be used.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### get(...)
 
@@ -60,8 +61,7 @@ Get the value from storage of a given key.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### set(...)
 
@@ -79,8 +79,7 @@ Set the value in storage for a given key.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### remove(...)
 
@@ -98,8 +97,7 @@ Remove the value from storage for a given key, if any.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### clear()
 
@@ -113,8 +111,7 @@ Clear keys and values from storage.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### keys()
 
@@ -128,8 +125,7 @@ Return the list of known keys in storage.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### migrate()
 
@@ -146,11 +142,9 @@ write new data if they key was not already set.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### ConfigureOptions
 
@@ -158,20 +152,17 @@ write new data if they key was not already set.
 | ----------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------- | ----- |
 | **`group`** | <code>string</code> | Set the storage group. Storage groups are used to organize key/value pairs. Using the value 'NativeStorage' provides backwards-compatibility with [`cordova-plugin-nativestorage`](https://www.npmjs.com/package/cordova-plugin-nativestorage). WARNING: The `clear()` method can delete unintended values when using the 'NativeStorage' group. | <code>CapacitorStorage</code> | 1.0.0 |
 
-
 #### GetResult
 
 | Prop        | Type                        | Description                                                                                                                   | Since |
 | ----------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----- |
 | **`value`** | <code>string \| null</code> | The value from storage associated with the given key. If a value was not previously set or was removed, value will be `null`. | 1.0.0 |
 
-
 #### GetOptions
 
 | Prop      | Type                | Description                                   | Since |
 | --------- | ------------------- | --------------------------------------------- | ----- |
 | **`key`** | <code>string</code> | The key whose value to retrieve from storage. | 1.0.0 |
-
 
 #### SetOptions
 
@@ -180,13 +171,11 @@ write new data if they key was not already set.
 | **`key`**   | <code>string</code> | The key to associate with the value being set in storage. | 1.0.0 |
 | **`value`** | <code>string</code> | The value to set in storage with the associated key.      | 1.0.0 |
 
-
 #### RemoveOptions
 
 | Prop      | Type                | Description                                 | Since |
 | --------- | ------------------- | ------------------------------------------- | ----- |
 | **`key`** | <code>string</code> | The key whose value to remove from storage. | 1.0.0 |
-
 
 #### KeysResult
 
@@ -194,13 +183,11 @@ write new data if they key was not already set.
 | ---------- | --------------------- | -------------------------- | ----- |
 | **`keys`** | <code>string[]</code> | The known keys in storage. | 1.0.0 |
 
-
 #### MigrateResult
 
 | Prop           | Type                  | Description                                                                                                                   | Since |
 | -------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----- |
 | **`migrated`** | <code>string[]</code> | An array of keys that were migrated.                                                                                          | 1.0.0 |
 | **`existing`** | <code>string[]</code> | An array of keys that were already migrated or otherwise exist in storage that had a value in the Capacitor 2 Storage plugin. | 1.0.0 |
-
 
 <!--DOCGEN_API_END-->

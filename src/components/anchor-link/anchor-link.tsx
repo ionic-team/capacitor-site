@@ -6,7 +6,7 @@ import { Component, Prop, h } from '@stencil/core';
  */
 @Component({
   tag: 'anchor-link',
-  styleUrl: 'anchor-link.scss'
+  styleUrl: 'anchor-link.scss',
 })
 export class AnchorLink {
   @Prop() to: string;
@@ -28,6 +28,6 @@ export class AnchorLink {
       <div onClick={this.handleClick.bind(this)}>
         <slot></slot>
       </div>
-    )
+    );
   }
 }

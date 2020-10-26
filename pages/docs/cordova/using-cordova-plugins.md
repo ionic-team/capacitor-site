@@ -30,6 +30,7 @@ npx cap update
 If you don't want to risk to introduce breaking changes, use `npm update cordova-plugin-name` instead of `@latest` as `update` respects semver.
 
 ## Installing Ionic Native Plugins
+
 [Ionic Native](https://ionicframework.com/docs/native) provides TypeScript wrappers and a consistent API and naming convention for easier development with Cordova plugins. It's supported in Capacitor, so whenever you find an Ionic Native wrapper you'd like to use, install the JavaScript code, install the corresponding Cordova plugin, then sync your project:
 
 ```bash
@@ -58,7 +59,7 @@ See the list of Capacitor and Cordova plugins (and their exact version numbers) 
 npx cap ls
 ```
 
-## Important: Configuration 
+## Important: Configuration
 
 Capacitor does not support Cordova install variables, auto configuration, or hooks, due to our philosophy of letting you control your native project source code (meaning things like hooks are unnecessary). If your plugin requires variables or settings to be set, you'll need to apply those configuration settings manually by mapping between the plugin's `plugin.xml` and required settings on iOS and Android.
 

@@ -14,29 +14,28 @@ The Keyboard API provides keyboard display and visibility control, along with ev
 
 <docgen-index>
 
-* [`show()`](#show)
-* [`hide()`](#hide)
-* [`setAccessoryBarVisible(...)`](#setaccessorybarvisible)
-* [`setScroll(...)`](#setscroll)
-* [`setStyle(...)`](#setstyle)
-* [`setResizeMode(...)`](#setresizemode)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
-* [Enums](#enums)
+- [`show()`](#show)
+- [`hide()`](#hide)
+- [`setAccessoryBarVisible(...)`](#setaccessorybarvisible)
+- [`setScroll(...)`](#setscroll)
+- [`setStyle(...)`](#setstyle)
+- [`setResizeMode(...)`](#setresizemode)
+- [`addListener(...)`](#addlistener)
+- [`addListener(...)`](#addlistener)
+- [`addListener(...)`](#addlistener)
+- [`addListener(...)`](#addlistener)
+- [`removeAllListeners()`](#removealllisteners)
+- [Interfaces](#interfaces)
+- [Enums](#enums)
 
 </docgen-index>
 
-
 ## Window Events for cordova-plugin-ionic-keyboard compatibility
 
-* keyboardWillShow
-* keyboardDidShow
-* keyboardWillHide
-* keyboardDidHide
+- keyboardWillShow
+- keyboardDidShow
+- keyboardWillHide
+- keyboardDidHide
 
 ## Example
 
@@ -65,12 +64,12 @@ Keyboard.addListener('keyboardDidHide', () => {
 
 // window events
 
-window.addEventListener('keyboardWillShow', (e) => {
+window.addEventListener('keyboardWillShow', e => {
   console.log('keyboard will show with height', (<any>e).keyboardHeight);
 });
 
-window.addEventListener('keyboardDidShow', (e) => {
-  console.log("keyboard did show with height", (<any>e).keyboardHeight);
+window.addEventListener('keyboardDidShow', e => {
+  console.log('keyboard did show with height', (<any>e).keyboardHeight);
 });
 
 window.addEventListener('keyboardWillHide', () => {
@@ -83,12 +82,11 @@ window.addEventListener('keyboardDidHide', () => {
 
 // API
 
-Keyboard.setAccessoryBarVisible({isVisible: false});
+Keyboard.setAccessoryBarVisible({ isVisible: false });
 
 Keyboard.show();
 
 Keyboard.hide();
-
 ```
 
 ## Keyboard configuration (iOS only)
@@ -96,7 +94,8 @@ Keyboard.hide();
 The keyboard plugin allows the following configuration values to be added in `capacitor.config.json` for the iOS platform:
 
 - `resize`: It configures the way the app is resized when the Keyboard appears.
-Allowed values are
+  Allowed values are
+
   - `none`: Not the app, nor the webview are resized
   - `native`: (default) The whole native webview will be resized when the keyboard shows/hides, it will affect the `vh` relative unit.
   - `body`: Only the html `<body>` element will be resized. Relative units are not affected, because the viewport does not change.
@@ -128,8 +127,7 @@ show() => Promise<void>
 
 Show the keyboard. This method is alpha and may have issues
 
---------------------
-
+---
 
 ### hide()
 
@@ -139,8 +137,7 @@ hide() => Promise<void>
 
 Hide the keyboard.
 
---------------------
-
+---
 
 ### setAccessoryBarVisible(...)
 
@@ -155,8 +152,7 @@ the accessory bar for short forms (login, signup, etc.) to provide a cleaner UI
 | ------------- | ------------------------------------ |
 | **`options`** | <code>{ isVisible: boolean; }</code> |
 
---------------------
-
+---
 
 ### setScroll(...)
 
@@ -170,8 +166,7 @@ Programmatically enable or disable the WebView scroll
 | ------------- | ------------------------------------- |
 | **`options`** | <code>{ isDisabled: boolean; }</code> |
 
---------------------
-
+---
 
 ### setStyle(...)
 
@@ -185,8 +180,7 @@ Programmatically set the keyboard style
 | ------------- | --------------------------------------------------------------------- |
 | **`options`** | <code><a href="#keyboardstyleoptions">KeyboardStyleOptions</a></code> |
 
---------------------
-
+---
 
 ### setResizeMode(...)
 
@@ -200,8 +194,7 @@ Programmatically set the resize mode
 | ------------- | ----------------------------------------------------------------------- |
 | **`options`** | <code><a href="#keyboardresizeoptions">KeyboardResizeOptions</a></code> |
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -216,8 +209,7 @@ addListener(eventName: 'keyboardWillShow', listenerFunc: (info: KeyboardInfo) =>
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -232,8 +224,7 @@ addListener(eventName: 'keyboardDidShow', listenerFunc: (info: KeyboardInfo) => 
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -248,8 +239,7 @@ addListener(eventName: 'keyboardWillHide', listenerFunc: () => void) => PluginLi
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -264,8 +254,7 @@ addListener(eventName: 'keyboardDidHide', listenerFunc: () => void) => PluginLis
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### removeAllListeners()
 
@@ -275,11 +264,9 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### KeyboardStyleOptions
 
@@ -287,13 +274,11 @@ Remove all native listeners for this plugin
 | ----------- | ------------------------------------------------------- |
 | **`style`** | <code><a href="#keyboardstyle">KeyboardStyle</a></code> |
 
-
 #### KeyboardResizeOptions
 
 | Prop       | Type                                                      |
 | ---------- | --------------------------------------------------------- |
 | **`mode`** | <code><a href="#keyboardresize">KeyboardResize</a></code> |
-
 
 #### PluginListenerHandle
 
@@ -301,16 +286,13 @@ Remove all native listeners for this plugin
 | ------------ | -------------------------- |
 | **`remove`** | <code>() =&gt; void</code> |
 
-
 #### KeyboardInfo
 
 | Prop                 | Type                |
 | -------------------- | ------------------- |
 | **`keyboardHeight`** | <code>number</code> |
 
-
 ### Enums
-
 
 #### KeyboardStyle
 
@@ -318,7 +300,6 @@ Remove all native listeners for this plugin
 | ----------- | -------------------- |
 | **`Dark`**  | <code>"DARK"</code>  |
 | **`Light`** | <code>"LIGHT"</code> |
-
 
 #### KeyboardResize
 

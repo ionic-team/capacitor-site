@@ -14,9 +14,11 @@ npx cap copy [platform]
 ```
 
 <strong>Inputs:</strong>
+
 - `platform` (optional): `android`, `ios`
 
 <strong>Example output:</strong>
+
 ```
 √ Copying web assets from www to android\app\src\main\assets\public in 2.64s
 √ Copying web assets from www to ios/App/public in 450ms

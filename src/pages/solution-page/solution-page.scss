@@ -11,7 +11,7 @@
     margin-block-end: var(--space-11);
     margin-inline-start: auto;
     margin-inline-end: auto;
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,9 +24,7 @@
   }
 }
 
-
 #getting-started {
-
   .step {
     display: flex;
     padding-block-end: 120px;
@@ -71,13 +69,13 @@
       height: 40px;
       width: 40px;
       margin-block-end: 0;
-      background: white;   
+      background: white;
       position: relative;
-      top: -11px;  
+      top: -11px;
     }
 
     .heading-group {
-      flex-grow: 1;      
+      flex-grow: 1;
 
       @media screen and (max-width: $screen-xs-max) {
         margin-block-start: 0;
@@ -89,8 +87,8 @@
 
       > * {
         max-width: 440px;
-      }   
-      
+      }
+
       .platforms {
         display: flex;
         margin-block-end: var(--space-3);
@@ -110,16 +108,14 @@
 
     @media screen and (max-width: $screen-xs-max) {
       min-width: auto;
-      margin-inline-start: 0px
+      margin-inline-start: 0px;
     }
   }
 }
 
-
 #continue {
   margin-block-start: 96px;
 }
-
 
 #newsletter {
   margin-block-start: 160px;

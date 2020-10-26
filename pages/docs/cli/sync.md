@@ -16,12 +16,15 @@ npx cap sync [options] [platform]
 ```
 
 <strong>Inputs:</strong>
+
 - `platform` (optional): `android`, `ios`
 
 <strong>Options:</strong>
+
 - `--deployment`: Podfile.lock won't be deleted and pod install will use `--deployment` option.
 
 <strong>Example output:</strong>
+
 ```
 √ Copying web assets from www to android\app\src\main\assets\public in 3.37s
 √ Copying native bridge in 5.80ms

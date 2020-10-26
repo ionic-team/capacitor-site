@@ -5,7 +5,7 @@ contributors:
   - dotNetkow
 ---
 
-#  Creating Splash Screens and Icons
+# Creating Splash Screens and Icons
 
 Initial support for splash screen and icon generation is now available. For complete details, see the [cordova-res docs](https://github.com/ionic-team/cordova-res).
 

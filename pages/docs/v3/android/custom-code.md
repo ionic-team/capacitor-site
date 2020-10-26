@@ -9,7 +9,7 @@ contributors:
 
 # Custom Native Android Code
 
-Many apps will want to add custom Java or Kotlin code to implement native features, without the overhead of building and publishing a proper Capacitor plugin. 
+Many apps will want to add custom Java or Kotlin code to implement native features, without the overhead of building and publishing a proper Capacitor plugin.
 
 There are two ways to do this depending on whether or not you need to access that code from the WebView:
 
@@ -19,7 +19,7 @@ The easiest way to build custom native code that needs to be accessible in the W
 a local Capacitor plugin for it. In this case, building the plugin is as simple as building a class
 that inherits from `com.getcapacitor.Plugin` and uses the `@NativePlugin()` and `@PluginMethod()` annotations.
 
-Here are examples of custom code in Java and Kotlin: 
+Here are examples of custom code in Java and Kotlin:
 
 ### Java
 
@@ -42,7 +42,7 @@ public class CustomNativePlugin extends Plugin {
     // More code here...
     call.success();
   }
-  
+
   @PluginMethod()
   public void customFunction(PluginCall call) {
     // More code here...
@@ -110,10 +110,10 @@ Then you can use your functions in your webView code:
 
 ```typescript
 // Other codes...
-import { Plugins } from "@capacitor/core";
+import { Plugins } from '@capacitor/core';
 const { CustomNativePlugin } = Plugins;
 // Other codes...
-CustomNativePlugin.customCall({ message: "CUSTOM MESSAGE" });
+CustomNativePlugin.customCall({ message: 'CUSTOM MESSAGE' });
 CustomNativePlugin.customFunction();
 // Other codes...
 ```

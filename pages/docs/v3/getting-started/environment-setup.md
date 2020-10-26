@@ -48,10 +48,10 @@ In Android Studio open **Tools -> SDK Manager** from the menu and install the pl
 
 In the **SDK Tools** tab, make sure to install at least the following:
 
-* Android SDK Build-Tools
-* Android Emulator
-* Android SDK Platform-Tools
-* Android SDK Tools
+- Android SDK Build-Tools
+- Android Emulator
+- Android SDK Platform-Tools
+- Android SDK Tools
 
 ![SDK Tools](/assets/img/docs/android/sdk-tools.png)
 

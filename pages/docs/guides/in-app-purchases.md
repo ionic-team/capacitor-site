@@ -22,5 +22,5 @@ The bulk of the work in setting up In App Purchases in your Capacitor app comes 
 
 This is a fairly complicated process, and we recommend the following guides as next steps:
 
- * [In App Purchase Plugin Guide](https://purchase.cordova.fovea.cc/)
- * [How to use In App Purchase with Capacitor](https://devdactic.com/ionic-in-app-purchase-capacitor/)
+- [In App Purchase Plugin Guide](https://purchase.cordova.fovea.cc/)
+- [How to use In App Purchase with Capacitor](https://devdactic.com/ionic-in-app-purchase-capacitor/)

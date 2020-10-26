@@ -9,15 +9,17 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader
 The Screen Reader API provides access to TalkBack/VoiceOver/etc. and provides simple text-to-speech capabilities for visual accessibility.
 
 <!--DOCGEN_INDEX_START-->
-* [`isEnabled()`](#isenabled)
-* [`speak(...)`](#speak)
-* [`addListener(...)`](#addlistener)
-* [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
+
+- [`isEnabled()`](#isenabled)
+- [`speak(...)`](#speak)
+- [`addListener(...)`](#addlistener)
+- [`removeAllListeners()`](#removealllisteners)
+- [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
 ## API
 
 ### isEnabled()
@@ -35,8 +37,7 @@ Readers).
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### speak(...)
 
@@ -64,8 +65,7 @@ plugin](https://github.com/capacitor-community/text-to-speech).
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -87,8 +87,7 @@ Readers).
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### removeAllListeners()
 
@@ -102,11 +101,9 @@ Remove all the listeners that are attached to this plugin.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### ScreenReaderSpeakOptions
 
@@ -115,12 +112,10 @@ Remove all the listeners that are attached to this plugin.
 | **`value`**    | <code>string</code> | The text to speak.                                                                                                                                                        | 1.0.0 |
 | **`language`** | <code>string</code> | The language to speak the text in, as its [ISO 639-1 Code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g.: "en"). This option is only supported on Android. | 1.0.0 |
 
-
 #### PluginListenerHandle
 
 | Prop         | Type                    |
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
-
 
 <!--DOCGEN_API_END-->

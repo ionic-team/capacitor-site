@@ -31,8 +31,7 @@ Get photos from the user's photo library
 
 **Returns:** <code>Promise&lt;<a href="#photosresult">PhotosResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### getAlbums(...)
 
@@ -48,8 +47,7 @@ Get albums from the user's photo library
 
 **Returns:** <code>Promise&lt;<a href="#photosalbumsresult">PhotosAlbumsResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### savePhoto(...)
 
@@ -65,8 +63,7 @@ Save a photo the the user's photo library
 
 **Returns:** <code>Promise&lt;<a href="#photossaveresult">PhotosSaveResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### createAlbum(...)
 
@@ -80,18 +77,15 @@ Create an album in the user's photo library
 | ------------- | ----------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#photoscreatealbumoptions">PhotosCreateAlbumOptions</a></code> |
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### PhotosResult
 
 | Prop         | Type                      | Description                                  |
 | ------------ | ------------------------- | -------------------------------------------- |
 | **`photos`** | <code>PhotoAsset[]</code> | The list of photos returned from the library |
-
 
 #### PhotoAsset
 
@@ -106,7 +100,6 @@ Create an album in the user's photo library
 | **`thumbnailHeight`** | <code>number</code>                                     | Height of thumbnail preview                                             |
 | **`location`**        | <code><a href="#photolocation">PhotoLocation</a></code> | Location metadata for the asset                                         |
 
-
 #### PhotoLocation
 
 | Prop            | Type                | Description                              |
@@ -116,7 +109,6 @@ Create an album in the user's photo library
 | **`heading`**   | <code>number</code> | Heading of user at time image was taken  |
 | **`altitude`**  | <code>number</code> | Altitude of user at time image was taken |
 | **`speed`**     | <code>number</code> | Speed of user at time image was taken    |
-
 
 #### PhotosFetchOptions
 
@@ -129,13 +121,11 @@ Create an album in the user's photo library
 | **`types`**            | <code>string</code> | Which types of assets to return (currently only supports "photos")    |
 | **`albumIdentifier`**  | <code>string</code> | Which album identifier to query in (get identifier with getAlbums())  |
 
-
 #### PhotosAlbumsResult
 
 | Prop         | Type                       | Description                                |
 | ------------ | -------------------------- | ------------------------------------------ |
 | **`albums`** | <code>PhotosAlbum[]</code> | The list of albums returned from the query |
-
 
 #### PhotosAlbum
 
@@ -146,20 +136,17 @@ Create an album in the user's photo library
 | **`count`**      | <code>number</code>                                         | Number of items in the album   |
 | **`type`**       | <code><a href="#photosalbumtype">PhotosAlbumType</a></code> | The type of album              |
 
-
 #### PhotosAlbumsFetchOptions
 
 | Prop             | Type                 | Description                         |
 | ---------------- | -------------------- | ----------------------------------- |
 | **`loadShared`** | <code>boolean</code> | Whether to load cloud shared albums |
 
-
 #### PhotosSaveResult
 
 | Prop          | Type                 | Description                   |
 | ------------- | -------------------- | ----------------------------- |
 | **`success`** | <code>boolean</code> | Whether the photo was created |
-
 
 #### PhotosSaveOptions
 
@@ -168,16 +155,13 @@ Create an album in the user's photo library
 | **`data`**            | <code>string</code> | The base64-encoded JPEG data for a photo (note: do not add HTML data-uri type prefix) |
 | **`albumIdentifier`** | <code>string</code> | The optional album identifier to save this photo in                                   |
 
-
 #### PhotosCreateAlbumOptions
 
 | Prop       | Type                |
 | ---------- | ------------------- |
 | **`name`** | <code>string</code> |
 
-
 ### Enums
-
 
 #### PhotosAlbumType
 

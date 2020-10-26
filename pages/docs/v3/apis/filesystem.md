@@ -14,19 +14,19 @@ The Filesystem API provides a NodeJS-like API for working with files on the devi
 
 <docgen-index>
 
-* [`readFile(...)`](#readfile)
-* [`writeFile(...)`](#writefile)
-* [`appendFile(...)`](#appendfile)
-* [`deleteFile(...)`](#deletefile)
-* [`mkdir(...)`](#mkdir)
-* [`rmdir(...)`](#rmdir)
-* [`readdir(...)`](#readdir)
-* [`getUri(...)`](#geturi)
-* [`stat(...)`](#stat)
-* [`rename(...)`](#rename)
-* [`copy(...)`](#copy)
-* [Interfaces](#interfaces)
-* [Enums](#enums)
+- [`readFile(...)`](#readfile)
+- [`writeFile(...)`](#writefile)
+- [`appendFile(...)`](#appendfile)
+- [`deleteFile(...)`](#deletefile)
+- [`mkdir(...)`](#mkdir)
+- [`rmdir(...)`](#rmdir)
+- [`readdir(...)`](#readdir)
+- [`getUri(...)`](#geturi)
+- [`stat(...)`](#stat)
+- [`rename(...)`](#rename)
+- [`copy(...)`](#copy)
+- [Interfaces](#interfaces)
+- [Enums](#enums)
 
 </docgen-index>
 
@@ -186,8 +186,7 @@ Read a file from disk
 
 **Returns:** <code>Promise&lt;<a href="#filereadresult">FileReadResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### writeFile(...)
 
@@ -203,8 +202,7 @@ Write a file to disk in the specified location on device
 
 **Returns:** <code>Promise&lt;<a href="#filewriteresult">FileWriteResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### appendFile(...)
 
@@ -220,8 +218,7 @@ Append to a file on disk in the specified location on device
 
 **Returns:** <code>Promise&lt;<a href="#fileappendresult">FileAppendResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### deleteFile(...)
 
@@ -237,8 +234,7 @@ Delete a file from disk
 
 **Returns:** <code>Promise&lt;<a href="#filedeleteresult">FileDeleteResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### mkdir(...)
 
@@ -254,8 +250,7 @@ Create a directory.
 
 **Returns:** <code>Promise&lt;<a href="#mkdirresult">MkdirResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### rmdir(...)
 
@@ -271,8 +266,7 @@ Remove a directory
 
 **Returns:** <code>Promise&lt;<a href="#rmdirresult">RmdirResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### readdir(...)
 
@@ -288,8 +282,7 @@ Return a list of files from the directory (not recursive)
 
 **Returns:** <code>Promise&lt;<a href="#readdirresult">ReaddirResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### getUri(...)
 
@@ -305,8 +298,7 @@ Return full File URI for a path and directory
 
 **Returns:** <code>Promise&lt;<a href="#geturiresult">GetUriResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### stat(...)
 
@@ -322,8 +314,7 @@ Return data about a file
 
 **Returns:** <code>Promise&lt;<a href="#statresult">StatResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### rename(...)
 
@@ -339,8 +330,7 @@ Rename a file or directory
 
 **Returns:** <code>Promise&lt;<a href="#renameresult">RenameResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### copy(...)
 
@@ -356,18 +346,15 @@ Copy a file or directory
 
 **Returns:** <code>Promise&lt;<a href="#copyresult">CopyResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### FileReadResult
 
 | Prop       | Type                |
 | ---------- | ------------------- |
 | **`data`** | <code>string</code> |
-
 
 #### FileReadOptions
 
@@ -377,13 +364,11 @@ Copy a file or directory
 | **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to read the file from                                                                                                                      |
 | **`encoding`**  | <code><a href="#filesystemencoding">FilesystemEncoding</a></code>   | The encoding to read the file in, if not provided, data is read as binary and returned as base64 encoded data. Pass FilesystemEncoding.UTF8 to read data as string |
 
-
 #### FileWriteResult
 
 | Prop      | Type                |
 | --------- | ------------------- |
 | **`uri`** | <code>string</code> |
-
 
 #### FileWriteOptions
 
@@ -395,9 +380,7 @@ Copy a file or directory
 | **`encoding`**  | <code><a href="#filesystemencoding">FilesystemEncoding</a></code>   | The encoding to write the file in. If not provided, data is written as base64 encoded data. Pass FilesystemEncoding.UTF8 to write data as string |
 | **`recursive`** | <code>boolean</code>                                                | Whether to create any missing parent directories. Defaults to false                                                                              |
 
-
 #### FileAppendResult
-
 
 #### FileAppendOptions
 
@@ -408,9 +391,7 @@ Copy a file or directory
 | **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to store the file in                                                                                                     |
 | **`encoding`**  | <code><a href="#filesystemencoding">FilesystemEncoding</a></code>   | The encoding to write the file in. If not provided, data is written as base64 encoded data. Pass FilesystemEncoding.UTF8 to write data as string |
 
-
 #### FileDeleteResult
-
 
 #### FileDeleteOptions
 
@@ -419,9 +400,7 @@ Copy a file or directory
 | **`path`**      | <code>string</code>                                                 | The filename to delete                          |
 | **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to delete the file from |
 
-
 #### MkdirResult
-
 
 #### MkdirOptions
 
@@ -431,9 +410,7 @@ Copy a file or directory
 | **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to make the new directory in                        |
 | **`recursive`** | <code>boolean</code>                                                | Whether to create any missing parent directories as well. Defaults to false |
 
-
 #### RmdirResult
-
 
 #### RmdirOptions
 
@@ -443,13 +420,11 @@ Copy a file or directory
 | **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to remove the directory from                          |
 | **`recursive`** | <code>boolean</code>                                                | Whether to recursively remove the contents of the directory Defaults to false |
 
-
 #### ReaddirResult
 
 | Prop        | Type                  |
 | ----------- | --------------------- |
 | **`files`** | <code>string[]</code> |
-
 
 #### ReaddirOptions
 
@@ -458,13 +433,11 @@ Copy a file or directory
 | **`path`**      | <code>string</code>                                                 | The path of the directory to read          |
 | **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to list files from |
 
-
 #### GetUriResult
 
 | Prop      | Type                |
 | --------- | ------------------- |
 | **`uri`** | <code>string</code> |
-
 
 #### GetUriOptions
 
@@ -472,7 +445,6 @@ Copy a file or directory
 | --------------- | ------------------------------------------------------------------- | --------------------------------------------- |
 | **`path`**      | <code>string</code>                                                 | The path of the file to get the URI for       |
 | **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to get the file under |
-
 
 #### StatResult
 
@@ -484,7 +456,6 @@ Copy a file or directory
 | **`mtime`** | <code>number</code> |
 | **`uri`**   | <code>string</code> |
 
-
 #### StatOptions
 
 | Prop            | Type                                                                | Description                                   |
@@ -492,15 +463,11 @@ Copy a file or directory
 | **`path`**      | <code>string</code>                                                 | The path of the file to get data about        |
 | **`directory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory to get the file under |
 
-
 #### RenameResult
-
 
 #### RenameOptions
 
-
 #### CopyResult
-
 
 #### CopyOptions
 
@@ -511,9 +478,7 @@ Copy a file or directory
 | **`directory`**   | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory containing the existing file or directory                                                                           |
 | **`toDirectory`** | <code><a href="#filesystemdirectory">FilesystemDirectory</a></code> | The FilesystemDirectory containing the destination file or directory. If not supplied will use the 'directory' parameter as the destination |
 
-
 ### Enums
-
 
 #### FilesystemDirectory
 
@@ -524,7 +489,6 @@ Copy a file or directory
 | **`Cache`**           | <code>"CACHE"</code>            | The Cache directory Can be deleted in cases of low memory, so use this directory to write app-specific files that your app can re-create easily.                                                                                                                                                                                                                                                      |
 | **`External`**        | <code>"EXTERNAL"</code>         | The external directory On iOS it will use the Documents directory On Android it's the directory on the primary shared/external storage device where the application can place persistent files it owns. These files are internal to the applications, and not typically visible to the user as media. Files will be deleted when the application is uninstalled.                                      |
 | **`ExternalStorage`** | <code>"EXTERNAL_STORAGE"</code> | The external storage directory On iOS it will use the Documents directory On Android it's the primary shared/external storage directory. It's not accesible on Android 10 unless the app enables legacy External Storage by adding `android:requestLegacyExternalStorage="true"` in the `application` tag in the `AndroidManifest.xml`                                                                |
-
 
 #### FilesystemEncoding
 

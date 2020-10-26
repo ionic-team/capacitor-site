@@ -15,9 +15,9 @@ API sends an intent which will be handled by the core Camera app by default.
 
 <docgen-index>
 
-* [`getPhoto(...)`](#getphoto)
-* [Interfaces](#interfaces)
-* [Enums](#enums)
+- [`getPhoto(...)`](#getphoto)
+- [Interfaces](#interfaces)
+- [Enums](#enums)
 
 </docgen-index>
 
@@ -26,13 +26,13 @@ API sends an intent which will be handled by the core Camera app by default.
 iOS requires the following usage description be added and filled out for your app in `Info.plist`:
 
 Name: `Privacy - Camera Usage Description`
-Key: 	`NSCameraUsageDescription`
+Key: `NSCameraUsageDescription`
 
 Name: `Privacy - Photo Library Additions Usage Description`
-Key: 	`NSPhotoLibraryAddUsageDescription`
+Key: `NSPhotoLibraryAddUsageDescription`
 
 Name: `Privacy - Photo Library Usage Description`
-Key: 	`NSPhotoLibraryUsageDescription`
+Key: `NSPhotoLibraryUsageDescription`
 
 Read about [Setting iOS Permissions](/docs/ios/configuration/) in the [iOS Guide](/docs/ios/) for more information on setting iOS permissions in Xcode
 
@@ -103,11 +103,9 @@ with the camera.
 
 **Returns:** <code>Promise&lt;<a href="#cameraphoto">CameraPhoto</a>&gt;</code>
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### CameraPhoto
 
@@ -119,7 +117,6 @@ with the camera.
 | **`webPath`**      | <code>string</code> | webPath returns a path that can be used to set the src attribute of an image for efficient loading and rendering.                                                             |
 | **`exif`**         | <code>any</code>    | Exif data, if any, retrieved from the image                                                                                                                                   |
 | **`format`**       | <code>string</code> | The format of the image, ex: jpeg, png, gif. iOS and Android only support jpeg. Web supports jpeg and png. gif is only supported if using file input.                         |
-
 
 #### CameraOptions
 
@@ -142,9 +139,7 @@ with the camera.
 | **`promptLabelPhoto`**    | <code>string</code>                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **`promptLabelPicture`**  | <code>string</code>                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
-
 ### Enums
-
 
 #### CameraResultType
 
@@ -154,7 +149,6 @@ with the camera.
 | **`Base64`**  | <code>"base64"</code>  |
 | **`DataUrl`** | <code>"dataUrl"</code> |
 
-
 #### CameraSource
 
 | Members      | Value                 |
@@ -162,7 +156,6 @@ with the camera.
 | **`Prompt`** | <code>"PROMPT"</code> |
 | **`Camera`** | <code>"CAMERA"</code> |
 | **`Photos`** | <code>"PHOTOS"</code> |
-
 
 #### CameraDirection
 

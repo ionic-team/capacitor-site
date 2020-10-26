@@ -1,9 +1,8 @@
-
 import { Component, Prop, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'more-button',
-  styleUrl: 'more-button.scss'
+  styleUrl: 'more-button.scss',
 })
 export class MoreButton {
   @Prop() icon = 'ellipsis-vertical';

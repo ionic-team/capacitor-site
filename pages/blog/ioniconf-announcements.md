@@ -11,11 +11,11 @@ Today at the first ever official Ioniconf, we unveiled a number of exciting upda
 
 In no particular order, we announced:
 
-* [Capacitor opening up to all modern web technologies]($POST#capacitor-opening-up)
-* [The Capacitor Community project]($POST#capacitor-community)
-* [Capacitor Elements]($POST#capacitor-elements)
-* [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)
-* [Updated site and domain]($POST#updated-site-domain-and-docs)
+- [Capacitor opening up to all modern web technologies]($POST#capacitor-opening-up)
+- [The Capacitor Community project]($POST#capacitor-community)
+- [Capacitor Elements]($POST#capacitor-elements)
+- [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)
+- [Updated site and domain]($POST#updated-site-domain-and-docs)
 
 <preview-end />
 
@@ -29,7 +29,7 @@ One of the biggest announcements of the day was that Capacitor will be opening u
 
 While technically Capacitor has worked with any modern web framework and UI library, it was not always clear that Capacitor could be used without Ionic Framework, and the project certainly did not embrace outside frameworks.
 
-With this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more  on non-Ionic Framework options from the Capacitor team.
+With this change, expect to see a lot more Capacitor apps running Angular Material, Tailwind, Material UI, and even Bootstrap. Expect to see content, tutorials, examples, and more on non-Ionic Framework options from the Capacitor team.
 
 The new Capacitor mission is to help _all_ web developers build cross-platform apps with their web development skills.
 

@@ -10,7 +10,6 @@ contributors:
 
 Building Capacitor plugins for Android involves writing Java or [Kotlin](https://developer.android.com/kotlin/overview) to interface with Android SDKs.
 
-
 ## Getting Started
 
 To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins) section of the Plugin guide.
@@ -248,8 +247,8 @@ bridge.triggerDocumentJSEvent("myCustomEvent",  "{ 'dataKey': 'dataValue' }");
 And to listen for it, just use regular javascript:
 
 ```typescript
-window.addEventListener("myCustomEvent", function() {
-  console.log("myCustomEvent was fired")
+window.addEventListener('myCustomEvent', function () {
+  console.log('myCustomEvent was fired');
 });
 ```
 
@@ -258,8 +257,8 @@ window.addEventListener("myCustomEvent", function() {
 Plugins can emit their own events that you can listen by attaching a listener to the plugin Object like this:
 
 ```typescript
-Plugins.MyPlugin.addListener("myPluginEvent", (info: any) => {
-  console.log("myPluginEvent was fired");
+Plugins.MyPlugin.addListener('myPluginEvent', (info: any) => {
+  console.log('myPluginEvent was fired');
 });
 ```
 
@@ -274,9 +273,12 @@ notifyListeners("myPluginEvent", ret);
 To remove a listener from the plugin object:
 
 ```typescript
-const myPluginEventListener = Plugins.MyPlugin.addListener("myPluginEvent", (info: any) => {
-  console.log("myPluginEvent was fired");
-});
+const myPluginEventListener = Plugins.MyPlugin.addListener(
+  'myPluginEvent',
+  (info: any) => {
+    console.log('myPluginEvent was fired');
+  },
+);
 
 myPluginEventListener.remove();
 ```

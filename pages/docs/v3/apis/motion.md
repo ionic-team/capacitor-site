@@ -9,14 +9,16 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/src/de
 The Motion API tracks accelerometer and device orientation (compass heading, etc.)
 
 <!--DOCGEN_INDEX_START-->
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
+
+- [`addListener(...)`](#addlistener)
+- [`addListener(...)`](#addlistener)
+- [`removeAllListeners()`](#removealllisteners)
+- [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
 ## API
 
 ### addListener(...)
@@ -36,8 +38,7 @@ Add a listener for accelerometer data
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -56,8 +57,7 @@ Add a listener for device orientation change (compass heading, etc.)
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### removeAllListeners()
 
@@ -71,18 +71,15 @@ Remove all the listeners that are attached to this plugin.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### PluginListenerHandle
 
 | Prop         | Type                    |
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
-
 
 #### MotionEventResult
 
@@ -93,7 +90,6 @@ Remove all the listeners that are attached to this plugin.
 | **`rotationRate`**                 | <code><a href="#devicemotioneventrotationrate">DeviceMotionEventRotationRate</a></code> | An object giving the rate of change of the device's orientation on the three orientation axis alpha, beta and gamma. Rotation rate is expressed in degrees per seconds. | 1.0.0 |
 | **`interval`**                     | <code>number</code>                                                                     | A number representing the interval of time, in milliseconds, at which data is obtained from the device.                                                                 | 1.0.0 |
 
-
 #### DeviceMotionEventAcceleration
 
 | Prop    | Type                | Description                                  | Since |
@@ -102,7 +98,6 @@ Remove all the listeners that are attached to this plugin.
 | **`y`** | <code>number</code> | The amount of acceleration along the Y axis. | 1.0.0 |
 | **`z`** | <code>number</code> | The amount of acceleration along the Z axis. | 1.0.0 |
 
-
 #### DeviceMotionEventRotationRate
 
 | Prop        | Type                | Description                                                      | Since |
@@ -110,6 +105,5 @@ Remove all the listeners that are attached to this plugin.
 | **`alpha`** | <code>number</code> | The amount of rotation around the Z axis, in degrees per second. | 1.0.0 |
 | **`beta`**  | <code>number</code> | The amount of rotation around the X axis, in degrees per second. | 1.0.0 |
 | **`gamma`** | <code>number</code> | The amount of rotation around the Y axis, in degrees per second. | 1.0.0 |
-
 
 <!--DOCGEN_API_END-->

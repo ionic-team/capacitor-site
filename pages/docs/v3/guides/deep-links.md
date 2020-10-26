@@ -12,9 +12,10 @@ contributors:
 
 Universal links (iOS) and App Links (Android) offer the ability to take users directly to specific content within a native app (commonly known as deep linking).
 
-When users tap or click on a deep link, the user is sent directly into your app without routing through the device's web browser or website first. If the app isn't installed, then the user is directed to the website. If the user navigates directly to the website, they remain on the website.  This makes deep links an excellent feature for cross-platform apps built for the web, iOS, and Android: a seamless mobile experience, with graceful fallback to the website.
+When users tap or click on a deep link, the user is sent directly into your app without routing through the device's web browser or website first. If the app isn't installed, then the user is directed to the website. If the user navigates directly to the website, they remain on the website. This makes deep links an excellent feature for cross-platform apps built for the web, iOS, and Android: a seamless mobile experience, with graceful fallback to the website.
 
 Benefits:
+
 - Secure: Universal/App Links use HTTPS URLs that link to a website domain that you own, ensuring that no other app can use your links.
 - Seamless experience: One URL works for both your website and app, ensuring that users can successfully access the content they're looking for without errors.
 - Increase Engagement: Links can be opened from email clients, search engine results, and more.
@@ -27,8 +28,8 @@ Here's what it looks like in practice. In this example, the user has the native 
 
 ## Prerequisites
 
-* A pre-configured [Capacitor app](/docs/getting-started).
-* For iOS, enrollment in the Apple Developer Program.
+- A pre-configured [Capacitor app](/docs/getting-started).
+- For iOS, enrollment in the Apple Developer Program.
 
 For illustrative purposes, https://beerswift.app will be used as the web app link.
 
@@ -69,7 +70,7 @@ initializeApp() {
             if (slug) {
                 this.router.navigateByUrl(slug);
             }
-            // If no match, do nothing - let regular routing 
+            // If no match, do nothing - let regular routing
             // logic take over
         });
     });
@@ -82,7 +83,7 @@ There's a variety of options for React. One approach is to wrap the App API list
 
 ```typescript
 import React, { useEffect } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import { Plugins } from '@capacitor/core';
 const { App: CapApp } = Plugins;
 ```
@@ -91,21 +92,21 @@ Next, define the AppUrlListener component, listening for the `appUrlOpen` event 
 
 ```typescript
 const AppUrlListener: React.FC<any> = () => {
-    let history = useHistory();
-    useEffect(() => {
-        CapApp.addListener('appUrlOpen', (data: any) => {
-            // Example url: https://beerswift.app/tabs/tab2
-            // slug = /tabs/tab2
-            const slug = data.url.split(".app").pop();
-            if (slug) {
-                history.push(slug);
-            }
-            // If no match, do nothing - let regular routing 
-            // logic take over
-        });
-    }, []);
+  let history = useHistory();
+  useEffect(() => {
+    CapApp.addListener('appUrlOpen', (data: any) => {
+      // Example url: https://beerswift.app/tabs/tab2
+      // slug = /tabs/tab2
+      const slug = data.url.split('.app').pop();
+      if (slug) {
+        history.push(slug);
+      }
+      // If no match, do nothing - let regular routing
+      // logic take over
+    });
+  }, []);
 
-    return null;
+  return null;
 };
 
 export default AppUrlListener;
@@ -121,22 +122,23 @@ Then add it inside of `IonReactRouter` (or wherever your app is bootstrapped, ju
 
 ```tsx
 const App: React.FC = () => {
-    return (
-        <IonApp>
-            <IonReactRouter>
-                <AppUrlListener></AppUrlListener>
-                <IonRouterOutlet>
-                    <Route path="/home" component={Home} exact={true} />
-                    <Route exact path="/" render={() => <Redirect to="/home" />} />
-                </IonRouterOutlet>
-            </IonReactRouter>
-        </IonApp>
-    );
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <AppUrlListener></AppUrlListener>
+        <IonRouterOutlet>
+          <Route path="/home" component={Home} exact={true} />
+          <Route exact path="/" render={() => <Redirect to="/home" />} />
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
 };
 ```
 
 ### Vue
-VueJS offers a first party routing system that integrates natively with Vue called Vue Router. To set up deep linking with Vue Router, start in the file that you used to configure all of your routes (usually `routes.js` or something similar).  
+
+VueJS offers a first party routing system that integrates natively with Vue called Vue Router. To set up deep linking with Vue Router, start in the file that you used to configure all of your routes (usually `routes.js` or something similar).
 
 First we import the capacitor `App` from plugins along with `Vue` and `VueRouter`.
 
@@ -151,8 +153,8 @@ Next, configure your routes using the Vue Router (more information on [Getting S
 
 ```typescript
 const router = new VueRouter({
-    routes: []
-})
+  routes: [],
+});
 ```
 
 It's recommended to use `mode: history` so you don't have to deal with the `#`.
@@ -161,24 +163,24 @@ Let Vue know that you are using Vue Router and register the router within Vue:
 
 ```typescript
 const VueApp = new Vue({
-    router
-}).$mount('#app')
+  router,
+}).$mount('#app');
 ```
 
 Finally, we need to register our app for deep linking. To do that, we add an event listener to the `appUrlOpen` event on the Capacitor App. Capacitor will pick this up, then we hand it off to Vue Router to navigate to the page requested.
 
 ```typescript
-App.addListener('appUrlOpen', function( data ){
-    // Example url: https://beerswift.app/tabs/tabs2
-    // slug = /tabs/tabs2
-    const slug = data.url.split(".app").pop();
+App.addListener('appUrlOpen', function (data) {
+  // Example url: https://beerswift.app/tabs/tabs2
+  // slug = /tabs/tabs2
+  const slug = data.url.split('.app').pop();
 
-    // We only push to the route if there is a slug present
-    if( slug ){
-        router.push({
-            path: slug
-        });
-    }
+  // We only push to the route if there is a slug present
+  if (slug) {
+    router.push({
+      path: slug,
+    });
+  }
 });
 ```
 
@@ -208,15 +210,15 @@ An example of the `apple-app-site-association` file is below. Be sure to replace
 
 ```json
 {
-    "applinks": {
-        "apps": [],
-        "details": [
-            {
-                "appID": "TEAMID.BUNDLEID",
-                "paths": ["*"]
-            }
-        ]
-    }
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.BUNDLEID",
+        "paths": ["*"]
+      }
+    ]
+  }
 }
 ```
 
@@ -266,9 +268,7 @@ Copy the JSON output into a new local file under `.well-known/assetlinks.json`.
     "target": {
       "namespace": "android_app",
       "package_name": "com.netkosoft.beerswift",
-      "sha256_cert_fingerprints": [
-        "43:12:D4:27:D7:C4:14..."
-      ]
+      "sha256_cert_fingerprints": ["43:12:D4:27:D7:C4:14..."]
     }
   }
 ]
@@ -325,9 +325,9 @@ Place the association files under `src/.well-known`. Next, configure the build p
 
 ```json
 {
-    "glob": "**/*",
-    "input": "src/.well-known",
-    "output": ".well-known/"
+  "glob": "**/*",
+  "input": "src/.well-known",
+  "output": ".well-known/"
 }
 ```
 
@@ -345,7 +345,6 @@ Place the association files under `public/.well-known`. No additional steps are 
 
 See [here](https://devdactic.com/universal-links-ionic/) for Wordpress instructions.
 
-
 ## Verification
 
 To verify that the websites and the native apps are configured correctly, the website needs to host the Site Association files but the apps do not need to be in the app stores.
@@ -354,7 +353,7 @@ Connect a device to your computer, build and deploy the native apps, then test b
 
 ## Resources
 
-* Branch.io: [What is Deep Linking?](https://branch.io/what-is-deep-linking/)
-* Android: [App Links](https://developer.android.com/training/app-links)
-* iOS: [Universal Links](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content)
-* iOS: [Enabling Universal Links](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/enabling_universal_links)
+- Branch.io: [What is Deep Linking?](https://branch.io/what-is-deep-linking/)
+- Android: [App Links](https://developer.android.com/training/app-links)
+- iOS: [Universal Links](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content)
+- iOS: [Enabling Universal Links](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/enabling_universal_links)

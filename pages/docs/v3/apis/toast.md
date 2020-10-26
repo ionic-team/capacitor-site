@@ -9,12 +9,14 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/toast/src/def
 The Toast API provides a notification pop up for displaying important information to a user. Just like real toast!
 
 <!--DOCGEN_INDEX_START-->
-* [`show(...)`](#show)
-* [Interfaces](#interfaces)
+
+- [`show(...)`](#show)
+- [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
 ## API
 
 ### show(...)
@@ -33,11 +35,9 @@ Shows a Toast on the screen
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### ToastShowOptions
 
@@ -46,6 +46,5 @@ Shows a Toast on the screen
 | **`text`**     | <code>string</code>                        | Text to display on the Toast                                      |                       | 1.0.0 |
 | **`duration`** | <code>"short" \| "long"</code>             | Duration of the Toast, either 'short' (2000ms) or 'long' (3500ms) | <code>'short'</code>  | 1.0.0 |
 | **`position`** | <code>"top" \| "center" \| "bottom"</code> | Postion of the Toast                                              | <code>'bottom'</code> | 1.0.0 |
-
 
 <!--DOCGEN_API_END-->

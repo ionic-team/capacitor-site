@@ -7,15 +7,13 @@ author: Dan Pastori <dan@521dimensions.com>
 authorUrl: https://twitter.com/danpastori
 ---
 
->The following is a guest blog post from Dan Pastori of [Server Side Up](https://serversideup.net). Server Side Up is an online community that shares tutorials and resources about Vuejs, Laravel, Wordpress, and more recently have started creating resources on how to deliver native apps with Capacitor.
+> The following is a guest blog post from Dan Pastori of [Server Side Up](https://serversideup.net). Server Side Up is an online community that shares tutorials and resources about Vuejs, Laravel, Wordpress, and more recently have started creating resources on how to deliver native apps with Capacitor.
 
 Using CapacitorJS with NuxtJS is a perfect combination. NuxtJS allows you to develop powerful, modern fronteneds using VueJS. Combined with CapacitorJS, you can take those modern frontends, compilie them to mobile, and deploy to the platform of your choice.
 
 Working with CapacitorJS, the power of native device features is there for you to integrate into your application. These features include GPS, Haptics, Camera, Filesystem, etc. When I structure a NuxtJS frontend, I like to design it in a way that allows me to re-use important modules through-out components, pages, and layouts.
 
 <preview-end />
-
-
 
 ## Making CapacitorJS Plugins Globally Availble
 

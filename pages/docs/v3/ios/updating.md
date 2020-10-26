@@ -33,13 +33,13 @@ In particular, [AppDelegate.swift](https://github.com/ionic-team/capacitor/blob/
 
 Recommended change:
 
-* Update `.gitignore` file inside `ios` folder with [this changes](https://github.com/ionic-team/capacitor/commit/91941975ea5fe5389e0b09bb8331d5cb16ea6a78#diff-ea346566a7f09b5e88ed28d3d6362ec3)
+- Update `.gitignore` file inside `ios` folder with [this changes](https://github.com/ionic-team/capacitor/commit/91941975ea5fe5389e0b09bb8331d5cb16ea6a78#diff-ea346566a7f09b5e88ed28d3d6362ec3)
 
 ### From <= 1.5.1 to 2.0.0
 
 Recommended change:
 
-* Update native project to Swift 5
+- Update native project to Swift 5
 
   Capacitor 2.0 uses Swift 5, it's recommended to update your native project to also use Swift 5.
   To do so, from Xcode click `Edit -> Convert -> To Current Swift Syntax`.

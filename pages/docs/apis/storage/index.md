@@ -20,11 +20,11 @@ Note: this API is not meant for high-performance data storage applications. Take
 
 <docgen-index>
 
-* [`get(...)`](#get)
-* [`set(...)`](#set)
-* [`remove(...)`](#remove)
-* [`clear()`](#clear)
-* [`keys()`](#keys)
+- [`get(...)`](#get)
+- [`set(...)`](#set)
+- [`remove(...)`](#remove)
+- [`clear()`](#clear)
+- [`keys()`](#keys)
 
 </docgen-index>
 
@@ -105,8 +105,7 @@ Get the value with the given key.
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
---------------------
-
+---
 
 ### set(...)
 
@@ -120,8 +119,7 @@ Set the value for the given key
 | ------------- | -------------------------------------------- |
 | **`options`** | <code>{ key: string; value: string; }</code> |
 
---------------------
-
+---
 
 ### remove(...)
 
@@ -135,8 +133,7 @@ Remove the value for this key (if any)
 | ------------- | ----------------------------- |
 | **`options`** | <code>{ key: string; }</code> |
 
---------------------
-
+---
 
 ### clear()
 
@@ -146,8 +143,7 @@ clear() => Promise<void>
 
 Clear stored keys and values.
 
---------------------
-
+---
 
 ### keys()
 
@@ -159,6 +155,6 @@ Return the list of known keys
 
 **Returns:** <code>Promise&lt;{ keys: string[]; }&gt;</code>
 
---------------------
+---
 
 </docgen-api>

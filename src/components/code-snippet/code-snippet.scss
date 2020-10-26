@@ -6,8 +6,9 @@
   --border-radius: 8px;
 }
 
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: #0B2231;
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #0b2231;
   border-radius: var(--border-radius);
   margin-top: 0;
 

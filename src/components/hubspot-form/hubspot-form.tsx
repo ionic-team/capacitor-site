@@ -1,4 +1,14 @@
-import { Component, Host, h, Prop, Event, EventEmitter, Element, State, Listen } from '@stencil/core';
+import {
+  Component,
+  Host,
+  h,
+  Prop,
+  Event,
+  EventEmitter,
+  Element,
+  State,
+  Listen,
+} from '@stencil/core';
 import { importResource } from 'src/utils/common';
 
 declare var window: any;
@@ -37,7 +47,8 @@ export class HubspotForm {
       if (e.data.accepted === true) {
         this.formSubmitted?.emit();
       } else if (e.data.accepted === false) {
-        this.error = 'Unable to submit. Please check your information and try again.';
+        this.error =
+          'Unable to submit. Please check your information and try again.';
       } else {
         this.error = '';
       }
@@ -63,7 +74,9 @@ export class HubspotForm {
       return;
     }
 
-    const formEl = this.el?.querySelector(`#${this.getFormElementId()} form`) as HTMLFormElement;
+    const formEl = this.el?.querySelector(
+      `#${this.getFormElementId()} form`,
+    ) as HTMLFormElement;
     if (!formEl) {
       return;
     }
@@ -74,10 +87,12 @@ export class HubspotForm {
       return false;
     });
 
-    formEl.querySelector('input[type="submit"]')?.addEventListener('click', (e) => {
-      this.submitForm(formEl);
-      e.preventDefault();
-    });
+    formEl
+      .querySelector('input[type="submit"]')
+      ?.addEventListener('click', e => {
+        this.submitForm(formEl);
+        e.preventDefault();
+      });
   };
 
   getFormElementId = () => `hbspt-form-${this.formId}`;

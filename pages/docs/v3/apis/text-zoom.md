@@ -9,14 +9,16 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/text-zoom/src
 The Text Zoom API provides the ability to change Web View text size for visual accessibility.
 
 <!--DOCGEN_INDEX_START-->
-* [`get()`](#get)
-* [`getPreferred()`](#getpreferred)
-* [`set(...)`](#set)
-* [Interfaces](#interfaces)
+
+- [`get()`](#get)
+- [`getPreferred()`](#getpreferred)
+- [`set(...)`](#set)
+- [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
 ## API
 
 ### get()
@@ -33,8 +35,7 @@ Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### getPreferred()
 
@@ -50,8 +51,7 @@ Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### set(...)
 
@@ -71,11 +71,9 @@ Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### GetResponse
 
@@ -83,19 +81,16 @@ Zoom levels are represented as a decimal (e.g. 1.2 is 120%).
 | ----------- | ------------------- | -------------------------------------------------- | ----- |
 | **`value`** | <code>number</code> | The current zoom level (represented as a decimal). | 1.0.0 |
 
-
 #### GetPreferredResponse
 
 | Prop        | Type                | Description                                          | Since |
 | ----------- | ------------------- | ---------------------------------------------------- | ----- |
 | **`value`** | <code>number</code> | The preferred zoom level (represented as a decimal). | 1.0.0 |
 
-
 #### SetOptions
 
 | Prop        | Type                | Description                                    | Since |
 | ----------- | ------------------- | ---------------------------------------------- | ----- |
 | **`value`** | <code>number</code> | The new zoom level (represented as a decimal). | 1.0.0 |
-
 
 <!--DOCGEN_API_END-->

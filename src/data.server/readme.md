@@ -1,6 +1,6 @@
 # Server Side Only Code
 
-Code within the `data.server` directory will only run within nodejs at build time. 
+Code within the `data.server` directory will only run within nodejs at build time.
 
 This directory can use nodejs APIs, but will be removed from the browser builds.
 

@@ -14,10 +14,10 @@ The Network API provides events for monitoring network status changes, along wit
 
 <docgen-index>
 
-* [`getStatus()`](#getstatus)
-* [`addListener(...)`](#addlistener)
-* [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
+- [`getStatus()`](#getstatus)
+- [`addListener(...)`](#addlistener)
+- [`removeAllListeners()`](#removealllisteners)
+- [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -69,8 +69,7 @@ Query the current network status
 
 **Returns:** <code>Promise&lt;<a href="#networkstatus">NetworkStatus</a>&gt;</code>
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -87,8 +86,7 @@ Listen for network status change events
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### removeAllListeners()
 
@@ -98,11 +96,9 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### NetworkStatus
 
@@ -110,7 +106,6 @@ Remove all native listeners for this plugin
 | -------------------- | -------------------------------------------------------- |
 | **`connected`**      | <code>boolean</code>                                     |
 | **`connectionType`** | <code>"none" \| "unknown" \| "wifi" \| "cellular"</code> |
-
 
 #### PluginListenerHandle
 

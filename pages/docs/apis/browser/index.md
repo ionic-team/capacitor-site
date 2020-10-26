@@ -12,13 +12,13 @@ contributors:
 
 <docgen-index>
 
-* [`open(...)`](#open)
-* [`prefetch(...)`](#prefetch)
-* [`close()`](#close)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
+- [`open(...)`](#open)
+- [`prefetch(...)`](#prefetch)
+- [`close()`](#close)
+- [`addListener(...)`](#addlistener)
+- [`addListener(...)`](#addlistener)
+- [`removeAllListeners()`](#removealllisteners)
+- [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -52,8 +52,7 @@ Open a page with the given URL
 | ------------- | ----------------------------------------------------------------- |
 | **`options`** | <code><a href="#browseropenoptions">BrowserOpenOptions</a></code> |
 
---------------------
-
+---
 
 ### prefetch(...)
 
@@ -70,8 +69,7 @@ Only functional on Android, is a no-op on iOS
 | ------------- | ------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#browserprefetchoptions">BrowserPrefetchOptions</a></code> |
 
---------------------
-
+---
 
 ### close()
 
@@ -81,8 +79,7 @@ close() => Promise<void>
 
 Close an open browser. Only works on iOS and Web environment, otherwise is a no-op
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -97,8 +94,7 @@ addListener(eventName: 'browserFinished', listenerFunc: (info: any) => void) => 
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -113,8 +109,7 @@ addListener(eventName: 'browserPageLoaded', listenerFunc: (info: any) => void) =
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### removeAllListeners()
 
@@ -124,28 +119,24 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin
 
---------------------
-
+---
 
 ### Interfaces
 
-
 #### BrowserOpenOptions
 
-| Prop                    | Type                                   | Description                                                                                                   |
-| ----------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **`url`**               | <code>string</code>                    | The URL to open the browser to                                                                                |
-| **`windowName`**        | <code>string</code>                    | Web only: Optional target for browser open. Follows the `target` property for window.open. Defaults to _blank |
-| **`toolbarColor`**      | <code>string</code>                    | A hex color to set the toolbar color to.                                                                      |
-| **`presentationStyle`** | <code>"fullscreen" \| "popover"</code> | iOS only: The presentation style of the browser. Defaults to fullscreen.                                      |
-
+| Prop                    | Type                                   | Description                                                                                                    |
+| ----------------------- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **`url`**               | <code>string</code>                    | The URL to open the browser to                                                                                 |
+| **`windowName`**        | <code>string</code>                    | Web only: Optional target for browser open. Follows the `target` property for window.open. Defaults to \_blank |
+| **`toolbarColor`**      | <code>string</code>                    | A hex color to set the toolbar color to.                                                                       |
+| **`presentationStyle`** | <code>"fullscreen" \| "popover"</code> | iOS only: The presentation style of the browser. Defaults to fullscreen.                                       |
 
 #### BrowserPrefetchOptions
 
 | Prop       | Type                  |
 | ---------- | --------------------- |
 | **`urls`** | <code>string[]</code> |
-
 
 #### PluginListenerHandle
 

@@ -62,7 +62,10 @@ However, this by itself isn't enough. To avoid possible [man-in-the-middle](http
 CSP can be configured in your Capacitor app by adding a `meta` tag to the `<head>` with an acceptable CSP format (CSP can be configured both server and client side using the same format). For example, this configuration would allow all requests to the current origin and `foo.com`:
 
 ```html
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' foo.com">
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self' foo.com"
+/>
 ```
 
 CSP supports a wide variety of configurations, and the [CSP reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is a must-read. Another useful resource is [content-security-policy.com](https://content-security-policy.com/).

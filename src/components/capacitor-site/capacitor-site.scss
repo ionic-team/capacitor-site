@@ -9,7 +9,7 @@
 
 capacitor-site {
   --container: clamp(8px, 2.5vw, 20px);
-  
+
   min-height: 100%;
   display: block;
 }
@@ -70,7 +70,6 @@ site-header.scrolled {
   flex: 1;
 }
 
-
 ::selection {
   background: #98d2ff;
 }
@@ -78,7 +77,6 @@ site-header.scrolled {
 ::-moz-selection {
   background: #98d2ff;
 }
-
 
 .hljs-comment,
 .hljs-quote {

@@ -1,5 +1,9 @@
 import { Fragment, h } from '@stencil/core';
-import { ResponsiveContainer, Heading, Paragraph } from '@ionic-internal/ionic-ds';
+import {
+  ResponsiveContainer,
+  Heading,
+  Paragraph,
+} from '@ionic-internal/ionic-ds';
 export const SolutionAngular = () => {
   return (
     <Fragment>
@@ -7,7 +11,9 @@ export const SolutionAngular = () => {
         <article class="step">
           <sup class="ui-heading-6">01</sup>
           <div class="heading-group">
-            <Heading level={3} id="install">Install Capacitor.</Heading>
+            <Heading level={3} id="install">
+              Install Capacitor.
+            </Heading>
             <Paragraph>
               Add Capacitor to your project using the ng-app schematic
             </Paragraph>
@@ -53,14 +59,16 @@ ng build --prod
                 src="/assets/img/landing/apple.png"
                 alt="Apple"
                 class="apple"
-                width="22" height="26"
+                width="22"
+                height="26"
               />
               <img
                 loading="lazy"
                 src="/assets/img/landing/android.png"
                 alt="Android"
                 class="android"
-                width="27" height="23"
+                width="27"
+                height="23"
               />
             </div>
             <Paragraph>
@@ -90,9 +98,9 @@ npx cap add ios
             </Paragraph>
           </div>
           <div class="code-panel">
-              <code-snippet
-                language="typescript"
-                code={`
+            <code-snippet
+              language="typescript"
+              code={`
 import { Component } from '@angular/core';
 import {  Plugins, GeolocationPosition } from '@capacitor/core';
 @Component({
@@ -109,7 +117,7 @@ export class GeolocationPage {
   }
 }
 `}
-              />
+            />
           </div>
         </article>
       </ResponsiveContainer>
@@ -118,12 +126,18 @@ export class GeolocationPage {
           <Heading level={3}>Continue your Capacitor Journey.</Heading>
           <Paragraph>
             This is only the beginning. Learn more about the Capacitor{' '}
-            <a href="/docs/basics/workflow" target="_blank">development workflow</a>{' '}
-            or using more <a href="/docs/apis" target="_blank"> native APIs</a> .
+            <a href="/docs/basics/workflow" target="_blank">
+              development workflow
+            </a>{' '}
+            or using more{' '}
+            <a href="/docs/apis" target="_blank">
+              {' '}
+              native APIs
+            </a>{' '}
+            .
           </Paragraph>
         </ResponsiveContainer>
       </section>
     </Fragment>
   );
 };
-

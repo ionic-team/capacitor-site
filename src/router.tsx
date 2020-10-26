@@ -69,7 +69,7 @@ export const Routes = () => (
     <Route path="/enterprise">
       <SiteHeader />
       <capacitor-enterprise />
-    </Route>    
+    </Route>
 
     <Route
       path={matchAny(['/docs/v3/:id*', '/docs/v3'])}
@@ -122,10 +122,7 @@ Router.on('change', (newUrl, _oldUrl) => {
 
 const SiteHeader = () => (
   <Fragment>
-    <platform-bar
-      containerClass="heading-container"
-      productName="Capacitor"
-    />
+    <platform-bar containerClass="heading-container" productName="Capacitor" />
     <site-header class="heading-container" />
   </Fragment>
 );

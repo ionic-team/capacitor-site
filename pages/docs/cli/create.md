@@ -1,5 +1,5 @@
 ---
-title: CLI Commands 
+title: CLI Commands
 description: Capacitor CLI command reference list
 contributors:
   - dotNetkow
@@ -14,9 +14,11 @@ npx @capacitor/cli create [options] [directory] [name] [id]
 ```
 
 <strong>Inputs:</strong>
-- `directory` (optional): Directory to create the new app in, such as `c:\src\myapp` 
+
+- `directory` (optional): Directory to create the new app in, such as `c:\src\myapp`
 - `name` (optional): App name
 - `id` (optional): App Package Id (in Java package format, no dashes), such as `com.example.app`
 
 <strong>Options:</strong>
+
 - `--npm-client <npmClient>`: npm client to use for dependency installation

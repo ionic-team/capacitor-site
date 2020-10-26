@@ -5,7 +5,6 @@ in-page-navigation {
   letter-spacing: 0;
 }
 
-
 in-page-navigation internal-ad {
   visibility: hidden;
 }
@@ -44,7 +43,7 @@ in-page-navigation .heading-links li {
   cursor: pointer;
 }
 in-page-navigation .heading-links li:hover a {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 in-page-navigation .heading-links a {
@@ -56,10 +55,10 @@ in-page-navigation .heading-links a {
   border: none;
   text-decoration: none;
   border: none !important;
-  transition: 0.2s color ease-out, .2s opacity ease-out;
+  transition: 0.2s color ease-out, 0.2s opacity ease-out;
 }
 
-in-page-navigation .heading-links a:hover {  
+in-page-navigation .heading-links a:hover {
   opacity: 1;
 }
 

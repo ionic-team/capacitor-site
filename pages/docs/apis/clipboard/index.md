@@ -6,19 +6,18 @@ contributors:
   - jcesarmobile
 ---
 
-
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
 # Clipboard
 
-The Clipboard API enables copy and pasting to/from the clipboard. On iOS this API also allows 
+The Clipboard API enables copy and pasting to/from the clipboard. On iOS this API also allows
 copying images and URLs.
 
 <docgen-index>
 
-* [`write(...)`](#write)
-* [`read()`](#read)
-* [Interfaces](#interfaces)
+- [`write(...)`](#write)
+- [`read()`](#read)
+- [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -30,7 +29,7 @@ import { Plugins } from '@capacitor/core';
 const { Clipboard } = Plugins;
 
 Clipboard.write({
-  string: "Hello, Moto"
+  string: 'Hello, Moto',
 });
 
 let result = await Clipboard.read();
@@ -54,8 +53,7 @@ Write a value to the clipboard (the "copy" action)
 | ------------- | --------------------------------------------------------- |
 | **`options`** | <code><a href="#clipboardwrite">ClipboardWrite</a></code> |
 
---------------------
-
+---
 
 ### read()
 
@@ -67,11 +65,9 @@ Read a value from the clipboard (the "paste" action)
 
 **Returns:** <code>Promise&lt;<a href="#clipboardreadresult">ClipboardReadResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### ClipboardWrite
 
@@ -81,7 +77,6 @@ Read a value from the clipboard (the "paste" action)
 | **`image`**  | <code>string</code> |
 | **`url`**    | <code>string</code> |
 | **`label`**  | <code>string</code> |
-
 
 #### ClipboardReadResult
 

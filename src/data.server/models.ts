@@ -8,4 +8,4 @@ export interface PrismicDocsResponse {
 
 export interface BlogPostDocument extends PrismicDocument {}
 
-export interface BlogPostsResponse extends PrismicDocsResponse {};
+export interface BlogPostsResponse extends PrismicDocsResponse {}

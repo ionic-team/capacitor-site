@@ -9,14 +9,16 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/dialog/src/de
 The Dialog API provides methods for triggering native dialog windows for alerts, confirmations, and input prompts
 
 <!--DOCGEN_INDEX_START-->
-* [`alert(...)`](#alert)
-* [`prompt(...)`](#prompt)
-* [`confirm(...)`](#confirm)
-* [Interfaces](#interfaces)
+
+- [`alert(...)`](#alert)
+- [`prompt(...)`](#prompt)
+- [`confirm(...)`](#confirm)
+- [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
 ## API
 
 ### alert(...)
@@ -35,8 +37,7 @@ Show an alert dialog
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### prompt(...)
 
@@ -54,8 +55,7 @@ Show a prompt dialog
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### confirm(...)
 
@@ -73,11 +73,9 @@ Show a confirmation dialog
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### AlertOptions
 
@@ -87,14 +85,12 @@ Show a confirmation dialog
 | **`message`**     | <code>string</code> | Message to show on the dialog.    |                   | 1.0.0 |
 | **`buttonTitle`** | <code>string</code> | Text to use on the action button. | <code>"OK"</code> | 1.0.0 |
 
-
 #### PromptResult
 
 | Prop            | Type                 | Description                                     | Since |
 | --------------- | -------------------- | ----------------------------------------------- | ----- |
 | **`value`**     | <code>string</code>  | Text entered on the prompt.                     | 1.0.0 |
 | **`cancelled`** | <code>boolean</code> | Whether if the prompt was canceled or accepted. | 1.0.0 |
-
 
 #### PromptOptions
 
@@ -107,13 +103,11 @@ Show a confirmation dialog
 | **`inputPlaceholder`**  | <code>string</code> | Placeholder text for hints.                |                       | 1.0.0 |
 | **`inputText`**         | <code>string</code> | Prepopulated text.                         |                       | 1.0.0 |
 
-
 #### ConfirmResult
 
 | Prop        | Type                 | Description                                               | Since |
 | ----------- | -------------------- | --------------------------------------------------------- | ----- |
 | **`value`** | <code>boolean</code> | true if the positive button was clicked, false otherwise. | 1.0.0 |
-
 
 #### ConfirmOptions
 
@@ -123,6 +117,5 @@ Show a confirmation dialog
 | **`message`**           | <code>string</code> | Message to show on the dialog.             |                       | 1.0.0 |
 | **`okButtonTitle`**     | <code>string</code> | Text to use on the positive action button. | <code>"OK"</code>     | 1.0.0 |
 | **`cancelButtonTitle`** | <code>string</code> | Text to use on the negative action button. | <code>"Cancel"</code> | 1.0.0 |
-
 
 <!--DOCGEN_API_END-->

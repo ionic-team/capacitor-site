@@ -9,14 +9,16 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/network/src/d
 The Network API provides network and connectivity information.
 
 <!--DOCGEN_INDEX_START-->
-* [`getStatus()`](#getstatus)
-* [`addListener(...)`](#addlistener)
-* [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
+
+- [`getStatus()`](#getstatus)
+- [`addListener(...)`](#addlistener)
+- [`removeAllListeners()`](#removealllisteners)
+- [Interfaces](#interfaces)
 <!--DOCGEN_INDEX_END-->
 
 <!--DOCGEN_API_START-->
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
 ## API
 
 ### getStatus()
@@ -31,8 +33,7 @@ Query the current status of the network connection.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### addListener(...)
 
@@ -51,8 +52,7 @@ Listen for changes in the network connection.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### removeAllListeners()
 
@@ -66,11 +66,9 @@ Remove all listeners (including the network status changes) for this plugin.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### NetworkStatus
 
@@ -81,12 +79,10 @@ Represents the state and type of the network connection.
 | **`connected`**      | <code>boolean</code>                                     | Whether there is an active connection or not.                                                                                 | 1.0.0 |
 | **`connectionType`** | <code>"wifi" \| "cellular" \| "none" \| "unknown"</code> | The type of network connection currently in use. If there is no active network connection, `connectionType` will be `'none'`. | 1.0.0 |
 
-
 #### PluginListenerHandle
 
 | Prop         | Type                    |
 | ------------ | ----------------------- |
 | **`remove`** | <code>() => void</code> |
-
 
 <!--DOCGEN_API_END-->

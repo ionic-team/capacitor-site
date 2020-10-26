@@ -1,5 +1,5 @@
 ---
-title: CLI Commands 
+title: CLI Commands
 description: Capacitor CLI command reference list
 contributors:
   - dotNetkow

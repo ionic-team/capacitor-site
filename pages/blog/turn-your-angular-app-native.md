@@ -17,7 +17,7 @@ Perhaps a surprise to many Angular developers, Angular is already used to power 
 
 ## Is this like Cordova?
 
-Capacitor is similar to Cordova (and Electron, for that matter) in that it runs a web app in a native environment and adds Native API access to the web app. 
+Capacitor is similar to Cordova (and Electron, for that matter) in that it runs a web app in a native environment and adds Native API access to the web app.
 
 Compared to Cordova, Capacitor is a relatively new, ground up effort to build a modern native mobile runtime for cross-platform iOS, Android, and PWA apps. Capacitor was built by the team behind [Ionic Framework](https://ionicframework.com/) to provide an alternative to Cordova for this native runtime layer. You can read more about the [motivation for creating Capacitor](https://capacitorjs.com/docs/cordova) on the docs.
 
@@ -39,7 +39,7 @@ Capacitor does not require Ionic Framework (though it's certainly one of the ver
 
 NativeScript and React Native are two popular mobile app frameworks that enable developers to build native apps using JavaScript.
 
-The biggest difference between Capacitor and these other options is that Capacitor uses standard web development technology, tooling, and developer experience.  This means Capacitor can turn *any web app* into a native app. React Native and NativeScript, in contrast, are frameworks that must be targeted from the beginning of an app's code base and provide a "web like" experience that is not a true browser environment.
+The biggest difference between Capacitor and these other options is that Capacitor uses standard web development technology, tooling, and developer experience. This means Capacitor can turn _any web app_ into a native app. React Native and NativeScript, in contrast, are frameworks that must be targeted from the beginning of an app's code base and provide a "web like" experience that is not a true browser environment.
 
 This has some advantages in that system controls are used exclusively, but in this case it's important to remember that these solutions will not enable you to take an existing Angular app, or one built with popular Angular libraries like Angular Material or Ionic Framework, and deploy it to the App Store. Instead, your app would need to be written from the ground up to use them and web libraries would not be compatible.
 

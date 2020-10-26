@@ -13,7 +13,7 @@ Live Reload is useful for debugging both the web portion of an app as well as na
 
 ## Using with Ionic CLI
 
-The Ionic CLI includes a complete Live Reload experience, automating all of the steps that are detailed manually below. Install it along with `native-run` (a cross-platform command-line utility for running native binaries on devices and simulators/emulators): 
+The Ionic CLI includes a complete Live Reload experience, automating all of the steps that are detailed manually below. Install it along with `native-run` (a cross-platform command-line utility for running native binaries on devices and simulators/emulators):
 
 ```bash
 npm install -g @ionic/cli native-run
@@ -29,7 +29,6 @@ ionic cap run ios -l --external
 This performs an `ionic build`, copies web assets into the specified native platform, then opens the IDE for your native project (Xcode for iOS, Android Studio for Android).
 
 The `server` entry automatically created in `capacitor.config.json` is removed after the command terminates. For complete details on the `ionic cap run` command, [see here](https://ionicframework.com/docs/cli/commands/capacitor-run).
-
 
 ## Using with Framework CLIs
 

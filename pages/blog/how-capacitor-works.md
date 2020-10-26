@@ -37,7 +37,7 @@ Most of the magic happens in the Native Bridge and the Runtime, so let's explore
 
 That Web View needs a way to access native functionality, interact with OS level native controls, and access custom native code or 3rd party plugins. It does that using the Native Bridge inside of Capacitor.
 
-The Native Bridge is where Capacitor's *runtime* JS API, including all known native plugins and their methods, are exported to the Web View. The runtime API is different from the `@capacitor/core` API that is imported directly into your web app, but they work together to enable Capacitor APIs to work across all supported platforms.
+The Native Bridge is where Capacitor's _runtime_ JS API, including all known native plugins and their methods, are exported to the Web View. The runtime API is different from the `@capacitor/core` API that is imported directly into your web app, but they work together to enable Capacitor APIs to work across all supported platforms.
 
 Capacitor loads all known plugins that have been installed or coded directly into the native project, and then exports `window.Capacitor.Plugins` containing every loaded plugin and every known method that plugin has exported to the Web View.
 

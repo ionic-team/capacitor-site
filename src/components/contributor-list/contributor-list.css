@@ -15,7 +15,7 @@ contributor-list ul.img-list {
 }
 
 contributor-list li:last-child {
-  margin-left:0 !important;
+  margin-left: 0 !important;
 }
 
 contributor-list li:not(:last-child) {
@@ -27,7 +27,7 @@ contributor-list img {
   border-radius: 50%;
   height: 32px;
   width: 32px;
-  border: 2px solid #FFF;
+  border: 2px solid #fff;
 }
 
 contributor-list a.contributor-img {
@@ -38,7 +38,6 @@ contributor-list a.contributor-img {
 
 contributor-list .ui-button {
   margin-inline-start: var(--space-3);
-
 }
 
 @media (hover: hover) {

@@ -15,12 +15,12 @@ well as Action Sheets.
 
 <docgen-index>
 
-* [`alert(...)`](#alert)
-* [`prompt(...)`](#prompt)
-* [`confirm(...)`](#confirm)
-* [`showActions(...)`](#showactions)
-* [Interfaces](#interfaces)
-* [Enums](#enums)
+- [`alert(...)`](#alert)
+- [`prompt(...)`](#prompt)
+- [`confirm(...)`](#confirm)
+- [`showActions(...)`](#showactions)
+- [Interfaces](#interfaces)
+- [Enums](#enums)
 
 </docgen-index>
 
@@ -92,8 +92,7 @@ Show an alert modal
 | ------------- | ----------------------------------------------------- |
 | **`options`** | <code><a href="#alertoptions">AlertOptions</a></code> |
 
---------------------
-
+---
 
 ### prompt(...)
 
@@ -109,8 +108,7 @@ Show a prompt modal
 
 **Returns:** <code>Promise&lt;<a href="#promptresult">PromptResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### confirm(...)
 
@@ -126,8 +124,7 @@ Show a confirmation modal
 
 **Returns:** <code>Promise&lt;<a href="#confirmresult">ConfirmResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### showActions(...)
 
@@ -144,11 +141,9 @@ to select.
 
 **Returns:** <code>Promise&lt;<a href="#actionsheetresult">ActionSheetResult</a>&gt;</code>
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### AlertOptions
 
@@ -158,14 +153,12 @@ to select.
 | **`message`**     | <code>string</code> |
 | **`buttonTitle`** | <code>string</code> |
 
-
 #### PromptResult
 
 | Prop            | Type                 |
 | --------------- | -------------------- |
 | **`value`**     | <code>string</code>  |
 | **`cancelled`** | <code>boolean</code> |
-
 
 #### PromptOptions
 
@@ -178,13 +171,11 @@ to select.
 | **`inputPlaceholder`**  | <code>string</code> |
 | **`inputText`**         | <code>string</code> |
 
-
 #### ConfirmResult
 
 | Prop        | Type                 |
 | ----------- | -------------------- |
 | **`value`** | <code>boolean</code> |
-
 
 #### ConfirmOptions
 
@@ -195,13 +186,11 @@ to select.
 | **`okButtonTitle`**     | <code>string</code> |
 | **`cancelButtonTitle`** | <code>string</code> |
 
-
 #### ActionSheetResult
 
 | Prop        | Type                |
 | ----------- | ------------------- |
 | **`index`** | <code>number</code> |
-
 
 #### ActionSheetOptions
 
@@ -211,7 +200,6 @@ to select.
 | **`message`** | <code>string</code>              | iOS only    |
 | **`options`** | <code>ActionSheetOption[]</code> |             |
 
-
 #### ActionSheetOption
 
 | Prop        | Type                                                                      | Description                              |
@@ -220,9 +208,7 @@ to select.
 | **`style`** | <code><a href="#actionsheetoptionstyle">ActionSheetOptionStyle</a></code> |                                          |
 | **`icon`**  | <code>string</code>                                                       | Icon for web (ionicon naming convention) |
 
-
 ### Enums
-
 
 #### ActionSheetOptionStyle
 

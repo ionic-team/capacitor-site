@@ -7,7 +7,7 @@ contributors:
 
 # Cordova and PhoneGap
 
-Apache Cordova (and Adobe PhoneGap), created in 2008, is an open source project that enables web developers to use their HTML, CSS, and JavaScript content to create a native application for a variety of mobile and desktop platforms. 
+Apache Cordova (and Adobe PhoneGap), created in 2008, is an open source project that enables web developers to use their HTML, CSS, and JavaScript content to create a native application for a variety of mobile and desktop platforms.
 
 For more details on the history of Cordova and more details on how it works, [please see here](https://ionicframework.com/resources/articles/what-is-apache-cordova).
 
@@ -31,10 +31,10 @@ Additionally, Capacitor does not "run on device" or emulate through the command 
 
 While these changes may be concerning to long-time Cordova users, there are worthwhile benefits:
 
- 1. Updating and modifying native projects through abstracted-away tools such as `config.xml` is error prone and a constant moving target. Becoming more comfortable with platform-specific tooling makes troubleshooting issues that much easier.
- 2. It's easier to add custom native code that your app needs without having to build a new plugin for it. Additionally, native teams can work alongside web teams on the same project. 
- 3. Creating more compelling app experiences is now easier since you "own" the native project, such as adding a native UI shell around your web app.
- 4. More visibility into native project changes and better app maintainability as new mobile operating system versions are released. When breaking changes to Capacitor are introduced or changes are applied to the native project templates, the team will publish step-by-step upgrade instructions to ensure that the update process is as smooth as possible.
+1.  Updating and modifying native projects through abstracted-away tools such as `config.xml` is error prone and a constant moving target. Becoming more comfortable with platform-specific tooling makes troubleshooting issues that much easier.
+2.  It's easier to add custom native code that your app needs without having to build a new plugin for it. Additionally, native teams can work alongside web teams on the same project.
+3.  Creating more compelling app experiences is now easier since you "own" the native project, such as adding a native UI shell around your web app.
+4.  More visibility into native project changes and better app maintainability as new mobile operating system versions are released. When breaking changes to Capacitor are introduced or changes are applied to the native project templates, the team will publish step-by-step upgrade instructions to ensure that the update process is as smooth as possible.
 
 ### Plugin Management
 

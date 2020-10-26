@@ -15,10 +15,10 @@ with altitude, heading, and speed information if available.
 
 <docgen-index>
 
-* [`getCurrentPosition(...)`](#getcurrentposition)
-* [`watchPosition(...)`](#watchposition)
-* [`clearWatch(...)`](#clearwatch)
-* [Interfaces](#interfaces)
+- [`getCurrentPosition(...)`](#getcurrentposition)
+- [`watchPosition(...)`](#watchposition)
+- [`clearWatch(...)`](#clearwatch)
+- [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -63,8 +63,7 @@ class GeolocationExample {
   }
 
   watchPosition() {
-    const wait = Geolocation.watchPosition({}, (position, err) => {
-    })
+    const wait = Geolocation.watchPosition({}, (position, err) => {});
   }
 }
 ```
@@ -88,8 +87,7 @@ Get the current GPS location of the device
 
 **Returns:** <code>Promise&lt;<a href="#geolocationposition">GeolocationPosition</a>&gt;</code>
 
---------------------
-
+---
 
 ### watchPosition(...)
 
@@ -107,8 +105,7 @@ can consume a large amount of energy. Be smart about listening only when you nee
 
 **Returns:** <code>string</code>
 
---------------------
-
+---
 
 ### clearWatch(...)
 
@@ -122,11 +119,9 @@ Clear a given watch
 | ------------- | ---------------------------- |
 | **`options`** | <code>{ id: string; }</code> |
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### GeolocationPosition
 
@@ -134,7 +129,6 @@ Clear a given watch
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | **`timestamp`** | <code>number</code>                                                                                                                                     | Creation timestamp for coords                           |
 | **`coords`**    | <code>{ latitude: number; longitude: number; accuracy: number; altitudeAccuracy?: number; altitude?: number; speed?: number; heading?: number; }</code> | The GPS coordinates along with the accuracy of the data |
-
 
 #### GeolocationOptions
 

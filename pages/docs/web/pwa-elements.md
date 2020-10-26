@@ -17,7 +17,7 @@ with your own UI.
 
 ## Installation
 
-To enable these controls, you must add `@ionic/pwa-elements` to your app. 
+To enable these controls, you must add `@ionic/pwa-elements` to your app.
 
 A typical installation involves importing the package and registering the elements, or adding a script tag to the `<head>` of the `index.html` for your app:
 
@@ -59,7 +59,8 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
   .catch(err => console.log(err));
 
 // Call the element loader after the platform has been bootstrapped
@@ -71,6 +72,12 @@ defineCustomElements(window);
 PWA Elements can be included through a script tag in your `index.html`. However, keep in mind this will not work for offline scenarios:
 
 ```html
-<script type="module" src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
-<script nomodule src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
+<script
+  type="module"
+  src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
+></script>
 ```
