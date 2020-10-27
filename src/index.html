@@ -14,84 +14,9 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="theme-color" content="#16161d" />
-
-    <script>
-      navigator.serviceWorker.getRegistrations().then(function (registrations) {
-        for (let registration of registrations) {
-          registration.unregister();
-        }
-      });
-    </script>
-    <script type="module" src="/build/site.esm.js"></script>
-    <script nomodule src="/build/site.js"></script>
-
-    <link
-      rel="preload"
-      href="/assets/fonts/inter/Inter-variable-ASCII-subset.woff2"
-      as="font"
-      type="font/woff2"
-    />
-    <link
-      rel="preload"
-      href="/assets/fonts/eina/eina-01-bold.woff2"
-      as="font"
-      type="font/woff2"
-    />
-    <link
-      rel="preload"
-      href="/assets/fonts/eina/eina-01-semibold.woff2"
-      as="font"
-      type="font/woff2"
-    />
-
-    <link rel="stylesheet" href="/build/site.css" />
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700"
-      rel="stylesheet"
-    />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
   </head>
   <body>
     <capacitor-site></capacitor-site>
-
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-    <script>
-      // Thank hubspot for "requiring" jQuery on their form events
-      window.jQuery =
-        window.jQuery ||
-        (() => ({
-          // these are all methods required by HubSpot
-          change: () => {},
-          trigger: () => {},
-        }));
-    </script>
-
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-44023830-42"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', 'UA-44023830-42');
-    </script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-    <!-- Start of HubSpot Embed Code -->
-    <script
-      type="text/javascript"
-      id="hs-script-loader"
-      async
-      defer
-      src="//js.hs-scripts.com/3776657.js"
-    ></script>
-    <!-- End of HubSpot Embed Code -->
   </body>
 </html>
