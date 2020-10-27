@@ -8,8 +8,8 @@ import {
   h,
   Listen,
 } from '@stencil/core';
-import Router from '../../router';
-import { importResource } from '../../utils/common';
+// import Router from '../../router';
+// import { importResource } from '../../utils/common';
 
 declare global {
   interface Window {
@@ -22,8 +22,8 @@ declare global {
   styleUrl: 'docs-search.scss',
 })
 export class DocsSearch implements ComponentInterface {
-  private siteContent: HTMLElement;
-  private contentWidth = 736;
+  // private siteContent: HTMLElement;
+  // private contentWidth = 736;
 
   @Element() el: HTMLElement;
   @Prop() placeholder = 'Search';
@@ -63,99 +63,91 @@ export class DocsSearch implements ComponentInterface {
   }
 
   componentDidLoad() {
-    importResource({ propertyName: 'docsearch', link: this.algolia.js }, () =>
-      this.setupSearch(),
-    );
-
-    this.el.addEventListener(
-      'focus',
-      () => {
-        this.siteContent =
-          document.querySelector('docs-component .measure-lg') ||
-          document.querySelector('section.ui-container');
-        this.getContentStats();
-      },
-      true,
-    );
+    // importResource({ propertyName: 'docsearch', link: this.algolia.js }, () =>
+    //   this.setupSearch(),
+    // );
+    // this.el.addEventListener(
+    //   'focus',
+    //   () => {
+    //     this.siteContent =
+    //       document.querySelector('docs-component .measure-lg') ||
+    //       document.querySelector('section.ui-container');
+    //     this.getContentStats();
+    //   },
+    //   true,
+    // );
   }
 
   disconnectedCallback() {
-    this.algolia.linkEl?.remove();
-
-    const scripts = document.head.querySelectorAll('script');
-    scripts.forEach(script => {
-      if ((script.src = this.algolia.js)) script.remove();
-    });
+    // this.algolia.linkEl?.remove();
+    // const scripts = document.head.querySelectorAll('script');
+    // scripts.forEach(script => {
+    //   if ((script.src = this.algolia.js)) script.remove();
+    // });
   }
 
   @Listen('resize', { target: 'window' })
   getContentStats() {
-    requestAnimationFrame(() => {
-      if (!this.siteContent) return;
-
-      let left =
-        this.siteContent.getBoundingClientRect().left -
-        this.el.getBoundingClientRect().left;
-      let width = this.siteContent.offsetWidth;
-
-      if (width > this.contentWidth) {
-        left -= (this.contentWidth - width) / 2;
-
-        this.searchStats = {
-          width: this.contentWidth.toString().concat('px'),
-          left: left.toString().concat('px'),
-        };
-      } else {
-        this.searchStats = {
-          width: width.toString().concat('px'),
-          left: left.toString().concat('px'),
-        };
-      }
-    });
+    // requestAnimationFrame(() => {
+    //   if (!this.siteContent) return;
+    //   let left =
+    //     this.siteContent.getBoundingClientRect().left -
+    //     this.el.getBoundingClientRect().left;
+    //   let width = this.siteContent.offsetWidth;
+    //   if (width > this.contentWidth) {
+    //     left -= (this.contentWidth - width) / 2;
+    //     this.searchStats = {
+    //       width: this.contentWidth.toString().concat('px'),
+    //       left: left.toString().concat('px'),
+    //     };
+    //   } else {
+    //     this.searchStats = {
+    //       width: width.toString().concat('px'),
+    //       left: left.toString().concat('px'),
+    //     };
+    //   }
+    // });
   }
 
   setupSearch() {
-    window.docsearch({
-      apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
-      indexName: `capacitorjs`,
-      inputSelector: `#input-${this.uniqueId}`,
-      debug: false, // Set debug to true if you want to inspect the dropdown
-      queryHook: () => {
-        if (this.input.isPristine) {
-          this.input.isPristine = false;
-
-          this.input.el = this.el.querySelector(
-            `#id-${this.uniqueId} input[name="search"]`,
-          ) as HTMLInputElement;
-
-          this.input.el.oninput = () => this.handleInput();
-
-          this.handleInput();
-          this.getContentStats();
-        }
-      },
-      handleSelected: (_, __, suggestion) => {
-        const url = suggestion.url.replace('https://capacitorjs.com', '');
-        this.clearSearch();
-        Router.push(url);
-      },
-    });
+    // window.docsearch({
+    //   apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
+    //   indexName: `capacitorjs`,
+    //   inputSelector: `#input-${this.uniqueId}`,
+    //   debug: false, // Set debug to true if you want to inspect the dropdown
+    //   queryHook: () => {
+    //     if (this.input.isPristine) {
+    //       this.input.isPristine = false;
+    //       this.input.el = this.el.querySelector(
+    //         `#id-${this.uniqueId} input[name="search"]`,
+    //       ) as HTMLInputElement;
+    //       this.input.el.oninput = () => this.handleInput();
+    //       this.handleInput();
+    //       this.getContentStats();
+    //     }
+    //   },
+    //   handleSelected: (_, __, suggestion) => {
+    //     const url = suggestion.url.replace('https://capacitorjs.com', '');
+    //     this.clearSearch();
+    //     Router.push(url);
+    //   },
+    // });
   }
 
   clearSearch = () => {
-    this.input.el.value = '';
-    this.input = {
-      ...this.input,
-      isEmpty: true,
-    };
+    // this.input.el.value = '';
+    // this.input = {
+    //   ...this.input,
+    //   isEmpty: true,
+    // };
   };
 
   handleInput() {
-    if (this.input.el.value === '') {
-      this.input = { ...this.input, isEmpty: true };
-    } else {
-      this.input = { ...this.input, isEmpty: false };
-    }
+    // if (this.input.el.value === '') {
+    //   this.input = { ...this.input, isEmpty: true };
+    // } else {
+    //   this.input = { ...this.input, isEmpty: false };
+    // }
   }
 
   render() {

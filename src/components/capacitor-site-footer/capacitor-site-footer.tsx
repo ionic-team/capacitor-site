@@ -6,7 +6,7 @@ import {
   Heading,
   Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { importResource } from '../../utils/common';
+// import { importResource } from '../../utils/common';
 
 declare global {
   interface Window {
@@ -29,29 +29,29 @@ declare global {
 })
 export class CapacitorSiteFooter {
   private uniqueFormId = `id-${Math.random().toString().replace('.', '')}`;
-  private hubspotCdn = '//js.hsforms.net/forms/v2.js';
+  // private hubspotCdn = '//js.hsforms.net/forms/v2.js';
 
   componentWillLoad() {
-    importResource(
-      { propertyName: 'hbspt', link: this.hubspotCdn },
-      this.createForm,
-    );
+    // importResource(
+    //   { propertyName: 'hbspt', link: this.hubspotCdn },
+    //   this.createForm,
+    // );
   }
 
   disconnectedCallback() {
-    const scripts = document.head.querySelectorAll('script');
-    scripts.forEach(script => {
-      if ((script.src = this.hubspotCdn)) script.remove();
-    });
+    // const scripts = document.head.querySelectorAll('script');
+    // scripts.forEach(script => {
+    //   if ((script.src = this.hubspotCdn)) script.remove();
+    // });
   }
 
   createForm = () => {
-    window.hbspt.forms.create({
-      portalId: '3776657',
-      formId: 'c8d355e3-a5ad-4f91-a2c0-c9dc93e10658',
-      cssClass: '',
-      target: `#${this.uniqueFormId}`,
-    });
+    // window.hbspt.forms.create({
+    //   portalId: '3776657',
+    //   formId: 'c8d355e3-a5ad-4f91-a2c0-c9dc93e10658',
+    //   cssClass: '',
+    //   target: `#${this.uniqueFormId}`,
+    // });
   };
 
   render() {
