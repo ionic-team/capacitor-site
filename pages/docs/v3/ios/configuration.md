@@ -12,7 +12,7 @@ contributors:
 
 The `Info.plist` file is the main configuration file for iOS apps. You may need to edit it whenever a Capacitor plugin requires new settings or permissions.
 
-To modify it, open your project in Xcode (`npx cap open ios`), select the **App** project and the **App** target, and click the **Info** tab.
+To modify it, [open your project in Xcode](/docs/ios#opening-the-ios-project), select the **App** project and the **App** target, and click the **Info** tab.
 
 ![Xcode info editor](/assets/img/docs/ios/xcode-info-editor.png)
 
@@ -34,7 +34,7 @@ Entitlements are used to enable key features that your app may need. You may nee
 
 Unlike other configuration options and usage descriptions, entitlements are _not_ configured in `Info.plist`.
 
-To add a new entitlement, open your app in Xcode (`npx cap open ios`), select the **App** project and the **App** target, click **Signing & Capabilities** in the tab bar, and then click the **+ Capability** button. See [this article](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) for more information about iOS capabilities.
+To add a new entitlement, [open your app in Xcode](/docs/ios#opening-the-ios-project), select the **App** project and the **App** target, click **Signing & Capabilities** in the tab bar, and then click the **+ Capability** button. See [this article](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) for more information about iOS capabilities.
 
 ![Xcode Capabilities](/assets/img/docs/ios/xcode-capabilities.png)
 
@@ -42,7 +42,7 @@ To add a new entitlement, open your app in Xcode (`npx cap open ios`), select th
 
 You can't rename the `App` directory, but you can set the name of your app by renaming the **App** target.
 
-To rename the **App** target, open your project in Xcode (`npx cap open ios`), select the **App** project, and double-click the **App** target.
+To rename the **App** target, [open your project in Xcode](/docs/ios#opening-the-ios-project), select the **App** project, and double-click the **App** target.
 
 ![Xcode Target](/assets/img/docs/ios/xcode-target.png)
 
