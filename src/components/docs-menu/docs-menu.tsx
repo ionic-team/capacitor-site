@@ -28,7 +28,7 @@ export class SiteMenu implements ComponentInterface {
   @State() expands: { [key: string]: number[] } = {
     docs: [],
     plugins: [2],
-    cli: [],
+    cli: [1],
   };
 
   @State() showOverlay = false;

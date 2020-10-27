@@ -1,18 +1,18 @@
 ---
-title: CLI Commands
-description: Capacitor CLI command reference list
+title: CLI Reference
+description: Reference documentation for the Capacitor CLI
 contributors:
   - dotNetkow
 ---
 
 # Capacitor CLI Reference
 
-The Capacitor command-line interface (CLI) tool is used to develop Capacitor apps. View installation details [here](/docs/getting-started).
+The Capacitor command-line interface (CLI) tool is used to develop Capacitor apps.
 
 ## CLI
 
 ```bash
-npx cap [-V] [-h]
+npx cap [-V] [-h] [<command>]
 ```
 
 <strong>Options:</strong>
@@ -20,7 +20,7 @@ npx cap [-V] [-h]
 - `-V, --version` (optional): Output the version number
 - `-h, --help` (optional): Output usage information. Can be used with individual commands too.
 
-## Command List
+### Command List
 
 View all available CLI commands and options.
 
@@ -30,3 +30,9 @@ View all available CLI commands and options.
 - [`open`](/docs/cli/open)
 - [`sync`](/docs/cli/sync)
 - [`update`](/docs/cli/update)
+
+## Additional Resources
+
+[Learn how to install the Capacitor CLI &#8250;](/docs/getting-started)
+
+[Learn about the CLI workflow &#8250;](/docs/basics/workflow)

@@ -1,13 +1,13 @@
 ---
-title: CLI Command - cap opy
-description: Capacitor CLI command - cap opy
+title: CLI Command - cap open
+description: Capacitor CLI command - cap open
 contributors:
   - dotNetkow
 ---
 
-# Capacitor CLI - cap opy
+# Capacitor CLI - cap open
 
-Opens the native project workspace in the specified native IDE (Xcode for iOS, Android Studio for Android). Once open, use the native IDEs to build, simulate, and run your app on a device.
+Opens the native project workspace in the specified native IDE (Xcode for iOS, Android Studio for Android).
 
 ```bash
 npx cap open <platform>

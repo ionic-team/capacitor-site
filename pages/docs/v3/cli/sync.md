@@ -7,9 +7,7 @@ contributors:
 
 # Capacitor CLI - cap sync
 
-## Sync
-
-Run the [Copy](#copy) and [Update](#update) commands together.
+This command runs [`copy`](/docs/cli/copy) and then [`update`](/docs/cli/update).
 
 ```bash
 npx cap sync [options] [platform]
