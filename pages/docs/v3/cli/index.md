@@ -5,11 +5,11 @@ contributors:
   - dotNetkow
 ---
 
-# Capacitor CLI Reference
+# Capacitor CLI
 
 The Capacitor command-line interface (CLI) tool is used to develop Capacitor apps.
 
-## CLI
+## CLI Reference
 
 ```bash
 npx cap [-V] [-h] [<command>]
