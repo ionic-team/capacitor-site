@@ -1,8 +1,12 @@
 # Plugins Table of Contents (v3)
 
-- [Introduction](index.md)
-- Official Plugins
-  - [Introduction](../apis/index.md)
+- Overview
+  - [Introduction](index.md)
+  - [Official Plugins](../apis/index.md)
+  - [Community Plugins](community.md)
+  - [Cordova Plugins](cordova.md)
+  - [Enterprise Plugins](enterprise.md)
+- APIs
   - [Action Sheet](../apis/action-sheet.md)
   - [Browser](../apis/browser.md)
   - [Clipboard](../apis/clipboard.md)
@@ -18,9 +22,6 @@
   - [Storage](../apis/storage.md)
   - [Text Zoom](../apis/text-zoom.md)
   - [Toast](../apis/toast.md)
-- [Community Plugins](community.md)
-- [Cordova Plugins](cordova.md)
-- [Enterprise Plugins](enterprise.md)
 - Creating Plugins
   - [Overview](creating-plugins.md)
   - [Development Workflow](workflow.md)
