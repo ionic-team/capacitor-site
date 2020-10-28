@@ -1,7 +1,6 @@
 export const importResource = (
   { propertyName, link }: { propertyName: string; link: string },
   callback: () => any,
-  target: HTMLElement = document.body,
 ) => {
   if (window.hasOwnProperty(propertyName)) return callback();
 
@@ -17,8 +16,10 @@ export const importResource = (
   const script = document.createElement('script');
   script.src = link;
   script.type = 'text/javascript';
+  script.setAttribute('async', '');
+  script.setAttribute('defer', '');
   script.onload = callback;
   script.onerror = () => console.error(`error loading resource: ${link}`);
 
-  target.appendChild(script);
+  document.body.appendChild(script);
 };
