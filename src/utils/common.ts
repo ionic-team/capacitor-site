@@ -22,3 +22,7 @@ export const importResource = (
 
   target.appendChild(script);
 };
+
+export const pixelize = (num: number) => {
+  return num.toString().concat('px');
+}

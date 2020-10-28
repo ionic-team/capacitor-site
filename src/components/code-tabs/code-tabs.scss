@@ -1,0 +1,86 @@
+@use '~prismjs/themes/prism-tomorrow.css';
+
+:host {
+  display: block;
+  max-width: 560px;
+  min-width: 0;
+}
+
+nav {
+  padding: 16px;
+}
+
+code-snippet {
+  height: 100%;
+}
+
+.tabs-wrapper {
+  overflow: auto;
+  position: relative;
+  display: flex;
+
+
+  button {
+    color: var(--c-indigo-90);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: -0.02em;
+
+    cursor: pointer;
+    background: transparent;
+    border-radius: 1000px;
+    padding: 10px 12px;
+    height: 34px;
+
+    border: none;
+    font-family: inherit;
+
+    + button {
+      margin-inline-start: 6px;
+    }
+
+    transition: color .2s ease-out;
+
+    &:active, &:focus {
+      outline: 2px solid rgba(0,0,0,0);
+    }
+  }
+  button.active {
+    color: #fff;
+  }
+
+  &::after {
+    content: '';
+    z-index: -1;
+    background: var(--c-capacitor-blue);
+    position: absolute;
+    left: var(--tab-left);
+    height: 34px;
+    width: var(--tab-width);
+    border-radius: 1000px;
+
+    transition: width .2s cubic-bezier(.22,.62,.04,.93), left .2s cubic-bezier(.22,.62,.04,.93);
+  }
+}
+
+.background {
+  overflow: hidden;
+  border-radius: 16px;
+  background: #00233A;
+}
+
+.code-wrapper {
+  display: flex;
+  background: #00233A;
+  border-radius: 16px;
+
+  position: relative;
+  left: var(--code-left);
+
+  transition: left 500ms cubic-bezier(0.4,0,0.2,1);
+
+  article {
+    min-width: 100%;
+  }
+}

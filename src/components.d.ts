@@ -40,6 +40,13 @@ export namespace Components {
         "code": string;
         "language": string;
     }
+    interface CodeTabs {
+        "data": {
+    tabs: string[]
+    languages: string[]
+    code: string[]
+  };
+    }
     interface CommunityPage {
         "data": any;
     }
@@ -155,6 +162,12 @@ declare global {
         prototype: HTMLCodeSnippetElement;
         new (): HTMLCodeSnippetElement;
     };
+    interface HTMLCodeTabsElement extends Components.CodeTabs, HTMLStencilElement {
+    }
+    var HTMLCodeTabsElement: {
+        prototype: HTMLCodeTabsElement;
+        new (): HTMLCodeTabsElement;
+    };
     interface HTMLCommunityPageElement extends Components.CommunityPage, HTMLStencilElement {
     }
     var HTMLCommunityPageElement: {
@@ -268,6 +281,7 @@ declare global {
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
         "code-snippet": HTMLCodeSnippetElement;
+        "code-tabs": HTMLCodeTabsElement;
         "community-page": HTMLCommunityPageElement;
         "contributor-list": HTMLContributorListElement;
         "cordova-page": HTMLCordovaPageElement;
@@ -320,6 +334,13 @@ declare namespace LocalJSX {
     interface CodeSnippet {
         "code"?: string;
         "language"?: string;
+    }
+    interface CodeTabs {
+        "data"?: {
+    tabs: string[]
+    languages: string[]
+    code: string[]
+  };
     }
     interface CommunityPage {
         "data"?: any;
@@ -385,6 +406,7 @@ declare namespace LocalJSX {
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
         "code-snippet": CodeSnippet;
+        "code-tabs": CodeTabs;
         "community-page": CommunityPage;
         "contributor-list": ContributorList;
         "cordova-page": CordovaPage;
@@ -418,6 +440,7 @@ declare module "@stencil/core" {
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
+            "code-tabs": LocalJSX.CodeTabs & JSXBase.HTMLAttributes<HTMLCodeTabsElement>;
             "community-page": LocalJSX.CommunityPage & JSXBase.HTMLAttributes<HTMLCommunityPageElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
             "cordova-page": LocalJSX.CordovaPage & JSXBase.HTMLAttributes<HTMLCordovaPageElement>;
