@@ -16,6 +16,7 @@ If you find an issue with an existing Cordova plugin, please [let us know](https
 - cordova-plugin-add-swift-support (not needed, Capacitor has built in Swift support)
 - cordova-plugin-admobpro ([see details](https://github.com/ionic-team/capacitor/issues/1101))
 - cordova-plugin-braintree ([see details](https://github.com/ionic-team/capacitor/issues/1415))
+- cordova-plugin-code-push ([see details](https://github.com/microsoft/code-push/issues/615))
 - cordova-plugin-compat (not needed)
 - cordova-plugin-console (not needed, Capacitor has its own)
 - cordova-plugin-crosswalk-webview (Capacitor doesn't allow to change the webview)
