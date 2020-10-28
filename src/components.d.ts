@@ -332,7 +332,7 @@ declare namespace LocalJSX {
     interface CapacitorSiteFooter {
     }
     interface CodeSnippet {
-        "code"?: string;
+        "code": string;
         "language"?: string;
     }
     interface CodeTabs {
