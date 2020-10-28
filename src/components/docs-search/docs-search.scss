@@ -1,4 +1,5 @@
 @use '../../global/variables' as *;
+@use './algolia';
 
 docs-search {
   display: flex;
