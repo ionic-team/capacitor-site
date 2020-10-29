@@ -45,10 +45,11 @@ export class CodeSnippet {
       switch(env.language) {
         case 'shell-session':
           const lines = env.code.split('\n')
+
           const code = lines.map(line => {
-            return line[0].trim() === '#' || ''
+            return line.trim() === '' || line.trim()[0] === '#'
               ? `<span class="token output">${line}</span>\n`
-              : `<span class="dollar-sign token output">${line}</span>\n`
+              : `<span class="dollar-sign token output">${line}</span>\n`         
           });         
           env.highlightedCode = code.join('');
           break;

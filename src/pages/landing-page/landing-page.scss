@@ -283,10 +283,6 @@ em {
       @media screen and (max-width: $screen-xs-max) {
         flex-basis: auto;
       }
-
-      .ui-tab-bar__button {
-        font-family: var(--f-family-text);
-      }
     }
 
     .platforms {

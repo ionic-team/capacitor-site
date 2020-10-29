@@ -6,7 +6,6 @@ import {
   Paragraph,
   Heading,
 } from '@ionic-internal/ionic-ds';
-import { Tabs, Tab, TabBar, TabBarButton } from '../../components/tabs';
 import { href } from '@stencil/router';
 
 @Component({
@@ -200,26 +199,11 @@ cordova-res android --skip-config --copy
           </Paragraph>
         </div>
         <div class="code-panel">
-          <Tabs>
-            <TabBar>
-              <TabBarButton
-                selected={this.selectedCodeTab === 'before'}
-                tabSelect={() => (this.selectedCodeTab = 'before')}
-              >
-                Cordova Camera
-              </TabBarButton>
-              <TabBarButton
-                selected={this.selectedCodeTab === 'after'}
-                tabSelect={() => (this.selectedCodeTab = 'after')}
-              >
-                Capacitor Camera
-              </TabBarButton>
-            </TabBar>
-            <Tab selected={this.selectedCodeTab === 'before'}>
-              <code-snippet
-                style={{ '--border-radius': '0 0 8px 8px' }}
-                language="typescript"
-                code={`
+          <code-tabs
+            data={{
+              tabs: ['Cordova Camera', 'Capacitor Camera'],
+              languages: ['typescript'],
+              code: [`
 import { Camera } from '@ionic-native/camera/ngx';
 
 constructor(private camera: Camera) {}
@@ -230,14 +214,8 @@ const photo = await this.camera.getPicture({
   allowEdit: true,
   saveToPhotoAlbum: true
 });
-`}
-              />
-            </Tab>
-            <Tab selected={this.selectedCodeTab === 'after'}>
-              <code-snippet
-                style={{ '--border-radius': '0 0 8px 8px' }}
-                language="typescript"
-                code={`
+`, //----------------------------------
+`
 import { Plugins } from '@capacitor/core';
 
 const { Camera } = Plugins;
@@ -248,10 +226,9 @@ const photo = await Camera.getPhoto({
   allowEditing: true,
   saveToGallery: true
 });
-`}
-              />
-            </Tab>
-          </Tabs>
+`]
+            }}
+          />
         </div>
       </article>
       <article class="step">
