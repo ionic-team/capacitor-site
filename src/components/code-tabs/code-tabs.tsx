@@ -4,21 +4,18 @@ import { pixelize } from 'src/utils/common';
 class MyMap extends Map<number, HTMLElement> {
   constructor(callback: (target: HTMLElement) => any) {
     super();
-    this.set = (key, value) => {      
+    this.set = (key, value) => {    
       this[key] = value;
-      if (key === 0) callback(value);
+      if (key !== 0) return this;
+
+      callback(value);
 
       if (value.offsetWidth > 0) {
-        this.set = () => {
-          this[key] = value;
-          return this;
-        }
-      }
-      return this;
+        this.set = super.set;
+      }      
     }
   }
 }
-
 
 @Component({
   tag: 'code-tabs',
@@ -27,7 +24,6 @@ class MyMap extends Map<number, HTMLElement> {
 })
 export class CodeTabs {
   private tabs: Map<number, HTMLElement> = new MyMap(this.setActive.bind(this));
-
   private codeContainer: HTMLElement;
 
   @Element() elm: HTMLElement;
@@ -56,7 +52,7 @@ export class CodeTabs {
 
   async setActive(target: HTMLElement) {
     if (Build.isServer) return;
-    
+
     await customElements.whenDefined('code-tabs');
 
     this.codeContainer.style.willChange = 'left';
