@@ -337,9 +337,9 @@ declare namespace LocalJSX {
     }
     interface CodeTabs {
         "data"?: {
-    tabs: string[]
-    languages: string[]
-    code: string[]
+    tabs: string[];
+    languages: string[];
+    code: string[];
   };
     }
     interface CommunityPage {

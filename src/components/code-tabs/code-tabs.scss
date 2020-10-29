@@ -23,7 +23,7 @@ code-snippet {
     color: var(--c-indigo-90);
     font-weight: 500;
     font-size: 14px;
-    line-height: 160%;
+    line-height: 100%;
     letter-spacing: -0.02em;
 
     cursor: pointer;
@@ -82,7 +82,6 @@ code-snippet {
 .code-wrapper {
   display: flex;
   background: #00233a;
-  border-radius: 16px;
 
   position: relative;
   left: var(--code-left);
