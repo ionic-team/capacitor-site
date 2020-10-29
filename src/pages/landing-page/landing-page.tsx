@@ -196,7 +196,7 @@ export class LandingPage {
       />,
       <code-tabs
         data={{
-          tabs: ['Camera', 'Geolocation', 'Notifications', 'Custom'],
+          tabs: ['Notifications', 'Geolocation', 'Camera', 'Custom'],
           languages: ['typescript'],
           code: [
             `
