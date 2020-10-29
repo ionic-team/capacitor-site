@@ -203,7 +203,8 @@ cordova-res android --skip-config --copy
             data={{
               tabs: ['Cordova Camera', 'Capacitor Camera'],
               languages: ['typescript'],
-              code: [`
+              code: [
+                `
 import { Camera } from '@ionic-native/camera/ngx';
 
 constructor(private camera: Camera) {}
@@ -215,7 +216,7 @@ const photo = await this.camera.getPicture({
   saveToPhotoAlbum: true
 });
 `, //----------------------------------
-`
+                `
 import { Plugins } from '@capacitor/core';
 
 const { Camera } = Plugins;
@@ -226,7 +227,8 @@ const photo = await Camera.getPhoto({
   allowEditing: true,
   saveToGallery: true
 });
-`]
+`,
+              ],
             }}
           />
         </div>

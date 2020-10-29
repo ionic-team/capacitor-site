@@ -41,12 +41,9 @@ export class DocsSearch implements ComponentInterface {
     left?: string;
   } = {};
 
-  
-
   componentDidLoad() {
-    importResource(
-      { propertyName: 'docsearch', link: algolia },
-      () => this.setupSearch(),
+    importResource({ propertyName: 'docsearch', link: algolia }, () =>
+      this.setupSearch(),
     );
 
     this.el.addEventListener(

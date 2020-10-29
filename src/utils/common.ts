@@ -1,16 +1,16 @@
 export const importResource = (
-  { 
+  {
     propertyName,
     link,
     target = document.body,
     defer = true,
-    async = true
+    async = true,
   }: {
     propertyName?: string;
-    link: string,
-    target?: HTMLElement,
-    async?: boolean,
-    defer?: boolean
+    link: string;
+    target?: HTMLElement;
+    async?: boolean;
+    defer?: boolean;
   },
   callback: () => any,
 ) => {
@@ -20,7 +20,7 @@ export const importResource = (
     if (script.src === link) {
       script.addEventListener('load', callback);
       return true;
-    }    
+    }
   });
 
   if (scriptAlreadyLoading) return;
@@ -38,17 +38,15 @@ export const importResource = (
 
 export const pixelize = (num: number) => {
   return num.toString().concat('px');
-}
+};
 
 const hasGlobalProperty = (property: string) => {
   if (property && property.includes('.')) {
     const propertyList = property.split('.');
     return !!propertyList.reduce((prev, cur) => {
-      return prev.hasOwnProperty(cur)
-        ? prev[cur]
-        : null;
-    }, window)
+      return prev.hasOwnProperty(cur) ? prev[cur] : null;
+    }, window);
   }
 
   return window.hasOwnProperty(property);
-} 
+};

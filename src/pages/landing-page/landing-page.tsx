@@ -198,7 +198,8 @@ export class LandingPage {
         data={{
           tabs: ['Camera', 'Geolocation', 'Notifications', 'Custom'],
           languages: ['typescript'],
-          code: [`
+          code: [
+            `
 import { Plugins } from '@capacitor/core';
 const { LocalNotifications } = Plugins;
 
@@ -216,7 +217,7 @@ LocalNotifications.schedule({
     }
   ]
 });`, //-----------------------------------
-`
+            `
 import { Plugins } from '@capacitor/core';
 const { Geolocation } = Plugins;
 // get the users current position
@@ -226,15 +227,15 @@ const position = await Geolocation.getCurrentPosition();
 const latitude = position.coords.latitude;
 const longitude = position.coords.longitude;
 `,
-`
+            `
 import { Plugins } from '@capacitor/core';
 const { Camera } = Plugins;
 // Take a picture or video, or load from the library
 const picture = await Camera.getPicture({
   encodingType: this.camera.EncodingType.JPEG
 });
-`,  //-----------------------------------
-`
+`, //-----------------------------------
+            `
 import Foundation
 import Capacitor
 
@@ -250,115 +251,116 @@ public class MyAwesomePlugin: CAPPlugin {
   // ....
   }
 }
-`]
+`,
+          ],
         }}
       />,
-//       <Tabs>
-//         <TabBar>
-//           <TabBarButton
-//             selected={this.selectedCodeTab === 'notifications'}
-//             tabSelect={() => (this.selectedCodeTab = 'notifications')}
-//           >
-//             Notifications
-//           </TabBarButton>
-//           <TabBarButton
-//             selected={this.selectedCodeTab === 'geolocation'}
-//             tabSelect={() => (this.selectedCodeTab = 'geolocation')}
-//           >
-//             Geolocation
-//           </TabBarButton>
-//           <TabBarButton
-//             selected={this.selectedCodeTab === 'camera'}
-//             tabSelect={() => (this.selectedCodeTab = 'camera')}
-//           >
-//             Camera
-//           </TabBarButton>
-//           <TabBarButton
-//             selected={this.selectedCodeTab === 'custom'}
-//             tabSelect={() => (this.selectedCodeTab = 'custom')}
-//           >
-//             Custom
-//           </TabBarButton>
-//         </TabBar>
-//         <Tab selected={this.selectedCodeTab === 'notifications'}>
-//           <code-snippet
-//             style={{ '--border-radius': '0 0 8px 8px' }}
-//             language="typescript"
-//             code={`
-// import { Plugins } from '@capacitor/core';
-// const { LocalNotifications } = Plugins;
+      //       <Tabs>
+      //         <TabBar>
+      //           <TabBarButton
+      //             selected={this.selectedCodeTab === 'notifications'}
+      //             tabSelect={() => (this.selectedCodeTab = 'notifications')}
+      //           >
+      //             Notifications
+      //           </TabBarButton>
+      //           <TabBarButton
+      //             selected={this.selectedCodeTab === 'geolocation'}
+      //             tabSelect={() => (this.selectedCodeTab = 'geolocation')}
+      //           >
+      //             Geolocation
+      //           </TabBarButton>
+      //           <TabBarButton
+      //             selected={this.selectedCodeTab === 'camera'}
+      //             tabSelect={() => (this.selectedCodeTab = 'camera')}
+      //           >
+      //             Camera
+      //           </TabBarButton>
+      //           <TabBarButton
+      //             selected={this.selectedCodeTab === 'custom'}
+      //             tabSelect={() => (this.selectedCodeTab = 'custom')}
+      //           >
+      //             Custom
+      //           </TabBarButton>
+      //         </TabBar>
+      //         <Tab selected={this.selectedCodeTab === 'notifications'}>
+      //           <code-snippet
+      //             style={{ '--border-radius': '0 0 8px 8px' }}
+      //             language="typescript"
+      //             code={`
+      // import { Plugins } from '@capacitor/core';
+      // const { LocalNotifications } = Plugins;
 
-// LocalNotifications.schedule({
-//   notifications: [
-//     {
-//       title: "On sale",
-//       body: "Widgets are 10% off. Act fast!",
-//       id: 1,
-//       schedule: { at: new Date(Date.now() + 1000 * 5) },
-//       sound: null,
-//       attachments: null,
-//       actionTypeId: "",
-//       extra: null
-//     }
-//   ]
-// });
-// `}
-//           />
-//         </Tab>
-//         <Tab selected={this.selectedCodeTab === 'geolocation'}>
-//           <code-snippet
-//             style={{ '--border-radius': '0 0 8px 8px' }}
-//             language="typescript"
-//             code={`
-// import { Plugins } from '@capacitor/core';
-// const { Geolocation } = Plugins;
-// // get the users current position
-// const position = await Geolocation.getCurrentPosition();
+      // LocalNotifications.schedule({
+      //   notifications: [
+      //     {
+      //       title: "On sale",
+      //       body: "Widgets are 10% off. Act fast!",
+      //       id: 1,
+      //       schedule: { at: new Date(Date.now() + 1000 * 5) },
+      //       sound: null,
+      //       attachments: null,
+      //       actionTypeId: "",
+      //       extra: null
+      //     }
+      //   ]
+      // });
+      // `}
+      //           />
+      //         </Tab>
+      //         <Tab selected={this.selectedCodeTab === 'geolocation'}>
+      //           <code-snippet
+      //             style={{ '--border-radius': '0 0 8px 8px' }}
+      //             language="typescript"
+      //             code={`
+      // import { Plugins } from '@capacitor/core';
+      // const { Geolocation } = Plugins;
+      // // get the users current position
+      // const position = await Geolocation.getCurrentPosition();
 
-// // grab latitude & longitude
-// const latitude = position.coords.latitude;
-// const longitude = position.coords.longitude;
-// `}
-//           />
-//         </Tab>
-//         <Tab selected={this.selectedCodeTab === 'camera'}>
-//           <code-snippet
-//             style={{ '--border-radius': '0 0 8px 8px' }}
-//             language="typescript"
-//             code={`
-// import { Plugins } from '@capacitor/core';
-// const { Camera } = Plugins;
-// // Take a picture or video, or load from the library
-// const picture = await Camera.getPicture({
-//   encodingType: this.camera.EncodingType.JPEG
-// });
-// `}
-//           />
-//         </Tab>
-//         <Tab selected={this.selectedCodeTab === 'custom'}>
-//           <code-snippet
-//             style={{ '--border-radius': '0 0 8px 8px' }}
-//             language="typescript"
-//             code={`
-// import Foundation
-// import Capacitor
+      // // grab latitude & longitude
+      // const latitude = position.coords.latitude;
+      // const longitude = position.coords.longitude;
+      // `}
+      //           />
+      //         </Tab>
+      //         <Tab selected={this.selectedCodeTab === 'camera'}>
+      //           <code-snippet
+      //             style={{ '--border-radius': '0 0 8px 8px' }}
+      //             language="typescript"
+      //             code={`
+      // import { Plugins } from '@capacitor/core';
+      // const { Camera } = Plugins;
+      // // Take a picture or video, or load from the library
+      // const picture = await Camera.getPicture({
+      //   encodingType: this.camera.EncodingType.JPEG
+      // });
+      // `}
+      //           />
+      //         </Tab>
+      //         <Tab selected={this.selectedCodeTab === 'custom'}>
+      //           <code-snippet
+      //             style={{ '--border-radius': '0 0 8px 8px' }}
+      //             language="typescript"
+      //             code={`
+      // import Foundation
+      // import Capacitor
 
-// // Custom platform code, easily exposed to your web app
-// // through Capacitor plugin APIs. Build APIs that work
-// // across iOS, Android, and the web!
-// @objc(MyAwesomePlugin)
-// public class MyAwesomePlugin: CAPPlugin {
+      // // Custom platform code, easily exposed to your web app
+      // // through Capacitor plugin APIs. Build APIs that work
+      // // across iOS, Android, and the web!
+      // @objc(MyAwesomePlugin)
+      // public class MyAwesomePlugin: CAPPlugin {
 
-//   @objc public func doNative(_ call: CAPPluginCall) {
-//   let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
+      //   @objc public func doNative(_ call: CAPPluginCall) {
+      //   let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
 
-//   // ....
-//   }
-// }
-// `}
-//           />
-//         </Tab>
-//       </Tabs>,
+      //   // ....
+      //   }
+      // }
+      // `}
+      //           />
+      //         </Tab>
+      //       </Tabs>,
     ];
 
     const dimensions = ['22x26', '27x23'];
@@ -369,9 +371,9 @@ public class MyAwesomePlugin: CAPPlugin {
           <PrismicRichText richText={started} />
         </div>
         {started__list.map(({ number, title, text }, i) => (
-          <div class="step">            
-            <sup class="ui-heading-6">{number}</sup>    
-            <div class="heading-panel-wrapper">        
+          <div class="step">
+            <sup class="ui-heading-6">{number}</sup>
+            <div class="heading-panel-wrapper">
               <div class="heading-wrapper">
                 <Heading>{title}</Heading>
                 {i === 1 ? (
@@ -385,10 +387,8 @@ public class MyAwesomePlugin: CAPPlugin {
                     ))}
                   </div>
                 ) : null}
-                {text
-                  ? <Paragraph>{text}</Paragraph>
-                  : null }
-              </div>            
+                {text ? <Paragraph>{text}</Paragraph> : null}
+              </div>
               <div class="panel">{panels[i]}</div>
             </div>
           </div>

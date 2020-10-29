@@ -3,7 +3,6 @@ import { importResource } from 'src/utils/common';
 
 // use an exact version so the cdn response is heavily cached
 
-
 @Component({
   tag: 'code-snippet',
   styleUrl: 'code-snippet.scss',
@@ -19,47 +18,44 @@ export class CodeSnippet {
 
   componentWillLoad() {
     importResource(
-      { propertyName: 'Prism',
-        link: `${this.prismCdn}/prism.min.js`
-      },
-      this.loadInPrismLanguage
-    )
+      { propertyName: 'Prism', link: `${this.prismCdn}/prism.min.js` },
+      this.loadInPrismLanguage,
+    );
   }
 
   loadInPrismLanguage = () => {
     importResource(
       {
         propertyName: `Prism.languages.${this.language}`,
-        link: `${this.prismCdn}/components/prism-${this.language}.min.js`
+        link: `${this.prismCdn}/components/prism-${this.language}.min.js`,
       },
-      this.highlightCode
-    )
-  }
+      this.highlightCode,
+    );
+  };
 
   highlightCode = async () => {
     if (Build.isServer) return;
 
-    await customElements.whenDefined('code-snippet')
+    await customElements.whenDefined('code-snippet');
 
-    window.Prism.hooks.add('before-insert', (env) => {
-      switch(env.language) {
+    window.Prism.hooks.add('before-insert', env => {
+      switch (env.language) {
         case 'shell-session':
-          const lines = env.code.split('\n')
+          const lines = env.code.split('\n');
 
           const code = lines.map(line => {
             return line.trim() === '' || line.trim()[0] === '#'
               ? `<span class="token output">${line}</span>\n`
-              : `<span class="dollar-sign token output">${line}</span>\n`         
-          });         
+              : `<span class="dollar-sign token output">${line}</span>\n`;
+          });
           env.highlightedCode = code.join('');
           break;
         default:
-      }      
+      }
     });
 
-    window.Prism.highlightElement(this.codeEl, false);    
-  }
-
+    window.Prism.highlightElement(this.codeEl, false);
+  };
 
   render() {
     if (!this.code) {
@@ -68,11 +64,7 @@ export class CodeSnippet {
     return (
       <Host>
         <pre class={`language-${this.language}`}>
-          <code
-            ref={e => (this.codeEl = e)}
-          >
-            {this.code.trim()}
-          </code>
+          <code ref={e => (this.codeEl = e)}>{this.code.trim()}</code>
         </pre>
       </Host>
     );

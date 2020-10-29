@@ -19,7 +19,6 @@ code-snippet {
   position: relative;
   display: flex;
 
-
   button {
     color: var(--c-indigo-90);
     font-weight: 500;
@@ -40,14 +39,15 @@ code-snippet {
       margin-inline-start: 6px;
     }
 
-    transition: color .2s ease-out, opacity .2s ease-out;
+    transition: color 0.2s ease-out, opacity 0.2s ease-out;
 
-    &:active, &:focus {
-      outline: 2px solid rgba(0,0,0,0);
+    &:active,
+    &:focus {
+      outline: 2px solid rgba(0, 0, 0, 0);
     }
 
     &:hover {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
   button.active {
@@ -68,25 +68,26 @@ code-snippet {
     width: var(--tab-width);
     border-radius: 1000px;
 
-    transition: width .2s cubic-bezier(.22,.62,.04,.93), left .2s cubic-bezier(.22,.62,.04,.93);
+    transition: width 0.2s cubic-bezier(0.22, 0.62, 0.04, 0.93),
+      left 0.2s cubic-bezier(0.22, 0.62, 0.04, 0.93);
   }
 }
 
 .background {
   overflow: hidden;
   border-radius: 16px;
-  background: #00233A;
+  background: #00233a;
 }
 
 .code-wrapper {
   display: flex;
-  background: #00233A;
+  background: #00233a;
   border-radius: 16px;
 
   position: relative;
   left: var(--code-left);
 
-  transition: left 500ms cubic-bezier(0.4,0,0.2,1);
+  transition: left 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
   article {
     min-width: 100%;

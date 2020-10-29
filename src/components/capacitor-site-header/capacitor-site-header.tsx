@@ -36,7 +36,6 @@ export class DocsHeader implements ComponentInterface {
     this.createRouteListener();
   }
 
-
   createHeaderObserver() {
     const opts = {
       root: document.body,
