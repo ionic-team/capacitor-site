@@ -40,14 +40,22 @@ code-snippet {
       margin-inline-start: 6px;
     }
 
-    transition: color .2s ease-out;
+    transition: color .2s ease-out, opacity .2s ease-out;
 
     &:active, &:focus {
       outline: 2px solid rgba(0,0,0,0);
     }
+
+    &:hover {
+      opacity: .7;
+    }
   }
   button.active {
     color: #fff;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &::after {
