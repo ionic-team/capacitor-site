@@ -38,7 +38,7 @@ export class CodeSnippet {
 
   highlightCode = async () => {
     if (Build.isServer) return;
-    
+
     await customElements.whenDefined('code-snippet')
 
     window.Prism.hooks.add('before-insert', (env) => {
@@ -46,7 +46,9 @@ export class CodeSnippet {
         case 'shell-session':
           const lines = env.code.split('\n')
           const code = lines.map(line => {
-            return `<span class="dollar-sign token output">${line}</span>\n`
+            return line[0].trim() === '#' || ''
+              ? `<span class="token output">${line}</span>\n`
+              : `<span class="dollar-sign token output">${line}</span>\n`
           });         
           env.highlightedCode = code.join('');
           break;
