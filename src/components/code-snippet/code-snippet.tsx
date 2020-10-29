@@ -1,9 +1,7 @@
-import { Component, Host, h, Prop, Build } from '@stencil/core';
-
-const loadedPrismLangs: { [lang: string]: Promise<void> } = {};
+import { Component, Host, h, Prop, Element, Build } from '@stencil/core';
+import { importResource } from 'src/utils/common';
 
 // use an exact version so the cdn response is heavily cached
-const prismCdn = `https://cdn.jsdelivr.net/npm/prismjs@1.21.0`;
 
 @Component({
   tag: 'code-snippet',
@@ -11,46 +9,53 @@ const prismCdn = `https://cdn.jsdelivr.net/npm/prismjs@1.21.0`;
   shadow: true,
 })
 export class CodeSnippet {
+  @Element() elm: HTMLElement;
   @Prop() language: string;
-  @Prop() code: string;
+  @Prop() code!: string;
 
-  codeRef: HTMLElement;
+  private prismCdn = `https://cdn.jsdelivr.net/npm/prismjs@1.21.0`;
+  private codeEl: HTMLElement;
 
-  componentDidLoad() {
-    if (Build.isBrowser) {
-      const prismLang = this.language;
-
-      if (!loadedPrismLangs.core) {
-        loadedPrismLangs.core = new Promise(resolve => {
-          const s = document.createElement('script');
-          s.onload = () => resolve();
-          s.src = `${prismCdn}/prism.min.js`;
-          document.body.appendChild(s);
-        });
-      }
-      loadedPrismLangs.core
-        .then(() => {
-          if (window.Prism && window.Prism.highlightElement) {
-            if (!loadedPrismLangs[prismLang]) {
-              loadedPrismLangs[prismLang] = new Promise(resolve => {
-                const s = document.createElement('script');
-                s.onload = () => resolve();
-                s.src = `${prismCdn}/components/prism-${prismLang}.min.js`;
-                document.body.appendChild(s);
-              });
-            }
-            loadedPrismLangs[prismLang].then(() => {
-              window.Prism.highlightElement(this.codeRef, false);
-            });
-          } else {
-            console.warn('Prism not loaded');
-          }
-        })
-        .catch(e => {
-          console.error(e);
-        });
-    }
+  componentWillLoad() {
+    importResource(
+      { propertyName: 'Prism', link: `${this.prismCdn}/prism.min.js` },
+      this.loadInPrismLanguage,
+    );
   }
+
+  loadInPrismLanguage = () => {
+    importResource(
+      {
+        propertyName: `Prism.languages.${this.language}`,
+        link: `${this.prismCdn}/components/prism-${this.language}.min.js`,
+      },
+      this.highlightCode,
+    );
+  };
+
+  highlightCode = async () => {
+    if (Build.isServer) return;
+
+    await customElements.whenDefined('code-snippet');
+
+    window.Prism.hooks.add('before-insert', env => {
+      switch (env.language) {
+        case 'shell-session':
+          const lines = env.code.split('\n');
+
+          const code = lines.map(line => {
+            return line.trim() === '' || line.trim()[0] === '#'
+              ? `<span class="token output">${line}</span>\n`
+              : `<span class="dollar-sign token output">${line}</span>\n`;
+          });
+          env.highlightedCode = code.join('');
+          break;
+        default:
+      }
+    });
+
+    window.Prism.highlightElement(this.codeEl, false);
+  };
 
   render() {
     if (!this.code) {
@@ -59,7 +64,7 @@ export class CodeSnippet {
     return (
       <Host>
         <pre class={`language-${this.language}`}>
-          <code ref={e => (this.codeRef = e)}>{this.code.trim()}</code>
+          <code ref={e => (this.codeEl = e)}>{this.code.trim()}</code>
         </pre>
       </Host>
     );

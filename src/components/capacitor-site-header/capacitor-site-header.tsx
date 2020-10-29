@@ -30,16 +30,13 @@ export class DocsHeader implements ComponentInterface {
 
   private links: { [key: string]: HTMLElement } = {};
 
+  //TODO: Find a better way to do this.
   componentWillLoad() {
-    this.handleActive(globalThis.location.pathname);
-    this.createObserver();
+    this.createHeaderObserver();
+    this.createRouteListener();
   }
 
-  componentWillUpdate() {
-    this.handleActive(globalThis.location.pathname);
-  }
-
-  createObserver() {
+  createHeaderObserver() {
     const opts = {
       root: document.body,
       rootMargin: '-45px 0px 0px 0px',
@@ -53,16 +50,21 @@ export class DocsHeader implements ComponentInterface {
     observer.observe(this.elm);
   }
 
-  handleActive = (path: string) => {
-    const activeRoute = path.split('/')[1];
+  createRouteListener() {
+    if (window.hasOwnProperty('R-146')) return;
 
-    if (this.links.hasOwnProperty(activeRoute)) {
-      for (const [key, value] of Object.entries(this.links)) {
-        if (key === activeRoute) {
-          value.classList.add('active');
-        } else {
-          value.classList.remove('active');
-        }
+    window['R-146'] = true;
+    Router.on('change', this.handleActive);
+  }
+
+  handleActive = (url: URL) => {
+    const activeRoute = url.pathname.split('/')[1];
+
+    for (const [key, value] of Object.entries(this.links)) {
+      if (key === activeRoute) {
+        value.classList.add('active');
+      } else {
+        value.classList.remove('active');
       }
     }
   };

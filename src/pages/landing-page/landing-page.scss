@@ -19,7 +19,7 @@ $section-space: 200px;
   --p2-color: var(--c-carbon-80);
   --p2-size: clamp(16px, 2vw, 20px);
 
-  --p3-color: var(--c-carbon-80);
+  --p3-color: var(--c-indigo-80);
   --p3-size: clamp(14px, 2vw, 16px);
 }
 //#endregion ------------------------------------------------------------------------------
@@ -211,7 +211,7 @@ em {
     padding-block-end: 120px;
     position: relative;
 
-    @media screen and (max-width: $screen-xs) {
+    @media screen and (max-width: $screen-xs-max) {
       flex-direction: column;
       padding-block-end: 64px;
 
@@ -246,6 +246,22 @@ em {
       margin-block-end: var(--space-4);
     }
 
+    .heading-panel-wrapper {
+      display: flex;
+      margin-block-start: -32px;
+      margin-inline-start: -32px;
+      width: calc(100% + 32px);
+
+      @media screen and (max-width: $screen-xs-max) {
+        flex-direction: column;
+      }
+
+      > * {
+        margin-block-start: 32px;
+        margin-inline-start: 32px;
+      }
+    }
+
     .heading-wrapper {
       flex-grow: 1;
 
@@ -253,61 +269,27 @@ em {
         max-width: 384px;
         margin-inline-end: 32px;
       }
+      .ui-paragraph {
+        margin-block-start: 24px;
+        max-width: 384px;
+      }
     }
 
     .panel {
       flex-basis: 560px;
       max-width: 560px;
+      min-width: 0;
 
-      @media screen and (max-width: $screen-xs) {
+      @media screen and (max-width: $screen-xs-max) {
         flex-basis: auto;
-      }
-
-      .ui-tab-bar__button {
-        font-family: var(--f-family-text);
       }
     }
 
     .platforms {
       display: flex;
 
-      @media screen and (max-width: $screen-xs) {
-        margin-block-end: var(--space-6);
-      }
-
       * + * {
         margin-inline-start: var(--space-3);
-      }
-    }
-  }
-
-  .ui-tabs {
-    .ui-tab {
-      min-height: 300px;
-    }
-    .ui-tab-bar {
-      background: #2e3b4a;
-      border-radius: 8px 8px 0 0;
-      display: flex;
-      flex-direction: row;
-      padding: 16px;
-      overflow-x: auto;
-
-      &__button {
-        cursor: pointer;
-        user-select: none;
-        font-family: var(--f-family-display);
-        font-size: 13px;
-        color: var(--c-indigo-30);
-        padding: 6px 14px;
-
-        margin-right: 10px;
-
-        &--selected {
-          background: #617184;
-          color: white;
-          border-radius: 6px;
-        }
       }
     }
   }

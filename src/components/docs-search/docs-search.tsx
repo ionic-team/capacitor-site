@@ -24,6 +24,7 @@ declare global {
 export class DocsSearch implements ComponentInterface {
   private siteContent: HTMLElement;
   private contentWidth = 736;
+  private uniqueId = Math.random().toString().replace('.', '');
 
   @Element() el: HTMLElement;
   @Prop() placeholder = 'Search';
@@ -39,8 +40,6 @@ export class DocsSearch implements ComponentInterface {
     width?: string;
     left?: string;
   } = {};
-
-  private uniqueId = Math.random().toString().replace('.', '');
 
   componentDidLoad() {
     importResource({ propertyName: 'docsearch', link: algolia }, () =>
