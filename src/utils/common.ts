@@ -3,11 +3,13 @@ export const importResource = (
     propertyName,
     link,
     target = document.body,
-    defer = true
+    defer = true,
+    async = true
   }: {
     propertyName?: string;
     link: string,
     target?: HTMLElement,
+    async?: boolean,
     defer?: boolean
   },
   callback: () => any,
@@ -28,6 +30,7 @@ export const importResource = (
   script.type = 'text/javascript';
   script.addEventListener('load', callback);
   script.defer = defer;
+  script.async = async;
   script.onerror = () => console.warn(`error loading resource: ${link}`);
 
   target.appendChild(script);
