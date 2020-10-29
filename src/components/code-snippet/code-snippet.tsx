@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element } from '@stencil/core';
+import { Component, Host, h, Prop, Element, Build } from '@stencil/core';
 import { importResource } from 'src/utils/common';
 
 // use an exact version so the cdn response is heavily cached
@@ -37,6 +37,8 @@ export class CodeSnippet {
   }
 
   highlightCode = async () => {
+    if (Build.isServer) return;
+    
     await customElements.whenDefined('code-snippet')
 
     window.Prism.hooks.add('before-insert', (env) => {
@@ -47,6 +49,7 @@ export class CodeSnippet {
             return `<span class="dollar-sign token output">${line}</span>\n`
           });         
           env.highlightedCode = code.join('');
+          break;
         default:
       }      
     });

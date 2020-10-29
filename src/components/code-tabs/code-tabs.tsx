@@ -1,5 +1,23 @@
-import { Component, Host, h, Prop, State, Element } from '@stencil/core';
+import { Component, Host, h, Prop, State, Element, Build } from '@stencil/core';
 import { pixelize } from 'src/utils/common';
+
+class MyMap extends Map<number, HTMLElement> {
+  constructor(callback: (target: HTMLElement) => any) {
+    super();
+    this.set = (key, value) => {      
+      this[key] = value;
+      if (key === 0) callback(value);
+
+      if (value.offsetWidth > 0) {
+        this.set = () => {
+          this[key] = value;
+          return this;
+        }
+      }
+      return this;
+    }
+  }
+}
 
 
 @Component({
@@ -8,7 +26,8 @@ import { pixelize } from 'src/utils/common';
   scoped: true,
 })
 export class CodeTabs {
-  private tabs: Map<number, HTMLElement> = new Map();
+  private tabs: Map<number, HTMLElement> = new MyMap(this.setActive.bind(this));
+
   private codeContainer: HTMLElement;
 
   @Element() elm: HTMLElement;
@@ -30,18 +49,17 @@ export class CodeTabs {
               .toString().concat('px');
   }
 
-  componentDidLoad() {
-    this.setActive(this.tabs.get(0));
-  }
-
   handleTabSelect(ev: Event) {
     const target = ev.target as HTMLElement;
     this.setActive(target);
   }
 
-  setActive(target: HTMLElement) {
-    this.codeContainer.style.willChange = 'left';
+  async setActive(target: HTMLElement) {
+    if (Build.isServer) return;
+    
+    await customElements.whenDefined('code-tabs');
 
+    this.codeContainer.style.willChange = 'left';
 
     requestAnimationFrame(() => {
       this.activeTab = {
