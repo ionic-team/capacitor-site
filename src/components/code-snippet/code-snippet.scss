@@ -23,6 +23,7 @@ pre[class*='language-'] {
   width: fit-content;
 
   code {
+    line-height: 1.8;
     display: block;
     font-family: 'Roboto Mono', 'Source Code Pro', monospace;
     font-size: 14px;
@@ -31,25 +32,27 @@ pre[class*='language-'] {
     span {
       display: inline;
     }
+
+    .token.selector,
+    .token.important,
+    .token.atrule,
+    .token.keyword,
+    .token.builtin {
+      color: #4ebdfc;
+    }
+
+    .token.string,
+    .token.char,
+    .token.attr-value,
+    .token.regex,
+    .token.variable {
+      color: #00e9ac;
+    }
   }
 }
 
-pre.language-typescript code {
-  .token.selector,
-  .token.important,
-  .token.atrule,
-  .token.keyword,
-  .token.builtin {
-    color: #4ebdfc;
-  }
-
-  .token.string,
-  .token.char,
-  .token.attr-value,
-  .token.regex,
-  .token.variable {
-    color: #00e9ac;
-  }
+pre.language-shell-session code {
+  line-height: 200%;
 }
 
 // pre[class*="language-shell"] code::before {

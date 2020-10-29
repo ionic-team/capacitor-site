@@ -63,8 +63,9 @@ export class DocsSearch implements ComponentInterface {
   }
 
   componentDidLoad() {
-    importResource({ propertyName: 'docsearch', link: this.algolia.js }, () =>
-      this.setupSearch(),
+    importResource(
+      { propertyName: 'docsearch', link: this.algolia.js },
+      () => this.setupSearch(),
     );
 
     this.el.addEventListener(
@@ -77,15 +78,6 @@ export class DocsSearch implements ComponentInterface {
       },
       true,
     );
-  }
-
-  disconnectedCallback() {
-    this.algolia.linkEl?.remove();
-
-    const scripts = document.head.querySelectorAll('script');
-    scripts.forEach(script => {
-      if ((script.src = this.algolia.js)) script.remove();
-    });
   }
 
   @Listen('resize', { target: 'window' })
