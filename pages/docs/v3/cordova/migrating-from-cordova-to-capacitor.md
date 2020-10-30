@@ -87,7 +87,7 @@ cordova-res android --skip-config --copy
 
 Begin by auditing your existing Cordova plugins - it's possible that you may be able to remove ones that are no longer needed.
 
-Next, review all of Capacitor's [core plugins](/docs/apis) as well as [community plugins](/docs/plugins/community). You may be able to switch to the Capacitor-equivalent Cordova plugin.
+Next, review all of Capacitor's [official plugins](/docs/apis) as well as [community plugins](/docs/plugins/community). You may be able to switch to the Capacitor-equivalent Cordova plugin.
 
 Some plugins may not match functionality entirely, but based on the features you need that may not matter.
 

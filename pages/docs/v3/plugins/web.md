@@ -73,7 +73,7 @@ import { Plugins } from '@capacitor/core';
 // Import custom plugin package for web support too
 import 'my-plugin';
 
-// Destructure custom plugin from core plugins
+// Destructure custom plugin from official plugins
 const { MyPlugin } = Plugins;
 await MyPlugin.echo({
   value: 'Hello from web!',
