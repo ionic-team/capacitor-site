@@ -28,6 +28,7 @@ View all available CLI commands and options.
 - [`copy`](/docs/cli/copy)
 - [`list`](/docs/cli/list)
 - [`open`](/docs/cli/open)
+- [`run`](/docs/cli/run)
 - [`sync`](/docs/cli/sync)
 - [`update`](/docs/cli/update)
 
