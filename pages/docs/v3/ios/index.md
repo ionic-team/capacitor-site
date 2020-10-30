@@ -24,7 +24,7 @@ First, install the `@capacitor/ios` package.
 npm install @capacitor/ios
 ```
 
-Then, add the iOS platform and sync your app. [Learn more about `sync`](/docs/cli#sync).
+Then, add the iOS platform and sync your app. [Learn more about `sync`](/docs/cli/sync).
 
 ```bash
 npx cap add ios
@@ -57,7 +57,7 @@ To run the project on a device or simulator, run:
 npx cap run ios
 ```
 
-The command will prompt you to select a target. [Learn more about `run`](/docs/cli#run).
+The command will prompt you to select a target. [Learn more about `run`](/docs/cli/run).
 
 ### Running in Xcode
 
