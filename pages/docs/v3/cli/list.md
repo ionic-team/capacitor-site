@@ -10,7 +10,7 @@ contributors:
 List all installed Cordova and Capacitor plugins.
 
 ```bash
-npx cap ls [platform]
+npx cap ls [<platform>]
 ```
 
 <strong>Inputs:</strong>

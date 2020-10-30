@@ -10,7 +10,7 @@ contributors:
 Copy the web app build and Capacitor configuration file into the native platform project. Run this each time you make changes to your web app or change a configuration value in `capacitor.config.json`.
 
 ```bash
-npx cap copy [platform]
+npx cap copy [<platform>]
 ```
 
 <strong>Inputs:</strong>

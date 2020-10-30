@@ -10,7 +10,7 @@ contributors:
 This command runs [`copy`](/docs/cli/copy) and then [`update`](/docs/cli/update).
 
 ```bash
-npx cap sync [options] [platform]
+npx cap sync [options] [<platform>]
 ```
 
 <strong>Inputs:</strong>

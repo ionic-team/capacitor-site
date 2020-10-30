@@ -7,7 +7,7 @@ contributors:
 
 # Capacitor CLI - cap add
 
-Add a native platform project to your project.
+Add a native platform project to your app.
 
 ```bash
 npx cap add <platform>

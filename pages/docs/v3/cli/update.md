@@ -10,7 +10,7 @@ contributors:
 Updates the native plugins and dependencies referenced in `package.json`.
 
 ```bash
-npx cap update
+npx cap update [<platform>]
 ```
 
 <strong>Inputs:</strong>
