@@ -1,5 +1,4 @@
 import { Component, h, Host, Prop, State } from '@stencil/core';
-import Helmet from '@stencil/helmet';
 import {
   ResponsiveContainer,
   Grid,
@@ -13,6 +12,7 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { Fragment, JSXBase } from '@stencil/core/internal';
 import { href } from '@stencil/router';
+import { MetaTags } from 'src/components/meta-tags/meta-tags';
 
 @Component({
   tag: 'landing-page',
@@ -39,12 +39,11 @@ export class LandingPage {
       Companies,
       GetStarted,
       WhitepaperAd,
-      MetaHead,
     } = this;
 
     return (
       <Host>
-        <MetaHead />
+        <MetaTags />
         <Top />
         <Started />
         <WhitepaperAd />
@@ -58,43 +57,6 @@ export class LandingPage {
       </Host>
     );
   }
-
-  MetaHead = () => (
-    <Helmet>
-      <title>Capacitor: Cross-platform native runtime for web apps</title>
-      <meta
-        name="description"
-        content={
-          'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript'
-        }
-      />
-      <meta
-        property="og:description"
-        content="Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript"
-      />
-      <meta property="og:site_name" content="Capacitor" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@capacitorjs" />
-      <meta name="twitter:creator" content="capacitorjs" />
-      <meta
-        name="twitter:title"
-        content="Build cross-platform apps with web technologies"
-      />
-      <meta
-        name="twitter:description"
-        content="Build cross-platform apps with web technologies"
-      />
-      <meta
-        name="twitter:image"
-        content="https://capacitorjs.com/assets/img/og.png"
-      />
-      <meta
-        property="og:image"
-        content="https://capacitorjs.com/assets/img/og.png"
-      />
-      <meta property="og:url" content="https://capacitorjs.com/" />
-    </Helmet>
-  );
 
   Top = () => {
     const { Announcement } = this;
