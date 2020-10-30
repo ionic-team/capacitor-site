@@ -80,7 +80,11 @@ Implement [iOS functionality](./ios) in `ios/Plugin/Plugin.swift`:
 
 To test the plugin locally while developing it, link the plugin folder to your app project using the [npm link command](https://docs.npmjs.com/cli/link).
 
-First, within the plugin folder, run: `npm link`.
+First, within the plugin folder, run:
+
+```bash
+$ npm link
+```
 
 Then, within the project that will test the plugin, run:
 
