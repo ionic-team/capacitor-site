@@ -23,6 +23,7 @@ export const MetaTags = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      {/* Fixed domain and strip out hashtags and query strings */}
       <meta property="og:url" content={`${site}${location.pathname}`} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
