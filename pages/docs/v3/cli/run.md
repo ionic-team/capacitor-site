@@ -8,7 +8,7 @@ description: Capacitor CLI - cap run
 This command first runs [`copy`](/docs/cli/copy), then it builds and deploys the native app to a target device of your choice.
 
 ```bash
-npx cap run <platform>
+npx cap run [options] <platform>
 ```
 
 <strong>Inputs:</strong>
