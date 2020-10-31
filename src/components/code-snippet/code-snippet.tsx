@@ -24,6 +24,12 @@ export class CodeSnippet {
   }
 
   loadInPrismLanguage = () => {
+    if (window.hasOwnProperty('Prism')
+          .hasOwnProperty('languages')
+          .hasOwnProperty(this.language)) {
+      return;
+    }
+    
     importResource(
       {
         propertyName: `Prism.languages.${this.language}`,
