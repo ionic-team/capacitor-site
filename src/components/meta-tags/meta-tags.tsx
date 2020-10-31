@@ -15,17 +15,19 @@ export const MetaTags = ({
   ogType?: string;
 }) => {
   const site = 'https://capacitorjs.com';
+  const prettyTitle = title === 'Capacitor: Cross-platform native runtime for web apps' ?
+    title : `${title} - Capacitor`;
   return (
     <Helmet>
-      <title>{title}</title>
+      <title>{prettyTitle}</title>
       <meta name="description" content={description} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={prettyTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       {/* Fixed domain and strip out hashtags and query strings */}
       <meta property="og:url" content={`${site}${location.pathname}`} />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={prettyTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       <meta name="twitter:creator" content={authorTwitter} />
