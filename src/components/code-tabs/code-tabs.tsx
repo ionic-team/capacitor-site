@@ -1,20 +1,9 @@
 import { Component, Host, h, Prop, State, Element, Build } from '@stencil/core';
 import { pixelize } from 'src/utils/common';
+import ResizeObserver from 'resize-observer-polyfill';
 
-class MyMap extends Map<number, HTMLElement> {
-  constructor(callback: (target: HTMLElement) => any) {
-    super();
-    this.set = (key, value) => {
-      this[key] = value;
-      if (key !== 0) return this;
-
-      callback(value);
-
-      if (value.offsetWidth > 0) {
-        this.set = super.set;
-      }
-    };
-  }
+interface tabsProps {
+  [key: string]: HTMLElement;
 }
 
 @Component({
@@ -23,8 +12,18 @@ class MyMap extends Map<number, HTMLElement> {
   scoped: true,
 })
 export class CodeTabs {
-  private tabs: Map<number, HTMLElement> = new MyMap(this.setActive.bind(this));
-  private codeContainer: HTMLElement;
+  private tabsHandler = {
+    set: (obj: tabsProps, prop: string, value: HTMLElement) => {
+      if (prop === '0') {
+        value.offsetWidth === 0
+          ? this.setResizeObserver(value)
+          : this.setActive(value);
+      }
+      obj[prop] = value;
+      return true;
+    },
+  };
+  private tabs: tabsProps = new Proxy({}, this.tabsHandler);
 
   @Element() elm: HTMLElement;
   @Prop() data: {
@@ -39,8 +38,17 @@ export class CodeTabs {
   };
   @State() codeLeft;
 
-  getTabsLeft() {
-    return this.tabs[this.activeTab.index]?.offsetLeft.toString().concat('px');
+  setResizeObserver(el: HTMLElement) {
+    const resizeObserver = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        if (entry.contentRect.width > 0) {
+          this.setActive(el);
+          resizeObserver.disconnect();
+        }
+      }
+    });
+
+    resizeObserver.observe(el);
   }
 
   handleTabSelect(ev: Event) {
@@ -53,21 +61,13 @@ export class CodeTabs {
 
     await customElements.whenDefined('code-tabs');
 
-    this.codeContainer.style.willChange = 'left';
+    this.activeTab = {
+      ...this.activeTab,
+      left: pixelize(target.offsetLeft),
+      width: pixelize(target.offsetWidth),
+    };
 
-    requestAnimationFrame(() => {
-      this.activeTab = {
-        ...this.activeTab,
-        left: pixelize(target.offsetLeft),
-        width: pixelize(target.offsetWidth),
-      };
-
-      this.codeLeft = `-${pixelize(
-        this.elm.offsetWidth * this.activeTab.index,
-      )}`;
-
-      this.codeContainer.style.willChange = 'unset';
-    });
+    this.codeLeft = `-${pixelize(this.elm.offsetWidth * this.activeTab.index)}`;
   }
 
   render() {
@@ -86,7 +86,7 @@ export class CodeTabs {
                 class={{
                   active: this.activeTab.index === i,
                 }}
-                ref={el => this.tabs.set(i, el)}
+                ref={el => !this.tabs.hasOwnProperty(i) && (this.tabs[i] = el)}
                 onClick={ev => {
                   this.activeTab.index = i;
                   this.handleTabSelect(ev);
@@ -98,7 +98,7 @@ export class CodeTabs {
           </div>
         </nav>
         <div class="background">
-          <div class="code-wrapper" ref={elm => (this.codeContainer = elm)}>
+          <div class="code-wrapper">
             {this.data.code.map((code, i) => (
               <article>
                 <code-snippet

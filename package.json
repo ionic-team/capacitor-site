@@ -49,6 +49,7 @@
     "prismic-dom": "^2.2.4",
     "prismic-javascript": "^2.7.1",
     "prismjs": "^1.22.0",
+    "resize-observer-polyfill": "^1.5.1",
     "rollup-plugin-dotenv": "^0.3.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
