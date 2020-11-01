@@ -1,8 +1,6 @@
 import { Component, Host, h, Prop, Element, Build } from '@stencil/core';
 import { importResource } from 'src/utils/common';
 
-// use an exact version so the cdn response is heavily cached
-
 @Component({
   tag: 'code-snippet',
   styleUrl: 'code-snippet.scss',
@@ -13,12 +11,13 @@ export class CodeSnippet {
   @Prop() language: string;
   @Prop() code!: string;
 
-  private prismCdn = `https://cdn.jsdelivr.net/npm/prismjs@1.21.0`;
+  // use an exact version so the cdn response is heavily cached
+  private static prismCdn = `https://cdn.jsdelivr.net/npm/prismjs@1.21.0`;
   private codeEl: HTMLElement;
 
   componentWillLoad() {
     importResource(
-      { propertyName: 'Prism', link: `${this.prismCdn}/prism.min.js` },
+      { propertyName: 'Prism', link: `${CodeSnippet.prismCdn}/prism.min.js` },
       this.loadInPrismLanguage,
     );
   }
@@ -27,7 +26,7 @@ export class CodeSnippet {
     importResource(
       {
         propertyName: `Prism.languages.${this.language}`,
-        link: `${this.prismCdn}/components/prism-${this.language}.min.js`,
+        link: `${CodeSnippet.prismCdn}/components/prism-${this.language}.min.js`,
       },
       this.highlightCode,
     );
