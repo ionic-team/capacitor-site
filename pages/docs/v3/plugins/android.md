@@ -26,7 +26,7 @@ After generating a plugin, right click the Java plugin class in Android Studio a
 
 ## Building your Plugin
 
-A Capacitor plugin for Android is a simple Java class that extends `com.getcapacitor.Plugin` and have a `@NativePlugin` annotation.
+A Capacitor plugin for Android is a simple Java class that extends `com.getcapacitor.Plugin` and have a `@CapacitorPlugin` annotation.
 It has some methods with `@PluginMethod()` annotation that will be callable from JavaScript.
 
 Once your plugin is generated, you can start editing it by opening the file with the Plugin class name you choose on the generator.
@@ -43,12 +43,12 @@ This example demonstrates a couple core components of Capacitor plugins: receivi
 package android.plugin.test;
 
 import com.getcapacitor.JSObject;
-import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
+import com.getcapacitor.annotation.CapacitorPlugin;
 
-@NativePlugin()
+@CapacitorPlugin()
 public class EchoPlugin extends Plugin {
 
     @PluginMethod()
@@ -74,12 +74,12 @@ If choosing to use Kotlin instead of Java, the Echo plugin example looks like th
 package android.plugin.test;
 
 import com.getcapacitor.JSObject;
-import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
+import com.getcapacitor.annotation.CapacitorPlugin;
 
-@NativePlugin()
+@CapacitorPlugin()
 class EchoPlugin : Plugin() {
 
   @PluginMethod
@@ -165,11 +165,11 @@ Sometimes when you launch an Intent, you expect some result back. In that case y
 
 Also make sure you call `saveCall(call);` as you will need it later when handling the intents result.
 
-You also have to register your intents [unique request](https://developer.android.com/training/basics/intents/result#StartActivity) code with `@NativePlugin` in order for
+You also have to register your intents [unique request](https://developer.android.com/training/basics/intents/result#StartActivity) code with `@CapacitorPlugin` in order for
 `handleOnActivityResult` to be triggered.
 
 ```java
-@NativePlugin(
+@CapacitorPlugin(
   requestCodes={MyPlugin.REQUEST_IMAGE_PICK} // register request code(s) for intent results
 )
 class ImagePicker extends Plugin {
@@ -274,12 +274,12 @@ myPluginEventListener.remove();
 Some Plugins will require you to request permissions.
 Capacitor provides some helpers to do that.
 
-First declare your plugin permissions in the `@NativePlugin` annotation
+First declare your plugin permissions in the `@CapacitorPlugin` annotation
 
 ```java
-@NativePlugin(
+@CapacitorPlugin(
   permissions={
-    Manifest.permission.ACCESS_NETWORK_STATE
+     @Permission(permission = Manifest.permission.ACCESS_NETWORK_STATE)
   }
 )
 ```
@@ -298,12 +298,12 @@ pluginRequestPermissions(new String[] {
 }, REQUEST_IMAGE_CAPTURE);
 ```
 
-To handle the permission request you have to Override `handleRequestPermissionsResult`
+To handle the permission request you have to Override `onRequestPermissionsResult`
 
 ```java
 @Override
-protected void handleRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-  super.handleRequestPermissionsResult(requestCode, permissions, grantResults);
+protected void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+  super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
   log("handling request perms result");
   PluginCall savedCall = getSavedCall();
@@ -334,7 +334,7 @@ Returning `null` will defer to the default Capacitor policy.
 
 ### Export to Capacitor
 
-By using the `@NativePlugin` and `@PluginMethod()` annotations in your plugins, you make them available to Capacitor, but you still need an extra step in your application to make Capacitor aware of the plugins.
+By using the `@CapacitorPlugin` and `@PluginMethod()` annotations in your plugins, you make them available to Capacitor, but you still need an extra step in your application to make Capacitor aware of the plugins.
 
 This is done in your apps `MainActivity`, where you `add` it in e.g. `src/main/java/com/example/myapp/MainActivity.java` like so:
 
