@@ -26,7 +26,7 @@ After generating a plugin, right click the Java plugin class in Android Studio a
 
 ## Building your Plugin
 
-A Capacitor plugin for Android is a simple Java class that extends `com.getcapacitor.Plugin` and have a `@CapacitorPlugin` annotation.
+A Capacitor plugin for Android is a simple Java class that extends `com.getcapacitor.Plugin` and has a `@CapacitorPlugin` annotation.
 It has some methods with `@PluginMethod()` annotation that will be callable from JavaScript.
 
 Once your plugin is generated, you can start editing it by opening the file with the Plugin class name you choose on the generator.
@@ -303,8 +303,6 @@ To handle the permission request you have to Override `onRequestPermissionsResul
 ```java
 @Override
 protected void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-  super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
   log("handling request perms result");
   PluginCall savedCall = getSavedCall();
   if (savedCall == null) {
