@@ -30,7 +30,6 @@ export class DocsHeader implements ComponentInterface {
 
   private links: { [key: string]: HTMLElement } = {};
 
-  //TODO: Find a better way to do this.
   componentWillLoad() {
     this.createHeaderObserver();
     this.createRouteListener();
