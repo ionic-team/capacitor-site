@@ -8,6 +8,15 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/sr
 
 The StatusBar API Provides methods for configuring the style of the Status Bar, along with showing or hiding it.
 
+## Install
+
+```bash
+npm install @capacitor/status-bar
+npx cap sync
+```
+
+## API
+
 <docgen-index>
 
 * [`setStyle(...)`](#setstyle)
@@ -23,8 +32,6 @@ The StatusBar API Provides methods for configuring the style of the Status Bar, 
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### setStyle(...)
 

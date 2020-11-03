@@ -8,15 +8,25 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/clipboard/src
 
 The Clipboard API enables copy and pasting to/from the system clipboard.
 
-<!--DOCGEN_INDEX_START-->
+## Install
+
+```bash
+npm install @capacitor/clipboard
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
 * [`write(...)`](#write)
 * [`read()`](#read)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
 
-<!--DOCGEN_API_START-->
+</docgen-index>
+
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-## API
 
 ### write(...)
 
@@ -26,11 +36,9 @@ write(options: ClipboardWriteOptions) => Promise<void>
 
 Write a value to the clipboard (the "copy" action)
 
-| Param       | Type                                                                    |
-| ----------- | ----------------------------------------------------------------------- |
-| **options** | <code><a href="#clipboardwriteoptions">ClipboardWriteOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                                                    |
+| ------------- | ----------------------------------------------------------------------- |
+| **`options`** | <code><a href="#clipboardwriteoptions">ClipboardWriteOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -76,5 +84,4 @@ Represents the data read from the clipboard.
 | **`value`** | <code>string</code> | Data read from the clipboard.  | 1.0.0 |
 | **`type`**  | <code>string</code> | Type of data in the clipboard. | 1.0.0 |
 
-
-<!--DOCGEN_API_END-->
+</docgen-api>

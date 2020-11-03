@@ -8,16 +8,26 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/device/src/de
 
 The Device API exposes internal information about the device, such as the model and operating system version, along with user information such as unique ids.
 
-<!--DOCGEN_INDEX_START-->
+## Install
+
+```bash
+npm install @capacitor/device
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
 * [`getInfo()`](#getinfo)
 * [`getBatteryInfo()`](#getbatteryinfo)
 * [`getLanguageCode()`](#getlanguagecode)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
 
-<!--DOCGEN_API_START-->
+</docgen-index>
+
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-## API
 
 ### getInfo()
 
@@ -98,5 +108,4 @@ Get the device's current language locale code.
 | ----------- | ------------------- | ---------------------------- | ----- |
 | **`value`** | <code>string</code> | Two character language code. | 1.0.0 |
 
-
-<!--DOCGEN_API_END-->
+</docgen-api>

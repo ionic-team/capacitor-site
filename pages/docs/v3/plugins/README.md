@@ -8,6 +8,8 @@
   - [Enterprise Plugins](enterprise.md)
 - APIs
   - [Action Sheet](../apis/action-sheet.md)
+  - [App](../apis/app.md)
+  - [App Launcher](../apis/app-launcher.md)
   - [Browser](../apis/browser.md)
   - [Clipboard](../apis/clipboard.md)
   - [Device](../apis/device.md)

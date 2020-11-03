@@ -8,17 +8,27 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader
 
 The Screen Reader API provides access to TalkBack/VoiceOver/etc. and provides simple text-to-speech capabilities for visual accessibility.
 
-<!--DOCGEN_INDEX_START-->
+## Install
+
+```bash
+npm install @capacitor/screen-reader
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
 * [`isEnabled()`](#isenabled)
 * [`speak(...)`](#speak)
 * [`addListener(...)`](#addlistener)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
 
-<!--DOCGEN_API_START-->
+</docgen-index>
+
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-## API
 
 ### isEnabled()
 
@@ -56,11 +66,9 @@ For more text-to-speech capabilities, please see the [Capacitor Community
 Text-to-Speech
 plugin](https://github.com/capacitor-community/text-to-speech).
 
-| Param       | Type                                                                          |
-| ----------- | ----------------------------------------------------------------------------- |
-| **options** | <code><a href="#screenreaderspeakoptions">ScreenReaderSpeakOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                                                          |
+| ------------- | ----------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#screenreaderspeakoptions">ScreenReaderSpeakOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -78,10 +86,10 @@ Add a listener
 This method is not supported on web (it is not possible to detect Screen
 Readers).
 
-| Param         | Type                                             |
-| ------------- | ------------------------------------------------ |
-| **eventName** | <code>"screenReaderStateChange"</code>           |
-| **listener**  | <code>(state: { value: boolean; }) => any</code> |
+| Param           | Type                                                |
+| --------------- | --------------------------------------------------- |
+| **`eventName`** | <code>"screenReaderStateChange"</code>              |
+| **`listener`**  | <code>(state: { value: boolean; }) =&gt; any</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -97,8 +105,6 @@ removeAllListeners() => void
 ```
 
 Remove all the listeners that are attached to this plugin.
-
-**Returns:** <code>void</code>
 
 **Since:** 1.0.0
 
@@ -118,9 +124,8 @@ Remove all the listeners that are attached to this plugin.
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
-
-<!--DOCGEN_API_END-->
+</docgen-api>

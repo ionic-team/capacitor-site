@@ -4,20 +4,30 @@ description: The Dialog API provides methods for triggering native dialog window
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/dialog/src/definitions.ts
 ---
 
-# @capacitor/Dialog
+# @capacitor/dialog
 
 The Dialog API provides methods for triggering native dialog windows for alerts, confirmations, and input prompts
 
-<!--DOCGEN_INDEX_START-->
+## Install
+
+```bash
+npm install @capacitor/dialog
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
 * [`alert(...)`](#alert)
 * [`prompt(...)`](#prompt)
 * [`confirm(...)`](#confirm)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
 
-<!--DOCGEN_API_START-->
+</docgen-index>
+
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-## API
 
 ### alert(...)
 
@@ -27,11 +37,9 @@ alert(options: AlertOptions) => Promise<void>
 
 Show an alert dialog
 
-| Param       | Type                                                  |
-| ----------- | ----------------------------------------------------- |
-| **options** | <code><a href="#alertoptions">AlertOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#alertoptions">AlertOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -46,9 +54,9 @@ prompt(options: PromptOptions) => Promise<PromptResult>
 
 Show a prompt dialog
 
-| Param       | Type                                                    |
-| ----------- | ------------------------------------------------------- |
-| **options** | <code><a href="#promptoptions">PromptOptions</a></code> |
+| Param         | Type                                                    |
+| ------------- | ------------------------------------------------------- |
+| **`options`** | <code><a href="#promptoptions">PromptOptions</a></code> |
 
 **Returns:** <code>Promise&lt;<a href="#promptresult">PromptResult</a>&gt;</code>
 
@@ -65,9 +73,9 @@ confirm(options: ConfirmOptions) => Promise<ConfirmResult>
 
 Show a confirmation dialog
 
-| Param       | Type                                                      |
-| ----------- | --------------------------------------------------------- |
-| **options** | <code><a href="#confirmoptions">ConfirmOptions</a></code> |
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code><a href="#confirmoptions">ConfirmOptions</a></code> |
 
 **Returns:** <code>Promise&lt;<a href="#confirmresult">ConfirmResult</a>&gt;</code>
 
@@ -124,5 +132,4 @@ Show a confirmation dialog
 | **`okButtonTitle`**     | <code>string</code> | Text to use on the positive action button. | <code>"OK"</code>     | 1.0.0 |
 | **`cancelButtonTitle`** | <code>string</code> | Text to use on the negative action button. | <code>"Cancel"</code> | 1.0.0 |
 
-
-<!--DOCGEN_API_END-->
+</docgen-api>

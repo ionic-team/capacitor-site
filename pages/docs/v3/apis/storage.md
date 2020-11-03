@@ -8,7 +8,17 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/storage/src/d
 
 The Storage API provides a simple key/value persistent store for lightweight data.
 
-<!--DOCGEN_INDEX_START-->
+## Install
+
+```bash
+npm install @capacitor/storage
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
 * [`configure(...)`](#configure)
 * [`get(...)`](#get)
 * [`set(...)`](#set)
@@ -17,11 +27,11 @@ The Storage API provides a simple key/value persistent store for lightweight dat
 * [`keys()`](#keys)
 * [`migrate()`](#migrate)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
 
-<!--DOCGEN_API_START-->
+</docgen-index>
+
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-## API
 
 ### configure(...)
 
@@ -33,11 +43,9 @@ Configure the storage plugin at runtime.
 
 Options that are `undefined` will not be used.
 
-| Param       | Type                                                          |
-| ----------- | ------------------------------------------------------------- |
-| **options** | <code><a href="#configureoptions">ConfigureOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                                          |
+| ------------- | ------------------------------------------------------------- |
+| **`options`** | <code><a href="#configureoptions">ConfigureOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -52,9 +60,9 @@ get(options: GetOptions) => Promise<GetResult>
 
 Get the value from storage of a given key.
 
-| Param       | Type                                              |
-| ----------- | ------------------------------------------------- |
-| **options** | <code><a href="#getoptions">GetOptions</a></code> |
+| Param         | Type                                              |
+| ------------- | ------------------------------------------------- |
+| **`options`** | <code><a href="#getoptions">GetOptions</a></code> |
 
 **Returns:** <code>Promise&lt;<a href="#getresult">GetResult</a>&gt;</code>
 
@@ -71,11 +79,9 @@ set(options: SetOptions) => Promise<void>
 
 Set the value in storage for a given key.
 
-| Param       | Type                                              |
-| ----------- | ------------------------------------------------- |
-| **options** | <code><a href="#setoptions">SetOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                              |
+| ------------- | ------------------------------------------------- |
+| **`options`** | <code><a href="#setoptions">SetOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -90,11 +96,9 @@ remove(options: RemoveOptions) => Promise<void>
 
 Remove the value from storage for a given key, if any.
 
-| Param       | Type                                                    |
-| ----------- | ------------------------------------------------------- |
-| **options** | <code><a href="#removeoptions">RemoveOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                                    |
+| ------------- | ------------------------------------------------------- |
+| **`options`** | <code><a href="#removeoptions">RemoveOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -108,8 +112,6 @@ clear() => Promise<void>
 ```
 
 Clear keys and values from storage.
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 **Since:** 1.0.0
 
@@ -202,5 +204,4 @@ write new data if they key was not already set.
 | **`migrated`** | <code>string[]</code> | An array of keys that were migrated.                                                                                          | 1.0.0 |
 | **`existing`** | <code>string[]</code> | An array of keys that were already migrated or otherwise exist in storage that had a value in the Capacitor 2 Storage plugin. | 1.0.0 |
 
-
-<!--DOCGEN_API_END-->
+</docgen-api>

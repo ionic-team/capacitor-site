@@ -8,16 +8,26 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/network/src/d
 
 The Network API provides network and connectivity information.
 
-<!--DOCGEN_INDEX_START-->
+## Install
+
+```bash
+npm install @capacitor/network
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
 * [`getStatus()`](#getstatus)
 * [`addListener(...)`](#addlistener)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
 
-<!--DOCGEN_API_START-->
+</docgen-index>
+
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-## API
 
 ### getStatus()
 
@@ -42,10 +52,10 @@ addListener(eventName: 'networkStatusChange', listenerFunc: (status: NetworkStat
 
 Listen for changes in the network connection.
 
-| Param            | Type                                         |
-| ---------------- | -------------------------------------------- |
-| **eventName**    | <code>"networkStatusChange"</code>           |
-| **listenerFunc** | <code>(status: NetworkStatus) => void</code> |
+| Param              | Type                                                                         |
+| ------------------ | ---------------------------------------------------------------------------- |
+| **`eventName`**    | <code>"networkStatusChange"</code>                                           |
+| **`listenerFunc`** | <code>(status: <a href="#networkstatus">NetworkStatus</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -61,8 +71,6 @@ removeAllListeners() => void
 ```
 
 Remove all listeners (including the network status changes) for this plugin.
-
-**Returns:** <code>void</code>
 
 **Since:** 1.0.0
 
@@ -84,9 +92,8 @@ Represents the state and type of the network connection.
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
-
-<!--DOCGEN_API_END-->
+</docgen-api>

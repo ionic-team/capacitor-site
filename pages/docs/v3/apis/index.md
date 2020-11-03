@@ -16,6 +16,8 @@ The API documentation for these plugins can be found below.
 ## List of Official Plugins
 
 - [Action Sheet](/docs/apis/action-sheet)
+- [App](/docs/apis/app)
+- [App Launcher](/docs/apis/app-launcher)
 - [Browser](/docs/apis/browser)
 - [Clipboard](/docs/apis/clipboard)
 - [Device](/docs/apis/device)

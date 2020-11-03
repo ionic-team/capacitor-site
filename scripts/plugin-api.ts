@@ -6,6 +6,8 @@ const API_DIR =  path.join(__dirname,'..','pages','docs', 'v3', 'apis');
 
 const pluginApis = [
   'action-sheet',
+  'app',
+  'app-launcher',
   'browser',
   'clipboard',
   'device',
@@ -65,7 +67,7 @@ async function writeListToIndex(pluginIds: string[]) {
   const indexPath = path.join(API_DIR, 'index.md');
   const content = fs.readFileSync(indexPath, 'utf-8');
   const re = /## List of Official Plugins[\s\S]+?(?=^#)/gm;
-  const result = content.replace(re, '## List of Official Plugins\n\n' + pluginIds.map(id => `* [${toTitleCase(id)}](/docs/apis/${id})`).join('\n') + '\n\n');
+  const result = content.replace(re, '## List of Official Plugins\n\n' + pluginIds.map(id => `- [${toTitleCase(id)}](/docs/apis/${id})`).join('\n') + '\n\n');
 
   fs.writeFileSync(indexPath, result);
 }

@@ -8,7 +8,17 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/haptics/src/d
 
 The Haptics API provides physical feedback to the user through touch or vibration.
 
-<!--DOCGEN_INDEX_START-->
+## Install
+
+```bash
+npm install @capacitor/haptics
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
 * [`impact(...)`](#impact)
 * [`notification(...)`](#notification)
 * [`vibrate(...)`](#vibrate)
@@ -17,11 +27,11 @@ The Haptics API provides physical feedback to the user through touch or vibratio
 * [`selectionEnd()`](#selectionend)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
-<!--DOCGEN_INDEX_END-->
 
-<!--DOCGEN_API_START-->
+</docgen-index>
+
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-## API
 
 ### impact(...)
 
@@ -31,11 +41,9 @@ impact(options?: HapticsImpactOptions | undefined) => Promise<void>
 
 Trigger a haptics "impact" feedback
 
-| Param       | Type                                                                  |
-| ----------- | --------------------------------------------------------------------- |
-| **options** | <code><a href="#hapticsimpactoptions">HapticsImpactOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                                                  |
+| ------------- | --------------------------------------------------------------------- |
+| **`options`** | <code><a href="#hapticsimpactoptions">HapticsImpactOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -50,11 +58,9 @@ notification(options?: HapticsNotificationOptions | undefined) => Promise<void>
 
 Trigger a haptics "notification" feedback
 
-| Param       | Type                                                                              |
-| ----------- | --------------------------------------------------------------------------------- |
-| **options** | <code><a href="#hapticsnotificationoptions">HapticsNotificationOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                                                              |
+| ------------- | --------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#hapticsnotificationoptions">HapticsNotificationOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -69,11 +75,9 @@ vibrate(options?: VibrateOptions | undefined) => Promise<void>
 
 Vibrate the device
 
-| Param       | Type                                                      |
-| ----------- | --------------------------------------------------------- |
-| **options** | <code><a href="#vibrateoptions">VibrateOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code><a href="#vibrateoptions">VibrateOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -87,8 +91,6 @@ selectionStart() => Promise<void>
 ```
 
 Trigger a selection started haptic hint
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 **Since:** 1.0.0
 
@@ -105,8 +107,6 @@ Trigger a selection changed haptic hint. If a selection was
 started already, this will cause the device to provide haptic
 feedback
 
-**Returns:** <code>Promise&lt;void&gt;</code>
-
 **Since:** 1.0.0
 
 --------------------
@@ -120,8 +120,6 @@ selectionEnd() => Promise<void>
 
 If selectionStart() was called, selectionEnd() ends the selection.
 For example, call this when a user has lifted their finger from a control
-
-**Returns:** <code>Promise&lt;void&gt;</code>
 
 **Since:** 1.0.0
 
@@ -168,9 +166,8 @@ For example, call this when a user has lifted their finger from a control
 
 | Members       | Value                  | Description                                                                    | Since |
 | ------------- | ---------------------- | ------------------------------------------------------------------------------ | ----- |
-| **`SUCCESS`** | <code>'SUCCESS'</code> | A notification feedback type indicating that a task has completed successfully | 1.0.0 |
-| **`WARNING`** | <code>'WARNING'</code> | A notification feedback type indicating that a task has produced a warning     | 1.0.0 |
-| **`ERROR`**   | <code>'ERROR'</code>   | A notification feedback type indicating that a task has failed                 | 1.0.0 |
+| **`Success`** | <code>'SUCCESS'</code> | A notification feedback type indicating that a task has completed successfully | 1.0.0 |
+| **`Warning`** | <code>'WARNING'</code> | A notification feedback type indicating that a task has produced a warning     | 1.0.0 |
+| **`Error`**   | <code>'ERROR'</code>   | A notification feedback type indicating that a task has failed                 | 1.0.0 |
 
-
-<!--DOCGEN_API_END-->
+</docgen-api>

@@ -8,14 +8,24 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/share/src/def
 
 The Share API provides methods for sharing content in any sharing-enabled apps the user may have installed.
 
-<!--DOCGEN_INDEX_START-->
+## Install
+
+```bash
+npm install @capacitor/share
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
 * [`share(...)`](#share)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
 
-<!--DOCGEN_API_START-->
+</docgen-index>
+
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-## API
 
 ### share(...)
 
@@ -25,9 +35,9 @@ share(options: ShareOptions) => Promise<ShareResult>
 
 Show a Share modal for sharing content with other apps
 
-| Param       | Type                                                  |
-| ----------- | ----------------------------------------------------- |
-| **options** | <code><a href="#shareoptions">ShareOptions</a></code> |
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#shareoptions">ShareOptions</a></code> |
 
 **Returns:** <code>Promise&lt;<a href="#shareresult">ShareResult</a>&gt;</code>
 
@@ -55,5 +65,4 @@ Show a Share modal for sharing content with other apps
 | **`url`**         | <code>string</code> | Set a URL to share, can be http, https or file:// URL                      | 1.0.0 |
 | **`dialogTitle`** | <code>string</code> | Set a title for the share modal. This option is only supported on Android. | 1.0.0 |
 
-
-<!--DOCGEN_API_END-->
+</docgen-api>

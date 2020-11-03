@@ -8,14 +8,24 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/toast/src/def
 
 The Toast API provides a notification pop up for displaying important information to a user. Just like real toast!
 
-<!--DOCGEN_INDEX_START-->
+## Install
+
+```bash
+npm install @capacitor/toast
+npx cap sync
+```
+
+## API
+
+<docgen-index>
+
 * [`show(...)`](#show)
 * [Interfaces](#interfaces)
-<!--DOCGEN_INDEX_END-->
 
-<!--DOCGEN_API_START-->
+</docgen-index>
+
+<docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-## API
 
 ### show(...)
 
@@ -25,11 +35,9 @@ show(options: ToastShowOptions) => Promise<void>
 
 Shows a Toast on the screen
 
-| Param       | Type                                                          |
-| ----------- | ------------------------------------------------------------- |
-| **options** | <code><a href="#toastshowoptions">ToastShowOptions</a></code> |
-
-**Returns:** <code>Promise&lt;void&gt;</code>
+| Param         | Type                                                          |
+| ------------- | ------------------------------------------------------------- |
+| **`options`** | <code><a href="#toastshowoptions">ToastShowOptions</a></code> |
 
 **Since:** 1.0.0
 
@@ -47,5 +55,4 @@ Shows a Toast on the screen
 | **`duration`** | <code>"short" \| "long"</code>             | Duration of the Toast, either 'short' (2000ms) or 'long' (3500ms) | <code>'short'</code>  | 1.0.0 |
 | **`position`** | <code>"top" \| "center" \| "bottom"</code> | Postion of the Toast                                              | <code>'bottom'</code> | 1.0.0 |
 
-
-<!--DOCGEN_API_END-->
+</docgen-api>
