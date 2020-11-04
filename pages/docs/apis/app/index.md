@@ -49,11 +49,6 @@ App.addListener('appStateChange', (state: AppState) => {
   console.log('App state changed. Is active?', state.isActive);
 });
 
-// Listen for serious plugin errors
-App.addListener('pluginError', (info: any) => {
-  console.error('There was a serious error with a plugin', err, info);
-});
-
 var ret = await App.canOpenUrl({ url: 'com.getcapacitor.myapp' });
 console.log('Can open url: ', ret.value);
 
