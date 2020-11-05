@@ -23,7 +23,7 @@ export const SolutionStencil = () => {
               language="shell-session"
               code={`
 npm install @capacitor/core @capacitor/cli
-npx cap init [name] [id] --webDir=www
+npx cap init [name] [id] --web-dir=www
 `}
             />
           </div>
