@@ -21,7 +21,7 @@ export const SolutionVue = () => {
               language="shell-session"
               code={`
 npm install @capacitor/core @capacitor/cli
-npx cap init [name] [id] --webDir=build
+npx cap init [name] [id] --web-dir=build
 `}
             />
           </div>

@@ -23,7 +23,7 @@ export const SolutionSvelte = () => {
               language="shell-session"
               code={`
 npm install @capacitor/core @capacitor/cli
-npx cap init [name] [id] --webDir=public
+npx cap init [name] [id] --web-dir=public
 `}
             />
           </div>

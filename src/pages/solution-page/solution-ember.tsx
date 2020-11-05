@@ -23,7 +23,7 @@ export const SolutionEmber = () => {
               language="shell-session"
               code={`
 npm install @capacitor/core @capacitor/cli
-npx cap init [name] [id] --webDir=dist
+npx cap init [name] [id] --web-dir=dist
 `}
             />
           </div>
