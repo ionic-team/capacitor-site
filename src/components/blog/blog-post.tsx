@@ -17,7 +17,7 @@ export class BlogPage {
       return (
         <Host>
           <MetaTags 
-            title={`${this.data.title} - Capacitor Blog`}
+            title={`${this.data.title} - Blog`}
             description={this.data.description}
             image={this.data.featuredImage || 'https://capacitorjs.com/assets/img/og.png'}
             authorTwitter={getTwitterUserFromURL(this.data.authorUrl)}

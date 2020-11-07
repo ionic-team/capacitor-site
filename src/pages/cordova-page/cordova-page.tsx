@@ -1,12 +1,12 @@
 import { Component, h, Host, State } from '@stencil/core';
 
-import Helmet from '@stencil/helmet';
 import {
   ResponsiveContainer,
   Paragraph,
   Heading,
 } from '@ionic-internal/ionic-ds';
 import { href } from '@stencil/router';
+import { MetaTags } from 'src/components/meta-tags/meta-tags';
 
 @Component({
   tag: 'cordova-page',
@@ -325,24 +325,8 @@ npx @capacitor/cli plugin:generate
 }
 
 const MetaHead = () => (
-  <Helmet>
-    <title>Capacitor: Cross-platform native runtime for web apps</title>
-    <meta
-      name="description"
-      content={
-        'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript'
-      }
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@capacitorjs" />
-    <meta name="twitter:creator" content="capacitorjs" />
-    <meta
-      name="twitter:title"
-      content="Build cross-platform apps with web technologies"
-    />
-    <meta
-      name="twitter:description"
-      content="Build cross-platform apps with web technologies"
-    />
-  </Helmet>
+  <MetaTags 
+    title={`Cordova to Capacitor Migration`}
+    description={'A step by step guide to migrating your app'}
+  />
 );
