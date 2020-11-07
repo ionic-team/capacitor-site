@@ -325,7 +325,7 @@ npx @capacitor/cli plugin:generate
 }
 
 const MetaHead = () => (
-  <MetaTags 
+  <MetaTags
     title={`Cordova to Capacitor Migration`}
     description={'A step by step guide to migrating your app'}
   />

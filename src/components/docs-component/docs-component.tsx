@@ -53,10 +53,10 @@ export class DocsComponent implements ComponentInterface {
 
     return (
       <Fragment>
-        <MetaTags 
-            title={this.data.title}
-            description={`${this.data.description} - Official Capacitor Documentation`}
-          />
+        <MetaTags
+          title={this.data.title}
+          description={`${this.data.description} - Official Capacitor Documentation`}
+        />
         <platform-bar
           containerClass="sc-docs-component docs-container"
           productName="Capacitor"

@@ -16,10 +16,13 @@ export class BlogPage {
     if (this.data) {
       return (
         <Host>
-          <MetaTags 
+          <MetaTags
             title={`${this.data.title} - Blog`}
             description={this.data.description}
-            image={this.data.featuredImage || 'https://capacitorjs.com/assets/img/og.png'}
+            image={
+              this.data.featuredImage ||
+              'https://capacitorjs.com/assets/img/og.png'
+            }
             authorTwitter={getTwitterUserFromURL(this.data.authorUrl)}
             ogType="blog"
           />
@@ -43,7 +46,8 @@ export class BlogPage {
   }
 }
 
-const getTwitterUserFromURL = (url:string ): string | undefined => {
-  return url.indexOf('twitter.com') != -1 ?
-    `@${url.replace('https://twitter.com/', '')}` : undefined;
-}
+const getTwitterUserFromURL = (url: string): string | undefined => {
+  return url.indexOf('twitter.com') != -1
+    ? `@${url.replace('https://twitter.com/', '')}`
+    : undefined;
+};

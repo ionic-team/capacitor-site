@@ -98,12 +98,10 @@ export class SolutionPage implements ComponentInterface {
 
 const MetaHead = ({ framework }) => {
   return (
-
-    <MetaTags 
+    <MetaTags
       title={`Using Capacitor with ${framework.name}`}
       description={`Build iOS, Android, and Progressive Web Apps with ${framework.name}`}
     />
-
   );
 };
 

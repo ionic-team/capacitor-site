@@ -15,8 +15,10 @@ export const MetaTags = ({
   ogType?: string;
 }) => {
   const site = 'https://capacitorjs.com';
-  const prettyTitle = title === 'Capacitor: Cross-platform native runtime for web apps' ?
-    title : `${title} - Capacitor`;
+  const prettyTitle =
+    title === 'Capacitor: Cross-platform native runtime for web apps'
+      ? title
+      : `${title} - Capacitor`;
   return (
     <Helmet>
       <title>{prettyTitle}</title>
