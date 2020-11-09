@@ -38,6 +38,13 @@ Local Notifications are great for reminding the user about a change in the app s
 import { Plugins } from '@capacitor/core';
 const { LocalNotifications } = Plugins;
 
+// ask user for permissions to send notification messages. 
+if (!LocalNotifications.requestPermissions) {
+  LocalNotifications.requestPermission().then( result => {
+    console.log('request', result);
+  })
+}
+
 const notifs = await LocalNotifications.schedule({
   notifications: [
     {
