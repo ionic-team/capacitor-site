@@ -6,6 +6,7 @@ import {
   Grid,
   Col,
 } from '@ionic-internal/ionic-ds';
+import { MetaTags } from 'src/components/meta-tags/meta-tags';
 
 @Component({
   tag: 'community-page',
@@ -20,6 +21,12 @@ export class CommunityPage {
 
     return (
       <Host>
+        <MetaTags
+          title="Community"
+          description={
+            'Get connected and get help from the Capacitor community'
+          }
+        />
         <Top />
         <Websites />
         <ResponsiveContainer id="newsletter" as="section">

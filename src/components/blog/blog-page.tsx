@@ -3,6 +3,7 @@ import { Heading, ResponsiveContainer } from '@ionic-internal/ionic-ds';
 
 import { BlogPost } from './blog-common';
 import { BlogData } from '../../data.server/blog';
+import { MetaTags } from '../meta-tags/meta-tags';
 
 @Component({
   tag: 'blog-page',
@@ -17,6 +18,11 @@ export class BlogPage {
     if (this.data) {
       return (
         <Fragment>
+          <MetaTags
+            title={`Blog`}
+            description={'The lastest news and updates from the Copacitor team'}
+            ogType="blog"
+          />
           <AllPosts posts={this.data} />
 
           <ResponsiveContainer>
