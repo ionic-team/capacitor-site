@@ -1,5 +1,5 @@
 import { h } from '@stencil/core';
-import Helmet from '@stencil/helmet';
+import Helmet from '../../lib/stencil-helmet/dist/stencil-helmet';
 
 export const MetaTags = ({
   title = 'Capacitor: Cross-platform native runtime for web apps',
