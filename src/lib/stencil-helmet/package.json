@@ -1,0 +1,48 @@
+{
+  "name": "@stencil/helmet",
+  "version": "0.3.2",
+  "description": "Declaratively update the head from a Stencil app.",
+  "main": "dist/stencil-helmet.js",
+  "types": "dist/stencil-helmet.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc",
+    "test": "jest",
+    "prepublish": "npm run build"
+  },
+  "author": "Ionic Team",
+  "license": "MIT",
+  "homepage": "https://github.com/ionic-team/stencil-helmet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/stencil-helmet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/stencil-helmet"
+  },
+  "devDependencies": {
+    "@stencil/core": "^1.12.6",
+    "@types/jest": "^22.2.3",
+    "jest": "^25.4.0",
+    "np": "^3.1.0",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
