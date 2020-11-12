@@ -30,7 +30,7 @@
     "@ionic-internal/ionic-ds": "4.0.0",
     "@ionic/prettier-config": "^1.0.1",
     "@stencil/core": "^2.2.0",
-    "@stencil/helmet": "github:ionic-team/stencil-helmet#pull/10/head",
+    "@stencil/helmet": "ionic-team/stencil-helmet#use-utils",
     "@stencil/router": "^2.0.0-1",
     "@stencil/sass": "^1.3.2",
     "@stencil/ssg": "^0.0.22",
