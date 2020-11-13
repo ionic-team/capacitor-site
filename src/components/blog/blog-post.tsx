@@ -2,7 +2,6 @@ import { Component, Prop, h, Host } from '@stencil/core';
 import { BlogPost } from './blog-common';
 import { Heading, ResponsiveContainer } from '@ionic-internal/ionic-ds';
 import { BlogData } from '../../data.server/blog';
-import { MetaTags } from '../meta-tags/meta-tags';
 
 @Component({
   tag: 'blog-post',
@@ -16,8 +15,8 @@ export class BlogPage {
     if (this.data) {
       return (
         <Host>
-          <MetaTags
-            title={`${this.data.title} - Blog`}
+          <meta-tags
+            page-title={`${this.data.title} - Blog`}
             description={this.data.description}
             image={
               this.data.featuredImage ||

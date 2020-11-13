@@ -12,7 +12,6 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { Fragment, JSXBase } from '@stencil/core/internal';
 import { href } from '@stencil/router';
-import { MetaTags } from 'src/components/meta-tags/meta-tags';
 
 @Component({
   tag: 'landing-page',
@@ -43,7 +42,7 @@ export class LandingPage {
 
     return (
       <Host>
-        <MetaTags />
+        <meta-tags />
         <Top />
         <Started />
         <WhitepaperAd />

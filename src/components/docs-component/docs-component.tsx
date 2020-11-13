@@ -1,5 +1,6 @@
 import {
   Component,
+  Element,
   Listen,
   Prop,
   ComponentInterface,
@@ -11,7 +12,6 @@ import { RenderJsxAst } from '@stencil/ssg';
 import { DocsData } from '../../data.server/docs';
 import Router, { docsVersionHref } from '../../router';
 import { href } from '@stencil/router';
-import { MetaTags } from '../meta-tags/meta-tags';
 
 @Component({
   tag: 'docs-component',
@@ -24,6 +24,8 @@ export class DocsComponent implements ComponentInterface {
   @Prop() data: DocsData;
 
   @State() showBackdrop = false;
+
+  @Element() el;
 
   @Listen('menuToggleClick')
   toggleMenu() {
@@ -53,8 +55,8 @@ export class DocsComponent implements ComponentInterface {
 
     return (
       <Fragment>
-        <MetaTags
-          title={this.data.title}
+        <meta-tags
+          page-title={this.data.title}
           description={`${this.data.description} - Official Capacitor Documentation`}
         />
         <platform-bar

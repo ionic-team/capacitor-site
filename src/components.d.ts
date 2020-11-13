@@ -80,6 +80,13 @@ export namespace Components {
     interface LowerContentNav {
         "navigation": PageNavigation;
     }
+    interface MetaTags {
+        "authorTwitter": string;
+        "description": string;
+        "image": string;
+        "ogType": string;
+        "pageTitle": string;
+    }
     interface MoreButton {
         "icon": string;
     }
@@ -228,6 +235,12 @@ declare global {
         prototype: HTMLLowerContentNavElement;
         new (): HTMLLowerContentNavElement;
     };
+    interface HTMLMetaTagsElement extends Components.MetaTags, HTMLStencilElement {
+    }
+    var HTMLMetaTagsElement: {
+        prototype: HTMLMetaTagsElement;
+        new (): HTMLMetaTagsElement;
+    };
     interface HTMLMoreButtonElement extends Components.MoreButton, HTMLStencilElement {
     }
     var HTMLMoreButtonElement: {
@@ -292,6 +305,7 @@ declare global {
         "in-page-navigation": HTMLInPageNavigationElement;
         "landing-page": HTMLLandingPageElement;
         "lower-content-nav": HTMLLowerContentNavElement;
+        "meta-tags": HTMLMetaTagsElement;
         "more-button": HTMLMoreButtonElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
@@ -375,6 +389,13 @@ declare namespace LocalJSX {
     interface LowerContentNav {
         "navigation"?: PageNavigation;
     }
+    interface MetaTags {
+        "authorTwitter"?: string;
+        "description"?: string;
+        "image"?: string;
+        "ogType"?: string;
+        "pageTitle"?: string;
+    }
     interface MoreButton {
         "icon"?: string;
     }
@@ -417,6 +438,7 @@ declare namespace LocalJSX {
         "in-page-navigation": InPageNavigation;
         "landing-page": LandingPage;
         "lower-content-nav": LowerContentNav;
+        "meta-tags": MetaTags;
         "more-button": MoreButton;
         "newsletter-signup": NewsletterSignup;
         "plugin-platforms": PluginPlatforms;
@@ -451,6 +473,7 @@ declare module "@stencil/core" {
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;
+            "meta-tags": LocalJSX.MetaTags & JSXBase.HTMLAttributes<HTMLMetaTagsElement>;
             "more-button": LocalJSX.MoreButton & JSXBase.HTMLAttributes<HTMLMoreButtonElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;

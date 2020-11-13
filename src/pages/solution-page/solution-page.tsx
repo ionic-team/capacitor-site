@@ -13,7 +13,6 @@ import { SolutionVue } from './solution-vue';
 import { SolutionEmber } from './solution-ember';
 import { SolutionSvelte } from './solution-svelte';
 import { SolutionStencil } from './solution-stencil';
-import { MetaTags } from 'src/components/meta-tags/meta-tags';
 
 @Component({
   tag: 'solution-page',
@@ -54,7 +53,10 @@ export class SolutionPage implements ComponentInterface {
   render() {
     return (
       <Host>
-        <MetaHead framework={this.framework} />
+        <meta-tags
+          page-title={`Using Capacitor with ${this.framework.name}`}
+          description={`Build iOS, Android, and Progressive Web Apps with ${this.framework.name}`}
+        />
         <ResponsiveContainer id="top" as="section">
           <div class="heading-group">
             <img
@@ -95,15 +97,6 @@ export class SolutionPage implements ComponentInterface {
     );
   }
 }
-
-const MetaHead = ({ framework }) => {
-  return (
-    <MetaTags
-      title={`Using Capacitor with ${framework.name}`}
-      description={`Build iOS, Android, and Progressive Web Apps with ${framework.name}`}
-    />
-  );
-};
 
 const solutions = [
   {

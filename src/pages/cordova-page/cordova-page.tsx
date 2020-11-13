@@ -6,7 +6,6 @@ import {
   Heading,
 } from '@ionic-internal/ionic-ds';
 import { href } from '@stencil/router';
-import { MetaTags } from 'src/components/meta-tags/meta-tags';
 
 @Component({
   tag: 'cordova-page',
@@ -21,7 +20,10 @@ export class CordovaPage {
 
     return (
       <Host>
-        <MetaHead />
+        <meta-tags
+          page-title={`Cordova to Capacitor Migration`}
+          description={'A step by step guide to migrating your app'}
+        />
 
         <Top />
         <GettingStarted />
@@ -323,10 +325,3 @@ npx @capacitor/cli plugin:generate
     </ResponsiveContainer>
   );
 }
-
-const MetaHead = () => (
-  <MetaTags
-    title={`Cordova to Capacitor Migration`}
-    description={'A step by step guide to migrating your app'}
-  />
-);
