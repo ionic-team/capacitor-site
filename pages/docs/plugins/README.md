@@ -36,5 +36,5 @@
   - [Storage](../apis/storage/index.md)
   - [Toast](../apis/toast/index.md)
 - Community Plugins
-  - [Introduction ->](../community/index.md)
-  - [Plugins ->](../community/plugins.md)
+  - [Introduction](community.md)
+  - [Plugins ->](../../community/registry.md)
