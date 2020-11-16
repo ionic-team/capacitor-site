@@ -29,12 +29,12 @@
     display: grid;
     column-gap: 64px;
     row-gap: 64px;
-    grid-template-columns: repeat(3, minmax(100px, 340px));
-    justify-content: space-between;
+    grid-template-columns: repeat(2, minmax(100px, 340px));
+    justify-content: space-evenly;
 
     @media screen and (max-width: $screen-xs) {
       grid-template-columns: none;
-      grid-template-row: repeat(3, minmax(100px, 340px));
+      grid-template-row: repeat(2, minmax(100px, 340px));
     }
 
     @media screen and (max-width: $screen-sm-max) {

@@ -6,6 +6,7 @@ import {
   match,
   matchAny,
 } from '@stencil/router';
+import { getCommunityData } from './data.server/community';
 import { getPage } from './data.server/prismic';
 import { getDocsData } from './data.server/docs';
 import { getBlogData, getAllBlogData } from './data.server/blog';
@@ -59,6 +60,12 @@ export const Routes = () => (
           <community-page data={data} />
         </Fragment>
       )}
+    />
+
+    <Route
+      path={matchAny(['/community/:id*', '/community/plugins'])}
+      mapParams={staticState(getCommunityData)}
+      render={(_, data) => <community-component data={data} />}
     />
 
     <Route path="/cordova">
