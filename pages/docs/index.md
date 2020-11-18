@@ -10,7 +10,7 @@ contributors:
 
 # Capacitor: Cross-platform Native Runtime for Web Apps
 
-Capacitor is a cross-platform native runtime that makes it easy to build web apps that run natively on iOS, Android, <em>and</em> the web. Representing the next evolution of Hybrid apps, it provides a modern native container approach for teams who want to build web-first apps with full access to native SDKs when they need it.
+Capacitor is a cross-platform native runtime that makes it easy to build web-based apps that run natively on iOS, Android, and the Web. Representing the next evolution of Hybrid apps, Capacitor creates <strong>Web Native apps</strong>, providing a modern native container approach for teams who want to build web-first without sacrificing full access to native SDKs when they need it.
 
 <img
   src="/assets/img/docs/capacitor-index.png"
