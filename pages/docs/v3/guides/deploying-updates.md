@@ -9,7 +9,7 @@ contributors:
 
 The last mile of app development involves publishing your app to the app stores, as well as keeping it updated over time.
 
-One of the key advantages to a web (or hybrid) based mobile development approach is the ability to make realtime updates to apps in an app store friendly way, as long as those changes do not require binary updates (aka compiled native functionality).
+One of the key advantages to a Web Native mobile development approach is the ability to make realtime updates to apps in an app store friendly way, as long as those changes do not require binary updates (aka compiled native functionality).
 
 Additionally, since most Capacitor developers are targeting both iOS and Android (and web) at the same time, manually publishing app and binary updates to each store can be unnecessarily tedious.
 

@@ -25,7 +25,7 @@ If a plugin exists for a particular topic within the [Capacitor Community](https
 
 ### Small in Scope
 
-We believe Capacitor plugins should be reasonably small in scope. With the hybrid approach Capacitor takes, plugins add native code to apps that may or may not be used by apps. By keeping the scope of plugins small, we can ensure apps have a minimal amount of native code that they need. This avoids unnecessary app bloat and warnings/rejections from the App Store due to APIs without usage descriptions, etc.
+We believe Capacitor plugins should be reasonably small in scope. With the Web Native approach Capacitor takes, plugins add native code to apps that may or may not be used by apps. By keeping the scope of plugins small, we can ensure apps have a minimal amount of native code that they need. This avoids unnecessary app bloat and warnings/rejections from the App Store due to APIs without usage descriptions, etc.
 
 ## Plugin Generator
 

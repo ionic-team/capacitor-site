@@ -7,9 +7,9 @@ author: Max Lynch <max@ionic.io>
 authorUrl: https://twitter.com/maxlynch
 ---
 
-Capacitor is a cross-platform native runtime for web apps, or hybrid apps, if you prefer. That's quite a mouthful, what does that mean exactly?
+Capacitor is a cross-platform native runtime for Web Native apps.
 
-At a high level, that means Capacitor takes a typical browser-based web app, and then packages it up to run on iOS, Android, and PWA with access to native platform features and OS-level controls.
+At a high level, that means Capacitor takes a modern web app, and then packages it up to run on iOS, Android, and PWA with access to native platform features and OS-level controls.
 
 Capacitor then acts as the _runtime_ facilitating communication between the web app and the underlying OS.
 
