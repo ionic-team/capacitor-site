@@ -38,7 +38,7 @@ pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
   text-shadow: none;
-  background: #f5f7fa;
+  background: #98d2ff;
 }
 
 @media print {
