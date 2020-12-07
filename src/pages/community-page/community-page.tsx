@@ -46,6 +46,18 @@ export class CommunityPage {
           <PrismicRichText richText={top} paragraphLevel={2} />
         </div>
         <div class="cards">
+          {
+            // TODO: remove this temporary card
+          }
+          <a target="_self" href="/community/registry" class="card">
+            <div class="image-wrapper">
+              <img alt="capacitor logo on card" class="sc-community-page" height="200" loading="lazy" src="https://images.prismic.io/ionicframeworkcom/0b3bfd94-9c60-432a-98a2-f282aea4a8a1_capacitor-community-top-1%402x.png?auto=compress,format&amp;rect=0,0,680,400&amp;w=340&amp;h=200&amp;q=65" srcset="https://images.prismic.io/ionicframeworkcom/0b3bfd94-9c60-432a-98a2-f282aea4a8a1_capacitor-community-top-1%402x.png?auto=compress,format&amp;rect=0,0,680,400&amp;w=340&amp;h=200&amp;q=65 1x, https://images.prismic.io/ionicframeworkcom/0b3bfd94-9c60-432a-98a2-f282aea4a8a1_capacitor-community-top-1%402x.png?auto=compress,format&amp;rect=0,0,680,400&amp;w=680&amp;h=400&amp;q=65 2x" width="340" />
+            </div>
+            <h4 class="sc-community-page ui-heading ui-heading-4" id="h-github-discussions">
+              Plugins Registry</h4>
+            <p class="sc-community-page ui-paragraph ui-paragraph--body ui-paragraph-3">
+              Join the community in discussing new features, asking questions, and help others get started</p>
+          </a>
           {top__list.map(({ image, text, link: { target, url } }) => (
             <a target={target} href={url} class="card">
               <div class="image-wrapper">

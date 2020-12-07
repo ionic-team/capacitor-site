@@ -24,7 +24,7 @@ export interface DocsData extends MarkdownResults {
   template?: DocsTemplate;
 }
 
-export type DocsTemplate = 'docs' | 'plugins' | 'cli';
+export type DocsTemplate = 'docs' | 'plugins' | 'cli' | 'community';
 
 export const getDocsData: MapParamData = async ({ id }) => {
   if (!id) {

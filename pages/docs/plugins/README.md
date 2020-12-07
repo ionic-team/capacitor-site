@@ -2,7 +2,6 @@
 
 - Getting Started
   - [Introduction](index.md)
-  - [Community Plugins](community.md)
   - [Enterprise Plugins](enterprise.md)
 - Creating Plugins
   - [Overview](creating-plugins.md)
@@ -36,3 +35,6 @@
   - [Status Bar](../apis/status-bar/index.md)
   - [Storage](../apis/storage/index.md)
   - [Toast](../apis/toast/index.md)
+- Community Plugins
+  - [Introduction](community.md)
+  - [Plugins ->](../../community/registry.md)

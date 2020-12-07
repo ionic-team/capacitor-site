@@ -79,7 +79,6 @@ export class DocsHeader implements ComponentInterface {
 
   render() {
     const { expanded, template, includeLogo, includeBurger } = this;
-
     return (
       <Host
         class={{
@@ -164,7 +163,10 @@ export class DocsHeader implements ComponentInterface {
             <div class="separator"></div>
             <a
               {...href('/community')}
-              class="ui-paragraph-4"
+              class={{
+                'ui-paragraph-4': true,
+                'active': template === 'community',
+              }}
               ref={el => (this.links.community = el)}
             >
               Community

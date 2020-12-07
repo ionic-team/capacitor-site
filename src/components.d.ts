@@ -6,7 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BlogData } from "./data.server/blog";
+import { CommunityData } from "./data.server/community";
 import { DocsData, DocsTemplate } from "./data.server/docs";
+import { PluginInfo } from "./components/community-menu/community-menu";
 import { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
 export namespace Components {
     interface AnchorLink {
@@ -46,6 +48,15 @@ export namespace Components {
     languages: string[];
     code: string[];
   };
+    }
+    interface CommunityComponent {
+        "data": CommunityData;
+    }
+    interface CommunityMenu {
+        "activePath": string;
+        "plugins": PluginInfo[];
+        "template": DocsTemplate;
+        "toggleOverlayMenu": () => Promise<void>;
     }
     interface CommunityPage {
         "data": any;
@@ -175,6 +186,18 @@ declare global {
         prototype: HTMLCodeTabsElement;
         new (): HTMLCodeTabsElement;
     };
+    interface HTMLCommunityComponentElement extends Components.CommunityComponent, HTMLStencilElement {
+    }
+    var HTMLCommunityComponentElement: {
+        prototype: HTMLCommunityComponentElement;
+        new (): HTMLCommunityComponentElement;
+    };
+    interface HTMLCommunityMenuElement extends Components.CommunityMenu, HTMLStencilElement {
+    }
+    var HTMLCommunityMenuElement: {
+        prototype: HTMLCommunityMenuElement;
+        new (): HTMLCommunityMenuElement;
+    };
     interface HTMLCommunityPageElement extends Components.CommunityPage, HTMLStencilElement {
     }
     var HTMLCommunityPageElement: {
@@ -295,6 +318,8 @@ declare global {
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
         "code-snippet": HTMLCodeSnippetElement;
         "code-tabs": HTMLCodeTabsElement;
+        "community-component": HTMLCommunityComponentElement;
+        "community-menu": HTMLCommunityMenuElement;
         "community-page": HTMLCommunityPageElement;
         "contributor-list": HTMLContributorListElement;
         "cordova-page": HTMLCordovaPageElement;
@@ -355,6 +380,15 @@ declare namespace LocalJSX {
     languages: string[];
     code: string[];
   };
+    }
+    interface CommunityComponent {
+        "data"?: CommunityData;
+    }
+    interface CommunityMenu {
+        "activePath"?: string;
+        "onMenuToggled"?: (event: CustomEvent<any>) => void;
+        "plugins"?: PluginInfo[];
+        "template"?: DocsTemplate;
     }
     interface CommunityPage {
         "data"?: any;
@@ -428,6 +462,8 @@ declare namespace LocalJSX {
         "capacitor-site-footer": CapacitorSiteFooter;
         "code-snippet": CodeSnippet;
         "code-tabs": CodeTabs;
+        "community-component": CommunityComponent;
+        "community-menu": CommunityMenu;
         "community-page": CommunityPage;
         "contributor-list": ContributorList;
         "cordova-page": CordovaPage;
@@ -463,6 +499,8 @@ declare module "@stencil/core" {
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
             "code-tabs": LocalJSX.CodeTabs & JSXBase.HTMLAttributes<HTMLCodeTabsElement>;
+            "community-component": LocalJSX.CommunityComponent & JSXBase.HTMLAttributes<HTMLCommunityComponentElement>;
+            "community-menu": LocalJSX.CommunityMenu & JSXBase.HTMLAttributes<HTMLCommunityMenuElement>;
             "community-page": LocalJSX.CommunityPage & JSXBase.HTMLAttributes<HTMLCommunityPageElement>;
             "contributor-list": LocalJSX.ContributorList & JSXBase.HTMLAttributes<HTMLContributorListElement>;
             "cordova-page": LocalJSX.CordovaPage & JSXBase.HTMLAttributes<HTMLCordovaPageElement>;
