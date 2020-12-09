@@ -7,74 +7,60 @@ contributors:
 
 # Using Capacitor with Ionic
 
-## Install Capacitor into an Ionic project
+## Installing
 
-Capacitor is easily installed directly into any Ionic project (1.0-4.x+).
+Capacitor can be installed directly into any new or existing Ionic app.
 
 ### New Ionic Project
 
+Capacitor is installed in new Ionic apps by default! All you have to do is start a new project:
+
 ```bash
-ionic start myApp tabs --capacitor
-cd myApp
+ionic start
 ```
+
+> If you'd like a tutorial for building your first Ionic/Capacitor app, see [this tutorial](https://ionicframework.com/docs/intro/next).
 
 ### Existing Ionic Project
 
+Install and initialize Capacitor with your app name and bundle ID:
+
 ```bash
-cd myApp
 ionic integrations enable capacitor
 ```
 
-### Initialize Capacitor with your app information
+If your Ionic app uses Cordova, you will want to read the [Migrating from Cordova to Capacitor guide](/docs/cordova/migrating-from-cordova-to-capacitor) as well.
 
-_Note: `npx` is a new utility available in npm 5 or above that executes local binaries/scripts to avoid global installs._
+### Add Platforms
+
+After Capacitor installed, you can add native platforms to your app:
 
 ```bash
-npx cap init [appName] [appId]
+ionic capacitor add
 ```
 
-where `appName` is the name of your app, and `appId` is the domain identifier of your app (ex: `com.example.app`).
+This will create a new directory in the root of your project for the native platform. This directory is a native project that should be considered a source artifact. Learn more about [native project management](/docs/cordova#native-project-management).
 
-_Note: Use the native IDEs to change these properties after initial configuration._
+## Workflow
 
 ### Build your Ionic App
 
-You must build your Ionic project at least once before adding any native platforms.
+Capacitor JavaScript libraries are bundled into your app, so the web asset build is no different after Capacitor is installed.
 
 ```bash
 ionic build
 ```
 
-This creates the `www` folder that Capacitor has been [automatically configured](/docs/basics/configuring-your-app) to use as the `webDir` in `capacitor.config.json`.
+This creates the web asset directory that Capacitor copies into native projects, configured via `webDir` in the [Capacitor configuration](/docs/config).
 
-### Add Platforms
+### Ionic CLI Capacitor Commands
 
-```bash
-npx cap add ios
-npx cap add android
-```
+The Ionic CLI has a variety of high-level commands that wrap the Capacitor CLI for convenience. See the documentation for each below. Help output is also available by using the `--help` flag after each command.
 
-Both `android` and `ios` folders at the root of the project are created. These are entirely separate native project artifacts that should be considered part of your Ionic app (i.e., check them into source control, edit them in their own IDEs, etc.).
+- [`ionic capacitor add`](https://ionicframework.com/docs/cli/commands/capacitor-add)
+- [`ionic capacitor build`](https://ionicframework.com/docs/cli/commands/capacitor-build)
+- [`ionic capacitor run`](https://ionicframework.com/docs/cli/commands/capacitor-run)
+- [`ionic capacitor sync`](https://ionicframework.com/docs/cli/commands/capacitor-sync)
+- [`ionic capacitor open`](https://ionicframework.com/docs/cli/commands/capacitor-open)
 
-### Open IDE to build, run, and deploy
-
-```bash
-npx cap open ios
-npx cap open android
-```
-
-The native iOS and Android projects are opened in their standard IDEs (Xcode and Android Studio, respectively). Use the IDEs to run and deploy your app.
-
-## Syncing your app with Capacitor
-
-Every time you perform a build (e.g. `ionic build`) that changes your web directory (default: `www`), you'll need to copy those changes down to your native projects:
-
-```bash
-npx cap copy
-```
-
-## Using Cordova and Ionic Native Plugins
-
-Cordova and [Ionic Native](https://ionicframework.com/docs/native/) plugins are supported in Capacitor. See the [Using Cordova Plugins](/docs/plugins/cordova) guide for more information.
-
-Want to start using Capacitor in an Ionic app immediately? [Check out this guide](/docs/guides/ionic-framework-app).
+[Learn more about development workflow in Capacitor &#8250;](/docs/basics/workflow)
