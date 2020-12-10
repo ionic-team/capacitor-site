@@ -33,14 +33,12 @@
 - iOS
   - [Getting Started](ios/index.md)
   - [Configuration](ios/configuration.md)
-  - [Updating](ios/updating.md)
   - [Custom Native Code](ios/custom-code.md)
   - [Deploying to App Store](ios/deploying-to-app-store.md)
   - [Troubleshooting](ios/troubleshooting.md)
 - Android
   - [Getting Started](android/index.md)
   - [Configuration](android/configuration.md)
-  - [Updating](android/updating.md)
   - [Custom Native Code](android/custom-code.md)
   - [Deploying to Google Play](android/deploying-to-google-play.md)
   - [Troubleshooting](android/troubleshooting.md)
@@ -48,6 +46,7 @@
   - [Getting Started](web/index.md)
   - [PWA Elements](web/pwa-elements.md)
 - Reference
+  - [Release Notes](releases/index.md)
   - [Config](config/index.md)
   - [Core APIs](core-apis/index.md)
   - [Plugin APIs ->](apis/index.md)

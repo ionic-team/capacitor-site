@@ -60,6 +60,14 @@
     {
       "source": "/docs/v3/basics/utilities",
       "destination": "/docs/v3/core-apis/web"
+    },
+    {
+      "source": "/docs/v3/ios/updating",
+      "destination": "/docs/v3/releases"
+    },
+    {
+      "source": "/docs/v3/android/updating",
+      "destination": "/docs/v3/releases"
     }
   ],
   "headers": [
