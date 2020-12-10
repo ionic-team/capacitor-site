@@ -63,11 +63,11 @@
     },
     {
       "source": "/docs/v3/ios/updating",
-      "destination": "/docs/v3/releases"
+      "destination": "/docs/v3/updating/apps"
     },
     {
       "source": "/docs/v3/android/updating",
-      "destination": "/docs/v3/releases"
+      "destination": "/docs/v3/updating/apps"
     }
   ],
   "headers": [

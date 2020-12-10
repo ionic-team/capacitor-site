@@ -1,13 +1,15 @@
 ---
-title: Release Notes
-description: The release history and upgrade instructions for Capacitor
+title: Updating Capacitor in your app
+description: Guide for updating Capacitor in your app
 ---
 
-# Release Notes
+# Updating Capacitor in your app
 
-This is a list of releases and any corresponding upgrade instructions. For a comprehensive list of changes, see [`CHANGELOG.md`](https://github.com/ionic-team/capacitor/blob/HEAD/CHANGELOG.md).
+This is a list of instructions for updating to certain Capacitor versions in your app.
 
-## 3.0.0 (WIP)
+These instructions may include changes in configuration or the build process, updates to dependencies or your development environment, code changes to your app, or anything else to be aware of when updating to newer versions of Capacitor.
+
+## Update to 3.0.0 (WIP)
 
 Capacitor 3 brings crucial updates to the ecosystem and exciting new features.
 
@@ -20,6 +22,39 @@ Node 8 has reached end-of-life. Node 10 will reach end-of-life on April 30th, 20
 ### ES2017+
 
 Capacitor 3 now builds for ES2017 environments, instead of ES5. The [plugin template has also been updated](https://github.com/ionic-team/capacitor/pull/3427/files#diff-b22b3d0cbb7d8f6fdfe1f6f1d9e84b7d) to target ES2017, and third-party plugins are encouraged to update their targets.
+
+This change should not affect your app unless you are supporting IE11, which Capacitor does not officially support.
+
+### Official Plugins
+
+All plugins have been removed from Capacitor core and placed into their own npm packages. There are several reasons for this (see [#3227](https://github.com/ionic-team/capacitor/issues/3227)) and the core team is confident this is the right way to go.
+
+#### Background Task, Permissions, and Photos plugins removed
+
+- **Background Task**: This plugin appeared to be rarely used and didn't quite work as most devs expected. The core team will readdress background functionality in the future. Subscribe to [#3032](https://github.com/ionic-team/capacitor/issues/3032) for updates.
+- **Permissions**: The core team has implemented an alternative to this centralized approach which community plugins may also adopt. See the new Permissions API. (TODO: link)
+- **Photos**: This undocumented iOS-only plugin has been removed. Use [`@capacitor-community/media`](https://github.com/capacitor-community/media).
+
+#### Accessibility, App, and Modals plugins split up
+
+- **Accessibility**
+  - VoiceOver and TalkBack functionality moved into [**Screen Reader**](/docs/apis/screen-reader)
+- **App**
+  - App-related info and functionality remains in [**App**](/docs/apis/app)
+  - App URL handling (`openUrl()` and `canOpenUrl()`) moved into [**App Launcher**](/docs/apis/app-launcher)
+- **Modals**
+  - Action Sheet functionality (`showActions()`) moved into [**Action Sheet**](/docs/apis/action-sheet)
+  - Dialog window functionality (`alert()`, `prompt()`, and `confirm()`) moved into [**Dialog**](/docs/apis/dialog)
+
+#### Migrating your app to use the new official plugin packages
+
+This change will require you to install each plugin that you were using individually.
+
+1. Search your project for core plugins extracted from the `Plugins` object from `@capacitor/core`
+1. Find the corresponding [plugin documentation](/docs/apis), keeping in mind that [some plugins have been split up](#accessibility-app-and-modals-plugins-split-up)
+1. Follow the installation instructions for each plugin in the documentation
+1. Change the plugin import to import from the plugin's package instead (see [Plugin Imports](#plugin-imports))
+1. Follow any instructions in [Backward Incompatible Plugin Changes](#backward-incompatible-plugin-changes)
 
 ### Plugin Imports
 
@@ -39,6 +74,24 @@ Importing the plugin directly from the plugin's package is preferred, but the pl
 // NEW
 import { AnyPlugin } from 'any-plugin';
 ```
+
+### Backward Incompatible Plugin Changes
+
+While many of the plugin APIs remain the same to ease the migration process to Capacitor 3, some will require code updates and manual migrations.
+
+- **Accessibility** / **Screen Reader**
+  - `isScreenReaderEnabled()` method has been renamed to `isEnabled()`
+  - `'accessibilityScreenReaderStateChange'` event has been renamed to `'screenReaderStateChange'`
+  - On Android and iOS, `speak()` will only work if a screen reader is currently active. For text-to-speech capabilities while screen readers are active or not, use [`@capacitor-community/text-to-speech`](https://github.com/capacitor-community/text-to-speech).
+- **Device**
+  - App information has been removed from `getInfo()` (`appVersion`, `appBuild`, `appId` and `appName`). Use the App plugin's [`getInfo()`](/docs/apis/app#getinfo) for this information.
+- **Haptics**
+  - `HapticsNotificationType` enum keys have been switched from upper case to camel case to match other enums.
+- **Share**
+  - `share()` method now returns `ShareResult` instead of `any`
+  - The return value of `share()` will no longer include `completed`. If it was not completed, it will reject instead.
+- **Storage**
+  - **Data migration required!** The internal storage mechanism has changed and requires data migration. A convenience method has been added: `migrate()`. To update your app without affecting end users, call `migrate()` before any other methods.
 
 ### iOS
 
@@ -142,7 +195,7 @@ public class MainActivity extends BridgeActivity {
 
 Android Studio now recommends Gradle 6.5. (TODO)
 
-## 2.0.0
+## Update to 2.0.0
 
 Capacitor 2 makes some tooling updates including the adoption of Swift 5 in iOS and AndroidX for Android.
 
@@ -312,7 +365,7 @@ In `android/app/src/main/res/xml/file_paths.xml` add `<cache-path name="my_cache
 
 Check [`CHANGELOG.md`](https://github.com/ionic-team/capacitor/blob/main/CHANGELOG.md#200-2020-04-03).
 
-## 1.1.0
+## Update to 1.1.0
 
 ### iOS
 

@@ -46,7 +46,7 @@
   - [Getting Started](web/index.md)
   - [PWA Elements](web/pwa-elements.md)
 - Reference
-  - [Release Notes](releases/index.md)
+  - [Update Guide](updating/apps.md)
   - [Config](config/index.md)
   - [Core APIs](core-apis/index.md)
   - [Plugin APIs ->](apis/index.md)
