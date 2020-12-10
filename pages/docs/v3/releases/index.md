@@ -7,13 +7,152 @@ description: The release history and upgrade instructions for Capacitor
 
 This is a list of releases and any corresponding upgrade instructions. For a comprehensive list of changes, see [`CHANGELOG.md`](https://github.com/ionic-team/capacitor/blob/HEAD/CHANGELOG.md).
 
+## 3.0.0 (WIP)
+
+Capacitor 3 brings crucial updates to the ecosystem and exciting new features.
+
+Read the Capacitor 3.0 announcement &#8250; (TODO)
+
+### NodeJS 12+
+
+Node 8 has reached end-of-life. Node 10 will reach end-of-life on April 30th, 2021. Capacitor 3 requires NodeJS 12 or greater. (Latest LTS version is recommended.)
+
+### ES2017+
+
+Capacitor 3 now builds for ES2017 environments, instead of ES5. The [plugin template has also been updated](https://github.com/ionic-team/capacitor/pull/3427/files#diff-b22b3d0cbb7d8f6fdfe1f6f1d9e84b7d) to target ES2017, and third-party plugins are encouraged to update their targets.
+
+### Plugin Imports
+
+The `Plugins` object is deprecated, but will continue to work in Capacitor 3. Capacitor plugins should be updated to use the new plugin registration APIs (TODO: link), which will allow them to be imported directly from the plugin's package.
+
+Going forward, the `Plugins` object from `@capacitor/core` should not be used.
+
+```typescript
+// OLD
+import { Plugins } from '@capacitor/core';
+const { AnyPlugin } = Plugins;
+```
+
+Importing the plugin directly from the plugin's package is preferred, but the plugin must be updated to work with Capacitor 3 for this to be possible.
+
+```typescript
+// NEW
+import { AnyPlugin } from 'any-plugin';
+```
+
+### iOS
+
+#### Switch from `CAPBridge` to `ApplicationDelegateProxy` in application events
+
+In `ios/App/App/AppDelegate.swift`, update the following:
+
+```diff-swift
+     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+         // Called when the app was launched with a url. Feel free to add additional processing here,
+         // but if you want the App API to support tracking app url opens, make sure to keep this call
+-        return CAPBridge.handleOpenUrl(url, options)
++        return ApplicationDelegateProxy.shared.application(app, open: url, options: options)
+     }
+
+     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+         // Called when the app was launched with an activity, including Universal Links.
+         // Feel free to add additional processing here, but if you want the App API to support
+         // tracking app url opens, make sure to keep this call
+-        return CAPBridge.handleContinueActivity(userActivity, restorationHandler)
++        return ApplicationDelegateProxy.shared.application(application, continue: userActivity, restorationHandler: restorationHandler)
+     }
+```
+
+#### Switch from hard-coded `CAPNotifications` to `NSNotification` extensions
+
+In `ios/App/App/AppDelegate.swift`, update the following:
+
+```diff-swift
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         super.touchesBegan(touches, with: event)
+
+         let statusBarRect = UIApplication.shared.statusBarFrame
+         guard let touchPoint = event?.allTouches?.first?.location(in: self.window) else { return }
+
+         if statusBarRect.contains(touchPoint) {
+-            NotificationCenter.default.post(CAPBridge.statusBarTappedNotification)
++            NotificationCenter.default.post(name: .capacitorStatusBarTapped, object: nil)
+         }
+     }
+
+     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+-        NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidRegisterForRemoteNotificationsWithDeviceToken.name()), object: deviceToken)
++        NotificationCenter.default.post(name: .capacitorDidRegisterForRemoteNotifications, object: deviceToken)
+     }
+
+     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+-        NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidFailToRegisterForRemoteNotificationsWithError.name()), object: error)
++        NotificationCenter.default.post(name: .capacitorDidFailToRegisterForRemoteNotifications, object: error)
+     }
+```
+
+#### Ignore `DerivedData`
+
+Add `DerivedData` to the `ios/.gitignore` file. This is where the Capacitor CLI places native iOS builds.
+
+```diff
+ App/Pods
+ App/public
+ App/Podfile.lock
++DerivedData
+ xcuserdata
+
+ # Cordova plugins for Capacitor
+```
+
+### Android
+
+#### Switch to automatic Android plugin loading
+
+In Capacitor 3, it is preferred to automatically load the Android plugins (TODO: link). In `MainActivity.java`, the `onCreate` method can be removed. You no longer have to edit this file when adding or removing plugins.
+
+```diff-java
+ public class MainActivity extends BridgeActivity {
+-  @Override
+-  public void onCreate(Bundle savedInstanceState) {
+-    super.onCreate(savedInstanceState);
+-
+-    // Initializes the Bridge
+-    this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
+-      // Additional plugins you've installed go here
+-      add(Plugin1.class);
+-      add(Plugin2.class);
+-    }});
+-  }
+ }
+```
+
+If your app includes custom plugins, you do still have to register the plugins in `onCreate`:
+
+```java
+public class MainActivity extends BridgeActivity {
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    registerPlugin(PluginInMyApp.class);
+  }
+}
+```
+
+#### Update Gradle to 6.5
+
+Android Studio now recommends Gradle 6.5. (TODO)
+
 ## 2.0.0
+
+Capacitor 2 makes some tooling updates including the adoption of Swift 5 in iOS and AndroidX for Android.
+
+[Read the Capacitor 2.0 announcement &#8250;](https://ionicframework.com/blog/announcing-capacitor-2-0/)
 
 ### iOS
 
 #### Update native project to Swift 5
 
-Capacitor 2.0 uses Swift 5. It's recommended to update your native project to also use Swift 5.
+Capacitor 2 uses Swift 5. It's recommended to update your native project to also use Swift 5.
 
 1. From Xcode click **Edit** -> **Convert** -> **To Current Swift Syntax**.
 1. **App.app** will appear selected, click **Next** button.
@@ -24,7 +163,7 @@ Capacitor 2.0 uses Swift 5. It's recommended to update your native project to al
 
 #### AndroidX
 
-Capacitor 2.0 uses AndroidX for Android support library dependencies as recommended by Google, so the native project needs to be updated to use AndroidX as well.
+Capacitor 2 uses AndroidX for Android support library dependencies as recommended by Google, so the native project needs to be updated to use AndroidX as well.
 
 From Android Studio do **Refactor** -> **Migrate to AndroidX**. Then click on **Migrate** button and finally click on **Do Refactor**.
 
