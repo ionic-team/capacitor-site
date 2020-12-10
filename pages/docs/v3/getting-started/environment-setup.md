@@ -54,9 +54,3 @@ In the **SDK Tools** tab, make sure to install at least the following:
 - Android SDK Tools
 
 ![SDK Tools](/assets/img/docs/android/sdk-tools.png)
-
-> You can use [`native-run`](https://github.com/ionic-team/native-run), a dependency of the Capacitor CLI, to check the health of your Android SDK installation and look for missing packages:
->
-> ```bash
-> npx native-run android --sdk-info
-> ```
