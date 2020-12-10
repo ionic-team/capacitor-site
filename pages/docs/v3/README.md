@@ -4,7 +4,7 @@
   - [Introduction](index.md)
   - [Environment Setup](getting-started/environment-setup.md)
   - [Installation](getting-started/index.md)
-  - [Using with Ionic](getting-started/with-ionic.md)
+  - [Using with Ionic Framework](getting-started/with-ionic.md)
 - Basics
   - [Development Workflow](basics/workflow.md)
   - [Building your App](basics/building-your-app.md)

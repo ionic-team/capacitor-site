@@ -1,11 +1,11 @@
 ---
-title: Using Capacitor with Ionic
-description: Using Capacitor with Ionic
+title: Using Capacitor with Ionic Framework
+description: Using Capacitor with Ionic Framework
 contributors:
   - dotNetkow
 ---
 
-# Using Capacitor with Ionic
+# Using Capacitor with Ionic Framework
 
 ## Installing
 
