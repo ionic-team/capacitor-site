@@ -201,7 +201,39 @@ Capacitor 2 makes some tooling updates including the adoption of Swift 5 in iOS 
 
 [Read the Capacitor 2.0 announcement &#8250;](https://ionicframework.com/blog/announcing-capacitor-2-0/)
 
+### Backward Incompatible Plugin Changes
+
+- **Camera**
+  - `saveToGallery` default value is now `false` on all platforms
+  - if `allowEditing` is `true` and the edit is canceled, the original image is returned
+- **Push Notifications**
+  - permissions will no longer be requested when `register()` is called, use `requestPermission()`
+  - `PushNotificationChannel` renamed to `NotificationChannel`
+- **Local Notifications**
+  - permissions will no longer be requested when `register()` is called, use `requestPermission()`
+  - `schedule()` now returns `LocalNotificationScheduleResult`
+- **Toast**
+  - unify duration across platforms: short 2000ms, long 3500ms
+- **Geolocation**
+  - use Fused Location Provider on Android
+  - `requireAltitude` removed from `GeolocationOptions`
+  - change native location accuracy values on iOS ([more info](https://github.com/ionic-team/capacitor/pull/2420))
+- **Filesystem**
+  - `createIntermediateDirectories` was removed from `MkdirOptions` (use `recursive` instead)
+  - `recursive` option added to writeFile, which changes behavior on Android and web ([more info](https://github.com/ionic-team/capacitor/pull/2487))
+  - `Application` directory option removed because it was broken
+- **Device**
+  - `batteryLevel` and `isCharging` removed from `getInfo()`, use `getBatteryInfo()`
+- **Modals**
+  - `inputPlaceholder` sets a placeholder instead of text, use `inputText` instead
+- **App**
+  - `AppRestoredResult` is optional now, returned only if succeeded, otherwise it returns an error
+- **Clipboard**
+  - `ReadOptions` was removed
+
 ### iOS
+
+Capacitor 2 requires Xcode 11+.
 
 #### Update native project to Swift 5
 
@@ -360,6 +392,10 @@ In `android/app/src/main/res/xml/file_paths.xml` add `<cache-path name="my_cache
 +    <cache-path name="my_cache_images" path="." />
  </paths>
 ```
+
+#### Remove `launch_splash.xml`
+
+The `android/app/src/main/res/drawable/launch_splash.xml` file can be removed because it is no longer used.
 
 ### API Changes
 
