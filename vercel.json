@@ -56,6 +56,10 @@
     {
       "source": "/docs/v3/apis/local-notifications",
       "destination": "/docs/v3/apis/notifications"
+    },
+    {
+      "source": "/docs/v3/basics/utilities",
+      "destination": "/docs/v3/core-apis/web"
     }
   ],
   "headers": [

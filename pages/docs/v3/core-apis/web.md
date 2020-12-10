@@ -1,11 +1,11 @@
 ---
-title: JavaScript Utilities
-description: Capacitor's JavaScript Utilities
+title: Capacitor Web API
+description: The API for Capacitor on web
 contributors:
   - dotNetkow
 ---
 
-# JavaScript Utilities
+# Capacitor Web API
 
 Capacitor has several JavaScript utilities useful for ensuring apps run successfully across multiple platforms with the same codebase. To use them, import Capacitor then call the desired utility function:
 
