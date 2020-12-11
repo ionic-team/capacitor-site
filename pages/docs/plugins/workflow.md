@@ -85,8 +85,8 @@ First, within the plugin folder, run: `npm link`.
 Then, within the project that will test the plugin, run:
 
 ```bash
-$ npm link plugin-name
 $ npm install plugin-name
+$ npm link plugin-name
 ```
 
 The project's `package.json` file now shows the plugin package link in the dependencies list:
