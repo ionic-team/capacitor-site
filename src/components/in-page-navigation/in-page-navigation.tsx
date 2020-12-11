@@ -18,15 +18,7 @@ export class InPageNavigtion {
   @State() selectedId: string = null;
 
   render() {
-    const headings = this.headings
-      .filter(heading => heading.level !== 1)
-      .reduce((headings, h) => {
-        if (!headings.some(d => d.id === h.id)) {
-          headings.push(h);
-        }
-        return headings;
-      }, [] as HeadingData[]);
-
+    const headings = this.headings.filter(heading => heading.level !== 1);
     const h1 = this.headings.find(heading => heading.level === 1);
 
     const submitEditLink = this.editUrl ? (
@@ -60,8 +52,9 @@ export class InPageNavigtion {
         )}
 
         <ul class="heading-links">
-          {headings.map(heading => (
+          {headings.map((heading, i) => (
             <li
+              key={i}
               class={{
                 'heading-link': true,
                 [`size-h${heading.level}`]: true,
