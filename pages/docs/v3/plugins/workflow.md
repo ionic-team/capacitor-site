@@ -11,38 +11,37 @@ With the new plugin created, you can begin implementing functionality across a v
 
 ## Implementing a New Function
 
-Each plugin comes with some TypeScript files that provide typing to TypeScript consumers of your plugin.
+To implement new functionality in your plugin, begin by defining the function's signature in the exported TypeScript interface for your plugin in `src/definitions.ts`.
 
-Starting with the TypeScript interface is a good way to build out the API for your plugin. For example,
-here's the default interface for our Plugin located in `src/definitions.ts`:
+In the example below, the `openMap()` function is added which takes a `latitude` and `longitude`. It is good practice to define interfaces for method parameters that can be imported and used in apps.
 
-```typescript
-declare module '@capacitor/core' {
-  interface PluginRegistry {
-    Echo: EchoPlugin;
-  }
-}
+```diff-typescript
+ export interface EchoPlugin {
+   echo(options: { value: string }): Promise<{ value: string }>;
++  openMap(options: OpenMapOptions): Promise<void>;
+ }
 
-export interface EchoPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
-}
-```
-
-To implement new functionality in your plugin, begin by defining a new function in the exported interface:
-
-```typescript
-export interface EchoPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
-  openMap(location: { latitude: number; longitude: number }): Promise<void>;
-}
++export interface OpenMapOptions {
++  latitude: number;
++  longitude: number;
++}
 ```
 
 Implement the web implementation in `src/web.ts`:
 
-```typescript
-async openMap(location: { latitude: number, longitude: number}): Promise<void> {
-  // logic here
-}
+```diff-typescript
+ import type {
+   EchoPlugin,
++  OpenMapOptions,
+ } from './definitions';
+
+ export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
+   // other functions
+
++  async openMap(location: OpenMapOptions): Promise<void> {
++    // logic here
++  }
+ }
 ```
 
 To compile the plugin, navigate into the plugin directory then run:
@@ -60,6 +59,8 @@ public void openMap(PluginCall call) {
   Double longitude = call.getDouble("longitude");
 
   // more logic
+
+  call.resolve();
 }
 ```
 
@@ -71,41 +72,90 @@ Implement [iOS functionality](./ios) in `ios/Plugin/Plugin.swift`:
   let longitude = call.getNumber("longitude")
 
   // more logic
+
+  call.resolve()
 }
 ```
 
-> Remember to export the plugin to Capacitor (to make it aware of the plugin) on [iOS](/docs/plugins/ios#export-to-capacitor) and [Android](/docs/plugins/android#export-to-capacitor).
+> Remember to export the plugin to Capacitor on [iOS](/docs/plugins/ios#export-to-capacitor) and [Android](/docs/plugins/android#export-to-capacitor).
 
 ## Local Testing
 
-To test the plugin locally while developing it, link the plugin folder to your app project using the [npm link command](https://docs.npmjs.com/cli/link).
-
-First, within the plugin folder, run: `npm link`.
-
-Then, within the project that will test the plugin, run:
+To test the plugin locally while developing it, link the plugin folder to your app using `npm install` with the path to your plugin.
 
 ```bash
-npm link plugin-name
-npm install plugin-name
+npm install ../path/to/my-plugin
 ```
 
 The project's `package.json` file now shows the plugin package link in the dependencies list:
 
 ```json
-"my-plugin": "file:my-plugin",
+"my-plugin": "file:../path/to/my-plugin",
 ```
 
-Finally, run `npx cap sync` to make the native projects aware of your plugin. If it was detected correctly, it will print something similar to:
+Finally, run `npx cap sync` to make the native projects aware of your plugin. If it was detected correctly, it will print something like this:
 
-> Found 1 Capacitor plugin for android: my-plugin (0.0.1)
+```bash
+[info] Found 1 Capacitor plugin for android:
+    - my-plugin (0.0.1)
+```
 
 ### Unlinking the Plugin
 
-Once you're done with local testing, be sure to unlink the plugin. Otherwise, subsequent `npm install`s will install the local plugin, not the published version on npm (assuming you publish it).
+To unlink the local plugin from your app, use `npm uninstall` with the package name of your plugin.
 
-First, run `npm unlink --no-save plugin-name` in the app project folder.
+```bash
+npm uninstall my-plugin
+```
 
-Next, run `npm unlink` in the plugin folder.
+## Package Scripts
+
+The plugin template ships with a variety of scripts in `package.json`.
+
+- `verify`: builds and tests web and native code
+- `lint`: lints web and native code
+- `fmt`: autoformats web and native code
+- `docgen`: generates documentation from plugin interface (see [Documentation](#documentation))
+- `build`: builds web code into ESM and bundle distributions
+
+## Documentation
+
+To document plugin functionality, add [JSDoc](https://jsdoc.app) comment blocks to functions and properties.
+
+> It is usually not necessary to include type information with the `@param` and `@returns` JSDoc tags in TypeScript files.
+
+Using our `openMap()` function as an example, open `src/definitions.ts` and start documenting!
+
+```diff-typescript
+ export interface EchoPlugin {
+   echo(options: { value: string }): Promise<{ value: string }>;
+
++  /**
++   * Opens the map at a given location.
++   *
++   * @since 1.1.0
++   */
+   openMap(options: OpenMapOptions): Promise<void>;
+ }
+
+ export interface OpenMapOptions {
++  /**
++   * The latitude at which to open the map.
++   */
+   latitude: number;
+
++  /**
++   * The longitude at which to open the map.
++   */
+   longitude: number;
+ }
+```
+
+The plugin template ships with [`@capacitor/docgen`](https://github.com/ionic-team/capacitor-docgen), which writes generated documentation to `README.md`. Documentation is generated during `npm run build`. You can also run it manually:
+
+```bash
+npm run docgen
+```
 
 ## Publishing
 
