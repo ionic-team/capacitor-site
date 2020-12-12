@@ -131,7 +131,7 @@ The Author element can be configured in `package.json`, but is not used by Capac
 <author email="email@test.com" href="http://ionicframework.com/">Ionic Framework Team</author>
 ```
 
-Most of the `allow-intent` values are either not used or there are [configurable alternatives](/docs/basics/configuring-your-app/) in `capacitor.config.json`.
+Most of the `allow-intent` values are either not used or there are [configurable alternatives](/docs/basics/configuring-your-app/).
 
 ```xml
 <allow-intent href="http://*/*" />
