@@ -9,6 +9,8 @@ This is a list of instructions for updating to certain Capacitor versions in you
 
 These instructions may include changes in configuration or the build process, updates to dependencies or your development environment, code changes to your app, or anything else to be aware of when updating to newer versions of Capacitor.
 
+> Looking for an [Upgrade Guide for plugins](/docs/updating/plugins)?
+
 ## Update to 3.0.0 (WIP)
 
 Capacitor 3 brings crucial updates to the ecosystem and exciting new features.
