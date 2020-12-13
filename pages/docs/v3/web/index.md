@@ -9,68 +9,47 @@ contributors:
 
 Capacitor fully supports traditional web and Progressive Web Apps. In fact, using Capacitor makes it easy to ship a PWA version of your iOS and Android app store apps with minimal work.
 
-### Installation
+## Browser Support
 
-Chances are, you already have Capacitor installed in your app if you're using Capacitor to build an iOS, or Android app. In capacitor, the `web` platform is just the web project that powers your app!
+Capacitor core and plugins build for ES2017. This newer JavaScript syntax is supported in all modern browsers (including those that power PWAs on iOS and Android), but will not work in IE11 without additional JavaScript transformations, e.g. with [Babel](https://babeljs.io).
 
-If you don't have Capacitor installed yet, consult the [Installation](/docs/getting-started/) guide before continuing.
+Plugins with web support will perform feature detection and throw exceptions if a browser does not support a particular Web API.
 
-#### Using Capacitor as a Module
+## Installation
 
-Generally, apps will be using a framework with a build system that supports importing JavaScript modules. In that case,
-simply import Capacitor at the top of your app and you're set:
+If you're already building with Capacitor for iOS or Android, there are no additional installation steps!
 
-```typescript
-import { Capacitor } from '@capacitor/core';
-```
+Otherwise, see the [Installation](/docs/getting-started/) guide before continuing.
 
-To use a plugin, import `Plugins` and call it, noting that only plugins
-with web support will actually provide useful functionality:
+### Using Capacitor as a Module
 
-```typescript
-import { Plugins } from '@capacitor/core';
-
-const position = await Plugins.Geolocation.getCurrentPosition();
-```
+Most commonly, apps will be using a framework with a build system that supports importing JavaScript modules. By importing from `@capacitor/core`, or by importing a plugin, the Capacitor JavaScript runtime will be loaded with your app.
 
 ### Using Capacitor as a Script Include
 
-To use Capacitor core in a web app that is not using a build system or bundler/module loader, you must set `bundledWebRuntime` to `true` in the [Capacitor configuration file](/docs/v3/config), tell capacitor to copy the specified version of Capacitor Core into your project, and then import `capacitor.js` into your `index.html`:
+To use the Capacitor runtime in a web app that is not using a build system or bundler/module loader, do the following:
+
+1. Set `bundledWebRuntime` to `true` in the [Capacitor configuration file](/docs/v3/config)
 
 ```json
-{
-  "bundledWebRuntime": true
-}
+"bundledWebRuntime": true
 ```
 
-Copy to your project:
+2. Copy the Capacitor runtime bundle (`capacitor.js`) into your web assets directory
 
 ```bash
 npx cap copy web
 ```
 
-In `index.html`, import `capacitor.js` before your app's JS:
+3. Import `capacitor.js` in `index.html` before other JavaScript
 
 ```html
 <script src="capacitor.js"></script>
 <script src="your/app.js"></script>
 ```
 
-## Developing your App
-
-Chances are, you're using a framework like [Ionic](https://ionicframework.com/) for UI components and building. To develop
-your Capacitor web app, just use your framework!
-
-If you're not using a framework, Capacitor comes with a small development service with HTML5 routing support. To use it,
-run:
-
-```bash
-npx cap serve
-```
-
 ## Going Live
 
-When you're ready to publish your Progressive Web App and share it with the world,
-just upload the contents of your web directory (for example, the `www/` or `build/` folder).
+When you're ready to publish your Progressive Web App and share it with the world, just upload the contents of your web assets directory.
 
 That will contain everything you need to run your app!
