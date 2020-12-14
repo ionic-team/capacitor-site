@@ -49,6 +49,8 @@ It may be a good time to evaluate the request codes your plugin is using. Since 
 - 9000-9999 should be reserved for Capacitor core and official plugins
 - 10000+ should be reserved for community/third-party plugins
 
+> Android may be adding support for auto-managed request codes, which would make request codes in the Capacitor ecosystem a nonissue. Subscribe to [#3948](https://github.com/ionic-team/capacitor/issues/3948) for updates.
+
 ### iOS
 
 TODO
