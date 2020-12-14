@@ -85,6 +85,8 @@ While many of the plugin APIs remain the same to ease the migration process to C
   - `isScreenReaderEnabled()` method has been renamed to `isEnabled()`
   - `'accessibilityScreenReaderStateChange'` event has been renamed to `'screenReaderStateChange'`
   - On Android and iOS, `speak()` will only work if a screen reader is currently active. For text-to-speech capabilities while screen readers are active or not, use [`@capacitor-community/text-to-speech`](https://github.com/capacitor-community/text-to-speech).
+- **Browser**
+  - `prefetch()` has been removed. (TODO: explain)
 - **Device**
   - App information has been removed from `getInfo()` (`appVersion`, `appBuild`, `appId` and `appName`). Use the App plugin's [`getInfo()`](/docs/apis/app#getinfo) for this information.
 - **Haptics**
