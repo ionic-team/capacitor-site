@@ -96,6 +96,12 @@ To fail, or reject a call, call `reject()`, passing an error string and optional
 call.reject(error.localizedDescription, nil, error)
 ```
 
+### Permissions
+
+If your plugin has functionality on iOS that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases yet, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
+
+TODO
+
 ### Presenting Native Screens
 
 To present a Native Screen over the Capacitor screen we need to acces the Capacitor's View Controller.

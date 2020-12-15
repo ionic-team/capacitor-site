@@ -141,6 +141,12 @@ To fail, or reject a call, use `call.reject`, passing an error string and option
 call.reject(exception.getLocalizedMessage(), null, exception);
 ```
 
+### Permissions
+
+If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases yet, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
+
+TODO
+
 ### Presenting Native Screens
 
 To present a Native Screen over the Capacitor screen we will use [Android's Intents](https://developer.android.com/guide/components/intents-filters). Intents allow you to start an activity from your app, or from another app. [See Common Intents](https://developer.android.com/guide/components/intents-common)

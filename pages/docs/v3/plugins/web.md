@@ -24,9 +24,9 @@ The basic structure of a web plugin for Capacitor looks like this:
 ```typescript
 import { WebPlugin } from '@capacitor/core';
 
-import type { MyPlugin } from './definitions';
+import type { EchoPlugin } from './definitions';
 
-export class MyPluginWeb extends WebPlugin implements MyPlugin {
+export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
   async echo(options: { value: string }) {
     console.log('ECHO', options);
     return options;
@@ -35,3 +35,97 @@ export class MyPluginWeb extends WebPlugin implements MyPlugin {
 ```
 
 The `MyPlugin` interface defines the method signatures of your plugin. In TypeScript, we can ensure the web implementation (the `MyPluginWeb` class) correctly implements the interface.
+
+## Permissions
+
+If your plugin has functionality on web that requires permissions from the end user, then you will need to implement the permissions pattern.
+
+### Aliases
+
+You will need to develop one or more aliases for abstracting and grouping permissions that your plugin requires. These aliases are used to convey permission state. By default, an alias can be in one of the following states:
+
+- `granted`: Every permission in this alias has been granted by the end user (or prompting is not necessary).
+- `denied`: One or more permissions in this alias have been denied by the end user.
+- `prompt`: The end user should be prompted for permission, because it has neither been granted nor denied.
+- `prompt-with-rationale`: The end user has denied permission before, but has not blocked the prompt yet.
+
+It is also possible to define custom states for aliases, if need be. For example, the official [Camera plugin](/docs/apis/camera) also defines a `limited` state for the `camera` and `photos` aliases.
+
+Aliases are cross-platform, so make sure to take iOS, Android, and web permissions into account when deciding on the aliases for your plugin.
+
+### Definitions
+
+In `src/definitions.ts`, import `PermissionState` from Capacitor and define a `PermissionStatus` interface which represents the status of permissions in your plugin, keyed by alias(es).
+
+```typescript
+import type { PermissionState } from '@capacitor/core';
+
+export interface PermissionStatus {
+  alias: PermissionState; // TODO: change 'alias' to the actual name of your alias!
+}
+```
+
+Then, add the definitions for `checkPermissions()` and `requestPermissions()` in your plugin interface. Both of these methods will return the current status of permissions in your plugin as defined by `PermissionStatus`.
+
+```diff-typescript
+ export interface EchoPlugin {
+   echo(options: { value: string }): Promise<{ value: string }>;
++  checkPermissions(): Promise<PermissionStatus>;
++  requestPermissions(): Promise<PermissionStatus>;
+ }
+```
+
+Because these methods are added to your plugin interface, they must be implemented on all platforms that your plugin supports.
+
+### Implementing Permissions
+
+In `src/web.ts`, add the `checkPermissions()` and `requestPermissions()` methods to your web implementation.
+
+```diff-typescript
++import { PermissionState } from './definitions';
+
+ export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
+   async echo(options: { value: string }) {
+     ...
+   }
+
++  async checkPermissions(): Promise<PermissionState> {
++    // TODO
++  }
+
++  async requestPermissions(): Promise<PermissionState> {
++    // TODO
++  }
+ }
+```
+
+#### `checkPermissions()`
+
+This method should return the current status of permissions in your plugin. This information may be available on the specific web API directly, or from the [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API).
+
+Remember, when working with web APIs with spotty browser adoption (such as the Permissions API), you should implement feature detection and throw an appropriate error when the end user's browser is not supported.
+
+```diff-typescript
+ async checkPermissions(): Promise<PermissionState> {
++  if (typeof navigator === 'undefined' || !navigator.permissions) {
++    throw this.unavailable('Permissions API not available in this browser.');
++  }
+
+   const permission = await navigator.permissions.query( ... );
+
+   // TODO
+ }
+```
+
+#### `requestPermissions()`
+
+This method should prompt the end user for permission to use the platform APIs that your plugin requires. Then, it should return the new state of permissions in your plugin after prompting (just like with the `checkPermissions()` method).
+
+On web, is it sometimes not possible to separate the requesting of permission from the actual call. For example, the Geolocation API only requests permission at the time a location is requested. For situations like this, we recommended throwing the unimplemented exception.
+
+```typescript
+async requestPermissions(): Promise<PermissionState> {
+  // TODO: does the web support requesting permissions for my plugin?
+  throw this.unimplemented('Not implemented on web.');
+}
+```
