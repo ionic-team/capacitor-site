@@ -165,9 +165,7 @@ getActivity().startActivity(intent);
 
 Sometimes when you launch an Intent, you expect some result back. In that case you want to use `startActivityForResult`.
 
-Also make sure you call `saveCall(call);` as you will need it later when handling the intents result.
-
-You also have to register your intents [unique request](https://developer.android.com/training/basics/intents/result#StartActivity) code with `@CapacitorPlugin` in order for
+Make sure to register your intents [unique request](https://developer.android.com/training/basics/intents/result#StartActivity) code with `@CapacitorPlugin` in order for
 `handleOnActivityResult` to be triggered.
 
 ```java
@@ -179,8 +177,6 @@ class ImagePicker extends Plugin {
 
   @PluginMethod()
   public void pickImage(PluginCall call) {
-    saveCall(call);
-
     Intent intent = new Intent(Intent.ACTION_PICK);
     intent.setType("image/*");
 
@@ -189,15 +185,11 @@ class ImagePicker extends Plugin {
 
   // in order to handle the intents result, you have to @Override handleOnActivityResult
   @Override
-  protected void handleOnActivityResult(int requestCode, int resultCode, Intent data) {
-    super.handleOnActivityResult(requestCode, resultCode, data);
-
-    // Get the previously saved call
-    PluginCall savedCall = getSavedCall();
-
+  protected void handleOnActivityResult(PluginCall lastPluginCall, int requestCode, int resultCode, Intent data) {
     if (savedCall == null) {
       return;
     }
+
     if (requestCode == REQUEST_IMAGE_PICK) {
       // Do something with the data
     }
