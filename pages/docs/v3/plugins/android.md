@@ -186,7 +186,7 @@ class ImagePicker extends Plugin {
   // in order to handle the intents result, you have to @Override handleOnActivityResult
   @Override
   protected void handleOnActivityResult(PluginCall lastPluginCall, int requestCode, int resultCode, Intent data) {
-    if (savedCall == null) {
+    if (lastPluginCall == null) {
       return;
     }
 
