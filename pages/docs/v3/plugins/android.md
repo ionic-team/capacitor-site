@@ -14,7 +14,7 @@ Building Capacitor plugins for Android involves writing Java or [Kotlin](https:/
 
 To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins) section of the Plugin guide.
 
-Next, open `your-plugin/android/` in Android Studio. You then want to navigate to the `.java` file for your plugin, which changes depending on the Plugin ID and Plugin Class Name you used when creating the plugin.
+Next, open `my-plugin/android/` in Android Studio. You then want to navigate to the `.java` file for your plugin, which changes depending on the Plugin ID and Plugin Class Name you used when creating the plugin.
 
 For example, for a plugin with the ID `com.domain.myplugin` and the Plugin Class Name `MyPlugin`, you would find the `.java` file at `android/src/main/java/com/domain/myplugin/MyPlugin.java`.
 
@@ -26,7 +26,7 @@ After generating a plugin, right click the Java plugin class in Android Studio a
 
 ## Building your Plugin
 
-A Capacitor plugin for Android is a simple Java class that extends `com.getcapacitor.Plugin` and has a `@CapacitorPlugin` annotation.
+A Capacitor plugin for Android is a simple Java class that extends `com.getcapacitor.Plugin` and has a `@CapacitorPlugin()` annotation.
 It has some methods with `@PluginMethod()` annotation that will be callable from JavaScript.
 
 Once your plugin is generated, you can start editing it by opening the file with the Plugin class name you choose on the generator.
@@ -62,8 +62,6 @@ public class EchoPlugin extends Plugin {
 }
 ```
 
-> In order to make Capacitor aware of your plugin, you have to [export it to capacitor](#export-to-capacitor) in your apps `MainActivity`.
-
 ### Kotlin Example
 
 If choosing to use Kotlin instead of Java, the Echo plugin example looks like this:
@@ -91,8 +89,6 @@ class EchoPlugin : Plugin() {
   }
 }
 ```
-
-> In order to make Capacitor aware of your plugin, you have to [export it to capacitor](#export-to-capacitor) in your apps `MainActivity`.
 
 It is recommended for Kotlin files to be in the `android/src/main/java/` directory where Java files might also reside.
 
@@ -126,9 +122,9 @@ Notice the various ways data can be accessed on the `PluginCall` instance, inclu
 
 ### Returning Data Back
 
-A plugin call can succeed or fail. For calls using promises (most common), succeeding corresponds to calling `resolve` on the Promise, and failure calling `reject`. For those using callbacks, a succeeding will call the success callback or the error callback if failing.
+A plugin call can either succeed or fail. Plugin calls borrow method names from JavaScript promises: call `resolve()` to indicate success (optionally returning data) and use `reject()` to indicate failure with an error message.
 
-The `resolve` method of `PluginCall` takes a `JSObject` and supports JSON-serializable data types. Here's an example of returning data back to the client:
+The `resolve()` method of `PluginCall` takes a `JSObject` and supports JSON-serializable data types. Here's an example of returning data back to the client:
 
 ```java
 JSObject ret = new JSObject();
@@ -139,10 +135,10 @@ ret.put("info", info);
 call.resolve(ret);
 ```
 
-To fail, or reject a call, use `call.reject`, passing an error string and (optionally) an `Exception` instance
+To fail, or reject a call, use `call.reject`, passing an error string and optionally an error code and `Exception` instance
 
 ```java
-call.reject(exception.getLocalizedMessage(), exception);
+call.reject(exception.getLocalizedMessage(), null, exception);
 ```
 
 ### Presenting Native Screens
@@ -205,28 +201,25 @@ class ImagePicker extends Plugin {
 
 ### Events
 
-Capacitor Plugins can emit App events and Plugin events
+Capacitor Plugins can emit App events and Plugin events.
 
 #### App Events
 
 App Events are regular javascript events, like `window` or `document` events.
 
-Capacitor provides all this functions to fire events:
+Capacitor provides these functions to fire events:
 
 ```java
 //If you want to provide the target
 bridge.triggerJSEvent("myCustomEvent", "window");
-
 bridge.triggerJSEvent("myCustomEvent", "document", "{ 'dataKey': 'dataValue' }");
 
 // Window Events
 bridge.triggerWindowJSEvent("myCustomEvent");
-
 bridge.triggerWindowJSEvent("myCustomEvent", "{ 'dataKey': 'dataValue' }");
 
 // Document events
 bridge.triggerDocumentJSEvent("myCustomEvent");
-
 bridge.triggerDocumentJSEvent("myCustomEvent",  "{ 'dataKey': 'dataValue' }");
 ```
 
@@ -243,7 +236,9 @@ window.addEventListener('myCustomEvent', function () {
 Plugins can emit their own events that you can listen by attaching a listener to the plugin Object like this:
 
 ```typescript
-Plugins.MyPlugin.addListener('myPluginEvent', (info: any) => {
+import { MyPlugin } from 'my-plugin';
+
+MyPlugin.addListener('myPluginEvent', (info: any) => {
   console.log('myPluginEvent was fired');
 });
 ```
@@ -259,7 +254,9 @@ notifyListeners("myPluginEvent", ret);
 To remove a listener from the plugin object:
 
 ```typescript
-const myPluginEventListener = Plugins.MyPlugin.addListener(
+import { MyPlugin } from 'my-plugin';
+
+const myPluginEventListener = MyPlugin.addListener(
   'myPluginEvent',
   (info: any) => {
     console.log('myPluginEvent was fired');
@@ -329,28 +326,3 @@ Capacitor plugins can override the webview navigation. For that the plugin can o
 Returning `true` causes the WebView to abort loading the URL.
 Returning `false` causes the WebView to continue loading the URL.
 Returning `null` will defer to the default Capacitor policy.
-
-### Export to Capacitor
-
-By using the `@CapacitorPlugin` and `@PluginMethod()` annotations in your plugins, you make them available to Capacitor, but you still need an extra step in your application to make Capacitor aware of the plugins.
-
-This is done in your apps `MainActivity`, where you `add` it in e.g. `src/main/java/com/example/myapp/MainActivity.java` like so:
-
-```java
-// Other imports...
-import com.example.myapp.EchoPlugin;
-
-public class MainActivity extends BridgeActivity {
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-
-    // Initializes the Bridge
-    this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
-      // Additional plugins you've installed go here
-      // Ex: add(TotallyAwesomePlugin.class);
-      add(EchoPlugin.class);
-    }});
-  }
-}
-```

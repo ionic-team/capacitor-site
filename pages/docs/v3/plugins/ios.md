@@ -12,9 +12,9 @@ Building Capacitor plugins for iOS involves writing Swift (or Objective-C) to in
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins/creating-plugins) section of the Plugin guide.
 
-Next, open `your-plugin/ios/Plugin.xcworkspace` in Xcode.
+Next, open `my-plugin/ios/Plugin.xcworkspace` in Xcode.
 
 ## Building your Plugin in Swift
 
@@ -77,9 +77,9 @@ options using `guard`.
 
 ### Returning Data Back
 
-A plugin call can succeed or fail. For calls using promises (most common), succeeding corresponds to calling `resolve` on the Promise, and failure calling `reject`. For those using callbacks, a succeeding will call the success callback or the error callback if failing.
+A plugin call can either succeed or fail. Plugin calls borrow method names from JavaScript promises: call `resolve()` to indicate success (optionally returning data) and use `reject()` to indicate failure with an error message.
 
-The `resolve` method of `CAPPluginCall` takes a dictionary and supports JSON-serializable data types. Here's an example of returning data back to the client:
+The `resolve()` method of `CAPPluginCall` takes a dictionary and supports JSON-serializable data types. Here's an example of returning data back to the client:
 
 ```swift
 call.resolve([
@@ -90,12 +90,10 @@ call.resolve([
 ])
 ```
 
-To fail, or reject a call, call `call.reject`, passing an error string and (optionally) an `Error` instance and extra data back:
+To fail, or reject a call, call `reject()`, passing an error string and optionally an error code and `Error` instance:
 
 ```swift
-call.reject(error.localizedDescription, error, [
-  "item1": true
-])
+call.reject(error.localizedDescription, nil, error)
 ```
 
 ### Presenting Native Screens
@@ -122,29 +120,26 @@ self.bridge.viewController.present(ourCustomViewController, animated: true, comp
 
 ### Events
 
-Capacitor Plugins can emit App events and Plugin events
+Capacitor Plugins can emit App events and Plugin events.
 
 #### App Events
 
 App Events are regular javascript events, like `window` or `document` events.
 
-Capacitor provides all this functions to fire events:
+Capacitor provides these functions to fire events:
 
 ```swift
 
 //If you want to provide the target
 self.bridge.triggerJSEvent(eventName: "myCustomEvent", target: "window")
-
 self.bridge.triggerJSEvent(eventName: "myCustomEvent", target: "document", data: "my custom data")
 
 // Window Events
 self.bridge.triggerWindowJSEvent(eventName: "myCustomEvent")
-
 self.bridge.triggerWindowJSEvent(eventName: "myCustomEvent", data: "my custom data")
 
 // Document events
 self.bridge.triggerDocumentJSEvent(eventName: "myCustomEvent")
-
 self.bridge.triggerDocumentJSEvent(eventName: "myCustomEvent", data: "my custom data")
 ```
 
@@ -161,19 +156,25 @@ window.addEventListener('myCustomEvent', function () {
 Plugins can emit their own events that you can listen by attaching a listener to the plugin Object like this:
 
 ```typescript
-Plugins.MyPlugin.addListener('myPluginEvent', (info: any) => {
+import { MyPlugin } from 'my-plugin';
+
+MyPlugin.addListener('myPluginEvent', (info: any) => {
   console.log('myPluginEvent was fired');
 });
 ```
 
 To emit the event from the Swift plugin class you can do it like this:
 
-`self.notifyListeners("myPluginEvent", data: [:])`
+```swift
+self.notifyListeners("myPluginEvent", data: [:])
+```
 
 To remove a listener from the plugin object:
 
 ```typescript
-const myPluginEventListener = Plugins.MyPlugin.addListener(
+import { MyPlugin } from 'my-plugin';
+
+const myPluginEventListener = MyPlugin.addListener(
   'myPluginEvent',
   (info: any) => {
     console.log('myPluginEvent was fired');

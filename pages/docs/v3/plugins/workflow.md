@@ -77,7 +77,7 @@ Implement [iOS functionality](./ios) in `ios/Plugin/Plugin.swift`:
 }
 ```
 
-> Remember to export the plugin to Capacitor on [iOS](/docs/plugins/ios#export-to-capacitor) and [Android](/docs/plugins/android#export-to-capacitor).
+> Remember to [register plugin methods](/docs/plugins/ios#export-to-capacitor) in your `.m` file.
 
 ## Local Testing
 
@@ -167,4 +167,4 @@ npm publish
 
 This will build the JS portion of your plugin and publish the rest of your plugin files to npm.
 
-Your package can now be installed using `npm install your-plugin` in any Capacitor app.
+Your package can now be installed using `npm install my-plugin` in any Capacitor app.

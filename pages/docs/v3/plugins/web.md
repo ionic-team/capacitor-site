@@ -15,7 +15,7 @@ Capacitor utilizes a web/native compatibility layer, making it easy to build plu
 
 To get started, first generate a plugin as shown in the [Getting Started](./#getting-started) section of the Plugin guide.
 
-Next, open `your-plugin/src/web.ts` in your editor of choice.
+Next, open `my-plugin/src/web.ts` in your editor of choice.
 
 ## Example
 
