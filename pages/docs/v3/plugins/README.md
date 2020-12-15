@@ -30,4 +30,3 @@
   - [iOS Guide](ios.md)
   - [Android Guide](android.md)
   - [Web/PWA Guide](web.md)
-  - [JavaScript Guide](js.md)
