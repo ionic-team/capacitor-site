@@ -27,17 +27,21 @@ The `name`, `requestCodes`, and `permissionRequestCode` attributes are the same.
 -@NativePlugin(
 +@CapacitorPlugin(
      name = "FooBar",
-     requestCodes = { 10051, 10052, 10053 },
-     permissionRequestCode = 10050,
+     requestCodes = {
+         FooBarPlugin.REQUEST_SOME_METHOD,
+         FooBarPlugin.REQUEST_SOME_OTHER_METHOD
+     },
+     permissionRequestCode = FooBarPlugin.REQUEST_ALL_PERMISSIONS,
 -    permissions = { Manifest.permission.FOO, Manifest.permission.BAR }
 +    permissions = {
 +        @Permission(strings = { Manifest.permission.FOO }, alias = "foo"),
 +        @Permission(strings = { Manifest.permission.BAR }, alias = "bar")
 +    })
  )
- public class FooBar extends Plugin {
-
- }
+ public class FooBarPlugin extends Plugin {
+     static final int REQUEST_SOME_METHOD = 10051;
+     static final int REQUEST_SOME_OTHER_METHOD = 10052;
+     static final int REQUEST_ALL_PERMISSIONS = 10050;
 ```
 
 #### Evaluate Android request codes
