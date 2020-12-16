@@ -14,7 +14,7 @@ import { Capacitor } from '@capacitor/core';
 const isAvailable = Capacitor.isPluginAvailable('Camera');
 ```
 
-## convertFileSrc
+## convertFileSrc()
 
 `convertFileSrc: (filePath: string) => string;`
 
@@ -39,7 +39,7 @@ document.getElementById("savedPhoto").src = savedPhoto;
 <img id="savedPhoto" />
 ```
 
-## getPlatform
+## getPlatform()
 
 `getPlatform: () => string;`
 
@@ -51,19 +51,19 @@ if (Capacitor.getPlatform() === 'ios') {
 }
 ```
 
-## isNative
+## isNativePlatform()
 
-`isNative?: boolean;`
+`isNativePlatform: () => boolean;`
 
 Check whether the currently running platform is native (`ios`, `android`).
 
 ```typescript
-if (Capacitor.isNative) {
+if (Capacitor.isNativePlatform()) {
   // do something
 }
 ```
 
-## isPluginAvailable
+## isPluginAvailable()
 
 `isPluginAvailable: (name: string) => boolean;`
 
