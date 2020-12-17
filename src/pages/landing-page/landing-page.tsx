@@ -402,7 +402,6 @@ public class MyAwesomePlugin: CAPPlugin {
             onFormSubmitted={() => this.hubspotFormSubmitted}
           />
         </site-modal>
-        ,
       </Fragment>
     );
   };
