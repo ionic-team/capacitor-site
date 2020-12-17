@@ -36,7 +36,7 @@ This builds your Progressive Web App if you've configured <a href="/docs/basics/
 Once your web code is built, it needs to be copied into each native project:
 
 ```bash
-npx cap copy
+npx cap sync
 ```
 
 Run this command each time you perform a build and consider adding it to the end of your build script in `package.json`.
@@ -48,7 +48,7 @@ Run this command each time you perform a build and consider adding it to the end
 iOS relies on Xcode to do the final app compile:
 
 ```bash
-npx cap copy ios
+npx cap sync ios
 npx cap open ios
 ```
 
@@ -59,7 +59,7 @@ Once Xcode launches, you can build your app binary through the standard Xcode wo
 Android relies on Android Studio (or, optionally, the Android CLI tools) to build the app:
 
 ```bash
-npx cap copy android
+npx cap sync android
 npx cap open android
 ```
 

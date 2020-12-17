@@ -38,7 +38,7 @@ To use the Capacitor runtime in a web app that is not using a build system or bu
 2. Copy the Capacitor runtime bundle (`capacitor.js`) into your web assets directory
 
 ```bash
-npx cap copy web
+npx cap sync web
 ```
 
 3. Import `capacitor.js` in `index.html` before other JavaScript
