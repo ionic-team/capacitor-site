@@ -55,6 +55,17 @@ It may be a good time to evaluate the request codes your plugin is using. Since 
 
 > Android may be adding support for auto-managed request codes, which would make request codes in the Capacitor ecosystem a nonissue. Subscribe to [#3948](https://github.com/ionic-team/capacitor/issues/3948) for updates.
 
+#### Use WebColor.parseColor() over Color.parseColor()
+
+Android parses hex color strings with an alpha channel as _ARGB_ while in iOS and Web they are parsed as _RGBA_. If you are sharing colors with alpha channels across platforms be sure to use the new `WebColor` utility. `WebColor.parseColor()` works similar to the native Android `Color.parseColor()` function, but parses the string as RGBA instead.
+
+```java
+String colorStringWithAlpha = "#FF000088"; // Semi-transparent red
+int color = WebColor.parseColor(colorStringWithAlpha);
+```
+
+If you do not have an alpha channel on your colors both functions will return the same result.
+
 ### iOS
 
 TODO

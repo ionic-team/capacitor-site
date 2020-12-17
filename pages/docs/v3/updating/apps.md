@@ -195,6 +195,17 @@ public class MainActivity extends BridgeActivity {
 }
 ```
 
+#### Use WebColor.parseColor() over Color.parseColor()
+
+Android parses hex color strings with an alpha channel as _ARGB_ while in iOS and Web they are parsed as _RGBA_. If you are sharing colors with alpha channels across platforms be sure to use the new `WebColor` utility. `WebColor.parseColor()` works similar to the native Android `Color.parseColor()` function, but parses the string as RGBA instead.
+
+```java
+String colorStringWithAlpha = "#FF000088"; // Semi-transparent red
+int color = WebColor.parseColor(colorStringWithAlpha);
+```
+
+If you do not have an alpha channel on your colors both functions will return the same result.
+
 #### Update Gradle to 6.5
 
 Android Studio now recommends Gradle 6.5. (TODO)
