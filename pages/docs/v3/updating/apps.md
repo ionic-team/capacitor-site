@@ -99,6 +99,8 @@ While many of the plugin APIs remain the same to ease the migration process to C
 
 ### iOS
 
+Capacitor 3 supports iOS 12+. Xcode 12+ is required.
+
 #### Switch from `CAPBridge` to `ApplicationDelegateProxy` in application events
 
 In `ios/App/App/AppDelegate.swift`, update the following:
