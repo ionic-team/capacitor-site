@@ -18,8 +18,6 @@ You will interact with the native platform underneath using Capacitor's plugins 
 
 To deploy your web app to native devices, you will first need to build the web assets into an output directory. Consult your JavaScript framework's documentation for the exact command. For most, it's `npm run build`.
 
-[Learn more about building your app &#8250;](/docs/basics/building-your-app)
-
 ## Sync your Project
 
 You may wish to sync your web app with your native project(s) in the following circumstances:
