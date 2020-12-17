@@ -51,12 +51,6 @@ npx jetify
 npx cap sync android
 ```
 
-## Error: "Unable to load native-bridge.js. Capacitor will not function!"
-
-This error occurs when Capacitor's `native-bridge.js` file was not copied to the native project.
-
-The fix is simple: run `npx cap copy android` to copy this file.
-
 ## Error: "Please select Android SDK"
 
 This error is often due to Gradle needing to be synced, something you'll need to do
