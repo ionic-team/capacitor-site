@@ -72,6 +72,10 @@
     {
       "source": "/docs/v3/plugins/js",
       "destination": "/docs/v3/plugins/web"
+    },
+    {
+      "source": "/docs/v3/basics/building-your-app",
+      "destination": "/docs/v3/basics/workflow"
     }
   ],
   "headers": [
