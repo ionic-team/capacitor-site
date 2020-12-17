@@ -53,7 +53,7 @@ It is also possible to define custom states for aliases, if need be. For example
 
 Aliases are cross-platform, so make sure to take iOS, Android, and web permissions into account when deciding on the aliases for your plugin.
 
-### Definitions
+### Permission Status Definitions
 
 In `src/definitions.ts`, import `PermissionState` from Capacitor and define a `PermissionStatus` interface which represents the status of permissions in your plugin, keyed by alias(es).
 
