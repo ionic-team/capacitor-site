@@ -21,7 +21,7 @@ iOS 11+ is supported. Xcode 11+ is required (see [Environment Setup](/docs/getti
 First, install the `@capacitor/ios` package.
 
 ```bash
-npm install @capacitor/ios
+npm install @capacitor/ios@next
 ```
 
 Then, add the iOS platform and sync your app. [Learn more about `sync`](/docs/cli/sync).

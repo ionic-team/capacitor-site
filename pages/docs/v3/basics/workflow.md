@@ -65,15 +65,15 @@ You may wish to open your project in a Native IDE in the following circumstances
 To update Capacitor Core and CLI:
 
 ```bash
-npm install @capacitor/cli@3
-npm install @capacitor/core@3
+npm install @capacitor/cli@next
+npm install @capacitor/core@next
 ```
 
 To update any or all of the platforms you are using:
 
 ```bash
-npm install @capacitor/ios@3
-npm install @capacitor/android@3
+npm install @capacitor/ios@next
+npm install @capacitor/android@next
 ```
 
 > You can subscribe to the [Capacitor repo](https://github.com/ionic-team/capacitor) to be notified of new releases. At the top of the repository index, click **Watch** -> **Releases only**.
