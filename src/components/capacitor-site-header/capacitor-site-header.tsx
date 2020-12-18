@@ -99,6 +99,17 @@ export class DocsHeader implements ComponentInterface {
             </a>
           ) : null}
 
+          <a
+            {...href(docsVersionHref('/docs/plugins'))}
+            class={{
+              'ui-paragraph-4': true,
+              'mobile-only': true,
+              'active': template === 'docs',
+            }}
+          >
+            Plugins
+          </a>
+
           {includeBurger ? <app-menu-toggle /> : null}
 
           <div class="docs-search-wrapper">

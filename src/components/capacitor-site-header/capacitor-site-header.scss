@@ -18,11 +18,10 @@
 }
 
 .docs-search-wrapper {
-  flex-grow: 1;
+  margin-inline-start: auto;
 
   docs-search {
-    max-width: 251px;
-    float: right;
+    max-width: clamp(100px, 40vw, 251px);
   }
 }
 
@@ -99,6 +98,10 @@ app-menu-toggle {
       margin-block-start: 2px;
     }
   }
+}
+
+.mobile-only {
+  display: none;
 }
 
 .separator {
@@ -234,6 +237,16 @@ more-button {
     transform: translateY(0px);
     opacity: 1;
     pointer-events: all;
+  }
+
+  .mobile-only {
+    display: inline-block;
+    margin-inline-start: auto;
+    margin-inline-end: clamp(var(--space-0), 1.3vw, var(--space-3));
+  }
+
+  .docs-search-wrapper {
+    margin-inline-start: 0;
   }
 
   .ctas {

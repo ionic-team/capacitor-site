@@ -53,8 +53,8 @@ docs-search {
     -webkit-appearance: textfield;
 
     padding: 0;
-    padding-inline-start: 40px;
-    padding-inline-end: 16px;
+    padding-inline-start: clamp(20px, 7vw, 40px);
+    padding-inline-end: clamp(2px, 1vw, 16px);
 
     font-family: 'Inter';
     font-size: 14px;
@@ -73,6 +73,7 @@ docs-search {
 
     &::placeholder {
       color: #92a0b3;
+      overflow: visible;
     }
 
     &:focus {
