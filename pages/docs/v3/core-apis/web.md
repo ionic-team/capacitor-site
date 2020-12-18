@@ -9,14 +9,19 @@ contributors:
 
 Capacitor has several JavaScript utilities useful for ensuring apps run successfully across multiple platforms with the same codebase. To use them, import Capacitor then call the desired utility function:
 
+## Capacitor Object
+
+The `Capacitor` object is a container for several utility functions. It is available at `window.Capacitor`, but the preferred usage for modern JavaScript apps is to import it:
+
 ```typescript
 import { Capacitor } from '@capacitor/core';
-const isAvailable = Capacitor.isPluginAvailable('Camera');
 ```
 
-## convertFileSrc()
+### convertFileSrc(...)
 
-`convertFileSrc: (filePath: string) => string;`
+```typescript
+convertFileSrc: (filePath: string) => string;
+```
 
 Convert a device filepath into a Web View-friendly path.
 
@@ -39,9 +44,11 @@ document.getElementById("savedPhoto").src = savedPhoto;
 <img id="savedPhoto" />
 ```
 
-## getPlatform()
+### getPlatform()
 
-`getPlatform: () => string;`
+```typescript
+getPlatform: () => string;
+```
 
 Get the name of the platform the app is currently running on: `web`, `ios`, `android`.
 
@@ -51,9 +58,11 @@ if (Capacitor.getPlatform() === 'ios') {
 }
 ```
 
-## isNativePlatform()
+### isNativePlatform()
 
-`isNativePlatform: () => boolean;`
+```typescript
+isNativePlatform: () => boolean;
+```
 
 Check whether the currently running platform is native (`ios`, `android`).
 
@@ -63,11 +72,13 @@ if (Capacitor.isNativePlatform()) {
 }
 ```
 
-## isPluginAvailable()
+### isPluginAvailable(...)
 
-`isPluginAvailable: (name: string) => boolean;`
+```typescript
+isPluginAvailable: (name: string) => boolean;
+```
 
-Check if a plugin is available on the currently running platform. The plugin name is used in the plugin registry (e.g. `const { Name } = Plugins;`), which means it also works with custom plugins.
+Check if a plugin is available on the currently running platform. The plugin name is used in the plugin registry, which means it also works with custom plugins.
 
 ```typescript
 const isAvailable = Capacitor.isPluginAvailable('Camera');

@@ -104,62 +104,11 @@ TODO
 
 ### Presenting Native Screens
 
-To present a Native Screen over the Capacitor screen we need to acces the Capacitor's View Controller.
-To access the Capacitor's View Controller, we have to use the `CAPBridge` object available on `CAPPlugin` class.
+You can present native screens over the app by using [Capacitor's `UIViewController`](/docs/core-apis/ios#viewcontroller).
 
-We can use the `UIViewController` to present Native View Controllers over it like this:
+### Plugin Events
 
-```swift
-DispatchQueue.main.async {
-  self.bridge.viewController.present(ourCustomViewController, animated: true, completion: nil)
-}
-```
-
-Using `DispatchQueue.main.async` makes your view render from the main thread instead of a background thread. Removing this can cause unexpected results.
-
-On iPad devices you can also present `UIPopovers`, to do so, we provide a helper function to show it centered.
-
-```swift
-self.setCenteredPopover(ourCustomViewController)
-self.bridge.viewController.present(ourCustomViewController, animated: true, completion: nil)
-```
-
-### Events
-
-Capacitor Plugins can emit App events and Plugin events.
-
-#### App Events
-
-App Events are regular javascript events, like `window` or `document` events.
-
-Capacitor provides these functions to fire events:
-
-```swift
-
-//If you want to provide the target
-self.bridge.triggerJSEvent(eventName: "myCustomEvent", target: "window")
-self.bridge.triggerJSEvent(eventName: "myCustomEvent", target: "document", data: "my custom data")
-
-// Window Events
-self.bridge.triggerWindowJSEvent(eventName: "myCustomEvent")
-self.bridge.triggerWindowJSEvent(eventName: "myCustomEvent", data: "my custom data")
-
-// Document events
-self.bridge.triggerDocumentJSEvent(eventName: "myCustomEvent")
-self.bridge.triggerDocumentJSEvent(eventName: "myCustomEvent", data: "my custom data")
-```
-
-And to listen for it, just use regular javascript:
-
-```typescript
-window.addEventListener('myCustomEvent', function () {
-  console.log('myCustomEvent was fired');
-});
-```
-
-#### Plugin Events
-
-Plugins can emit their own events that you can listen by attaching a listener to the plugin Object like this:
+Plugins can emit their own events that you can listen by attaching a listener to the plugin object like this:
 
 ```typescript
 import { MyPlugin } from 'my-plugin';
@@ -169,7 +118,7 @@ MyPlugin.addListener('myPluginEvent', (info: any) => {
 });
 ```
 
-To emit the event from the Swift plugin class you can do it like this:
+To emit the event from the Swift plugin class:
 
 ```swift
 self.notifyListeners("myPluginEvent", data: [:])
@@ -189,6 +138,8 @@ const myPluginEventListener = MyPlugin.addListener(
 
 myPluginEventListener.remove();
 ```
+
+> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/docs/core-apis/ios#triggerjsevent).
 
 ### Override navigation
 

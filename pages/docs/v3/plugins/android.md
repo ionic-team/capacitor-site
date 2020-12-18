@@ -197,41 +197,9 @@ class ImagePicker extends Plugin {
 }
 ```
 
-### Events
+### Plugin Events
 
-Capacitor Plugins can emit App events and Plugin events.
-
-#### App Events
-
-App Events are regular javascript events, like `window` or `document` events.
-
-Capacitor provides these functions to fire events:
-
-```java
-//If you want to provide the target
-bridge.triggerJSEvent("myCustomEvent", "window");
-bridge.triggerJSEvent("myCustomEvent", "document", "{ 'dataKey': 'dataValue' }");
-
-// Window Events
-bridge.triggerWindowJSEvent("myCustomEvent");
-bridge.triggerWindowJSEvent("myCustomEvent", "{ 'dataKey': 'dataValue' }");
-
-// Document events
-bridge.triggerDocumentJSEvent("myCustomEvent");
-bridge.triggerDocumentJSEvent("myCustomEvent",  "{ 'dataKey': 'dataValue' }");
-```
-
-And to listen for it, just use regular javascript:
-
-```typescript
-window.addEventListener('myCustomEvent', function () {
-  console.log('myCustomEvent was fired');
-});
-```
-
-#### Plugin Events
-
-Plugins can emit their own events that you can listen by attaching a listener to the plugin Object like this:
+Plugins can emit their own events that you can listen by attaching a listener to the plugin object like this:
 
 ```typescript
 import { MyPlugin } from 'my-plugin';
@@ -241,7 +209,7 @@ MyPlugin.addListener('myPluginEvent', (info: any) => {
 });
 ```
 
-To emit the event from the Java plugin class you can do it like this:
+To emit the event from the Java plugin class:
 
 ```java
 JSObject ret = new JSObject();
@@ -263,6 +231,8 @@ const myPluginEventListener = MyPlugin.addListener(
 
 myPluginEventListener.remove();
 ```
+
+> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/docs/core-apis/android#triggerjsevent).
 
 ### Permissions
 
