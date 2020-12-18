@@ -117,6 +117,36 @@ If your plugin has functionality on Android that requires permissions from the e
 
 TODO
 
+### Annotation Changes
+
+> Still using `@NativePlugin`? See the [upgrade guide](docs/updating/plugins#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
+
+```diff-java
+ @CapacitorPlugin(
+     name = "FooBar",
++    permissionRequestCode = FooBarPlugin.REQUEST_ALL_PERMISSIONS,
++    permissions = {
++        @Permission(
++            alias = "camera",
++            strings = { Manifest.permission.CAMERA }
++        ),
++        @Permission(
++            alias = "storage",
++            strings = {
++                Manifest.permission.READ_EXTERNAL_STORAGE,
++                Manifest.permission.WRITE_EXTERNAL_STORAGE
++            }
++        )
++    }
+ )
+ public class FooBarPlugin extends Plugin {
++    static final int REQUEST_ALL_PERMISSIONS = 10050;
+
+     ...
+```
+
+TODO
+
 ## Presenting Native Screens
 
 To present a Native Screen over the Capacitor screen we will use [Android's Intents](https://developer.android.com/guide/components/intents-filters). Intents allow you to start an activity from your app, or from another app. [See Common Intents](https://developer.android.com/guide/components/intents-common)
@@ -203,60 +233,6 @@ myPluginEventListener.remove();
 ```
 
 > It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/docs/core-apis/android#triggerjsevent).
-
-### Permissions
-
-Some Plugins will require you to request permissions.
-Capacitor provides some helpers to do that.
-
-First declare your plugin permissions in the `@CapacitorPlugin` annotation
-
-```java
-@CapacitorPlugin(
-  permissions={
-     @Permission(permission = Manifest.permission.ACCESS_NETWORK_STATE)
-  }
-)
-```
-
-You can check if all the required permissions has been granted with `hasRequiredPermissions()`.
-You can request all permissions with `pluginRequestAllPermissions();`.
-You can request for a single permission with `pluginRequestPermission(Manifest.permission.CAMERA, 12345);`
-Or you can request a group of permissions with:
-
-```java
-static final int REQUEST_IMAGE_CAPTURE = 12345;
-pluginRequestPermissions(new String[] {
-  Manifest.permission.CAMERA,
-  Manifest.permission.WRITE_EXTERNAL_STORAGE,
-  Manifest.permission.READ_EXTERNAL_STORAGE
-}, REQUEST_IMAGE_CAPTURE);
-```
-
-To handle the permission request you have to Override `onRequestPermissionsResult`
-
-```java
-@Override
-protected void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-  log("handling request perms result");
-  PluginCall savedCall = getSavedCall();
-  if (savedCall == null) {
-    log("No stored plugin call for permissions request result");
-    return;
-  }
-
-  for(int result : grantResults) {
-    if (result == PackageManager.PERMISSION_DENIED) {
-      savedCall.error("User denied permission");
-      return;
-    }
-  }
-
-  if (requestCode == REQUEST_IMAGE_CAPTURE) {
-    // We got the permission
-  }
-}
-```
 
 ## Override navigation
 
