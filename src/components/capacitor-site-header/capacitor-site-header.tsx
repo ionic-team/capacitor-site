@@ -98,6 +98,11 @@ export class DocsHeader implements ComponentInterface {
               {capacitorLogo()}
             </a>
           ) : null}
+
+          <div class="docs-search-wrapper desktop-only">
+            <docs-search />
+          </div>
+
           <a
             {...href(docsVersionHref('/docs'))}
             class={{
@@ -125,6 +130,8 @@ export class DocsHeader implements ComponentInterface {
           >
             CLI
           </a>
+
+          <div class="separator sm-hide"></div>
 
           {includeBurger ? <app-menu-toggle /> : null}
 
@@ -157,7 +164,7 @@ export class DocsHeader implements ComponentInterface {
               </button>
             </div>
 
-            <div class="docs-search-wrapper">
+            <div class="docs-search-wrapper mobile-only">
               <docs-search />
             </div>
             <a

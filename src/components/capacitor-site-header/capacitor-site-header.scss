@@ -23,6 +23,10 @@
   docs-search {
     max-width: clamp(100px, 40vw, 251px);
   }
+
+  &.desktop-only {
+    margin-inline-start: auto;
+  }
 }
 
 header {
@@ -42,7 +46,6 @@ app-menu-toggle {
 
 .routes {
   display: flex;
-  margin-left: auto;
 
   transition: transform 0.2s ease-out, opacity 0.2s ease-out,
     box-shadow 0.2s ease-out;
@@ -157,9 +160,15 @@ more-button {
 }
 
 @media screen and (max-width: $screen-xs-max) {
-  .separator {
+  .separator,
+  .desktop-only {
     display: none;
   }
+
+  header > .docs-search-wrapper + .ui-paragraph-4 {
+    margin-inline-start: auto;
+  }
+
   .routes {
     flex-direction: column;
 
@@ -246,6 +255,5 @@ more-button {
 
   more-button {
     display: block;
-    margin-inline-start: auto;
   }
 }
