@@ -134,3 +134,39 @@ async requestPermissions(): Promise<PermissionState> {
   throw this.unimplemented('Not implemented on web.');
 }
 ```
+
+## Error Handling
+
+Capacitor plugins for web often work with APIs that haven't been adopted in some browsers or even remotely standardized. Despite this, it is common to take a best-effort approach for the web implementation of your plugin and gracefully fail when APIs are unavailable. This is why error handling is especially important on web!
+
+### Unavailable
+
+This error should be thrown to indicate that the functionality can't be used right now.
+
+Reasons for this include:
+
+- It is currently missing a prerequisite, such as network connectivity.
+- It requires a browser that has implemented the underlying API.
+
+In the example below, we first check that `geolocation` is defined on `navigator`. If it does not, it means the browser does not support Geolocation and we should throw the "unavailable" error. Otherwise, we can proceed with the implementation.
+
+```typescript
+async getLocation(): Promise<Location> {
+  if (typeof navigator === 'undefined' || !navigator.geolocation) {
+    throw this.unavailable('Geolocation API not available in this browser.');
+  }
+
+  // TODO: actual web implementation
+}
+
+```
+
+### Unimplemented
+
+This error can be thrown to indicate that the functionality is not implemented. You can use this to stub out your methods on web for a later implementation.
+
+```typescript
+async getLocation(): Promise<Location> {
+  throw this.unimplemented('Not implemented on web.');
+}
+```
