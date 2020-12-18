@@ -24,7 +24,7 @@ Capacitor uses Java by default but you can use Kotlin instead, if you prefer.
 
 After generating a plugin, right click the Java plugin class in Android Studio and select the "Convert Java file to Kotlin file" option from the menu. Android Studio will walk you through configuring the project for Kotlin support. Once this is completed, right click the Java class again and re-select the conversion option to convert it to a Kotlin class.
 
-## Building your Plugin
+## Plugin Basics
 
 A Capacitor plugin for Android is a simple Java class that extends `com.getcapacitor.Plugin` and has a `@CapacitorPlugin()` annotation.
 It has some methods with `@PluginMethod()` annotation that will be callable from JavaScript.
@@ -48,7 +48,7 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-@CapacitorPlugin()
+@CapacitorPlugin(name = "Echo")
 public class EchoPlugin extends Plugin {
 
     @PluginMethod()
@@ -61,36 +61,6 @@ public class EchoPlugin extends Plugin {
     }
 }
 ```
-
-### Kotlin Example
-
-If choosing to use Kotlin instead of Java, the Echo plugin example looks like this:
-
-`EchoPlugin.kt`
-
-```kotlin
-package android.plugin.test;
-
-import com.getcapacitor.JSObject;
-import com.getcapacitor.Plugin;
-import com.getcapacitor.PluginCall;
-import com.getcapacitor.PluginMethod;
-import com.getcapacitor.annotation.CapacitorPlugin;
-
-@CapacitorPlugin()
-class EchoPlugin : Plugin() {
-
-  @PluginMethod
-  fun echo(call: PluginCall) {
-    val value = call.getString("value")
-    val ret = JSObject()
-    ret.put("value", value)
-    call.success(ret)
-  }
-}
-```
-
-It is recommended for Kotlin files to be in the `android/src/main/java/` directory where Java files might also reside.
 
 ### Accessing Called Data
 
@@ -141,17 +111,17 @@ To fail, or reject a call, use `call.reject`, passing an error string and option
 call.reject(exception.getLocalizedMessage(), null, exception);
 ```
 
-### Permissions
+## Permissions
 
 If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases and status interfaces yet, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
 
 TODO
 
-### Presenting Native Screens
+## Presenting Native Screens
 
 To present a Native Screen over the Capacitor screen we will use [Android's Intents](https://developer.android.com/guide/components/intents-filters). Intents allow you to start an activity from your app, or from another app. [See Common Intents](https://developer.android.com/guide/components/intents-common)
 
-#### Intents without Result(s)
+### Intents without Result(s)
 
 Most times you just want to present the native Activity,
 in this case you can just trigger the [relevant action](https://developer.android.com/guide/components/intents-common).
@@ -161,7 +131,7 @@ Intent intent = new Intent(Intent.ACTION_VIEW);
 getActivity().startActivity(intent);
 ```
 
-#### Intents with Result(s)
+### Intents with Result(s)
 
 Sometimes when you launch an Intent, you expect some result back. In that case you want to use `startActivityForResult`.
 
@@ -197,7 +167,7 @@ class ImagePicker extends Plugin {
 }
 ```
 
-### Plugin Events
+## Plugin Events
 
 Plugins can emit their own events that you can listen by attaching a listener to the plugin object like this:
 
@@ -288,7 +258,7 @@ protected void onRequestPermissionsResult(int requestCode, String[] permissions,
 }
 ```
 
-### Override navigation
+## Override navigation
 
 Capacitor plugins can override the webview navigation. For that the plugin can override `public Boolean shouldOverrideLoad(Uri url)` method.
 Returning `true` causes the WebView to abort loading the URL.
