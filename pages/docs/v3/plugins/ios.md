@@ -16,7 +16,7 @@ To get started, first generate a plugin as shown in the [Getting Started](/docs/
 
 Next, open `my-plugin/ios/Plugin.xcworkspace` in Xcode.
 
-## Building your Plugin in Swift
+## Plugin Basics
 
 A Capacitor plugin for iOS is a simple Swift class that extends `CAPPlugin` and
 has some exported methods that will be callable from JavaScript.
@@ -96,17 +96,157 @@ To fail, or reject a call, call `reject()`, passing an error string and optional
 call.reject(error.localizedDescription, nil, error)
 ```
 
-### Permissions
+### Export to Capacitor
+
+To make sure Capacitor can see your plugin, you must do two things: export your Swift class to Objective-C, and register it
+using the provided Capacitor Objective-C Macros.
+
+To export your Swift class to Objective-C, make sure to add `@objc(YourPluginClass)` above your Swift class, and add `@objc` before any plugin method, as shown above.
+
+To register your plugin with Capacitor, you'll need to create a new Objective-C file (with a `.m` extension, _not_ `.h`!) corresponding to your plugin (such as `MyPlugin.m`) and use the Capacitor macros to register the plugin, and each method that you will use. Important: you _must_ use the New File dialog in Xcode to do this. You'll then be prompted by Xcode to create a Bridging Header, which you _must_ do.
+
+Finally, register the plugin by adding the required Capacitor plugin macros into your new `.m` file:
+
+```objectivec
+#import <Capacitor/Capacitor.h>
+
+CAP_PLUGIN(MyPlugin, "MyPlugin",
+  CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
+)
+```
+
+This makes `MyPlugin`, and the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
+
+## Permissions
 
 If your plugin has functionality on iOS that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases and status interfaces yet, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
 
-TODO
+### Implementing Permissions
 
-### Presenting Native Screens
+Add the `checkPermissions()` and `requestPermissions()` methods to your Swift plugin class.
 
-You can present native screens over the app by using [Capacitor's `UIViewController`](/docs/core-apis/ios#viewcontroller).
+```diff-swift
+ import Capacitor
 
-### Plugin Events
+ @objc(MyPlugin)
+ public class MyPlugin: CAPPlugin {
+     ...
+
++    @objc override public func checkPermissions(_ call: CAPPluginCall) {
++        // TODO
++    }
+
++    @objc override public func requestPermissions(_ call: CAPPluginCall) {
++        // TODO
++    }
+ }
+```
+
+#### `checkPermissions()`
+
+This method should return the current status of permissions in your plugin, which should be a dictionary that matches the structure of the [permission status definition](/docs/plugins/web#permission-status-definitions) you defined. Typically, this information is available directly on the frameworks you're using.
+
+In the example below, we map the current authorization status from location services into a permission state and associate the `location` alias with that state.
+
+```swift
+@objc override func checkPermissions(_ call: CAPPluginCall) {
+    let locationState: String
+
+    switch CLLocationManager.authorizationStatus() {
+    case .notDetermined:
+        locationState = "prompt"
+    case .restricted, .denied:
+        locationState = "denied"
+    case .authorizedAlways, .authorizedWhenInUse:
+        locationState = "granted"
+    @unknown default:
+        locationState = "prompt"
+    }
+
+    call.resolve(["location": locationState])
+}
+```
+
+#### `requestPermissions()`
+
+**Block-based APIs**
+
+If the framework supports a block-based API for requesting permission, it's possible to complete the operation within the single method.
+
+In the example below, we request video access from `AVCaptureDevice` and then use our own `checkPermissions` method to check the current status of permissions and then fulfill the call.
+
+```swift
+@objc override func requestPermissions(_ call: CAPPluginCall) {
+    AVCaptureDevice.requestAccess(for: .video) { [weak self] _ in
+        self?.checkPermissions(call)
+    }
+}
+```
+
+**Delegate-based APIs**
+
+If the framework uses a delegate (or callback) API, completing the operation means that the original call will need to be saved and then retrieved once the callback has been invoked.
+
+```swift
+var permissionCallID: String?
+var locationManager: CLLocationManager?
+
+@objc override func requestPermissions(_ call: CAPPluginCall) {
+    if let manager = locationManager, CLLocationManager.locationServicesEnabled() {
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            call.save()
+            permissionCallID = call.callbackId
+            manager.requestWhenInUseAuthorization()
+        } else {
+            checkPermissions(call)
+        }
+    } else {
+        call.reject("Location services are disabled")
+    }
+}
+
+public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    if let callID = permissionCallID, let call = bridge?.getSavedCall(callID) {
+        checkPermissions(call)
+        bridge?.releaseCall(call)
+    }
+}
+```
+
+**Multiple Permissions**
+
+When several types of permissions are required, a [DispatchGroup](https://developer.apple.com/documentation/dispatch/dispatchgroup) is a convenient way to synchronize the multiple calls.
+
+```swift
+let store = CNContactStore()
+
+@objc override func requestPermissions(_ call: CAPPluginCall) {
+    // get the permissions to check or default to all of them
+    var permissions = call.getArray("types", String.self) ?? []
+    if permissions.isEmpty {
+        permissions = ["contacts", "camera"]
+    }
+
+    let group = DispatchGroup()
+    if permissions.contains("contacts") {
+        group.enter()
+        store.requestAccess(for: .contacts) { (_, _) in
+            group.leave()
+        }
+    }
+    if permissions.contains("camera") {
+        group.enter()
+        AVCaptureDevice.requestAccess(for: .video) { _ in
+            group.leave()
+        }
+    }
+    group.notify(queue: DispatchQueue.main) {
+        self.checkPermissions(call)
+    }
+}
+```
+
+## Plugin Events
 
 Plugins can emit their own events that you can listen by attaching a listener to the plugin object like this:
 
@@ -141,30 +281,13 @@ myPluginEventListener.remove();
 
 > It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/docs/core-apis/ios#triggerjsevent).
 
-### Override navigation
+## Presenting Native Screens
+
+You can present native screens over the app by using [Capacitor's `UIViewController`](/docs/core-apis/ios#viewcontroller).
+
+## Override navigation
 
 Capacitor plugins can override the webview navigation. For that the plugin can override `- (NSNumber *)shouldOverrideLoad:(WKNavigationAction *)navigationAction` method.
 Returning `true` causes the WebView to abort loading the URL.
 Returning `false` causes the WebView to continue loading the URL.
 Returning `nil` will defer to the default Capacitor policy.
-
-### Export to Capacitor
-
-To make sure Capacitor can see your plugin, you must do two things: export your Swift class to Objective-C, and register it
-using the provided Capacitor Objective-C Macros.
-
-To export your Swift class to Objective-C, make sure to add `@objc(YourPluginClass)` above your Swift class, and add `@objc` before any plugin method, as shown above.
-
-To register your plugin with Capacitor, you'll need to create a new Objective-C file (with a `.m` extension, _not_ `.h`!) corresponding to your plugin (such as `MyPlugin.m`) and use the Capacitor macros to register the plugin, and each method that you will use. Important: you _must_ use the New File dialog in Xcode to do this. You'll then be prompted by Xcode to create a Bridging Header, which you _must_ do.
-
-Finally, register the plugin by adding the required Capacitor plugin macros into your new `.m` file:
-
-```objectivec
-#import <Capacitor/Capacitor.h>
-
-CAP_PLUGIN(MyPlugin, "MyPlugin",
-  CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
-)
-```
-
-This makes `MyPlugin`, and the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.

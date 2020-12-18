@@ -49,19 +49,24 @@ You will need to develop one or more aliases for abstracting and grouping permis
 - `prompt`: The end user should be prompted for permission, because it has neither been granted nor denied.
 - `prompt-with-rationale`: The end user has denied permission before, but has not blocked the prompt yet.
 
+These are represented by the `PermissionState` type exported from `@capacitor/core`.
+
 It is also possible to define custom states for aliases, if need be. For example, the official [Camera plugin](/docs/apis/camera) also defines a `limited` state for the `camera` and `photos` aliases.
 
 Aliases are cross-platform, so make sure to take iOS, Android, and web permissions into account when deciding on the aliases for your plugin.
 
 ### Permission Status Definitions
 
-In `src/definitions.ts`, import `PermissionState` from Capacitor and define a `PermissionStatus` interface which represents the status of permissions in your plugin, keyed by alias(es).
+In `src/definitions.ts`, import `PermissionState` from Capacitor and define a `PermissionStatus` interface which represents the status of permissions in your plugin, keyed by the alias(es) you came up with.
+
+In the example below, the permission status can be entirely represented by a `location` alias which can be `granted`, `denied`, etc.
 
 ```typescript
 import type { PermissionState } from '@capacitor/core';
 
 export interface PermissionStatus {
-  alias: PermissionState; // TODO: change 'alias' to the actual name of your alias!
+  // TODO: change 'location' to the actual name of your alias!
+  location: PermissionState;
 }
 ```
 
