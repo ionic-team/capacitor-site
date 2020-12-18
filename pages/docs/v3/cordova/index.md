@@ -23,34 +23,36 @@ In spirit, Capacitor and Cordova are very similar. Both manage a Web View and pr
 
 ### Native Project Management
 
-Capacitor considers each platform project a _source asset_ instead of a _build time asset_. That means you'll check your Xcode and Android Studio projects into source control, as well as use those IDEs when necessary for platform-specific configuration and running/testing.
+Capacitor considers each platform project a _source asset_ instead of a _build time asset_. That means you'll check your Xcode and Android Studio projects into source control, as well as use those IDEs when necessary for platform-specific configuration and building/testing.
 
-This change in approach has a few implications. First, Capacitor does not use `config.xml` or a similar custom configuration for platform settings. Instead, configuration changes are made by editing the appropriate platform-specific configuration files directly, such as `AndroidManifest.xml` for Android and `Info.plist` for Xcode. Capacitor does have some [high level configuration options](/docs/basics/configuring-your-app). These generally don't modify native functionality, but control Capacitor's tooling.
+This change in approach has a few implications. First, Capacitor does not use `config.xml` or a similar custom configuration for platform settings. Instead, configuration changes are made by editing the appropriate platform-specific configuration files directly, such as `AndroidManifest.xml` for Android and `Info.plist` for iOS. Capacitor does have some [high level configuration options](/docs/basics/configuring-your-app). These generally don't modify native functionality, but control Capacitor's tooling.
 
-Additionally, Capacitor does not "run on device" or emulate through the command line. Instead, such operations occur through the platform-specific IDE, which provides a faster, more typical experience that follows the standards of app development for that platform. For example, running iOS apps from the command line is not officially supported by Apple anyway, so Xcode is preferred.
+Additionally, Capacitor does not offer a way to build native apps on the command line. Platform-specific tooling (or in the IDE) should be used instead, which provides a faster, more typical experience that follows the standards of app development for that platform.
 
-While these changes may be concerning to long-time Cordova users, there are worthwhile benefits:
+While these differences may be concerning to long-time Cordova users, there are worthwhile benefits:
 
-1.  Updating and modifying native projects through abstracted-away tools such as `config.xml` is error prone and a constant moving target. Becoming more comfortable with platform-specific tooling makes troubleshooting issues that much easier.
-2.  It's easier to add custom native code that your app needs without having to build a new plugin for it. Additionally, native teams can work alongside web teams on the same project.
-3.  Creating more compelling app experiences is now easier since you "own" the native project, such as adding a native UI shell around your web app.
-4.  More visibility into native project changes and better app maintainability as new mobile operating system versions are released. When breaking changes to Capacitor are introduced or changes are applied to the native project templates, the team will publish step-by-step upgrade instructions to ensure that the update process is as smooth as possible.
+1. Updating and modifying native projects through abstracted-away tools such as `config.xml` is error prone and a constant moving target. Becoming more comfortable with platform-specific tooling makes troubleshooting issues that much easier.
+2. It's easier to add custom native code that your app needs without having to build a dedicated plugin for it outside of your app's codebase. Additionally, native teams can work alongside web teams on the same project.
+3. Creating more compelling app experiences is now easier since you "own" the native project, such as adding a native UI shell around your web app.
+4. More visibility into native project changes and better app maintainability as new mobile operating system versions are released. When breaking changes to Capacitor are introduced or changes are applied to the native project templates, the team will publish step-by-step upgrade instructions to ensure that the update process is as smooth as possible.
 
 ### Plugin Management
 
-Capacitor manages plugins in a different way than Cordova. First, Capacitor does not copy plugin source code to your app before building. Instead, all plugins are built as Frameworks (on iOS) and Libraries (on Android) and installed using the leading dependency management tool for each platform (CocoaPods and Gradle/Maven, respectively). Additionally, Capacitor does not modify native source code, so any necessary native project settings must be added manually (for example, permissions in `AndroidManifest.xml`). We think this approach is less error-prone and makes it easier for developers to find help in the community for each specific platform.
+Capacitor manages plugins in a different way than Cordova. First, Capacitor does not copy plugin source code to your app before building. Instead, all plugins are built as "frameworks" (on iOS) and "libraries" (on Android) and installed using the leading dependency management tool for each platform (CocoaPods and Gradle, respectively). Additionally, Capacitor does not modify native source code, so any necessary native project settings must be added manually (for example, permissions in `AndroidManifest.xml`). We think this approach is less error-prone and makes it easier for developers to find help in the community for each specific platform.
 
-One major difference is the way plugins handle the JavaScript code they need in order to be executed from the WebView. Cordova requires plugins to ship their own JavaScript and manually call `exec()`. Capacitor, in contrast, registers and exports all JavaScript for each plugin based on the methods it detects at runtime, so all plugin methods are available as soon as the WebView loads. One important implication of this: there is no more need for the `deviceready` event. As soon as your app code loads, you can start calling plugin methods.
+One major difference is the way plugins handle the JavaScript code they need in order to be executed from the WebView. Cordova requires plugins to ship their own JavaScript and manually call `exec()`. Capacitor, in contrast, registers and exports all JavaScript for each plugin based on the native methods it detects at runtime, so all plugin methods are available as soon as the WebView loads. One important implication of this: there is no more need for the `deviceready` event. As soon as your app code loads, you can start calling plugin methods.
 
-While Capacitor doesn't require plugins to provide JavaScript, many plugins will want to have logic in JavaScript. In this case, providing a plugin with extra JavaScript is as easy as shipping a traditional JavaScript library (bundle, module, etc), but instead of calling `exec()` in Cordova, the plugin will reference the Capacitor plugin through `Capacitor.Plugins.MyPlugin`.
+While Capacitor doesn't require plugins to provide JavaScript for iOS or Android, it is common for plugins to have shared logic in JavaScript, which is also easy to accomplish.
 
-Finally, Capacitor has implications for plugin authors. On iOS, Swift 4 is officially supported and even _preferred_ for building plugins (Objective-C is also supported). Plugins no longer export a `Plugin.xml` file; Capacitor provides a few simple macros on iOS and Annotations on Android for adding metadata to your plugin source code that Capacitor reads at runtime.
+Finally, Capacitor has implications for plugin authors. On iOS, Swift 5 is officially supported and even _preferred_ for building plugins (Objective-C is also supported). Plugins no longer export a `Plugin.xml` file; Capacitor provides a few simple macros on iOS and annotations on Android for adding metadata to your plugin source code that Capacitor reads at runtime.
 
 ### CLI/Version Management
 
-Capacitor, unlike Cordova, does not use a global CLI. Instead, the Capacitor "CLI" is installed locally into each project as an npm script. This makes it easier to manage versions of Capacitor across many different apps.
+Capacitor, unlike Cordova, does not use a global CLI. Instead, the Capacitor CLI is installed locally into each project as an npm script. This makes it easier to manage versions of Capacitor across many different apps.
 
-Thus, instead of running `capacitor` directly from the command line, Capacitor is invoked by calling `npx cap` in the directory of your app.
+Thus, instead of running directly from the command line, Capacitor is invoked by calling `npx cap` in the directory of your app.
+
+[Learn more about the Capacitor CLI &#8250;](/docs/cli)
 
 ## Start the Migration
 

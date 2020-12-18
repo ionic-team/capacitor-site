@@ -9,37 +9,30 @@ contributors:
 
 There are several steps required to fully migrate a web app using Cordova over to Capacitor.
 
-> Note that it's recommended to work in a separate code branch when applying these changes.
+> It's recommended to work in a separate code branch when applying these changes.
 
 ## Add Capacitor
 
-Begin by opening your project in a Terminal, then add Capacitor to [a web app](/docs/getting-started) or [an Ionic app](/docs/getting-started/with-ionic).
+Begin by opening your project in the terminal, then either follow the guides for [adding Capacitor to a web app](/docs/getting-started#adding-capacitor-to-your-app) or [adding Capacitor to an Ionic app](/docs/getting-started/with-ionic#existing-ionic-project).
 
-Next, open `config.xml` and find the `id` field in the widget element. In this example, it's `io.ionic.myapp`.
+Initialize your app with Capacitor. Some of the information you will be prompted for is available in the Cordova `config.xml` file:
 
-```xml
-<widget id="io.ionic.myapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-```
-
-Also find the `Name` of your app:
-
-```xml
-<name>MyApp</name>
-```
-
-Now, initialize Capacitor with this app information:
+- The app name can be found within the `<name>` element.
+- The Bundle ID can be found in the `id` attribute of the root `<widget>` element.
 
 ```bash
-npx cap init [appName] [appId]
+npx cap init
 ```
-
-In this example, it would be `npx cap init MyApp io.ionic.myapp`. These values can be found in the newly created `capacitor.config.json` file.
 
 ### Build your Web App
 
 You must build your web project at least once before adding any native platforms.
 
-This ensures that the `www` folder that Capacitor has been [automatically configured](/docs/basics/configuring-your-app/) to use as the `webDir` in `capacitor.config.json` actually exists.
+```bash
+npm run build
+```
+
+This ensures that the `www` folder that Capacitor has been [automatically configured](/docs/basics/configuring-your-app) to use as the `webDir` in the Capacitor configuration file.
 
 ### Add Platforms
 
@@ -50,7 +43,7 @@ npx cap add ios
 npx cap add android
 ```
 
-Both android and ios folders at the root of the project are created. These are entirely separate native project artifacts that should be considered part of your app (i.e., check them into source control, edit them in their own IDEs, etc.). Additionally, any Cordova plugins that were previously added to the project via `npm install` (located under `dependencies` in `package.json`) are automatically installed by Capacitor into each new native project (minus any [incompatible ones](/docs/plugins/cordova#known-incompatible-plugins)):
+Both android and ios folders at the root of the project are created. These are entirely separate native project artifacts that should be considered part of your app (i.e., check them into source control, edit them in their own IDEs, etc.). Additionally, any Cordova plugins found under `dependencies` in `package.json` are automatically installed by Capacitor into each new native project (minus any [incompatible ones](/docs/plugins/cordova#known-incompatible-plugins)):
 
 ```json
 "dependencies": {
@@ -99,7 +92,7 @@ After replacing a Cordova plugin with a Capacitor one (or simply removing it ent
 
 ```bash
 npm uninstall cordova-plugin-name
-npx cap sync [android | ios]
+npx cap sync
 ```
 
 ## Set Permissions
@@ -108,7 +101,7 @@ By default, the entire initial permissions requested for the latest version of C
 
 ## Cordova Plugin preferences
 
-When `npx cap init` is run, Capacitor reads all the preferences in `config.xml` and port them to `capacitor.config.json` file. You can manually add more preferences to the `cordova.preferences` object too.
+When `npx cap init` is run, Capacitor reads all the preferences in `config.xml` and ports them to the [Capacitor configuration file](/docs/config). You can manually add more preferences to the `cordova.preferences` object.
 
 ```json
 {
@@ -121,7 +114,7 @@ When `npx cap init` is run, Capacitor reads all the preferences in `config.xml` 
 }
 ```
 
-## Additional Config.xml Fields
+## Additional Fields from `config.xml`
 
 You may be curious about how other elements from `config.xml` work in Capacitor apps.
 
