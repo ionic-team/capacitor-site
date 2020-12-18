@@ -163,7 +163,7 @@ async getLocation(): Promise<Location> {
 
 ### Unimplemented
 
-This error can be thrown to indicate that the functionality is not implemented. You can use this to stub out your methods on web for a later implementation.
+This error can be thrown to indicate that the functionality is not implemented. You can use this to stub out your methods on web for a later implementation or use it to indicate the functionality can't be implemented on a certain platform.
 
 ```typescript
 async getLocation(): Promise<Location> {

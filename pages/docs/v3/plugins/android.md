@@ -147,6 +147,36 @@ TODO
 
 TODO
 
+## Error Handling
+
+### Unavailable
+
+This error can be thrown to indicate that the functionality can't be used right now, usually because it requires a newer Android API version.
+
+```java
+@PluginMethod
+public void methodThatUsesNewAndroidAPI(PluginCall call) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        // TODO implementation
+    } else {
+        call.unavailable('Not available on Android API 25 or earlier.');
+    }
+}
+```
+
+> It is recommended to gracefully degrade the experience with older APIs as much as possible. Use `unavailable` sparingly.
+
+### Unimplemented
+
+Use this error to indicate that a method can't be implemented for Android.
+
+```java
+@PluginMethod
+public void methodThatRequiresIOS(PluginCall call) {
+    call.unimplemented('Not implemented on Android.');
+}
+```
+
 ## Presenting Native Screens
 
 To present a Native Screen over the Capacitor screen we will use [Android's Intents](https://developer.android.com/guide/components/intents-filters). Intents allow you to start an activity from your app, or from another app. [See Common Intents](https://developer.android.com/guide/components/intents-common)

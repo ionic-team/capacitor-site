@@ -246,6 +246,34 @@ let store = CNContactStore()
 }
 ```
 
+## Error Handling
+
+### Unavailable
+
+This error can be thrown to indicate that the functionality can't be used right now, usually because it requires a newer iOS version.
+
+```swift
+@objc override func methodThatUsesNewIOSFramework(_ call: CAPPluginCall) {
+    if #available(iOS 14, *) {
+        // TODO implementation
+    } else {
+        call.unavailable("Not available in iOS 13 or earlier.")
+    }
+}
+```
+
+> It is recommended to gracefully degrade the experience with older APIs as much as possible. Use `unavailable` sparingly.
+
+### Unimplemented
+
+Use this error to indicate that a method can't be implemented for iOS.
+
+```swift
+@objc override func methodThatRequiresAndroid(_ call: CAPPluginCall) {
+    call.unimplemented("Not implemented on iOS.")
+}
+```
+
 ## Plugin Events
 
 Plugins can emit their own events that you can listen by attaching a listener to the plugin object like this:

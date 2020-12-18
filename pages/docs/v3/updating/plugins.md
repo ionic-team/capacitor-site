@@ -73,9 +73,14 @@ Previously, calling `resolve()` with no arguments resulted in an empty object be
 
 TODO
 
-### Evaluate errors and error codes
+### Evaluate error handling
 
-TODO
+We are now recommending that plugin authors make use of the new error codes in Capacitor 3:
+
+- **Unavailable**: indicates the functionality can't be used right now
+- **Unimplemented**: indicates the functionality can't or won't be implemented, or may be implemented in the future
+
+Read more about Error Handling for [Web](/docs/plugins/web#error-handling), [iOS](/docs/plugins/ios#error-handling), and [Android](/docs/plugins/android#error-handling).
 
 ### Adopting the new Permissions API
 
