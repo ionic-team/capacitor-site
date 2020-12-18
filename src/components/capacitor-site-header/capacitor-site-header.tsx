@@ -98,23 +98,35 @@ export class DocsHeader implements ComponentInterface {
               {capacitorLogo()}
             </a>
           ) : null}
-
+          <a
+            {...href(docsVersionHref('/docs'))}
+            class={{
+              'ui-paragraph-4': true,
+              'active': template === 'docs',
+            }}
+          >
+            Docs
+          </a>
           <a
             {...href(docsVersionHref('/docs/plugins'))}
             class={{
               'ui-paragraph-4': true,
-              'mobile-only': true,
               'active': template === 'docs',
             }}
           >
             Plugins
           </a>
+          <a
+            {...href(docsVersionHref('/docs/cli'))}
+            class={{
+              'ui-paragraph-4': true,
+              'active': template === 'cli',
+            }}
+          >
+            CLI
+          </a>
 
           {includeBurger ? <app-menu-toggle /> : null}
-
-          <div class="docs-search-wrapper">
-            <docs-search />
-          </div>
 
           <nav
             class={{
@@ -145,34 +157,9 @@ export class DocsHeader implements ComponentInterface {
               </button>
             </div>
 
-            <a
-              {...href(docsVersionHref('/docs'))}
-              class={{
-                'ui-paragraph-4': true,
-                'active': template === 'docs',
-              }}
-            >
-              Docs
-            </a>
-            <a
-              {...href(docsVersionHref('/docs/plugins'))}
-              class={{
-                'ui-paragraph-4': true,
-                'active': template === 'plugins',
-              }}
-            >
-              Plugins
-            </a>
-            <a
-              {...href(docsVersionHref('/docs/cli'))}
-              class={{
-                'ui-paragraph-4': true,
-                'active': template === 'cli',
-              }}
-            >
-              CLI
-            </a>
-            <div class="separator"></div>
+            <div class="docs-search-wrapper">
+              <docs-search />
+            </div>
             <a
               {...href('/community')}
               class="ui-paragraph-4"
@@ -210,7 +197,7 @@ export class DocsHeader implements ComponentInterface {
             </a>
           </nav>
 
-          <div class="separator"></div>
+          <div class="separator sm-hide"></div>
 
           <more-button onClick={() => this.toggleExpanded()} />
 
