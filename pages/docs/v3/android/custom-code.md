@@ -15,71 +15,99 @@ There may not be [a Capacitor plugin](/docs/plugins) for everything--and that's 
 
 ## WebView-Accessible Native Code
 
-The easiest way to communicate between JavaScript and native code is to build a Capacitor plugin local to your app.
+The easiest way to communicate between JavaScript and native code is to build a custom Capacitor plugin that is local to your app.
 
-### `MyPlugin.java`
+### `EchoPlugin.java`
 
-First, create a `MyPlugin.java` file by [opening Android Studio](/docs/android#opening-the-android-project), expanding the **app** module and the **java** folder, right-clicking on your app's Java package, selecting **New** -> **Java Class** from the context menu, and creating the file.
+First, create a `EchoPlugin.java` file by [opening Android Studio](/docs/android#opening-the-android-project), expanding the **app** module and the **java** folder, right-clicking on your app's Java package, selecting **New** -> **Java Class** from the context menu, and creating the file.
 
 ![Android Studio app package](/assets/img/docs/android/studio-app-package.png)
 
-Copy the following Java code into `MyPlugin.java`:
+Copy the following Java code into `EchoPlugin.java`:
 
 ```java
 package com.example.myapp;
 
+import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-@CapacitorPlugin()
-public class MyPlugin extends Plugin {
+@CapacitorPlugin(name = "Echo")
+public class EchoPlugin extends Plugin {
 
-  @PluginMethod()
-  public void echo(PluginCall call) {
-    String value = call.getString("value");
+    @PluginMethod()
+    public void echo(PluginCall call) {
+        String value = call.getString("value");
 
-    JSObject ret = new JSObject();
-    ret.put("value", value);
-    call.resolve(ret);
-  }
+        JSObject ret = new JSObject();
+        ret.put("value", value);
+        call.resolve(ret);
+    }
 }
 ```
 
 ### Register the Plugin
 
-Capacitor plugins for Android must be registered in `MainActivity.java`.
+We must register custom plugins on both Android and web so that Capacitor can bridge between Java and JavaScript.
+
+#### `MainActivity.java`
+
+In your app's `MainActivity.java`, use `registerPlugin()` or `registerPlugins()` to register your custom plugin(s).
 
 ```diff-java
- // Other imports...
-+import com.example.myapp.MyPlugin;
-
  public class MainActivity extends BridgeActivity {
-   @Override
-   public void onCreate(Bundle savedInstanceState) {
-     super.onCreate(savedInstanceState);
-
-     // Initializes the Bridge
-     this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
-       // Additional plugins you've installed go here
-       // Ex: add(TotallyAwesomePlugin.class);
-+      add(MyPlugin.class);
-     }});
-   }
+     @Override
+     public void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
++        registerPlugin(EchoPlugin.class);
+     }
  }
 ```
 
-### JavaScript
+#### JavaScript
 
-Once `MyPlugin.java` is created and the class is registered in `MainActivity.java`, the plugin is callable from JavaScript:
+In JS, we use `registerPlugin()` from `@capacitor/core` to create an object which is linked to our Java plugin.
 
 ```typescript
-import { Plugins } from '@capacitor/core';
-const { MyPlugin } = Plugins;
+import { registerPlugin } from '@capacitor/core';
 
-const result = await MyPlugin.echo({ value: 'Hello World!' });
-console.log(result.value);
+const Echo = registerPlugin('Echo');
+
+export default Echo;
+```
+
+> The first parameter to `registerPlugin()` is the plugin name, which must match the `name` attribute of our `@CapacitorPlugin` annotation in `EchoPlugin.java`.
+
+**TypeScript**
+
+We can define types on our linked object by defining an interface and using it in the call to `registerPlugin()`.
+
+```diff-typescript
+ import { registerPlugin } from '@capacitor/core';
+
++export interface EchoPlugin {
++  echo(options: { value: string }): Promise<{ value: string }>;
++}
+
+-const Echo = registerPlugin('Echo');
++const Echo = registerPlugin<EchoPlugin>('Echo');
+
+ export default Echo;
+```
+
+The generic parameter of `registerPlugin()` is what defines the structure of the linked object. You can use `registerPlugin<any>('Echo')` to ignore types if you need to. No judgment. ❤️
+
+### Use the Plugin
+
+Use the exported `Echo` object to call your plugin methods. The following snippet will call into Java on Android and print the result:
+
+```typescript
+import Echo from '../path/to/echo-plugin';
+
+const { value } = await Echo.echo({ value: 'Hello World!' });
+console.log('Response from native:', value);
 ```
 
 ### Next Steps
