@@ -15,15 +15,36 @@ npm install @capacitor/screen-reader
 npx cap sync
 ```
 
+## Example
+
+```typescript
+import { ScreenReader } from '@capacitor/screen-reader';
+
+ScreenReader.addListener('screenReaderStateChange', ({ value }) => {
+  console.log(`Screen reader is now ${value ? 'on' : 'off'}`);
+});
+
+const checkScreenReaderEnabled = async () => {
+  const { value } = await ScreenReader.isEnabled();
+
+  alert('Voice over enabled? ' + value);
+};
+
+const sayHello = async () => {
+  await ScreenReader.speak({ value: 'Hello World!' });
+};
+```
+
 ## API
 
 <docgen-index>
 
 * [`isEnabled()`](#isenabled)
 * [`speak(...)`](#speak)
-* [`addListener(...)`](#addlistener)
+* [`addListener('screenReaderStateChange', ...)`](#addlistenerscreenreaderstatechange-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -51,7 +72,7 @@ Readers).
 ### speak(...)
 
 ```typescript
-speak(options: ScreenReaderSpeakOptions) => Promise<void>
+speak(options: SpeakOptions) => Promise<void>
 ```
 
 Text-to-Speech functionality.
@@ -66,19 +87,19 @@ For more text-to-speech capabilities, please see the [Capacitor Community
 Text-to-Speech
 plugin](https://github.com/capacitor-community/text-to-speech).
 
-| Param         | Type                                                                          |
-| ------------- | ----------------------------------------------------------------------------- |
-| **`options`** | <code><a href="#screenreaderspeakoptions">ScreenReaderSpeakOptions</a></code> |
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#speakoptions">SpeakOptions</a></code> |
 
 **Since:** 1.0.0
 
 --------------------
 
 
-### addListener(...)
+### addListener('screenReaderStateChange', ...)
 
 ```typescript
-addListener(eventName: 'screenReaderStateChange', listener: ScreenReaderStateChangeListener) => PluginListenerHandle
+addListener(eventName: 'screenReaderStateChange', listener: StateChangeListener) => PluginListenerHandle
 ```
 
 Add a listener
@@ -86,10 +107,10 @@ Add a listener
 This method is not supported on web (it is not possible to detect Screen
 Readers).
 
-| Param           | Type                                                |
-| --------------- | --------------------------------------------------- |
-| **`eventName`** | <code>"screenReaderStateChange"</code>              |
-| **`listener`**  | <code>(state: { value: boolean; }) =&gt; any</code> |
+| Param           | Type                                                                |
+| --------------- | ------------------------------------------------------------------- |
+| **`eventName`** | <code>'screenReaderStateChange'</code>                              |
+| **`listener`**  | <code><a href="#statechangelistener">StateChangeListener</a></code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -114,7 +135,7 @@ Remove all the listeners that are attached to this plugin.
 ### Interfaces
 
 
-#### ScreenReaderSpeakOptions
+#### SpeakOptions
 
 | Prop           | Type                | Description                                                                                                                                                               | Since |
 | -------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
@@ -127,5 +148,20 @@ Remove all the listeners that are attached to this plugin.
 | Prop         | Type                       |
 | ------------ | -------------------------- |
 | **`remove`** | <code>() =&gt; void</code> |
+
+
+#### ScreenReaderState
+
+| Prop        | Type                 | Description                                  | Since |
+| ----------- | -------------------- | -------------------------------------------- | ----- |
+| **`value`** | <code>boolean</code> | Whether a Screen Reader is currently active. | 1.0.0 |
+
+
+### Type Aliases
+
+
+#### StateChangeListener
+
+<code>(state: <a href="#screenreaderstate">ScreenReaderState</a>): void</code>
 
 </docgen-api>
