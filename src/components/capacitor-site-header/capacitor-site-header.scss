@@ -18,10 +18,14 @@
 }
 
 .docs-search-wrapper {
-  margin-inline-start: auto;
+  margin-inline-start: var(--space-4);
 
   docs-search {
     max-width: clamp(100px, 40vw, 251px);
+  }
+
+  &.desktop-only {
+    margin-inline-start: auto;
   }
 }
 
@@ -73,30 +77,30 @@ app-menu-toggle {
       width: 105px;
     }
   }
+}
 
-  a {
-    display: flex;
-    align-items: center;
-    margin-inline-start: 24px;
-    transition: opacity 0.2s ease-out;
+a.ui-paragraph-4 {
+  display: flex;
+  align-items: center;
+  margin-inline-start: clamp(var(--space-0), 3.5vw, 24px);
+  transition: opacity 0.2s ease-out;
 
-    &.active {
-      color: var(--c-cyan-100);
-      // font-weight: 500;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      opacity: var(--link-hover-opacity);
-    }
+  &.active {
+    color: var(--c-cyan-100);
+    // font-weight: 500;
   }
 
-  .external {
-    svg {
-      margin-inline-start: 6px;
-      margin-block-start: 2px;
-    }
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: var(--link-hover-opacity);
+  }
+}
+
+.external {
+  svg {
+    margin-inline-start: 6px;
+    margin-block-start: 2px;
   }
 }
 
@@ -148,10 +152,23 @@ more-button {
   margin-inline-start: var(--container);
 }
 
-@media screen and (max-width: $screen-md-max) {
-  .separator {
+@media screen and (max-width: $screen-sm-max) {
+  .ctas,
+  .sm-hide {
     display: none;
   }
+}
+
+@media screen and (max-width: $screen-xs-max) {
+  .separator,
+  .desktop-only {
+    display: none;
+  }
+
+  header > .docs-search-wrapper + .ui-paragraph-4 {
+    margin-inline-start: auto;
+  }
+
   .routes {
     flex-direction: column;
 
@@ -191,16 +208,6 @@ more-button {
       }
     }
 
-    &::before {
-      content: '';
-      position: absolute;
-      height: 1px;
-      left: 0;
-      right: 0;
-      background: var(--c-indigo-20);
-      bottom: 154px;
-    }
-
     a {
       display: block;
 
@@ -211,15 +218,6 @@ more-button {
 
       + a {
         margin-block-start: var(--space-0);
-      }
-
-      &:nth-of-type(3) {
-        margin-block-end: 25px;
-
-        &::after {
-          content: '';
-          display: none;
-        }
       }
 
       &.active {
@@ -247,10 +245,12 @@ more-button {
 
   .docs-search-wrapper {
     margin-inline-start: 0;
-  }
+    max-width: 100%;
+    margin-block-end: var(--space-2);
 
-  .ctas {
-    display: none;
+    docs-search {
+      max-width: 100%;
+    }
   }
 
   more-button {
