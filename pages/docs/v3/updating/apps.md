@@ -101,6 +101,10 @@ While many of the plugin APIs remain the same to ease the migration process to C
 
 Capacitor 3 supports iOS 12+. Xcode 12+ is required.
 
+#### Set iOS deployment target to 12.0
+
+Do the following for your Xcode project and app target: open the **Build Settings** tab. Under **Deployment**, change **iOS Deployment Target** to **iOS 12.0**.
+
 #### Switch from `CAPBridge` to `ApplicationDelegateProxy` in application events
 
 In `ios/App/App/AppDelegate.swift`, update the following:
