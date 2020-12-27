@@ -21,6 +21,12 @@ Read the Capacitor 3.0 announcement &#8250; (TODO)
 
 Node 8 has reached end-of-life. Node 10 will reach end-of-life on April 30th, 2021. Capacitor 3 requires NodeJS 12 or greater. (Latest LTS version is recommended.)
 
+### Update Capacitor CLI and Core
+
+```bash
+npm install @capacitor/cli@next @capacitor/core@next
+```
+
 ### ES2017+
 
 Capacitor 3 now builds for ES2017 environments, instead of ES5. The [plugin template has also been updated](https://github.com/ionic-team/capacitor/pull/3427/files#diff-b22b3d0cbb7d8f6fdfe1f6f1d9e84b7d) to target ES2017, and third-party plugins are encouraged to update their targets.
@@ -105,6 +111,13 @@ Capacitor 3 supports iOS 12+. Xcode 12+ is required.
 
 Do the following for your Xcode project and app target: open the **Build Settings** tab. Under **Deployment**, change **iOS Deployment Target** to **iOS 12.0**.
 
+#### Update the Capacitor iOS platform
+
+```bash
+npm install @capacitor/ios@next
+npx cap sync ios
+```
+
 #### Switch from `CAPBridge` to `ApplicationDelegateProxy` in application events
 
 In `ios/App/App/AppDelegate.swift`, update the following:
@@ -170,6 +183,15 @@ Add `DerivedData` to the `ios/.gitignore` file. This is where the Capacitor CLI 
 
 ### Android
 
+Capacitor 3 supports Android 5+ (and now supports Android 11). Android Studio 4+ is required.
+
+#### Update the Capacitor Android platform
+
+```bash
+npm install @capacitor/android@next
+npx cap sync android
+```
+
 #### Switch to automatic Android plugin loading
 
 In Capacitor 3, it is preferred to automatically load the Android plugins (TODO: link). In `MainActivity.java`, the `onCreate` method can be removed. You no longer have to edit this file when adding or removing plugins.
@@ -212,6 +234,30 @@ Android Studio now recommends Gradle 6.5. (TODO)
 Capacitor 2 makes some tooling updates including the adoption of Swift 5 in iOS and AndroidX for Android.
 
 [Read the Capacitor 2.0 announcement &#8250;](https://ionicframework.com/blog/announcing-capacitor-2-0/)
+
+### Update Capacitor dependencies
+
+First, update Capacitor Core and the CLI:
+
+```bash
+npm install @capacitor/cli@2 @capacitor/core@2
+```
+
+Next, update each Capacitor platform that you use:
+
+```bash
+# iOS
+npm install @capacitor/ios@2
+npx cap sync ios
+
+# Android
+npm install @capacitor/android@2
+npx cap sync android
+
+# Electron
+cd electron
+npm install @capacitor/electron@2
+```
 
 ### Backward Incompatible Plugin Changes
 
