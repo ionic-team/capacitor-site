@@ -35,6 +35,10 @@ Capacitor 3 now builds for ES2017 environments, instead of ES5. The [plugin temp
 
 This change should not affect your app unless you are supporting IE11, which Capacitor does not officially support.
 
+### TypeScript 3.8+
+
+Capacitor 3 uses a newer TypeScript syntax which can only be used in TS 3.8 or later.
+
 ### Official Plugins
 
 All plugins have been removed from Capacitor core and placed into their own npm packages. There are several reasons for this (see [#3227](https://github.com/ionic-team/capacitor/issues/3227)) and the core team is confident this is the right way to go.
