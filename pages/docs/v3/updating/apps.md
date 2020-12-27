@@ -233,7 +233,9 @@ If your app includes custom plugins, you do still have to register the plugins i
 
 #### Update Gradle to 6.5
 
-Android Studio now recommends Gradle 6.5. (TODO)
+We now recommend using Gradle 6.5 with Capacitor projects. In Android Studio, open the **File** menu, then click **Project Structure**. In the **Project** section, change **Gradle Version** to **6.5** and **Android Gradle Plugin Version** to **4.1.1**. Then, click **OK**.
+
+You may want to evaluate suggested updates to Android packages in the **Suggestions** section of the **Project Structure** dialog.
 
 ## Update to 2.0.0
 
