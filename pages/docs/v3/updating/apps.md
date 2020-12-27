@@ -111,7 +111,11 @@ Capacitor 3 supports iOS 12+. Xcode 12+ is required.
 
 #### Set iOS deployment target to 12.0
 
-Do the following for your Xcode project and app target: open the **Build Settings** tab. Under **Deployment**, change **iOS Deployment Target** to **iOS 12.0**.
+Do the following for your Xcode project and app target: open the **Build Settings** tab. Under the **Deployment** section, change **iOS Deployment Target** to **iOS 12.0**.
+
+#### Set Swift version to 5
+
+If your app is not already using Swift 5, open the **Build Settings** tab in your Xcode target, then change **Swift Language Version** to **Swift 5** under the **Swift Compiler - Language** section.
 
 #### Update the Capacitor iOS platform
 
