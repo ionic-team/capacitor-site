@@ -255,6 +255,22 @@ We now recommend using Gradle 6.5 with Capacitor projects. In Android Studio, op
 
 You may want to evaluate suggested updates to Android packages in the **Suggestions** section of the **Project Structure** dialog.
 
+#### Update SDK target version to 30
+
+Capacitor 3 supports Android 11 (API 30), so you can update your SDK target to 30. In `android/variables.gradle`, change `compileSdkVersion` and `targetSdkVersion` to `30`.
+
+```diff-groovy
+ ext {
+     minSdkVersion = 21
+-    compileSdkVersion = 29
+-    targetSdkVersion = 29
++    compileSdkVersion = 30
++    targetSdkVersion = 30
+     androidxAppCompatVersion = '1.2.0'
+     androidxCoreVersion =  '1.2.0'
+     androidxMaterialVersion =  '1.1.0-rc02'
+```
+
 ## Update to 2.0.0
 
 Capacitor 2 makes some tooling updates including the adoption of Swift 5 in iOS and AndroidX for Android.
