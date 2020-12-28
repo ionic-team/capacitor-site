@@ -106,7 +106,7 @@ export class SiteMenu implements ComponentInterface {
               >
                 Docs
               </a>
-              {/* <version-select /> */}
+              <version-select />
             </div>
             <ul class="menu-list">
               {this.toc?.root.map((item, i) => {
