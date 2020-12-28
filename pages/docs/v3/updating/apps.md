@@ -70,6 +70,20 @@ This change will require you to install each plugin that you were using individu
 1. Change the plugin import to import from the plugin's package instead (see [Plugin Imports](#plugin-imports))
 1. Follow any instructions in [Backward Incompatible Plugin Changes](#backward-incompatible-plugin-changes)
 
+**Using Ionic Framework?**
+
+The Ionic Framework makes use of APIs in the following plugins:
+
+- [**App**](/docs/apis/app)
+- [**Haptics**](/docs/apis/haptics)
+- [**Keyboard**](/docs/apis/keyboard)
+
+For best performance with Ionic Framework, you should make sure these plugins are installed even if you don't import them in your app:
+
+```bash
+npm install @capacitor/app @capacitor/haptics @capacitor/keyboard
+```
+
 ### Plugin Imports
 
 The `Plugins` object is deprecated, but will continue to work in Capacitor 3. Capacitor plugins should be updated to use the new plugin registration APIs (TODO: link), which will allow them to be imported directly from the plugin's package.
