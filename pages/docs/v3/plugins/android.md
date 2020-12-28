@@ -119,7 +119,7 @@ TODO
 
 ### Annotation Changes
 
-> Still using `@NativePlugin`? See the [upgrade guide](/docs/updating/plugins#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
+> Still using `@NativePlugin`? See the [upgrade guide](/docs/updating/plugins/3-0#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
 
 ```diff-java
  @CapacitorPlugin(
