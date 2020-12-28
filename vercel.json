@@ -76,6 +76,10 @@
     {
       "source": "/docs/v3/basics/building-your-app",
       "destination": "/docs/v3/basics/workflow"
+    },
+    {
+      "source": "/docs/v3/basics/progressive-web-app",
+      "destination": "/docs/v3/web/progressive-web-apps"
     }
   ],
   "headers": [

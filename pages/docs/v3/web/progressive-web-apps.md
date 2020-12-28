@@ -47,26 +47,3 @@ Progressive Web Apps are judged by several performance standards, including [Tim
 Follow the [Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist) before going live, and use [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to audit and test your app.
 
 If you're struggling to meet Progressive Web App performance standards with your existing frontend stack, take a look at [Ionic Framework](http://ionicframework.com/) as an option for getting fast PWA support with nearly zero configuration.
-
-## Running Natively and on the Web
-
-One of the key features of Capacitor is the ability to build one app that runs both natively (in the app stores), _and_ on the web. Capacitor does this by providing a layer between the underlying platform and the APIs/Plugins you'd like to use.
-
-If your app makes native plugin calls that don't have a web substitute, such as `SplashScreen.show()`, the app will allow those calls without crashing. Calls that return a promise will return a rejected promise, which you should be handling in your app anyways.
-
-Additionally, Capacitor's JavaScript API has a number of utilities that make it possible to programmatically check whether certain APIs are available.
-
-For example, if your app would normally rely on the Camera app being used to take a photo, you could check if the Camera is available, and if not, ask the user to upload a file instead:
-
-```typescript
-import { Capacitor } from '@capacitor/core';
-
-const isAvailable = Capacitor.isPluginAvailable('Camera');
-
-if (!isAvailable) {
-  // Have the user upload a file instead
-} else {
-  // Otherwise, make the call:
-  Camera.getPhoto();
-}
-```
