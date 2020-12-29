@@ -1,4 +1,8 @@
-import { Component, h, Host, Prop, State } from '@stencil/core';
+import React, { useEffect, useState } from 'react';
+import CodeBlock from '@theme/CodeBlock';
+import Layout from '@theme/Layout';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import {
   ResponsiveContainer,
   Grid,
@@ -9,88 +13,65 @@ import {
   PrismicRichText,
   PrismicResponsiveImage,
   Paragraph,
-} from '@ionic-internal/ionic-ds';
-import { Fragment, JSXBase } from '@stencil/core/internal';
-import { href } from '@stencil/router';
+} from '../ds';
+import { getPage } from '../data.server/prismic';
 
-@Component({
-  tag: 'landing-page',
-  styleUrl: 'landing-page.scss',
-  scoped: true,
-})
-export class LandingPage {
-  @Prop() data: any;
-  @State() selectedCodeTab: string = 'notifications';
-  @State() showHubspotForm = false;
-  @State() hubspotFormSubmitted = false;
+import './landing-page.scss';
 
-  componentWillLoad() {
-    console.log(this.data);
+interface Props {
+  data: any;
+}
+
+function LandingPage(props: Props): JSX.Element {
+  const [data, setData] = useState(null);
+  const [showHubspotForm, setShowHubspotForm] = useState(false);
+  const [hubspotFormSubmitted, setHubspotFormSubmitted] = useState(false);
+
+  useEffect(() => {
+    const fetchPrismicContent = async () => {
+      const page = await getPage({}, { pathname: '/' });
+      setData(page);
+    };
+    fetchPrismicContent();
+  }, []);
+
+  if (!data) {
+    return null;
   }
 
-  render() {
-    const {
-      Top,
-      Started,
-      Native,
-      Features,
-      Framework,
-      Companies,
-      GetStarted,
-      WhitepaperAd,
-    } = this;
-
-    return (
-      <Host>
-        <meta-tags />
-        <Top />
-        <Started />
-        <WhitepaperAd />
-        <Native />
-        <Features />
-        <Framework />
-        <Companies />
-        <GetStarted />
-        <pre-footer />
-        <capacitor-site-footer />
-      </Host>
-    );
-  }
-
-  Top = () => {
-    const { Announcement } = this;
-    const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
+  const Top = () => {
+    const { top, top__ctas, top__link, top__hero, top__icons } = data;
     const { primary, secondary } = top__ctas[0];
 
     return (
       <section id="top">
-        <div class="background"></div>
+        <div className="background"></div>
         <ResponsiveContainer>
-          <div class="heading-group">
+          <div className="heading-group">
             <Announcement />
             <PrismicRichText richText={top} paragraphLevel={2} />
-            <div class="buttons">
+            <div className="buttons">
               <Button
                 kind="round"
                 anchor
-                {...href('/docs/getting-started')}
-                class="primary"
+                href="/docs/getting-started"
+                className="primary"
               >
-                {primary} <span class="arrow"> -&gt;</span>
+                {primary} <span className="arrow"> -&gt;</span>
               </Button>
               <Button
                 kind="round"
                 variation="light"
                 anchor
-                {...href('docs/plugins')}
-                class="secondary"
+                href="docs/plugins"
+                className="secondary"
               >
                 {secondary}
               </Button>
             </div>
-            <a class="link | ui-paragraph-4" {...href('/cordova')}>
+            <a className="link | ui-paragraph-4" href="/cordova">
               {top__link}
-              <span class="arrow"> -&gt;</span>
+              <span className="arrow"> -&gt;</span>
             </a>
             <PrismicResponsiveImage
               loading="eager"
@@ -101,7 +82,7 @@ export class LandingPage {
               }}
             />
           </div>
-          <div class="image-wrapper">
+          <div className="image-wrapper">
             <PrismicResponsiveImage loading="eager" image={top__hero} />
           </div>
         </ResponsiveContainer>
@@ -109,13 +90,8 @@ export class LandingPage {
     );
   };
 
-  Announcement = () => {
-    const {
-      tag_text,
-      desktop_text,
-      mobile_text,
-      link,
-    } = this.data.announcement;
+  const Announcement = () => {
+    const { tag_text, desktop_text, mobile_text, link } = data.announcement;
     const { target, url } = link;
 
     const newUrl = url.replace(window.location.origin, '');
@@ -123,45 +99,55 @@ export class LandingPage {
     return (
       <a
         id="announcement"
-        class="feature__register"
-        {...href(newUrl)}
+        className="feature__register"
+        href={newUrl}
         target={target}
         rel={target ? 'noopener' : undefined}
       >
-        <div class="tag">{tag_text}</div>
-        <Breakpoint sm={true} display="inline-block" class="text">
-          <span class="text__content">
-            {desktop_text} <span class="arrow">-&gt;</span>
+        <div className="tag">{tag_text}</div>
+        <Breakpoint sm={true} display="inline-block" className="text">
+          <span className="text__content">
+            {desktop_text} <span className="arrow">-&gt;</span>
           </span>
         </Breakpoint>
-        <Breakpoint xs={true} sm={false} display="inline-block" class="text">
-          <span class="text__content">
-            {mobile_text} <span class="arrow">-&gt;</span>
+        <Breakpoint
+          xs={true}
+          sm={false}
+          display="inline-block"
+          className="text"
+        >
+          <span className="text__content">
+            {mobile_text} <span className="arrow">-&gt;</span>
           </span>
         </Breakpoint>
       </a>
     );
   };
 
-  Started = () => {
-    const { started, started__list, started__icons } = this.data;
+  const Started = () => {
+    const { started, started__list, started__icons } = data;
 
     const panels = [
-      <code-snippet
-        language="shell-session"
-        code={`npm install @capacitor/cli @capacitor/core\nnpx cap init`}
-      />,
-      <code-snippet
-        language="shell-session"
-        code={`npx cap add ios\nnpx cap add android`}
-      />,
-      <code-tabs
-        data={{
-          tabs: ['Notifications', 'Geolocation', 'Camera', 'Custom'],
-          languages: ['typescript'],
-          code: [
-            `
-import { Plugins } from '@capacitor/core';
+      <CodeBlock className="language-shell-session">
+        {`$ npm install @capacitor/cli @capacitor/core
+$ npx cap init`}
+      </CodeBlock>,
+      <CodeBlock className="language-shell-session">
+        {`$ npx cap add ios
+$ npx cap add android`}
+      </CodeBlock>,
+      <Tabs
+        defaultValue="notifications"
+        values={[
+          { value: 'notifications', label: 'Notifications' },
+          { value: 'geolocation', label: 'Geolocation' },
+          { value: 'camera', label: 'Camera' },
+          { value: 'custom', label: 'Custom' },
+        ]}
+      >
+        <TabItem value="notifications">
+          <CodeBlock className="language-typescript">
+            {`import { Plugins } from '@capacitor/core';
 const { LocalNotifications } = Plugins;
 
 LocalNotifications.schedule({
@@ -177,9 +163,12 @@ LocalNotifications.schedule({
       extra: null
     }
   ]
-});`, //-----------------------------------
-            `
-import { Plugins } from '@capacitor/core';
+});`}
+          </CodeBlock>
+        </TabItem>
+        <TabItem value="geolocation">
+          <CodeBlock className="language-typescript">
+            {`import { Plugins } from '@capacitor/core';
 const { Geolocation } = Plugins;
 // get the users current position
 const position = await Geolocation.getCurrentPosition();
@@ -187,17 +176,23 @@ const position = await Geolocation.getCurrentPosition();
 // grab latitude & longitude
 const latitude = position.coords.latitude;
 const longitude = position.coords.longitude;
-`,
-            `
-import { Plugins } from '@capacitor/core';
+`}
+          </CodeBlock>
+        </TabItem>
+        <TabItem value="camera">
+          <CodeBlock className="language-typescript">
+            {`import { Plugins } from '@capacitor/core';
 const { Camera } = Plugins;
 // Take a picture or video, or load from the library
 const picture = await Camera.getPicture({
   encodingType: this.camera.EncodingType.JPEG
 });
-`, //-----------------------------------
-            `
-import Foundation
+`}
+          </CodeBlock>
+        </TabItem>
+        <TabItem value="custom">
+          <CodeBlock className="language-swift">
+            {`import Foundation
 import Capacitor
 
 // Custom platform code, easily exposed to your web app
@@ -212,10 +207,10 @@ public class MyAwesomePlugin: CAPPlugin {
   // ....
   }
 }
-`,
-          ],
-        }}
-      />,
+`}
+          </CodeBlock>
+        </TabItem>
+      </Tabs>,
       //       <Tabs>
       //         <TabBar>
       //           <TabBarButton
@@ -328,17 +323,17 @@ public class MyAwesomePlugin: CAPPlugin {
 
     return (
       <ResponsiveContainer id="started" as="section">
-        <div class="heading-group">
+        <div className="heading-group">
           <PrismicRichText richText={started} />
         </div>
         {started__list.map(({ number, title, text }, i) => (
-          <div class="step">
-            <sup class="ui-heading-6">{number}</sup>
-            <div class="heading-panel-wrapper">
-              <div class="heading-wrapper">
+          <div className="step">
+            <sup className="ui-heading-6">{number}</sup>
+            <div className="heading-panel-wrapper">
+              <div className="heading-wrapper">
                 <Heading>{title}</Heading>
                 {i === 1 ? (
-                  <div class="platforms">
+                  <div className="platforms">
                     {started__icons.map(({ icon }, i) => (
                       <PrismicResponsiveImage
                         image={icon}
@@ -350,7 +345,7 @@ public class MyAwesomePlugin: CAPPlugin {
                 ) : null}
                 {text ? <Paragraph>{text}</Paragraph> : null}
               </div>
-              <div class="panel">{panels[i]}</div>
+              <div className="panel">{panels[i]}</div>
             </div>
           </div>
         ))}
@@ -358,18 +353,18 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   };
 
-  WhitepaperAd = () => {
-    const { image, text, cta } = this.data.whitepaper_ad;
+  const WhitepaperAd = () => {
+    const { image, text, cta } = data.whitepaper_ad;
     const { line1, line2 } = text[0];
 
     return (
-      <Fragment>
+      <>
         <ResponsiveContainer id="whitepaper" as="section">
-          <div class="content-wrapper">
-            <div class="image-wrapper">
+          <div className="content-wrapper">
+            <div className="image-wrapper">
               <PrismicResponsiveImage image={image} />
             </div>
-            <div class="info">
+            <div className="info">
               <Heading>
                 <span>{line1}</span> <span>{line2}</span>
               </Heading>
@@ -377,18 +372,18 @@ public class MyAwesomePlugin: CAPPlugin {
                 kind="round"
                 anchor
                 onClick={() => {
-                  this.showHubspotForm = true;
+                  setShowHubspotForm(true);
                 }}
               >
                 {cta}
-                <span class="arrow">-&gt;</span>
+                <span className="arrow">-&gt;</span>
               </Button>
             </div>
           </div>
         </ResponsiveContainer>
         <site-modal
-          open={this.showHubspotForm}
-          modalClose={() => (this.showHubspotForm = false)}
+          open={showHubspotForm}
+          modalClose={() => setShowHubspotForm(false)}
         >
           <hgroup>
             <Heading level={2}>
@@ -399,20 +394,20 @@ public class MyAwesomePlugin: CAPPlugin {
           <capacitor-hubspot-form
             formId={'9151dc0b-42d9-479f-b7b8-649e0e7bd1bc'}
             ajax={false}
-            onFormSubmitted={() => this.hubspotFormSubmitted}
+            onFormSubmitted={() => setHubspotFormSubmitted(true)}
           />
         </site-modal>
-      </Fragment>
+      </>
     );
   };
 
-  Native = () => {
-    const { native, native__list } = this.data;
+  const Native = () => {
+    const { native, native__list } = data;
     const dimensions = ['48x64', '60x64', '60x64'];
 
     return (
       <ResponsiveContainer id="native" as="section">
-        <div class="heading-group">
+        <div className="heading-group">
           <PrismicRichText richText={native} />
         </div>
         <Grid>
@@ -431,8 +426,8 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   };
 
-  Features = () => {
-    const { features, features__list, features__link } = this.data;
+  const Features = () => {
+    const { features, features__list, features__link } = data;
     const dimensions = [
       '40x32',
       '40x32',
@@ -447,11 +442,11 @@ public class MyAwesomePlugin: CAPPlugin {
     return (
       <section id="features">
         <ResponsiveContainer>
-          <div class="heading-group">
+          <div className="heading-group">
             <PrismicRichText richText={features} />
-            <a {...href('/docs/apis')} class="link | ui-heading-4">
+            <a href="/docs/apis" className="link | ui-heading-4">
               {features__link}
-              <span class="arrow">-&gt;</span>
+              <span className="arrow">-&gt;</span>
             </a>
           </div>
           <Grid>
@@ -471,8 +466,8 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   };
 
-  Framework = () => {
-    const { framework, framework__list } = this.data;
+  const Framework = () => {
+    const { framework, framework__list } = data;
 
     const logoTile = (logo: any) => (
       <PrismicResponsiveImage image={logo} width="272" height="200" />
@@ -480,13 +475,13 @@ public class MyAwesomePlugin: CAPPlugin {
 
     return (
       <ResponsiveContainer id="framework" as="section">
-        <div class="heading-group">
+        <div className="heading-group">
           <PrismicRichText richText={framework} paragraphLevel={2} />
         </div>
         <Grid>
           {framework__list.map(({ logo, link }) => (
             <Col sm={3} cols={6}>
-              {link ? <a {...href(link)}>{logoTile(logo)}</a> : logoTile(logo)}
+              {link ? <a href={link}>{logoTile(logo)}</a> : logoTile(logo)}
             </Col>
           ))}
         </Grid>
@@ -494,8 +489,8 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   };
 
-  Companies = () => {
-    const { companies, companies__list } = this.data;
+  const Companies = () => {
+    const { companies, companies__list } = data;
 
     //array structure matches css div placement
     const dimensions = [
@@ -513,16 +508,16 @@ public class MyAwesomePlugin: CAPPlugin {
 
     return (
       <ResponsiveContainer id="companies" as="section">
-        <div class="heading-group">
+        <div className="heading-group">
           <Paragraph level={2}>{companies}</Paragraph>
         </div>
-        <div class="images">
+        <div className="images">
           {dimensions.map((_, i1: number) => (
             //row of 4 images (2 groups of 2)
-            <div class="image-row">
+            <div className="image-row">
               {dimensions[i1].map((_, i2: number) => (
                 //group of 2 images
-                <div class="image-group">
+                <div className="image-group">
                   {dimensions[i1][i2].map((dimensions, i3) => (
                     <PrismicResponsiveImage
                       image={companies__list[i1 * 4 + i2 * 2 + i3].logo}
@@ -539,35 +534,35 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   };
 
-  GetStarted = () => {
-    const Background = this.getStartedBackground;
-    const { get_started, get_started__ctas } = this.data;
+  const GetStarted = () => {
+    const Background = getStartedBackground;
+    const { get_started, get_started__ctas } = data;
     const { primary, secondary } = get_started__ctas[0];
 
     return (
       <section id="get-started">
-        <Background class="background" />
+        <Background className="background" />
         <ResponsiveContainer>
-          <div class="heading-group">
+          <div className="heading-group">
             <PrismicRichText richText={get_started} paragraphLevel={2} />
           </div>
-          <div class="ctas">
+          <div className="ctas">
             <Button
-              {...href('/docs/getting-started')}
+              href="/docs/getting-started"
               anchor
               kind="round"
               variation="light"
-              class="primary"
+              className="primary"
               color="cyan"
             >
               {primary}
-              <span class="arrow"> -&gt;</span>
+              <span className="arrow"> -&gt;</span>
             </Button>
             <Button
-              {...href('/docs/plugins')}
+              href="/docs/plugins"
               kind="round"
               anchor
-              class="secondary"
+              className="secondary"
               color="cyan"
             >
               {secondary}
@@ -578,7 +573,7 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   };
 
-  getStartedBackground = (props?: JSXBase.SVGAttributes) => (
+  const getStartedBackground = (props?: JSXBase.SVGAttributes) => (
     <svg
       viewBox="0 0 1800 492"
       fill="none"
@@ -624,8 +619,8 @@ public class MyAwesomePlugin: CAPPlugin {
           y2="246"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#37B3FF" />
-          <stop offset="1" stop-color="#0097FF" />
+          <stop stopColor="#37B3FF" />
+          <stop offset="1" stopColor="#0097FF" />
         </linearGradient>
         <linearGradient
           id="paint1_linear"
@@ -635,8 +630,8 @@ public class MyAwesomePlugin: CAPPlugin {
           y2="338"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="white" stopOpacity="0" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint2_linear"
@@ -646,8 +641,8 @@ public class MyAwesomePlugin: CAPPlugin {
           y2="182"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="white" stopOpacity="0" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint3_linear"
@@ -657,10 +652,28 @@ public class MyAwesomePlugin: CAPPlugin {
           y2="249"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="white" stopOpacity="0" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
       </defs>
     </svg>
   );
+
+  return (
+    <Layout>
+      <meta-tags />
+      <Top />
+      <Started />
+      <WhitepaperAd />
+      <Native />
+      <Features />
+      <Framework />
+      <Companies />
+      <GetStarted />
+      <pre-footer />
+      <capacitor-site-footer />
+    </Layout>
+  );
 }
+
+export default LandingPage;

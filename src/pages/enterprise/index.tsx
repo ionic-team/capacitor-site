@@ -1,4 +1,5 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import React, { useEffect, useState } from 'react';
+import Layout from '@theme/Layout';
 import {
   ResponsiveContainer,
   Heading,
@@ -6,74 +7,53 @@ import {
   PrismicRichText,
   PrismicResponsiveImage,
   Paragraph,
-} from '@ionic-internal/ionic-ds';
-import { getAssetPath, State } from '@stencil/core/internal';
+} from '../../ds';
+import { getPage } from '../../data.server/prismic';
 
-@Component({
-  tag: 'enterprise-page',
-  styleUrl: 'enterprise-page.scss',
-  scoped: true,
-  assetsDirs: ['./assets-enterprise-page'],
-})
-export class EnterprisePage {
-  @Prop() data: any;
-  @State() ebookModalOpen = false;
+import './enterprise-page.scss';
 
-  render() {
-    const {
-      Top,
-      Companies,
-      Native,
-      Ebook,
-      Approach,
-      Plugins,
-      Security,
-      SupportGuidance,
-      Features,
-      Demo,
-      Editions,
-    } = this;
+interface Props {
+  data: any;
+}
 
-    return (
-      <Host>
-        <meta-tags />
-        <enterprise-subnav />
-        <Top />
-        <Companies />
-        <Native />
-        <Ebook />
-        <Approach />
-        <Plugins />
-        <Security />
-        <SupportGuidance />
-        <Features />
-        <Editions />
-        <Demo />
-        <pre-footer />
-        <capacitor-site-footer />
-      </Host>
-    );
+function EnterprisePage(props: Props): JSX.Element {
+  const [data, setData] = useState(null);
+  const [ebookModalOpen, setEbookModalOpen] = useState(false);
+
+  useEffect(() => {
+    const fetchPrismicContent = async () => {
+      const page = await getPage({}, { pathname: '/enterprise' });
+      setData(page);
+    };
+    fetchPrismicContent();
+  }, []);
+
+  if (!data) {
+    return null;
   }
 
-  Top = () => {
-    const { top } = this.data;
+  const Top = () => {
+    const { top } = data;
     const { title, text, cta_1, cta_2, background } = top[0];
 
     return (
       <section id="top">
-        <PrismicResponsiveImage image={background} class="background" />
+        <PrismicResponsiveImage image={background} className="background" />
         <ResponsiveContainer>
-          <div class="heading-group">
+          <div className="heading-group">
             <Heading level={1}>{title}</Heading>
             <Paragraph level={2}>{text}</Paragraph>
-            <div class="cta-row">
+            <div className="cta-row">
               <Button anchor href="#demo" kind="round">
                 {cta_1}
-                <span class="arrow"> -&gt;</span>
+                <span className="arrow"> -&gt;</span>
               </Button>
-              <a href="https://ionic.io/contact/sales" class="link btn-link">
+              <a
+                href="https://ionic.io/contact/sales"
+                className="link btn-link"
+              >
                 {cta_2}
-                <span class="arrow"> -&gt;</span>
+                <span className="arrow"> -&gt;</span>
               </a>
             </div>
           </div>
@@ -82,8 +62,8 @@ export class EnterprisePage {
     );
   };
 
-  Companies = () => {
-    const { companies } = this.data;
+  const Companies = () => {
+    const { companies } = data;
 
     const companies__list = [
       ['nationwide', '34x42'],
@@ -100,30 +80,26 @@ export class EnterprisePage {
       <section id="companies">
         <ResponsiveContainer>
           <Heading level={2}>{companies}</Heading>
-          <div class="logos">
-            <div class="row1">
+          <div className="logos">
+            <div className="row1">
               {companies__list.slice(0, 4).map((stats, i) => (
                 <img
                   width={stats[1].split('x')[0]}
                   height={stats[1].split('x')[1]}
-                  src={getAssetPath(
-                    `./assets-enterprise-page/companies/${i}@2x.png`,
-                  )}
+                  src={`./assets-enterprise-page/companies/${i}@2x.png`}
                   loading="lazy"
                   alt={`${stats[0]} logo`}
                 />
               ))}
             </div>
-            <div class="row2">
+            <div className="row2">
               {companies__list.slice(0, 4).map((stats, i) => (
                 <img
                   width={stats[1].split('x')[0]}
                   height={stats[1].split('x')[1]}
-                  src={getAssetPath(
-                    `./assets-enterprise-page/companies/${
-                      i + companies__list.length / 2
-                    }@2x.png`,
-                  )}
+                  src={`./assets-enterprise-page/companies/${
+                    i + companies__list.length / 2
+                  }@2x.png`}
                   loading="lazy"
                   alt={`${stats[0]} logo`}
                 />
@@ -135,8 +111,8 @@ export class EnterprisePage {
     );
   };
 
-  Native = () => {
-    const { native, native__list } = this.data;
+  const Native = () => {
+    const { native, native__list } = data;
     const { supertext, title, subtext } = native[0];
 
     const icons = [
@@ -147,22 +123,20 @@ export class EnterprisePage {
 
     return (
       <ResponsiveContainer id="native" as="section">
-        <div class="heading-group">
-          <p class="ui-heading-6">
+        <div className="heading-group">
+          <p className="ui-heading-6">
             <sup>{supertext}</sup>
           </p>
           <PrismicRichText richText={title} />
           <Paragraph level={2}>{subtext}</Paragraph>
         </div>
-        <ul class="list">
+        <ul className="list">
           {native__list.map(({ title, text }, i) => (
             <li key={icons[i][0]}>
               <img
                 width={icons[i][1].split('x')[0]}
                 height={icons[i][1].split('x')[1]}
-                src={getAssetPath(
-                  `./assets-enterprise-page/native/${i}@2x.png`,
-                )}
+                src={`/assets-enterprise-page/native/${i}@2x.png`}
                 loading="lazy"
               />
               <Heading level={4} as="h3">
@@ -176,36 +150,36 @@ export class EnterprisePage {
     );
   };
 
-  Ebook = () => {
-    const { ebook } = this.data;
+  const Ebook = () => {
+    const { ebook } = data;
     const { text, cta, background, book } = ebook[0];
 
     return (
       <section id="ebook">
         <ResponsiveContainer>
           <site-modal
-            open={this.ebookModalOpen}
-            onModalClose={() => (this.ebookModalOpen = false)}
+            open={ebookModalOpen}
+            onModalClose={() => setEbookModalOpen(false)}
           >
             <Heading level={2}>
               Building Cross-platform Apps with Capacitor
             </Heading>
             <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
           </site-modal>
-          <div class="wrapper">
-            <PrismicResponsiveImage image={background} class="background" />
-            <div class="content">
-              <div class="image-wrapper">
+          <div className="wrapper">
+            <PrismicResponsiveImage image={background} className="background" />
+            <div className="content">
+              <div className="image-wrapper">
                 <PrismicResponsiveImage image={book} />
               </div>
-              <div class="heading-group">
+              <div className="heading-group">
                 <PrismicRichText paragraphLevel={1} richText={text} />
                 <Button
                   kind="round"
                   size="md"
-                  onClick={() => (this.ebookModalOpen = true)}
+                  onClick={() => setEbookModalOpen(true)}
                 >
-                  {cta} <span class="arrow"> -&gt;</span>
+                  {cta} <span className="arrow"> -&gt;</span>
                 </Button>
               </div>
             </div>
@@ -215,33 +189,33 @@ export class EnterprisePage {
     );
   };
 
-  Approach = () => {
+  const Approach = () => {
     const {
       approach,
       approach_traditional,
       approach_traditional__list,
       approach_web,
       approach_web__list,
-    } = this.data;
+    } = data;
     const { supertext, title } = approach[0];
 
     return (
       <section id="approach">
         <ResponsiveContainer>
-          <div class="heading-group">
-            <p class="ui-heading-6">
+          <div className="heading-group">
+            <p className="ui-heading-6">
               <sup>{supertext}</sup>
             </p>
             <PrismicRichText richText={title} />
           </div>
-          <div class="split">
-            <article class="traditional column">
+          <div className="split">
+            <article className="traditional column">
               <Heading>{approach_traditional[0]['title']}</Heading>
               <Paragraph>{approach_traditional[0]['text']}</Paragraph>
               <PrismicResponsiveImage
                 image={approach_traditional[0]['image']}
               />
-              <div class="list">
+              <div className="list">
                 <Heading level={4}>
                   {approach_traditional[0]['subtitle']}
                 </Heading>
@@ -255,11 +229,11 @@ export class EnterprisePage {
                 </ul>
               </div>
             </article>
-            <article class="web column">
+            <article className="web column">
               <Heading>{approach_web[0]['title']}</Heading>
               <Paragraph>{approach_web[0]['text']}</Paragraph>
               <PrismicResponsiveImage image={approach_web[0]['image']} />
-              <div class="list">
+              <div className="list">
                 <Heading level={4}>{approach_web[0]['subtitle']}</Heading>
                 <ul>
                   {approach_web__list.map(({ text, icon }) => (
@@ -277,22 +251,22 @@ export class EnterprisePage {
     );
   };
 
-  Plugins = () => {
-    const { plugins } = this.data;
+  const Plugins = () => {
+    const { plugins } = data;
     const { supertext, title, subtext, image } = plugins[0];
 
     return (
       <section id="plugins">
         <ResponsiveContainer>
-          <div class="wrapper">
-            <div class="heading-group">
-              <p class="ui-heading-6">
+          <div className="wrapper">
+            <div className="heading-group">
+              <p className="ui-heading-6">
                 <sup>{supertext}</sup>
               </p>
               <PrismicRichText richText={title} />
               <Paragraph level={2}>{subtext}</Paragraph>
             </div>
-            <div class="image-wrapper">
+            <div className="image-wrapper">
               <PrismicResponsiveImage image={image} />
             </div>
           </div>
@@ -301,19 +275,19 @@ export class EnterprisePage {
     );
   };
 
-  Security = () => {
-    const { security } = this.data;
+  const Security = () => {
+    const { security } = data;
     const { supertext, title, subtext, image } = security[0];
 
     return (
       <section id="security">
         <ResponsiveContainer>
-          <div class="wrapper">
-            <div class="image-wrapper">
+          <div className="wrapper">
+            <div className="image-wrapper">
               <PrismicResponsiveImage image={image} />
             </div>
-            <div class="heading-group">
-              <p class="ui-heading-6">
+            <div className="heading-group">
+              <p className="ui-heading-6">
                 <sup>{supertext}</sup>
               </p>
               <PrismicRichText richText={title} />
@@ -325,13 +299,13 @@ export class EnterprisePage {
     );
   };
 
-  SupportGuidance = () => {
-    const { support_guidance } = this.data;
+  const SupportGuidance = () => {
+    const { support_guidance } = data;
 
     return (
       <section id="support-guidance">
         <ResponsiveContainer>
-          <div class="wrapper">
+          <div className="wrapper">
             {support_guidance.map(({ image, title, text }) => (
               <article>
                 <PrismicResponsiveImage image={image} />
@@ -345,16 +319,16 @@ export class EnterprisePage {
     );
   };
 
-  Features = () => {
-    const { features, features__list } = this.data;
+  const Features = () => {
+    const { features, features__list } = data;
     const { supertext, title, subtext } = features[0];
 
     return (
       <section id="features">
         <ResponsiveContainer>
-          <div class="wrapper">
-            <div class="heading-group">
-              <p class="ui-heading-6">
+          <div className="wrapper">
+            <div className="heading-group">
+              <p className="ui-heading-6">
                 <sup>{supertext}</sup>
               </p>
               <PrismicRichText richText={title} />
@@ -363,7 +337,7 @@ export class EnterprisePage {
             <ul>
               {features__list.map(({ icon, title, text }) => (
                 <li>
-                  <div class="image-wrapper">
+                  <div className="image-wrapper">
                     <PrismicResponsiveImage image={icon} />
                   </div>
                   <div>
@@ -381,8 +355,8 @@ export class EnterprisePage {
     );
   };
 
-  Editions = () => {
-    const { editions } = this.data;
+  const Editions = () => {
+    const { editions } = data;
     const {
       supertext,
       title,
@@ -407,33 +381,34 @@ export class EnterprisePage {
     return (
       <section id="editions">
         <ResponsiveContainer>
-          <div class="wrapper">
-            <div class="heading-group">
-              <p class="ui-heading-6">
+          <div className="wrapper">
+            <div className="heading-group">
+              <p className="ui-heading-6">
                 <sup>{supertext}</sup>
               </p>
               <PrismicRichText richText={title} />
               <PrismicRichText richText={paragraph_1} paragraphLevel={2} />
               <PrismicRichText richText={paragraph_2} paragraphLevel={2} />
-              <div class="cta-row">
+              <div className="cta-row">
                 <Button href="#demo" anchor kind="round">
                   {cta_1}
-                  <span class="arrow"> -&gt;</span>
+                  <span className="arrow"> -&gt;</span>
                 </Button>
-                <a href="https://ionic.io/contact/sales" class="link btn-link">
+                <a
+                  href="https://ionic.io/contact/sales"
+                  className="link btn-link"
+                >
                   {cta_2}
-                  <span class="arrow"> -&gt;</span>
+                  <span className="arrow"> -&gt;</span>
                 </a>
               </div>
             </div>
-            <div class="logos">
-              <div class="row0">
+            <div className="logos">
+              <div className="row0">
                 {images.slice(0, 3).map((stats, i) => (
-                  <div class="image-wrapper">
+                  <div className="image-wrapper">
                     <img
-                      src={getAssetPath(
-                        `./assets-enterprise-page/editions/${i}@2x.png`,
-                      )}
+                      src={`./assets-enterprise-page/editions/${i}@2x.png`}
                       width={stats[1].split('x')[0]}
                       height={stats[1].split('x')[1]}
                       loading="lazy"
@@ -441,13 +416,11 @@ export class EnterprisePage {
                   </div>
                 ))}
               </div>
-              <div class="row1">
+              <div className="row1">
                 {images.slice(3, 6).map((stats, i) => (
-                  <div class="image-wrapper">
+                  <div className="image-wrapper">
                     <img
-                      src={getAssetPath(
-                        `./assets-enterprise-page/editions/${i + 3}@2x.png`,
-                      )}
+                      src={`/assets-enterprise-page/editions/${i + 3}@2x.png`}
                       width={stats[1].split('x')[0]}
                       height={stats[1].split('x')[1]}
                       loading="lazy"
@@ -455,13 +428,11 @@ export class EnterprisePage {
                   </div>
                 ))}
               </div>
-              <div class="row2">
+              <div className="row2">
                 {images.slice(6, 9).map((stats, i) => (
-                  <div class="image-wrapper">
+                  <div className="image-wrapper">
                     <img
-                      src={getAssetPath(
-                        `./assets-enterprise-page/editions/${i + 6}@2x.png`,
-                      )}
+                      src={`/assets-enterprise-page/editions/${i + 6}@2x.png`}
                       width={stats[1].split('x')[0]}
                       height={stats[1].split('x')[1]}
                       loading="lazy"
@@ -476,15 +447,15 @@ export class EnterprisePage {
     );
   };
 
-  Demo = () => {
-    const { demo } = this.data;
+  const Demo = () => {
+    const { demo } = data;
     const { supertext, title } = demo[0];
 
     return (
       <section id="demo">
         <ResponsiveContainer>
-          <div class="heading-group">
-            <p class="ui-heading-6">
+          <div className="heading-group">
+            <p className="ui-heading-6">
               <sup>{supertext}</sup>
             </p>
             <Heading level={2}>{title}</Heading>
@@ -494,4 +465,26 @@ export class EnterprisePage {
       </section>
     );
   };
+
+  return (
+    <Layout>
+      <meta-tags />
+      <enterprise-subnav />
+      <Top />
+      <Companies />
+      <Native />
+      <Ebook />
+      <Approach />
+      <Plugins />
+      <Security />
+      <SupportGuidance />
+      <Features />
+      <Editions />
+      <Demo />
+      <pre-footer />
+      <capacitor-site-footer />
+    </Layout>
+  );
 }
+
+export default EnterprisePage;

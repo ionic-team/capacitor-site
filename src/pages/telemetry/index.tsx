@@ -1,36 +1,12 @@
-import { Component, Host, h, Prop } from '@stencil/core';
-import {
-  ResponsiveContainer,
-  Heading,
-  Paragraph,
-} from '@ionic-internal/ionic-ds';
+import React from 'react';
+import CodeBlock from '@theme/CodeBlock';
+import Layout from '@theme/Layout';
+import { ResponsiveContainer, Heading, Paragraph } from '../../ds';
 
-@Component({
-  tag: 'telemetry-page',
-  styleUrl: 'telemetry-page.scss',
-  scoped: true,
-})
-export class TelemetryPage {
-  @Prop() data: any;
+import './telemetry-page.scss';
 
-  render() {
-    const { Telemetry } = this;
-
-    return (
-      <Host>
-        <meta-tags
-          page-title="Telemetry"
-          description={'Capacitor Telemetry usage information'}
-        />
-        <Telemetry />
-
-        <pre-footer />
-        <capacitor-site-footer />
-      </Host>
-    );
-  }
-
-  Telemetry = () => (
+function TelemetryPage(props): JSX.Element {
+  const Telemetry = () => (
     <ResponsiveContainer id="telemetry" as="section">
       <Heading level={1}>Telemetry</Heading>
       <Paragraph>
@@ -77,32 +53,38 @@ export class TelemetryPage {
         <code class="sc-docs-component">npx cap telemetry off</code> in the root
         of your project:
       </Paragraph>
-      <code-snippet
-        language="shell-session"
-        code={`
-        npx cap telemetry off
-        `}
-      />
+      <CodeBlock className="language-shell-session">
+        $ npx cap telemetry off
+      </CodeBlock>
       <Paragraph>
         You can check the status by running the following command in the root of
         your project:
       </Paragraph>
-      <code-snippet
-        language="shell-session"
-        code={`
-        npx cap telemetry
-        `}
-      />
+      <CodeBlock className="language-shell-session">
+        $ npx cap telemetry
+      </CodeBlock>
       <Paragraph>
         If you would like to rejoin the program and provide telemetry on your
         project then run the following command:
       </Paragraph>
-      <code-snippet
-        language="shell-session"
-        code={`
-        npx cap telemetry on
-        `}
-      />
+      <CodeBlock className="language-shell-session">
+        $ npx cap telemetry on
+      </CodeBlock>
     </ResponsiveContainer>
   );
+
+  return (
+    <Layout>
+      <meta-tags
+        page-title="Telemetry"
+        description={'Capacitor Telemetry usage information'}
+      />
+      <Telemetry />
+
+      <pre-footer />
+      <capacitor-site-footer />
+    </Layout>
+  );
 }
+
+export default TelemetryPage;

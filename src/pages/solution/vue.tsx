@@ -1,22 +1,20 @@
-import { Fragment, h } from '@stencil/core';
-import {
-  ResponsiveContainer,
-  Heading,
-  Paragraph,
-} from '@ionic-internal/ionic-ds';
+import React from 'react';
+import { ResponsiveContainer, Heading, Paragraph } from '../../ds';
+import SolutionPage from '../../components/SolutionPage';
+
 export const SolutionVue = () => {
   return (
-    <Fragment>
+    <SolutionPage solutionId="vue">
       <ResponsiveContainer id="getting-started" as="section">
-        <article class="step">
-          <sup class="ui-heading-6">01</sup>
-          <div class="heading-group">
+        <article className="step">
+          <sup className="ui-heading-6">01</sup>
+          <div className="heading-group">
             <Heading>Install Capacitor.</Heading>
             <Paragraph>
               Add Capacitor to your project and create a config for your app
             </Paragraph>
           </div>
-          <div class="code-panel">
+          <div className="code-panel">
             <code-snippet
               language="shell-session"
               code={`
@@ -27,16 +25,16 @@ npx cap init [name] [id] --web-dir=build
           </div>
         </article>
 
-        <article class="step">
-          <sup class="ui-heading-6">02</sup>
-          <div class="heading-group">
+        <article className="step">
+          <sup className="ui-heading-6">02</sup>
+          <div className="heading-group">
             <Heading>Build the Web App.</Heading>
             <Paragraph>
               The compiled web assets will be copied into each Capacitor native
               platform during the next step.
             </Paragraph>
           </div>
-          <div class="code-panel">
+          <div className="code-panel">
             <code-snippet
               language="shell-session"
               code={`
@@ -46,16 +44,16 @@ npm run build
           </div>
         </article>
 
-        <article class="step">
-          <sup class="ui-heading-6">03</sup>
-          <div class="heading-group">
+        <article className="step">
+          <sup className="ui-heading-6">03</sup>
+          <div className="heading-group">
             <Heading>Install the native platforms you want to target.</Heading>
-            <div class="platforms">
+            <div className="platforms">
               <img
                 loading="lazy"
                 src="/assets/img/landing/apple.png"
                 alt="Apple"
-                class="apple"
+                className="apple"
                 width="22"
                 height="26"
               />
@@ -63,7 +61,7 @@ npm run build
                 loading="lazy"
                 src="/assets/img/landing/android.png"
                 alt="Android"
-                class="android"
+                className="android"
                 width="27"
                 height="23"
               />
@@ -74,7 +72,7 @@ npm run build
               control).
             </Paragraph>
           </div>
-          <div class="code-panel">
+          <div className="code-panel">
             <code-snippet
               language="shell-session"
               code={`
@@ -85,16 +83,16 @@ npx cap add ios
           </div>
         </article>
 
-        <article class="step">
-          <sup class="ui-heading-6">04</sup>
-          <div class="heading-group">
+        <article className="step">
+          <sup className="ui-heading-6">04</sup>
+          <div className="heading-group">
             <Heading level={3}>Adding calls to Native APIs</Heading>
             <Paragraph>
               With Capacitor installed, adding calls to native device features
               is as straight forward as calling other JavaScript methods
             </Paragraph>
           </div>
-          <div class="code-panel">
+          <div className="code-panel">
             <code-snippet
               language="markup"
               code={`
@@ -149,6 +147,8 @@ export default {
           </Paragraph>
         </ResponsiveContainer>
       </section>
-    </Fragment>
+    </SolutionPage>
   );
 };
+
+export default SolutionVue;
