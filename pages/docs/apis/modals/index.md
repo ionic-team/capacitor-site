@@ -27,7 +27,7 @@ well as Action Sheets.
 ## Example
 
 ```typescript
-import { Plugins } from '@capacitor/core';
+import { Plugins, ActionSheetOptionStyle } from '@capacitor/core';
 
 const { Modals } = Plugins;
 
