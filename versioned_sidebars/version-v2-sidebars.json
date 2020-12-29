@@ -1,0 +1,458 @@
+{
+  "version-v2/docs": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Getting Started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/index"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/getting-started/dependencies"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/getting-started"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/getting-started/with-ionic"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Basics",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/basics/workflow"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/basics/opening-native-projects"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/basics/building-your-app"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/basics/running-your-app"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/basics/using-plugins"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/basics/configuring-your-app"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/basics/progressive-web-app"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/basics/utilities"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Cordova/PhoneGap",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/cordova"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cordova/migration-strategy"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cordova/migrating-from-cordova-to-capacitor"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cordova/using-cordova-plugins"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cordova/known-incompatible-plugins"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Concepts",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/guides/ads"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/ci-cd"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/deep-links"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/deploying-updates"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/in-app-purchases"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/live-reload"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/push-notifications-firebase"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/react-hooks"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/screen-orientation"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/security"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/splash-screens-and-icons"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/storage"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/guides/community"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "iOS",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/ios"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/ios/configuration"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/ios/updating"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/ios/custom-code"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/ios/deploying-to-app-store"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/ios/troubleshooting"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Android",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/android"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/android/configuration"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/android/updating"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/android/custom-code"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/android/deploying-to-google-play"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/android/troubleshooting"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Web/PWA",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/web"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/web/pwa-elements"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Reference",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/config"
+        },
+        {
+          "type": "link",
+          "label": "CLI",
+          "href": "/docs/cli"
+        },
+        {
+          "type": "link",
+          "label": "Plugins",
+          "href": "/docs/apis"
+        }
+      ]
+    }
+  ],
+  "version-v2/plugins": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Getting Started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/plugins"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/plugins/community"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/plugins/enterprise"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Creating Plugins",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/plugins/creating-plugins"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/plugins/workflow"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/plugins/ios"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/plugins/android"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/plugins/web"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/plugins/js"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "type": "category",
+      "label": "Official Plugins",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/apis"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/accessibility"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/app"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/background-task"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/browser"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/camera"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/clipboard"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/console"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/device"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/filesystem"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/geolocation"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/haptics"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/keyboard"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/local-notifications"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/modals"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/motion"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/network"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/permissions"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/push-notifications"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/share"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/splash-screen"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/status-bar"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/storage"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/apis/toast"
+        }
+      ]
+    }
+  ],
+  "version-v2/cli": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Command Reference",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v2/cli"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/add"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/cap"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/copy"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/create"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/list"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/open"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/plugin-generate"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/serve"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/sync"
+        },
+        {
+          "type": "doc",
+          "id": "version-v2/cli/update"
+        }
+      ]
+    }
+  ]
+}
