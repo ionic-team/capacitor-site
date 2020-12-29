@@ -24,8 +24,6 @@ export namespace Components {
     interface BlogPost {
         "data": BlogData;
     }
-    interface CapacitorEnterprise {
-    }
     interface CapacitorHubspotForm {
         "ajax": boolean;
         "formId"?: string;
@@ -69,6 +67,9 @@ export namespace Components {
     }
     interface DocsSearch {
         "placeholder": string;
+    }
+    interface EnterprisePage {
+        "data": any;
     }
     interface InPageNavigation {
         "editUrl": string;
@@ -138,12 +139,6 @@ declare global {
     var HTMLBlogPostElement: {
         prototype: HTMLBlogPostElement;
         new (): HTMLBlogPostElement;
-    };
-    interface HTMLCapacitorEnterpriseElement extends Components.CapacitorEnterprise, HTMLStencilElement {
-    }
-    var HTMLCapacitorEnterpriseElement: {
-        prototype: HTMLCapacitorEnterpriseElement;
-        new (): HTMLCapacitorEnterpriseElement;
     };
     interface HTMLCapacitorHubspotFormElement extends Components.CapacitorHubspotForm, HTMLStencilElement {
     }
@@ -217,6 +212,12 @@ declare global {
         prototype: HTMLDocsSearchElement;
         new (): HTMLDocsSearchElement;
     };
+    interface HTMLEnterprisePageElement extends Components.EnterprisePage, HTMLStencilElement {
+    }
+    var HTMLEnterprisePageElement: {
+        prototype: HTMLEnterprisePageElement;
+        new (): HTMLEnterprisePageElement;
+    };
     interface HTMLInPageNavigationElement extends Components.InPageNavigation, HTMLStencilElement {
     }
     var HTMLInPageNavigationElement: {
@@ -289,7 +290,6 @@ declare global {
         "avc-code-type": HTMLAvcCodeTypeElement;
         "blog-page": HTMLBlogPageElement;
         "blog-post": HTMLBlogPostElement;
-        "capacitor-enterprise": HTMLCapacitorEnterpriseElement;
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
@@ -302,6 +302,7 @@ declare global {
         "docs-component": HTMLDocsComponentElement;
         "docs-menu": HTMLDocsMenuElement;
         "docs-search": HTMLDocsSearchElement;
+        "enterprise-page": HTMLEnterprisePageElement;
         "in-page-navigation": HTMLInPageNavigationElement;
         "landing-page": HTMLLandingPageElement;
         "lower-content-nav": HTMLLowerContentNavElement;
@@ -331,8 +332,6 @@ declare namespace LocalJSX {
     }
     interface BlogPost {
         "data"?: BlogData;
-    }
-    interface CapacitorEnterprise {
     }
     interface CapacitorHubspotForm {
         "ajax"?: boolean;
@@ -379,6 +378,9 @@ declare namespace LocalJSX {
     interface DocsSearch {
         "placeholder"?: string;
     }
+    interface EnterprisePage {
+        "data"?: any;
+    }
     interface InPageNavigation {
         "editUrl"?: string;
         "headings"?: HeadingData[];
@@ -422,7 +424,6 @@ declare namespace LocalJSX {
         "avc-code-type": AvcCodeType;
         "blog-page": BlogPage;
         "blog-post": BlogPost;
-        "capacitor-enterprise": CapacitorEnterprise;
         "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
@@ -435,6 +436,7 @@ declare namespace LocalJSX {
         "docs-component": DocsComponent;
         "docs-menu": DocsMenu;
         "docs-search": DocsSearch;
+        "enterprise-page": EnterprisePage;
         "in-page-navigation": InPageNavigation;
         "landing-page": LandingPage;
         "lower-content-nav": LowerContentNav;
@@ -457,7 +459,6 @@ declare module "@stencil/core" {
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
-            "capacitor-enterprise": LocalJSX.CapacitorEnterprise & JSXBase.HTMLAttributes<HTMLCapacitorEnterpriseElement>;
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
@@ -470,6 +471,7 @@ declare module "@stencil/core" {
             "docs-component": LocalJSX.DocsComponent & JSXBase.HTMLAttributes<HTMLDocsComponentElement>;
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
             "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
+            "enterprise-page": LocalJSX.EnterprisePage & JSXBase.HTMLAttributes<HTMLEnterprisePageElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;

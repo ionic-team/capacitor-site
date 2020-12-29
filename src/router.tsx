@@ -68,7 +68,7 @@ export const Routes = () => (
 
     <Route path="/enterprise">
       <SiteHeader />
-      <capacitor-enterprise />
+      <enterprise-page />
     </Route>
 
     <Route
