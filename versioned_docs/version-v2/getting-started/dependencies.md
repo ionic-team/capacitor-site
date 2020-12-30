@@ -1,12 +1,11 @@
 ---
 title: Capacitor Required Dependencies
+sidebar_label: Required Dependencies
 description: Required Dependencies for different platforms
 contributors:
   - mlynch
   - dotNetkow
 ---
-
-# Capacitor Required Dependencies
 
 Capacitor has a number of dependencies depending on which platforms you're targeting and which operating systems you are developing on.
 

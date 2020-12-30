@@ -5,7 +5,7 @@ import {
 import { readdirSync } from 'fs';
 import path from 'path';
 
-const API_DIR =  path.join(__dirname,'..','pages','docs','apis');
+const API_DIR =  path.join(__dirname, '..', 'versioned_docs', 'version-v2', 'apis');
 const PLUGIN_DIR = path.join(
   __dirname,
   '..',
@@ -36,7 +36,7 @@ async function main() {
           pluginData && 
           (pluginData.api || pluginData.interfaces.length || pluginData.enums.length)
         ) {
-          await outputReadme(path.join(API_DIR, plugin, 'index.md'), pluginData);
+          await outputReadme(path.join(API_DIR, `${plugin}.md`), pluginData);
           console.log(`Updated: ${plugin}`);
         }
       } catch(e) {

@@ -9,8 +9,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Clipboard
-
 The Clipboard API enables copy and pasting to/from the clipboard. On iOS this API also allows 
 copying images and URLs.
 
@@ -40,6 +38,7 @@ console.log('Got', result.type, 'from clipboard:', result.value);
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### write(...)

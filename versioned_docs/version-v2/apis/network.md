@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Network
-
 The Network API provides events for monitoring network status changes, along with querying the current state of the network.
 
 <docgen-index>
@@ -57,6 +55,7 @@ This permission allows the app to access information about the current network, 
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getStatus()

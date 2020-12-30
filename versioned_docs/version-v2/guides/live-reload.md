@@ -5,8 +5,6 @@ contributors:
   - dotNetkow
 ---
 
-# Live Reload
-
 Live Reload is useful for debugging both the web portion of an app as well as native functionality on device hardware or simulators. Rather than deploy a new native binary every time you make a code change, it reloads the browser (or Web View) when changes in the app are detected.
 
 > If running on a device, make sure it is on the same Wi-Fi network as your computer.

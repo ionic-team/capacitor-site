@@ -9,8 +9,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Accessibility
-
 The Accessibility API makes it easy to know when a user has a screen reader enabled, as well as programmatically speaking
 labels through the connected screen reader.
 
@@ -53,6 +51,7 @@ async speak() {
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### isScreenReaderEnabled()

@@ -6,8 +6,6 @@ contributors:
   - mlynch
 ---
 
-# Building your App
-
 Capacitor works on a three-step build process: First, your web code is built (if necessary). Next, the built web code is copied to each platform. Finally, the app is compiled using the platform-specific tooling.
 
 ## 1. Building web code

@@ -9,8 +9,6 @@ contributors:
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>
 
-# Splash Screen
-
 The Splash Screen API provides methods for showing or hiding a Splash image.
 
 <docgen-index>
@@ -160,6 +158,7 @@ To use splash screen images named something other than `splash.png`, set `androi
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### show(...)

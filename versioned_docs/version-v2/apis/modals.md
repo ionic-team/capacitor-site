@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Modals
-
 The Modals API provides methods for triggering native modal windows for alerts, confirmations, and input prompts, as
 well as Action Sheets.
 
@@ -78,6 +76,7 @@ async showActions() {
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### alert(...)

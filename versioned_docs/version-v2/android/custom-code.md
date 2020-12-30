@@ -1,13 +1,12 @@
 ---
 title: Custom Native Android Code
+sidebar_label: Custom Native Code
 description: Custom Native Android Code
 contributors:
   - mlynch
   - jcesarmobile
   - RoderickQiu
 ---
-
-# Custom Native Android Code
 
 Many apps will want to add custom Java or Kotlin code to implement native features, without the overhead of building and publishing a proper Capacitor plugin.
 

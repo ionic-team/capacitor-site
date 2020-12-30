@@ -1,11 +1,10 @@
 ---
-title: CLI Commands
+title: Capacitor CLI - create
+sidebar_label: Create
 description: Capacitor CLI command reference list
 contributors:
   - dotNetkow
 ---
-
-# Capacitor CLI - create
 
 Create a new Capacitor project with a stock project structure if you'd rather start fresh and plan to add a UI/frontend framework separately.
 

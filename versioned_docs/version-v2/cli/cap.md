@@ -1,11 +1,10 @@
 ---
-title: CLI Command - cap
+title: Capacitor CLI - cap
+sidebar_label: Cap
 description: Capacitor CLI command - cap
 contributors:
   - dotNetkow
 ---
-
-# Capacitor CLI - cap
 
 View all available CLI commands and options.
 

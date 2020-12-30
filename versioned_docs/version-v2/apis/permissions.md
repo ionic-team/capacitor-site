@@ -7,8 +7,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Permissions
-
 The Permissions API provides methods to check if certain permissions have been granted before requesting them.
 
 This can be useful, for example, to avoid a user denying a permission request due to lack of context behind why the app is requesting the permission. Instead, checking the permission
@@ -17,6 +15,7 @@ first and optionally displaying a custom UI to prepare the user for the permissi
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### query(...)

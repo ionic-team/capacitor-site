@@ -1,12 +1,11 @@
 ---
 title: Capacitor Android Documentation
+sidebar_label: Getting Started
 description: Capacitor Android Documentation
 contributors:
   - mlynch
   - jcesarmobile
 ---
-
-# Capacitor Android Documentation
 
 Capacitor features a native Android runtime that enables developers to communicate between JavaScript and Native Java for Android code.
 
@@ -19,8 +18,8 @@ the Android SDK Platforms for API 21 or greater.
 
 You can install these easily by opening Android Studio, and going to Tools -> Android -> SDK Manager from the top menu bar:
 
-![SDK Platforms](/assets/img/docs/android/sdk-platforms.png)
-![SDK Tools](/assets/img/docs/android/sdk-tools.png)
+![SDK Platforms](/img/docs/android/sdk-platforms.png)
+![SDK Tools](/img/docs/android/sdk-tools.png)
 
 ### Creating Android Project
 
@@ -54,11 +53,11 @@ npx cap open android
 
 Once Android Studio is open, you should be able to run your app on a device or emulator. Click Run or Debug:
 
-![Running App](/assets/img/docs/android/running.png)
+![Running App](/img/docs/android/running.png)
 
 ### Troubleshooting
 
-If you encountered any issue above, please let us know by filing an issue on the repo, and then consult the [Troubleshooting Android](/docs/android/troubleshooting) page for solutions to common Android problems.
+If you encountered any issue above, please let us know by filing an issue on the repo, and then consult the [Troubleshooting Android](android/troubleshooting.md) page for solutions to common Android problems.
 
 ### Next Steps
 
@@ -69,6 +68,6 @@ If your app ran you are now ready to continue developing and building your app. 
 Follow these Android-specific guides for more information on setting permissions for your app, updating dependencies, building
 plugins, and more:
 
-[Configuring and setting permissions for Android &#8250;](/docs/android/configuration)
+[Configuring and setting permissions for Android &#8250;](android/configuration.md)
 
-[Building Native Plugins for Android &#8250;](/docs/plugins)
+[Building Native Plugins for Android &#8250;](plugins.md)

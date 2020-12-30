@@ -1,11 +1,10 @@
 ---
 title: Updating Your Capacitor iOS Project
+sidebar_label: Updating
 description: Updating Your Capacitor iOS Project
 contributors:
   - mlynch
 ---
-
-# Updating Your Capacitor iOS Project
 
 Occasionally, you'll need to make Capacitor updates to your iOS app, including updating the version of Capacitor used in your app, or using new ways of interfacing with Capacitor inside of your iOS codebase (for example, with new iOS API changes).
 

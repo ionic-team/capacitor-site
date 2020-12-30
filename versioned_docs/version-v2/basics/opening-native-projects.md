@@ -1,12 +1,11 @@
 ---
 title: Opening Native Projects
+sidebar_label: Opening Native IDE
 description: Opening Native Projects via Native IDEs
 contributors:
   - dotNetkow
   - mlynch
 ---
-
-# Opening Native Projects
 
 Capacitor uses the native IDE for each platform in order to provide required configuration, and to build, test, and deploy apps.
 

@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Browser
-
 <docgen-index>
 
 * [`open(...)`](#open)
@@ -38,6 +36,7 @@ await Browser.open({ url: 'http://capacitorjs.com/' });
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### open(...)

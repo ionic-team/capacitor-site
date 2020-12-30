@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>
 
-# Keyboard
-
 The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
 
 <docgen-index>
@@ -118,6 +116,7 @@ Allowed values are
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### show()

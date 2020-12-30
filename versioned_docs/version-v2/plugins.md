@@ -1,5 +1,6 @@
 ---
 title: Capacitor Plugins
+sidebar_label: Introduction
 description: Capacitor Plugins
 contributors:
   - mlynch
@@ -7,10 +8,10 @@ contributors:
   - dotNetkow
 ---
 
-# Capacitor Plugins
-
 Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
 
+```
+TODO(docusaurus):
 <style>
   plugin-cards {
     display: flex;
@@ -26,7 +27,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
 
     flex-basis: 100%;
     border-radius: var(--radius-2);
-    box-shadow: var(--elevation-5);    
+    box-shadow: var(--elevation-5);
 
     transition: transform .2s ease-out, box-shadow .2s ease-out;
   }
@@ -41,23 +42,25 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
   @media screen and (max-width: 500px) {
     plugin-cards {
       flex-direction: column;
-    }   
+    }
   }
 </style>
+```
+
 <plugin-cards>
   <a class="card" href="/docs/apis">
     <img
-      src="/assets/img/docs/core-plugins.png"
+      src="/img/docs/core-plugins.png"
       width="40" height="40"
-    >
+    />
     <p class="ui-heading-5">Official Plugins</p>
     <p class="ui-paragraph-5">Official Plugins are maintained by the Capacitor team.</p>
   </a>
   <a class="card" href="/docs/plugins/community">
     <img
-      src="/assets/img/docs/community-plugins.png"
+      src="/img/docs/community-plugins.png"
       width="40" height="40"
-    >
+    />
     <p class="ui-heading-5">Community Plugins</p>
     <p class="ui-paragraph-5">Community Plugins are maintained by the Capacitor Community.</p>
   </a>

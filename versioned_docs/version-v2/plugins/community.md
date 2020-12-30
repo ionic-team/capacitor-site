@@ -1,9 +1,8 @@
 ---
 title: Capacitor Community Plugins
+sidebar_label: Community Plugins
 description: Capacitor Community Plugins
 ---
-
-# Capacitor Community Plugins
 
 The community has built a number of Capacitor plugins to add functionality to your app.
 

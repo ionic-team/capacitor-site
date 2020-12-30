@@ -1,11 +1,10 @@
 ---
-title: Screen Orientation Configuration
+title: Screen Orientation in your Capacitor App
+sidebar_label: Screen Orientation
 description: Manage screen orientation settings in your Capacitor app
 contributors:
   - mlynch
 ---
-
-## Screen Orientation in your Capacitor App
 
 Many apps work well in portrait and landscape device orientations. However, many don't, and there are good reasons to require an app to function solely or occasionally in one mode or the other.
 

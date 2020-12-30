@@ -1,11 +1,10 @@
 ---
-title: Security
+title: Security Best Practices for Capacitor
+sidebar_label: Security
 description: Security best practices for your Capacitor apps
 contributors:
   - mlynch
 ---
-
-# Security Best Practices for Capacitor
 
 Every Capacitor developer is responsible for making sure their app is following security best practices. Without proper care, major security issues can crop up which can prove extremely damaging and expensive.
 
@@ -35,7 +34,7 @@ For enterprise use cases, the Capacitor team provides [Identity Vault](https://i
 
 Authentication flows in native apps require extra care, since authentication often happens through the use of Custom URL Schemes. Custom URL Schemes, such as `instagram://`, are not globally controlled like web domains are, so it's possible that a malicious app could intercept a request meant for one app by defining and overriding a custom URL scheme. Imagine a secure token being sent to the wrong app!
 
-Generally, an app should never send sensitive data through a Custom URL scheme deep link (newer techniques such as Universal Links are more secure as they rely on actual web domain ownership, see the [Deep Links](./deep-links) guide for details).
+Generally, an app should never send sensitive data through a Custom URL scheme deep link (newer techniques such as Universal Links are more secure as they rely on actual web domain ownership, see the [Deep Links](deep-links.md) guide for details).
 
 This is especially important for oAuth2 flows, where the last step in the authentication experience relies on a deep link back to the app. To mitigate the possibility of a malicious app receiving a token, [PKCE](https://oauth.net/2/pkce/) must be used for oAuth2 in Capacitor apps.
 

@@ -8,12 +8,10 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Console
-
 The Console API automatically sends `console.debug`, `console.error`, `console.info`, `console.log`, `console.trace` and `console.warn` calls to the native log system on each respective platform. This enables, for example,
 `console.log` calls to be rendered in the Xcode and Android Studio log windows.
 
-It can be disabled by using `hideLogs` entry in `capacitor.config.json`, check [common configuration](/docs/basics/configuring-your-app#common-configuration) for more information.
+It can be disabled by using `hideLogs` entry in `capacitor.config.json`, check [common configuration](../basics/configuring-your-app.md#common-configuration) for more information.
 
 ## Example
 

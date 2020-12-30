@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Filesystem
-
 The Filesystem API provides a NodeJS-like API for working with files on the device.
 
 <docgen-index>
@@ -170,6 +168,7 @@ async copy() {
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### readFile(...)

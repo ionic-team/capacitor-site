@@ -1,11 +1,10 @@
 ---
 title: React Hooks for Capacitor
+sidebar_label: React Hooks
 description: Use these React hooks to simplify native mobile API access with Capacitor
 contributors:
   - mlynch
 ---
-
-# React Hooks for Capacitor
 
 Developers using React in their Capacitor app have access to a set of useful, community-maintained React Hooks to access Capacitor APIs in their React function components.
 

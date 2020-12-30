@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# App
-
 The App API handles high level App state and events.
 
 For example, this API emits events when the app enters and leaves the foreground, handles
@@ -35,7 +33,7 @@ deeplinks, opens other apps, and manages persisted plugin state.
 
 To use `canOpenUrl`, you need to set the URL schemes your app will query for in `LSApplicationQueriesSchemes` in `Info.plist`.
 
-Read more about [LSApplicationQueriesSchemes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW14) and [configuring Info.plist](/docs/ios/configuration).
+Read more about [LSApplicationQueriesSchemes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW14) and [configuring Info.plist](../ios/configuration.md).
 
 ## Example
 
@@ -87,6 +85,7 @@ We recommend every Android app using plugins that rely on external Activities (f
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### exitApp()

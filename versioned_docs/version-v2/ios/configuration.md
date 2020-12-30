@@ -1,12 +1,11 @@
 ---
 title: Configuring iOS
+sidebar_label: Configuration
 description: Configuring iOS
 contributors:
   - dotNetkow
   - mlynch
 ---
-
-# Configuring iOS
 
 ## Configuring `Info.plist`
 
@@ -60,4 +59,4 @@ The default Podfile has an `'App'` target, which needs to be replaced with <a hr
 
 ## Deeplinks (aka Universal Links)
 
-For a complete Deep Links guide, [see here](/docs/guides/deep-links).
+For a complete Deep Links guide, [see here](../guides/deep-links.md).

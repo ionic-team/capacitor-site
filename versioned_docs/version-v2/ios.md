@@ -1,12 +1,11 @@
 ---
 title: Capacitor iOS Documentation
+sidebar_label: Getting Started
 description: Communicate between JavaScript and Native Swift or Objective-C code
 contributors:
   - dotNetkow
   - mlynch
 ---
-
-# Capacitor iOS Documentation
 
 Capacitor features a native iOS bridge that enables developers to communicate between JavaScript and Native Swift or Objective-C code.
 
@@ -48,7 +47,7 @@ npx cap open ios
 
 Once Xcode is open, just click the Play button to run your app on a Simulator or Device.
 
-![Running your app](/assets/img/docs/ios/running.png)
+![Running your app](/img/docs/ios/running.png)
 
 ## Next steps
 
@@ -58,6 +57,6 @@ You are now ready to continue developing and building your app. Use the various 
 
 Follow these guides for more information on each topic:
 
-[Configuring and setting permissions for iOS &#8250;](/docs/ios/configuration)
+[Configuring and setting permissions for iOS &#8250;](ios/configuration.md)
 
-[Building Native Plugins for iOS &#8250;](/docs/plugins)
+[Building Native Plugins for iOS &#8250;](plugins.md)

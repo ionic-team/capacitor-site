@@ -6,8 +6,6 @@ contributors:
   - mlynch
 ---
 
-# Running your App
-
 Capacitor relies on each platform's IDE of choice to run and test your app.
 
 ## iOS

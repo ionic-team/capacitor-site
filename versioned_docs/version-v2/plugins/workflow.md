@@ -1,11 +1,10 @@
 ---
 title: Plugin Development Workflow
+sidebar_label: Development Workflow
 description: Capacitor Plugin Development Workflow
 contributors:
   - dotNetkow
 ---
-
-# Plugin Development Workflow
 
 With the new plugin created, you can begin implementing functionality across a variety of platforms.
 
@@ -51,7 +50,7 @@ To compile the plugin, navigate into the plugin directory then run:
 $ npm run build
 ```
 
-Implement [Android functionality](./android) in `android/src/main/[nested folders]/PluginName.java`:
+Implement [Android functionality](android.md) in `android/src/main/[nested folders]/PluginName.java`:
 
 ```java
 @PluginMethod()
@@ -63,7 +62,7 @@ public void openMap(PluginCall call) {
 }
 ```
 
-Implement [iOS functionality](./ios) in `ios/Plugin/Plugin.swift`:
+Implement [iOS functionality](ios.md) in `ios/Plugin/Plugin.swift`:
 
 ```swift
 @objc func openMap(_ call: CAPPluginCall) {
@@ -74,7 +73,7 @@ Implement [iOS functionality](./ios) in `ios/Plugin/Plugin.swift`:
 }
 ```
 
-> Remember to export the plugin to Capacitor (to make it aware of the plugin) on [iOS](/docs/plugins/ios#export-to-capacitor) and [Android](/docs/plugins/android#export-to-capacitor).
+> Remember to export the plugin to Capacitor (to make it aware of the plugin) on [iOS](ios.md#export-to-capacitor) and [Android](android.md#export-to-capacitor).
 
 ## Local Testing
 

@@ -8,15 +8,13 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Toast
-
 The Toast API provides a notification pop up for displaying important information to a user. Just like real toast!
 
 <docgen-index></docgen-index>
 
 ## PWA Notes
 
-[PWA Elements](/docs/web/pwa-elements) are required for Toast plugin to work.
+[PWA Elements](../web/pwa-elements.md) are required for Toast plugin to work.
 
 ## Example
 
@@ -34,6 +32,7 @@ async show() {
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### show(...)

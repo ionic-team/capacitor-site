@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Camera
-
 The Camera API allows a user to pick a photo from their photo album or take a picture. On iOS, this uses `UIImagePickerController`, and on Android this
 API sends an intent which will be handled by the core Camera app by default.
 
@@ -34,7 +32,7 @@ Key: 	`NSPhotoLibraryAddUsageDescription`
 Name: `Privacy - Photo Library Usage Description`
 Key: 	`NSPhotoLibraryUsageDescription`
 
-Read about [Setting iOS Permissions](/docs/ios/configuration/) in the [iOS Guide](/docs/ios/) for more information on setting iOS permissions in Xcode
+Read about [Setting iOS Permissions](../ios/configuration.md) in the [iOS Guide](../ios.md) for more information on setting iOS permissions in Xcode
 
 ## Android Notes
 
@@ -47,14 +45,14 @@ This API requires the following permissions be added to your `AndroidManifest.xm
 
 The storage permissions are for reading/saving photo files.
 
-Read about [Setting Android Permissions](/docs/android/configuration/) in the [Android Guide](/docs/android/) for more information on setting Android permissions.
+Read about [Setting Android Permissions](../android/configuration.md) in the [Android Guide](../android.md) for more information on setting Android permissions.
 
 Additionally, because the Camera API launches a separate Activity to handle taking the photo, you should listen for `appRestoredResult` in the `App` plugin
 to handle any camera data that was sent in the case your app was terminated by the operating system while the Activity was running.
 
 ## PWA Notes
 
-[PWA Elements](/docs/web/pwa-elements) are required for Camera plugin to work.
+[PWA Elements](../web/pwa-elements.md) are required for Camera plugin to work.
 
 ## Example
 
@@ -81,11 +79,12 @@ async takePicture() {
 
 ## Example Guides
 
-[Building an Ionic Framework Camera App](/docs/guides/ionic-framework-app)
+[Building an Ionic Framework Camera App](../guides/ionic-framework-app.md)
 
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getPhoto(...)

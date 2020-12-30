@@ -1,11 +1,10 @@
 ---
 title: Known Incompatible Cordova Plugins
+sidebar_label: Known Incompatible Plugins
 description: Known Incompatible Cordova Plugins
 contributors:
   - dotNetkow
 ---
-
-# Known Incompatible Cordova Plugins
 
 While we've tested a number of popular Cordova plugins, it's possible Capacitor doesn't support every Cordova plugin. Some don't work with Capacitor or Capacitor provides a conflicting alternative. If it's known that the plugin is conflicting or causes build issues, it will be skipped when running `npx cap update`.
 

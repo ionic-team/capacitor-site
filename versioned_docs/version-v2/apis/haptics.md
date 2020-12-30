@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>
 
-# Haptics
-
 The Haptics API provides physical feedback to the user through touch or vibration.
 
 <docgen-index>
@@ -79,6 +77,7 @@ export class HapticsExample {
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### impact(...)

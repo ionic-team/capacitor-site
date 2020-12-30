@@ -1,12 +1,11 @@
 ---
-title: Deep Links
+title: Deep Linking with Universal and App Links
+sidebar_label: Deep Links
 description: Implement deep linking functionality in an iOS and Android app
 contributors:
   - dotNetkow
   - jaydrogers
 ---
-
-# Deep Linking with Universal and App Links
 
 **Platforms**: iOS, Android
 
@@ -28,14 +27,14 @@ Here's what it looks like in practice. In this example, the user has the native 
 
 ## Prerequisites
 
-- A pre-configured [Capacitor app](/docs/getting-started).
+- A pre-configured [Capacitor app](../getting-started.md).
 - For iOS, enrollment in the Apple Developer Program.
 
 For illustrative purposes, https://beerswift.app will be used as the web app link.
 
 ## Deep Link Routing using the Capacitor App API
 
-When the native app is opened after a deep link is clicked, the mobile OS doesn't automatically know where to route the user. This must be implemented within the app itself using the Capacitor [App API](/docs/apis/app) on app startup.
+When the native app is opened after a deep link is clicked, the mobile OS doesn't automatically know where to route the user. This must be implemented within the app itself using the Capacitor [App API](../apis/app.md) on app startup.
 
 If your website and app paths don't match, you will need to implement more advanced url pattern matching (see [this guide](https://devdactic.com/universal-links-ionic/) for examples). If your mobile app and web app use the same codebase though, this is very straightforward - just redirect to the same URL. The following examples assume this.
 
@@ -200,7 +199,7 @@ iOS configuration involves creating a site association file and configuring the 
 
 First, log into the [Apple Developer site](https://developer.apple.com). Navigate to the "Certificates, Identifiers, & Profiles" section and select your app's identifier. Note the Team ID and Bundle ID, and under Capabilities, toggle "Associated Domains" then save:
 
-![iOS Identifier Config](/assets/img/docs/guides/deep-links/ios-config.png)
+![iOS Identifier Config](/img/docs/guides/deep-links/ios-config.png)
 
 Next, create the site association file (`apple-app-site-association`).
 
@@ -228,7 +227,7 @@ Next, upload the file to your web site (hosted on HTTPS), then validate that it'
 
 The final step is to configure the iOS app to recognize incoming links. Open Xcode, then navigate to Signing & Capabilities. Click "+ Capability", then choose Associated Domains. In the Domains entry that appears, edit it using the format `applinks:yourdomain.com`:
 
-![Xcode Associated Domain](/assets/img/docs/guides/deep-links/xcode-associated-domain.png)
+![Xcode Associated Domain](/img/docs/guides/deep-links/xcode-associated-domain.png)
 
 ## Android Configuration
 
@@ -252,11 +251,11 @@ keytool -list -v -keystore my-release-key.keystore
 
 The printed output will include the SHA256 fingerprint:
 
-![Keytool output](/assets/img/docs/guides/deep-links/keystore-sha256.png)
+![Keytool output](/img/docs/guides/deep-links/keystore-sha256.png)
 
 Next, use Google's [Asset Links tool](https://developers.google.com/digital-asset-links/tools/generator) to create the Site Association file. Fill in the website domain, app package name, and SHA256 fingerprint, then click "Generate statement":
 
-![Android Identifier Config](/assets/img/docs/guides/deep-links/android-config.png)
+![Android Identifier Config](/img/docs/guides/deep-links/android-config.png)
 
 Copy the JSON output into a new local file under `.well-known/assetlinks.json`.
 

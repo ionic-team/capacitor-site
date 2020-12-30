@@ -1,11 +1,10 @@
 ---
-title: CLI Command - cap sync
+title: Capacitor CLI - cap sync
+sidebar_label: Sync
 description: Capacitor CLI command - cap sync
 contributors:
   - dotNetkow
 ---
-
-# Capacitor CLI - cap sync
 
 ## Sync
 

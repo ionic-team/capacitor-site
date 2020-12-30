@@ -1,11 +1,10 @@
 ---
-title: Deploying Realtime Updates
+title: App Deployment and Realtime Updates
+sidebar_label: Deploying and Updating
 description: Update your Capacitor app remotely in realtime even through the app stores
 contributors:
   - mlynch
 ---
-
-# App Deployment and Realtime Updates
 
 The last mile of app development involves publishing your app to the app stores, as well as keeping it updated over time.
 

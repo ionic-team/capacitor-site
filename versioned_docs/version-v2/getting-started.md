@@ -1,12 +1,11 @@
 ---
 title: Installing Capacitor
+sidebar_label: Installation
 description: Installing Capacitor
 contributors:
   - dotNetkow
   - jcesarmobile
 ---
-
-# Installing Capacitor
 
 There are two ways to start using Capacitor: adding Capacitor to an existing frontend project (recommended), or starting a fresh project. Capacitor was designed primarily to drop-in to existing frontend projects, but comes with a simple starting project structure if you'd like to start fresh.
 
@@ -16,11 +15,11 @@ We strongly recommend starting a Capacitor project with your mobile frontend fra
 
 ## Before you start
 
-Make sure you have all the required [Dependencies](/docs/getting-started/dependencies) installed for the platforms you will be building for. Most importantly, make sure you update CocoaPods using `pod repo update` before starting a new project, if you plan on building for iOS using a Mac.
+Make sure you have all the required [Dependencies](getting-started/dependencies.md) installed for the platforms you will be building for. Most importantly, make sure you update CocoaPods using `pod repo update` before starting a new project, if you plan on building for iOS using a Mac.
 
 ## Adding Capacitor to an existing Ionic App
 
-[See here.](/docs/getting-started/with-ionic)
+[See here.](getting-started/with-ionic.md)
 
 ## Adding Capacitor to an existing web app
 
@@ -68,4 +67,4 @@ This will create a very simple starting app with no UI library.
 
 ## Where to go next
 
-Make sure you have the [Required Dependencies](/docs/getting-started/dependencies) installed, including [PWA Elements](/docs/web/pwa-elements), then proceed to the [Developer Workflow Guide](/docs/basics/workflow) to learn how Capacitor apps are built.
+Make sure you have the [Required Dependencies](getting-started/dependencies.md) installed, including [PWA Elements](web/pwa-elements.md), then proceed to the [Developer Workflow Guide](basics/workflow.md) to learn how Capacitor apps are built.

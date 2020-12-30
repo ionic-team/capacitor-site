@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>
 
-# Background Tasks
-
 The Background Task API makes it easy to run background tasks. Currently, this plugin
 supports running a task when the app is backgrounded, and soon will support periodic background
 fetch operations.
@@ -76,6 +74,7 @@ App.addListener('appStateChange', (state) => {
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### beforeExit(...)

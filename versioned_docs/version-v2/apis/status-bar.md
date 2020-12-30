@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>
 
-# Status Bar
-
 The StatusBar API Provides methods for configuring the style of the Status Bar, along with showing or hiding it.
 
 <docgen-index>
@@ -27,7 +25,7 @@ The StatusBar API Provides methods for configuring the style of the Status Bar, 
 
 ## iOS Note
 
-This plugin requires "View controller-based status bar appearance" (`UIViewControllerBasedStatusBarAppearance`) set to `YES` in `Info.plist`. Read about [Configuring iOS](/docs/ios/configuration) for help.
+This plugin requires "View controller-based status bar appearance" (`UIViewControllerBasedStatusBarAppearance`) set to `YES` in `Info.plist`. Read about [Configuring iOS](../ios/configuration.md) for help.
 
 The status bar visibility defaults to visible and the style defaults to `StatusBarStyle.Light`. You can change these defaults by adding `UIStatusBarHidden` and or `UIStatusBarStyle` in the `Info.plist`.
 
@@ -81,6 +79,7 @@ export class StatusBarExample {
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### setStyle(...)

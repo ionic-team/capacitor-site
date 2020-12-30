@@ -1,13 +1,12 @@
 ---
 title: Capacitor Plugins
+sidebar_label: Introduction
 description: Capacitor Plugins
 contributors:
   - mlynch
   - jcesarmobile
   - ehorodyski-ionic
 ---
-
-# Capacitor Plugin APIs
 
 Capacitor includes a number of native plugin APIs that are available to all Capacitor apps. These can be thought of as Capacitor "core plugins," and they make it easy to access commonly needed functionality on each platform.
 

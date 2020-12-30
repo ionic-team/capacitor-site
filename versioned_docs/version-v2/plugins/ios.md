@@ -1,12 +1,11 @@
 ---
 title: Capacitor iOS Plugin Guide
+sidebar_label: iOS Guide
 description: Capacitor iOS Plugin Guide
 contributors:
   - mlynch
   - jcesarmobile
 ---
-
-# Capacitor iOS Plugin Guide
 
 Building Capacitor plugins for iOS involves writing Swift (or Objective-C) to interface with Apple's iOS SDKs.
 
@@ -14,7 +13,7 @@ Capacitor embraces standard iOS development tools for building iOS plugins. We b
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](../plugins.md) section of the Plugin guide.
 
 Next, open `your-plugin/ios/Plugin.xcworkspace` in Xcode.
 

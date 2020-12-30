@@ -8,8 +8,6 @@ contributors:
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
 
-# Motion
-
 The Motion API tracks accelerometer and device orientation (compass heading, etc.)
 
 <docgen-index>
@@ -54,6 +52,7 @@ See the [DeviceMotionEvent](https://developer.mozilla.org/en-US/docs/Web/API/Dev
 ## API
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### addListener(...)

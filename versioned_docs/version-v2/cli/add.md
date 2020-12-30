@@ -1,11 +1,10 @@
 ---
-title: CLI Command - cap add
+title: Capacitor CLI - cap add
+sidebar_label: Add
 description: Capacitor CLI - cap add
 contributors:
   - dotNetkow
 ---
-
-# Capacitor CLI - cap add
 
 Add a native platform project to your project.
 

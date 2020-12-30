@@ -1,12 +1,11 @@
 ---
 title: Capacitor JavaScript Plugin Guide
+sidebar_label: JavaScript Guide
 description: Capacitor JavaScript Plugin Guide
 contributors:
   - mlynch
   - jcesarmobile
 ---
-
-# Capacitor JavaScript Plugin Guide
 
 In Capacitor, Native Plugins have all of their methods automatically made available to JavaScript at runtime, so the majority of plugins won't need any JavaScript for their plugin at all.
 
@@ -14,7 +13,7 @@ However, if your plugin requires some special JavaScript, or you'd like to provi
 
 ## Getting Started
 
-To build a custom JavaScript frontend for Capacitor, first follow the [Getting Started](/docs/plugins) section of the plugin guide.
+To build a custom JavaScript frontend for Capacitor, first follow the [Getting Started](../plugins.md) section of the plugin guide.
 
 Next, build out your plugin any way you see fit! The generated plugin template comes with TypeScript and a simple build process ready to go. You can adopt that (recommended) or remove those files and start fresh.
 
