@@ -1,0 +1,97 @@
+@use 'paragraph.base' as base;
+
+:root {
+  @include base.paragraph;
+}
+
+.ui-paragraph {
+  margin: 0 0 1.6em 0;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+  // margin: 0;
+  // Styles for themes
+  // .ui-theme--editorial & {  
+  // }
+
+  &--base {
+    --p1-leading: var(--f-leading-body);
+    --p2-leading: var(--f-leading-body);
+    --p3-leading: var(--f-leading-body);
+    --p4-leading: var(--f-leading-body);
+    --p5-leading: var(--f-leading-body);
+    --p6-leading: var(--f-leading-body);
+  }
+  &--prose {
+    --p1-leading: var(--f-leading-prose);
+    --p2-leading: var(--f-leading-prose);
+    --p3-leading: var(--f-leading-prose);
+    --p4-leading: var(--f-leading-prose);
+    --p5-leading: var(--f-leading-prose);
+    --p6-leading: var(--f-leading-prose);
+  }
+  &--none {
+    --p1-leading: 100%;
+    --p2-leading: 100%;
+    --p3-leading: 100%;
+    --p4-leading: 100%;
+    --p5-leading: 100%;
+    --p6-leading: 100%;
+  }
+  
+  &-1 {
+    font-family: var(--p1-font);
+    font-size: var(--p1-size);
+    line-height: var(--p1-leading);
+    letter-spacing: var(--p1-tracking);
+    font-weight: var(--p1-weight);
+    color: var(--p1-color);
+    text-transform: var(--p1-transform);
+  }
+  &-2 {
+    font-family: var(--p2-font);
+    font-size: var(--p2-size);
+    line-height: var(--p2-leading);
+    letter-spacing: var(--p2-tracking);
+    font-weight: var(--p2-weight);
+    color: var(--p2-color);
+    text-transform: var(--p2-transform);
+  }
+  &-3 {
+    font-family: var(--p3-font);
+    font-size: var(--p3-size);
+    line-height: var(--p3-leading);
+    letter-spacing: var(--p3-tracking);
+    font-weight: var(--p3-weight);
+    color: var(--p3-color);
+    text-transform: var(--p3-transform);
+  }
+  &-4 {
+    font-family: var(--p4-font);
+    font-size: var(--p4-size);
+    line-height: var(--p4-leading);
+    letter-spacing: var(--p4-tracking);
+    font-weight: var(--p4-weight);
+    color: var(--p4-color);
+    text-transform: var(--p4-transform);
+  }
+  &-5 {
+    font-family: var(--p5-font);
+    font-size: var(--p5-size);
+    line-height: var(--p5-leading);
+    letter-spacing: var(--p5-tracking);
+    font-weight: var(--p5-weight);
+    color: var(--p5-color);
+    text-transform: var(--p5-transform);
+  }
+  &-6 {
+    font-family: var(--p6-font);
+    font-size: var(--p6-size);
+    line-height: var(--p6-leading);
+    letter-spacing: var(--p6-tracking);
+    font-weight: var(--p6-weight);
+    color: var(--p6-color);
+    text-transform: var(--p6-transform);
+  }  
+}

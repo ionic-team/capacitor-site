@@ -1,0 +1,36 @@
+@use '../../vars';
+
+.ui-breakpoint {
+  display: none;
+}
+
+.ui-breakpoint-xl {
+  @media (min-width: vars.$screen-lg){
+    display: var(--display);
+  } 
+}
+.ui-breakpoint-lg {
+  @media (min-width: vars.$screen-md) and (max-width: vars.$screen-md-max){
+    display: var(--display);
+  } 
+}
+.ui-breakpoint-md {
+  @media (min-width: vars.$screen-sm) and (max-width: vars.$screen-sm-max) {
+    display: var(--display);
+  }  
+}
+.ui-breakpoint-sm {
+  @media (min-width: vars.$screen-xs) and (max-width: vars.$screen-xs-max) {
+    display: var(--display);
+  }
+}
+.ui-breakpoint-xs {
+  @media (max-width: vars.$screen-xs - 1px) {
+    display: var(--display);
+  }
+}
+
+
+
+
+

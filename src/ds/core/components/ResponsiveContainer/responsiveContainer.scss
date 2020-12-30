@@ -1,0 +1,22 @@
+@use '../../vars';
+
+.ui-container {
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: vars.$screen-sm) {
+    width: 768px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  @media (min-width: vars.$screen-md) {
+    width: 1024px;
+  }
+
+  @media (min-width: vars.$screen-lg) {
+    width: 1152px;
+  }
+}
