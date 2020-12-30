@@ -11,11 +11,11 @@ Today at the first ever official Ioniconf, we unveiled a number of exciting upda
 
 In no particular order, we announced:
 
-- [Capacitor opening up to all modern web technologies]($POST#capacitor-opening-up)
-- [The Capacitor Community project]($POST#capacitor-community)
-- [Capacitor Elements]($POST#capacitor-elements)
-- [Deploy to App Store for Capacitor]($POST#deploy-to-app-store-for-capacitor)
-- [Updated site and domain]($POST#updated-site-domain-and-docs)
+- [Capacitor opening up to all modern web technologies](#capacitor-opening-up)
+- [The Capacitor Community project](#capacitor-community)
+- [Capacitor Elements](#capacitor-elements)
+- [Deploy to App Store for Capacitor](#deploy-to-app-store-for-capacitor)
+- [Updated site and domain](#updated-site-domain-and-docs)
 
 <preview-end />
 

@@ -21,11 +21,11 @@ Let's dig in and explore how Capacitor works under the hood.
 
 At a high level, Capacitor does this:
 
-![Basic Capacitor Diagram](/assets/img/blog/how-capacitor-works/basic.png)
+![Basic Capacitor Diagram](/img/blog/how-capacitor-works/basic.png)
 
 But that's pretty simplistic, if we zoom in a bit and bring in your app code, we see that Capacitor is made up of a few individual components:
 
-![Zoomed Capacitor App](/assets/img/blog/how-capacitor-works/zoomed.png)
+![Zoomed Capacitor App](/img/blog/how-capacitor-works/zoomed.png)
 
 In this diagram, we see that your web app runs inside of a Web View. A Web View is a native OS control that provides a streamlined, chrome-less browser instance. If you imagine a typical web browser, a ton of overhead comes from the chrome and experience around the actual browsing frame. A Web View is just one instance of that browsing frame, so it's very light weight.
 
@@ -33,7 +33,7 @@ Most of the magic happens in the Native Bridge and the Runtime, so let's explore
 
 ## Native Bridge
 
-![Bridge](/assets/img/blog/how-capacitor-works/bridge.png)
+![Bridge](/img/blog/how-capacitor-works/bridge.png)
 
 That Web View needs a way to access native functionality, interact with OS level native controls, and access custom native code or 3rd party plugins. It does that using the Native Bridge inside of Capacitor.
 
@@ -45,7 +45,7 @@ Finally, the bridge manages message passing and tracking native invocations betw
 
 ## Runtime
 
-![Runtime](/assets/img/blog/how-capacitor-works/runtime.png)
+![Runtime](/img/blog/how-capacitor-works/runtime.png)
 
 The Native runtime is where calls from the Web View get routed to native plugins and custom native code.
 
@@ -59,7 +59,7 @@ Once those calls complete, a message is constructed and sent back to the Web Vie
 
 ## Capacitor apps are native
 
-![Native](/assets/img/blog/how-capacitor-works/native.png)
+![Native](/img/blog/how-capacitor-works/native.png)
 
 Capacitor works by extending a Web View with additional functionality and indirect access to full native functionality through plugins and custom native code.
 
