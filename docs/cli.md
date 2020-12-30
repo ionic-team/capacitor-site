@@ -1,11 +1,10 @@
 ---
-title: CLI Reference
+title: Capacitor CLI
+sidebar_label: Introduction
 description: Reference documentation for the Capacitor CLI
 contributors:
   - dotNetkow
 ---
-
-# Capacitor CLI
 
 The Capacitor command-line interface (CLI) tool is used to develop Capacitor apps.
 
@@ -24,16 +23,16 @@ npx cap [-V] [-h] [<command>]
 
 View all available CLI commands and options.
 
-- [`add`](/docs/cli/add)
-- [`copy`](/docs/cli/copy)
-- [`list`](/docs/cli/list)
-- [`open`](/docs/cli/open)
-- [`run`](/docs/cli/run)
-- [`sync`](/docs/cli/sync)
-- [`update`](/docs/cli/update)
+- [`add`](cli/add.md)
+- [`copy`](cli/copy.md)
+- [`list`](cli/list.md)
+- [`open`](cli/open.md)
+- [`run`](cli/run.md)
+- [`sync`](cli/sync.md)
+- [`update`](cli/update.md)
 
 ## Additional Resources
 
-[Learn how to install the Capacitor CLI &#8250;](/docs/getting-started)
+[Learn how to install the Capacitor CLI &#8250;](getting-started.md)
 
-[Learn about the CLI workflow &#8250;](/docs/basics/workflow)
+[Learn about the CLI workflow &#8250;](basics/workflow.md)

@@ -1,7 +1,9 @@
 ---
 title: App Capacitor Plugin API
+hide_title: true
+sidebar_label: App
 description: The App API handles high level App state and events.For example, this API emits events when the app enters and leaves the foreground, handles deeplinks, opens other apps, and manages persisted plugin state.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/app/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/app/src/definitions.ts
 ---
 
 # @capacitor/app
@@ -58,6 +60,7 @@ const checkAppLaunchUrl = async () => {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### exitApp()

@@ -1,7 +1,9 @@
 ---
 title: Status Bar Capacitor Plugin API
+hide_title: true
+sidebar_label: Status Bar
 description: The StatusBar API Provides methods for configuring the style of the Status Bar, along with showing or hiding it.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/status-bar/src/definitions.ts
 ---
 
 # @capacitor/status-bar
@@ -75,6 +77,7 @@ const showStatusBar = async () => {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### setStyle(...)

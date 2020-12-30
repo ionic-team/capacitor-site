@@ -1,11 +1,10 @@
 ---
-title: CLI Command - cap update
+title: Capacitor CLI - cap update
+sidebar_label: update
 description: Capacitor - cap update
 contributors:
   - dotNetkow
 ---
-
-# Capacitor CLI - cap update
 
 Updates the native plugins and dependencies referenced in `package.json`.
 

@@ -1,12 +1,11 @@
 ---
 title: Capacitor iOS Documentation
+sidebar_label: Getting Started
 description: Communicate between JavaScript and Native Swift or Objective-C code
 contributors:
   - dotNetkow
   - mlynch
 ---
-
-# Capacitor iOS Documentation
 
 Capacitor features a native iOS runtime that enables developers to communicate between JavaScript and Native Swift or Objective-C code.
 
@@ -14,7 +13,7 @@ Capacitor iOS apps are configured and managed with Xcode and [CocoaPods](https:/
 
 ## iOS Support
 
-iOS 12+ is supported. Xcode 12+ is required (see [Environment Setup](/docs/getting-started/environment-setup#ios-development)). Capacitor uses [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview), not the deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
+iOS 12+ is supported. Xcode 12+ is required (see [Environment Setup](getting-started/environment-setup.md#ios-development)). Capacitor uses [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview), not the deprecated [UIWebView](https://developer.apple.com/documentation/uikit/uiwebview).
 
 ## Adding the iOS Platform
 
@@ -24,7 +23,7 @@ First, install the `@capacitor/ios` package.
 npm install @capacitor/ios@next
 ```
 
-Then, add the iOS platform and sync your app. [Learn more about `sync`](/docs/cli/sync).
+Then, add the iOS platform and sync your app. [Learn more about `sync`](cli/sync.md).
 
 ```bash
 npx cap add ios
@@ -57,17 +56,17 @@ To run the project on a device or simulator, run:
 npx cap run ios
 ```
 
-The command will prompt you to select a target. [Learn more about `run`](/docs/cli/run).
+The command will prompt you to select a target. [Learn more about `run`](cli/run.md).
 
 ### Running in Xcode
 
 In Xcode, first select the device or simulator and then click the play button to run your app.
 
-![Running your app](/assets/img/docs/ios/running.png)
+![Running your app](/img/docs/ios/running.png)
 
 ## Troubleshooting
 
-If you encountered any issues while getting started, you can consult the [iOS Troubleshooting Guide](/docs/ios/troubleshooting). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
+If you encountered any issues while getting started, you can consult the [iOS Troubleshooting Guide](ios/troubleshooting.md). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
 
 ## Next steps
 
@@ -77,6 +76,6 @@ You are now ready to continue developing and building your app. Use the various 
 
 Follow these guides for more information on each topic:
 
-[Configuring and setting permissions for iOS &#8250;](/docs/ios/configuration)
+[Configuring and setting permissions for iOS &#8250;](ios/configuration.md)
 
-[Building Native Plugins for iOS &#8250;](/docs/plugins)
+[Building Native Plugins for iOS &#8250;](plugins.md)

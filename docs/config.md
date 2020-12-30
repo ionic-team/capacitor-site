@@ -1,12 +1,11 @@
 ---
 title: Capacitor Configuration
+sidebar_label: Config
 description: Configuring Capacitor
 contributors:
   - mlynch
   - jcesarmobile
 ---
-
-# Capacitor Configuration
 
 The Capacitor configuration file is used to set high-level options for Capacitor tooling.
 

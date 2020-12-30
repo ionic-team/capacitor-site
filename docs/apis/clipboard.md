@@ -1,7 +1,9 @@
 ---
 title: Clipboard Capacitor Plugin API
+hide_title: true
+sidebar_label: Clipboard
 description: The Clipboard API enables copy and pasting to/from the system clipboard.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/clipboard/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/clipboard/src/definitions.ts
 ---
 
 # @capacitor/clipboard
@@ -44,6 +46,7 @@ const checkClipboard = async () => {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### write(...)

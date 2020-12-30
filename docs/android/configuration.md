@@ -1,12 +1,11 @@
 ---
 title: Configuring Android
+sidebar_label: Configuration
 description: Configuring Android
 contributors:
   - mlynch
   - jcesarmobile
 ---
-
-# Configuring Android
 
 ## Configuring `AndroidManifest.xml`
 
@@ -43,11 +42,11 @@ It may make sense to change the activity name to match, especially if your app h
 
 ## Deeplinks (aka Android App Links)
 
-> For a Deep Links guide, [see here](/docs/guides/deep-links).
+> For a Deep Links guide, [see here](../guides/deep-links.md).
 
 To enable deeplinking through Android App Links, follow the official Android guide on [Adding Android App Links](https://developer.android.com/studio/write/app-link-indexing). Android Studio comes with a handy wizard for configuring App Links.
 
-Once configured, the [`getLaunchUrl()` method in the App API](/docs/apis/app#method-getLaunchUrl-0) will provide any URL the app was launched with, and the [`'appUrlOpen'` event](/docs/apis/app#method-addListener-1) will fire any time the app receives a new App Link deeplink.
+Once configured, the [`getLaunchUrl()` method in the App API](../apis/app.md#method-getLaunchUrl-0) will provide any URL the app was launched with, and the [`'appUrlOpen'` event](../apis/app.md#method-addListener-1) will fire any time the app receives a new App Link deeplink.
 
 ## URL Schemes
 

@@ -1,7 +1,9 @@
 ---
 title: Device Capacitor Plugin API
+hide_title: true
+sidebar_label: Device
 description: The Device API exposes internal information about the device, such as the model and operating system version, along with user information such as unique ids.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/device/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/device/src/definitions.ts
 ---
 
 # @capacitor/device
@@ -46,6 +48,7 @@ const logBatteryInfo = async () => {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getInfo()

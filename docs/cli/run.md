@@ -1,11 +1,10 @@
 ---
-title: CLI Command - cap run
+title: Capacitor CLI - cap run
+sidebar_label: run
 description: Capacitor CLI - cap run
 ---
 
-# Capacitor CLI - cap run
-
-This command first runs [`copy`](/docs/cli/copy), then it builds and deploys the native app to a target device of your choice.
+This command first runs [`copy`](copy.md), then it builds and deploys the native app to a target device of your choice.
 
 ```bash
 npx cap run [options] <platform>

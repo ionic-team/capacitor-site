@@ -1,12 +1,11 @@
 ---
 title: Troubleshooting Android Issues
+sidebar_label: Troubleshooting
 description: Troubleshooting Android Issues
 contributors:
   - mlynch
   - jcesarmobile
 ---
-
-# Troubleshooting Android Issues
 
 Creating a 100% perfect native management tool is nearly impossible, and sooner or later you'll run into various issues with some part of the Android workflow.
 
@@ -28,7 +27,7 @@ It could be as simple as updating a dependency, running Gradle sync, or invalida
 
 Cleaning and rebuilding can fix a number of build issues:
 
-![Android Clean and Build](/assets/img/docs/android/clean-rebuild.png)
+![Android Clean and Build](/img/docs/android/clean-rebuild.png)
 
 ### Invalidate Caches/Restart
 
@@ -36,7 +35,7 @@ If you're confident you fixed an issue, but Android Studio or Gradle doesn't agr
 
 That can be done easily from the File menu:
 
-![Android Invalidate Caches](/assets/img/docs/android/invalidate-caches.png)
+![Android Invalidate Caches](/img/docs/android/invalidate-caches.png)
 
 ## Error: "package android.support.\* does not exist"
 
@@ -58,13 +57,13 @@ periodically after updating dependencies and changing project settings.
 
 To manually sync Gradle, open File -> Sync Project with Gradle Files from the main menu bar:
 
-![Sync Gradle](/assets/img/docs/android/sync-gradle.png)
+![Sync Gradle](/img/docs/android/sync-gradle.png)
 
 ## Error: "APK Can't be installed"
 
 An APK not installing to an Emulator or Device is often due to having an existing app with the same package name. You may see an error like this when trying to run your app:
 
-![Android APK Failed](/assets/img/docs/android/apk-failed.png)
+![Android APK Failed](/img/docs/android/apk-failed.png)
 
 The solution is to remove any old apps and make sure your package name is up to date in `AndroidManifest.xml` and not conflicting with other apps you are developing.
 

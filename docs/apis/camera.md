@@ -1,7 +1,9 @@
 ---
 title: Camera Capacitor Plugin API
+hide_title: true
+sidebar_label: Camera
 description: The Camera API provides the ability to take a photo with the camera or choose an existing one from the photo album.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/camera/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/camera/src/definitions.ts
 ---
 
 # @capacitor/camera
@@ -81,6 +83,7 @@ const takePicture = async () {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getPhoto(...)

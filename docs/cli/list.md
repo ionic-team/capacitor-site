@@ -1,11 +1,10 @@
 ---
-title: CLI Command - cap ls
+title: Capacitor CLI - cap ls
+sidebar_label: ls
 description: Capacitor CLI - cap ls
 contributors:
   - dotNetkow
 ---
-
-# Capacitor CLI - cap ls
 
 List all installed Cordova and Capacitor plugins.
 

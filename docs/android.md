@@ -1,12 +1,11 @@
 ---
 title: Capacitor Android Documentation
+sidebar_label: Getting Started
 description: Capacitor Android Documentation
 contributors:
   - mlynch
   - jcesarmobile
 ---
-
-# Capacitor Android Documentation
 
 Capacitor features a native Android runtime that enables developers to communicate between JavaScript and Native Java or Kotlin code.
 
@@ -24,7 +23,7 @@ First, install the `@capacitor/android` package.
 npm install @capacitor/android@next
 ```
 
-Then, add the Android platform and sync your app. [Learn more about `sync`](/docs/cli/sync).
+Then, add the Android platform and sync your app. [Learn more about `sync`](cli/sync.md).
 
 ```bash
 npx cap add android
@@ -55,17 +54,17 @@ To run the project on a device or emulator, run:
 npx cap run android
 ```
 
-The command will prompt you to select a target. [Learn more about `run`](/docs/cli/run).
+The command will prompt you to select a target. [Learn more about `run`](cli/run.md).
 
 ### Running with Android Studio
 
 In Android Studio, first select the device or emulator and then click the run or debug button to run your app. Unless you're debugging Java or Kotlin code, the run button is preferred.
 
-![Running App](/assets/img/docs/android/running.png)
+![Running App](/img/docs/android/running.png)
 
 ## Troubleshooting
 
-If you encountered any issues while getting started, you can consult the [Android Troubleshooting Guide](/docs/android/troubleshooting). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
+If you encountered any issues while getting started, you can consult the [Android Troubleshooting Guide](android/troubleshooting.md). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
 
 ## Next Steps
 
@@ -75,6 +74,6 @@ If your app ran you are now ready to continue developing and building your app. 
 
 Follow these Android-specific guides for more information on setting permissions for your app, updating dependencies, building plugins, and more:
 
-[Configuring and setting permissions for Android &#8250;](/docs/android/configuration)
+[Configuring and setting permissions for Android &#8250;](android/configuration.md)
 
-[Building Native Plugins for Android &#8250;](/docs/plugins)
+[Building Native Plugins for Android &#8250;](plugins.md)

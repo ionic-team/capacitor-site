@@ -1,7 +1,9 @@
 ---
 title: Filesystem Capacitor Plugin API
+hide_title: true
+sidebar_label: Filesystem
 description: The Filesystem API provides a NodeJS-like API for working with files on the device.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/src/definitions.ts
 ---
 
 # @capacitor/filesystem
@@ -88,6 +90,7 @@ const readFilePath = async () {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### readFile(...)

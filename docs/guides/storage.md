@@ -1,11 +1,10 @@
 ---
-title: Storage
+title: Data Storage in Capacitor
+sidebar_label: Storage
 description: Storing small to large amounts of data in Capacitor
 contributors:
   - mlynch
 ---
-
-# Data Storage in Capacitor
 
 Most apps need to persist and read local data. Depending on the specific use case, there are a few approaches one can take.
 
@@ -17,7 +16,7 @@ Local Storage can be used for small amounts of temporary data, such as a user id
 
 ## Capacitor Storage API
 
-Capacitor comes with a native [Storage API](/docs/apis/storage) that avoids the eviction issues above, but is meant for small amounts of data.
+Capacitor comes with a native [Storage API](../apis/storage.md) that avoids the eviction issues above, but is meant for small amounts of data.
 
 The Storage API provides a simple key/value API with no advanced query support:
 

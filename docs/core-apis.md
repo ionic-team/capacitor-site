@@ -1,9 +1,8 @@
 ---
 title: Capacitor APIs
+sidebar_label: Core APIs
 description: The APIs of Capacitor core
 ---
-
-# Capacitor APIs
 
 Whether developing apps or plugins, the Capacitor API is an important addition to your toolbelt.
 
@@ -11,6 +10,6 @@ Whether developing apps or plugins, the Capacitor API is an important addition t
 
 These docs are organized by platform.
 
-- [iOS](/docs/core-apis/ios)
-- [Android](/docs/core-apis/android)
-- [Web](/docs/core-apis/web)
+- [iOS](core-apis/ios.md)
+- [Android](core-apis/android.md)
+- [Web](core-apis/web.md)

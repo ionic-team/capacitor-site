@@ -36,7 +36,7 @@ public void triggerJSEvent(final String eventName, final String target)
 public void triggerJSEvent(final String eventName, final String target, final String data)
 ```
 
-Fire an event on a JavaScript [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) such as `window` or `document`. If possible, it is preferred to use [Plugin Events](/docs/plugins/android#plugin-events) instead.
+Fire an event on a JavaScript [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) such as `window` or `document`. If possible, it is preferred to use [Plugin Events](../plugins/android.md#plugin-events) instead.
 
 Examples:
 

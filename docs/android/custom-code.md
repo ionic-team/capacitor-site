@@ -1,5 +1,6 @@
 ---
 title: Custom Native Android Code
+sidebar_label: Custom Native Code
 description: Custom Native Android Code
 contributors:
   - mlynch
@@ -7,11 +8,9 @@ contributors:
   - RoderickQiu
 ---
 
-# Custom Native Android Code
-
 With Capacitor, you are encouraged to write Java or Kotlin code to implement the native features your app needs.
 
-There may not be [a Capacitor plugin](/docs/plugins) for everything--and that's okay! It is possible to write WebView-accessible native code right in your app.
+There may not be [a Capacitor plugin](../plugins.md) for everything--and that's okay! It is possible to write WebView-accessible native code right in your app.
 
 ## WebView-Accessible Native Code
 
@@ -19,9 +18,9 @@ The easiest way to communicate between JavaScript and native code is to build a 
 
 ### `EchoPlugin.java`
 
-First, create a `EchoPlugin.java` file by [opening Android Studio](/docs/android#opening-the-android-project), expanding the **app** module and the **java** folder, right-clicking on your app's Java package, selecting **New** -> **Java Class** from the context menu, and creating the file.
+First, create a `EchoPlugin.java` file by [opening Android Studio](../android.md#opening-the-android-project), expanding the **app** module and the **java** folder, right-clicking on your app's Java package, selecting **New** -> **Java Class** from the context menu, and creating the file.
 
-![Android Studio app package](/assets/img/docs/android/studio-app-package.png)
+![Android Studio app package](/img/docs/android/studio-app-package.png)
 
 Copy the following Java code into `EchoPlugin.java`:
 
@@ -112,4 +111,4 @@ console.log('Response from native:', value);
 
 ### Next Steps
 
-[Read the Android Plugin Guide &#8250;](/docs/plugins/android)
+[Read the Android Plugin Guide &#8250;](../plugins/android.md)

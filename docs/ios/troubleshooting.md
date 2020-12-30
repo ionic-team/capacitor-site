@@ -1,12 +1,11 @@
 ---
 title: iOS Troubleshooting Guide
+sidebar_label: Troubleshooting
 description: iOS Troubleshooting Guide
 contributors:
   - dotNetkow
   - mlynch
 ---
-
-# iOS Troubleshooting Guide
 
 Creating a 100% perfect native management tool is nearly impossible, and sooner or later you'll run into various issues with some part of the iOS workflow.
 
@@ -34,13 +33,13 @@ Sometimes, Xcode clings to old, outdated build artifacts. To start fresh, you'll
 
 To do this, open Xcode Preferences, choose the Locations tab, and click the small arrow next to your Derived Data path:
 
-![Locations](/assets/img/docs/ios/location-prefs.png)
+![Locations](/img/docs/ios/location-prefs.png)
 
 This opens a Finder window to the location of Xcode's temporary Derived Data.
 
 Next, select all items in that directory and delete:
 
-![Deleting Derived Data](/assets/img/docs/ios/deleting-derived-data.png)
+![Deleting Derived Data](/img/docs/ios/deleting-derived-data.png)
 
 Finally, do a rebuild in Xcode.
 
@@ -60,7 +59,7 @@ Perform a new build after running this command.
 
 Xcode sometimes gets stuck indexing forever. This unfortunate situation looks like this:
 
-![Xcode indexing](/assets/img/docs/ios/indexing.png)
+![Xcode indexing](/img/docs/ios/indexing.png)
 
 The only solution is to Force Close Xcode (using Activity Monitor) and start it up again.
 

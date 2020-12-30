@@ -1,12 +1,11 @@
 ---
 title: Installing Capacitor
+sidebar_label: Installation
 description: Installing Capacitor
 contributors:
   - dotNetkow
   - jcesarmobile
 ---
-
-# Installing Capacitor
 
 This guide will help you install Capacitor into an existing frontend web app.
 
@@ -18,7 +17,7 @@ Capacitor provides a native mobile runtime and API layer for web apps. It does n
 
 ## Before you start
 
-Make sure your [environment is set up](/docs/getting-started/environment-setup) for the platforms you will be building for.
+Make sure your [environment is set up](getting-started/environment-setup.md) for the platforms you will be building for.
 
 ## Project Requirements
 
@@ -42,12 +41,12 @@ Then, initialize Capacitor using the CLI questionnaire:
 npx cap init
 ```
 
-> The `npx cap` command is how Capacitor is executed locally on the command-line in your project. [Learn more about the Capacitor CLI](/docs/cli).
+> The `npx cap` command is how Capacitor is executed locally on the command-line in your project. [Learn more about the Capacitor CLI](cli.md).
 
 ## Where to go next
 
-[Get started with iOS &#8250;](/docs/ios)
+[Get started with iOS &#8250;](ios.md)
 
-[Get started with Android &#8250;](/docs/android)
+[Get started with Android &#8250;](android.md)
 
-[Developer Workflow Guide &#8250;](/docs/basics/workflow)
+[Developer Workflow Guide &#8250;](basics/workflow.md)

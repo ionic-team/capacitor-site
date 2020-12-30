@@ -1,11 +1,10 @@
 ---
-title: Ads in Capacitor Apps
+title: Advertisements in Capacitor Apps
+sidebar_label: Ads
 description: Adding Advertisements to your Capacitor app
 contributors:
   - mlynch
 ---
-
-# Advertisements in Capacitor Apps
 
 Many consumer apps need to display ads in order to generate revenue.
 

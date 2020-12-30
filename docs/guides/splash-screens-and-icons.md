@@ -1,11 +1,10 @@
 ---
 title: Creating Splash Screens and Icons
+sidebar_label: Splash Screens and Icons
 description: Use cordova-res to generate resource images for native projects
 contributors:
   - dotNetkow
 ---
-
-# Creating Splash Screens and Icons
 
 Initial support for splash screen and icon generation is now available. For complete details, see the [cordova-res docs](https://github.com/ionic-team/cordova-res).
 

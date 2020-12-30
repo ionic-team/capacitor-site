@@ -1,7 +1,9 @@
 ---
 title: Motion Capacitor Plugin API
+hide_title: true
+sidebar_label: Motion
 description: The Motion API tracks accelerometer and device orientation (compass heading, etc.)
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/src/definitions.ts
 ---
 
 # @capacitor/motion
@@ -56,6 +58,7 @@ API to understand the data supplied in the 'accel' event.
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### addListener('accel', ...)

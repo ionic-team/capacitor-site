@@ -1,7 +1,9 @@
 ---
 title: Dialog Capacitor Plugin API
+hide_title: true
+sidebar_label: Dialog
 description: The Dialog API provides methods for triggering native dialog windows for alerts, confirmations, and input prompts
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/dialog/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/dialog/src/definitions.ts
 ---
 
 # @capacitor/dialog
@@ -59,6 +61,7 @@ const showPrompt = async () => {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### alert(...)

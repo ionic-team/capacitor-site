@@ -1,7 +1,9 @@
 ---
 title: Screen Reader Capacitor Plugin API
+hide_title: true
+sidebar_label: Screen Reader
 description: The Screen Reader API provides access to TalkBack/VoiceOver/etc. and provides simple text-to-speech capabilities for visual accessibility.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/screen-reader/src/definitions.ts
 ---
 
 # @capacitor/screen-reader
@@ -49,6 +51,7 @@ const sayHello = async () => {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### isEnabled()

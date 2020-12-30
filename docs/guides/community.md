@@ -5,8 +5,6 @@ contributors:
   - dotNetkow
 ---
 
-# Community Guides
-
 ## General
 
 [How to Build an Ionic Chat App with React and Stream &#8250;](https://levelup.gitconnected.com/how-to-build-an-ionic-chat-app-with-react-and-stream-739b67611280)
@@ -21,9 +19,9 @@ contributors:
 
 ## APIs
 
-[Camera: Building an Ionic Framework Camera App](/docs/guides/ionic-framework-app)
+[Camera: Building an Ionic Framework Camera App](ionic-framework-app.md)
 
-[Push Notifications: Using Push Notifications with Firebase in an Ionic Angular App](/docs/guides/push-notifications-firebase)
+[Push Notifications: Using Push Notifications with Firebase in an Ionic Angular App](push-notifications-firebase.md)
 
 [Splash Screen: Creating a Dynamic/Adaptable Splash Screen for Capacitor (Android) &#8250;](https://www.joshmorony.com/creating-a-dynamic-universal-splash-screen-for-capacitor-android/)
 

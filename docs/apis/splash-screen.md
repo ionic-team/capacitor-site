@@ -1,7 +1,9 @@
 ---
 title: Splash Screen Capacitor Plugin API
+hide_title: true
+sidebar_label: Splash Screen
 description: The Splash Screen API provides methods for showing or hiding a Splash image.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/splash-screen/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/splash-screen/src/definitions.ts
 ---
 
 # @capacitor/splash-screen
@@ -126,6 +128,7 @@ To use splash screen images named something other than `splash.png`, set `androi
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### show(...)

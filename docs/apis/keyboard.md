@@ -1,7 +1,9 @@
 ---
 title: Keyboard Capacitor Plugin API
+hide_title: true
+sidebar_label: Keyboard
 description: The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/src/definitions.ts
 ---
 
 # @capacitor/keyboard
@@ -91,6 +93,7 @@ the following events also work with `window.addEventListener`:
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### show()

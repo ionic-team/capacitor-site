@@ -1,5 +1,6 @@
 ---
 title: Creating Capacitor Plugins
+sidebar_label: Overview
 description: Creating Capacitor Plugins
 contributors:
   - mlynch
@@ -7,11 +8,9 @@ contributors:
   - dotNetkow
 ---
 
-# Creating Capacitor Plugins
-
 Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
 
-This guide will help you get started creating a shareable Capacitor plugin which will be published on npm. You can also create Capacitor plugins local to your app. See the custom native code guides for [iOS](/docs/ios/custom-code) and [Android](/docs/android/custom-code).
+This guide will help you get started creating a shareable Capacitor plugin which will be published on npm. You can also create Capacitor plugins local to your app. See the custom native code guides for [iOS](../ios/custom-code.md) and [Android](../android/custom-code.md).
 
 ## Philosophies
 
@@ -55,10 +54,10 @@ The generator will prompt you for input. You can also supply command-line option
 
 ## Next Steps
 
-[Learn about the Capacitor plugin development workflow &#8250;](/docs/plugins/workflow)
+[Learn about the Capacitor plugin development workflow &#8250;](../plugins/workflow.md)
 
-[Learn about building Android plugins for Capacitor &#8250;](/docs/plugins/android)
+[Learn about building Android plugins for Capacitor &#8250;](../plugins/android.md)
 
-[Learn about building iOS plugins for Capacitor &#8250;](/docs/plugins/ios)
+[Learn about building iOS plugins for Capacitor &#8250;](../plugins/ios.md)
 
-[Learn about building Web/PWA plugins for Capacitor &#8250;](/docs/plugins/web)
+[Learn about building Web/PWA plugins for Capacitor &#8250;](../plugins/web.md)

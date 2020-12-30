@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import fetch from 'node-fetch';
 
-const API_DIR =  path.join(__dirname,'..','pages','docs', 'v3', 'apis');
+const API_DIR =  path.join(__dirname,'..', 'docs', 'apis');
 
 const pluginApis = [
   'action-sheet',
@@ -42,14 +42,18 @@ async function buildPluginApiDocs(pluginId: string) {
 
 function createApiPage(pluginId: string, readme: string, pkgJson: any) {
   const title = `${toTitleCase(pluginId)} Capacitor Plugin API`;
+  const sidebarLabel = toTitleCase(pluginId);
   const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
   const editUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/src/definitions.ts`;
+  readme = readme.replace(/<docgen-api>\n<!--/, '<docgen-api>\n\n<!--');
 
   return `
 ---
 title: ${title}
+hide_title: true
+sidebar_label: ${sidebarLabel}
 description: ${desc}
-editUrl: ${editUrl}
+custom_edit_url: ${editUrl}
 ---
 
 ${readme}`.trim();
@@ -68,7 +72,7 @@ async function getPkgJsonData(pluginId: string) {
 }
 
 async function writeListToIndex(pluginIds: string[]) {
-  const indexPath = path.join(API_DIR, 'index.md');
+  const indexPath = path.join(API_DIR, '..', 'apis.md');
   const content = fs.readFileSync(indexPath, 'utf-8');
   const re = /## List of Official Plugins[\s\S]+?(?=^#)/gm;
   const result = content.replace(re, '## List of Official Plugins\n\n' + pluginIds.map(id => `- [${toTitleCase(id)}](/docs/apis/${id})`).join('\n') + '\n\n');

@@ -1,5 +1,5 @@
 ---
-title: Capacitor Plugins
+title: Official Plugins
 description: Capacitor Plugins
 contributors:
   - mlynch
@@ -7,35 +7,33 @@ contributors:
   - ehorodyski-ionic
 ---
 
-# Official Plugins
-
 The Official Plugins are a set of Capacitor plugins maintained by the Capacitor team that provide access to commonly used native APIs.
 
 The API documentation for these plugins can be found below.
 
 ## List of Official Plugins
 
-- [Action Sheet](/docs/apis/action-sheet)
-- [App](/docs/apis/app)
-- [App Launcher](/docs/apis/app-launcher)
-- [Browser](/docs/apis/browser)
-- [Camera](/docs/apis/camera)
-- [Clipboard](/docs/apis/clipboard)
-- [Device](/docs/apis/device)
-- [Dialog](/docs/apis/dialog)
-- [Filesystem](/docs/apis/filesystem)
-- [Geolocation](/docs/apis/geolocation)
-- [Haptics](/docs/apis/haptics)
-- [Keyboard](/docs/apis/keyboard)
-- [Motion](/docs/apis/motion)
-- [Network](/docs/apis/network)
-- [Screen Reader](/docs/apis/screen-reader)
-- [Share](/docs/apis/share)
-- [Splash Screen](/docs/apis/splash-screen)
-- [Status Bar](/docs/apis/status-bar)
-- [Storage](/docs/apis/storage)
-- [Text Zoom](/docs/apis/text-zoom)
-- [Toast](/docs/apis/toast)
+- [Action Sheet](apis/action-sheet.md)
+- [App](apis/app.md)
+- [App Launcher](apis/app-launcher.md)
+- [Browser](apis/browser.md)
+- [Camera](apis/camera.md)
+- [Clipboard](apis/clipboard.md)
+- [Device](apis/device.md)
+- [Dialog](apis/dialog.md)
+- [Filesystem](apis/filesystem.md)
+- [Geolocation](apis/geolocation.md)
+- [Haptics](apis/haptics.md)
+- [Keyboard](apis/keyboard.md)
+- [Motion](apis/motion.md)
+- [Network](apis/network.md)
+- [Screen Reader](apis/screen-reader.md)
+- [Share](apis/share.md)
+- [Splash Screen](apis/splash-screen.md)
+- [Status Bar](apis/status-bar.md)
+- [Storage](apis/storage.md)
+- [Text Zoom](apis/text-zoom.md)
+- [Toast](apis/toast.md)
 
 ## GitHub
 

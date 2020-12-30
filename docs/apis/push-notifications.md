@@ -10,7 +10,7 @@ contributors:
 
 # Push Notifications
 
-The Push Notifications API provides methods for registering a device to receive notifications from a server, along with processing received notifications and responding to them. In contrast, the [Local Notifications](/docs/apis/local-notifications) API provides means for offline, local notification scheduling and processing.
+The Push Notifications API provides methods for registering a device to receive notifications from a server, along with processing received notifications and responding to them. In contrast, the [Local Notifications](../apis/local-notifications.md) API provides means for offline, local notification scheduling and processing.
 
 ## Enabling Push Notifications Capabilites
 
@@ -18,7 +18,7 @@ On iOS you must enable Push Notifications Capabilities in your project to enable
 
 This change adds the push capabilites to the app and creates an entitlements file in the project.
 
-![Enabling Push Notifications Capabilities](/assets/img/docs/ios/enable-push-capabilities.png)
+![Enabling Push Notifications Capabilities](/img/docs/ios/enable-push-capabilities.png)
 
 On Android just download the app project's `google-services.json` file from the Firebase console, and place it in the  `projectName/android/app` folder.
 
@@ -42,7 +42,7 @@ Apple sends that mail just to make sure you didn't make a mistake and forgot to 
 
 In case you don't want to receive the mail, you can disable the Push Notifications plugin by removing `USE_PUSH` from `Active Compilation Conditions` in your project's Build Settings section.
 
-![Disable Push Notifications](/assets/img/docs/ios/disable-push-plugin.png)
+![Disable Push Notifications](/img/docs/ios/disable-push-plugin.png)
 
 ## Push notifications appearance in foreground
 
@@ -85,9 +85,10 @@ An empty Array can be provided if none of the previous options are desired. `pus
 
 ## Example Guides
 
-[Using Push Notifications with Firebase in an Ionic Angular App](/docs/guides/push-notifications-firebase)
+[Using Push Notifications with Firebase in an Ionic Angular App](../guides/push-notifications-firebase.md)
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ## API

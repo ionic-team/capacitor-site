@@ -1,7 +1,9 @@
 ---
 title: Network Capacitor Plugin API
+hide_title: true
+sidebar_label: Network
 description: The Network API provides network and connectivity information.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/network/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/network/src/definitions.ts
 ---
 
 # @capacitor/network
@@ -44,6 +46,7 @@ const logCurrentNetworkStatus = async () => {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getStatus()

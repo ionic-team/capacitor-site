@@ -1,11 +1,10 @@
 ---
 title: CI/CD for Capacitor Apps
+sidebar_label: CI/CD
 description: Adding Mobile CI/CD to your Capacitor App development process
 contributors:
   - mlynch
 ---
-
-# CI/CD for Capacitor Apps
 
 Every serious app will utilize a CI/CD process for continuous testing, integration, and delivery.
 

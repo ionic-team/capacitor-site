@@ -1,5 +1,6 @@
 ---
 title: Capacitor Web/PWA Plugin Guide
+sidebar_label: Web/PWA Guide
 description: Capacitor Web/PWA Plugin Guide
 contributors:
   - mlynch
@@ -7,13 +8,11 @@ contributors:
   - dotNetkow
 ---
 
-# Capacitor Web/PWA Plugin Guide
-
 Capacitor utilizes a web/native compatibility layer, making it easy to build plugins that have functionality when running natively as well as when running in a PWA on the Web.
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins/creating-plugins#plugin-generator) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](../plugins/creating-plugins.md#plugin-generator) section of the Plugin guide.
 
 Next, open `my-plugin/src/web.ts` in your editor of choice.
 
@@ -51,7 +50,7 @@ You will need to develop one or more aliases for abstracting and grouping permis
 
 These are represented by the `PermissionState` type exported from `@capacitor/core`.
 
-It is also possible to define custom states for aliases, if need be. For example, the official [Camera plugin](/docs/apis/camera) also defines a `limited` state for the `camera` and `photos` aliases.
+It is also possible to define custom states for aliases, if need be. For example, the official [Camera plugin](../apis/camera.md) also defines a `limited` state for the `camera` and `photos` aliases.
 
 Aliases are cross-platform, so make sure to take iOS, Android, and web permissions into account when deciding on the aliases for your plugin.
 

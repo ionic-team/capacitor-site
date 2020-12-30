@@ -67,7 +67,7 @@ func triggerJSEvent(eventName: String, target: String)
 func triggerJSEvent(eventName: String, target: String, data: String)
 ```
 
-Fire an event on a JavaScript [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) such as `window` or `document`. If possible, it is preferred to use [Plugin Events](/docs/plugins/ios#plugin-events) instead.
+Fire an event on a JavaScript [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) such as `window` or `document`. If possible, it is preferred to use [Plugin Events](../plugins/ios.md#plugin-events) instead.
 
 Examples:
 

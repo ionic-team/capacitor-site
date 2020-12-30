@@ -1,12 +1,11 @@
 ---
 title: Configuring Your App
+sidebar_label: Native Project Configuration
 description: Native Project Configuration
 contributors:
   - jcesarmobile
   - dotNetkow
 ---
-
-# Configuring Your App
 
 Much of Capacitor is configured per-platform instead of in an abstracted system like Cordova's `config.xml`.
 
@@ -18,12 +17,12 @@ Additionally, since configuring a Capacitor project is no different from configu
 
 ## Common Configuration
 
-Capacitor has some high-level configuration options that are set in the [Capacitor configuration file](/docs/config). These generally don't modify native functionality, but control Capacitor's tooling.
+Capacitor has some high-level configuration options that are set in the [Capacitor configuration file](../config.md). These generally don't modify native functionality, but control Capacitor's tooling.
 
 ## Native Configuration
 
 iOS and Android each have configuration guides walking through making common changes to their behavior:
 
-[Configuring iOS &#8250;](/docs/ios/configuration)
+[Configuring iOS &#8250;](../ios/configuration.md)
 
-[Configuring Android &#8250;](/docs/android/configuration)
+[Configuring Android &#8250;](../android/configuration.md)

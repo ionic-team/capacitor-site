@@ -1,7 +1,9 @@
 ---
 title: Storage Capacitor Plugin API
+hide_title: true
+sidebar_label: Storage
 description: The Storage API provides a simple key/value persistent store for lightweight data.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/storage/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/storage/src/definitions.ts
 ---
 
 # @capacitor/storage
@@ -75,6 +77,7 @@ This method can also be used to store non-string values, such as numbers and boo
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### configure(...)

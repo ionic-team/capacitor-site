@@ -1,18 +1,17 @@
 ---
 title: Capacitor iOS Plugin Guide
+sidebar_label: iOS Guide
 description: Capacitor iOS Plugin Guide
 contributors:
   - mlynch
   - jcesarmobile
 ---
 
-# Capacitor iOS Plugin Guide
-
 Building Capacitor plugins for iOS involves writing Swift (or Objective-C) to interface with Apple's iOS SDKs.
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins/creating-plugins) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](../plugins/creating-plugins.md) section of the Plugin guide.
 
 Next, open `my-plugin/ios/Plugin.xcworkspace` in Xcode.
 
@@ -119,7 +118,7 @@ This makes `MyPlugin`, and the `echo` method available to the Capacitor web runt
 
 ## Permissions
 
-If your plugin has functionality on iOS that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases and status interfaces yet, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
+If your plugin has functionality on iOS that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases and status interfaces yet, see the [Permissions section in the Web guide](../plugins/web.md#permissions).
 
 ### Implementing Permissions
 
@@ -144,7 +143,7 @@ Add the `checkPermissions()` and `requestPermissions()` methods to your Swift pl
 
 #### `checkPermissions()`
 
-This method should return the current status of permissions in your plugin, which should be a dictionary that matches the structure of the [permission status definition](/docs/plugins/web#permission-status-definitions) you defined. Typically, this information is available directly on the frameworks you're using.
+This method should return the current status of permissions in your plugin, which should be a dictionary that matches the structure of the [permission status definition](../plugins/web.md#permission-status-definitions) you defined. Typically, this information is available directly on the frameworks you're using.
 
 In the example below, we map the current authorization status from location services into a permission state and associate the `location` alias with that state.
 
@@ -307,11 +306,11 @@ const myPluginEventListener = MyPlugin.addListener(
 myPluginEventListener.remove();
 ```
 
-> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/docs/core-apis/ios#triggerjsevent).
+> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](../core-apis/ios.md#triggerjsevent).
 
 ## Presenting Native Screens
 
-You can present native screens over the app by using [Capacitor's `UIViewController`](/docs/core-apis/ios#viewcontroller).
+You can present native screens over the app by using [Capacitor's `UIViewController`](../core-apis/ios.md#viewcontroller).
 
 ## Override navigation
 

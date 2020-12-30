@@ -1,11 +1,9 @@
 ---
-title: Migrating Strategy
+title: Migration Strategy
 description: Migration Strategy
 contributors:
   - dotNetkow
 ---
-
-# Migration Strategy
 
 Migrating from Cordova to Capacitor can occur over time or can be fully replaced in many cases. The effort involved will largely depend on the complexity of the app.
 
@@ -29,12 +27,12 @@ With the release of Capacitor, Ionic now controls almost all of its technology s
 
 Begin by auditing your existing Cordova plugins. It's possible that you may be able to remove ones that are no longer needed.
 
-Next, review all of Capacitor's [official plugins](/docs/apis) as well as [community plugins](/docs/plugins/community). You may be able to switch to the Capacitor-equivalent Cordova plugin.
+Next, review all of Capacitor's [official plugins](../apis.md) as well as [community plugins](../plugins/community.md). You may be able to switch to the Capacitor-equivalent Cordova plugin.
 
 Some plugins may not match functionality entirely, but based on the features you need that may not matter.
 
 ### Continue to Use Cordova or Ionic Native if Needed
 
-To leverage Cordova and/or Ionic Native plugins in your Capacitor app, [see here](/docs/plugins/cordova). If a replacement plugin doesn't exist, continue to use the Cordova plugin as-is. If there's a plugin you'd like to see supported, open a [plugin proposal](https://github.com/capacitor-community/proposals)!
+To leverage Cordova and/or Ionic Native plugins in your Capacitor app, [see here](../plugins/cordova.md). If a replacement plugin doesn't exist, continue to use the Cordova plugin as-is. If there's a plugin you'd like to see supported, open a [plugin proposal](https://github.com/capacitor-community/proposals)!
 
-Ready to [migrate to Capacitor](/docs/cordova/migrating-from-cordova-to-capacitor)?
+Ready to [migrate to Capacitor](../cordova/migrating-from-cordova-to-capacitor.md)?

@@ -1,9 +1,8 @@
 ---
 title: Capacitor for Enterprise
+sidebar_label: Enterprise Plugins
 description: Capacitor offers powerful native features and support for enterprise
 ---
-
-# Capacitor for Enterprise
 
 Capacitor offers powerful native security, authentication, and data management solutions and plugins for mission-critical enterprise apps.
 

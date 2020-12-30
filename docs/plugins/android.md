@@ -1,18 +1,17 @@
 ---
 title: Capacitor Android Plugin Guide
+sidebar_label: Android Guide
 description: Capacitor Android Plugin Guide
 contributors:
   - mlynch
   - jcesarmobile
 ---
 
-# Capacitor Android Plugin Guide
-
 Building Capacitor plugins for Android involves writing Java or [Kotlin](https://developer.android.com/kotlin/overview) to interface with Android SDKs.
 
 ## Getting Started
 
-To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins) section of the Plugin guide.
+To get started, first generate a plugin as shown in the [Getting Started](../plugins.md) section of the Plugin guide.
 
 Next, open `my-plugin/android/` in Android Studio. You then want to navigate to the `.java` file for your plugin, which changes depending on the Plugin ID and Plugin Class Name you used when creating the plugin.
 
@@ -113,13 +112,13 @@ call.reject(exception.getLocalizedMessage(), null, exception);
 
 ## Permissions
 
-If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases and status interfaces yet, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
+If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases and status interfaces yet, see the [Permissions section in the Web guide](../plugins/web.md#permissions).
 
 TODO
 
 ### Annotation Changes
 
-> Still using `@NativePlugin`? See the [upgrade guide](/docs/updating/plugins/3-0#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
+> Still using `@NativePlugin`? See the [upgrade guide](../updating/plugins/3-0.md#use-the-new-capacitorplugin-annotation) to switch to `@CapacitorPlugin`.
 
 ```diff-java
  @CapacitorPlugin(
@@ -262,7 +261,7 @@ const myPluginEventListener = MyPlugin.addListener(
 myPluginEventListener.remove();
 ```
 
-> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](/docs/core-apis/android#triggerjsevent).
+> It is also possible to trigger global events on `window`. See the docs for [`triggerJSEvent`](../core-apis/android.md#triggerjsevent).
 
 ## Override navigation
 

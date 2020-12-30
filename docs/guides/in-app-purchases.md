@@ -1,11 +1,10 @@
 ---
 title: In App Purchases in Capacitor
+sidebar_label: In App Purchases
 description: How to register and consume In App Purchases in your Capacitor app or game
 contributors:
   - mlynch
 ---
-
-# In App Purchases in Capacitor
 
 Most apps need to create and consume In App Purchases in order to generate revenue and enable upgrades. Adding In App Purchase support to your Capacitor app is straightforward, but requires a fair amount of work configuring and registering your own app products.
 

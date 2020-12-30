@@ -1,13 +1,12 @@
 ---
-title: CLI Command - cap sync
+title: Capacitor CLI - cap sync
+sidebar_label: sync
 description: Capacitor CLI command - cap sync
 contributors:
   - dotNetkow
 ---
 
-# Capacitor CLI - cap sync
-
-This command runs [`copy`](/docs/cli/copy) and then [`update`](/docs/cli/update).
+This command runs [`copy`](copy.md) and then [`update`](update.md).
 
 ```bash
 npx cap sync [options] [<platform>]

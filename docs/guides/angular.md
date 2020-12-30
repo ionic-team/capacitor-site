@@ -1,9 +1,8 @@
 ---
-title: Capacitor and Angular
+title: Using Angular with Capacitor
+sidebar_label: Angular
 description: Using Angular with Capacitor
 ---
-
-# Using Angular with Capacitor
 
 ## NgZone
 

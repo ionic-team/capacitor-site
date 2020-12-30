@@ -1,7 +1,9 @@
 ---
 title: Text Zoom Capacitor Plugin API
+hide_title: true
+sidebar_label: Text Zoom
 description: The Text Zoom API provides the ability to change Web View text size for visual accessibility.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/text-zoom/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/text-zoom/src/definitions.ts
 ---
 
 # @capacitor/text-zoom
@@ -27,6 +29,7 @@ npx cap sync
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### get()

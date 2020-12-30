@@ -1,7 +1,9 @@
 ---
 title: App Launcher Capacitor Plugin API
+hide_title: true
+sidebar_label: App Launcher
 description: The AppLauncher API allows to open other apps
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/app-launcher/src/definitions.ts
+custom_edit_url: https://github.com/ionic-team/capacitor-plugins/blob/main/app-launcher/src/definitions.ts
 ---
 
 # @capacitor/app-launcher
@@ -42,6 +44,7 @@ const openPortfolioPage = async () => {
 </docgen-index>
 
 <docgen-api>
+
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### canOpenUrl(...)

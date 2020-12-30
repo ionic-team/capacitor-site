@@ -1,11 +1,10 @@
 ---
-title: CLI Command - cap open
+title: Capacitor CLI - cap open
+sidebar_label: open
 description: Capacitor CLI command - cap open
 contributors:
   - dotNetkow
 ---
-
-# Capacitor CLI - cap open
 
 Opens the native project workspace in the specified native IDE (Xcode for iOS, Android Studio for Android).
 

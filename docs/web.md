@@ -1,11 +1,10 @@
 ---
-title: Capacitor Web Documentation
+title: Using Capacitor in a Web Project
+sidebar_label: Getting Started
 description: Web Getting Started
 contributors:
   - mlynch
 ---
-
-# Using Capacitor in a Web Project
 
 Capacitor fully supports traditional web and Progressive Web Apps. In fact, using Capacitor makes it easy to ship a PWA version of your iOS and Android app store apps with minimal work.
 
@@ -19,7 +18,7 @@ Plugins with web support will perform feature detection and throw exceptions if 
 
 If you're already building with Capacitor for iOS or Android, there are no additional installation steps!
 
-Otherwise, see the [Installation](/docs/getting-started/) guide before continuing.
+Otherwise, see the [Installation](getting-started.md) guide before continuing.
 
 ### Using Capacitor as a Module
 
@@ -29,7 +28,7 @@ Most commonly, apps will be using a framework with a build system that supports 
 
 To use the Capacitor runtime in a web app that is not using a build system or bundler/module loader, do the following:
 
-1. Set `bundledWebRuntime` to `true` in the [Capacitor configuration file](/docs/v3/config)
+1. Set `bundledWebRuntime` to `true` in the [Capacitor configuration file](config.md)
 
 ```json
 "bundledWebRuntime": true
