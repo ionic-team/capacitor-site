@@ -28,13 +28,13 @@ Consult the [Cocoa Keys](https://developer.apple.com/library/content/documentati
 
 For more information, Apple has provided a guide to [Resolving the Privacy-Sensitive Data App Rejection](https://developer.apple.com/library/content/qa/qa1937/_index.html) which contains more information on APIs that require usage descriptions.
 
-## Setting Entitlements
+## Setting Capabilities
 
-Entitlements are used to enable key features that your app may need. You may need to configure them whenever a Capacitor plugin requires it.
+Capabilities are used to enable key features that your app may need. You may need to configure them whenever a Capacitor plugin requires it.
 
-Unlike other configuration options and usage descriptions, entitlements are _not_ configured in `Info.plist`.
+Unlike other configuration options and usage descriptions, capabilities are _not_ configured in `Info.plist`.
 
-To add a new entitlement, [open your app in Xcode](/docs/ios#opening-the-ios-project), select the **App** project and the **App** target, click **Signing & Capabilities** in the tab bar, and then click the **+ Capability** button. See [this article](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) for more information about iOS capabilities.
+To add a new capability, [open your app in Xcode](/docs/ios#opening-the-ios-project), select the **App** project and the **App** target, click **Signing & Capabilities** in the tab bar, and then click the **+ Capability** button. See [this article](https://developer.apple.com/documentation/xcode/adding_capabilities_to_your_app) for more information about iOS capabilities.
 
 ![Xcode Capabilities](/assets/img/docs/ios/xcode-capabilities.png)
 
