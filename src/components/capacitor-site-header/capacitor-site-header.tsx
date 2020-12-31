@@ -181,26 +181,8 @@ export class DocsHeader implements ComponentInterface {
             >
               Blog
             </a>
-            <a
-              class="external | ui-paragraph-4"
-              target="_blank"
-              href="https://ionicframework.com/native"
-              rel="noopener"
-            >
+            <a class="ui-paragraph-4" href="/enterprise">
               Enterprise
-              <svg
-                width="8"
-                height="9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M.5 8l7-7m0 0H2.95M7.5 1v4.55"
-                  stroke="#73849A"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
             </a>
           </nav>
 

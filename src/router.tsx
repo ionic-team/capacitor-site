@@ -66,10 +66,16 @@ export const Routes = () => (
       <cordova-page />
     </Route>
 
-    <Route path="/enterprise">
-      <SiteHeader />
-      <enterprise-page />
-    </Route>
+    <Route
+      path="/enterprise"
+      mapParams={staticState(getPage)}
+      render={(_, data) => (
+        <Fragment>
+          <SiteHeader />
+          <enterprise-page data={data} />
+        </Fragment>
+      )}
+    />
 
     <Route
       path={matchAny(['/docs/v3/:id*', '/docs/v3'])}
