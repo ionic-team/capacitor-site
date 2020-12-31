@@ -1,17 +1,13 @@
-import { Component, h, Host, Prop, State } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 import {
   ResponsiveContainer,
-  Grid,
-  Col,
   Heading,
-  Breakpoint,
   Button,
   PrismicRichText,
   PrismicResponsiveImage,
   Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { Fragment, getAssetPath, JSXBase } from '@stencil/core/internal';
-import { href } from '@stencil/router';
+import { getAssetPath } from '@stencil/core/internal';
 
 @Component({
   tag: 'enterprise-page',
