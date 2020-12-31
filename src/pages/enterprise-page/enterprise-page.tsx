@@ -23,7 +23,7 @@ export class EnterprisePage {
   @Prop() data: any;
 
   render() {
-    const { Top, Companies, Native, Ebook } = this;
+    const { Top, Companies, Native, Ebook, Approach, Plugins, Security } = this;
 
     return (
       <Host>
@@ -32,6 +32,9 @@ export class EnterprisePage {
         <Companies />
         <Native />
         <Ebook />
+        <Approach />
+        <Plugins />
+        <Security />
         <pre-footer />
         <capacitor-site-footer />
       </Host>
@@ -131,7 +134,9 @@ export class EnterprisePage {
     return (
       <ResponsiveContainer id="native" as="section">
         <div class="heading-group">
-          <p class="ui-heading-6">{supertext}</p>
+          <p class="ui-heading-6">
+            <sup>{supertext}</sup>
+          </p>
           <PrismicRichText richText={title} />
           <Paragraph level={2}>{subtext}</Paragraph>
         </div>
@@ -163,16 +168,118 @@ export class EnterprisePage {
 
     return (
       <ResponsiveContainer id="ebook" as="section">
-        <PrismicResponsiveImage image={background} class="background" />
+        <div class="wrapper">
+          <PrismicResponsiveImage image={background} class="background" />
+          <div class="content">
+            <div class="image-wrapper">
+              <PrismicResponsiveImage image={book} />
+            </div>
+            <div class="heading-group">
+              <PrismicRichText paragraphLevel={1} richText={text} />
+              <Button anchor>
+                {cta} <span class="arrow"> -&gt;</span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </ResponsiveContainer>
+    );
+  };
+
+  Approach = () => {
+    const {
+      approach,
+      approach_traditional,
+      approach_traditional__list,
+      approach_web,
+      approach_web__list,
+    } = this.data;
+    const { supertext, title } = approach[0];
+
+    return (
+      <ResponsiveContainer id="approach" as="section">
+        <div class="heading-group">
+          <p class="ui-heading-6">
+            <sup>{supertext}</sup>
+          </p>
+          <PrismicRichText richText={title} />
+        </div>
+        <div class="split">
+          <article class="traditional column">
+            <Heading>{approach_traditional[0]['title']}</Heading>
+            <Paragraph>{approach_traditional[0]['text']}</Paragraph>
+            <PrismicResponsiveImage image={approach_traditional[0]['image']} />
+            <div class="list">
+              <Heading level={4}>{approach_traditional[0]['subtitle']}</Heading>
+              <ul>
+                {approach_traditional__list.map(({ text, icon }) => (
+                  <li>
+                    <PrismicResponsiveImage image={icon} />
+                    <Paragraph>{text}</Paragraph>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+          <article class="web column">
+            <Heading>{approach_web[0]['title']}</Heading>
+            <Paragraph>{approach_web[0]['text']}</Paragraph>
+            <PrismicResponsiveImage image={approach_web[0]['image']} />
+            <div class="list">
+              <Heading level={4}>{approach_web[0]['subtitle']}</Heading>
+              <ul>
+                {approach_web__list.map(({ text, icon }) => (
+                  <li>
+                    <PrismicResponsiveImage image={icon} />
+                    <Paragraph>{text}</Paragraph>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        </div>
+      </ResponsiveContainer>
+    );
+  };
+
+  Plugins = () => {
+    const { plugins } = this.data;
+    const { supertext, title, subtext, image } = plugins[0];
+
+    return (
+      <ResponsiveContainer id="plugins" as="section">
+        <div class="wrapper">
+          <div class="heading-group">
+            <p class="ui-heading-6">
+              <sup>{supertext}</sup>
+            </p>
+            <PrismicRichText richText={title} />
+            <Paragraph level={2}>{subtext}</Paragraph>
+          </div>
+          <div class="image-wrapper">
+            <PrismicResponsiveImage image={image} />
+          </div>
+        </div>
+      </ResponsiveContainer>
+    );
+  };
+
+  Security = () => {
+    const { security } = this.data;
+    const { supertext, title, subtext, image } = security[0];
+
+    return (
+      <ResponsiveContainer id="security" as="section">
         <div class="wrapper">
           <div class="image-wrapper">
-            <PrismicResponsiveImage image={book} />
+            <PrismicResponsiveImage image={image} />
           </div>
           <div class="heading-group">
-            <PrismicRichText paragraphLevel={1} richText={text} />
-            <Button anchor>
-              {cta} <span class="arrow"> -&gt;</span>
-            </Button>
+            <p class="ui-heading-6">
+              <sup>{supertext}</sup>
+            </p>
+            <PrismicRichText richText={title} />
+            <PrismicRichText richText={subtext} paragraphLevel={2} />
           </div>
         </div>
       </ResponsiveContainer>
