@@ -19,7 +19,18 @@ export class EnterprisePage {
   @Prop() data: any;
 
   render() {
-    const { Top, Companies, Native, Ebook, Approach, Plugins, Security } = this;
+    const {
+      Top,
+      Companies,
+      Native,
+      Ebook,
+      Approach,
+      Plugins,
+      Security,
+      SupportGuidance,
+      Features,
+      Editions,
+    } = this;
 
     return (
       <Host>
@@ -31,6 +42,9 @@ export class EnterprisePage {
         <Approach />
         <Plugins />
         <Security />
+        <SupportGuidance />
+        <Features />
+        <Editions />
         <pre-footer />
         <capacitor-site-footer />
       </Host>
@@ -279,6 +293,151 @@ export class EnterprisePage {
           </div>
         </div>
       </ResponsiveContainer>
+    );
+  };
+
+  SupportGuidance = () => {
+    const { support_guidance } = this.data;
+
+    return (
+      <ResponsiveContainer id="support-guidance" as="section">
+        <div class="wrapper">
+          {support_guidance.map(({ image, title, text }) => (
+            <article>
+              <PrismicResponsiveImage image={image} />
+              <Heading level={2}>{title}</Heading>
+              <Paragraph level={2}>{text}</Paragraph>
+            </article>
+          ))}
+        </div>
+      </ResponsiveContainer>
+    );
+  };
+
+  Features = () => {
+    const { features, features__list } = this.data;
+    const { supertext, title, subtext } = features[0];
+
+    return (
+      <section id="features">
+        <ResponsiveContainer>
+          <div class="wrapper">
+            <div class="heading-group">
+              <p class="ui-heading-6">
+                <sup>{supertext}</sup>
+              </p>
+              <PrismicRichText richText={title} />
+              <Paragraph level={2}>{subtext}</Paragraph>
+            </div>
+            <ul>
+              {features__list.map(({ icon, title, text }) => (
+                <li>
+                  <div class="image-wrapper">
+                    <PrismicResponsiveImage image={icon} />
+                  </div>
+                  <div>
+                    <Heading level={4} as="h3">
+                      {title}
+                    </Heading>
+                    <Paragraph>{text}</Paragraph>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </ResponsiveContainer>
+      </section>
+    );
+  };
+
+  Editions = () => {
+    const { editions } = this.data;
+    const {
+      supertext,
+      title,
+      paragraph_1,
+      paragraph_2,
+      cta_1,
+      cta_2,
+    } = editions[0];
+
+    const images = [
+      ['burger-king', '36x38'],
+      ['fidelity', '113x32'],
+      ['hr-block', '32x32'],
+      ['communo', '102x24'],
+      ['usaa', '27x32'],
+      ['ibm', '64x26'],
+      ['bcbs', '62x32'],
+      ['test-kitchen', '77x28'],
+      ['home-depot', '32x32'],
+    ];
+
+    return (
+      <section id="editions">
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <p class="ui-heading-6">
+              <sup>{supertext}</sup>
+            </p>
+            <PrismicRichText richText={title} />
+            <PrismicRichText richText={paragraph_1} paragraphLevel={2} />
+            <PrismicRichText richText={paragraph_2} paragraphLevel={2} />
+            <div class="cta-row">
+              <Button>
+                {cta_1} <span class="arrow"> -&gt;</span>
+              </Button>
+              <a href="" class="link">
+                {cta_2} <span class="arrow"> -&gt;</span>
+              </a>
+            </div>
+          </div>
+          <div class="logos">
+            <div class="row0">
+              {images.slice(0, 3).map((stats, i) => (
+                <div class="image-wrapper">
+                  <img
+                    src={getAssetPath(
+                      `./assets-enterprise-page/editions/${i}@2x.png`,
+                    )}
+                    width={stats[1].split('x')[0]}
+                    height={stats[1].split('x')[1]}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+            <div class="row1">
+              {images.slice(3, 6).map((stats, i) => (
+                <div class="image-wrapper">
+                  <img
+                    src={getAssetPath(
+                      `./assets-enterprise-page/editions/${i + 3}@2x.png`,
+                    )}
+                    width={stats[1].split('x')[0]}
+                    height={stats[1].split('x')[1]}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+            <div class="row2">
+              {images.slice(6, 9).map((stats, i) => (
+                <div class="image-wrapper">
+                  <img
+                    src={getAssetPath(
+                      `./assets-enterprise-page/editions/${i + 6}@2x.png`,
+                    )}
+                    width={stats[1].split('x')[0]}
+                    height={stats[1].split('x')[1]}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </ResponsiveContainer>
+      </section>
     );
   };
 }
