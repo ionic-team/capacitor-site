@@ -118,7 +118,7 @@ export class DocsHeader implements ComponentInterface {
             {...href(docsVersionHref('/docs/plugins'))}
             class={{
               'ui-paragraph-4': true,
-              'active': template === 'docs',
+              'active': template === 'plugins',
             }}
           >
             Plugins
