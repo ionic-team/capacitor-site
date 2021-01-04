@@ -93,6 +93,8 @@ export class DocsHeader implements ComponentInterface {
         />
 
         <header>
+          {includeBurger ? <app-menu-toggle /> : null}
+
           {includeLogo ? (
             <a {...href('/')} aria-label="homepage link">
               {capacitorLogo()}
@@ -131,9 +133,7 @@ export class DocsHeader implements ComponentInterface {
             CLI
           </a>
 
-          <div class="separator sm-hide"></div>
-
-          {includeBurger ? <app-menu-toggle /> : null}
+          <div class="separator desktop-only"></div>
 
           <nav
             class={{
@@ -204,7 +204,7 @@ export class DocsHeader implements ComponentInterface {
             </a>
           </nav>
 
-          <div class="separator sm-hide"></div>
+          <div class="separator desktop-only"></div>
 
           <more-button onClick={() => this.toggleExpanded()} />
 
