@@ -61,6 +61,11 @@ export const Routes = () => (
       )}
     />
 
+    <Route path="/telemetry">
+      <SiteHeader />
+      <telemetry-page />
+    </Route>
+
     <Route path="/cordova">
       <SiteHeader />
       <cordova-page />

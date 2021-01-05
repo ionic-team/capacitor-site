@@ -105,6 +105,9 @@ export namespace Components {
     interface SolutionPage {
         "solutionId": string;
     }
+    interface TelemetryPage {
+        "data": any;
+    }
     interface VersionSelect {
     }
 }
@@ -277,6 +280,12 @@ declare global {
         prototype: HTMLSolutionPageElement;
         new (): HTMLSolutionPageElement;
     };
+    interface HTMLTelemetryPageElement extends Components.TelemetryPage, HTMLStencilElement {
+    }
+    var HTMLTelemetryPageElement: {
+        prototype: HTMLTelemetryPageElement;
+        new (): HTMLTelemetryPageElement;
+    };
     interface HTMLVersionSelectElement extends Components.VersionSelect, HTMLStencilElement {
     }
     var HTMLVersionSelectElement: {
@@ -312,6 +321,7 @@ declare global {
         "pre-footer": HTMLPreFooterElement;
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
+        "telemetry-page": HTMLTelemetryPageElement;
         "version-select": HTMLVersionSelectElement;
     }
 }
@@ -414,6 +424,9 @@ declare namespace LocalJSX {
     interface SolutionPage {
         "solutionId"?: string;
     }
+    interface TelemetryPage {
+        "data"?: any;
+    }
     interface VersionSelect {
     }
     interface IntrinsicElements {
@@ -445,6 +458,7 @@ declare namespace LocalJSX {
         "pre-footer": PreFooter;
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
+        "telemetry-page": TelemetryPage;
         "version-select": VersionSelect;
     }
 }
@@ -480,6 +494,7 @@ declare module "@stencil/core" {
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
+            "telemetry-page": LocalJSX.TelemetryPage & JSXBase.HTMLAttributes<HTMLTelemetryPageElement>;
             "version-select": LocalJSX.VersionSelect & JSXBase.HTMLAttributes<HTMLVersionSelectElement>;
         }
     }
