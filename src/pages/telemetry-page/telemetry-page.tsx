@@ -65,11 +65,16 @@ export class TelemetryPage {
           <code class="sc-docs-component">open</code>, etc)
         </li>
         <li>Timestamp</li>
+        <li>Time it took to execute the command</li>
         <li>
           Capacitor machine ID: This is an anonymous UUID that is stored in a
           global config.
         </li>
-        <li>Your operating system (Mac, Linux, Windows) and its version.</li>
+        <li>
+          Project ID: This is an anonymous UUID that is stored on a machine and
+          project level.
+        </li>
+        <li>Your operating system (Mac, Linux, Windows)</li>
         <li>Node Version</li>
         <li>@capacitor/core Version</li>
         <li>@capacitor/cli Version</li>
