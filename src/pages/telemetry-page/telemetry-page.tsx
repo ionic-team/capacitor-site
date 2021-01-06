@@ -66,6 +66,7 @@ export class TelemetryPage {
         </li>
         <li>Timestamp</li>
         <li>Time it took to execute the command</li>
+        <li>Error message if the command failed (no stacktrace)</li>
         <li>
           Capacitor machine ID: This is an anonymous UUID that is stored in a
           global config.
