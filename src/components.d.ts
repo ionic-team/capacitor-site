@@ -102,6 +102,7 @@ export namespace Components {
         "includeBurger": boolean;
         "includeLogo": boolean;
         "template": DocsTemplate;
+        "theme": 'light' | 'dark';
     }
     interface SolutionPage {
         "solutionId": string;
@@ -412,6 +413,7 @@ declare namespace LocalJSX {
         "includeBurger"?: boolean;
         "includeLogo"?: boolean;
         "template"?: DocsTemplate;
+        "theme"?: 'light' | 'dark';
     }
     interface SolutionPage {
         "solutionId"?: string;

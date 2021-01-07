@@ -23,11 +23,13 @@ export class DocsHeader implements ComponentInterface {
   @Prop() template: DocsTemplate;
   @Prop() includeLogo = true;
   @Prop() includeBurger = false;
+  @Prop() theme: 'light' | 'dark' = 'light';
 
   @State() collapsed = false;
   @State() expanded = false;
   @State() scrolled = false;
 
+  private routeListener = Symbol();
   private links: { [key: string]: HTMLElement } = {};
 
   componentWillLoad() {
@@ -50,9 +52,9 @@ export class DocsHeader implements ComponentInterface {
   }
 
   createRouteListener() {
-    if (window.hasOwnProperty('R-146')) return;
+    if (window.hasOwnProperty(this.routeListener)) return;
 
-    window['R-146'] = true;
+    window[this.routeListener] = true;
     Router.on('change', this.handleActive);
   }
 
@@ -84,6 +86,7 @@ export class DocsHeader implements ComponentInterface {
       <Host
         class={{
           scrolled: this.scrolled,
+          [`theme--${this.theme}`]: true,
         }}
       >
         <site-backdrop

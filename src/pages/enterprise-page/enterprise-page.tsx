@@ -29,6 +29,7 @@ export class EnterprisePage {
       Security,
       SupportGuidance,
       Features,
+      Demo,
       Editions,
     } = this;
 
@@ -45,6 +46,7 @@ export class EnterprisePage {
         <SupportGuidance />
         <Features />
         <Editions />
+        <Demo />
         <pre-footer />
         <capacitor-site-footer />
       </Host>
@@ -436,6 +438,25 @@ export class EnterprisePage {
               ))}
             </div>
           </div>
+        </ResponsiveContainer>
+      </section>
+    );
+  };
+
+  Demo = () => {
+    const { demo } = this.data;
+    const { supertext, title } = demo[0];
+
+    return (
+      <section id="demo">
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <p class="ui-heading-6">
+              <sup>{supertext}</sup>
+            </p>
+            <Heading level={2}>{title}</Heading>
+          </div>
+          <hubspot-form formId="d0019a78-110e-4d28-b356-56357b4abe4b" />
         </ResponsiveContainer>
       </section>
     );

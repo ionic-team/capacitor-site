@@ -8,6 +8,7 @@ $section-space: 12.5rem;
 
   --h1-color: #fff;
   --h2-color: #677483;
+  --h6-color: var(--c-cyan-80);
 }
 //#endregion ------------------------------------------------------------------------------
 
@@ -20,6 +21,27 @@ ul {
 .ui-heading-2 em {
   font-style: normal;
   color: var(--c-carbon-100);
+}
+.ui-heading-1 {
+  font-family: var(--f-family-text);
+  font-weight: 800;
+}
+.ui-heading-2 {
+  font-family: var(--f-family-text);
+}
+.ui-heading-3 {
+  font-family: var(--f-family-text);
+}
+
+.ui-heading-6 {
+  vertical-align: middle;
+  margin-block-start: 0;
+  margin-block-end: 2rem;
+  // font-size: 0.75rem;
+
+  sup {
+    all: inherit;
+  }
 }
 //#endregion ------------------------------------------------------------------------------
 
@@ -101,7 +123,7 @@ ul {
   padding-block-end: $section-space;
 
   .heading-group {
-    max-width: 37.5rem;
+    max-width: 38rem;
 
     margin-block-end: 6rem;
   }
@@ -183,7 +205,7 @@ ul {
   padding-block-start: $section-space;
 
   .heading-group {
-    max-width: 40rem;
+    max-width: 42rem;
     margin: 0 auto 6rem;
     text-align: center;
   }
@@ -266,7 +288,7 @@ ul {
   }
 
   .heading-group {
-    max-width: 28.1875rem;
+    max-width: 30rem;
   }
 
   .image-wrapper {
@@ -508,6 +530,22 @@ ul {
       display: flex;
       justify-content: space-between;
     }
+  }
+}
+
+#demo {
+  --h2-color: var(--c-carbon-100);
+
+  padding-block-start: $section-space;
+  padding-block-end: $section-space;
+
+  .heading-group {
+    text-align: center;
+    margin-block-end: 4rem;
+  }
+
+  hubspot-form {
+    max-width: 41rem;
   }
 }
 //#endregion ------------------------------------------------------------------------------
