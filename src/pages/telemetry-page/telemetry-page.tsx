@@ -66,7 +66,7 @@ export class TelemetryPage {
         <li>Project ID (anonymous, generated ID)</li>
         <li>Your operating system (Mac, Linux, Windows)</li>
         <li>
-          Versions of: NodeJS, Capacitor CLI, core, platforms, and official
+          Versions of: NodeJS, Capacitor CLI, core, and official platforms and
           plugins
         </li>
       </ul>
