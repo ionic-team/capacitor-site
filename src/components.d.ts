@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BlogData } from "./data.server/blog";
 import { DocsData, DocsTemplate } from "./data.server/docs";
 import { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
+import { SiteHeader } from "./components/capacitor-site-header/capacitor-site-header";
 export namespace Components {
     interface AnchorLink {
         "to": string;
@@ -67,6 +68,7 @@ export namespace Components {
     }
     interface DocsSearch {
         "placeholder": string;
+        "theme": SiteHeader['theme'];
     }
     interface EnterprisePage {
         "data": any;
@@ -378,6 +380,7 @@ declare namespace LocalJSX {
     }
     interface DocsSearch {
         "placeholder"?: string;
+        "theme"?: SiteHeader['theme'];
     }
     interface EnterprisePage {
         "data"?: any;
