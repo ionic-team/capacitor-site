@@ -312,6 +312,10 @@ ul {
     max-width: 42rem;
     margin: 0 auto 6rem;
     text-align: center;
+
+    .ui-heading-6 {
+      margin-block-end: 1.5rem;
+    }
   }
 
   .split {
@@ -394,6 +398,10 @@ ul {
 
   .heading-group {
     max-width: 30rem;
+
+    .ui-heading-6 {
+      margin-block-end: 1.5rem;
+    }
   }
 
   .image-wrapper {
@@ -440,6 +448,10 @@ ul {
 
   .heading-group {
     max-width: 28.1875rem;
+
+    .ui-heading-6 {
+      margin-block-end: 1.5rem;
+    }
   }
 
   .image-wrapper {
@@ -487,6 +499,8 @@ ul {
     .ui-heading {
       margin-block-start: 3rem;
       margin-block-end: 1.5rem;
+
+      letter-spacing: -0.02em;
     }
   }
 }
@@ -540,9 +554,9 @@ ul {
   }
 
   ul {
-    max-width: 29.9375rem;
+    max-width: 32rem;
 
-    padding-inline-start: 2rem;
+    padding-inline-start: clamp(4rem, 10vw, 7rem);
 
     @media (max-width: $screen-xs-max) {
       padding: 0;
@@ -558,7 +572,7 @@ ul {
       padding-block-end: 6rem;
 
       &:first-of-type {
-        margin-block-start: 3.5rem;
+        margin-block-start: 2rem;
       }
 
       &:last-of-type {
