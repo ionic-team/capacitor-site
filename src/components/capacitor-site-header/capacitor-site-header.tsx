@@ -24,6 +24,7 @@ export class SiteHeader implements ComponentInterface {
   @Prop() includeLogo = true;
   @Prop() includeBurger = false;
   @Prop() theme: 'light' | 'dark' = 'light';
+  @Prop() sticky = true;
 
   @State() collapsed = false;
   @State() expanded = false;
@@ -87,6 +88,7 @@ export class SiteHeader implements ComponentInterface {
         class={{
           scrolled: this.scrolled,
           [`theme--${this.theme}`]: true,
+          sticky: this.sticky,
         }}
       >
         <site-backdrop

@@ -8,6 +8,8 @@ $section-space: 12.5rem;
 
   --h1-color: #fff;
   --h2-color: #677483;
+  --h3-color: var(--c-carbon-100);
+  --h4-color: var(--c-carbon-100);
   --h6-color: var(--c-cyan-80);
 }
 //#endregion ------------------------------------------------------------------------------
@@ -43,6 +45,17 @@ ul {
     all: inherit;
   }
 }
+
+.btn-link {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 112%;
+  letter-spacing: -0.02em;
+
+  /* Cyan / 80 */
+
+  color: #46b1ff;
+}
 //#endregion ------------------------------------------------------------------------------
 
 //#region -------------------------------- PAGE STYLES ---------------------------------------
@@ -70,6 +83,23 @@ ul {
     .ui-paragraph {
       max-width: 31rem;
     }
+
+    .cta-row {
+      margin-inline-start: -1.25rem;
+      margin-block-start: -2rem;
+
+      .ui-button {
+        --c-background: var(--c-cyan-90);
+        --c-focus: rgba(255, 255, 255, 0.8);
+        --c-background--hover: #3daeff;
+        --c-background--active: #0a99ff;
+      }
+
+      > * {
+        margin-inline-start: 1.25rem;
+        margin-block-start: 2rem;
+      }
+    }
   }
 }
 
@@ -86,7 +116,7 @@ ul {
   text-align: center;
 
   .ui-heading {
-    margin-block-end: 3rem;
+    margin-block-end: 2.5rem;
   }
 
   .logos {
@@ -152,6 +182,13 @@ ul {
 }
 
 #ebook {
+  site-modal {
+    h2 {
+      text-align: center;
+      color: var(--c-carbon-100);
+      margin-block-end: 2rem;
+    }
+  }
   .background {
     position: absolute;
     object-fit: cover;
@@ -164,6 +201,8 @@ ul {
 
   .wrapper {
     position: relative;
+    margin-inline-start: -3rem;
+    margin-inline-end: -3rem;
   }
 
   .content {
@@ -171,15 +210,18 @@ ul {
     background: #011830;
 
     border-radius: 32px;
-    overflow-x: hidden;
   }
 
   .heading-group {
+    flex-basis: 50%;
     position: relative;
     z-index: 1;
     align-self: center;
 
-    max-width: 31.5rem;
+    max-width: 35rem;
+
+    padding: clamp(1rem, 2.5vw, 2rem);
+    padding-inline-end: 3rem;
 
     .ui-paragraph {
       color: var(--c-carbon-20);
@@ -188,16 +230,36 @@ ul {
       line-height: 120%;
       letter-spacing: -0.03em;
 
+      margin-block-end: 2rem;
+
       em {
         font-style: normal;
         color: #fff;
       }
     }
+
+    .ui-button {
+      color: #011830;
+      --c-background: #fff;
+      --c-focus: rgba(255, 255, 255, 0.6);
+      --c-background--hover: #fff;
+      --c-background--active: #f2f2f2;
+    }
   }
 
   .image-wrapper {
+    flex-basis: 50%;
     position: relative;
     z-index: 1;
+
+    align-self: flex-end;
+
+    img {
+      margin-inline-start: clamp(2rem, 8vw, 10rem);
+      margin-inline-end: clamp(2rem, 8vw, 6rem);
+      margin-block-start: -3rem;
+      max-width: 100%;
+    }
   }
 }
 
@@ -351,6 +413,8 @@ ul {
 }
 
 #support-guidance {
+  --h3-size: 2rem;
+
   margin-block-end: $section-space;
   padding-block-start: $section-space;
 
@@ -496,13 +560,26 @@ ul {
 
   background: #000c19;
 
-  .ui-container {
+  .wrapper {
     display: flex;
     justify-content: space-between;
+
+    margin-inline-start: -4rem;
+    margin-block-start: -4rem;
+
+    @media (max-width: $screen-xs-max) {
+      flex-direction: column;
+    }
+
+    > * {
+      margin-inline-start: 4rem;
+      margin-block-start: 4rem;
+    }
   }
 
   .heading-group {
     max-width: 35rem;
+    flex-basis: 60%;
 
     .ui-heading em {
       font-style: normal;
@@ -513,13 +590,31 @@ ul {
       color: #fff;
       font-style: normal;
     }
+
+    .cta-row {
+      margin-inline-start: -1.25rem;
+      margin-block-start: -2rem;
+
+      .ui-button {
+        --c-background: var(--c-cyan-90);
+        --c-focus: rgba(255, 255, 255, 0.8);
+        --c-background--hover: #3daeff;
+        --c-background--active: #0a99ff;
+      }
+
+      > * {
+        margin-inline-start: 1.25rem;
+        margin-block-start: 2rem;
+      }
+    }
   }
 
   .logos {
     max-width: 23.8125rem;
     flex-grow: 1;
+    flex-basis: 40%;
 
-    margin-block-start: 6rem;
+    margin-block-start: -4rem;
     margin-block-end: 3rem;
 
     display: flex;
@@ -529,6 +624,8 @@ ul {
     [class*='row'] {
       display: flex;
       justify-content: space-between;
+
+      margin-block-start: 4rem;
     }
   }
 }

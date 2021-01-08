@@ -95,7 +95,7 @@ export const Routes = () => (
             containerClass="heading-container"
             productName="Capacitor"
           />
-          <site-header class="heading-container" theme="dark" />
+          <site-header class="heading-container" theme="dark" sticky={false} />
           <enterprise-page data={data} />
         </Fragment>
       )}

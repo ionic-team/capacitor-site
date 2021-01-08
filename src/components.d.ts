@@ -73,6 +73,8 @@ export namespace Components {
     interface EnterprisePage {
         "data": any;
     }
+    interface EnterpriseSubnav {
+    }
     interface InPageNavigation {
         "editUrl": string;
         "headings": HeadingData[];
@@ -103,6 +105,7 @@ export namespace Components {
     interface SiteHeader {
         "includeBurger": boolean;
         "includeLogo": boolean;
+        "sticky": boolean;
         "template": DocsTemplate;
         "theme": 'light' | 'dark';
     }
@@ -221,6 +224,12 @@ declare global {
         prototype: HTMLEnterprisePageElement;
         new (): HTMLEnterprisePageElement;
     };
+    interface HTMLEnterpriseSubnavElement extends Components.EnterpriseSubnav, HTMLStencilElement {
+    }
+    var HTMLEnterpriseSubnavElement: {
+        prototype: HTMLEnterpriseSubnavElement;
+        new (): HTMLEnterpriseSubnavElement;
+    };
     interface HTMLInPageNavigationElement extends Components.InPageNavigation, HTMLStencilElement {
     }
     var HTMLInPageNavigationElement: {
@@ -306,6 +315,7 @@ declare global {
         "docs-menu": HTMLDocsMenuElement;
         "docs-search": HTMLDocsSearchElement;
         "enterprise-page": HTMLEnterprisePageElement;
+        "enterprise-subnav": HTMLEnterpriseSubnavElement;
         "in-page-navigation": HTMLInPageNavigationElement;
         "landing-page": HTMLLandingPageElement;
         "lower-content-nav": HTMLLowerContentNavElement;
@@ -385,6 +395,8 @@ declare namespace LocalJSX {
     interface EnterprisePage {
         "data"?: any;
     }
+    interface EnterpriseSubnav {
+    }
     interface InPageNavigation {
         "editUrl"?: string;
         "headings"?: HeadingData[];
@@ -415,6 +427,7 @@ declare namespace LocalJSX {
     interface SiteHeader {
         "includeBurger"?: boolean;
         "includeLogo"?: boolean;
+        "sticky"?: boolean;
         "template"?: DocsTemplate;
         "theme"?: 'light' | 'dark';
     }
@@ -442,6 +455,7 @@ declare namespace LocalJSX {
         "docs-menu": DocsMenu;
         "docs-search": DocsSearch;
         "enterprise-page": EnterprisePage;
+        "enterprise-subnav": EnterpriseSubnav;
         "in-page-navigation": InPageNavigation;
         "landing-page": LandingPage;
         "lower-content-nav": LowerContentNav;
@@ -477,6 +491,7 @@ declare module "@stencil/core" {
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
             "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
             "enterprise-page": LocalJSX.EnterprisePage & JSXBase.HTMLAttributes<HTMLEnterprisePageElement>;
+            "enterprise-subnav": LocalJSX.EnterpriseSubnav & JSXBase.HTMLAttributes<HTMLEnterpriseSubnavElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;

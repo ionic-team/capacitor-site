@@ -7,7 +7,7 @@ import {
   PrismicResponsiveImage,
   Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { getAssetPath } from '@stencil/core/internal';
+import { getAssetPath, State } from '@stencil/core/internal';
 
 @Component({
   tag: 'enterprise-page',
@@ -17,6 +17,7 @@ import { getAssetPath } from '@stencil/core/internal';
 })
 export class EnterprisePage {
   @Prop() data: any;
+  @State() ebookModalOpen = false;
 
   render() {
     const {
@@ -36,6 +37,7 @@ export class EnterprisePage {
     return (
       <Host>
         <meta-tags />
+        <enterprise-subnav />
         <Top />
         <Companies />
         <Native />
@@ -65,11 +67,13 @@ export class EnterprisePage {
             <Heading level={1}>{title}</Heading>
             <Paragraph level={2}>{text}</Paragraph>
             <div class="cta-row">
-              <Button>
-                {cta_1} <span class="arrow"> -&gt;</span>
+              <Button anchor href="#demo" kind="round">
+                {cta_1}
+                <span class="arrow"> -&gt;</span>
               </Button>
-              <a href="" class="link">
-                {cta_2} <span class="arrow"> -&gt;</span>
+              <a href="https://ionic.io/contact/sales" class="link btn-link">
+                {cta_2}
+                <span class="arrow"> -&gt;</span>
               </a>
             </div>
           </div>
@@ -180,6 +184,15 @@ export class EnterprisePage {
 
     return (
       <ResponsiveContainer id="ebook" as="section">
+        <site-modal
+          open={this.ebookModalOpen}
+          onModalClose={() => (this.ebookModalOpen = false)}
+        >
+          <Heading level={2}>
+            Building Cross-platform Apps with Capacitor
+          </Heading>
+          <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
+        </site-modal>
         <div class="wrapper">
           <PrismicResponsiveImage image={background} class="background" />
           <div class="content">
@@ -188,7 +201,11 @@ export class EnterprisePage {
             </div>
             <div class="heading-group">
               <PrismicRichText paragraphLevel={1} richText={text} />
-              <Button anchor>
+              <Button
+                kind="round"
+                size="md"
+                onClick={() => (this.ebookModalOpen = true)}
+              >
                 {cta} <span class="arrow"> -&gt;</span>
               </Button>
             </div>
@@ -307,7 +324,7 @@ export class EnterprisePage {
           {support_guidance.map(({ image, title, text }) => (
             <article>
               <PrismicResponsiveImage image={image} />
-              <Heading level={2}>{title}</Heading>
+              <Heading level={3}>{title}</Heading>
               <Paragraph level={2}>{text}</Paragraph>
             </article>
           ))}
@@ -378,64 +395,66 @@ export class EnterprisePage {
     return (
       <section id="editions">
         <ResponsiveContainer>
-          <div class="heading-group">
-            <p class="ui-heading-6">
-              <sup>{supertext}</sup>
-            </p>
-            <PrismicRichText richText={title} />
-            <PrismicRichText richText={paragraph_1} paragraphLevel={2} />
-            <PrismicRichText richText={paragraph_2} paragraphLevel={2} />
-            <div class="cta-row">
-              <Button>
-                {cta_1} <span class="arrow"> -&gt;</span>
-              </Button>
-              <a href="" class="link">
-                {cta_2} <span class="arrow"> -&gt;</span>
-              </a>
+          <div class="wrapper">
+            <div class="heading-group">
+              <p class="ui-heading-6">
+                <sup>{supertext}</sup>
+              </p>
+              <PrismicRichText richText={title} />
+              <PrismicRichText richText={paragraph_1} paragraphLevel={2} />
+              <PrismicRichText richText={paragraph_2} paragraphLevel={2} />
+              <div class="cta-row">
+                <Button href="#demo" anchor kind="round">
+                  {cta_1} <span class="arrow"> -&gt;</span>
+                </Button>
+                <a href="https://ionic.io/contact/sales" class="link btn-link">
+                  {cta_2} <span class="arrow"> -&gt;</span>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="logos">
-            <div class="row0">
-              {images.slice(0, 3).map((stats, i) => (
-                <div class="image-wrapper">
-                  <img
-                    src={getAssetPath(
-                      `./assets-enterprise-page/editions/${i}@2x.png`,
-                    )}
-                    width={stats[1].split('x')[0]}
-                    height={stats[1].split('x')[1]}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-            <div class="row1">
-              {images.slice(3, 6).map((stats, i) => (
-                <div class="image-wrapper">
-                  <img
-                    src={getAssetPath(
-                      `./assets-enterprise-page/editions/${i + 3}@2x.png`,
-                    )}
-                    width={stats[1].split('x')[0]}
-                    height={stats[1].split('x')[1]}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-            <div class="row2">
-              {images.slice(6, 9).map((stats, i) => (
-                <div class="image-wrapper">
-                  <img
-                    src={getAssetPath(
-                      `./assets-enterprise-page/editions/${i + 6}@2x.png`,
-                    )}
-                    width={stats[1].split('x')[0]}
-                    height={stats[1].split('x')[1]}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+            <div class="logos">
+              <div class="row0">
+                {images.slice(0, 3).map((stats, i) => (
+                  <div class="image-wrapper">
+                    <img
+                      src={getAssetPath(
+                        `./assets-enterprise-page/editions/${i}@2x.png`,
+                      )}
+                      width={stats[1].split('x')[0]}
+                      height={stats[1].split('x')[1]}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div class="row1">
+                {images.slice(3, 6).map((stats, i) => (
+                  <div class="image-wrapper">
+                    <img
+                      src={getAssetPath(
+                        `./assets-enterprise-page/editions/${i + 3}@2x.png`,
+                      )}
+                      width={stats[1].split('x')[0]}
+                      height={stats[1].split('x')[1]}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div class="row2">
+                {images.slice(6, 9).map((stats, i) => (
+                  <div class="image-wrapper">
+                    <img
+                      src={getAssetPath(
+                        `./assets-enterprise-page/editions/${i + 6}@2x.png`,
+                      )}
+                      width={stats[1].split('x')[0]}
+                      height={stats[1].split('x')[1]}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </ResponsiveContainer>
