@@ -23,7 +23,7 @@ const config: CapacitorConfig = {
   webDir: 'www',
 };
 
-export = config;
+export default config;
 ```
 
 ## Schema
