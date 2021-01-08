@@ -183,35 +183,37 @@ export class EnterprisePage {
     const { text, cta, background, book } = ebook[0];
 
     return (
-      <ResponsiveContainer id="ebook" as="section">
-        <site-modal
-          open={this.ebookModalOpen}
-          onModalClose={() => (this.ebookModalOpen = false)}
-        >
-          <Heading level={2}>
-            Building Cross-platform Apps with Capacitor
-          </Heading>
-          <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
-        </site-modal>
-        <div class="wrapper">
-          <PrismicResponsiveImage image={background} class="background" />
-          <div class="content">
-            <div class="image-wrapper">
-              <PrismicResponsiveImage image={book} />
-            </div>
-            <div class="heading-group">
-              <PrismicRichText paragraphLevel={1} richText={text} />
-              <Button
-                kind="round"
-                size="md"
-                onClick={() => (this.ebookModalOpen = true)}
-              >
-                {cta} <span class="arrow"> -&gt;</span>
-              </Button>
+      <section id="ebook">
+        <ResponsiveContainer>
+          <site-modal
+            open={this.ebookModalOpen}
+            onModalClose={() => (this.ebookModalOpen = false)}
+          >
+            <Heading level={2}>
+              Building Cross-platform Apps with Capacitor
+            </Heading>
+            <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
+          </site-modal>
+          <div class="wrapper">
+            <PrismicResponsiveImage image={background} class="background" />
+            <div class="content">
+              <div class="image-wrapper">
+                <PrismicResponsiveImage image={book} />
+              </div>
+              <div class="heading-group">
+                <PrismicRichText paragraphLevel={1} richText={text} />
+                <Button
+                  kind="round"
+                  size="md"
+                  onClick={() => (this.ebookModalOpen = true)}
+                >
+                  {cta} <span class="arrow"> -&gt;</span>
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </ResponsiveContainer>
+        </ResponsiveContainer>
+      </section>
     );
   };
 
@@ -276,20 +278,22 @@ export class EnterprisePage {
     const { supertext, title, subtext, image } = plugins[0];
 
     return (
-      <ResponsiveContainer id="plugins" as="section">
-        <div class="wrapper">
-          <div class="heading-group">
-            <p class="ui-heading-6">
-              <sup>{supertext}</sup>
-            </p>
-            <PrismicRichText richText={title} />
-            <Paragraph level={2}>{subtext}</Paragraph>
+      <section id="plugins">
+        <ResponsiveContainer>
+          <div class="wrapper">
+            <div class="heading-group">
+              <p class="ui-heading-6">
+                <sup>{supertext}</sup>
+              </p>
+              <PrismicRichText richText={title} />
+              <Paragraph level={2}>{subtext}</Paragraph>
+            </div>
+            <div class="image-wrapper">
+              <PrismicResponsiveImage image={image} />
+            </div>
           </div>
-          <div class="image-wrapper">
-            <PrismicResponsiveImage image={image} />
-          </div>
-        </div>
-      </ResponsiveContainer>
+        </ResponsiveContainer>
+      </section>
     );
   };
 
@@ -298,20 +302,22 @@ export class EnterprisePage {
     const { supertext, title, subtext, image } = security[0];
 
     return (
-      <ResponsiveContainer id="security" as="section">
-        <div class="wrapper">
-          <div class="image-wrapper">
-            <PrismicResponsiveImage image={image} />
+      <section id="security">
+        <ResponsiveContainer>
+          <div class="wrapper">
+            <div class="image-wrapper">
+              <PrismicResponsiveImage image={image} />
+            </div>
+            <div class="heading-group">
+              <p class="ui-heading-6">
+                <sup>{supertext}</sup>
+              </p>
+              <PrismicRichText richText={title} />
+              <PrismicRichText richText={subtext} paragraphLevel={2} />
+            </div>
           </div>
-          <div class="heading-group">
-            <p class="ui-heading-6">
-              <sup>{supertext}</sup>
-            </p>
-            <PrismicRichText richText={title} />
-            <PrismicRichText richText={subtext} paragraphLevel={2} />
-          </div>
-        </div>
-      </ResponsiveContainer>
+        </ResponsiveContainer>
+      </section>
     );
   };
 
@@ -405,10 +411,12 @@ export class EnterprisePage {
               <PrismicRichText richText={paragraph_2} paragraphLevel={2} />
               <div class="cta-row">
                 <Button href="#demo" anchor kind="round">
-                  {cta_1} <span class="arrow"> -&gt;</span>
+                  {cta_1}
+                  <span class="arrow"> -&gt;</span>
                 </Button>
                 <a href="https://ionic.io/contact/sales" class="link btn-link">
-                  {cta_2} <span class="arrow"> -&gt;</span>
+                  {cta_2}
+                  <span class="arrow"> -&gt;</span>
                 </a>
               </div>
             </div>

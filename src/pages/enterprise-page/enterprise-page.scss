@@ -56,6 +56,7 @@ ul {
 
   color: #46b1ff;
 }
+
 //#endregion ------------------------------------------------------------------------------
 
 //#region -------------------------------- PAGE STYLES ---------------------------------------
@@ -66,11 +67,19 @@ ul {
   position: relative;
   min-height: 46.25rem;
   z-index: 0;
+  overflow: hidden;
+
+  padding-block-end: 11rem;
 
   .background {
     position: absolute;
     right: 0;
     z-index: 1;
+
+    @media (max-width: $screen-lg) {
+      opacity: 0.2;
+      right: calc((1330px - 100%) * -1 / 2);
+    }
   }
 
   .heading-group {
@@ -203,6 +212,10 @@ ul {
     position: relative;
     margin-inline-start: -3rem;
     margin-inline-end: -3rem;
+
+    @media (max-width: $screen-md-max) {
+      margin: 0;
+    }
   }
 
   .content {
@@ -210,6 +223,15 @@ ul {
     background: #011830;
 
     border-radius: 32px;
+
+    @media (max-width: $screen-xs) {
+      flex-direction: column;
+    }
+
+    @media (max-width: $screen-xs) {
+      padding-inline-start: clamp(1rem, 8vw, 3rem);
+      padding-inline-end: clamp(1rem, 8vw, 3rem);
+    }
   }
 
   .heading-group {
@@ -222,6 +244,10 @@ ul {
 
     padding: clamp(1rem, 2.5vw, 2rem);
     padding-inline-end: 3rem;
+
+    @media (max-width: $screen-xs) {
+      padding: clamp(1rem, 8vw, 3rem) 0;
+    }
 
     .ui-paragraph {
       color: var(--c-carbon-20);
@@ -254,16 +280,32 @@ ul {
 
     align-self: flex-end;
 
+    @media (max-width: $screen-xs) {
+      align-self: center;
+    }
+
     img {
       margin-inline-start: clamp(2rem, 8vw, 10rem);
       margin-inline-end: clamp(2rem, 8vw, 6rem);
       margin-block-start: -3rem;
       max-width: 100%;
+
+      @media (max-width: $screen-sm-max) {
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        padding-inline-start: 3rem;
+        width: 100%;
+      }
+
+      @media (max-width: $screen-xs) {
+        padding: 0;
+      }
     }
   }
 }
 
 #approach {
+  overflow: hidden;
   padding-block-start: $section-space;
 
   .heading-group {
@@ -326,6 +368,7 @@ ul {
 
 #plugins {
   padding-block-start: $section-space;
+  overflow: hidden;
 
   .wrapper {
     display: flex;
@@ -357,6 +400,7 @@ ul {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-inline-end: -3rem;
 
     img {
       max-width: 100%;
@@ -370,6 +414,7 @@ ul {
 
 #security {
   padding-block-start: $section-space;
+  overflow: hidden;
 
   .wrapper {
     display: flex;
@@ -403,10 +448,12 @@ ul {
     justify-content: center;
 
     img {
+      margin-inline-start: -3rem;
       max-width: 100%;
 
       @media (max-width: $screen-xs) {
         max-width: 75vw;
+        margin: 0;
       }
     }
   }
@@ -587,6 +634,7 @@ ul {
     }
 
     .ui-paragraph em {
+      font-weight: 500;
       color: #fff;
       font-style: normal;
     }
@@ -637,6 +685,9 @@ ul {
   padding-block-end: $section-space;
 
   .heading-group {
+    .ui-heading-6 {
+      margin-block-end: 1.5rem;
+    }
     text-align: center;
     margin-block-end: 4rem;
   }
