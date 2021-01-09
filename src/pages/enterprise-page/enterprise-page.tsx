@@ -99,9 +99,7 @@ export class EnterprisePage {
     return (
       <section id="companies">
         <ResponsiveContainer>
-          <Heading level={6} as="h2">
-            {companies}
-          </Heading>
+          <Heading level={2}>{companies}</Heading>
           <div class="logos">
             <div class="row1">
               {companies__list.slice(0, 4).map((stats, i) => (
@@ -228,48 +226,54 @@ export class EnterprisePage {
     const { supertext, title } = approach[0];
 
     return (
-      <ResponsiveContainer id="approach" as="section">
-        <div class="heading-group">
-          <p class="ui-heading-6">
-            <sup>{supertext}</sup>
-          </p>
-          <PrismicRichText richText={title} />
-        </div>
-        <div class="split">
-          <article class="traditional column">
-            <Heading>{approach_traditional[0]['title']}</Heading>
-            <Paragraph>{approach_traditional[0]['text']}</Paragraph>
-            <PrismicResponsiveImage image={approach_traditional[0]['image']} />
-            <div class="list">
-              <Heading level={4}>{approach_traditional[0]['subtitle']}</Heading>
-              <ul>
-                {approach_traditional__list.map(({ text, icon }) => (
-                  <li>
-                    <PrismicResponsiveImage image={icon} />
-                    <Paragraph>{text}</Paragraph>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-          <article class="web column">
-            <Heading>{approach_web[0]['title']}</Heading>
-            <Paragraph>{approach_web[0]['text']}</Paragraph>
-            <PrismicResponsiveImage image={approach_web[0]['image']} />
-            <div class="list">
-              <Heading level={4}>{approach_web[0]['subtitle']}</Heading>
-              <ul>
-                {approach_web__list.map(({ text, icon }) => (
-                  <li>
-                    <PrismicResponsiveImage image={icon} />
-                    <Paragraph>{text}</Paragraph>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        </div>
-      </ResponsiveContainer>
+      <section id="approach">
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <p class="ui-heading-6">
+              <sup>{supertext}</sup>
+            </p>
+            <PrismicRichText richText={title} />
+          </div>
+          <div class="split">
+            <article class="traditional column">
+              <Heading>{approach_traditional[0]['title']}</Heading>
+              <Paragraph>{approach_traditional[0]['text']}</Paragraph>
+              <PrismicResponsiveImage
+                image={approach_traditional[0]['image']}
+              />
+              <div class="list">
+                <Heading level={4}>
+                  {approach_traditional[0]['subtitle']}
+                </Heading>
+                <ul>
+                  {approach_traditional__list.map(({ text, icon }) => (
+                    <li>
+                      <PrismicResponsiveImage image={icon} />
+                      <Paragraph>{text}</Paragraph>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+            <article class="web column">
+              <Heading>{approach_web[0]['title']}</Heading>
+              <Paragraph>{approach_web[0]['text']}</Paragraph>
+              <PrismicResponsiveImage image={approach_web[0]['image']} />
+              <div class="list">
+                <Heading level={4}>{approach_web[0]['subtitle']}</Heading>
+                <ul>
+                  {approach_web__list.map(({ text, icon }) => (
+                    <li>
+                      <PrismicResponsiveImage image={icon} />
+                      <Paragraph>{text}</Paragraph>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          </div>
+        </ResponsiveContainer>
+      </section>
     );
   };
 
@@ -325,17 +329,19 @@ export class EnterprisePage {
     const { support_guidance } = this.data;
 
     return (
-      <ResponsiveContainer id="support-guidance" as="section">
-        <div class="wrapper">
-          {support_guidance.map(({ image, title, text }) => (
-            <article>
-              <PrismicResponsiveImage image={image} />
-              <Heading level={3}>{title}</Heading>
-              <Paragraph level={2}>{text}</Paragraph>
-            </article>
-          ))}
-        </div>
-      </ResponsiveContainer>
+      <section id="support-guidance">
+        <ResponsiveContainer>
+          <div class="wrapper">
+            {support_guidance.map(({ image, title, text }) => (
+              <article>
+                <PrismicResponsiveImage image={image} />
+                <Heading level={3}>{title}</Heading>
+                <Paragraph level={2}>{text}</Paragraph>
+              </article>
+            ))}
+          </div>
+        </ResponsiveContainer>
+      </section>
     );
   };
 
