@@ -14,6 +14,8 @@ export const getPage: MapParamData = async (_params, url) => {
       };
     case '/community':
       return await queryPrismic('capacitor_community');
+    case '/enterprise':
+      return await queryPrismic('capacitor_enterprise');
   }
 };
 

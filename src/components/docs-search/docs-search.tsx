@@ -10,6 +10,7 @@ import {
 } from '@stencil/core';
 import Router from '../../router';
 import { importResource } from '../../utils/common';
+import { SiteHeader } from '../capacitor-site-header/capacitor-site-header';
 
 declare global {
   interface Window {
@@ -26,8 +27,10 @@ export class DocsSearch implements ComponentInterface {
   private contentWidth = 736;
   private uniqueId = Math.random().toString().replace('.', '');
 
-  @Element() el: HTMLElement;
+  @Prop() theme: SiteHeader['theme'] = 'light';
   @Prop() placeholder = 'Search';
+
+  @Element() el: HTMLElement;
   @State() input: {
     el?: HTMLInputElement;
     isPristine: boolean;
@@ -138,6 +141,7 @@ export class DocsSearch implements ComponentInterface {
           '--search-left': this.searchStats.left,
           '--search-width': this.searchStats.width,
         }}
+        class={`theme--${this.theme}`}
       >
         <svg
           class="search-icon"

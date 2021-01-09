@@ -18,16 +18,19 @@ import { JSXBase } from '@stencil/core/internal';
   styleUrl: 'capacitor-site-header.scss',
   scoped: true,
 })
-export class DocsHeader implements ComponentInterface {
+export class SiteHeader implements ComponentInterface {
   @Element() elm: HTMLElement;
   @Prop() template: DocsTemplate;
   @Prop() includeLogo = true;
   @Prop() includeBurger = false;
+  @Prop() theme: 'light' | 'dark' = 'light';
+  @Prop() sticky = true;
 
   @State() collapsed = false;
   @State() expanded = false;
   @State() scrolled = false;
 
+  private routeListener = Symbol();
   private links: { [key: string]: HTMLElement } = {};
 
   componentWillLoad() {
@@ -50,9 +53,9 @@ export class DocsHeader implements ComponentInterface {
   }
 
   createRouteListener() {
-    if (window.hasOwnProperty('R-146')) return;
+    if (window.hasOwnProperty(this.routeListener)) return;
 
-    window['R-146'] = true;
+    window[this.routeListener] = true;
     Router.on('change', this.handleActive);
   }
 
@@ -84,6 +87,8 @@ export class DocsHeader implements ComponentInterface {
       <Host
         class={{
           scrolled: this.scrolled,
+          [`theme--${this.theme}`]: true,
+          sticky: this.sticky,
         }}
       >
         <site-backdrop
@@ -102,7 +107,7 @@ export class DocsHeader implements ComponentInterface {
           ) : null}
 
           <div class="docs-search-wrapper desktop-only">
-            <docs-search />
+            <docs-search theme={this.theme} />
           </div>
 
           <a
@@ -181,26 +186,8 @@ export class DocsHeader implements ComponentInterface {
             >
               Blog
             </a>
-            <a
-              class="external | ui-paragraph-4"
-              target="_blank"
-              href="https://ionicframework.com/native"
-              rel="noopener"
-            >
+            <a class="ui-paragraph-4" href="/enterprise">
               Enterprise
-              <svg
-                width="8"
-                height="9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M.5 8l7-7m0 0H2.95M7.5 1v4.55"
-                  stroke="#73849A"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
             </a>
           </nav>
 
@@ -320,29 +307,35 @@ const capacitorLogo = (props?: JSXBase.SVGAttributes) => (
       fill="black"
     />
     <path
+      class="logo"
       d="M3.73712 5.07324L0.0291182 8.78592L5.74746 14.5214L0 20.2861L3.6964 24.0004L9.45544 18.2341L15.1833 23.9592L18.8913 20.2465L3.73712 5.07324Z"
       fill="#53B9FF"
     />
     <path
+      class="logo"
       d="M13.1735 14.5215L9.45557 18.2341L15.1834 23.9593L18.8914 20.2466L13.1735 14.5215Z"
       fill="#119EFF"
     />
     <path
+      class="logo"
       d="M13.1735 14.5215L9.45557 18.2341L10.8868 19.6574L13.1735 14.5215Z"
       fill="black"
       fill-opacity="0.2"
     />
     <path
+      class="logo"
       fill-rule="evenodd"
       clip-rule="evenodd"
       d="M18.2409 9.46736L24 3.70106L20.2904 0L14.533 5.75471L8.80468 0.0291556L5.09668 3.74184L20.2509 18.9151L23.9589 15.2024L18.2409 9.46736Z"
       fill="#53B9FF"
     />
     <path
+      class="logo"
       d="M10.815 9.46751L14.533 5.75485L8.80468 0.0292969L5.09668 3.74198L10.815 9.46751Z"
       fill="#119EFF"
     />
     <path
+      class="logo"
       d="M10.8149 9.46738L14.5329 5.75473L13.1013 4.33105L10.8149 9.46738Z"
       fill="black"
       fill-opacity="0.2"

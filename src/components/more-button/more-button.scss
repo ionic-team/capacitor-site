@@ -16,6 +16,10 @@ more-button {
 
     transition: opacity 0.2s ease-out;
 
+    ion-icon {
+      color: var(--color, black);
+    }
+
     &:hover {
       opacity: 0.4;
     }

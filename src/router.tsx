@@ -22,7 +22,11 @@ export const Routes = () => (
       mapParams={staticState(getPage)}
       render={(_, data) => (
         <Fragment>
-          <SiteHeader />
+          <platform-bar
+            containerClass="heading-container"
+            productName="Capacitor"
+          />
+          <site-header class="heading-container" />
           <landing-page data={data} />
         </Fragment>
       )}
@@ -33,7 +37,11 @@ export const Routes = () => (
       mapParams={staticState(getAllBlogData)}
       render={(_, data) => (
         <Fragment>
-          <SiteHeader />
+          <platform-bar
+            containerClass="heading-container"
+            productName="Capacitor"
+          />
+          <site-header class="heading-container" />
           <blog-page data={data} />
         </Fragment>
       )}
@@ -44,7 +52,11 @@ export const Routes = () => (
       mapParams={staticState(getBlogData)}
       render={(_, data) => (
         <Fragment>
-          <SiteHeader />
+          <platform-bar
+            containerClass="heading-container"
+            productName="Capacitor"
+          />
+          <site-header class="heading-container" />
           <blog-post data={data} />
         </Fragment>
       )}
@@ -55,7 +67,11 @@ export const Routes = () => (
       mapParams={staticState(getPage)}
       render={(_, data) => (
         <Fragment>
-          <SiteHeader />
+          <platform-bar
+            containerClass="heading-container"
+            productName="Capacitor"
+          />
+          <site-header class="heading-container" />
           <community-page data={data} />
         </Fragment>
       )}
@@ -67,14 +83,28 @@ export const Routes = () => (
     </Route>
 
     <Route path="/cordova">
-      <SiteHeader />
+      <platform-bar
+        containerClass="heading-container"
+        productName="Capacitor"
+      />
+      <site-header class="heading-container" />
       <cordova-page />
     </Route>
 
-    <Route path="/enterprise">
-      <SiteHeader />
-      <capacitor-enterprise />
-    </Route>
+    <Route
+      path="/enterprise"
+      mapParams={staticState(getPage)}
+      render={(_, data) => (
+        <Fragment>
+          <platform-bar
+            containerClass="heading-container"
+            productName="Capacitor"
+          />
+          <site-header class="heading-container" theme="dark" sticky={false} />
+          <enterprise-page data={data} />
+        </Fragment>
+      )}
+    />
 
     <Route
       path={matchAny(['/docs/v3/:id*', '/docs/v3'])}
@@ -92,7 +122,11 @@ export const Routes = () => (
       path={match('/solution/:solutionId*')}
       render={({ solutionId }) => (
         <Fragment>
-          <SiteHeader />
+          <platform-bar
+            containerClass="heading-container"
+            productName="Capacitor"
+          />
+          <site-header class="heading-container" />
           <solution-page solutionId={solutionId} />
         </Fragment>
       )}
@@ -124,13 +158,6 @@ Router.on('change', (newUrl, _oldUrl) => {
   //   }, 50);
   // }
 });
-
-const SiteHeader = () => (
-  <Fragment>
-    <platform-bar containerClass="heading-container" productName="Capacitor" />
-    <site-header class="heading-container" />
-  </Fragment>
-);
 
 const docsPath = '/docs';
 const versionedDocsPath = '/docs/v3';
