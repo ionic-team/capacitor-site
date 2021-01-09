@@ -7,7 +7,7 @@ authorUrl: https://twitter.com/dwieeb
 description: TODO
 ---
 
-Today I'm thrilled to announce that Capacitor 3 is ready for public beta! The Capacitor team is looking forward to hearing feedback on the beta from our developer community. 💖
+Today I'm thrilled to announce that Capacitor 3 is ready for public beta! The Capacitor team is looking forward to hearing feedback on it from our developer community. 💖
 
 ## A New Milestone
 
