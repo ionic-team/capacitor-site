@@ -9,6 +9,11 @@ in-page-navigation internal-ad {
   visibility: hidden;
 }
 
+in-page-navigation .sticky {
+  position: sticky;
+  top: 5rem;
+}
+
 in-page-navigation .title {
   margin-block-end: var(--space-1);
   color: var(--c-indigo-50);
