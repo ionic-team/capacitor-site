@@ -11,7 +11,10 @@ in-page-navigation internal-ad {
 
 in-page-navigation .sticky {
   position: sticky;
-  top: 5rem;
+  top: 100px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 in-page-navigation .title {
