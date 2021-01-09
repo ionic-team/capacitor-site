@@ -7,15 +7,44 @@
 
   display: block;
   height: 64px;
-  position: sticky;
+  position: relative;
   top: 0;
-  background: #fff;
+  background: var(--c-background);
   transform: translate(0px);
   z-index: 1000;
   border-block-end: 1px solid rgba(0, 21, 58, 0.06);
 
   transition: box-shadow 0.2s ease-out;
 }
+
+:host(.sticky) {
+  position: sticky;
+}
+
+// #region ---------------------- DARK THEME --------------------------
+:host(.theme--dark) {
+  --c-background: black;
+  background: black;
+
+  .capacitor-logo {
+    path:not(.logo) {
+      fill: #fff;
+    }
+  }
+
+  a.ui-paragraph-4 {
+    color: #fff;
+  }
+
+  .separator {
+    background: var(--c-carbon-70);
+  }
+
+  more-button {
+    --color: #fff;
+  }
+}
+// #endregion ---------------------------------------------------------
 
 .docs-search-wrapper {
   margin-inline-start: var(--space-4);
