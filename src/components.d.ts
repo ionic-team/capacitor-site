@@ -25,6 +25,8 @@ export namespace Components {
     interface BlogPost {
         "data": BlogData;
     }
+    interface CapacitorEnterprise {
+    }
     interface CapacitorHubspotForm {
         "ajax": boolean;
         "formId"?: string;
@@ -148,6 +150,12 @@ declare global {
     var HTMLBlogPostElement: {
         prototype: HTMLBlogPostElement;
         new (): HTMLBlogPostElement;
+    };
+    interface HTMLCapacitorEnterpriseElement extends Components.CapacitorEnterprise, HTMLStencilElement {
+    }
+    var HTMLCapacitorEnterpriseElement: {
+        prototype: HTMLCapacitorEnterpriseElement;
+        new (): HTMLCapacitorEnterpriseElement;
     };
     interface HTMLCapacitorHubspotFormElement extends Components.CapacitorHubspotForm, HTMLStencilElement {
     }
@@ -311,6 +319,7 @@ declare global {
         "avc-code-type": HTMLAvcCodeTypeElement;
         "blog-page": HTMLBlogPageElement;
         "blog-post": HTMLBlogPostElement;
+        "capacitor-enterprise": HTMLCapacitorEnterpriseElement;
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
@@ -355,6 +364,8 @@ declare namespace LocalJSX {
     }
     interface BlogPost {
         "data"?: BlogData;
+    }
+    interface CapacitorEnterprise {
     }
     interface CapacitorHubspotForm {
         "ajax"?: boolean;
@@ -455,6 +466,7 @@ declare namespace LocalJSX {
         "avc-code-type": AvcCodeType;
         "blog-page": BlogPage;
         "blog-post": BlogPost;
+        "capacitor-enterprise": CapacitorEnterprise;
         "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
@@ -492,6 +504,7 @@ declare module "@stencil/core" {
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
+            "capacitor-enterprise": LocalJSX.CapacitorEnterprise & JSXBase.HTMLAttributes<HTMLCapacitorEnterpriseElement>;
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
