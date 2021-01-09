@@ -78,16 +78,15 @@ export const Routes = () => (
     />
 
     <Route path="/telemetry">
-      <SiteHeader />
-      <telemetry-page />
-    </Route>
-
-    <Route path="/cordova">
       <platform-bar
         containerClass="heading-container"
         productName="Capacitor"
       />
       <site-header class="heading-container" />
+      <telemetry-page />
+    </Route>
+
+    <Route path="/cordova">
       <cordova-page />
     </Route>
 
