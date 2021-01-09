@@ -61,6 +61,8 @@ span {
   position: sticky;
   top: 0;
   max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .menu-header {
