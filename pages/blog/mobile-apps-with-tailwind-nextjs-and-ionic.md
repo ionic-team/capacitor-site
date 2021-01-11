@@ -21,7 +21,7 @@ Confused by all the project names yet? Don't worry, I'll break down each part of
 
 ## Ionic Framework
 
-[Ionic Framework](https://ionicframework.com/) is a cross-platform, mobile-focused UI library for the web. It provides ~100 components that implement platform UI standards across iOS and Android. Things like toolbars, navigation/transitions, tabs, dialog windows, and more.
+[Ionic Framework](https://ionicframework.com/) is a cross-platform, mobile-focused UI library for the web. It provides ~100 components that implement platform UI standards across iOS and Android. Things like toolbars, navigation/transitions, tabs, dialog windows, and more. The big draw is those components work on the web and work in frameworks like React, Angular, Vue, or plain HTML/CSS/JS.
 
 Ionic Framework is highly popular and powers upwards of 15% of apps in the app store.
 
@@ -35,15 +35,19 @@ Capacitor provides a plugin layer and runtime that runs web apps natively on iOS
 
 As such, any popular web technologies and libraries can be used to build mobile apps with Capacitor, and then deploy the same apps with the same code to the web and desktop.
 
+## The Stack Visualized
+
+There are a lot of projects working in tadem to provide the full experience here. To visualize it, I've tried to overlay the different layers and how they correspond to each project in this diagram:
+
+![Diagram of layers in a Capacitor Tailwind Next.js Ionic app](/assets/img/blog/tailwind-nextjs-ionic/layers.png)
+
+In the diagram above, we can see that Capacitor is concerned with the app and device layer of the app, Next.js is concerned with the entire web/React app our code and UI is running in, then Ionic handles the navigation toolbar (including system title and toolbar buttons) as well as the bottom tabs.
+
 ## Introducing the Next.js + Tailwind CSS + Ionic Framework + Capacitor Starter
 
 Interested in building mobile apps that look and feel like this using standard HTML/CSS/JS and Tailwind?
 
-This starter comes with common Mobile UI controls built with Tailwind that can be easily customized to fit your app design.
-
-I've provided components like an App layout, Tabs, Draggable Menu, Draggable Modal, Lists, Buttons, Toggles,
-
-https://github.com/mlynch/nextjs-tailwind-capacitor/
+This starter also comes with a few small opinions around folder structure and state management.
 
 ## How do Tailwind and Ionic Framework work together?
 
