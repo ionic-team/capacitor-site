@@ -73,6 +73,7 @@ ul {
   .background {
     position: absolute;
     right: 0;
+    top: -40px;
     z-index: 1;
 
     @media (max-width: $screen-lg) {
@@ -87,6 +88,10 @@ ul {
     max-width: 35rem;
 
     padding-block-start: 6.25rem;
+
+    .ui-heading-1 {
+      font-size: clamp(3rem, 11vw, 4rem);
+    }
 
     .ui-paragraph {
       max-width: 31rem;
@@ -272,9 +277,9 @@ ul {
 
     .ui-button {
       color: #011830;
-      --c-background: #fff;
+      --c-background: rgba(255, 255, 255, 1);
       --c-focus: rgba(255, 255, 255, 0.6);
-      --c-background--hover: #fff;
+      --c-background--hover: rgba(255, 255, 255, 0.9);
       --c-background--active: #f2f2f2;
     }
   }
