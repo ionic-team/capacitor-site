@@ -160,13 +160,14 @@ Group permission strings in each `@Permission` by the distinct pieces of functio
 
 ### Implementing Permission Requests
 
-Defining the permissions in the `@CapacitorPlugin` annotation is all that is required to enable permission requesting and checking from the web app. You may also decide to provide a permission request beside your plugin functionality.
+Defining the permissions in the `@CapacitorPlugin` annotation is enough to enable functional `checkPermissions` and `requestPermissions` calls from a web app. However, you may also decide to wrap your own permission checks and requests around functionality in a plugin.
 
-Create a private callback method with the parameters `(PluginCall, Map<String, PermissionState>)` and provide the name of the method in the `@PluginMethod` annotation on the plugin call. When permissions are requested using the call object from the annotated plugin method, this callback will run when the request is complete.
+#### Callback
+
+Create a private callback method with the parameters `(PluginCall, Map<String, PermissionState>)` and provide the name of the method in the `@PluginMethod` annotation on the plugin call. This callback will run after the completion of a permission request initiated with the associated call object.
 
 ```diff-java
-- @PluginMethod()
-+ @PluginMethod(permissionCallback = "cameraPermissionsCallback")
++ @PluginMethod(permissionCallback = "cameraPermsCallback")
  public void takePhoto(PluginCall call) {
    if (needPermission()) {
 +    requestPermissionForAlias("camera", call);
@@ -175,13 +176,34 @@ Create a private callback method with the parameters `(PluginCall, Map<String, P
    }
  }
 
-+ private void cameraPermissionsCallback(PluginCall call, Map<String, PermissionState> permissionStatus) {
++ private void cameraPermsCallback(PluginCall call, Map<String, PermissionState> permissionStatus) {
 +   if (permissionStatus.get("camera") == PermissionState.GRANTED) {
 +     loadCamera(call);
 +   } else {
 +     call.reject("Permission is required to take a picture");
 +   }
-+}
++ }
+```
+
+#### Initiating a Permission Request
+
+Permission requests are initiated by calling one of the request helper methods.
+
+For a single permission `requestPermissionForAlias` may be used. Multiple aliases can be provided to `requestPermissionForAliases`. Use `requestAllPermissions` to request all permissions defined in the plugin annotation.
+
+```diff-java
+ @PluginMethod(permissionCallback = "cameraPermsCallback")
+ public void takePhoto(PluginCall call) {
+   if (needPermission()) {
++    requestAllPermissions(call);
+   } else {
+     loadCamera(call);
+   }
+ }
+
+ private void cameraPermsCallback(PluginCall call, Map<String, PermissionState> permissionStatus) {
+   ...
+ }
 ```
 
 ## Error Handling
