@@ -164,7 +164,7 @@ Defining the permissions in the `@CapacitorPlugin` annotation is enough to enabl
 
 #### Callback
 
-Create a private callback method with the parameters `(PluginCall, Map<String, PermissionState>)` and provide the name of the method in the `@PluginMethod` annotation on the plugin call. This callback will run after the completion of a permission request initiated with the associated call object.
+Create a private method with parameters `(PluginCall, Map<String, PermissionState>)` and provide the name of the method in the `@PluginMethod` annotation on the plugin call. This callback will run after the completion of a permission request initiated with the associated call object.
 
 ```diff-java
 + @PluginMethod(permissionCallback = "cameraPermsCallback")
