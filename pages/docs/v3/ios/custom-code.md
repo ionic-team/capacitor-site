@@ -31,7 +31,7 @@ import Capacitor
 public class EchoPlugin: CAPPlugin {
     @objc func echo(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
-        call.success(["value": value])
+        call.resolve(["value": value])
     }
 }
 ```
