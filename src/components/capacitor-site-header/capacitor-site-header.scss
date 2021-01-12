@@ -32,18 +32,16 @@
     }
   }
 
-  .routes {
-    a.ui-paragraph-4 {
-      color: #fff;
+  a.ui-paragraph-4 {
+    color: #fff;
 
-      &.active {
-        color: var(--c-carbon-30);
-        pointer-events: none;
+    &.active {
+      color: var(--c-carbon-30);
+      pointer-events: none;
 
-        @media screen and (max-width: $screen-xs-max) {
-          background: initial;
-          color: var(--c-capacitor-blue);
-        }
+      @media screen and (max-width: $screen-xs-max) {
+        background: initial;
+        color: var(--c-capacitor-blue);
       }
     }
   }
