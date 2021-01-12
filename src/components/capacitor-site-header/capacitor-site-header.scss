@@ -34,6 +34,21 @@
 
   a.ui-paragraph-4 {
     color: #fff;
+
+    &.active {
+      color: var(--c-carbon-30);
+      pointer-events: none;
+    }
+  }
+
+  .ui-button {
+    transition: background-color 0.2s ease-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1;
+    }
   }
 
   .separator {
@@ -109,6 +124,7 @@ app-menu-toggle {
 }
 
 a.ui-paragraph-4 {
+  font-weight: 500;
   display: flex;
   align-items: center;
   margin-inline-start: clamp(var(--space-0), 3.5vw, 24px);
@@ -116,12 +132,13 @@ a.ui-paragraph-4 {
 
   &.active {
     color: var(--c-cyan-100);
-    // font-weight: 500;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:hover {
     opacity: var(--link-hover-opacity);
   }
 }
