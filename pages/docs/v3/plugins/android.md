@@ -160,7 +160,7 @@ Group permission strings in each `@Permission` by the distinct pieces of functio
 
 ### Implementing Permission Requests
 
-Defining the permissions in the `@CapacitorPlugin` annotation is enough to enable functional `checkPermissions` and `requestPermissions` calls from a web app. However, you may also decide to wrap your own permission checks and requests around functionality in a plugin.
+Defining the permissions in the `@CapacitorPlugin` annotation is enough to enable functional `checkPermissions` and `requestPermissions` calls from a web app. However, it is best practice to wrap your own permission checks and requests around functionality in a plugin.
 
 #### Callback
 
@@ -204,6 +204,18 @@ For a single permission `requestPermissionForAlias` may be used. Multiple aliase
  private void cameraPermsCallback(PluginCall call, Map<String, PermissionState> permissionStatus) {
    ...
  }
+```
+
+### Manifest
+
+Place any requred [install-time](https://developer.android.com/guide/topics/permissions/overview#install-time) permissions in the `AndroidManifest.xml` of the plugin. Do not add runtime or "unsafe" permissions such as location that need users to grant individually. These will be added to the manifest of the Capacitor app instead.
+
+```diff-xml
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.mycompany.plugins.network">
+
++     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  </manifest>
 ```
 
 ## Error Handling
