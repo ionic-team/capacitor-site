@@ -186,7 +186,11 @@ export class SiteHeader implements ComponentInterface {
             >
               Blog
             </a>
-            <a class="ui-paragraph-4" href="/enterprise">
+            <a
+              {...href('/enterprise')}
+              class="ui-paragraph-4"
+              ref={el => (this.links.enterprise = el)}
+            >
               Enterprise
             </a>
           </nav>
