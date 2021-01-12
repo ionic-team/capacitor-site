@@ -88,7 +88,7 @@ export class EnterprisePage {
     const companies__list = [
       ['nationwide', '34x42'],
       ['target', '31x42'],
-      ['burger-king', '39x41'],
+      ['burger-king', '32x36'],
       ['home-depot', '34x34'],
       ['nbc', '51x30'],
       ['microsoft', '35x35'],
