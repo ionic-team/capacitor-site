@@ -70,12 +70,11 @@ docs-search {
 
     font-size: 17px;
 
-    color: #b2becd;
-
     z-index: 1;
 
     path {
-      fill: var(--c-carbon-50);
+      fill: var(--c-indigo-50);
+
       transition: fill 0.2s ease-out;
     }
   }
