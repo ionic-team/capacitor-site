@@ -41,7 +41,7 @@ export const Routes = () => (
             containerClass="heading-container"
             productName="Capacitor"
           />
-          <site-header class="heading-container" />
+          <site-header class="heading-container" sticky={true} />
           <blog-page data={data} />
         </Fragment>
       )}
@@ -56,7 +56,7 @@ export const Routes = () => (
             containerClass="heading-container"
             productName="Capacitor"
           />
-          <site-header class="heading-container" />
+          <site-header class="heading-container" sticky={true} />
           <blog-post data={data} />
         </Fragment>
       )}
@@ -71,7 +71,7 @@ export const Routes = () => (
             containerClass="heading-container"
             productName="Capacitor"
           />
-          <site-header class="heading-container" />
+          <site-header class="heading-container" sticky={true} />
           <community-page data={data} />
         </Fragment>
       )}
@@ -82,7 +82,7 @@ export const Routes = () => (
         containerClass="heading-container"
         productName="Capacitor"
       />
-      <site-header class="heading-container" />
+      <site-header class="heading-container" sticky={true} />
       <telemetry-page />
     </Route>
 
