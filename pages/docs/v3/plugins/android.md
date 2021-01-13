@@ -159,28 +159,24 @@ By defining permissions in your `@CapacitorPlugin` annotation, the `checkPermiss
 
 #### Permission Callback
 
-Create a void method with parameters `(PluginCall, Map<String, PermissionState>)`, then provide its name to the `permissionCallback` attribute of the `@PluginMethod` annotation in the plugin method. This callback will run after the completion of a permission request initiated with the associated call object.
+Create a void method with a single `PluginCall` parameter, then provide its name to the `permissionCallback` attribute of the `@PluginMethod` annotation in the plugin method. This callback will run after the completion of a permission request initiated with the associated call object.
 
 ```java
 @PluginMethod(permissionCallback = "cameraPermsCallback")
 public void takePhoto(PluginCall call) {
-  if (!hasCameraPermissions()) {
+  if (getPermissionState("camera") != PermissionState.GRANTED) {
     requestPermissionForAlias("camera", call);
   } else {
     loadCamera(call);
   }
 }
 
-private void cameraPermsCallback(PluginCall call, Map<String, PermissionState> permissionStatus) {
-  if (hasCameraPermissions()) {
+private void cameraPermsCallback(PluginCall call) {
+  if (getPermissionState("camera") == PermissionState.GRANTED) {
     loadCamera(call);
   } else {
     call.reject("Permission is required to take a picture");
   }
-}
-
-private boolean hasCameraPermissions() {
-  return getPermissionStates().get("camera") == PermissionState.GRANTED;
 }
 ```
 
@@ -200,7 +196,7 @@ For a single alias `requestPermissionForAlias` may be used. Multiple aliases can
    }
  }
 
- private void cameraPermsCallback(PluginCall call, Map<String, PermissionState> permissionStatus) {
+ private void cameraPermsCallback(PluginCall call) {
    ...
  }
 ```
@@ -212,7 +208,6 @@ Place any required [install-time](https://developer.android.com/guide/topics/per
 ```diff-xml
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.mycompany.plugins.network">
-
 +     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   </manifest>
 ```
