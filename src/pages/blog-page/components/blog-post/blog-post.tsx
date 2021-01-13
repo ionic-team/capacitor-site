@@ -13,6 +13,7 @@ import { href } from '@stencil/router';
 import parseISO from 'date-fns/parseISO';
 
 import { BlogData } from 'src/data.server/blog';
+import Helmet from '@stencil/helmet';
 
 @Component({
   tag: 'blog-post',
@@ -127,36 +128,43 @@ export class BlogPost {
     );
   }
 
-  // PostHelmet = () => {
-  //   const path = this.data!.featuredImage
-  //     ? `${router.url.origin}/assets/blog/meta/${this.data!.featuredImage}`
-  //     : `${router.url.origin}assets/img/appflow-og-img.jpg`;
+  PostHelmet = () => {
+    // const path = this.data!.featuredImage
+    //   ? `${window.location.origin}/assets/blog/meta/${this.data!.featuredImage}`
+    //   : `${router.url.origin}assets/img/appflow-og-img.jpg`;
 
-  //   return (
-  //     <Helmet>
-  //       <title>Appflow Blog - {this.data!.title}</title>
-  //       <meta name="description" content={this.data!.description} />
-  //       <meta
-  //         name="twitter:description"
-  //         content={`${this.data!.description} - Appflow Blog`}
-  //       />
-  //       <meta name="twitter:image" content={path} />
-  //       <meta property="og:image" content={path} />
-  //       <meta property="og:url" content={router.url.href} />
-  //     </Helmet>
-  //   );
-  // };
+    return (
+      <Helmet>
+        <title>Capacitor Blog - {this.data!.title}</title>
+        <meta name="description" content={this.data!.description} />
+        <meta
+          name="twitter:description"
+          content={`${this.data!.description} - Capacitor Blog`}
+        />
+        <meta
+          name="twitter:image"
+          content="https://capacitorjs.com/assets/img/og.png"
+        />
+        <meta
+          property="og:image"
+          content="https://capacitorjs.com/assets/img/og.png"
+        />
+        {/* <meta property="og:url" content={router.url.href} /> */}
+      </Helmet>
+    );
+  };
 
   PostDetail = () => {
     const {
       PostAuthor,
       PostAuthorLarge,
       MoreResources,
-      // PostHelmet,
+      PostHelmet,
       data,
     } = this;
 
     return [
+      <PostHelmet />,
       <blog-subnav
         breadcrumbs={[
           ['Blog', '/blog'],

@@ -10,15 +10,21 @@ import { JSXBase } from '@stencil/core/internal';
 export class BlogSocialActions {
   private twitterUrl = [
     'http://twitter.com/intent/tweet?',
-    `url=${encodeURIComponent(window.location.href)}`,
+    `url=${encodeURIComponent(
+      `${window.location.origin}${window.location.pathname}`,
+    )}`,
   ];
   private facebookUrl = [
     'https://www.facebook.com/sharer/sharer.php?',
-    `u=${encodeURIComponent(window.location.href)}`,
+    `u=${encodeURIComponent(
+      `${window.location.origin}${window.location.pathname}`,
+    )}`,
   ];
   private linkedInUrl = [
     'https://www.linkedin.com/sharing/share-offsite',
-    `?url=${encodeURIComponent(window.location.href)}`,
+    `?url=${encodeURIComponent(
+      `${window.location.origin}${window.location.pathname}`,
+    )}`,
   ];
 
   @Prop() post?: BlogData;
