@@ -4,7 +4,9 @@ slug: announcing-capacitor-3-0-beta
 date: 2021-01-08 08:00:00
 author: Dan Imhoff <dwieeb@gmail.com>
 authorUrl: https://twitter.com/dwieeb
-description: TODO
+description: Announcing Capacitor 3.0 Beta
+featuredImage: /assets/img/blog/v3-beta/cap-3-beta-img.png
+featuredImageAlt: Capacitor 3.0 Beta
 ---
 
 Today I'm thrilled to announce that Capacitor 3 is ready for public beta! The Capacitor team is looking forward to hearing feedback on it from our developer community. 💖
@@ -21,6 +23,8 @@ For 3.0, we are focusing our attention on these areas of improvement:
 - Developer experience and productivity
 
 Capacitor 3 is more than just the "next version" of Capacitor. It is a crucial milestone for the project: the core team has grown significantly since the 2.0 release and now has the bandwidth and experience necessary to dedicate more time to the community, more time for prototyping and innovation, more time for stability and maintenance, and more time to deliver on Capacitor's promise of making it easy to build web apps that run natively on iOS, Android, and the Web.
+
+<preview-end />
 
 The Capacitor team is ready to redefine what the web can do in mobile development for years to come. More than ever, we're interested in pulling ideas and inspiration from both web and native, combining both platforms in new, exciting ways that we're not quite ready to talk about yet. Stay tuned! We have a lot planned for 2021.
 
@@ -76,7 +80,7 @@ Here's a list of new and updated official plugins for Capacitor 3 (also availabl
 
 Updating to these new plugins should be as easy as installing the package and changing the import, with the exception of a few minor changes (see the upgrade guide below).
 
-```tsx
+```ts
 // OLD
 import { Plugins } from '@capacitor/core';
 const { Camera } = Plugins;
