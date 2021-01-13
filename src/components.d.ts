@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { BlogData } from "./data.server/blog";
+import { BlogData } from "src/data.server/blog";
 import { DocsData, DocsTemplate } from "./data.server/docs";
 import { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
 import { SiteHeader } from "./components/capacitor-site-header/capacitor-site-header";
@@ -19,11 +19,29 @@ export namespace Components {
     interface AvcCodeType {
         "typeId": string;
     }
+    interface BlogNewsletter {
+    }
     interface BlogPage {
         "data": BlogData[];
     }
+    interface BlogPagination {
+        "linkText": [string, string];
+        "rssIcon": boolean;
+    }
     interface BlogPost {
         "data": BlogData;
+        "preview"?: boolean;
+    }
+    interface BlogSearch {
+    }
+    interface BlogSocialActions {
+        "column": boolean;
+        "post"?: BlogData;
+    }
+    interface BlogSubnav {
+        "breadcrumbs": [string, string][];
+        "pagination": boolean;
+        "socialActions": boolean;
     }
     interface CapacitorHubspotForm {
         "ajax": boolean;
@@ -137,17 +155,47 @@ declare global {
         prototype: HTMLAvcCodeTypeElement;
         new (): HTMLAvcCodeTypeElement;
     };
+    interface HTMLBlogNewsletterElement extends Components.BlogNewsletter, HTMLStencilElement {
+    }
+    var HTMLBlogNewsletterElement: {
+        prototype: HTMLBlogNewsletterElement;
+        new (): HTMLBlogNewsletterElement;
+    };
     interface HTMLBlogPageElement extends Components.BlogPage, HTMLStencilElement {
     }
     var HTMLBlogPageElement: {
         prototype: HTMLBlogPageElement;
         new (): HTMLBlogPageElement;
     };
+    interface HTMLBlogPaginationElement extends Components.BlogPagination, HTMLStencilElement {
+    }
+    var HTMLBlogPaginationElement: {
+        prototype: HTMLBlogPaginationElement;
+        new (): HTMLBlogPaginationElement;
+    };
     interface HTMLBlogPostElement extends Components.BlogPost, HTMLStencilElement {
     }
     var HTMLBlogPostElement: {
         prototype: HTMLBlogPostElement;
         new (): HTMLBlogPostElement;
+    };
+    interface HTMLBlogSearchElement extends Components.BlogSearch, HTMLStencilElement {
+    }
+    var HTMLBlogSearchElement: {
+        prototype: HTMLBlogSearchElement;
+        new (): HTMLBlogSearchElement;
+    };
+    interface HTMLBlogSocialActionsElement extends Components.BlogSocialActions, HTMLStencilElement {
+    }
+    var HTMLBlogSocialActionsElement: {
+        prototype: HTMLBlogSocialActionsElement;
+        new (): HTMLBlogSocialActionsElement;
+    };
+    interface HTMLBlogSubnavElement extends Components.BlogSubnav, HTMLStencilElement {
+    }
+    var HTMLBlogSubnavElement: {
+        prototype: HTMLBlogSubnavElement;
+        new (): HTMLBlogSubnavElement;
     };
     interface HTMLCapacitorHubspotFormElement extends Components.CapacitorHubspotForm, HTMLStencilElement {
     }
@@ -309,8 +357,13 @@ declare global {
         "anchor-link": HTMLAnchorLinkElement;
         "app-menu-toggle": HTMLAppMenuToggleElement;
         "avc-code-type": HTMLAvcCodeTypeElement;
+        "blog-newsletter": HTMLBlogNewsletterElement;
         "blog-page": HTMLBlogPageElement;
+        "blog-pagination": HTMLBlogPaginationElement;
         "blog-post": HTMLBlogPostElement;
+        "blog-search": HTMLBlogSearchElement;
+        "blog-social-actions": HTMLBlogSocialActionsElement;
+        "blog-subnav": HTMLBlogSubnavElement;
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
@@ -350,11 +403,29 @@ declare namespace LocalJSX {
     interface AvcCodeType {
         "typeId"?: string;
     }
+    interface BlogNewsletter {
+    }
     interface BlogPage {
         "data"?: BlogData[];
     }
+    interface BlogPagination {
+        "linkText"?: [string, string];
+        "rssIcon"?: boolean;
+    }
     interface BlogPost {
         "data"?: BlogData;
+        "preview"?: boolean;
+    }
+    interface BlogSearch {
+    }
+    interface BlogSocialActions {
+        "column"?: boolean;
+        "post"?: BlogData;
+    }
+    interface BlogSubnav {
+        "breadcrumbs"?: [string, string][];
+        "pagination"?: boolean;
+        "socialActions"?: boolean;
     }
     interface CapacitorHubspotForm {
         "ajax"?: boolean;
@@ -453,8 +524,13 @@ declare namespace LocalJSX {
         "anchor-link": AnchorLink;
         "app-menu-toggle": AppMenuToggle;
         "avc-code-type": AvcCodeType;
+        "blog-newsletter": BlogNewsletter;
         "blog-page": BlogPage;
+        "blog-pagination": BlogPagination;
         "blog-post": BlogPost;
+        "blog-search": BlogSearch;
+        "blog-social-actions": BlogSocialActions;
+        "blog-subnav": BlogSubnav;
         "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
@@ -490,8 +566,13 @@ declare module "@stencil/core" {
             "anchor-link": LocalJSX.AnchorLink & JSXBase.HTMLAttributes<HTMLAnchorLinkElement>;
             "app-menu-toggle": LocalJSX.AppMenuToggle & JSXBase.HTMLAttributes<HTMLAppMenuToggleElement>;
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
+            "blog-newsletter": LocalJSX.BlogNewsletter & JSXBase.HTMLAttributes<HTMLBlogNewsletterElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
+            "blog-pagination": LocalJSX.BlogPagination & JSXBase.HTMLAttributes<HTMLBlogPaginationElement>;
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
+            "blog-search": LocalJSX.BlogSearch & JSXBase.HTMLAttributes<HTMLBlogSearchElement>;
+            "blog-social-actions": LocalJSX.BlogSocialActions & JSXBase.HTMLAttributes<HTMLBlogSocialActionsElement>;
+            "blog-subnav": LocalJSX.BlogSubnav & JSXBase.HTMLAttributes<HTMLBlogSubnavElement>;
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
