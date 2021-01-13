@@ -7,23 +7,12 @@ import {
   ResponsiveContainer,
 } from '@ionic-internal/ionic-ds';
 import { Components as DS } from '@ionic-internal/ionic-ds/dist/types/components';
-import Helmet from '@stencil/helmet';
 
 import { href } from '@stencil/router';
 
 import parseISO from 'date-fns/parseISO';
-import router from '../../../../router';
-import {
-  prismicDocToResource,
-  resourceTypeToPrismicType,
-} from 'src/utils/prismic/prismic';
-import {
-  getResourceTypeForParam,
-  typeToResourceType,
-} from 'src/utils/prismic/data';
+
 import { BlogData } from 'src/data.server/blog';
-import { Client } from 'src/data.server/prismic-configuration';
-import ResponsiveImage from 'src/components/ResponsiveImage/ResponsiveImage';
 
 @Component({
   tag: 'blog-post',
@@ -31,9 +20,6 @@ import ResponsiveImage from 'src/components/ResponsiveImage/ResponsiveImage';
   assetsDirs: ['assets'],
 })
 export class BlogPost {
-  // private client = Client();
-
-  // @Prop() slug!: string;
   @Prop() preview?: boolean = false;
   @Prop() data: BlogData;
 
@@ -234,9 +220,9 @@ export class BlogPost {
   };
 
   PostAuthor = () => {
-    const { date, authorImageName, authorName, authorUrl } = this.data!;
+    const { date, authorName, authorUrl } = this.data!;
     const dateString = parseISO(date);
-    const imageParts = authorImageName?.split('.');
+    // const imageParts = authorImageName?.split('.');
     // if (!imageParts || !imageParts[0] || !imageParts[1])
     //   return console.error(
     //     'Markdown Blog author image name not formatted correctly.  It should look like: max-lynch.png',

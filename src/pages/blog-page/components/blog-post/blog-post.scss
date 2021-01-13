@@ -82,11 +82,6 @@
 
       li {
         list-style: disc;
-        margin-inline-start: var(--space-9);
-
-        & + li {
-          padding-block-start: var(--space-3);
-        }
       }
 
       p + p {

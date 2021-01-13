@@ -38,7 +38,7 @@ export class BlogSubnav {
         sticky: this.sticky,
       }}
     >
-      <div class="subnav-wrapper | ui-container">
+      <div class="subnav-wrapper">
         <div class="content">
           <Breadcrumbs onClick={() => window.scrollTo(0, 0)}>
             {this.breadcrumbs.map(crumb => (
