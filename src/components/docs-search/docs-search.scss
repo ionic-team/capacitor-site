@@ -31,6 +31,7 @@ docs-search {
     }
   }
 
+  // #region ------------------------ DARK THEME ---------------------------
   &.theme--dark {
     border: 1px solid var(--c-carbon-70);
 
@@ -38,7 +39,7 @@ docs-search {
       border: 1px solid var(--c-carbon-50);
 
       .search-icon path {
-        fill: var(--c-carbon-50);
+        fill: var(--c-carbon-30);
       }
     }
 
@@ -48,6 +49,12 @@ docs-search {
 
       .search-icon path {
         fill: #fff;
+      }
+    }
+
+    .search-icon {
+      path {
+        fill: var(--c-carbon-50);
       }
     }
 
@@ -61,6 +68,7 @@ docs-search {
       color: #fff;
     }
   }
+  // #endregion ---------------------------------------------------------
 
   .search-icon {
     position: absolute;
