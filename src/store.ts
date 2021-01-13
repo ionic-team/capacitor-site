@@ -8,4 +8,10 @@ const { state } = createStore<State>({
   pageTheme: 'light',
 });
 
+export const defaults = {
+  title: 'Capacitor',
+  description: '',
+  meta_image: '',
+};
+
 export default state;
