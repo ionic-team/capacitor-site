@@ -50,14 +50,6 @@
       "destination": "/docs/v3/apis/screen-reader"
     },
     {
-      "source": "/docs/v3/apis/push-notifications",
-      "destination": "/docs/v3/apis/notifications"
-    },
-    {
-      "source": "/docs/v3/apis/local-notifications",
-      "destination": "/docs/v3/apis/notifications"
-    },
-    {
       "source": "/docs/v3/basics/utilities",
       "destination": "/docs/v3/core-apis/web"
     },
