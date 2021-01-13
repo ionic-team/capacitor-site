@@ -113,7 +113,9 @@ call.reject(exception.getLocalizedMessage(), null, exception);
 
 ## Permissions
 
-If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases and status interfaces yet, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
+If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern.
+
+Before following this section, make sure you've set up your permission aliases and status interfaces. If you haven't, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
 
 ### Annotation Changes
 
@@ -140,61 +142,58 @@ If your plugin has functionality on Android that requires permissions from the e
      ...
 ```
 
-Define the permissions element in the `@CapacitorPlugin` annotation. One or more `@Permission` elements can be defined inside this array, each containing zero or more Android permission strings. Each permission element should be given a short alias describing the purpose.
+Add the `permissions` attribute in the `@CapacitorPlugin` annotation, which is an array of one or more `@Permission` annotations. Each `@Permission` annotation contains zero or more Android permission `strings` and a short `alias` describing the purpose.
 
-Group permission strings in each `@Permission` by the distinct pieces of functionality of your plugin. If your plugin requires permissions in other platforms but not Android, then define the permission with the same alias but an empty array for `strings`. This causes the result of the permission request to automatically return as 'granted' for that permission alias.
+Group permission strings in each `@Permission` by the distinct pieces of functionality of your plugin.If your plugin requires permissions in other platforms but not Android, then define the permission with the same alias but an empty array for `strings`. This causes the result of the permission request to automatically return as 'granted' for that permission alias.
 
-```diff-java
- @CapacitorPlugin(
-     name = "FooBar",
-+    permissions = {
-+        @Permission(
-+            alias = "notifications",
-+            strings = {}
-+        )
-+    }
- )
- public class FooBarPlugin extends Plugin {
-     ...
+```java
+@Permission(
+    alias = "notifications",
+    strings = {}
+)
 ```
 
 ### Implementing Permission Requests
 
-Defining the permissions in the `@CapacitorPlugin` annotation is enough to enable functional `checkPermissions` and `requestPermissions` calls from a web app. However, it is best practice to wrap your own permission checks and requests around functionality in a plugin.
+By defining permissions in your `@CapacitorPlugin` annotation, the `checkPermissions()` and `requestPermissions()` methods should be fully functional. App developers will be able to manually request permissions as needed. However, it is considered best practice to wrap plugin functionality with automatic permission requests as well.
 
-#### Callback
+#### Permission Callback
 
-Create a private method with parameters `(PluginCall, Map<String, PermissionState>)` and provide the name of the method in the `@PluginMethod` annotation on the plugin call. This callback will run after the completion of a permission request initiated with the associated call object.
+Create a void method with parameters `(PluginCall, Map<String, PermissionState>)`, then provide its name to the `permissionCallback` attribute of the `@PluginMethod` annotation in the plugin method. This callback will run after the completion of a permission request initiated with the associated call object.
 
-```diff-java
-+ @PluginMethod(permissionCallback = "cameraPermsCallback")
- public void takePhoto(PluginCall call) {
-   if (needPermission()) {
-+    requestPermissionForAlias("camera", call);
-   } else {
-     loadCamera(call);
-   }
- }
+```java
+@PluginMethod(permissionCallback = "cameraPermsCallback")
+public void takePhoto(PluginCall call) {
+  if (!hasCameraPermissions()) {
+    requestPermissionForAlias("camera", call);
+  } else {
+    loadCamera(call);
+  }
+}
 
-+ private void cameraPermsCallback(PluginCall call, Map<String, PermissionState> permissionStatus) {
-+   if (permissionStatus.get("camera") == PermissionState.GRANTED) {
-+     loadCamera(call);
-+   } else {
-+     call.reject("Permission is required to take a picture");
-+   }
-+ }
+private void cameraPermsCallback(PluginCall call, Map<String, PermissionState> permissionStatus) {
+  if (hasCameraPermissions()) {
+    loadCamera(call);
+  } else {
+    call.reject("Permission is required to take a picture");
+  }
+}
+
+private boolean hasCameraPermissions() {
+  return getPermissionStates().get("camera") == PermissionState.GRANTED;
+}
 ```
 
 #### Initiating a Permission Request
 
 Permission requests are initiated by calling one of the request helper methods.
 
-For a single permission `requestPermissionForAlias` may be used. Multiple aliases can be provided to `requestPermissionForAliases`. Use `requestAllPermissions` to request all permissions defined in the plugin annotation.
+For a single alias `requestPermissionForAlias` may be used. Multiple aliases can be provided to `requestPermissionForAliases`. Use `requestAllPermissions` to request all permissions defined in the plugin annotation.
 
 ```diff-java
  @PluginMethod(permissionCallback = "cameraPermsCallback")
  public void takePhoto(PluginCall call) {
-   if (needPermission()) {
+   if (!hasRequiredPermissions()) {
 +    requestAllPermissions(call);
    } else {
      loadCamera(call);
@@ -208,7 +207,7 @@ For a single permission `requestPermissionForAlias` may be used. Multiple aliase
 
 ### Manifest
 
-Place any requred [install-time](https://developer.android.com/guide/topics/permissions/overview#install-time) permissions in the `AndroidManifest.xml` of the plugin. Do not add runtime or "unsafe" permissions such as location that need users to grant individually. These will be added to the manifest of the Capacitor app instead.
+Place any required [install-time](https://developer.android.com/guide/topics/permissions/overview#install-time) permissions in the `AndroidManifest.xml` of the plugin. Do not add runtime permissions (permissions that prompts users to accept). These should be added to the manifest of the Capacitor app instead, and your plugin should document any required runtime permissions.
 
 ```diff-xml
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
