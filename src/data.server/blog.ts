@@ -47,7 +47,7 @@ export const getBlogData: MapParamData = async ({ slug }) => {
 };
 
 const getFormattedData = async (slug: string, preview = false) => {
-  const opts = getParseOpts(preview);
+  const opts = getParseOpts(slug, preview);
   const blogPath = join(blogDir, slug);
   let results: BlogData = await parseMarkdown(blogPath, opts);
 
@@ -76,10 +76,10 @@ const getFormattedData = async (slug: string, preview = false) => {
 };
 
 const updateAnchors = (results: BlogData, slug: string) => {
-  let { ast, anchors } = results;
-  ast = ast.map((node: JsxAstNode) => updateAnchorJsx(node, slug));
+  const { anchors } = results;
+  // ast = ast.map((node: JsxAstNode) => updateAnchorJsx(node, slug));
 
-  anchors = anchors.map(({ text, href }) => {
+  results.anchors = anchors.map(({ text, href }) => {
     if (!href) return;
 
     return {
@@ -98,7 +98,7 @@ const updateAnchorJsx = (node: JsxAstNode, slug: string) => {
     const props = node[1];
 
     if (props.hasOwnProperty('href') && props.href.includes('$POST')) {
-      props.href = props.href.replace('$POST', `/blog/${slug}`);
+      node[1].href = props.href.replace('$POST', `/blog/${slug}`);
     }
 
     return node;
@@ -117,7 +117,7 @@ const hasPreviewMarker = (ast: JsxAstNode[]) => {
   return !!hasPreview;
 };
 
-const getParseOpts = (preview: boolean) => {
+const getParseOpts = (slug: string, preview: boolean) => {
   if (preview) {
     return {
       async beforeHtmlSerialize(frag: DocumentFragment) {
@@ -127,6 +127,7 @@ const getParseOpts = (preview: boolean) => {
           notInPreview.forEach(el => el.remove());
 
           hookUpDesignSystem(frag);
+          interpolatePostLink(frag, slug);
         }
       },
     };
@@ -135,6 +136,7 @@ const getParseOpts = (preview: boolean) => {
       headingAnchors: true,
       beforeHtmlSerialize(frag: DocumentFragment) {
         hookUpDesignSystem(frag);
+        interpolatePostLink(frag, slug);
       },
     };
   }
@@ -168,4 +170,12 @@ export const hookUpDesignSystem = (frag: DocumentFragment) => {
   });
 
   return frag;
+};
+
+export const interpolatePostLink = (frag: DocumentFragment, slug: string) => {
+  const links = frag.querySelectorAll('a');
+
+  links.forEach(link => {
+    link.href = link.href.replace('$POST', `/blog/${slug}`);
+  });
 };
