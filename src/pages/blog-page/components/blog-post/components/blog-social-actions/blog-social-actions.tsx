@@ -1,5 +1,4 @@
 import { Component, h, Host, Prop, State } from '@stencil/core';
-import Router from '../../../../../../router';
 import { BlogData } from 'src/data.server/blog';
 import { JSXBase } from '@stencil/core/internal';
 
@@ -11,15 +10,15 @@ import { JSXBase } from '@stencil/core/internal';
 export class BlogSocialActions {
   private twitterUrl = [
     'http://twitter.com/intent/tweet?',
-    `url=${encodeURIComponent(Router.path.toString())}`,
+    `url=${encodeURIComponent(window.location.href)}`,
   ];
   private facebookUrl = [
     'https://www.facebook.com/sharer/sharer.php?',
-    `u=${encodeURIComponent(Router.path.toString())}`,
+    `u=${encodeURIComponent(window.location.href)}`,
   ];
   private linkedInUrl = [
     'https://www.linkedin.com/sharing/share-offsite',
-    `?url=${encodeURIComponent(Router.path.toString())}`,
+    `?url=${encodeURIComponent(window.location.href)}`,
   ];
 
   @Prop() post?: BlogData;
