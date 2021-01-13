@@ -5,7 +5,7 @@ date: 2021-01-13 08:00:00
 author: Dan Imhoff <dwieeb@gmail.com>
 authorUrl: https://twitter.com/dwieeb
 description: Announcing Capacitor 3.0 Beta
-featuredImage: /assets/img/blog/v3-beta/cap-3-beta-img.png
+featuredImage: /v3-beta/cap-3-beta-img.png
 featuredImageAlt: Capacitor 3.0 Beta
 ---
 

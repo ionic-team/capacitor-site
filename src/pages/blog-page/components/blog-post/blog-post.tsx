@@ -14,6 +14,7 @@ import parseISO from 'date-fns/parseISO';
 
 import { BlogData } from 'src/data.server/blog';
 import Helmet from '@stencil/helmet';
+import ResponsiveImage from 'src/components/ResponsiveImage/ResponsiveImage';
 
 @Component({
   tag: 'blog-post',
@@ -158,6 +159,7 @@ export class BlogPost {
     const {
       PostAuthor,
       PostAuthorLarge,
+      PostFeaturedImage,
       MoreResources,
       PostHelmet,
       data,
@@ -183,7 +185,7 @@ export class BlogPost {
             {data!.title}
           </Heading>
           <PostAuthor post={data!} />
-          {/* <PostFeaturedImage preview={preview!} post={data!} /> */}
+          <PostFeaturedImage preview={this.preview} post={data} />
 
           <div class="post-content" innerHTML={data!.html} />
 
@@ -197,7 +199,7 @@ export class BlogPost {
   };
 
   PostPreview = () => {
-    const { PostAuthor } = this;
+    const { PostAuthor, PostFeaturedImage } = this;
 
     return (
       <article class="post">
@@ -211,7 +213,7 @@ export class BlogPost {
           <a {...href(`/blog/${this.data.slug}`)}>{this.data!.title}</a>
         </Heading>
         <PostAuthor />
-        {/* <PostFeaturedImage preview={preview!} post={this.data!} /> */}
+        <PostFeaturedImage preview={this.preview} post={this.data} />
 
         <div class="post-content" innerHTML={this.data!.html} />
 
@@ -308,50 +310,54 @@ export class BlogPost {
     ];
   };
 
-  // PostFeaturedImage = ({
-  //   post: { slug, featuredImage, featuredImageAlt },
-  //   preview,
-  // }: {
-  //   post: BlogData;
-  //   preview: boolean;
-  // }) => {
-  //   const imageParts = featuredImage?.split('.');
-  //   // if (!imageParts || !imageParts[0] || !imageParts[1])
-  //   //   return console.error(
-  //   //     'Markdown Blog featured image name not formatted correctly.  It should look like: what-is-mobile-ci-cd.png',
-  //   //   );
+  PostFeaturedImage = ({
+    post,
+    preview,
+  }: {
+    post: BlogData;
+    preview: boolean;
+  }) => {
+    if (!post.featuredImage) return null;
 
-  //   // const data = {
-  //   //   name: imageParts[0],
-  //   //   type: imageParts[1],
-  //   //   alt: featuredImageAlt,
-  //   // };
+    const imageParts = post.featuredImage?.split('.');
+    if (!imageParts || !imageParts[0] || !imageParts[1]) {
+      console.log(post);
+      return console.error(
+        'Markdown Blog featured image name not formatted correctly.  It should look like: what-is-mobile-ci-cd.png',
+      );
+    }
 
-  //   return (
-  //     <div class="featured-image-wrapper">
-  //       {preview ? (
-  //         <a {...href(`/blog/${slug}`)}>
-  //           <ResponsiveImage
-  //             {...data}
-  //             fallback
-  //             onClick={() => {
-  //               window.scrollTo(0, 0);
-  //             }}
-  //             class="featured-image"
-  //             dimensions="1600x840"
-  //             path={'/assets/blog/meta/'}
-  //           />
-  //         </a>
-  //       ) : (
-  //         <ResponsiveImage
-  //           {...data}
-  //           fallback
-  //           class="featured-image"
-  //           dimensions="1600x840"
-  //           path={'/assets/blog/meta/'}
-  //         />
-  //       )}
-  //     </div>
-  //   );
-  // };
+    const data = {
+      name: imageParts[0],
+      type: imageParts[1],
+      alt: post.featuredImageAlt,
+    };
+
+    return (
+      <div class="featured-image-wrapper">
+        {preview ? (
+          <a {...href(`/blog/${post.slug}`)}>
+            <ResponsiveImage
+              {...data}
+              fallback
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+              class="featured-image"
+              dimensions="1600x840"
+              path={'/assets/img/blog'}
+            />
+          </a>
+        ) : (
+          <ResponsiveImage
+            {...data}
+            fallback
+            class="featured-image"
+            dimensions="1600x840"
+            path={'/assets/img/blog'}
+          />
+        )}
+      </div>
+    );
+  };
 }
