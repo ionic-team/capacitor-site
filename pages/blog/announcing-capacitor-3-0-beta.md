@@ -1,7 +1,7 @@
 ---
 title: Announcing Capacitor 3.0 Beta
 slug: announcing-capacitor-3-0-beta
-date: 2021-01-08 08:00:00
+date: 2021-01-13 08:00:00
 author: Dan Imhoff <dwieeb@gmail.com>
 authorUrl: https://twitter.com/dwieeb
 description: Announcing Capacitor 3.0 Beta
