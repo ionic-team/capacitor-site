@@ -44,6 +44,19 @@ npx cap init
 
 > The `npx cap` command is how Capacitor is executed locally on the command-line in your project. [Learn more about the Capacitor CLI](/docs/cli).
 
+Finally, add an import to `@capacitor/core` to the TypeScript or JavaScript file that bootstraps your app. This will include the Capacitor JavaScript bridge into your app.
+
+For example, in a React app, add the following import to `src/index.tsx`:
+
+```diff-typescript
++import '@capacitor/core';
+ import React from 'react';
+ import ReactDOM from 'react-dom';
+ import App from './App';
+
+ ReactDOM.render(<App />, document.getElementById('root'));
+```
+
 ## Where to go next
 
 [Get started with iOS &#8250;](/docs/ios)
