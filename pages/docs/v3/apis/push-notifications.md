@@ -1,26 +1,43 @@
 ---
-title: Push Notifications
-description: Push Notifications API
-contributors:
-  - mlynch
-  - jcesarmobile
+title: Push Notifications Capacitor Plugin API
+description: The Push Notifications API provides access to native push notifications.
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/src/definitions.ts
 ---
 
-<plugin-platforms platforms="ios,android"></plugin-platforms>
+# @capacitor/push-notifications
 
-# Push Notifications
+The Push Notifications API provides access to native push notifications.
 
-The Push Notifications API provides methods for registering a device to receive notifications from a server, along with processing received notifications and responding to them. In contrast, the [Local Notifications](/docs/apis/local-notifications) API provides means for offline, local notification scheduling and processing.
+## Install
 
-## Enabling Push Notifications Capabilites
+```bash
+npm install @capacitor/push-notifications
+npx cap sync
+```
 
-On iOS you must enable Push Notifications Capabilities in your project to enable the Push Notifications plugin to work. To do so, go to the `Capabilities` section of the app project and switch the `Push Notifications` button from `OFF` to the `ON` position.
+## iOS
 
-This change adds the push capabilites to the app and creates an entitlements file in the project.
+On iOS you must enable the Push Notifications capability. See [Setting Capabilities](https://capacitorjs.com/docs/v3/ios/configuration#setting-capabilities) for instructions on how to enable the capability.
 
-![Enabling Push Notifications Capabilities](/assets/img/docs/ios/enable-push-capabilities.png)
+The Push Notification API uses [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) SDK for handling notifications.  See [Set up a Firebase Cloud Messaging client app on iOS](https://firebase.google.com/docs/cloud-messaging/ios/client) and follow the instructions for creating a Firebase project and registering your application.  Do not add the Firebase SDK to your app - the Push Notifications provides that for you.  All that is required is your Firebase project `GoogleService-Info.plist` file added to your Xcode project.
 
-On Android just download the app project's `google-services.json` file from the Firebase console, and place it in the  `projectName/android/app` folder.
+After setting up your Firebase project, add the following to your application AppDelegate.swift
+
+```swift
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+  NotificationCenter.default.post(name: .capacitorDidRegisterForRemoteNotifications, object: deviceToken)
+}
+
+func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+  NotificationCenter.default.post(name: .capacitorDidFailToRegisterForRemoteNotifications, object: error)
+}
+```
+
+## Android
+
+The Push Notification API uses [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) SDK for handling notifications.  See [Set up a Firebase Cloud Messaging client app on Android](https://firebase.google.com/docs/cloud-messaging/android/client) and follow the instructions for creating a Firebase project and registering your application.  There is no need to add the Firebase SDK to your app or edit your app manifest - the Push Notifications provides that for you.  All that is required is your Firebase project's `google-services.json` file added to the module (app-level) directory of your app.
+
+---
 
 ## Push Notifications icon
 
@@ -33,16 +50,6 @@ On Android, the Push Notifications icon with the appropriate name should be adde
 If no icon is specified Android will use the application icon, but push icon should be white pixels on a transparent backdrop. As the application icon is not usually like that, it will show a white square or circle. So it's recommended to provide the separate icon for Push Notifications.
 
 Android Studio has an icon generator you can use to create your Push Notifications icon.
-
-## Disabling Push Notifications plugin
-
-If you are not using Push Notifications in your project, when you submit the app to iTunes Connect, Apple will send you an email saying it has issues because of `Missing Push Notification Entitlement`. That happens because Capacitor includes the code for registering for push notifications and getting the token.
-
-Apple sends that mail just to make sure you didn't make a mistake and forgot to enable Push Notifications Capabilities in your app, but can safely ignore it if you are not using the Push Notifications plugin.
-
-In case you don't want to receive the mail, you can disable the Push Notifications plugin by removing `USE_PUSH` from `Active Compilation Conditions` in your project's Build Settings section.
-
-![Disable Push Notifications](/assets/img/docs/ios/disable-push-plugin.png)
 
 ## Push notifications appearance in foreground
 
@@ -63,34 +70,33 @@ An empty Array can be provided if none of the previous options are desired. `pus
 }
 ```
 
+---
+
+## API
+
 <docgen-index>
 
 * [`register()`](#register)
-* [`requestPermission()`](#requestpermission)
 * [`getDeliveredNotifications()`](#getdeliverednotifications)
 * [`removeDeliveredNotifications(...)`](#removedeliverednotifications)
 * [`removeAllDeliveredNotifications()`](#removealldeliverednotifications)
 * [`createChannel(...)`](#createchannel)
 * [`deleteChannel(...)`](#deletechannel)
 * [`listChannels()`](#listchannels)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
+* [`checkPermissions()`](#checkpermissions)
+* [`requestPermissions()`](#requestpermissions)
+* [`addListener('registration', ...)`](#addlistenerregistration-)
+* [`addListener('registrationError', ...)`](#addlistenerregistrationerror-)
+* [`addListener('pushNotificationReceived', ...)`](#addlistenerpushnotificationreceived-)
+* [`addListener('pushNotificationActionPerformed', ...)`](#addlistenerpushnotificationactionperformed-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
-
-## Example Guides
-
-[Using Push Notifications with Firebase in an Ionic Angular App](/docs/guides/push-notifications-firebase)
-
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-## API
 
 ### register()
 
@@ -99,24 +105,12 @@ register() => Promise<void>
 ```
 
 Register the app to receive push notifications.
-Will trigger registration event with the push token
-or registrationError if there was some problem.
-Doesn't prompt the user for notification permissions, use requestPermission() first.
 
---------------------
+This method will trigger the `'registration'` event with the push token or
+`'registrationError'` if there was a problem. It does prompt the user for
+notification permissions, use `requestPermissions()` first.
 
-
-### requestPermission()
-
-```typescript
-requestPermission() => Promise<NotificationPermissionResponse>
-```
-
-On iOS it prompts the user to allow displaying notifications
-and return if the permission was granted or not.
-On Android there is no such prompt, so just return as granted.
-
-**Returns:** <code>Promise&lt;<a href="#notificationpermissionresponse">NotificationPermissionResponse</a>&gt;</code>
+**Since:** 1.0.0
 
 --------------------
 
@@ -127,9 +121,11 @@ On Android there is no such prompt, so just return as granted.
 getDeliveredNotifications() => Promise<PushNotificationDeliveredList>
 ```
 
-Returns the notifications that are visible on the notifications screen.
+Get a list of notifications that are visible on the notifications screen.
 
 **Returns:** <code>Promise&lt;<a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a>&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -140,11 +136,13 @@ Returns the notifications that are visible on the notifications screen.
 removeDeliveredNotifications(delivered: PushNotificationDeliveredList) => Promise<void>
 ```
 
-Removes the specified notifications from the notifications screen.
+Remove the specified notifications from the notifications screen.
 
-| Param           | Type                                                                                    | Description                      |
-| --------------- | --------------------------------------------------------------------------------------- | -------------------------------- |
-| **`delivered`** | <code><a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a></code> | list of delivered notifications. |
+| Param           | Type                                                                                    |
+| --------------- | --------------------------------------------------------------------------------------- |
+| **`delivered`** | <code><a href="#pushnotificationdeliveredlist">PushNotificationDeliveredList</a></code> |
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -155,7 +153,9 @@ Removes the specified notifications from the notifications screen.
 removeAllDeliveredNotifications() => Promise<void>
 ```
 
-Removes all the notifications from the notifications screen.
+Remove all the notifications from the notifications screen.
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -163,14 +163,18 @@ Removes all the notifications from the notifications screen.
 ### createChannel(...)
 
 ```typescript
-createChannel(channel: NotificationChannel) => Promise<void>
+createChannel(channel: Channel) => Promise<void>
 ```
 
-On Android O or newer (SDK 26+) creates a notification channel.
+Create a notification channel.
 
-| Param         | Type                                                                | Description |
-| ------------- | ------------------------------------------------------------------- | ----------- |
-| **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> | to create.  |
+Only available on Android O or newer (SDK 26+).
+
+| Param         | Type                                        |
+| ------------- | ------------------------------------------- |
+| **`channel`** | <code><a href="#channel">Channel</a></code> |
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -178,14 +182,18 @@ On Android O or newer (SDK 26+) creates a notification channel.
 ### deleteChannel(...)
 
 ```typescript
-deleteChannel(channel: NotificationChannel) => Promise<void>
+deleteChannel(channel: Channel) => Promise<void>
 ```
 
-On Android O or newer (SDK 26+) deletes a notification channel.
+Delete a notification channel.
 
-| Param         | Type                                                                | Description |
-| ------------- | ------------------------------------------------------------------- | ----------- |
-| **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> | to delete.  |
+Only available on Android O or newer (SDK 26+).
+
+| Param         | Type                                        |
+| ------------- | ------------------------------------------- |
+| **`channel`** | <code><a href="#channel">Channel</a></code> |
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -193,86 +201,130 @@ On Android O or newer (SDK 26+) deletes a notification channel.
 ### listChannels()
 
 ```typescript
-listChannels() => Promise<NotificationChannelList>
+listChannels() => Promise<ListChannelsResult>
 ```
 
-On Android O or newer (SDK 26+) list the available notification channels.
+List the available notification channels.
 
-**Returns:** <code>Promise&lt;<a href="#notificationchannellist">NotificationChannelList</a>&gt;</code>
+Only available on Android O or newer (SDK 26+).
+
+**Returns:** <code>Promise&lt;<a href="#listchannelsresult">ListChannelsResult</a>&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
 
-### addListener(...)
+### checkPermissions()
+
+```typescript
+checkPermissions() => Promise<PermissionStatus>
+```
+
+Check permission to receive push notifications.
+
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### requestPermissions()
+
+```typescript
+requestPermissions() => Promise<PermissionStatus>
+```
+
+Request permission to receive push notifications.
+
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### addListener('registration', ...)
 
 ```typescript
 addListener(eventName: 'registration', listenerFunc: (token: PushNotificationToken) => void) => PluginListenerHandle
 ```
 
-Event called when the push notification registration finished without problems.
+Called when the push notification registration finishes without problems.
+
 Provides the push notification token.
 
-| Param              | Type                                                | Description                   |
-| ------------------ | --------------------------------------------------- | ----------------------------- |
-| **`eventName`**    | <code>"registration"</code>                         | registration.                 |
-| **`listenerFunc`** | <code>(token: PushNotificationToken) => void</code> | callback with the push token. |
+| Param              | Type                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'registration'</code>                                                                 |
+| **`listenerFunc`** | <code>(token: <a href="#pushnotificationtoken">PushNotificationToken</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+**Since:** 1.0.0
 
 --------------------
 
 
-### addListener(...)
+### addListener('registrationError', ...)
 
 ```typescript
 addListener(eventName: 'registrationError', listenerFunc: (error: any) => void) => PluginListenerHandle
 ```
 
-Event called when the push notification registration finished with problems.
+Called when the push notification registration finished with problems.
+
 Provides an error with the registration problem.
 
-| Param              | Type                              | Description                           |
-| ------------------ | --------------------------------- | ------------------------------------- |
-| **`eventName`**    | <code>"registrationError"</code>  | registrationError.                    |
-| **`listenerFunc`** | <code>(error: any) => void</code> | callback with the registration error. |
+| Param              | Type                                 |
+| ------------------ | ------------------------------------ |
+| **`eventName`**    | <code>'registrationError'</code>     |
+| **`listenerFunc`** | <code>(error: any) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+**Since:** 1.0.0
 
 --------------------
 
 
-### addListener(...)
+### addListener('pushNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'pushNotificationReceived', listenerFunc: (notification: PushNotification) => void) => PluginListenerHandle
+addListener(eventName: 'pushNotificationReceived', listenerFunc: (notification: PushNotificationSchema) => void) => PluginListenerHandle
 ```
 
-Event called when the device receives a push notification.
+Called when the device receives a push notification.
 
-| Param              | Type                                                  | Description                              |
-| ------------------ | ----------------------------------------------------- | ---------------------------------------- |
-| **`eventName`**    | <code>"pushNotificationReceived"</code>               | pushNotificationReceived.                |
-| **`listenerFunc`** | <code>(notification: PushNotification) => void</code> | callback with the received notification. |
+| Param              | Type                                                                                                 |
+| ------------------ | ---------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'pushNotificationReceived'</code>                                                              |
+| **`listenerFunc`** | <code>(notification: <a href="#pushnotificationschema">PushNotificationSchema</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+**Since:** 1.0.0
 
 --------------------
 
 
-### addListener(...)
+### addListener('pushNotificationActionPerformed', ...)
 
 ```typescript
 addListener(eventName: 'pushNotificationActionPerformed', listenerFunc: (notification: PushNotificationActionPerformed) => void) => PluginListenerHandle
 ```
 
-Event called when an action is performed on a pusn notification.
+Called when an action is performed on a push notification.
 
-| Param              | Type                                                                 | Description                            |
-| ------------------ | -------------------------------------------------------------------- | -------------------------------------- |
-| **`eventName`**    | <code>"pushNotificationActionPerformed"</code>                       | pushNotificationActionPerformed.       |
-| **`listenerFunc`** | <code>(notification: PushNotificationActionPerformed) => void</code> | callback with the notification action. |
+| Param              | Type                                                                                                                   |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'pushNotificationActionPerformed'</code>                                                                         |
+| **`listenerFunc`** | <code>(notification: <a href="#pushnotificationactionperformed">PushNotificationActionPerformed</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -285,85 +337,95 @@ removeAllListeners() => void
 
 Remove all native listeners for this plugin.
 
+**Since:** 1.0.0
+
 --------------------
 
 
 ### Interfaces
 
 
-#### NotificationPermissionResponse
-
-| Prop          | Type                 |
-| ------------- | -------------------- |
-| **`granted`** | <code>boolean</code> |
-
-
 #### PushNotificationDeliveredList
 
-| Prop                | Type                            |
-| ------------------- | ------------------------------- |
-| **`notifications`** | <code>PushNotification[]</code> |
+| Prop                | Type                                  | Since |
+| ------------------- | ------------------------------------- | ----- |
+| **`notifications`** | <code>PushNotificationSchema[]</code> | 1.0.0 |
 
 
-#### PushNotification
+#### PushNotificationSchema
 
-| Prop               | Type                 | Description                                                                                                      |
-| ------------------ | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **`title`**        | <code>string</code>  |                                                                                                                  |
-| **`subtitle`**     | <code>string</code>  |                                                                                                                  |
-| **`body`**         | <code>string</code>  |                                                                                                                  |
-| **`id`**           | <code>string</code>  |                                                                                                                  |
-| **`badge`**        | <code>number</code>  |                                                                                                                  |
-| **`notification`** | <code>any</code>     |                                                                                                                  |
-| **`data`**         | <code>any</code>     |                                                                                                                  |
-| **`click_action`** | <code>string</code>  |                                                                                                                  |
-| **`link`**         | <code>string</code>  |                                                                                                                  |
-| **`group`**        | <code>string</code>  | Android only: set the group identifier for notification grouping, like threadIdentifier on iOS.                  |
-| **`groupSummary`** | <code>boolean</code> | Android only: designate this notification as the summary for a group (should be used with the `group` property). |
-
-
-#### NotificationChannel
-
-| Prop              | Type                               |
-| ----------------- | ---------------------------------- |
-| **`id`**          | <code>string</code>                |
-| **`name`**        | <code>string</code>                |
-| **`description`** | <code>string</code>                |
-| **`sound`**       | <code>string</code>                |
-| **`importance`**  | <code>1 \| 2 \| 5 \| 4 \| 3</code> |
-| **`visibility`**  | <code>0 \| 1 \| -1</code>          |
-| **`lights`**      | <code>boolean</code>               |
-| **`lightColor`**  | <code>string</code>                |
-| **`vibration`**   | <code>boolean</code>               |
+| Prop               | Type                 | Description                                                                                                         | Since |
+| ------------------ | -------------------- | ------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`title`**        | <code>string</code>  | The notification title.                                                                                             | 1.0.0 |
+| **`subtitle`**     | <code>string</code>  | The notification subtitle.                                                                                          | 1.0.0 |
+| **`body`**         | <code>string</code>  | The main text payload for the notification.                                                                         | 1.0.0 |
+| **`id`**           | <code>string</code>  | The notification identifier.                                                                                        | 1.0.0 |
+| **`badge`**        | <code>number</code>  | The number to display for the app icon badge.                                                                       | 1.0.0 |
+| **`notification`** | <code>any</code>     |                                                                                                                     | 1.0.0 |
+| **`data`**         | <code>any</code>     |                                                                                                                     | 1.0.0 |
+| **`click_action`** | <code>string</code>  |                                                                                                                     | 1.0.0 |
+| **`link`**         | <code>string</code>  |                                                                                                                     | 1.0.0 |
+| **`group`**        | <code>string</code>  | Set the group identifier for notification grouping Only available on Android. Works like `threadIdentifier` on iOS. | 1.0.0 |
+| **`groupSummary`** | <code>boolean</code> | Designate this notification as the summary for an associated `group`. Only available on Android.                    | 1.0.0 |
 
 
-#### NotificationChannelList
+#### Channel
 
-| Prop           | Type                               |
-| -------------- | ---------------------------------- |
-| **`channels`** | <code>NotificationChannel[]</code> |
+| Prop              | Type                               | Description                                                                                                                                                                                                                                                | Since |
+| ----------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`id`**          | <code>string</code>                | The channel identifier.                                                                                                                                                                                                                                    | 1.0.0 |
+| **`name`**        | <code>string</code>                | The human-friendly name of this channel (presented to the user).                                                                                                                                                                                           | 1.0.0 |
+| **`description`** | <code>string</code>                | The description of this channel (presented to the user).                                                                                                                                                                                                   | 1.0.0 |
+| **`sound`**       | <code>string</code>                | The sound that should be played for notifications posted to this channel. Notification channels with an importance of at least `3` should have a sound. The file name of a sound file should be specified relative to the android app `res/raw` directory. | 1.0.0 |
+| **`importance`**  | <code>1 \| 2 \| 5 \| 4 \| 3</code> | The level of interruption for notifications posted to this channel.                                                                                                                                                                                        | 1.0.0 |
+| **`visibility`**  | <code>0 \| 1 \| -1</code>          | The visibility of notifications posted to this channel. This setting is for whether notifications posted to this channel appear on the lockscreen or not, and if so, whether they appear in a redacted form.                                               | 1.0.0 |
+| **`lights`**      | <code>boolean</code>               | Whether notifications posted to this channel should display notification lights, on devices that support it.                                                                                                                                               | 1.0.0 |
+| **`lightColor`**  | <code>string</code>                | The light color for notifications posted to this channel. Only supported if lights are enabled on this channel and the device supports it. Supported color formats are `#RRGGBB` and `#RRGGBBAA`.                                                          | 1.0.0 |
+| **`vibration`**   | <code>boolean</code>               | Whether notifications posted to this channel should vibrate.                                                                                                                                                                                               | 1.0.0 |
+
+
+#### ListChannelsResult
+
+| Prop           | Type                   | Since |
+| -------------- | ---------------------- | ----- |
+| **`channels`** | <code>Channel[]</code> | 1.0.0 |
+
+
+#### PermissionStatus
+
+| Prop          | Type                                                        | Since |
+| ------------- | ----------------------------------------------------------- | ----- |
+| **`receive`** | <code><a href="#permissionstate">PermissionState</a></code> | 1.0.0 |
 
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
 
 #### PushNotificationToken
 
-| Prop        | Type                |
-| ----------- | ------------------- |
-| **`value`** | <code>string</code> |
+| Prop        | Type                | Since |
+| ----------- | ------------------- | ----- |
+| **`value`** | <code>string</code> | 1.0.0 |
 
 
 #### PushNotificationActionPerformed
 
-| Prop               | Type                                                          |
-| ------------------ | ------------------------------------------------------------- |
-| **`actionId`**     | <code>string</code>                                           |
-| **`inputValue`**   | <code>string</code>                                           |
-| **`notification`** | <code><a href="#pushnotification">PushNotification</a></code> |
+| Prop               | Type                                                                      | Since |
+| ------------------ | ------------------------------------------------------------------------- | ----- |
+| **`actionId`**     | <code>string</code>                                                       | 1.0.0 |
+| **`inputValue`**   | <code>string</code>                                                       | 1.0.0 |
+| **`notification`** | <code><a href="#pushnotificationschema">PushNotificationSchema</a></code> | 1.0.0 |
+
+
+### Type Aliases
+
+
+#### PermissionState
+
+<code>'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'</code>
 
 </docgen-api>
