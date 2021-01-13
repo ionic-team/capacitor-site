@@ -26,6 +26,7 @@ export class BlogSocialActions {
   //     `${window.location.origin}${window.location.pathname}`,
   //   )}`,
   // ];
+  //
 
   @Prop() post?: BlogData;
   @Prop() column: boolean = false;
