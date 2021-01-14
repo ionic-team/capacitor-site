@@ -147,6 +147,8 @@ I cannot emphasize how proud I am of this release and especially the team that m
 
 <div align="center">
 
-## [Join the discussion on the Ionic Forum!](https://forum.ionicframework.com/t/announcing-capacitor-3-0-beta/202858)
+<blog-forum-link href="https://forum.ionicframework.com/t/announcing-capacitor-3-0-beta/202858">
+  👋 Join the discussion on the Forum
+</blog-forum-link>
 
 </div>

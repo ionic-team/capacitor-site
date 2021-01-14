@@ -19,6 +19,9 @@ export namespace Components {
     interface AvcCodeType {
         "typeId": string;
     }
+    interface BlogForumLink {
+        "href"?: string;
+    }
     interface BlogNewsletter {
     }
     interface BlogPage {
@@ -154,6 +157,12 @@ declare global {
     var HTMLAvcCodeTypeElement: {
         prototype: HTMLAvcCodeTypeElement;
         new (): HTMLAvcCodeTypeElement;
+    };
+    interface HTMLBlogForumLinkElement extends Components.BlogForumLink, HTMLStencilElement {
+    }
+    var HTMLBlogForumLinkElement: {
+        prototype: HTMLBlogForumLinkElement;
+        new (): HTMLBlogForumLinkElement;
     };
     interface HTMLBlogNewsletterElement extends Components.BlogNewsletter, HTMLStencilElement {
     }
@@ -357,6 +366,7 @@ declare global {
         "anchor-link": HTMLAnchorLinkElement;
         "app-menu-toggle": HTMLAppMenuToggleElement;
         "avc-code-type": HTMLAvcCodeTypeElement;
+        "blog-forum-link": HTMLBlogForumLinkElement;
         "blog-newsletter": HTMLBlogNewsletterElement;
         "blog-page": HTMLBlogPageElement;
         "blog-pagination": HTMLBlogPaginationElement;
@@ -402,6 +412,9 @@ declare namespace LocalJSX {
     }
     interface AvcCodeType {
         "typeId"?: string;
+    }
+    interface BlogForumLink {
+        "href"?: string;
     }
     interface BlogNewsletter {
     }
@@ -524,6 +537,7 @@ declare namespace LocalJSX {
         "anchor-link": AnchorLink;
         "app-menu-toggle": AppMenuToggle;
         "avc-code-type": AvcCodeType;
+        "blog-forum-link": BlogForumLink;
         "blog-newsletter": BlogNewsletter;
         "blog-page": BlogPage;
         "blog-pagination": BlogPagination;
@@ -566,6 +580,7 @@ declare module "@stencil/core" {
             "anchor-link": LocalJSX.AnchorLink & JSXBase.HTMLAttributes<HTMLAnchorLinkElement>;
             "app-menu-toggle": LocalJSX.AppMenuToggle & JSXBase.HTMLAttributes<HTMLAppMenuToggleElement>;
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
+            "blog-forum-link": LocalJSX.BlogForumLink & JSXBase.HTMLAttributes<HTMLBlogForumLinkElement>;
             "blog-newsletter": LocalJSX.BlogNewsletter & JSXBase.HTMLAttributes<HTMLBlogNewsletterElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
             "blog-pagination": LocalJSX.BlogPagination & JSXBase.HTMLAttributes<HTMLBlogPaginationElement>;
