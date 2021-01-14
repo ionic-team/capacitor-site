@@ -142,6 +142,15 @@ export class BlogPost {
           content={`${this.data!.description} - Capacitor Blog`}
         />
         <meta name="twitter:image" content={path} />
+        <meta
+          property="og:url"
+          content={`${window.location.origin}${window.location.pathname}`}
+        />
+        <meta property="og:title" content={this.data.title} />
+        <meta
+          property="og:description"
+          content={`${this.data.description} - Capacitor Blog`}
+        />
         <meta property="og:image" content={path} />
         {/* <meta property="og:url" content={router.url.href} /> */}
       </Helmet>
