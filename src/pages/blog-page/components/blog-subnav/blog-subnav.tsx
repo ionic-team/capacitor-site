@@ -41,11 +41,16 @@ export class BlogSubnav {
       <div class="subnav-wrapper">
         <div class="content">
           <Breadcrumbs onClick={() => window.scrollTo(0, 0)}>
-            {this.breadcrumbs.map(crumb => (
+            {this.breadcrumbs.map((crumb, i) => (
               <li>
-                <a class="ui-heading-5" {...href(`${crumb[1]}`)}>
-                  {crumb[0]}
-                </a>
+                {i !== this.breadcrumbs.length - 1 ? (
+                  <a class="ui-heading-5" {...href(`${crumb[1]}`)}>
+                    <span class="arrow">&lt;- </span>
+                    {crumb[0]}
+                  </a>
+                ) : (
+                  crumb[0]
+                )}
               </li>
             ))}
           </Breadcrumbs>

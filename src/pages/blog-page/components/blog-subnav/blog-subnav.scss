@@ -23,9 +23,14 @@
   }
 
   li {
+    font-weight: 500;
     display: flex;
     align-items: center;
     white-space: nowrap;
+
+    a {
+      font-weight: inherit;
+    }
 
     &:last-of-type {
       overflow: hidden;

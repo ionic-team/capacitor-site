@@ -3,7 +3,6 @@ import {
   Heading,
   Paragraph,
   DateTime,
-  Breakpoint,
   ResponsiveContainer,
 } from '@ionic-internal/ionic-ds';
 import { Components as DS } from '@ionic-internal/ionic-ds/dist/types/components';
@@ -164,16 +163,16 @@ export class BlogPost {
       <blog-subnav
         breadcrumbs={[
           ['Blog', '/blog'],
-          [data?.title!, `/${data.slug}`],
+          [data?.title!, `/blog/${data.slug}`],
         ]}
       />,
       <ResponsiveContainer>
         <article class="post">
           {/* <PostHelmet /> */}
 
-          <Breakpoint md={true} class="sticky-wrapper">
+          {/* <Breakpoint md={true} class="sticky-wrapper">
             <blog-social-actions post={data} column class="top" />
-          </Breakpoint>
+          </Breakpoint> */}
 
           <Heading class="ui-theme--editorial" level={1}>
             {data!.title}
@@ -183,7 +182,7 @@ export class BlogPost {
 
           <div class="post-content" innerHTML={data!.html} />
 
-          <blog-social-actions post={data} class="bottom" />
+          {/* <blog-social-actions post={data} class="bottom" /> */}
           <PostAuthorLarge post={data!} />
           <MoreResources />
           {/* <disqus-comments url={`https://useappflow.com/blog/${post.slug}`} siteId="ionic"/> */}
