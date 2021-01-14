@@ -1,7 +1,7 @@
 ---
 title: Announcing Capacitor 3.0 Beta
 slug: announcing-capacitor-3-0-beta
-date: 2021-01-13 08:00:00
+date: 2021-01-14 08:00:00
 author: Dan Imhoff <dwieeb@gmail.com>
 authorUrl: https://twitter.com/dwieeb
 description: Announcing Capacitor 3.0 Beta
@@ -141,4 +141,12 @@ I cannot emphasize how proud I am of this release and especially the team that m
 
 <div align="center">
   <img width="224" height="224" src="https://user-images.githubusercontent.com/236501/104073592-f4f2f300-51c2-11eb-9cb6-20dff5043338.gif" />
+</div>
+
+<br />
+
+<div align="center">
+
+## [Join the discussion on the Ionic Forum!](https://forum.ionicframework.com/t/announcing-capacitor-3-0-beta/202858)
+
 </div>
