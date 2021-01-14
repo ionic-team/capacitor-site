@@ -123,6 +123,13 @@ const getParseOpts = (slug: string, preview: boolean) => {
       async beforeHtmlSerialize(frag: DocumentFragment) {
         if (frag.querySelector('preview-end')) {
           const notInPreview = frag.querySelectorAll('preview-end ~ *');
+          // const h1s = frag.querySelectorAll('h1');
+
+          // h1s.forEach(h1 => {
+          //   const h2 = frag.createElement('h2');
+          //   h2.innerHTML = h1.innerHTML;
+          //   h1.parentNode.replaceChild(h1, h2);
+          // });
 
           notInPreview.forEach(el => el.remove());
 
@@ -135,6 +142,9 @@ const getParseOpts = (slug: string, preview: boolean) => {
     return {
       headingAnchors: true,
       beforeHtmlSerialize(frag: DocumentFragment) {
+        const previewSelector = frag.querySelector('preview-end');
+        previewSelector?.remove();
+
         hookUpDesignSystem(frag);
         interpolatePostLink(frag, slug);
       },
