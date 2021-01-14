@@ -10,10 +10,6 @@
       font-weight: bold !important;
     }
 
-    a:visited {
-      color: var(--c-capacitor-blue);
-    }
-
     position: relative;
     max-width: 736px;
     margin-inline-start: auto;
@@ -138,7 +134,6 @@
 
     .continue-reading {
       margin-block-start: 30px;
-      color: var(--c-lavender-70);
     }
   }
 }
