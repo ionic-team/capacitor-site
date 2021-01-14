@@ -35,7 +35,8 @@ export class BlogSubnav {
   render = () => (
     <Host
       class={{
-        sticky: this.sticky,
+        'sticky': this.sticky,
+        'ui-container': true,
       }}
     >
       <div class="subnav-wrapper">
