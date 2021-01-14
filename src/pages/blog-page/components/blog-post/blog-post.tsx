@@ -130,9 +130,9 @@ export class BlogPost {
   }
 
   PostHelmet = () => {
-    // const path = this.data!.featuredImage
-    //   ? `${window.location.origin}/assets/blog/meta/${this.data!.featuredImage}`
-    //   : `${router.url.origin}assets/img/appflow-og-img.jpg`;
+    const path = this.data!.featuredImage
+      ? `${window.location.origin}/assets/img/blog${this.data!.featuredImage}`
+      : `https://capacitorjs.com/assets/img/og.png`;
 
     return (
       <Helmet>
@@ -142,14 +142,8 @@ export class BlogPost {
           name="twitter:description"
           content={`${this.data!.description} - Capacitor Blog`}
         />
-        <meta
-          name="twitter:image"
-          content="https://capacitorjs.com/assets/img/og.png"
-        />
-        <meta
-          property="og:image"
-          content="https://capacitorjs.com/assets/img/og.png"
-        />
+        <meta name="twitter:image" content={path} />
+        <meta property="og:image" content={path} />
         {/* <meta property="og:url" content={router.url.href} /> */}
       </Helmet>
     );
