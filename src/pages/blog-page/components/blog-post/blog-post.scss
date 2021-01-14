@@ -76,6 +76,10 @@
         font-size: 16px;
       }
 
+      .ui-paragraph {
+        font-size: 1.125rem;
+      }
+
       .paragraph-intro {
         font-family: var(--p2-font, var(--f-family-text));
         font-size: var(--p2-size, var(--f-size-6));
@@ -133,7 +137,14 @@
     }
 
     .continue-reading {
+      color: var(--c-capacitor-blue);
       margin-block-start: 30px;
+
+      transition: opacity 0.3s ease-out;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }
