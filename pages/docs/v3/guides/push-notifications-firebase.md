@@ -311,7 +311,7 @@ end
 Your `Podfile` should look something like this:
 
 ```ruby
-platform :ios, '11.0'
+platform :ios, '12.0'
 use_frameworks!
 
 # workaround to avoid Xcode caching of Pods that requires
@@ -385,13 +385,13 @@ If you would like to recieve the firebase FCM token from iOS instead of the raw 
 ```swift
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
-        InstanceID.instanceID().instanceID { (result, error) in
+        Messaging.messaging().token(completion: { (token, error) in
             if let error = error {
-                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidFailToRegisterForRemoteNotificationsWithError.name()), object: error)
-            } else if let result = result {
-                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidRegisterForRemoteNotificationsWithDeviceToken.name()), object: result.token)
+                NotificationCenter.default.post(name: .capacitorDidFailToRegisterForRemoteNotifications, object: error)
+            } else if let token = token {
+                NotificationCenter.default.post(name: .capacitorDidRegisterForRemoteNotifications, object: token)
             }
-        }
+          })
     }
 ```
 
