@@ -3,13 +3,13 @@ title: Capacitor data types
 description: Data types in Capacitor
 ---
 
-# Capacitor  data types
+# Capacitor data types
 
 Data moving between the web runtime and native environments in Capacitor have to be serialized and deserialized so that they can be stored natively in each language. The supported data types are those that can be represented in JSON such as numbers, strings, booleans, arrays, and objects (or dictionaries or key-value stores).
 
 ## iOS
 
-While Swift is the preferred language on iOS, it interoperates with Objective-C (upon which the system frameworks are built) and so the platform supports the intersection of three languages. Most data types will be translated as expected but there are some cases that may require special attention. 
+While Swift is the preferred language on iOS, it interoperates with Objective-C (upon which the system frameworks are built) and so the platform supports the intersection of three languages. Most data types will be translated as expected but there are some cases that may require special attention.
 
 ### Null Values
 
@@ -46,7 +46,7 @@ if let value = value as? NSNull {
 }
 ```
 
-In general, it is not recommended to rely on the presence of a key to convey meaning. Only the corresponding value should be evaluated after its expected type is confirmed. Since dictionaries typically require the typing of each value as it is extracted, the inclusion of `NSNull` can mostly be ignored. 
+In general, it is not recommended to rely on the presence of a key to convey meaning. Only the corresponding value should be evaluated after its expected type is confirmed. Since dictionaries typically require the typing of each value as it is extracted, the inclusion of `NSNull` can mostly be ignored.
 
 #### Arrays
 
@@ -58,13 +58,13 @@ if let values = call.getArray("bar") {
 }
 if let values = call.getArray("bar", Int) {
     // false, the array is a mix of Int and NSNull objects and can't be cast to [Int]
-} 
+}
 if let values = call.getArray("bar", Int?) {
     // false, the array is a mix of Int and NSNull objects and can't be cast to [Int?]
 }
 ```
 
-To help with this behavior, Capacitor includes a convenience extension that can map a heterogeneous array with `NSNull` values into an array of optionals. It works on the `JSValue` protocol, which represents all of the valid types that can be bridged between environments, but can be cast to a specific subtype. 
+To help with this behavior, Capacitor includes a convenience extension that can map a heterogeneous array with `NSNull` values into an array of optionals. It works on the `JSValue` protocol, which represents all of the valid types that can be bridged between environments, but can be cast to a specific subtype.
 
 ```swift
 if let values = call.getArray("bar").capacitor.replacingNullValues() as? [Int?] {
@@ -92,7 +92,7 @@ if let date = getDate("foo") {
 }
 if let date = getDate("bar") {
     // true, 'date' is a valid Date
-} 
+}
 ```
 
 Accessing the `options` dictionary means that the differing types will need to be handled separately:
