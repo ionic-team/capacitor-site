@@ -46,12 +46,12 @@ public class MyPlugin: CAPPlugin {
 }
 ```
 
-### Accessing Called Data
+### Accessing Call Data
 
 Each plugin method receives an instance of `CAPPluginCall` containing all the information of the plugin method invocation from the client.
 
 A client can send any data that can be JSON serialized, such as numbers, text, booleans, objects, and arrays. This data
-is accessible on the `options` field of the call instance, or by using convenience methods such as `getString` or `getObject`.
+is accessible on the `options` field of the call instance, or by using convenience methods such as `getString` or `getObject`. Passing and accessing some of these values has some peculiarities to be aware of, as discussed [separately](/docs/core-apis/data-types#ios).
 
 For example, here is how you'd get data passed to your method:
 
