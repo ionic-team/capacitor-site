@@ -27,7 +27,7 @@ As an example, consider the following object being passed to a Capacitor plugin 
 
 ```swift
 if let value = call.getString("foo") {
-    // false, `value` is nil
+    // GOOD: `value` is nil, so this block won't run
 }
 ```
 
@@ -35,10 +35,10 @@ However, accessing the storage property directly can return an `NSNull` object.
 
 ```swift
 if call.options["foo"] != nil {
-    // true, the key returned a value
+    // BAD: the key returned a truthy `NSNull` object, so this block will run
 }
 if let value = call.options["foo"] {
-    // true, 'value' is a valid NSNull object
+    // BAD: `value` is a truthy `NSNull` object, so this block will run
 }
 ```
 
@@ -50,13 +50,10 @@ Since accessing an array typically requires typing the whole collection, it is i
 
 ```swift
 if let values = call.getArray("bar") {
-    // true, the array is all valid objects
-}
-if let values = call.getArray("bar", Int) {
-    // false, the array is a mix of Int and NSNull objects and can't be cast to [Int]
+    // NEUTRAL: the array is all valid objects, so this block will run, but each value will need to be typed individually
 }
 if let values = call.getArray("bar", Int?) {
-    // false, the array is a mix of Int and NSNull objects and can't be cast to [Int?]
+    // BAD: the array is a mix of `Int` and `NSNull` and can't be cast to `Int?`, so this block won't run
 }
 ```
 
@@ -64,7 +61,7 @@ To help with this behavior, Capacitor includes a convenience extension that can 
 
 ```swift
 if let values = call.getArray("bar").capacitor.replacingNullValues() as? [Int?] {
-    // true, 'values' is now cast to [Int?] with 'nil' at index 2
+    // GOOD: `values` is now cast to `Int?` with `nil` at index 2
 }
 ```
 
@@ -84,10 +81,10 @@ The `CAPPluginCall` convenience accessor, `getDate`, will handle both fields by 
 
 ```swift
 if let date = getDate("foo") {
-    // true, 'date' is a valid Date
+    // GOOD: `date` is a valid Date, so this block will run
 }
 if let date = getDate("bar") {
-    // true, 'date' is a valid Date
+    // GOOD: `date` is a valid Date, so this block will run
 }
 ```
 
@@ -95,10 +92,13 @@ Accessing the `options` dictionary means that the differing types will need to b
 
 ```swift
 if let value = call.options["foo"] as? Date {
-    // true, 'value' is a valid Date
+    // GOOD: `value` is a valid Date, so this block will run
 }
 if let value = call.options["bar"] as? Date {
-    // false, 'value' is nil because the String cannot be cast into a Date
+    // BAD: `value` is nil because `String` cannot be cast to `Date`, so this block won't run
+}
+if let value = call.options["bar"] as? String {
+    // NEUTRAL: `value` is a valid `String`, so this block will run, but it will need to be parsed
 }
 ```
 
