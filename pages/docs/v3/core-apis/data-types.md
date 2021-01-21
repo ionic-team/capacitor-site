@@ -46,7 +46,7 @@ if let value = call.options["foo"] {
 
 #### Arrays
 
-Since accessing an array typically requires typing the whole collection, it is important to consider if it contains a single type or might be heterogenous.
+Since accessing an array typically requires typing the whole collection, it is important to consider if it contains a single type or might be heterogeneous.
 
 ```swift
 if let values = call.getArray("bar") {
