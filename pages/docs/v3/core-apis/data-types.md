@@ -1,5 +1,5 @@
 ---
-title: Capacitor data types
+title: Capacitor Data Types
 description: Data types in Capacitor
 ---
 
