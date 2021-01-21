@@ -3,7 +3,7 @@ title: Capacitor Data Types
 description: Data types in Capacitor
 ---
 
-# Capacitor data types
+# Capacitor Data Types
 
 Data moving between the web runtime and native environments in Capacitor have to be serialized and deserialized so that they can be stored natively in each language. The supported data types are those that can be represented in JSON such as numbers, strings, booleans, arrays, and objects (or dictionaries or key-value stores).
 
