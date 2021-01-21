@@ -5,6 +5,10 @@ import { JSXBase } from '@stencil/core/internal';
 interface Props extends JSXBase.ImgHTMLAttributes<HTMLImageElement> {
   image: any,
   params?: { [key: string]: string }
+  // Why are these necessary? Shouldn't they be part of ImgHTMLAttributes?
+  loading?: 'lazy' | 'eager'
+  height?: number
+  width?: number
 }
 
 const PrismicResponsiveImage = ({ image, params, ...props }: Props) => {

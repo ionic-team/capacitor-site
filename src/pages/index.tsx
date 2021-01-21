@@ -15,6 +15,8 @@ import {
   Paragraph,
 } from '../ds';
 import { getPage } from '../data.server/prismic';
+import Image from '@theme/IdealImage';
+import testImage from '../../static/img/og.png';
 
 import './landing-page.scss';
 
@@ -671,6 +673,7 @@ public class MyAwesomePlugin: CAPPlugin {
       <Companies />
       <GetStarted />
       <pre-footer />
+      <Image style="width:100%" img={testImage} size={400}/>
       <capacitor-site-footer />
     </Layout>
   );

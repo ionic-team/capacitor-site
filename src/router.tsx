@@ -130,6 +130,10 @@ export const Routes = () => (
         </Fragment>
       )}
     />
+
+    <Route path="/image-test">
+      <cordova-page />
+    </Route>
   </Router.Switch>
 );
 
