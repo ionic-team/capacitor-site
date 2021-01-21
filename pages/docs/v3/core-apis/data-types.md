@@ -23,7 +23,7 @@ As an example, consider the following object being passed to a Capacitor plugin 
 
 #### Dictionaries
 
-`CAPPluginCall` stores this data as its `options` dictionary property but has a variety of convenience accessors that operate on it. The convenience accessors will try to cast the value to the expected type(s) so `NSNull` values will get filtered out.
+`CAPPluginCall` stores this data as its `options` property but has a variety of convenience accessors that operate on it. The accessors will cast the value to the expected type(s) so `NSNull` values will get filtered out.
 
 ```swift
 if let value = call.getString("foo") {
@@ -31,26 +31,22 @@ if let value = call.getString("foo") {
 }
 ```
 
-However, accessing the storage property directly can return an `NSNull` object so its type will need to be checked before it is used.
+However, accessing the storage property directly can return an `NSNull` object.
 
 ```swift
-let value = call.options["foo"]
-if let value = value {
-    // true, 'value' is a valid object
+if call.options["foo"] != nil {
+    // true, the key returned a value
 }
-if let value = value as? Int {
-    // false, the NSNull object cannot be cast to Int
-}
-if let value = value as? NSNull {
-    // true, 'value' is a NSNull
+if let value = call.options["foo"] {
+    // true, 'value' is a valid NSNull object
 }
 ```
 
-In general, it is not recommended to rely on the presence of a key to convey meaning. Only the corresponding value should be evaluated after its expected type is confirmed. Since dictionaries typically require the typing of each value as it is extracted, the inclusion of `NSNull` can mostly be ignored.
+> It is not recommended to rely on the presence of a key to convey meaning. Always type-check the corresponding value to evaluate it.
 
 #### Arrays
 
-Since accessing arrays typically requiring typing the whole collection, it is more important to consider if they are heterogeneous or not.
+Since accessing an array typically requires typing the whole collection, it is important to consider if it contains a single type or might be heterogenous.
 
 ```swift
 if let values = call.getArray("bar") {
@@ -64,7 +60,7 @@ if let values = call.getArray("bar", Int?) {
 }
 ```
 
-To help with this behavior, Capacitor includes a convenience extension that can map a heterogeneous array with `NSNull` values into an array of optionals. It works on the `JSValue` protocol, which represents all of the valid types that can be bridged between environments, but can be cast to a specific subtype.
+To help with this behavior, Capacitor includes a convenience extension that can map an array with `NSNull` values into an array of optionals. It works on the `JSValue` protocol, which represents all of the valid types that can be bridged between environments, but can be cast to a specific subtype.
 
 ```swift
 if let values = call.getArray("bar").capacitor.replacingNullValues() as? [Int?] {
