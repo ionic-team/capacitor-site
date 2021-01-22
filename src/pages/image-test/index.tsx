@@ -85,7 +85,10 @@ function ImageTestPage(props: Props): JSX.Element {
 
   const ImageTest = () => {
     return (
-      <Image style={{width:'100%'}} img={TestImage} size={400}/>
+      <>
+        <Image style={{ width: '100%' }} img={TestImage} size={400} />
+        <Image style={{ width: '100%' }} img={require('../../../static/img/og.png')} min={320} max={1200} />
+      </>
     );
   }
 
