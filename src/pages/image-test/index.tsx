@@ -7,6 +7,10 @@ import {
   PrismicResponsiveImage,
 } from '../../ds';
 import { getPage } from '../../data.server/prismic';
+
+// import lqip from 'lqip'
+import IdealImage from 'react-ideal-image'
+
 import Image from '@theme/IdealImage';
 import TestImage from '../../../static/img/og.png';
 
@@ -18,8 +22,10 @@ interface Props {
 
 function ImageTestPage(props: Props): JSX.Element {
   const [data, setData] = useState(null);
-  const [showHubspotForm, setShowHubspotForm] = useState(false);
-  const [hubspotFormSubmitted, setHubspotFormSubmitted] = useState(false);
+
+
+  // let TestLqip: string;
+  // lqip('./images/doggo.jpg').base64(TestImage).then(res => TestLqip = res);
 
   useEffect(() => {
     const fetchPrismicContent = async () => {
@@ -86,6 +92,12 @@ function ImageTestPage(props: Props): JSX.Element {
   const ImageTest = () => {
     return (
       <>
+        {/* <IdealImage
+          // placeholder={{ TestLqip }}
+          srcSet={[{ src: TestImage, width: 1600 }]}
+          width={1600}
+          height={800}
+        /> */}
         <Image style={{ width: '100%' }} img={TestImage} size={400} />
         <Image style={{ width: '100%' }} img={require('../../../static/img/og.png')} min={320} max={1200} />
       </>
