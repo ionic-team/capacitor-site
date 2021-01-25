@@ -14,7 +14,7 @@ Plugins in Capacitor enable JavaScript to interface directly with Native APIs.
 Capacitor comes with a Plugin generator to start new plugins quickly. To use it, run
 
 ```bash
-npx @capacitor/cli plugin:generate
+npx cap plugin:generate
 ```
 
 This starts a wizard prompting you for information about your new plugin. For example:
