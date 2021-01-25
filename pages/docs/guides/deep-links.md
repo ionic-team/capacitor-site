@@ -211,11 +211,30 @@ An example of the `apple-app-site-association` file is below. Be sure to replace
 ```json
 {
   "applinks": {
-    "apps": [],
     "details": [
       {
-        "appID": "TEAMID.BUNDLEID",
-        "paths": ["*"]
+        "appIDs": ["TEAMID.BUNDLEID"],
+        "components": [
+           {
+              "#": "no_universal_links",
+              "exclude": true,
+              "comment": "Matches any URL whose fragment equals no_universal_links and instructs the system not to open it as a universal link"
+           },
+           {
+              "/": "/buy/*",
+              "comment": "Matches any URL whose path starts with /buy/"
+           },
+           {
+              "/": "/help/website/*",
+              "exclude": true,
+              "comment": "Matches any URL whose path starts with /help/website/ and instructs the system not to open it as a universal link"
+           },
+           {
+              "/": "/help/*",
+              "?": { "articleNumber": "????" },
+              "comment": "Matches any URL whose path starts with /help/ and which has a query item with name 'articleNumber' and a value of exactly 4 characters"
+           }
+         ]
       }
     ]
   }
