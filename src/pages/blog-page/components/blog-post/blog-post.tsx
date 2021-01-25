@@ -233,7 +233,6 @@ export class BlogPost {
 
   PostAuthor = () => {
     const { date, authorName, authorUrl } = this.data!;
-    console.log('Rendering post', date, authorName, authorUrl);
     const dateString = parseISO(date);
     // const imageParts = authorImageName?.split('.');
     // if (!imageParts || !imageParts[0] || !imageParts[1])
