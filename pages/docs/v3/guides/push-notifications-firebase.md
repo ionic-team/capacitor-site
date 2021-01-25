@@ -76,19 +76,24 @@ Upon running these commands, both `android` and `ios` folders at the root of the
 
 ## Using the Capacitor Push Notification API
 
-Before we get to Firebase, we'll need to ensure that our application can register for push notifications by making use of the Capacitor Push Notification API. We'll also add an `alert` (you could use `console.log` statements instead) to show us the payload for a notification when it arrives and the app is open on our device.
+First of all, we need to install the Capacitor Push Notifications Plugin
+
+```bash
+npm install @capacitor/push-notifications
+npx cap sync
+```
+
+Then, before we get to Firebase, we'll need to ensure that our application can register for push notifications by making use of the Capacitor Push Notification API. We'll also add an `alert` (you could use `console.log` statements instead) to show us the payload for a notification when it arrives and the app is open on our device.
 
 In your app, head to the `home.page.ts` file and add an `import` statement and a `const` to make use of the Capacitor Push API:
 
 ```typescript
 import {
-  Plugins,
-  PushNotification,
+  PushNotificationSchema,
+  PushNotifications,
   PushNotificationToken,
   PushNotificationActionPerformed,
-} from '@capacitor/core';
-
-const { PushNotifications } = Plugins;
+} from '@capacitor/push-notifications';
 ```
 
 Then, add the `ngOnInit()` method with some API methods to register and monitor for push notifications. We will also add an `alert()` a few of the events to monitor what is happening:
@@ -102,8 +107,8 @@ ngOnInit() {
     // Request permission to use push notifications
     // iOS will prompt user and return if they granted permission or not
     // Android will just grant without prompting
-    PushNotifications.requestPermission().then( result => {
-      if (result.granted) {
+    PushNotifications.requestPermissions().then(result => {
+      if (result.receive === 'granted') {
         // Register with Apple / Google to receive push via APNS/FCM
         PushNotifications.register();
       } else {
@@ -127,7 +132,7 @@ ngOnInit() {
 
     // Show us the notification payload if the app is open on our device
     PushNotifications.addListener('pushNotificationReceived',
-      (notification: PushNotification) => {
+      (notification: PushNotificationSchema) => {
         alert('Push received: ' + JSON.stringify(notification));
       }
     );
@@ -147,13 +152,11 @@ Here is the full implementation of `home.page.ts`:
 import { Component, OnInit } from '@angular/core';
 
 import {
-  Plugins,
-  PushNotification,
+  PushNotificationSchema,
+  PushNotifications,
   PushNotificationToken,
   PushNotificationActionPerformed,
-} from '@capacitor/core';
-
-const { PushNotifications } = Plugins;
+} from '@capacitor/push-notifications';
 
 @Component({
   selector: 'app-home',
@@ -167,8 +170,8 @@ export class HomePage implements OnInit {
     // Request permission to use push notifications
     // iOS will prompt user and return if they granted permission or not
     // Android will just grant without prompting
-    PushNotifications.requestPermission().then(result => {
-      if (result.granted) {
+    PushNotifications.requestPermissions().then(result => {
+      if (result.receive === 'granted') {
         // Register with Apple / Google to receive push via APNS/FCM
         PushNotifications.register();
       } else {
@@ -189,7 +192,7 @@ export class HomePage implements OnInit {
 
     PushNotifications.addListener(
       'pushNotificationReceived',
-      (notification: PushNotification) => {
+      (notification: PushNotificationSchema) => {
         alert('Push received: ' + JSON.stringify(notification));
       },
     );
@@ -311,7 +314,7 @@ end
 Your `Podfile` should look something like this:
 
 ```ruby
-platform :ios, '11.0'
+platform :ios, '12.0'
 use_frameworks!
 
 # workaround to avoid Xcode caching of Pods that requires
@@ -385,13 +388,13 @@ If you would like to recieve the firebase FCM token from iOS instead of the raw 
 ```swift
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
-        InstanceID.instanceID().instanceID { (result, error) in
+        Messaging.messaging().token(completion: { (token, error) in
             if let error = error {
-                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidFailToRegisterForRemoteNotificationsWithError.name()), object: error)
-            } else if let result = result {
-                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidRegisterForRemoteNotificationsWithDeviceToken.name()), object: result.token)
+                NotificationCenter.default.post(name: .capacitorDidFailToRegisterForRemoteNotifications, object: error)
+            } else if let token = token {
+                NotificationCenter.default.post(name: .capacitorDidRegisterForRemoteNotifications, object: token)
             }
-        }
+          })
     }
 ```
 

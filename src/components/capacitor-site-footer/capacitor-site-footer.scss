@@ -1,3 +1,5 @@
+@use '../../global/vars.scss' as *;
+
 capacitor-site-footer {
   display: block;
   border-block-start: 1px solid var(--c-indigo-20);
@@ -16,8 +18,12 @@ capacitor-site-footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-block-end: 64px;
-    margin-block-start: -16px;
+    margin-block-end: 4rem;
+    margin-block-start: -1rem;
+
+    @media (max-width: $screen-xs-max) {
+      margin-block-end: 2rem;
+    }
 
     --h4-color: var(--c-carbon-100);
     --p4-color: var(--c-indigo-70);
@@ -138,6 +144,9 @@ capacitor-site-footer {
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
+
+        margin-block-start: 0;
+        margin-block-end: 0;
 
         padding: 15px 18px 16px 18px;
         transition: box-shadow 0.2s ease-out, background-color 0.2s ease-out;

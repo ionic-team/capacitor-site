@@ -5,9 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { BlogData } from "./data.server/blog";
+import { BlogData } from "src/data.server/blog";
 import { DocsData, DocsTemplate } from "./data.server/docs";
 import { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
+import { SiteHeader } from "./components/capacitor-site-header/capacitor-site-header";
 export namespace Components {
     interface AnchorLink {
         "to": string;
@@ -18,13 +19,32 @@ export namespace Components {
     interface AvcCodeType {
         "typeId": string;
     }
+    interface BlogForumLink {
+        "href"?: string;
+    }
+    interface BlogNewsletter {
+    }
     interface BlogPage {
         "data": BlogData[];
     }
+    interface BlogPagination {
+        "linkText": [string, string];
+        "rssIcon": boolean;
+    }
     interface BlogPost {
         "data": BlogData;
+        "preview"?: boolean;
     }
-    interface CapacitorEnterprise {
+    interface BlogSearch {
+    }
+    interface BlogSocialActions {
+        "column": boolean;
+        "post"?: BlogData;
+    }
+    interface BlogSubnav {
+        "breadcrumbs": [string, string][];
+        "pagination": boolean;
+        "socialActions": boolean;
     }
     interface CapacitorHubspotForm {
         "ajax": boolean;
@@ -69,6 +89,12 @@ export namespace Components {
     }
     interface DocsSearch {
         "placeholder": string;
+        "theme": SiteHeader['theme'];
+    }
+    interface EnterprisePage {
+        "data": any;
+    }
+    interface EnterpriseSubnav {
     }
     interface InPageNavigation {
         "editUrl": string;
@@ -100,10 +126,15 @@ export namespace Components {
     interface SiteHeader {
         "includeBurger": boolean;
         "includeLogo": boolean;
+        "sticky": boolean;
         "template": DocsTemplate;
+        "theme": 'light' | 'dark';
     }
     interface SolutionPage {
         "solutionId": string;
+    }
+    interface TelemetryPage {
+        "data": any;
     }
     interface VersionSelect {
     }
@@ -127,11 +158,29 @@ declare global {
         prototype: HTMLAvcCodeTypeElement;
         new (): HTMLAvcCodeTypeElement;
     };
+    interface HTMLBlogForumLinkElement extends Components.BlogForumLink, HTMLStencilElement {
+    }
+    var HTMLBlogForumLinkElement: {
+        prototype: HTMLBlogForumLinkElement;
+        new (): HTMLBlogForumLinkElement;
+    };
+    interface HTMLBlogNewsletterElement extends Components.BlogNewsletter, HTMLStencilElement {
+    }
+    var HTMLBlogNewsletterElement: {
+        prototype: HTMLBlogNewsletterElement;
+        new (): HTMLBlogNewsletterElement;
+    };
     interface HTMLBlogPageElement extends Components.BlogPage, HTMLStencilElement {
     }
     var HTMLBlogPageElement: {
         prototype: HTMLBlogPageElement;
         new (): HTMLBlogPageElement;
+    };
+    interface HTMLBlogPaginationElement extends Components.BlogPagination, HTMLStencilElement {
+    }
+    var HTMLBlogPaginationElement: {
+        prototype: HTMLBlogPaginationElement;
+        new (): HTMLBlogPaginationElement;
     };
     interface HTMLBlogPostElement extends Components.BlogPost, HTMLStencilElement {
     }
@@ -139,11 +188,23 @@ declare global {
         prototype: HTMLBlogPostElement;
         new (): HTMLBlogPostElement;
     };
-    interface HTMLCapacitorEnterpriseElement extends Components.CapacitorEnterprise, HTMLStencilElement {
+    interface HTMLBlogSearchElement extends Components.BlogSearch, HTMLStencilElement {
     }
-    var HTMLCapacitorEnterpriseElement: {
-        prototype: HTMLCapacitorEnterpriseElement;
-        new (): HTMLCapacitorEnterpriseElement;
+    var HTMLBlogSearchElement: {
+        prototype: HTMLBlogSearchElement;
+        new (): HTMLBlogSearchElement;
+    };
+    interface HTMLBlogSocialActionsElement extends Components.BlogSocialActions, HTMLStencilElement {
+    }
+    var HTMLBlogSocialActionsElement: {
+        prototype: HTMLBlogSocialActionsElement;
+        new (): HTMLBlogSocialActionsElement;
+    };
+    interface HTMLBlogSubnavElement extends Components.BlogSubnav, HTMLStencilElement {
+    }
+    var HTMLBlogSubnavElement: {
+        prototype: HTMLBlogSubnavElement;
+        new (): HTMLBlogSubnavElement;
     };
     interface HTMLCapacitorHubspotFormElement extends Components.CapacitorHubspotForm, HTMLStencilElement {
     }
@@ -217,6 +278,18 @@ declare global {
         prototype: HTMLDocsSearchElement;
         new (): HTMLDocsSearchElement;
     };
+    interface HTMLEnterprisePageElement extends Components.EnterprisePage, HTMLStencilElement {
+    }
+    var HTMLEnterprisePageElement: {
+        prototype: HTMLEnterprisePageElement;
+        new (): HTMLEnterprisePageElement;
+    };
+    interface HTMLEnterpriseSubnavElement extends Components.EnterpriseSubnav, HTMLStencilElement {
+    }
+    var HTMLEnterpriseSubnavElement: {
+        prototype: HTMLEnterpriseSubnavElement;
+        new (): HTMLEnterpriseSubnavElement;
+    };
     interface HTMLInPageNavigationElement extends Components.InPageNavigation, HTMLStencilElement {
     }
     var HTMLInPageNavigationElement: {
@@ -277,6 +350,12 @@ declare global {
         prototype: HTMLSolutionPageElement;
         new (): HTMLSolutionPageElement;
     };
+    interface HTMLTelemetryPageElement extends Components.TelemetryPage, HTMLStencilElement {
+    }
+    var HTMLTelemetryPageElement: {
+        prototype: HTMLTelemetryPageElement;
+        new (): HTMLTelemetryPageElement;
+    };
     interface HTMLVersionSelectElement extends Components.VersionSelect, HTMLStencilElement {
     }
     var HTMLVersionSelectElement: {
@@ -287,9 +366,14 @@ declare global {
         "anchor-link": HTMLAnchorLinkElement;
         "app-menu-toggle": HTMLAppMenuToggleElement;
         "avc-code-type": HTMLAvcCodeTypeElement;
+        "blog-forum-link": HTMLBlogForumLinkElement;
+        "blog-newsletter": HTMLBlogNewsletterElement;
         "blog-page": HTMLBlogPageElement;
+        "blog-pagination": HTMLBlogPaginationElement;
         "blog-post": HTMLBlogPostElement;
-        "capacitor-enterprise": HTMLCapacitorEnterpriseElement;
+        "blog-search": HTMLBlogSearchElement;
+        "blog-social-actions": HTMLBlogSocialActionsElement;
+        "blog-subnav": HTMLBlogSubnavElement;
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
@@ -302,6 +386,8 @@ declare global {
         "docs-component": HTMLDocsComponentElement;
         "docs-menu": HTMLDocsMenuElement;
         "docs-search": HTMLDocsSearchElement;
+        "enterprise-page": HTMLEnterprisePageElement;
+        "enterprise-subnav": HTMLEnterpriseSubnavElement;
         "in-page-navigation": HTMLInPageNavigationElement;
         "landing-page": HTMLLandingPageElement;
         "lower-content-nav": HTMLLowerContentNavElement;
@@ -312,6 +398,7 @@ declare global {
         "pre-footer": HTMLPreFooterElement;
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
+        "telemetry-page": HTMLTelemetryPageElement;
         "version-select": HTMLVersionSelectElement;
     }
 }
@@ -326,13 +413,32 @@ declare namespace LocalJSX {
     interface AvcCodeType {
         "typeId"?: string;
     }
+    interface BlogForumLink {
+        "href"?: string;
+    }
+    interface BlogNewsletter {
+    }
     interface BlogPage {
         "data"?: BlogData[];
     }
+    interface BlogPagination {
+        "linkText"?: [string, string];
+        "rssIcon"?: boolean;
+    }
     interface BlogPost {
         "data"?: BlogData;
+        "preview"?: boolean;
     }
-    interface CapacitorEnterprise {
+    interface BlogSearch {
+    }
+    interface BlogSocialActions {
+        "column"?: boolean;
+        "post"?: BlogData;
+    }
+    interface BlogSubnav {
+        "breadcrumbs"?: [string, string][];
+        "pagination"?: boolean;
+        "socialActions"?: boolean;
     }
     interface CapacitorHubspotForm {
         "ajax"?: boolean;
@@ -378,6 +484,12 @@ declare namespace LocalJSX {
     }
     interface DocsSearch {
         "placeholder"?: string;
+        "theme"?: SiteHeader['theme'];
+    }
+    interface EnterprisePage {
+        "data"?: any;
+    }
+    interface EnterpriseSubnav {
     }
     interface InPageNavigation {
         "editUrl"?: string;
@@ -409,10 +521,15 @@ declare namespace LocalJSX {
     interface SiteHeader {
         "includeBurger"?: boolean;
         "includeLogo"?: boolean;
+        "sticky"?: boolean;
         "template"?: DocsTemplate;
+        "theme"?: 'light' | 'dark';
     }
     interface SolutionPage {
         "solutionId"?: string;
+    }
+    interface TelemetryPage {
+        "data"?: any;
     }
     interface VersionSelect {
     }
@@ -420,9 +537,14 @@ declare namespace LocalJSX {
         "anchor-link": AnchorLink;
         "app-menu-toggle": AppMenuToggle;
         "avc-code-type": AvcCodeType;
+        "blog-forum-link": BlogForumLink;
+        "blog-newsletter": BlogNewsletter;
         "blog-page": BlogPage;
+        "blog-pagination": BlogPagination;
         "blog-post": BlogPost;
-        "capacitor-enterprise": CapacitorEnterprise;
+        "blog-search": BlogSearch;
+        "blog-social-actions": BlogSocialActions;
+        "blog-subnav": BlogSubnav;
         "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
@@ -435,6 +557,8 @@ declare namespace LocalJSX {
         "docs-component": DocsComponent;
         "docs-menu": DocsMenu;
         "docs-search": DocsSearch;
+        "enterprise-page": EnterprisePage;
+        "enterprise-subnav": EnterpriseSubnav;
         "in-page-navigation": InPageNavigation;
         "landing-page": LandingPage;
         "lower-content-nav": LowerContentNav;
@@ -445,6 +569,7 @@ declare namespace LocalJSX {
         "pre-footer": PreFooter;
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
+        "telemetry-page": TelemetryPage;
         "version-select": VersionSelect;
     }
 }
@@ -455,9 +580,14 @@ declare module "@stencil/core" {
             "anchor-link": LocalJSX.AnchorLink & JSXBase.HTMLAttributes<HTMLAnchorLinkElement>;
             "app-menu-toggle": LocalJSX.AppMenuToggle & JSXBase.HTMLAttributes<HTMLAppMenuToggleElement>;
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
+            "blog-forum-link": LocalJSX.BlogForumLink & JSXBase.HTMLAttributes<HTMLBlogForumLinkElement>;
+            "blog-newsletter": LocalJSX.BlogNewsletter & JSXBase.HTMLAttributes<HTMLBlogNewsletterElement>;
             "blog-page": LocalJSX.BlogPage & JSXBase.HTMLAttributes<HTMLBlogPageElement>;
+            "blog-pagination": LocalJSX.BlogPagination & JSXBase.HTMLAttributes<HTMLBlogPaginationElement>;
             "blog-post": LocalJSX.BlogPost & JSXBase.HTMLAttributes<HTMLBlogPostElement>;
-            "capacitor-enterprise": LocalJSX.CapacitorEnterprise & JSXBase.HTMLAttributes<HTMLCapacitorEnterpriseElement>;
+            "blog-search": LocalJSX.BlogSearch & JSXBase.HTMLAttributes<HTMLBlogSearchElement>;
+            "blog-social-actions": LocalJSX.BlogSocialActions & JSXBase.HTMLAttributes<HTMLBlogSocialActionsElement>;
+            "blog-subnav": LocalJSX.BlogSubnav & JSXBase.HTMLAttributes<HTMLBlogSubnavElement>;
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
@@ -470,6 +600,8 @@ declare module "@stencil/core" {
             "docs-component": LocalJSX.DocsComponent & JSXBase.HTMLAttributes<HTMLDocsComponentElement>;
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
             "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
+            "enterprise-page": LocalJSX.EnterprisePage & JSXBase.HTMLAttributes<HTMLEnterprisePageElement>;
+            "enterprise-subnav": LocalJSX.EnterpriseSubnav & JSXBase.HTMLAttributes<HTMLEnterpriseSubnavElement>;
             "in-page-navigation": LocalJSX.InPageNavigation & JSXBase.HTMLAttributes<HTMLInPageNavigationElement>;
             "landing-page": LocalJSX.LandingPage & JSXBase.HTMLAttributes<HTMLLandingPageElement>;
             "lower-content-nav": LocalJSX.LowerContentNav & JSXBase.HTMLAttributes<HTMLLowerContentNavElement>;
@@ -480,6 +612,7 @@ declare module "@stencil/core" {
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
+            "telemetry-page": LocalJSX.TelemetryPage & JSXBase.HTMLAttributes<HTMLTelemetryPageElement>;
             "version-select": LocalJSX.VersionSelect & JSXBase.HTMLAttributes<HTMLVersionSelectElement>;
         }
     }

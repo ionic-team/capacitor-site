@@ -9,6 +9,14 @@ in-page-navigation internal-ad {
   visibility: hidden;
 }
 
+in-page-navigation .sticky {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 in-page-navigation .title {
   margin-block-end: var(--space-1);
   color: var(--c-indigo-50);

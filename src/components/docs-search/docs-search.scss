@@ -4,14 +4,71 @@
 docs-search {
   display: flex;
   align-items: center;
+  flex: 1;
 
   position: relative;
-
-  flex: 1;
+  height: 36px;
 
   border: 1px solid var(--c-indigo-30);
   border-radius: var(--radius-2);
-  height: 36px;
+
+  transition: border 0.2s ease-out;
+
+  &:hover {
+    border: 1px solid var(--c-indigo-50);
+
+    .search-icon path {
+      fill: var(--c-indigo-60);
+    }
+  }
+
+  &:focus,
+  &:focus-within {
+    border: 1px solid var(--c-cyan-100);
+
+    .search-icon path {
+      fill: var(--c-indigo-80);
+    }
+  }
+
+  // #region ------------------------ DARK THEME ---------------------------
+  &.theme--dark {
+    border: 1px solid var(--c-carbon-70);
+
+    &:hover {
+      border: 1px solid var(--c-carbon-50);
+
+      .search-icon path {
+        fill: var(--c-carbon-30);
+      }
+    }
+
+    &:focus,
+    &:focus-within {
+      border: 1px solid #fff;
+
+      .search-icon path {
+        fill: #fff;
+      }
+    }
+
+    .search-icon {
+      path {
+        fill: var(--c-carbon-50);
+      }
+    }
+
+    .algolia-autocomplete input {
+      background: black;
+      color: #fff;
+    }
+
+    ion-icon.close {
+      background: black;
+      color: #fff;
+    }
+  }
+  // #endregion ---------------------------------------------------------
 
   .search-icon {
     position: absolute;
@@ -21,16 +78,21 @@ docs-search {
 
     font-size: 17px;
 
-    color: #b2becd;
-
     z-index: 1;
+
+    path {
+      fill: var(--c-indigo-50);
+
+      transition: fill 0.2s ease-out;
+    }
   }
 
   ion-icon.close {
     position: absolute;
     display: inline-block;
+    padding-inline-end: 17px;
 
-    right: 18px;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
 
@@ -65,9 +127,8 @@ docs-search {
     width: 100%;
     height: 100%;
 
-    border: 1px solid var(--c-indigo-30);
     border: none;
-    border-radius: var(--radius-2);
+    border-radius: 8px;
 
     visibility: visible !important;
 

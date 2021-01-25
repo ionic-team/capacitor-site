@@ -1,18 +1,21 @@
 ---
-title: Local Notifications
-description: Local Notifications API
-contributors:
-  - mlynch
-  - jcesarmobile
+title: Local Notifications Capacitor Plugin API
+description: The Local Notifications API provides a way to schedule device notifications locally (i.e. without a server sending push notifications).
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/src/definitions.ts
 ---
 
-<plugin-platforms platforms="pwa,ios,android"></plugin-platforms>
+# @capacitor/local-notifications
 
-# Local Notifications
+The Local Notifications API provides a way to schedule device notifications locally (i.e. without a server sending push notifications).
 
-The Local Notification API provides a way to schedule "local" notifications - notifications that are scheduled and delivered on the device as opposed to "push" notifications sent from a server.
+## Install
 
-Local Notifications are great for reminding the user about a change in the app since they last visited, providing reminder features, and delivering offline information with the app being in the foreground.
+```bash
+npm install @capacitor/local-notifications
+npx cap sync
+```
+
+## API
 
 <docgen-index>
 
@@ -24,71 +27,34 @@ Local Notifications are great for reminding the user about a change in the app s
 * [`createChannel(...)`](#createchannel)
 * [`deleteChannel(...)`](#deletechannel)
 * [`listChannels()`](#listchannels)
-* [`requestPermission()`](#requestpermission)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
+* [`checkPermissions()`](#checkpermissions)
+* [`requestPermissions()`](#requestpermissions)
+* [`addListener('received', ...)`](#addlistenerreceived-)
+* [`addListener('actionPerformed', ...)`](#addlisteneractionperformed-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
-
-## Example
-
-```typescript
-import { Plugins } from '@capacitor/core';
-const { LocalNotifications } = Plugins;
-
-const notifs = await LocalNotifications.schedule({
-  notifications: [
-    {
-      title: "Title",
-      body: "Body",
-      id: 1,
-      schedule: { at: new Date(Date.now() + 1000 * 5) },
-      sound: null,
-      attachments: null,
-      actionTypeId: "",
-      extra: null
-    }
-  ]
-});
-console.log('scheduled notifications', notifs);
-```
-
-## Local Notifications configuration (Android only)
-
-The local notification plugin allows the following configuration values to be added in `capacitor.config.json` for the Android platform:
-
-- `smallIcon`: It allows you to set the default icon for the local notification.
-- `iconColor`: It allows you to set the default color for the local notification icon.
-- `sound`: It allows you to set the default notification sound. On Android 26+ it sets the default channel sound and can't be changed unless the app is uninstalled.
-
-```json
- "plugins": {
-    "LocalNotifications": {
-      "smallIcon": "ic_stat_icon_config_sample",
-      "iconColor": "#488AFF",
-      "sound": "beep.wav"
-    }
-  }
-```
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-## API
-
 ### schedule(...)
 
 ```typescript
-schedule(options: { notifications: LocalNotification[]; }) => Promise<LocalNotificationScheduleResult>
+schedule(options: ScheduleOptions) => Promise<ScheduleResult>
 ```
 
-| Param         | Type                                                 |
-| ------------- | ---------------------------------------------------- |
-| **`options`** | <code>{ notifications: LocalNotification[]; }</code> |
+<a href="#schedule">Schedule</a> one or more local notifications.
 
-**Returns:** <code>Promise&lt;<a href="#localnotificationscheduleresult">LocalNotificationScheduleResult</a>&gt;</code>
+| Param         | Type                                                        |
+| ------------- | ----------------------------------------------------------- |
+| **`options`** | <code><a href="#scheduleoptions">ScheduleOptions</a></code> |
+
+**Returns:** <code>Promise&lt;<a href="#scheduleresult">ScheduleResult</a>&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -96,10 +62,14 @@ schedule(options: { notifications: LocalNotification[]; }) => Promise<LocalNotif
 ### getPending()
 
 ```typescript
-getPending() => Promise<LocalNotificationPendingList>
+getPending() => Promise<PendingResult>
 ```
 
-**Returns:** <code>Promise&lt;<a href="#localnotificationpendinglist">LocalNotificationPendingList</a>&gt;</code>
+Get a list of pending notifications.
+
+**Returns:** <code>Promise&lt;<a href="#pendingresult">PendingResult</a>&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -107,12 +77,18 @@ getPending() => Promise<LocalNotificationPendingList>
 ### registerActionTypes(...)
 
 ```typescript
-registerActionTypes(options: { types: LocalNotificationActionType[]; }) => Promise<void>
+registerActionTypes(options: RegisterActionTypesOptions) => Promise<void>
 ```
 
-| Param         | Type                                                   |
-| ------------- | ------------------------------------------------------ |
-| **`options`** | <code>{ types: LocalNotificationActionType[]; }</code> |
+Register actions to take when notifications are displayed.
+
+Only available for iOS and Android.
+
+| Param         | Type                                                                              |
+| ------------- | --------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#registeractiontypesoptions">RegisterActionTypesOptions</a></code> |
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -120,12 +96,16 @@ registerActionTypes(options: { types: LocalNotificationActionType[]; }) => Promi
 ### cancel(...)
 
 ```typescript
-cancel(pending: LocalNotificationPendingList) => Promise<void>
+cancel(options: CancelOptions) => Promise<void>
 ```
 
-| Param         | Type                                                                                  |
-| ------------- | ------------------------------------------------------------------------------------- |
-| **`pending`** | <code><a href="#localnotificationpendinglist">LocalNotificationPendingList</a></code> |
+Cancel pending notifications.
+
+| Param         | Type                                                    |
+| ------------- | ------------------------------------------------------- |
+| **`options`** | <code><a href="#canceloptions">CancelOptions</a></code> |
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -133,10 +113,14 @@ cancel(pending: LocalNotificationPendingList) => Promise<void>
 ### areEnabled()
 
 ```typescript
-areEnabled() => Promise<LocalNotificationEnabledResult>
+areEnabled() => Promise<EnabledResult>
 ```
 
-**Returns:** <code>Promise&lt;<a href="#localnotificationenabledresult">LocalNotificationEnabledResult</a>&gt;</code>
+Check if notifications are enabled or not.
+
+**Returns:** <code>Promise&lt;<a href="#enabledresult">EnabledResult</a>&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -147,9 +131,15 @@ areEnabled() => Promise<LocalNotificationEnabledResult>
 createChannel(channel: NotificationChannel) => Promise<void>
 ```
 
-| Param         | Type                                                                |
-| ------------- | ------------------------------------------------------------------- |
-| **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> |
+Create a notification channel.
+
+Only available for Android.
+
+| Param         | Type                                        |
+| ------------- | ------------------------------------------- |
+| **`channel`** | <code><a href="#channel">Channel</a></code> |
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -160,9 +150,15 @@ createChannel(channel: NotificationChannel) => Promise<void>
 deleteChannel(channel: NotificationChannel) => Promise<void>
 ```
 
-| Param         | Type                                                                |
-| ------------- | ------------------------------------------------------------------- |
-| **`channel`** | <code><a href="#notificationchannel">NotificationChannel</a></code> |
+Delete a notification channel.
+
+Only available for Android.
+
+| Param         | Type                                        |
+| ------------- | ------------------------------------------- |
+| **`channel`** | <code><a href="#channel">Channel</a></code> |
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -170,53 +166,86 @@ deleteChannel(channel: NotificationChannel) => Promise<void>
 ### listChannels()
 
 ```typescript
-listChannels() => Promise<NotificationChannelList>
+listChannels() => Promise<ListChannelsResult>
 ```
 
-**Returns:** <code>Promise&lt;<a href="#notificationchannellist">NotificationChannelList</a>&gt;</code>
+Get a list of notification channels.
+
+Only available for Android.
+
+**Returns:** <code>Promise&lt;<a href="#listchannelsresult">ListChannelsResult</a>&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
 
-### requestPermission()
+### checkPermissions()
 
 ```typescript
-requestPermission() => Promise<NotificationPermissionResponse>
+checkPermissions() => Promise<PermissionStatus>
 ```
 
-**Returns:** <code>Promise&lt;<a href="#notificationpermissionresponse">NotificationPermissionResponse</a>&gt;</code>
+Check permission to display local notifications.
+
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
 
-### addListener(...)
+### requestPermissions()
 
 ```typescript
-addListener(eventName: 'localNotificationReceived', listenerFunc: (notification: LocalNotification) => void) => PluginListenerHandle
+requestPermissions() => Promise<PermissionStatus>
 ```
 
-| Param              | Type                                                   |
-| ------------------ | ------------------------------------------------------ |
-| **`eventName`**    | <code>"localNotificationReceived"</code>               |
-| **`listenerFunc`** | <code>(notification: LocalNotification) => void</code> |
+Request permission to display local notifications.
+
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### addListener('received', ...)
+
+```typescript
+addListener(eventName: 'received', listenerFunc: (notification: LocalNotificationSchema) => void) => PluginListenerHandle
+```
+
+Listen for when notifications are displayed.
+
+| Param              | Type                                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------ |
+| **`eventName`**    | <code>'received'</code>                                                                                |
+| **`listenerFunc`** | <code>(notification: <a href="#localnotificationschema">LocalNotificationSchema</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
+**Since:** 1.0.0
+
 --------------------
 
 
-### addListener(...)
+### addListener('actionPerformed', ...)
 
 ```typescript
-addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notificationAction: LocalNotificationActionPerformed) => void) => PluginListenerHandle
+addListener(eventName: 'actionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => PluginListenerHandle
 ```
 
-| Param              | Type                                                                        |
-| ------------------ | --------------------------------------------------------------------------- |
-| **`eventName`**    | <code>"localNotificationActionPerformed"</code>                             |
-| **`listenerFunc`** | <code>(notificationAction: LocalNotificationActionPerformed) => void</code> |
+Listen for when an action is performed on a notification.
+
+| Param              | Type                                                                                         |
+| ------------------ | -------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'actionPerformed'</code>                                                               |
+| **`listenerFunc`** | <code>(notificationAction: <a href="#actionperformed">ActionPerformed</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -227,7 +256,9 @@ addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notifi
 removeAllListeners() => void
 ```
 
-Remove all native listeners for this plugin
+Remove all listeners for this plugin.
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -235,203 +266,253 @@ Remove all native listeners for this plugin
 ### Interfaces
 
 
-#### LocalNotificationScheduleResult
+#### ScheduleResult
+
+| Prop                | Type                                       | Description                          | Since |
+| ------------------- | ------------------------------------------ | ------------------------------------ | ----- |
+| **`notifications`** | <code>LocalNotificationDescriptor[]</code> | The list of scheduled notifications. | 1.0.0 |
 
 
-#### LocalNotification
+#### LocalNotificationDescriptor
 
-| Prop                   | Type                                                                            | Description                                                                                                                                                                                                                                                            |
-| ---------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`title`**            | <code>string</code>                                                             |                                                                                                                                                                                                                                                                        |
-| **`body`**             | <code>string</code>                                                             |                                                                                                                                                                                                                                                                        |
-| **`id`**               | <code>number</code>                                                             |                                                                                                                                                                                                                                                                        |
-| **`schedule`**         | <code><a href="#localnotificationschedule">LocalNotificationSchedule</a></code> |                                                                                                                                                                                                                                                                        |
-| **`sound`**            | <code>string</code>                                                             | Name of the audio file with extension. On iOS the file should be in the app bundle. On Android the file should be on res/raw folder. Doesn't work on Android version 26+ (Android O and newer), for Recommended format is .wav because is supported by both platforms. |
-| **`smallIcon`**        | <code>string</code>                                                             | Android-only: set a custom statusbar icon. If set, it overrides default icon from capacitor.config.json                                                                                                                                                                |
-| **`iconColor`**        | <code>string</code>                                                             | Android only: set the color of the notification icon                                                                                                                                                                                                                   |
-| **`attachments`**      | <code>LocalNotificationAttachment[]</code>                                      |                                                                                                                                                                                                                                                                        |
-| **`actionTypeId`**     | <code>string</code>                                                             |                                                                                                                                                                                                                                                                        |
-| **`extra`**            | <code>any</code>                                                                |                                                                                                                                                                                                                                                                        |
-| **`threadIdentifier`** | <code>string</code>                                                             | iOS only: set the thread identifier for notification grouping                                                                                                                                                                                                          |
-| **`summaryArgument`**  | <code>string</code>                                                             | iOS 12+ only: set the summary argument for notification grouping                                                                                                                                                                                                       |
-| **`group`**            | <code>string</code>                                                             | Android only: set the group identifier for notification grouping, like threadIdentifier on iOS.                                                                                                                                                                        |
-| **`groupSummary`**     | <code>boolean</code>                                                            | Android only: designate this notification as the summary for a group (should be used with the `group` property).                                                                                                                                                       |
-| **`channelId`**        | <code>string</code>                                                             | Android only: set the notification channel on which local notification will generate. If channel with the given name does not exist then the notification will not fire. If not provided, it will use the default channel.                                             |
-| **`ongoing`**          | <code>boolean</code>                                                            | Android only: set the notification ongoing. If set to true the notification can't be swiped away.                                                                                                                                                                      |
-| **`autoCancel`**       | <code>boolean</code>                                                            | Android only: set the notification to be removed automatically when the user clicks on it                                                                                                                                                                              |
+The object that describes a local notification.
+
+| Prop     | Type                | Description                  | Since |
+| -------- | ------------------- | ---------------------------- | ----- |
+| **`id`** | <code>string</code> | The notification identifier. | 1.0.0 |
 
 
-#### LocalNotificationSchedule
+#### ScheduleOptions
 
-| Prop          | Type                                                                                               |
-| ------------- | -------------------------------------------------------------------------------------------------- |
-| **`at`**      | <code><a href="#date">Date</a></code>                                                              |
-| **`repeats`** | <code>boolean</code>                                                                               |
-| **`every`**   | <code>"year" \| "month" \| "two-weeks" \| "week" \| "day" \| "hour" \| "minute" \| "second"</code> |
-| **`count`**   | <code>number</code>                                                                                |
-| **`on`**      | <code>{ year?: number; month?: number; day?: number; hour?: number; minute?: number; }</code>      |
+| Prop                | Type                                   | Description                            | Since |
+| ------------------- | -------------------------------------- | -------------------------------------- | ----- |
+| **`notifications`** | <code>LocalNotificationSchema[]</code> | The list of notifications to schedule. | 1.0.0 |
+
+
+#### LocalNotificationSchema
+
+| Prop                   | Type                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                 | Since |
+| ---------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`title`**            | <code>string</code>                           | The title of the notification.                                                                                                                                                                                                                                                                                                                                                                              | 1.0.0 |
+| **`body`**             | <code>string</code>                           | The body of the notification, shown below the title.                                                                                                                                                                                                                                                                                                                                                        | 1.0.0 |
+| **`id`**               | <code>number</code>                           | The notification identifier.                                                                                                                                                                                                                                                                                                                                                                                | 1.0.0 |
+| **`schedule`**         | <code><a href="#schedule">Schedule</a></code> | <a href="#schedule">Schedule</a> this notification for a later time.                                                                                                                                                                                                                                                                                                                                        | 1.0.0 |
+| **`sound`**            | <code>string</code>                           | Name of the audio file to play when this notification is displayed. Include the file extension with the filename. On iOS, the file should be in the app bundle. On Android, the file should be in res/raw folder. Recommended format is `.wav` because is supported by both iOS and Android. Only available for iOS and Android 26+.                                                                        | 1.0.0 |
+| **`smallIcon`**        | <code>string</code>                           | Set a custom status bar icon. If set, this overrides the `smallIcon` option from Capacitor configuration. Icons should be placed in your app's `res/drawable` folder. The value for this option should be the drawable resource ID, which is the filename without an extension. Only available for Android.                                                                                                 | 1.0.0 |
+| **`iconColor`**        | <code>string</code>                           | Set the color of the notification icon. Only available for Android.                                                                                                                                                                                                                                                                                                                                         | 1.0.0 |
+| **`attachments`**      | <code>Attachment[]</code>                     | Set attachments for this notification.                                                                                                                                                                                                                                                                                                                                                                      | 1.0.0 |
+| **`actionTypeId`**     | <code>string</code>                           | Associate an action type with this notification.                                                                                                                                                                                                                                                                                                                                                            | 1.0.0 |
+| **`extra`**            | <code>any</code>                              | Set extra data to store within this notification.                                                                                                                                                                                                                                                                                                                                                           | 1.0.0 |
+| **`threadIdentifier`** | <code>string</code>                           | Used to group multiple notifications. Sets `threadIdentifier` on the [`UNMutableNotificationContent`](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent). Only available for iOS.                                                                                                                                                                                    | 1.0.0 |
+| **`summaryArgument`**  | <code>string</code>                           | The string this notification adds to the category's summary format string. Sets `summaryArgument` on the [`UNMutableNotificationContent`](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent). Only available for iOS 12+.                                                                                                                                            | 1.0.0 |
+| **`group`**            | <code>string</code>                           | Used to group multiple notifications. Calls `setGroup()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                                                       | 1.0.0 |
+| **`groupSummary`**     | <code>boolean</code>                          | If true, this notification becomes the summary for a group of notifications. Calls `setGroupSummary()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android when using `group`.                                                                                                      | 1.0.0 |
+| **`channelId`**        | <code>string</code>                           | Specifies the channel the notification should be delivered on. If channel with the given name does not exist then the notification will not fire. If not provided, it will use the default channel. Calls `setChannelId()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android 26+. | 1.0.0 |
+| **`ongoing`**          | <code>boolean</code>                          | If true, the notification can't be swiped away. Calls `setOngoing()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                                           | 1.0.0 |
+| **`autoCancel`**       | <code>boolean</code>                          | If true, the notification is canceled when the user clicks on it. Calls `setAutoCancel()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                      | 1.0.0 |
+
+
+#### Schedule
+
+Represents a schedule for a notification.
+
+Use either `at`, `on`, or `every` to schedule notifications.
+
+| Prop          | Type                                                                                               | Description                                                                                                                                                                                   | Since |
+| ------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`at`**      | <code><a href="#date">Date</a></code>                                                              | <a href="#schedule">Schedule</a> a notification at a specific date and time.                                                                                                                  | 1.0.0 |
+| **`repeats`** | <code>boolean</code>                                                                               | Repeat delivery of this notification at the date and time specified by `at`. Only available for iOS and Android.                                                                              | 1.0.0 |
+| **`on`**      | <code>{ year?: number; month?: number; day?: number; hour?: number; minute?: number; }</code>      | <a href="#schedule">Schedule</a> a notification on particular interval(s). This is similar to scheduling [cron](https://en.wikipedia.org/wiki/Cron) jobs. Only available for iOS and Android. | 1.0.0 |
+| **`every`**   | <code>'year' \| 'month' \| 'two-weeks' \| 'week' \| 'day' \| 'hour' \| 'minute' \| 'second'</code> | <a href="#schedule">Schedule</a> a notification on a particular interval.                                                                                                                     | 1.0.0 |
+| **`count`**   | <code>number</code>                                                                                | Limit the number times a notification is delivered by the interval specified by `every`.                                                                                                      | 1.0.0 |
 
 
 #### Date
 
 Enables basic storage and retrieval of dates and times.
 
-| Method                 | Signature                                                          | Description                                                                                                                             |
-| ---------------------- | ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **toString**           | () => string                                                       | Returns a string representation of a date. The format of the string depends on the locale.                                              |
-| **toDateString**       | () => string                                                       | Returns a date as a string value.                                                                                                       |
-| **toTimeString**       | () => string                                                       | Returns a time as a string value.                                                                                                       |
-| **toLocaleString**     | () => string                                                       | Returns a value as a string value appropriate to the host environment's current locale.                                                 |
-| **toLocaleDateString** | () => string                                                       | Returns a date as a string value appropriate to the host environment's current locale.                                                  |
-| **toLocaleTimeString** | () => string                                                       | Returns a time as a string value appropriate to the host environment's current locale.                                                  |
-| **valueOf**            | () => number                                                       | Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC.                                                      |
-| **getTime**            | () => number                                                       | Gets the time value in milliseconds.                                                                                                    |
-| **getFullYear**        | () => number                                                       | Gets the year, using local time.                                                                                                        |
-| **getUTCFullYear**     | () => number                                                       | Gets the year using Universal Coordinated Time (UTC).                                                                                   |
-| **getMonth**           | () => number                                                       | Gets the month, using local time.                                                                                                       |
-| **getUTCMonth**        | () => number                                                       | Gets the month of a Date object using Universal Coordinated Time (UTC).                                                                 |
-| **getDate**            | () => number                                                       | Gets the day-of-the-month, using local time.                                                                                            |
-| **getUTCDate**         | () => number                                                       | Gets the day-of-the-month, using Universal Coordinated Time (UTC).                                                                      |
-| **getDay**             | () => number                                                       | Gets the day of the week, using local time.                                                                                             |
-| **getUTCDay**          | () => number                                                       | Gets the day of the week using Universal Coordinated Time (UTC).                                                                        |
-| **getHours**           | () => number                                                       | Gets the hours in a date, using local time.                                                                                             |
-| **getUTCHours**        | () => number                                                       | Gets the hours value in a Date object using Universal Coordinated Time (UTC).                                                           |
-| **getMinutes**         | () => number                                                       | Gets the minutes of a Date object, using local time.                                                                                    |
-| **getUTCMinutes**      | () => number                                                       | Gets the minutes of a Date object using Universal Coordinated Time (UTC).                                                               |
-| **getSeconds**         | () => number                                                       | Gets the seconds of a Date object, using local time.                                                                                    |
-| **getUTCSeconds**      | () => number                                                       | Gets the seconds of a Date object using Universal Coordinated Time (UTC).                                                               |
-| **getMilliseconds**    | () => number                                                       | Gets the milliseconds of a Date, using local time.                                                                                      |
-| **getUTCMilliseconds** | () => number                                                       | Gets the milliseconds of a Date object using Universal Coordinated Time (UTC).                                                          |
-| **getTimezoneOffset**  | () => number                                                       | Gets the difference in minutes between the time on the local computer and Universal Coordinated Time (UTC).                             |
-| **setTime**            | (time: number) => number                                           | Sets the date and time value in the Date object.                                                                                        |
-| **setMilliseconds**    | (ms: number) => number                                             | Sets the milliseconds value in the Date object using local time.                                                                        |
-| **setUTCMilliseconds** | (ms: number) => number                                             | Sets the milliseconds value in the Date object using Universal Coordinated Time (UTC).                                                  |
-| **setSeconds**         | (sec: number, ms?: number) => number                               | Sets the seconds value in the Date object using local time.                                                                             |
-| **setUTCSeconds**      | (sec: number, ms?: number) => number                               | Sets the seconds value in the Date object using Universal Coordinated Time (UTC).                                                       |
-| **setMinutes**         | (min: number, sec?: number, ms?: number) => number                 | Sets the minutes value in the Date object using local time.                                                                             |
-| **setUTCMinutes**      | (min: number, sec?: number, ms?: number) => number                 | Sets the minutes value in the Date object using Universal Coordinated Time (UTC).                                                       |
-| **setHours**           | (hours: number, min?: number, sec?: number, ms?: number) => number | Sets the hour value in the Date object using local time.                                                                                |
-| **setUTCHours**        | (hours: number, min?: number, sec?: number, ms?: number) => number | Sets the hours value in the Date object using Universal Coordinated Time (UTC).                                                         |
-| **setDate**            | (date: number) => number                                           | Sets the numeric day-of-the-month value of the Date object using local time.                                                            |
-| **setUTCDate**         | (date: number) => number                                           | Sets the numeric day of the month in the Date object using Universal Coordinated Time (UTC).                                            |
-| **setMonth**           | (month: number, date?: number) => number                           | Sets the month value in the Date object using local time.                                                                               |
-| **setUTCMonth**        | (month: number, date?: number) => number                           | Sets the month value in the Date object using Universal Coordinated Time (UTC).                                                         |
-| **setFullYear**        | (year: number, month?: number, date?: number) => number            | Sets the year of the Date object using local time.                                                                                      |
-| **setUTCFullYear**     | (year: number, month?: number, date?: number) => number            | Sets the year value in the Date object using Universal Coordinated Time (UTC).                                                          |
-| **toUTCString**        | () => string                                                       | Returns a date converted to a string using Universal Coordinated Time (UTC).                                                            |
-| **toISOString**        | () => string                                                       | Returns a date as a string value in ISO format.                                                                                         |
-| **toJSON**             | (key?: any) => string                                              | Used by the JSON.stringify method to enable the transformation of an object's data for JavaScript Object Notation (JSON) serialization. |
+| Method                 | Signature                                                                                                    | Description                                                                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **toString**           | () =&gt; string                                                                                              | Returns a string representation of a date. The format of the string depends on the locale.                                              |
+| **toDateString**       | () =&gt; string                                                                                              | Returns a date as a string value.                                                                                                       |
+| **toTimeString**       | () =&gt; string                                                                                              | Returns a time as a string value.                                                                                                       |
+| **toLocaleString**     | () =&gt; string                                                                                              | Returns a value as a string value appropriate to the host environment's current locale.                                                 |
+| **toLocaleDateString** | () =&gt; string                                                                                              | Returns a date as a string value appropriate to the host environment's current locale.                                                  |
+| **toLocaleTimeString** | () =&gt; string                                                                                              | Returns a time as a string value appropriate to the host environment's current locale.                                                  |
+| **valueOf**            | () =&gt; number                                                                                              | Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC.                                                      |
+| **getTime**            | () =&gt; number                                                                                              | Gets the time value in milliseconds.                                                                                                    |
+| **getFullYear**        | () =&gt; number                                                                                              | Gets the year, using local time.                                                                                                        |
+| **getUTCFullYear**     | () =&gt; number                                                                                              | Gets the year using Universal Coordinated Time (UTC).                                                                                   |
+| **getMonth**           | () =&gt; number                                                                                              | Gets the month, using local time.                                                                                                       |
+| **getUTCMonth**        | () =&gt; number                                                                                              | Gets the month of a <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                             |
+| **getDate**            | () =&gt; number                                                                                              | Gets the day-of-the-month, using local time.                                                                                            |
+| **getUTCDate**         | () =&gt; number                                                                                              | Gets the day-of-the-month, using Universal Coordinated Time (UTC).                                                                      |
+| **getDay**             | () =&gt; number                                                                                              | Gets the day of the week, using local time.                                                                                             |
+| **getUTCDay**          | () =&gt; number                                                                                              | Gets the day of the week using Universal Coordinated Time (UTC).                                                                        |
+| **getHours**           | () =&gt; number                                                                                              | Gets the hours in a date, using local time.                                                                                             |
+| **getUTCHours**        | () =&gt; number                                                                                              | Gets the hours value in a <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                       |
+| **getMinutes**         | () =&gt; number                                                                                              | Gets the minutes of a <a href="#date">Date</a> object, using local time.                                                                |
+| **getUTCMinutes**      | () =&gt; number                                                                                              | Gets the minutes of a <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                           |
+| **getSeconds**         | () =&gt; number                                                                                              | Gets the seconds of a <a href="#date">Date</a> object, using local time.                                                                |
+| **getUTCSeconds**      | () =&gt; number                                                                                              | Gets the seconds of a <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                           |
+| **getMilliseconds**    | () =&gt; number                                                                                              | Gets the milliseconds of a <a href="#date">Date</a>, using local time.                                                                  |
+| **getUTCMilliseconds** | () =&gt; number                                                                                              | Gets the milliseconds of a <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                      |
+| **getTimezoneOffset**  | () =&gt; number                                                                                              | Gets the difference in minutes between the time on the local computer and Universal Coordinated Time (UTC).                             |
+| **setTime**            | (time: number) =&gt; number                                                                                  | Sets the date and time value in the <a href="#date">Date</a> object.                                                                    |
+| **setMilliseconds**    | (ms: number) =&gt; number                                                                                    | Sets the milliseconds value in the <a href="#date">Date</a> object using local time.                                                    |
+| **setUTCMilliseconds** | (ms: number) =&gt; number                                                                                    | Sets the milliseconds value in the <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                              |
+| **setSeconds**         | (sec: number, ms?: number \| undefined) =&gt; number                                                         | Sets the seconds value in the <a href="#date">Date</a> object using local time.                                                         |
+| **setUTCSeconds**      | (sec: number, ms?: number \| undefined) =&gt; number                                                         | Sets the seconds value in the <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                   |
+| **setMinutes**         | (min: number, sec?: number \| undefined, ms?: number \| undefined) =&gt; number                              | Sets the minutes value in the <a href="#date">Date</a> object using local time.                                                         |
+| **setUTCMinutes**      | (min: number, sec?: number \| undefined, ms?: number \| undefined) =&gt; number                              | Sets the minutes value in the <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                   |
+| **setHours**           | (hours: number, min?: number \| undefined, sec?: number \| undefined, ms?: number \| undefined) =&gt; number | Sets the hour value in the <a href="#date">Date</a> object using local time.                                                            |
+| **setUTCHours**        | (hours: number, min?: number \| undefined, sec?: number \| undefined, ms?: number \| undefined) =&gt; number | Sets the hours value in the <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                     |
+| **setDate**            | (date: number) =&gt; number                                                                                  | Sets the numeric day-of-the-month value of the <a href="#date">Date</a> object using local time.                                        |
+| **setUTCDate**         | (date: number) =&gt; number                                                                                  | Sets the numeric day of the month in the <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                        |
+| **setMonth**           | (month: number, date?: number \| undefined) =&gt; number                                                     | Sets the month value in the <a href="#date">Date</a> object using local time.                                                           |
+| **setUTCMonth**        | (month: number, date?: number \| undefined) =&gt; number                                                     | Sets the month value in the <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                     |
+| **setFullYear**        | (year: number, month?: number \| undefined, date?: number \| undefined) =&gt; number                         | Sets the year of the <a href="#date">Date</a> object using local time.                                                                  |
+| **setUTCFullYear**     | (year: number, month?: number \| undefined, date?: number \| undefined) =&gt; number                         | Sets the year value in the <a href="#date">Date</a> object using Universal Coordinated Time (UTC).                                      |
+| **toUTCString**        | () =&gt; string                                                                                              | Returns a date converted to a string using Universal Coordinated Time (UTC).                                                            |
+| **toISOString**        | () =&gt; string                                                                                              | Returns a date as a string value in ISO format.                                                                                         |
+| **toJSON**             | (key?: any) =&gt; string                                                                                     | Used by the JSON.stringify method to enable the transformation of an object's data for JavaScript Object Notation (JSON) serialization. |
 
 
-#### LocalNotificationAttachment
+#### Attachment
 
-| Prop          | Type                                                                                              |
-| ------------- | ------------------------------------------------------------------------------------------------- |
-| **`id`**      | <code>string</code>                                                                               |
-| **`url`**     | <code>string</code>                                                                               |
-| **`options`** | <code><a href="#localnotificationattachmentoptions">LocalNotificationAttachmentOptions</a></code> |
+Represents a notification attachment.
 
-
-#### LocalNotificationAttachmentOptions
-
-| Prop                                                             | Type                |
-| ---------------------------------------------------------------- | ------------------- |
-| **`iosUNNotificationAttachmentOptionsTypeHintKey`**              | <code>string</code> |
-| **`iosUNNotificationAttachmentOptionsThumbnailHiddenKey`**       | <code>string</code> |
-| **`iosUNNotificationAttachmentOptionsThumbnailClippingRectKey`** | <code>string</code> |
-| **`iosUNNotificationAttachmentOptionsThumbnailTimeKey`**         | <code>string</code> |
+| Prop          | Type                                                            | Description                                                                                                                           | Since |
+| ------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`id`**      | <code>string</code>                                             | The attachment identifier.                                                                                                            | 1.0.0 |
+| **`url`**     | <code>string</code>                                             | The URL to the attachment. Use the `res` scheme to reference web assets, e.g. `res:///assets/img/icon.png`. Also accepts `file` URLs. | 1.0.0 |
+| **`options`** | <code><a href="#attachmentoptions">AttachmentOptions</a></code> | <a href="#attachment">Attachment</a> options.                                                                                         | 1.0.0 |
 
 
-#### LocalNotificationPendingList
+#### AttachmentOptions
 
-| Prop                | Type                                    |
-| ------------------- | --------------------------------------- |
-| **`notifications`** | <code>LocalNotificationRequest[]</code> |
-
-
-#### LocalNotificationRequest
-
-| Prop     | Type                |
-| -------- | ------------------- |
-| **`id`** | <code>string</code> |
+| Prop                                                             | Type                | Description                                                                                                                                                                                                                                   | Since |
+| ---------------------------------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`iosUNNotificationAttachmentOptionsTypeHintKey`**              | <code>string</code> | Sets the `UNNotificationAttachmentOptionsTypeHintKey` key in the hashable options of [`UNNotificationAttachment`](https://developer.apple.com/documentation/usernotifications/unnotificationattachment). Only available for iOS.              | 1.0.0 |
+| **`iosUNNotificationAttachmentOptionsThumbnailHiddenKey`**       | <code>string</code> | Sets the `UNNotificationAttachmentOptionsThumbnailHiddenKey` key in the hashable options of [`UNNotificationAttachment`](https://developer.apple.com/documentation/usernotifications/unnotificationattachment). Only available for iOS.       | 1.0.0 |
+| **`iosUNNotificationAttachmentOptionsThumbnailClippingRectKey`** | <code>string</code> | Sets the `UNNotificationAttachmentOptionsThumbnailClippingRectKey` key in the hashable options of [`UNNotificationAttachment`](https://developer.apple.com/documentation/usernotifications/unnotificationattachment). Only available for iOS. | 1.0.0 |
+| **`iosUNNotificationAttachmentOptionsThumbnailTimeKey`**         | <code>string</code> | Sets the `UNNotificationAttachmentOptionsThumbnailTimeKey` key in the hashable options of [`UNNotificationAttachment`](https://developer.apple.com/documentation/usernotifications/unnotificationattachment). Only available for iOS.         | 1.0.0 |
 
 
-#### LocalNotificationActionType
+#### PendingResult
 
-| Prop                                   | Type                                   |
-| -------------------------------------- | -------------------------------------- |
-| **`id`**                               | <code>string</code>                    |
-| **`actions`**                          | <code>LocalNotificationAction[]</code> |
-| **`iosHiddenPreviewsBodyPlaceholder`** | <code>string</code>                    |
-| **`iosCustomDismissAction`**           | <code>boolean</code>                   |
-| **`iosAllowInCarPlay`**                | <code>boolean</code>                   |
-| **`iosHiddenPreviewsShowTitle`**       | <code>boolean</code>                   |
-| **`iosHiddenPreviewsShowSubtitle`**    | <code>boolean</code>                   |
+| Prop                | Type                                       | Description                        | Since |
+| ------------------- | ------------------------------------------ | ---------------------------------- | ----- |
+| **`notifications`** | <code>LocalNotificationDescriptor[]</code> | The list of pending notifications. | 1.0.0 |
 
 
-#### LocalNotificationAction
+#### RegisterActionTypesOptions
 
-| Prop                         | Type                 |
-| ---------------------------- | -------------------- |
-| **`id`**                     | <code>string</code>  |
-| **`title`**                  | <code>string</code>  |
-| **`requiresAuthentication`** | <code>boolean</code> |
-| **`foreground`**             | <code>boolean</code> |
-| **`destructive`**            | <code>boolean</code> |
-| **`input`**                  | <code>boolean</code> |
-| **`inputButtonTitle`**       | <code>string</code>  |
-| **`inputPlaceholder`**       | <code>string</code>  |
+| Prop        | Type                      | Description                           | Since |
+| ----------- | ------------------------- | ------------------------------------- | ----- |
+| **`types`** | <code>ActionType[]</code> | The list of action types to register. | 1.0.0 |
 
 
-#### LocalNotificationEnabledResult
+#### ActionType
 
-| Prop        | Type                 | Description                                               |
-| ----------- | -------------------- | --------------------------------------------------------- |
-| **`value`** | <code>boolean</code> | Whether the device has Local Notifications enabled or not |
+A collection of actions.
 
-
-#### NotificationChannel
-
-| Prop              | Type                               |
-| ----------------- | ---------------------------------- |
-| **`id`**          | <code>string</code>                |
-| **`name`**        | <code>string</code>                |
-| **`description`** | <code>string</code>                |
-| **`sound`**       | <code>string</code>                |
-| **`importance`**  | <code>1 \| 2 \| 5 \| 4 \| 3</code> |
-| **`visibility`**  | <code>0 \| 1 \| -1</code>          |
-| **`lights`**      | <code>boolean</code>               |
-| **`lightColor`**  | <code>string</code>                |
-| **`vibration`**   | <code>boolean</code>               |
+| Prop                                   | Type                  | Description                                                                                                                                                                                     | Since |
+| -------------------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`id`**                               | <code>string</code>   | The ID of the action type. Referenced in notifications by the `actionTypeId` key.                                                                                                               | 1.0.0 |
+| **`actions`**                          | <code>Action[]</code> | The list of actions associated with this action type.                                                                                                                                           | 1.0.0 |
+| **`iosHiddenPreviewsBodyPlaceholder`** | <code>string</code>   | Sets `hiddenPreviewsBodyPlaceholder` of the [`UNNotificationCategory`](https://developer.apple.com/documentation/usernotifications/unnotificationcategory). Only available for iOS.             | 1.0.0 |
+| **`iosCustomDismissAction`**           | <code>boolean</code>  | Sets `customDismissAction` in the options of the [`UNNotificationCategory`](https://developer.apple.com/documentation/usernotifications/unnotificationcategory). Only available for iOS.        | 1.0.0 |
+| **`iosAllowInCarPlay`**                | <code>boolean</code>  | Sets `allowInCarPlay` in the options of the [`UNNotificationCategory`](https://developer.apple.com/documentation/usernotifications/unnotificationcategory). Only available for iOS.             | 1.0.0 |
+| **`iosHiddenPreviewsShowTitle`**       | <code>boolean</code>  | Sets `hiddenPreviewsShowTitle` in the options of the [`UNNotificationCategory`](https://developer.apple.com/documentation/usernotifications/unnotificationcategory). Only available for iOS.    | 1.0.0 |
+| **`iosHiddenPreviewsShowSubtitle`**    | <code>boolean</code>  | Sets `hiddenPreviewsShowSubtitle` in the options of the [`UNNotificationCategory`](https://developer.apple.com/documentation/usernotifications/unnotificationcategory). Only available for iOS. | 1.0.0 |
 
 
-#### NotificationChannelList
+#### Action
 
-| Prop           | Type                               |
-| -------------- | ---------------------------------- |
-| **`channels`** | <code>NotificationChannel[]</code> |
+An action that can be taken when a notification is displayed.
+
+| Prop                         | Type                 | Description                                                                                                                                                                                                     | Since |
+| ---------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`id`**                     | <code>string</code>  | The action identifier. Referenced in the `'actionPerformed'` event as `actionId`.                                                                                                                               | 1.0.0 |
+| **`title`**                  | <code>string</code>  | The title text to display for this action.                                                                                                                                                                      | 1.0.0 |
+| **`requiresAuthentication`** | <code>boolean</code> | Sets `authenticationRequired` in the options of the [`UNNotificationAction`](https://developer.apple.com/documentation/usernotifications/unnotificationaction). Only available for iOS.                         | 1.0.0 |
+| **`foreground`**             | <code>boolean</code> | Sets `foreground` in the options of the [`UNNotificationAction`](https://developer.apple.com/documentation/usernotifications/unnotificationaction). Only available for iOS.                                     | 1.0.0 |
+| **`destructive`**            | <code>boolean</code> | Sets `destructive` in the options of the [`UNNotificationAction`](https://developer.apple.com/documentation/usernotifications/unnotificationaction). Only available for iOS.                                    | 1.0.0 |
+| **`input`**                  | <code>boolean</code> | Use a `UNTextInputNotificationAction` instead of a `UNNotificationAction`. Only available for iOS.                                                                                                              | 1.0.0 |
+| **`inputButtonTitle`**       | <code>string</code>  | Sets `textInputButtonTitle` on the [`UNTextInputNotificationAction`](https://developer.apple.com/documentation/usernotifications/untextinputnotificationaction). Only available for iOS when `input` is `true`. | 1.0.0 |
+| **`inputPlaceholder`**       | <code>string</code>  | Sets `textInputPlaceholder` on the [`UNTextInputNotificationAction`](https://developer.apple.com/documentation/usernotifications/untextinputnotificationaction). Only available for iOS when `input` is `true`. | 1.0.0 |
 
 
-#### NotificationPermissionResponse
+#### CancelOptions
 
-| Prop          | Type                 |
-| ------------- | -------------------- |
-| **`granted`** | <code>boolean</code> |
+| Prop                | Type                                       | Description                          | Since |
+| ------------------- | ------------------------------------------ | ------------------------------------ | ----- |
+| **`notifications`** | <code>LocalNotificationDescriptor[]</code> | The list of notifications to cancel. | 1.0.0 |
+
+
+#### EnabledResult
+
+| Prop        | Type                 | Description                                                | Since |
+| ----------- | -------------------- | ---------------------------------------------------------- | ----- |
+| **`value`** | <code>boolean</code> | Whether or not the device has local notifications enabled. | 1.0.0 |
+
+
+#### Channel
+
+| Prop              | Type                               | Description                                                                                                                                                                                                                                                | Since |
+| ----------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`id`**          | <code>string</code>                | The channel identifier.                                                                                                                                                                                                                                    | 1.0.0 |
+| **`name`**        | <code>string</code>                | The human-friendly name of this channel (presented to the user).                                                                                                                                                                                           | 1.0.0 |
+| **`description`** | <code>string</code>                | The description of this channel (presented to the user).                                                                                                                                                                                                   | 1.0.0 |
+| **`sound`**       | <code>string</code>                | The sound that should be played for notifications posted to this channel. Notification channels with an importance of at least `3` should have a sound. The file name of a sound file should be specified relative to the android app `res/raw` directory. | 1.0.0 |
+| **`importance`**  | <code>1 \| 2 \| 5 \| 4 \| 3</code> | The level of interruption for notifications posted to this channel.                                                                                                                                                                                        | 1.0.0 |
+| **`visibility`**  | <code>0 \| 1 \| -1</code>          | The visibility of notifications posted to this channel. This setting is for whether notifications posted to this channel appear on the lockscreen or not, and if so, whether they appear in a redacted form.                                               | 1.0.0 |
+| **`lights`**      | <code>boolean</code>               | Whether notifications posted to this channel should display notification lights, on devices that support it.                                                                                                                                               | 1.0.0 |
+| **`lightColor`**  | <code>string</code>                | The light color for notifications posted to this channel. Only supported if lights are enabled on this channel and the device supports it. Supported color formats are `#RRGGBB` and `#RRGGBBAA`.                                                          | 1.0.0 |
+| **`vibration`**   | <code>boolean</code>               | Whether notifications posted to this channel should vibrate.                                                                                                                                                                                               | 1.0.0 |
+
+
+#### ListChannelsResult
+
+| Prop           | Type                   | Description                        | Since |
+| -------------- | ---------------------- | ---------------------------------- | ----- |
+| **`channels`** | <code>Channel[]</code> | The list of notification channels. | 1.0.0 |
+
+
+#### PermissionStatus
+
+| Prop          | Type                                                        | Description                                   | Since |
+| ------------- | ----------------------------------------------------------- | --------------------------------------------- | ----- |
+| **`display`** | <code><a href="#permissionstate">PermissionState</a></code> | Permission state of displaying notifications. | 1.0.0 |
 
 
 #### PluginListenerHandle
 
-| Prop         | Type                    |
-| ------------ | ----------------------- |
-| **`remove`** | <code>() => void</code> |
+| Prop         | Type                       |
+| ------------ | -------------------------- |
+| **`remove`** | <code>() =&gt; void</code> |
 
 
-#### LocalNotificationActionPerformed
+#### ActionPerformed
 
-| Prop               | Type                                                            |
-| ------------------ | --------------------------------------------------------------- |
-| **`actionId`**     | <code>string</code>                                             |
-| **`inputValue`**   | <code>string</code>                                             |
-| **`notification`** | <code><a href="#localnotification">LocalNotification</a></code> |
+| Prop               | Type                                                                        | Description                                                                                                            | Since |
+| ------------------ | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`actionId`**     | <code>string</code>                                                         | The identifier of the performed action.                                                                                | 1.0.0 |
+| **`inputValue`**   | <code>string</code>                                                         | The value entered by the user on the notification. Only available on iOS for notifications with `input` set to `true`. | 1.0.0 |
+| **`notification`** | <code><a href="#localnotificationschema">LocalNotificationSchema</a></code> | The original notification schema.                                                                                      | 1.0.0 |
+
+
+### Type Aliases
+
+
+#### NotificationChannel
+
+<code><a href="#channel">Channel</a></code>
+
+
+#### PermissionState
+
+<code>'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'</code>
 
 </docgen-api>

@@ -9,7 +9,11 @@
   - [Development Workflow](basics/workflow.md)
   - [Using Plugins](basics/using-plugins.md)
   - [Native Project Configuration](basics/configuring-your-app.md)
-  - [Progressive Web Apps](basics/progressive-web-app.md)
+- Upgrade Guides
+  - [Upgrading to 3.0](updating/3-0.md)
+  - [Upgrading to 2.0](updating/2-0.md)
+  - [Upgrading to 1.1](updating/1-1.md)
+  - [Upgrading plugins to 3.0](updating/plugins/3-0.md)
 - Cordova/PhoneGap
   - [Overview](cordova/index.md)
   - [Migration Strategy](cordova/migration-strategy.md)
@@ -43,9 +47,9 @@
   - [Troubleshooting](android/troubleshooting.md)
 - Web/PWA
   - [Getting Started](web/index.md)
+  - [Progressive Web Apps](web/progressive-web-apps.md)
   - [PWA Elements](web/pwa-elements.md)
 - Reference
-  - [Upgrade Guide](updating/apps.md)
   - [Config](config/index.md)
   - [Core APIs](core-apis/index.md)
   - [Plugin APIs ->](apis/index.md)

@@ -7,15 +7,64 @@
 
   display: block;
   height: 64px;
-  position: sticky;
+  position: relative;
   top: 0;
-  background: #fff;
+  background: var(--c-background);
   transform: translate(0px);
   z-index: 1000;
   border-block-end: 1px solid rgba(0, 21, 58, 0.06);
 
   transition: box-shadow 0.2s ease-out;
 }
+
+:host(.sticky) {
+  position: sticky;
+}
+
+// #region ---------------------- DARK THEME --------------------------
+:host(.theme--dark) {
+  --c-background: black;
+  background: black;
+
+  .capacitor-logo {
+    path:not(.logo) {
+      fill: #fff;
+    }
+  }
+
+  a.ui-paragraph-4 {
+    color: #fff;
+
+    &.active {
+      color: var(--c-carbon-30);
+      pointer-events: none;
+
+      @media screen and (max-width: $screen-xs-max) {
+        background: initial;
+        color: var(--c-capacitor-blue);
+      }
+    }
+  }
+
+  .ui-button {
+    transition: background-color 0.2s ease-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  .separator {
+    background: var(--c-carbon-70);
+  }
+
+  more-button {
+    --color: #fff;
+  }
+}
+// #endregion ---------------------------------------------------------
 
 .docs-search-wrapper {
   margin-inline-start: var(--space-4);
@@ -80,6 +129,7 @@ app-menu-toggle {
 }
 
 a.ui-paragraph-4 {
+  font-weight: 500;
   display: flex;
   align-items: center;
   margin-inline-start: clamp(var(--space-0), 3.5vw, 24px);
@@ -87,12 +137,13 @@ a.ui-paragraph-4 {
 
   &.active {
     color: var(--c-cyan-100);
-    // font-weight: 500;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:hover {
     opacity: var(--link-hover-opacity);
   }
 }
@@ -160,7 +211,6 @@ more-button {
 }
 
 @media screen and (max-width: $screen-xs-max) {
-  .separator,
   .desktop-only {
     display: none;
   }

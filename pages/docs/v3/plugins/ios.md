@@ -119,7 +119,9 @@ This makes `MyPlugin`, and the `echo` method available to the Capacitor web runt
 
 ## Permissions
 
-If your plugin has functionality on iOS that requires permissions from the end user, then you will need to implement the permissions pattern. If you haven't yet set up your permission aliases and status interfaces yet, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
+If your plugin has functionality on iOS that requires permissions from the end user, then you will need to implement the permissions pattern.
+
+Before following this section, make sure you've set up your permission aliases and status interfaces. If you haven't, see the [Permissions section in the Web guide](/docs/plugins/web#permissions).
 
 ### Implementing Permissions
 

@@ -5,7 +5,7 @@ date: 2020-07-14 08:00:00
 author: Max Lynch <max@ionic.io>
 authorUrl: https://twitter.com/maxlynch
 description: Build app store apps using React web libraries and Capacitor
-featuredImage: /assets/img/blog/native-wout-react-native.png
+featuredImage: /native-wout-react-native.png
 featuredImageAlt: Native React Apps Without React Native
 ---
 
