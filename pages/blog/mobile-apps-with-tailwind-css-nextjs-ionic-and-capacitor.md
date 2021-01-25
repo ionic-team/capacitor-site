@@ -5,6 +5,8 @@ description: Learn how to build iOS, Android, and Progressive Web Apps with Tail
 date: 2021-01-21 08:00:00
 author: Max Lynch <max@ionic.io>
 authorUrl: https://twitter.com/maxlynch
+featuredImage: /tailwind-nextjs-ionic/feature.png
+featuredImageAlt: Tailwind + Next.js + Ionic Framework + Capacitor
 ---
 
 A very popular stack for building responsive web apps is [Tailwind CSS](https://tailwindcss.com/) and [Next.js](https://nextjs.org/).
