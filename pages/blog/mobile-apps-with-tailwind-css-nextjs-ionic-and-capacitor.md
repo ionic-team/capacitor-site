@@ -9,7 +9,7 @@ featuredImage: /tailwind-nextjs-ionic/feature.png
 featuredImageAlt: Tailwind + Next.js + Ionic Framework + Capacitor
 ---
 
-A very popular stack for building responsive web apps is [Tailwind CSS](https://tailwindcss.com/) and [Next.js](https://nextjs.org/).
+A very popular stack for building responsive web apps is [Tailwind CSS](https://tailwindcss.com/) and [Next.js](https://nextjs.org/) by [Vercel](https://vercel.com/).
 
 Tailwind, a utility-first CSS framework that replaces the need to write custom class names or even any CSS at all in many cases, makes it easy to design responsive web apps through small CSS building blocks and a flexible design foundation.
 

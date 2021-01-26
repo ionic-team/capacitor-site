@@ -136,6 +136,7 @@ export class BlogPost {
     return (
       <Helmet>
         <title>Capacitor Blog - {this.data!.title}</title>
+        <meta property="twitter:title" content={this.data.title} />
         <meta name="description" content={this.data!.description} />
         <meta
           name="twitter:description"
