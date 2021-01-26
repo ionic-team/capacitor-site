@@ -187,3 +187,11 @@ npx cap open android
 If you've been interested in building mobile apps using popular web dev projects like Next.js or Tailwind, hopefully this starter provides inspiration and a solid foundation for building your next app using web technologies. It's worth mentioning this exact same approach can be used with other UI libraries (like material, bootstrap, or your own!).
 
 When you're ready, dig into [the starter project](https://github.com/mlynch/nextjs-tailwind-ionic-capacitor-starter), follow the [Capacitor](https://capacitorjs.com/) and [Ionic Framework](https://ionicframework.com/) docs, and get building!
+
+<div align="center">
+
+<blog-forum-link href="https://forum.ionicframework.com/t/build-mobile-apps-with-tailwind-css-next-js-ionic-framework-and-capacitor/203596">
+  👋 Join the discussion on the Forum
+</blog-forum-link>
+
+</div>
