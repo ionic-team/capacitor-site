@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import {
   ResponsiveContainer,
   Button,
@@ -92,12 +93,10 @@ function ImageTestPage(props: Props): JSX.Element {
   const ImageTest = () => {
     return (
       <>
-        {/* <IdealImage
-          // placeholder={{ TestLqip }}
-          srcSet={[{ src: TestImage, width: 1600 }]}
-          width={1600}
-          height={800}
-        /> */}
+        <BrowserOnly
+          fallback={<h1>Pre-rendered!</h1>}>
+          {() => (<h2>In the browser!</h2>)}
+        </BrowserOnly>
         <Image style={{ width: '100%' }} img={TestImage} size={400} />
         <Image style={{ width: '100%' }} img={require('../../../static/img/og.png')} min={320} max={1200} />
       </>
