@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 import {
   ResponsiveContainer,
   Button,
@@ -9,10 +11,8 @@ import {
 } from '../../ds';
 import { getPage } from '../../data.server/prismic';
 
-// import lqip from 'lqip'
-import IdealImage from 'react-ideal-image'
-
-import Image from '@theme/IdealImage';
+import ResponsiveImage from '../../components/ResponsiveImage';
+import {Image as IdealImage} from '@theme/IdealImage';
 import TestImage from '../../../static/img/og.png';
 
 import '../landing-page.scss';
@@ -91,14 +91,15 @@ function ImageTestPage(props: Props): JSX.Element {
   };
 
   const ImageTest = () => {
+    const { isClient } = useDocusaurusContext();
     return (
       <>
         <BrowserOnly
-          fallback={<h1>Pre-rendered!</h1>}>
-          {() => (<h2>In the browser!</h2>)}
+          fallback={<h1>Pre-rendered! NODE_ENV: {process.env.NODE_ENV} </h1>}>
+          {() => (<h1>In the browser! NODE_ENV: {process.env.NODE_ENV} </h1>)}
         </BrowserOnly>
-        <Image style={{ width: '100%' }} img={TestImage} size={400} />
-        <Image style={{ width: '100%' }} img={require('../../../static/img/og.png')} min={320} max={1200} />
+        {/* <Image style={{ width: '100%' }} img={TestImage} size={400} /> */}
+        <ResponsiveImage style={{ width: '100%' }} img={require('../../../static/img/og.png')} min={320} max={1200} />
       </>
     );
   }
