@@ -32,7 +32,7 @@ iOS devices.
 ## Example
 
 ```typescript
-import { StatusBar, StatusBarStyle } from '@capacitor/status-bar';
+import { StatusBar, Style } from '@capacitor/status-bar';
 
 // iOS only
 window.addEventListener('statusTap', function () {
@@ -43,11 +43,11 @@ window.addEventListener('statusTap', function () {
 StatusBar.setOverlaysWebView({ overlay: true });
 
 const setStatusBarStyleDark = async () => {
-  await StatusBar.setStyle({ style: StatusBarStyle.Dark });
+  await StatusBar.setStyle({ style: Style.Dark });
 };
 
 const setStatusBarStyleLight = async () => {
-  await StatusBar.setStyle({ style: StatusBarStyle.Light });
+  await StatusBar.setStyle({ style: Style.Light });
 };
 
 const hideStatusBar = async () => {
