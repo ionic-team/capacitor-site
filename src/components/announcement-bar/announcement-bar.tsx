@@ -5,7 +5,7 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { h, Prop, Component, Host, getAssetPath } from '@stencil/core';
 
-import { track as trackEvent } from '../../utils/analytics';
+import { trackClick } from '../../utils/analytics';
 
 // interface AnnouncementBarProps {
 //   prismicData: {
@@ -26,23 +26,6 @@ import { track as trackEvent } from '../../utils/analytics';
 })
 export class AnnouncementBar {
   @Prop() prismicData;
-
-  handleCtaClick = e => {
-    e.preventDefault();
-    trackEvent({
-      action: 'click',
-      category: 'MarketingCTAs',
-      label: 'btn-header-announcement',
-    });
-    // open popup
-    const newWin = window.open(this.prismicData.url);
-    setTimeout(() => {
-      if (!newWin || newWin.closed || typeof newWin.closed == 'undefined') {
-        // popup blocked
-        window.location = this.prismicData.url;
-      }
-    }, 500);
-  };
 
   render() {
     const {
@@ -68,7 +51,7 @@ export class AnnouncementBar {
         <a
           href={url}
           target="_blank"
-          onClick={this.handleCtaClick}
+          onClick={event => trackClick('Capacitor Announcement Bar CTA', event)}
           rel="noopener"
           class="link-wrapper"
         >
