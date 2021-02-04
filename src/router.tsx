@@ -149,7 +149,7 @@ export const Routes = () => (
     <Route
       path={match('/solution/:solutionId*')}
       mapParams={staticState(getPage)}
-      render={data => (
+      render={(params, data) => (
         <Fragment>
           <announcement-bar prismicData={data.announcement_bar} />
           {/* <platform-bar
@@ -157,7 +157,7 @@ export const Routes = () => (
             productName="Capacitor"
           /> */}
           <site-header class="heading-container" />
-          <solution-page solutionId={data.solutionId} />
+          <solution-page solutionId={params.solutionId} />
         </Fragment>
       )}
     />
