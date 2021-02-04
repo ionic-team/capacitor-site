@@ -47,7 +47,7 @@ function createApiPage(pluginId: string, readme: string, pkgJson: any) {
   const desc = pkgJson.description
     ? pkgJson.description.replace(/\n/g, ' ')
     : title;
-  const editUrl = `https://github.com/ionic-team/capacitor-site/main/pages/docs/v3/${pluginId}.md`;
+  const editUrl = `https://github.com/ionic-team/capacitor-site/blob/main/pages/docs/v3/apis/${pluginId}.md`;
   const editApiUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/src/definitions.ts`;
 
   return `
