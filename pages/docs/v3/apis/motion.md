@@ -1,7 +1,7 @@
 ---
 title: Motion Capacitor Plugin API
 description: The Motion API tracks accelerometer and device orientation (compass heading, etc.)
-editUrl: https://github.com/ionic-team/capacitor-site/blob/main/pages/docs/v3/apis/motion.md
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/src/definitions.ts
 ---
 

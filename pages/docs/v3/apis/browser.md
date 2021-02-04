@@ -1,7 +1,7 @@
 ---
 title: Browser Capacitor Plugin API
 description: The Browser API provides the ability to open an in-app browser and subscribe to browser events.
-editUrl: https://github.com/ionic-team/capacitor-site/blob/main/pages/docs/v3/apis/browser.md
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/browser/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/browser/src/definitions.ts
 ---
 

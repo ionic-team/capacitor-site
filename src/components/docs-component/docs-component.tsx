@@ -102,6 +102,7 @@ export class DocsComponent implements ComponentInterface {
                 headings={data.headings}
                 editUrl={data.editUrl}
                 editApiUrl={data.editApiUrl}
+                url={data.navigation.current.url}
               />
             </div>
           </div>

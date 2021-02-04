@@ -101,6 +101,7 @@ export namespace Components {
         "editApiUrl": string;
         "editUrl": string;
         "headings": HeadingData[];
+        "url": string;
     }
     interface LandingPage {
         "data": any;
@@ -498,6 +499,7 @@ declare namespace LocalJSX {
         "editApiUrl"?: string;
         "editUrl"?: string;
         "headings"?: HeadingData[];
+        "url"?: string;
     }
     interface LandingPage {
         "data"?: any;

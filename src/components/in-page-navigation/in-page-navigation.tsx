@@ -15,14 +15,16 @@ export class InPageNavigtion {
   @Prop() headings: HeadingData[] = [];
   @Prop() editUrl: string = '';
   @Prop() editApiUrl: string = '';
+  @Prop() url: string = '';
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
   render() {
     const headings = this.headings.filter(heading => heading.level !== 1);
     const h1 = this.headings.find(heading => heading.level === 1);
+    const isPluginPage = this.url.includes('/v3/apis/');
 
-    const submitEditLinks = this.editUrl ? (
+    const submitEditLinks = (
       <div class="submit-edit">
         <div class="submit-edit-title">{ghIcon()} Submit an edit</div>
         <ul class="edit-links">
@@ -41,6 +43,14 @@ export class InPageNavigtion {
             </li>
           )}
         </ul>
+      </div>
+    );
+
+    const submitEditLink = this.editUrl ? (
+      <div class="submit-edit">
+        <a class="submit-edit-title" target="_blank" href={this.editUrl}>
+          {ghIcon()} Submit an edit
+        </a>
       </div>
     ) : null;
 
@@ -81,7 +91,7 @@ export class InPageNavigtion {
             </li>
           ))}
         </ul>
-        {submitEditLinks}
+        {isPluginPage ? submitEditLinks : submitEditLink}
         <internal-ad />
       </nav>
     );
