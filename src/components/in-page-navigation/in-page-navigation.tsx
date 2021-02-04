@@ -1,4 +1,4 @@
-import { Component, Prop, State, h, Fragment } from '@stencil/core';
+import { Component, Prop, State, h } from '@stencil/core';
 import type { HeadingData } from '@stencil/ssg';
 import { Heading } from '@ionic-internal/ionic-ds';
 
