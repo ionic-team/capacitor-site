@@ -9,6 +9,7 @@ import { join } from 'path';
 import { getGithubData } from './github';
 import type { DocsData } from './docs';
 import { hookUpDesignSystem } from './blog';
+import { queryPrismic } from './prismic';
 
 const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
@@ -49,6 +50,8 @@ export const getDocsDataV2: MapParamData = async ({ id }) => {
     results.contributors.push(...results.attributes.contributors);
   }
   results.contributors = Array.from(new Set(results.contributors));
+
+  results.announcement_bar = await queryPrismic('announcement_bar');
 
   return results;
 };

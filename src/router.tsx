@@ -22,10 +22,11 @@ export const Routes = () => (
       mapParams={staticState(getPage)}
       render={(_, data) => (
         <Fragment>
-          <platform-bar
+          {/* <platform-bar
             containerClass="heading-container"
             productName="Capacitor"
-          />
+          /> */}
+          <announcement-bar prismicData={data.announcement_bar} />
           <site-header class="heading-container" />
           <landing-page data={data} />
         </Fragment>
@@ -37,10 +38,11 @@ export const Routes = () => (
       mapParams={staticState(getAllBlogData)}
       render={(_, data) => (
         <Fragment>
-          <platform-bar
+          {/* <platform-bar
             containerClass="heading-container"
             productName="Capacitor"
-          />
+          /> */}
+          <announcement-bar prismicData={data[0].announcement_bar} />
           <site-header class="heading-container" sticky={true} />
           <blog-page data={data} />
         </Fragment>
@@ -52,10 +54,11 @@ export const Routes = () => (
       mapParams={staticState(getBlogData)}
       render={(_, data) => (
         <Fragment>
-          <platform-bar
+          <announcement-bar prismicData={data.announcement_bar} />
+          {/* <platform-bar
             containerClass="heading-container"
             productName="Capacitor"
-          />
+          /> */}
           <site-header class="heading-container" sticky={true} />
           <blog-post data={data} />
         </Fragment>
@@ -67,38 +70,54 @@ export const Routes = () => (
       mapParams={staticState(getPage)}
       render={(_, data) => (
         <Fragment>
-          <platform-bar
+          <announcement-bar prismicData={data.announcement_bar} />
+          {/* <platform-bar
             containerClass="heading-container"
             productName="Capacitor"
-          />
+          /> */}
           <site-header class="heading-container" sticky={true} />
           <community-page data={data} />
         </Fragment>
       )}
     />
 
-    <Route path="/telemetry">
-      <platform-bar
-        containerClass="heading-container"
-        productName="Capacitor"
-      />
-      <site-header class="heading-container" sticky={true} />
-      <telemetry-page />
-    </Route>
+    <Route
+      path="/telemetry"
+      mapParams={staticState(getPage)}
+      render={(_, data) => (
+        <Fragment>
+          <announcement-bar prismicData={data.announcement_bar} />
+          {/* <platform-bar
+            containerClass="heading-container"
+            productName="Capacitor"
+          /> */}
+          <site-header class="heading-container" sticky={true} />
+          <telemetry-page />
+        </Fragment>
+      )}
+    />
 
-    <Route path="/cordova">
-      <cordova-page />
-    </Route>
+    <Route
+      path="/cordova"
+      mapParams={staticState(getPage)}
+      render={(_, data) => (
+        <Fragment>
+          <announcement-bar prismicData={data.announcement_bar} />
+          <cordova-page />
+        </Fragment>
+      )}
+    />
 
     <Route
       path="/enterprise"
       mapParams={staticState(getPage)}
       render={(_, data) => (
         <Fragment>
-          <platform-bar
+          <announcement-bar prismicData={data.announcement_bar} />
+          {/* <platform-bar
             containerClass="heading-container"
             productName="Capacitor"
-          />
+          /> */}
           <site-header class="heading-container" theme="dark" sticky={false} />
           <enterprise-page data={data} />
         </Fragment>
@@ -108,25 +127,37 @@ export const Routes = () => (
     <Route
       path={matchAny(['/docs/v3/:id*', '/docs/v3'])}
       mapParams={staticState(getDocsData)}
-      render={(_, data) => <docs-component data={data} />}
+      render={(_, data) => (
+        <Fragment>
+          <announcement-bar prismicData={data.announcement_bar} />
+          <docs-component data={data} />
+        </Fragment>
+      )}
     />
 
     <Route
       path={matchAny(['/docs/:id*', '/docs'])}
       mapParams={staticState(getDocsDataV2)}
-      render={(_, data) => <docs-component data={data} />}
+      render={(_, data) => (
+        <Fragment>
+          <announcement-bar prismicData={data.announcement_bar} />
+          <docs-component data={data} />
+        </Fragment>
+      )}
     />
 
     <Route
       path={match('/solution/:solutionId*')}
-      render={({ solutionId }) => (
+      mapParams={staticState(getPage)}
+      render={data => (
         <Fragment>
-          <platform-bar
+          <announcement-bar prismicData={data.announcement_bar} />
+          {/* <platform-bar
             containerClass="heading-container"
             productName="Capacitor"
-          />
+          /> */}
           <site-header class="heading-container" />
-          <solution-page solutionId={solutionId} />
+          <solution-page solutionId={data.solutionId} />
         </Fragment>
       )}
     />

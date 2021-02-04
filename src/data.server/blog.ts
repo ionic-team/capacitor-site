@@ -3,6 +3,8 @@ import fs from 'fs';
 import { join } from 'path';
 import { parseMarkdown, MarkdownResults, JsxAstNode } from '@stencil/ssg/parse';
 
+import { queryPrismic } from './prismic';
+
 const repoRootDir = join(__dirname, '..', '..');
 const blogDir = join(repoRootDir, 'pages', 'blog');
 
@@ -17,6 +19,7 @@ export interface BlogData extends MarkdownResults {
   featuredImageAlt?: string;
   date?: string;
   preview?: boolean;
+  announcement_bar?: any;
 }
 
 export const getAllBlogData: MapParamData = async () => {
@@ -71,6 +74,8 @@ const getFormattedData = async (slug: string, preview = false) => {
   results.slug = results.attributes.slug || slug;
 
   results = updateAnchors(results, slug);
+
+  results.announcement_bar = await queryPrismic('announcement_bar');
 
   return results;
 };
