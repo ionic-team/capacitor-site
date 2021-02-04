@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, State, h, Fragment } from '@stencil/core';
 import type { HeadingData } from '@stencil/ssg';
 import { Heading } from '@ionic-internal/ionic-ds';
 
@@ -14,6 +14,7 @@ interface ItemOffset {
 export class InPageNavigtion {
   @Prop() headings: HeadingData[] = [];
   @Prop() editUrl: string = '';
+  @Prop() editApiUrl: string = '';
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
@@ -21,17 +22,32 @@ export class InPageNavigtion {
     const headings = this.headings.filter(heading => heading.level !== 1);
     const h1 = this.headings.find(heading => heading.level === 1);
 
-    const submitEditLink = this.editUrl ? (
-      <a class="submit-edit-link" target="_blank" href={this.editUrl}>
-        {ghIcon()}
-        <span>Submit an edit</span>
-      </a>
+    const submitEditLinks = this.editUrl ? (
+      <div class="submit-edit">
+        <div class="submit-edit-title">{ghIcon()} Submit an edit</div>
+        <ul class="edit-links">
+          {this.editUrl && (
+            <li>
+              <a target="_blank" href={this.editUrl}>
+                <span class="arrow">-&gt;</span> readme
+              </a>
+            </li>
+          )}
+          {this.editApiUrl && (
+            <li>
+              <a target="_blank" href={this.editApiUrl}>
+                <span class="arrow">-&gt;</span> api
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
     ) : null;
 
     if (headings.length === 0) {
       return (
         <nav class="sticky">
-          {submitEditLink}
+          {submitEditLinks}
           <internal-ad />
         </nav>
       );
@@ -65,7 +81,7 @@ export class InPageNavigtion {
             </li>
           ))}
         </ul>
-        {submitEditLink}
+        {submitEditLinks}
         <internal-ad />
       </nav>
     );

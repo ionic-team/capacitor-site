@@ -135,29 +135,36 @@ in-page-navigation li.heading-link stencil-route-link {
   margin-top: 4px;
 }
 
-in-page-navigation .submit-edit-link {
+in-page-navigation .submit-edit {
+  margin: 2rem 0;
+}
+
+in-page-navigation .submit-edit-title {
   display: flex;
   align-items: center;
 
-  font-size: 12px;
   color: var(--color-dodger-blue);
   font-weight: 600;
   text-decoration: none;
 }
 
-in-page-navigation .submit-edit-link svg {
+in-page-navigation .submit-edit-title svg {
   width: 16px;
+  margin-inline-end: 0.5rem;
   fill: currentColor;
 }
 
-in-page-navigation .submit-edit-link span {
-  transition: border 0.2s;
-  height: 16px;
-  margin-left: 6px;
-  margin-bottom: 2px;
+in-page-navigation .edit-links {
+  margin: 0.5rem 0 0 0;
+  list-style: none;
+  padding-inline-start: 1.5rem;
 }
 
-in-page-navigation .heading-links + .submit-edit-link {
+in-page-navigation .edit-links li + li {
+  margin-block-start: 0.25rem;
+}
+
+in-page-navigation .heading-links + .submit-edit-title {
   margin-top: 28px;
   border-bottom: none;
 }

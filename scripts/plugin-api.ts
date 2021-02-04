@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import fetch from 'node-fetch';
 
-const API_DIR =  path.join(__dirname,'..','pages','docs', 'v3', 'apis');
+const API_DIR = path.join(__dirname, '..', 'pages', 'docs', 'v3', 'apis');
 
 const pluginApis = [
   'action-sheet',
@@ -31,7 +31,7 @@ const pluginApis = [
 ];
 
 async function buildPluginApiDocs(pluginId: string) {
-  const [ readme, pkgJson ] = await Promise.all([
+  const [readme, pkgJson] = await Promise.all([
     getReadme(pluginId),
     getPkgJsonData(pluginId),
   ]);
@@ -44,14 +44,18 @@ async function buildPluginApiDocs(pluginId: string) {
 
 function createApiPage(pluginId: string, readme: string, pkgJson: any) {
   const title = `${toTitleCase(pluginId)} Capacitor Plugin API`;
-  const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
-  const editUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/src/definitions.ts`;
+  const desc = pkgJson.description
+    ? pkgJson.description.replace(/\n/g, ' ')
+    : title;
+  const editUrl = `https://github.com/ionic-team/capacitor-site/main/pages/docs/v3/${pluginId}.md`;
+  const editApiUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/src/definitions.ts`;
 
   return `
 ---
 title: ${title}
 description: ${desc}
 editUrl: ${editUrl}
+editApiUrl: ${editApiUrl}
 ---
 
 ${readme}`.trim();
@@ -73,7 +77,14 @@ async function writeListToIndex(pluginIds: string[]) {
   const indexPath = path.join(API_DIR, 'index.md');
   const content = fs.readFileSync(indexPath, 'utf-8');
   const re = /## List of Official Plugins[\s\S]+?(?=^#)/gm;
-  const result = content.replace(re, '## List of Official Plugins\n\n' + pluginIds.map(id => `- [${toTitleCase(id)}](/docs/apis/${id})`).join('\n') + '\n\n');
+  const result = content.replace(
+    re,
+    '## List of Official Plugins\n\n' +
+      pluginIds
+        .map(id => `- [${toTitleCase(id)}](/docs/apis/${id})`)
+        .join('\n') +
+      '\n\n',
+  );
 
   fs.writeFileSync(indexPath, result);
 }
@@ -86,9 +97,8 @@ async function main() {
 
 function toTitleCase(str) {
   return str.replace(/(^\w|-\w)/g, (s: string) => {
-    return s.replace(/-/, " ").toUpperCase();
+    return s.replace(/-/, ' ').toUpperCase();
   });
 }
-
 
 main();
