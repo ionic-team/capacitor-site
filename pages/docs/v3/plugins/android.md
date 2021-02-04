@@ -159,18 +159,19 @@ By defining permissions in your `@CapacitorPlugin` annotation, the `checkPermiss
 
 #### Permission Callback
 
-Create a void method with a single `PluginCall` parameter, then provide its name to the `permissionCallback` attribute of the `@PluginMethod` annotation in the plugin method. This callback will run after the completion of a permission request initiated with the associated call object.
+Create a void method with a single `PluginCall` parameter and annotate it with `@PermissionCallback`, then pass the name of the method as a string in the permission request call. The callback will run after the completion of the permission request.
 
 ```java
-@PluginMethod(permissionCallback = "cameraPermsCallback")
+@PluginMethod()
 public void takePhoto(PluginCall call) {
   if (getPermissionState("camera") != PermissionState.GRANTED) {
-    requestPermissionForAlias("camera", call);
+    requestPermissionForAlias("camera", call, "cameraPermsCallback");
   } else {
     loadCamera(call);
   }
 }
 
+@PermissionCallback
 private void cameraPermsCallback(PluginCall call) {
   if (getPermissionState("camera") == PermissionState.GRANTED) {
     loadCamera(call);
@@ -187,15 +188,16 @@ Permission requests are initiated by calling one of the request helper methods.
 For a single alias `requestPermissionForAlias` may be used. Multiple aliases can be provided to `requestPermissionForAliases`. Use `requestAllPermissions` to request all permissions defined in the plugin annotation.
 
 ```diff-java
- @PluginMethod(permissionCallback = "cameraPermsCallback")
+ @PluginMethod()
  public void takePhoto(PluginCall call) {
    if (!hasRequiredPermissions()) {
-+    requestAllPermissions(call);
++    requestAllPermissions(call, "cameraPermsCallback");
    } else {
      loadCamera(call);
    }
  }
 
+ @PermissionCallback
  private void cameraPermsCallback(PluginCall call) {
    ...
  }
@@ -260,34 +262,28 @@ getActivity().startActivity(intent);
 
 Sometimes when you launch an Intent, you expect some result back. In that case you want to use `startActivityForResult`.
 
-Make sure to register your intents [unique request](https://developer.android.com/training/basics/intents/result#StartActivity) code with `@CapacitorPlugin` in order for
-`handleOnActivityResult` to be triggered.
+Create a callback method to handle the result of the launched activity with a `PluginCall` and `ActivityResult` parameter, and annotate it with `@ActivityCallback`. Pass the name of this method to `startActivityForResult` and it will run when the started activity is finished.
 
 ```java
-@CapacitorPlugin(
-  requestCodes={MyPlugin.REQUEST_IMAGE_PICK} // register request code(s) for intent results
-)
+@CapacitorPlugin()
 class ImagePicker extends Plugin {
-  protected static final int REQUEST_IMAGE_PICK = 12345; // Unique request code
 
   @PluginMethod()
   public void pickImage(PluginCall call) {
     Intent intent = new Intent(Intent.ACTION_PICK);
     intent.setType("image/*");
 
-    startActivityForResult(call, intent, REQUEST_IMAGE_PICK);
+    // Start the Activity for result using the name of the callback method
+    startActivityForResult(call, intent, "pickImageResult");
   }
 
-  // in order to handle the intents result, you have to @Override handleOnActivityResult
-  @Override
-  protected void handleOnActivityResult(PluginCall lastPluginCall, int requestCode, int resultCode, Intent data) {
-    if (lastPluginCall == null) {
+  @ActivityCallback
+  private void pickImageResult(PluginCall call, ActivityResult result) {
+    if (call == null) {
       return;
     }
 
-    if (requestCode == REQUEST_IMAGE_PICK) {
-      // Do something with the data
-    }
+    // Do something with the result data
   }
 }
 ```
