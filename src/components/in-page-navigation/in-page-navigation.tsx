@@ -19,7 +19,11 @@ export class InPageNavigtion {
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
-  private isPluginPage = this.url.includes('/v3/apis/');
+  private isPluginPage = false;
+
+  componentWillLoad() {
+    this.isPluginPage = this.url.includes('/v3/apis/');
+  }
 
   render() {
     const headings = this.headings.filter(heading => heading.level !== 1);
