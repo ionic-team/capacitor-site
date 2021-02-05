@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, State, h, Watch } from '@stencil/core';
 import type { HeadingData } from '@stencil/ssg';
 import { Heading } from '@ionic-internal/ionic-ds';
 
@@ -18,10 +18,14 @@ export class InPageNavigtion {
   @Prop() url: string = '';
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
-
-  private isPluginPage = false;
+  @State() isPluginPage = false;
 
   componentWillLoad() {
+    this.checkPluginPage();
+  }
+
+  @Watch('url')
+  checkPluginPage() {
     this.isPluginPage = this.url.includes('/v3/apis/');
   }
 
