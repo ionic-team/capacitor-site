@@ -92,7 +92,8 @@ export class DocsComponent implements ComponentInterface {
                   <lower-content-nav navigation={data.navigation} />
                   <contributor-list
                     contributors={data.contributors}
-                    repoFileUrl={data.editUrl}
+                    editUrl={data.editUrl}
+                    editApiUrl={data.editApiUrl}
                   />
                 </div>
               </div>
@@ -100,6 +101,8 @@ export class DocsComponent implements ComponentInterface {
               <in-page-navigation
                 headings={data.headings}
                 editUrl={data.editUrl}
+                editApiUrl={data.editApiUrl}
+                url={data.navigation.current.url}
               />
             </div>
           </div>

@@ -1,7 +1,8 @@
 ---
 title: Action Sheet Capacitor Plugin API
 description: The Action Sheet API provides access to native Action Sheets, which come up from the bottom of the screen and display actions a user can take.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/action-sheet/src/definitions.ts
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/action-sheet/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/action-sheet/src/definitions.ts
 ---
 
 # @capacitor/action-sheet
@@ -14,6 +15,12 @@ The Action Sheet API provides access to native Action Sheets, which come up from
 npm install @capacitor/action-sheet
 npx cap sync
 ```
+
+### Variables
+
+This plugin will use the following project variables (defined in your app's `variables.gradle` file):
+
+- `$androidxMaterialVersion`: version of `com.google.android.material:material` (default: `1.3.0-rc01`)
 
 ## Example
 
@@ -91,22 +98,22 @@ to select.
 | ------------- | -------------------------------- | ------------------------------------------------------------------------ | ----- |
 | **`title`**   | <code>string</code>              | The title of the Action Sheet.                                           | 1.0.0 |
 | **`message`** | <code>string</code>              | A message to show under the title. This option is only supported on iOS. | 1.0.0 |
-| **`options`** | <code>ActionSheetSchema[]</code> | Options the user can choose from.                                        | 1.0.0 |
+| **`options`** | <code>ActionSheetButton[]</code> | Options the user can choose from.                                        | 1.0.0 |
 
 
-#### ActionSheetSchema
+#### ActionSheetButton
 
 | Prop        | Type                                                                      | Description                                                                           | Since |
 | ----------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----- |
 | **`title`** | <code>string</code>                                                       | The title of the option                                                               | 1.0.0 |
-| **`style`** | <code><a href="#actionsheetschemastyle">ActionSheetSchemaStyle</a></code> | The style of the option This option is only supported on iOS.                         | 1.0.0 |
+| **`style`** | <code><a href="#actionsheetbuttonstyle">ActionSheetButtonStyle</a></code> | The style of the option This option is only supported on iOS.                         | 1.0.0 |
 | **`icon`**  | <code>string</code>                                                       | Icon for the option (ionicon naming convention) This option is only supported on Web. | 1.0.0 |
 
 
 ### Enums
 
 
-#### ActionSheetSchemaStyle
+#### ActionSheetButtonStyle
 
 | Members           | Value                      | Description                                                                                                 | Since |
 | ----------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------- | ----- |

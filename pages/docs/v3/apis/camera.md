@@ -1,7 +1,8 @@
 ---
 title: Camera Capacitor Plugin API
 description: The Camera API provides the ability to take a photo with the camera or choose an existing one from the photo album.
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/camera/src/definitions.ts
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/camera/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/camera/src/definitions.ts
 ---
 
 # @capacitor/camera
@@ -15,7 +16,7 @@ npm install @capacitor/camera
 npx cap sync
 ```
 
-## iOS Notes
+## iOS
 
 iOS requires the following usage description be added and filled out for your app in `Info.plist`:
 
@@ -25,7 +26,7 @@ iOS requires the following usage description be added and filled out for your ap
 
 Read about [Configuring `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) in the [iOS Guide](https://capacitorjs.com/docs/ios) for more information on setting iOS permissions in Xcode
 
-## Android Notes
+## Android
 
 This API requires the following permissions be added to your `AndroidManifest.xml`:
 
@@ -39,6 +40,13 @@ The storage permissions are for reading/saving photo files.
 Read about [Setting Permissions](https://capacitorjs.com/docs/android/configuration#setting-permissions) in the [Android Guide](https://capacitorjs.com/docs/android) for more information on setting Android permissions.
 
 Additionally, because the Camera API launches a separate Activity to handle taking the photo, you should listen for `appRestoredResult` in the `App` plugin to handle any camera data that was sent in the case your app was terminated by the operating system while the Activity was running.
+
+### Variables
+
+This plugin will use the following project variables (defined in your app's `variables.gradle` file):
+
+- `$androidxExifInterfaceVersion`: version of `androidx.exifinterface:exifinterface` (default: `1.3.2`)
+- `$androidxMaterialVersion`: version of `com.google.android.material:material` (default: `1.3.0-rc01`)
 
 ## PWA Notes
 
@@ -86,7 +94,7 @@ const takePicture = async () {
 ### getPhoto(...)
 
 ```typescript
-getPhoto(options: PhotoOptions) => Promise<Photo>
+getPhoto(options: ImageOptions) => Promise<Photo>
 ```
 
 Prompt the user to pick a photo from an album, or take a new photo
@@ -94,7 +102,7 @@ with the camera.
 
 | Param         | Type                                                  |
 | ------------- | ----------------------------------------------------- |
-| **`options`** | <code><a href="#photooptions">PhotoOptions</a></code> |
+| **`options`** | <code><a href="#imageoptions">ImageOptions</a></code> |
 
 **Returns:** <code>Promise&lt;<a href="#photo">Photo</a>&gt;</code>
 
@@ -152,7 +160,7 @@ Request camera and photo album permissions
 | **`format`**       | <code>string</code> | The format of the image, ex: jpeg, png, gif. iOS and Android only support jpeg. Web supports jpeg and png. gif is only supported if using file input.                         | 1.0.0 |
 
 
-#### PhotoOptions
+#### ImageOptions
 
 | Prop                      | Type                                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          | Default                             | Since |
 | ------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----- |

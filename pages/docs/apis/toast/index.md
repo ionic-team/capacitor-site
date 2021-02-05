@@ -12,7 +12,12 @@ contributors:
 
 The Toast API provides a notification pop up for displaying important information to a user. Just like real toast!
 
-<docgen-index></docgen-index>
+<docgen-index>
+
+* [`show(...)`](#show)
+* [Interfaces](#interfaces)
+
+</docgen-index>
 
 ## PWA Notes
 

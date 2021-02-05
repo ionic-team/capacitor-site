@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, State, h, Watch } from '@stencil/core';
 import type { HeadingData } from '@stencil/ssg';
 import { Heading } from '@ionic-internal/ionic-ds';
 
@@ -14,31 +14,76 @@ interface ItemOffset {
 export class InPageNavigtion {
   @Prop() headings: HeadingData[] = [];
   @Prop() editUrl: string = '';
+  @Prop() editApiUrl: string = '';
+  @Prop() url: string = '';
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
+  @State() isPluginPage = false;
+
+  componentWillLoad() {
+    this.checkPluginPage();
+  }
+
+  @Watch('url')
+  checkPluginPage() {
+    this.isPluginPage = this.url.includes('/v3/apis/');
+  }
 
   render() {
     const headings = this.headings.filter(heading => heading.level !== 1);
     const h1 = this.headings.find(heading => heading.level === 1);
 
+    const submitEditLinks = (
+      <div class="submit-edit">
+        <div class="submit-edit__title">{ghIcon()} Submit an edit:</div>
+        <ul class="edit-links">
+          {this.editUrl && (
+            <li>
+              <a target="_blank" rel="noopener" href={this.editUrl}>
+                Readme
+              </a>
+            </li>
+          )}
+          {this.editApiUrl && (
+            <li>
+              <a target="_blank" rel="noopener" href={this.editApiUrl}>
+                API
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
+    );
+
     const submitEditLink = this.editUrl ? (
-      <a class="submit-edit-link" target="_blank" href={this.editUrl}>
-        {ghIcon()}
-        <span>Submit an edit</span>
-      </a>
+      <div class="submit-edit">
+        <a
+          class="submit-edit__title link"
+          rel="noopener"
+          target="_blank"
+          href={this.editUrl}
+        >
+          {ghIcon()} Submit an edit
+        </a>
+      </div>
     ) : null;
+
+    const className = {
+      'sticky': true,
+      'plugin-page': this.isPluginPage,
+    };
 
     if (headings.length === 0) {
       return (
-        <nav class="sticky">
-          {submitEditLink}
+        <nav class={className}>
+          {this.isPluginPage ? submitEditLinks : submitEditLink}
           <internal-ad />
         </nav>
       );
     }
 
     return (
-      <nav class="sticky">
+      <nav class={className}>
         {h1 ? (
           <a href={`#${h1.id}`}>
             <Heading level={6} class="title">
@@ -65,7 +110,7 @@ export class InPageNavigtion {
             </li>
           ))}
         </ul>
-        {submitEditLink}
+        {this.isPluginPage ? submitEditLinks : submitEditLink}
         <internal-ad />
       </nav>
     );

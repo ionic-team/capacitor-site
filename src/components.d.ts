@@ -72,7 +72,8 @@ export namespace Components {
     }
     interface ContributorList {
         "contributors": string[];
-        "repoFileUrl": string;
+        "editApiUrl": string;
+        "editUrl": string;
     }
     interface CordovaPage {
     }
@@ -97,8 +98,10 @@ export namespace Components {
     interface EnterpriseSubnav {
     }
     interface InPageNavigation {
+        "editApiUrl": string;
         "editUrl": string;
         "headings": HeadingData[];
+        "url": string;
     }
     interface LandingPage {
         "data": any;
@@ -467,7 +470,8 @@ declare namespace LocalJSX {
     }
     interface ContributorList {
         "contributors"?: string[];
-        "repoFileUrl"?: string;
+        "editApiUrl"?: string;
+        "editUrl"?: string;
     }
     interface CordovaPage {
     }
@@ -492,8 +496,10 @@ declare namespace LocalJSX {
     interface EnterpriseSubnav {
     }
     interface InPageNavigation {
+        "editApiUrl"?: string;
         "editUrl"?: string;
         "headings"?: HeadingData[];
+        "url"?: string;
     }
     interface LandingPage {
         "data"?: any;
