@@ -19,26 +19,27 @@ export class InPageNavigtion {
   @State() itemOffsets: ItemOffset[] = [];
   @State() selectedId: string = null;
 
+  private isPluginPage = this.url.includes('/v3/apis/');
+
   render() {
     const headings = this.headings.filter(heading => heading.level !== 1);
     const h1 = this.headings.find(heading => heading.level === 1);
-    const isPluginPage = this.url.includes('/v3/apis/');
 
     const submitEditLinks = (
       <div class="submit-edit">
-        <div class="submit-edit-title">{ghIcon()} Submit an edit</div>
+        <div class="submit-edit__title">{ghIcon()} Submit an edit:</div>
         <ul class="edit-links">
           {this.editUrl && (
             <li>
-              <a target="_blank" href={this.editUrl}>
-                <span class="arrow">-&gt;</span> readme
+              <a target="_blank" rel="noopener" href={this.editUrl}>
+                Readme
               </a>
             </li>
           )}
           {this.editApiUrl && (
             <li>
-              <a target="_blank" href={this.editApiUrl}>
-                <span class="arrow">-&gt;</span> api
+              <a target="_blank" rel="noopener" href={this.editApiUrl}>
+                API
               </a>
             </li>
           )}
@@ -48,23 +49,33 @@ export class InPageNavigtion {
 
     const submitEditLink = this.editUrl ? (
       <div class="submit-edit">
-        <a class="submit-edit-title" target="_blank" href={this.editUrl}>
+        <a
+          class="submit-edit__title link"
+          rel="noopener"
+          target="_blank"
+          href={this.editUrl}
+        >
           {ghIcon()} Submit an edit
         </a>
       </div>
     ) : null;
 
+    const className = {
+      'sticky': true,
+      'plugin-page': this.isPluginPage,
+    };
+
     if (headings.length === 0) {
       return (
-        <nav class="sticky">
-          {submitEditLinks}
+        <nav class={className}>
+          {this.isPluginPage ? submitEditLinks : submitEditLink}
           <internal-ad />
         </nav>
       );
     }
 
     return (
-      <nav class="sticky">
+      <nav class={className}>
         {h1 ? (
           <a href={`#${h1.id}`}>
             <Heading level={6} class="title">
@@ -91,7 +102,7 @@ export class InPageNavigtion {
             </li>
           ))}
         </ul>
-        {isPluginPage ? submitEditLinks : submitEditLink}
+        {this.isPluginPage ? submitEditLinks : submitEditLink}
         <internal-ad />
       </nav>
     );
