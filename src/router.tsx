@@ -133,20 +133,14 @@ export const Routes = () => (
   </Router.Switch>
 );
 
-Router.on('change', (newUrl, _oldUrl) => {
-  (window as any).gtag('config', 'UA-44023830-42', {
-    page_path: newUrl.pathname + newUrl.search,
-  });
-
+Router.on('change', (_newUrl, _oldUrl) => {
   // if (!oldUrl || oldUrl.pathname !== newUrl.pathname) {
   //   state.isLeftSidebarIn = false;
   //   state.showTopBar = true;
   //   state.pageTheme = 'light';
   // }
-
   // Reset scroll position
   // requestAnimationFrame(() => window.scrollTo(0, 0));
-
   // if (newUrl.hash) {
   //   const id = newUrl.hash.slice(1);
   //   setTimeout(() => {

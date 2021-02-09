@@ -20,6 +20,7 @@ export interface DocsData extends MarkdownResults {
   lastUpdated?: string;
   navigation?: PageNavigation;
   editUrl?: string;
+  editApiUrl?: string;
   tableOfContents?: TableOfContents;
   template?: DocsTemplate;
 }
@@ -53,6 +54,10 @@ export const getDocsData: MapParamData = async ({ id }) => {
 
   if (results.attributes?.editUrl) {
     results.editUrl = results.attributes.editUrl;
+  }
+
+  if (results.attributes?.editApiUrl) {
+    results.editApiUrl = results.attributes.editApiUrl;
   }
 
   results.contributors = [];

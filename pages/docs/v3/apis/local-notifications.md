@@ -1,7 +1,8 @@
 ---
 title: Local Notifications Capacitor Plugin API
 description: The Local Notifications API provides a way to schedule device notifications locally (i.e. without a server sending push notifications).
-editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/src/definitions.ts
+editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/README.md
+editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/src/definitions.ts
 ---
 
 # @capacitor/local-notifications
@@ -29,8 +30,8 @@ npx cap sync
 * [`listChannels()`](#listchannels)
 * [`checkPermissions()`](#checkpermissions)
 * [`requestPermissions()`](#requestpermissions)
-* [`addListener('received', ...)`](#addlistenerreceived-)
-* [`addListener('actionPerformed', ...)`](#addlisteneractionperformed-)
+* [`addListener('localNotificationReceived', ...)`](#addlistenerlocalnotificationreceived-)
+* [`addListener('localNotificationActionPerformed', ...)`](#addlistenerlocalnotificationactionperformed-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -210,17 +211,17 @@ Request permission to display local notifications.
 --------------------
 
 
-### addListener('received', ...)
+### addListener('localNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'received', listenerFunc: (notification: LocalNotificationSchema) => void) => PluginListenerHandle
+addListener(eventName: 'localNotificationReceived', listenerFunc: (notification: LocalNotificationSchema) => void) => PluginListenerHandle
 ```
 
 Listen for when notifications are displayed.
 
 | Param              | Type                                                                                                   |
 | ------------------ | ------------------------------------------------------------------------------------------------------ |
-| **`eventName`**    | <code>'received'</code>                                                                                |
+| **`eventName`**    | <code>'localNotificationReceived'</code>                                                               |
 | **`listenerFunc`** | <code>(notification: <a href="#localnotificationschema">LocalNotificationSchema</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
@@ -230,17 +231,17 @@ Listen for when notifications are displayed.
 --------------------
 
 
-### addListener('actionPerformed', ...)
+### addListener('localNotificationActionPerformed', ...)
 
 ```typescript
-addListener(eventName: 'actionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => PluginListenerHandle
+addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => PluginListenerHandle
 ```
 
 Listen for when an action is performed on a notification.
 
 | Param              | Type                                                                                         |
 | ------------------ | -------------------------------------------------------------------------------------------- |
-| **`eventName`**    | <code>'actionPerformed'</code>                                                               |
+| **`eventName`**    | <code>'localNotificationActionPerformed'</code>                                              |
 | **`listenerFunc`** | <code>(notificationAction: <a href="#actionperformed">ActionPerformed</a>) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
@@ -318,13 +319,13 @@ Represents a schedule for a notification.
 
 Use either `at`, `on`, or `every` to schedule notifications.
 
-| Prop          | Type                                                                                               | Description                                                                                                                                                                                   | Since |
-| ------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`at`**      | <code><a href="#date">Date</a></code>                                                              | <a href="#schedule">Schedule</a> a notification at a specific date and time.                                                                                                                  | 1.0.0 |
-| **`repeats`** | <code>boolean</code>                                                                               | Repeat delivery of this notification at the date and time specified by `at`. Only available for iOS and Android.                                                                              | 1.0.0 |
-| **`on`**      | <code>{ year?: number; month?: number; day?: number; hour?: number; minute?: number; }</code>      | <a href="#schedule">Schedule</a> a notification on particular interval(s). This is similar to scheduling [cron](https://en.wikipedia.org/wiki/Cron) jobs. Only available for iOS and Android. | 1.0.0 |
-| **`every`**   | <code>'year' \| 'month' \| 'two-weeks' \| 'week' \| 'day' \| 'hour' \| 'minute' \| 'second'</code> | <a href="#schedule">Schedule</a> a notification on a particular interval.                                                                                                                     | 1.0.0 |
-| **`count`**   | <code>number</code>                                                                                | Limit the number times a notification is delivered by the interval specified by `every`.                                                                                                      | 1.0.0 |
+| Prop          | Type                                                    | Description                                                                                                                                                                                   | Since |
+| ------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`at`**      | <code><a href="#date">Date</a></code>                   | <a href="#schedule">Schedule</a> a notification at a specific date and time.                                                                                                                  | 1.0.0 |
+| **`repeats`** | <code>boolean</code>                                    | Repeat delivery of this notification at the date and time specified by `at`. Only available for iOS and Android.                                                                              | 1.0.0 |
+| **`on`**      | <code><a href="#scheduleon">ScheduleOn</a></code>       | <a href="#schedule">Schedule</a> a notification on particular interval(s). This is similar to scheduling [cron](https://en.wikipedia.org/wiki/Cron) jobs. Only available for iOS and Android. | 1.0.0 |
+| **`every`**   | <code><a href="#scheduleevery">ScheduleEvery</a></code> | <a href="#schedule">Schedule</a> a notification on a particular interval.                                                                                                                     | 1.0.0 |
+| **`count`**   | <code>number</code>                                     | Limit the number times a notification is delivered by the interval specified by `every`.                                                                                                      | 1.0.0 |
 
 
 #### Date
@@ -376,6 +377,17 @@ Enables basic storage and retrieval of dates and times.
 | **toUTCString**        | () =&gt; string                                                                                              | Returns a date converted to a string using Universal Coordinated Time (UTC).                                                            |
 | **toISOString**        | () =&gt; string                                                                                              | Returns a date as a string value in ISO format.                                                                                         |
 | **toJSON**             | (key?: any) =&gt; string                                                                                     | Used by the JSON.stringify method to enable the transformation of an object's data for JavaScript Object Notation (JSON) serialization. |
+
+
+#### ScheduleOn
+
+| Prop         | Type                |
+| ------------ | ------------------- |
+| **`year`**   | <code>number</code> |
+| **`month`**  | <code>number</code> |
+| **`day`**    | <code>number</code> |
+| **`hour`**   | <code>number</code> |
+| **`minute`** | <code>number</code> |
 
 
 #### Attachment
@@ -460,17 +472,17 @@ An action that can be taken when a notification is displayed.
 
 #### Channel
 
-| Prop              | Type                               | Description                                                                                                                                                                                                                                                | Since |
-| ----------------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`id`**          | <code>string</code>                | The channel identifier.                                                                                                                                                                                                                                    | 1.0.0 |
-| **`name`**        | <code>string</code>                | The human-friendly name of this channel (presented to the user).                                                                                                                                                                                           | 1.0.0 |
-| **`description`** | <code>string</code>                | The description of this channel (presented to the user).                                                                                                                                                                                                   | 1.0.0 |
-| **`sound`**       | <code>string</code>                | The sound that should be played for notifications posted to this channel. Notification channels with an importance of at least `3` should have a sound. The file name of a sound file should be specified relative to the android app `res/raw` directory. | 1.0.0 |
-| **`importance`**  | <code>1 \| 2 \| 5 \| 4 \| 3</code> | The level of interruption for notifications posted to this channel.                                                                                                                                                                                        | 1.0.0 |
-| **`visibility`**  | <code>0 \| 1 \| -1</code>          | The visibility of notifications posted to this channel. This setting is for whether notifications posted to this channel appear on the lockscreen or not, and if so, whether they appear in a redacted form.                                               | 1.0.0 |
-| **`lights`**      | <code>boolean</code>               | Whether notifications posted to this channel should display notification lights, on devices that support it.                                                                                                                                               | 1.0.0 |
-| **`lightColor`**  | <code>string</code>                | The light color for notifications posted to this channel. Only supported if lights are enabled on this channel and the device supports it. Supported color formats are `#RRGGBB` and `#RRGGBBAA`.                                                          | 1.0.0 |
-| **`vibration`**   | <code>boolean</code>               | Whether notifications posted to this channel should vibrate.                                                                                                                                                                                               | 1.0.0 |
+| Prop              | Type                                              | Description                                                                                                                                                                                                                                                | Since |
+| ----------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`id`**          | <code>string</code>                               | The channel identifier.                                                                                                                                                                                                                                    | 1.0.0 |
+| **`name`**        | <code>string</code>                               | The human-friendly name of this channel (presented to the user).                                                                                                                                                                                           | 1.0.0 |
+| **`description`** | <code>string</code>                               | The description of this channel (presented to the user).                                                                                                                                                                                                   | 1.0.0 |
+| **`sound`**       | <code>string</code>                               | The sound that should be played for notifications posted to this channel. Notification channels with an importance of at least `3` should have a sound. The file name of a sound file should be specified relative to the android app `res/raw` directory. | 1.0.0 |
+| **`importance`**  | <code><a href="#importance">Importance</a></code> | The level of interruption for notifications posted to this channel.                                                                                                                                                                                        | 1.0.0 |
+| **`visibility`**  | <code><a href="#visibility">Visibility</a></code> | The visibility of notifications posted to this channel. This setting is for whether notifications posted to this channel appear on the lockscreen or not, and if so, whether they appear in a redacted form.                                               | 1.0.0 |
+| **`lights`**      | <code>boolean</code>                              | Whether notifications posted to this channel should display notification lights, on devices that support it.                                                                                                                                               | 1.0.0 |
+| **`lightColor`**  | <code>string</code>                               | The light color for notifications posted to this channel. Only supported if lights are enabled on this channel and the device supports it. Supported color formats are `#RRGGBB` and `#RRGGBBAA`.                                                          | 1.0.0 |
+| **`vibration`**   | <code>boolean</code>                              | Whether notifications posted to this channel should vibrate.                                                                                                                                                                                               | 1.0.0 |
 
 
 #### ListChannelsResult
@@ -506,9 +518,24 @@ An action that can be taken when a notification is displayed.
 ### Type Aliases
 
 
+#### ScheduleEvery
+
+<code>'year' | 'month' | 'two-weeks' | 'week' | 'day' | 'hour' | 'minute' | 'second'</code>
+
+
 #### NotificationChannel
 
 <code><a href="#channel">Channel</a></code>
+
+
+#### Importance
+
+<code>1 | 2 | 3 | 4 | 5</code>
+
+
+#### Visibility
+
+<code>-1 | 0 | 1</code>
 
 
 #### PermissionState

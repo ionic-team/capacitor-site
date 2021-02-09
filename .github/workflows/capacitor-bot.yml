@@ -2,7 +2,9 @@ name: Capacitor Bot
 
 on:
   issues:
-    types: [labeled]
+    types: [opened, labeled]
+  pull_request:
+    types: [opened]
 
 jobs:
   bot:
