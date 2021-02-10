@@ -57,6 +57,13 @@
   }
 
   .ui-button {
+    --c-background: linear-gradient(85.46deg, #4cc3ff 0%, #4172ff 100%), #3880ff;
+    --c-focus: #c2d8ff;
+    --c-background--hover: linear-gradient(85.46deg, #4cc3ff 0%, #4172ff 100%),
+      #3880ff;
+    --c-background--active: linear-gradient(85.46deg, #4cc3ff 0%, #4172ff 100%),
+      #3880ff;
+
     font-weight: 600;
     font-size: 13px;
     line-height: 112%;
