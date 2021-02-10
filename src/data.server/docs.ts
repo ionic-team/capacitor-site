@@ -10,6 +10,7 @@ import {
 import { join } from 'path';
 import { hookUpDesignSystem } from './blog';
 import { getGithubData } from './github';
+import { queryPrismic } from './prismic';
 
 const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
@@ -23,6 +24,7 @@ export interface DocsData extends MarkdownResults {
   editApiUrl?: string;
   tableOfContents?: TableOfContents;
   template?: DocsTemplate;
+  announcement_bar?: any;
 }
 
 export type DocsTemplate = 'docs' | 'plugins' | 'cli';
@@ -68,6 +70,8 @@ export const getDocsData: MapParamData = async ({ id }) => {
     results.contributors.push(...results.attributes.contributors);
   }
   results.contributors = Array.from(new Set(results.contributors));
+
+  results.announcement_bar = await queryPrismic('announcement_bar');
 
   return results;
 };

@@ -54,8 +54,11 @@ export class SolutionPage implements ComponentInterface {
     return (
       <Host>
         <meta-tags
-          page-title={`Using Capacitor with ${this.framework.name}`}
-          description={`Build iOS, Android, and Progressive Web Apps with ${this.framework.name}`}
+          page-title={'Using Capacitor with ' + this.framework.name}
+          description={
+            'Build iOS, Android, and Progressive Web Apps with ' +
+            this.framework.name
+          }
         />
         <ResponsiveContainer id="top" as="section">
           <div class="heading-group">

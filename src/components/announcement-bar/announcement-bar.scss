@@ -1,0 +1,80 @@
+@use '../../global/vars' as *;
+
+:host {
+  display: block;
+
+  overflow: hidden;
+
+  background: #f8fafc;
+
+  box-shadow: 0 1px 0 0 rgba(0, 20, 56, 0.06);
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+
+.link-wrapper {
+  display: block;
+}
+
+.ui-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 2rem;
+}
+.ui-paragraph {
+  font-size: 0.75rem;
+  margin-block-end: 0.2px;
+  margin-inline-end: 2rem;
+}
+
+// #region ------------- Q1 EVENT STYLES ------------------
+:host(.ui-announcement-bar--q1-event) {
+  background: #00376f var(--asset-path);
+  background-size: 1800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .ui-container {
+    min-height: 4.5rem;
+  }
+
+  .ui-paragraph {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #cad3e1;
+
+    strong,
+    b {
+      color: #fff;
+    }
+  }
+
+  .ui-button {
+    --c-background: linear-gradient(85.46deg, #4cc3ff 0%, #4172ff 100%), #3880ff;
+    --c-focus: #c2d8ff;
+    --c-background--hover: linear-gradient(85.46deg, #4cc3ff 0%, #4172ff 100%),
+      #3880ff;
+    --c-background--active: linear-gradient(85.46deg, #4cc3ff 0%, #4172ff 100%),
+      #3880ff;
+
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 112%;
+    color: #fff;
+
+    padding: 7.5px 12px 9.5px;
+
+    min-height: 32px;
+
+    white-space: nowrap;
+    text-transform: none;
+  }
+}
+//#endregion -------------------------------------------------

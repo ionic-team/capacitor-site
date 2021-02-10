@@ -13,6 +13,9 @@ export namespace Components {
     interface AnchorLink {
         "to": string;
     }
+    interface AnnouncementBar {
+        "prismicData": any;
+    }
     interface AppMenuToggle {
         "icon": string;
     }
@@ -148,6 +151,12 @@ declare global {
     var HTMLAnchorLinkElement: {
         prototype: HTMLAnchorLinkElement;
         new (): HTMLAnchorLinkElement;
+    };
+    interface HTMLAnnouncementBarElement extends Components.AnnouncementBar, HTMLStencilElement {
+    }
+    var HTMLAnnouncementBarElement: {
+        prototype: HTMLAnnouncementBarElement;
+        new (): HTMLAnnouncementBarElement;
     };
     interface HTMLAppMenuToggleElement extends Components.AppMenuToggle, HTMLStencilElement {
     }
@@ -367,6 +376,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "anchor-link": HTMLAnchorLinkElement;
+        "announcement-bar": HTMLAnnouncementBarElement;
         "app-menu-toggle": HTMLAppMenuToggleElement;
         "avc-code-type": HTMLAvcCodeTypeElement;
         "blog-forum-link": HTMLBlogForumLinkElement;
@@ -408,6 +418,9 @@ declare global {
 declare namespace LocalJSX {
     interface AnchorLink {
         "to"?: string;
+    }
+    interface AnnouncementBar {
+        "prismicData"?: any;
     }
     interface AppMenuToggle {
         "icon"?: string;
@@ -541,6 +554,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "anchor-link": AnchorLink;
+        "announcement-bar": AnnouncementBar;
         "app-menu-toggle": AppMenuToggle;
         "avc-code-type": AvcCodeType;
         "blog-forum-link": BlogForumLink;
@@ -584,6 +598,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "anchor-link": LocalJSX.AnchorLink & JSXBase.HTMLAttributes<HTMLAnchorLinkElement>;
+            "announcement-bar": LocalJSX.AnnouncementBar & JSXBase.HTMLAttributes<HTMLAnnouncementBarElement>;
             "app-menu-toggle": LocalJSX.AppMenuToggle & JSXBase.HTMLAttributes<HTMLAppMenuToggleElement>;
             "avc-code-type": LocalJSX.AvcCodeType & JSXBase.HTMLAttributes<HTMLAvcCodeTypeElement>;
             "blog-forum-link": LocalJSX.BlogForumLink & JSXBase.HTMLAttributes<HTMLBlogForumLinkElement>;
