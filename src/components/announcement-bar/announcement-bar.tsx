@@ -4,6 +4,7 @@ import {
   ResponsiveContainer,
 } from '@ionic-internal/ionic-ds';
 import { h, Prop, Component, Host, getAssetPath } from '@stencil/core';
+import { slugify } from 'src/utils/common';
 
 import { trackClick } from '../../utils/analytics';
 
@@ -39,8 +40,7 @@ export class AnnouncementBar {
       <Host
         class={{
           'ui-announcement-bar': true,
-          'ui-announcement-bar--q1-event': true,
-          [`ui-announcement-bar--${theme}`]: true,
+          [`ui-announcement-bar--${slugify(theme)}`]: true,
         }}
         style={{
           '--asset-path': `url('${getAssetPath(
