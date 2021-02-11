@@ -11,6 +11,8 @@ Data moving between the web runtime and native environments in Capacitor have to
 
 While Swift is the preferred language on iOS, it interoperates with Objective-C (upon which the system frameworks are built) and so the platform supports the intersection of three languages. Most data types will be translated as expected but there are some cases that may require special attention.
 
+---
+
 ### Null Values
 
 Objective-C does not support storing null values in collections such as arrays, dictionaries, or sets. Instead it uses a special placeholder object, [`NSNull`](https://developer.apple.com/documentation/foundation/nsnull?language=objc), to represent a null value. In contrast, Swift uses [Optionals](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html) to describe a value that might be null. Swift can manipulate `NSNull` values but Objective-C cannot handle Optionals (although, in some contexts, the runtime will automatically map optionals into the underlying value or `NSNull`). These `NSNull` objects can appear regardless of which language you are using.
@@ -36,9 +38,6 @@ However, accessing the storage property directly can return an `NSNull` object.
 ```swift
 if call.options["foo"] != nil {
     // BAD: the key returned a truthy `NSNull` object, so this block will run
-}
-if let value = call.options["foo"] {
-    // BAD: `value` is a truthy `NSNull` object, so this block will run
 }
 ```
 
@@ -69,44 +68,16 @@ if let values = call.getArray("bar").capacitor.replacingNullValues() as? [Int?] 
 
 ### Dates
 
-Data moving from the web runtime to native iOS code uses a different mechanism than data going in the other direction. In practice, this difference doesn't matter except for one data type: dates. The WebView can automatically translate JavaScript `Date` objects into native `NSDate` or `Date` objects but dates being returned from a plugin must be serialized as a string.
+In most situations, dates should work as expected. Any `Date` object sent from JavaScript or `Date` or `NSDate` object returned from a plugin will be serialized into an [ISO 8601 string](https://www.iso.org/iso-8601-date-and-time-format.html).
 
-Consider the following data being passed to a plugin:
-
-```typescript
-{ 'foo': new Date(1611144000), 'bar': '2021-01-20T17:00:00+00:00' }
-```
-
-The `CAPPluginCall` convenience accessor, `getDate`, will handle both fields by casting the first and parsing the second. It will return native `Date` objects.
+However, part of this behavior can be changed if needed. Data moving from the web runtime to native iOS code uses a different mechanism than data going in the other direction. `WKWebView` automatically transforms JavaScript `Date` objects into native `Date` objects. For consistency with other platforms and to match developer expectations, Capacitor will serialize these objects before passing them to the plugin starting in 3.0. If you want to opt-out of this behavior, set the `shouldStringifyDatesInCalls` property on your plugin.
 
 ```swift
-if let date = getDate("foo") {
-    // GOOD: `date` is a valid Date, so this block will run
-}
-if let date = getDate("bar") {
-    // GOOD: `date` is a valid Date, so this block will run
+override func load() {
+    shouldStringifyDatesInCalls = false
 }
 ```
 
-Accessing the `options` dictionary means that the differing types will need to be handled separately:
+The `CAPPluginCall` convenience accessor `getDate` will handle both data types and return a `Date` object.
 
-```swift
-if let value = call.options["foo"] as? Date {
-    // GOOD: `value` is a valid Date, so this block will run
-}
-if let value = call.options["bar"] as? Date {
-    // BAD: `value` is nil because `String` cannot be cast to `Date`, so this block won't run
-}
-if let value = call.options["bar"] as? String {
-    // NEUTRAL: `value` is a valid `String`, so this block will run, but it will need to be parsed
-}
-```
-
-However, JSON does not officially include a date type so returning a date from a plugin requires that it be stored as a `String`. By convention, it should be formatted according to the [ISO 8601 standard](https://www.iso.org/iso-8601-date-and-time-format.html) for the most reliable transmission.
-
-```swift
-let date = Date()
-let formatter = ISO8601DateFormatter()
-let result: JSObject = ['date': formatter.string(from: date)]
-call.resolve(result)
-```
+Data moving from native code to the web view will be serialized as JSON. Since JSON does not officially define dates, including a `Date` object in a plugin's results would throw an exception prior to 3.0. But Capacitor will now automatically serialize any `Date` objects into strings as per convention. If your plugin needs to handle dates differently, serialize them into some other supported JSON type first.
