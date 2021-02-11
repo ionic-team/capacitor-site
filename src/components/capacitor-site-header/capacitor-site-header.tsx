@@ -32,6 +32,8 @@ export class SiteHeader implements ComponentInterface {
 
   private routeListener = Symbol();
   private links: { [key: string]: HTMLElement } = {};
+  // Could be an announcement banner or platform bar
+  private heightAboveBar = 72;
 
   componentWillLoad() {
     this.createHeaderObserver();
@@ -41,7 +43,7 @@ export class SiteHeader implements ComponentInterface {
   createHeaderObserver() {
     const opts = {
       root: document.body,
-      rootMargin: '-45px 0px 0px 0px',
+      rootMargin: `-${this.heightAboveBar + 1}px 0px 0px 0px`,
       threshold: 1.0,
     };
 
