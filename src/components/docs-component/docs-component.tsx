@@ -121,7 +121,7 @@ const elementRouterHref = (tagName: string, props: any) => {
       return {
         ...props,
         target: '_blank',
-        class: 'external-link',
+        class: props.class ? `${props.class} external-link` : 'external-link',
         rel: 'noopener',
       };
     }

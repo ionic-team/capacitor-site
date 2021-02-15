@@ -287,4 +287,8 @@
   pre[class*='language-'] {
     background: rgb(245, 247, 250);
   }
+
+  a.unstyled-link {
+    color: inherit;
+  }
 }
