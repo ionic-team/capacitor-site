@@ -24,11 +24,10 @@ First, install the `@capacitor/ios` package.
 npm install @capacitor/ios@next
 ```
 
-Then, add the iOS platform and sync your app. [Learn more about `sync`](/docs/cli/sync).
+Then, add the iOS platform.
 
 ```bash
 npx cap add ios
-npx cap sync ios
 ```
 
 ## Opening the iOS Project
