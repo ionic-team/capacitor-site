@@ -24,11 +24,10 @@ First, install the `@capacitor/android` package.
 npm install @capacitor/android@next
 ```
 
-Then, add the Android platform and sync your app. [Learn more about `sync`](/docs/cli/sync).
+Then, add the Android platform.
 
 ```bash
 npx cap add android
-npx cap sync android
 ```
 
 ## Opening the Android Project
