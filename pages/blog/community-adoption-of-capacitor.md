@@ -21,7 +21,7 @@ This is incredible and really shows how Capacitor is eclipsing even our own mode
 
 ## NativeScript
 
-In addition to Framework7, we were also thrilled to see [NativeScript](https://capacitor.nativescript.org/) adopt Capacitor in the form of a plugin offering. As they note in their blog post, one of NativeScript's features is being able to target Native APIs directly from JavaScript, so plugins can be built entirely in JavaScript. This can become quite a compelling feature if you need to integrate with an obscure 3rd party Native SDK. While still in beta, we've been impressed with we've and can't wait to see what the community builds with it.
+In addition to Framework7, we were also thrilled to see [NativeScript](https://nativescript.org/blog/announcing-nativescript-capacitor-beta/) adopt Capacitor in the form of a plugin offering. As they note in their blog post, one of NativeScript's features is being able to target Native APIs directly from JavaScript, so plugins can be built entirely in JavaScript. This can become quite a compelling feature if you need to integrate with an obscure 3rd party Native SDK. While still in beta, we've been impressed with we've and can't wait to see what the community builds with it.
 
 ## Quasar
 
@@ -39,4 +39,4 @@ If you haven't heard of [Tailwind](https://tailwindcss.com) before, it's a CSS t
 
 In a short amount of time, Capacitor has grown from being a tool for Ionic developers to being the de facto way to build cross platform apps across the entire web community. This [Web Native](https://webnative.tech) approach to development is here to stay and we're thrilled to see Capacitor leading the way.
 
-An ending that thanks these projects and gives people an action (like trying capacitor) would fit here
+So thanks to the folks behind Framework7, NativeScript, Vue, Quasar, Tailwind, and others for welcoming Capacitor into your own communities. If you're interested seeing what Capacitor can do, checkout our [docs](https://capacitorjs.com/docs). We're excited to see what you build 🍻
