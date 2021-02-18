@@ -52,6 +52,8 @@ Here is a full example of available configuration options for `capacitor.config.
     // as it allows to run web APIs that require a secure context such as
     // navigator.geolocation and MediaDevices.getUserMedia.
     hostname: 'app',
+    // Starting with Android 9 (API level 28), cleartext support is disabled by default. Setting this option will allow cleartext traffic to prevent errors during local development on Android platforms. 
+    cleartext: true,
     // It is possible to configure the local scheme that is used. This can be useful
     // when migrating from cordova-plugin-ionic-webview, where the default scheme on iOS is ionic.
     iosScheme: 'ionic',
