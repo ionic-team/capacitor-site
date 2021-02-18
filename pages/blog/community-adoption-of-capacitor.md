@@ -21,7 +21,7 @@ This is incredible and really shows how Capacitor is eclipsing even our own mode
 
 ## NativeScript
 
-In addition to Framework7, we were also thrilled to see [NativeScript](https://nativescript.org/blog/announcing-nativescript-capacitor-beta/) adopt Capacitor in the form of a plugin offering. As they note in their blog post, one of NativeScript's features is being able to target Native APIs directly from JavaScript, so plugins can be built entirely in JavaScript. This can become quite a compelling feature if you need to integrate with an obscure 3rd party Native SDK. While still in beta, we've been impressed with we've and can't wait to see what the community builds with it.
+In addition to Framework7, we were also thrilled to see [NativeScript](https://capacitor.nativescript.org/) adopt Capacitor in the form of a plugin offering. As they note in [their blog post](https://nativescript.org/blog/announcing-nativescript-capacitor-beta/), one of NativeScript's features is being able to target Native APIs directly from JavaScript, so plugins can be built entirely in JavaScript. This can become quite a compelling feature if you need to integrate with an obscure 3rd party Native SDK. While still in beta, we've been impressed with we've and can't wait to see what the community builds with it.
 
 ## Quasar
 
