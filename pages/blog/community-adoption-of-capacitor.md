@@ -27,9 +27,9 @@ In addition to Framework7, we were also thrilled to see [NativeScript](https://c
 
 For the more Vue-minded folks, [Quasar](https://quasar.dev) has fully integrated Capacitor into their toolchain. Similar to Ionic and Framework7, Quasar UI framework for Vue provides common building blocks for building web apps. As of last year, they've provided full integration into the Quasar CLI so that making use of Capacitor is a natural fit for their community.
 
-## [Vue](https://v3.vuejs.org)
+## Vue
 
-While Quasar is built on top of Vue, Vue-proper has also started suggesting [Capacitor in their documentation](https://v3.vuejs.org/guide/mobile.html#capacitor). With this, they’re signaling to their user that “Hey, if you want to take your Vue app further, use Capacitor and target native platforms”. This is something we’ve seen the community respond well too as we hear from so many of you that you want more Vue specific content or example apps.
+While Quasar is built on top of [Vue](https://v3.vuejs.org), Vue-proper has also started suggesting [Capacitor in their documentation](https://v3.vuejs.org/guide/mobile.html#capacitor). With this, they’re signaling to their user that “Hey, if you want to take your Vue app further, use Capacitor and target native platforms”. This is something we’ve seen the community respond well too as we hear from so many of you that you want more Vue specific content or example apps.
 
 ## Tailwind
 
