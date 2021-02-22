@@ -25,9 +25,9 @@ export class EnterprisePage {
       Companies,
       Native,
       Ebook,
-      Approach,
       Plugins,
       Security,
+      Delivery,
       SupportGuidance,
       Features,
       Demo,
@@ -42,9 +42,10 @@ export class EnterprisePage {
         <Companies />
         <Native />
         <Ebook />
-        <Approach />
+        {/* <Approach /> */}
         <Plugins />
         <Security />
+        <Delivery />
         <SupportGuidance />
         <Features />
         <Editions />
@@ -57,7 +58,7 @@ export class EnterprisePage {
 
   Top = () => {
     const { top } = this.data;
-    const { title, text, cta_1, cta_2, background } = top[0];
+    const { title, text, cta_1, background } = top[0];
 
     return (
       <section id="top">
@@ -71,10 +72,10 @@ export class EnterprisePage {
                 {cta_1}
                 <span class="arrow"> -&gt;</span>
               </Button>
-              <a href="https://ionic.io/contact/sales" class="link btn-link">
+              {/* <a href="https://ionic.io/contact/sales" class="link btn-link">
                 {cta_2}
                 <span class="arrow"> -&gt;</span>
-              </a>
+              </a> */}
             </div>
           </div>
         </ResponsiveContainer>
@@ -215,67 +216,67 @@ export class EnterprisePage {
     );
   };
 
-  Approach = () => {
-    const {
-      approach,
-      approach_traditional,
-      approach_traditional__list,
-      approach_web,
-      approach_web__list,
-    } = this.data;
-    const { supertext, title } = approach[0];
+  // Approach = () => {
+  //   const {
+  //     approach,
+  //     approach_traditional,
+  //     approach_traditional__list,
+  //     approach_web,
+  //     approach_web__list,
+  //   } = this.data;
+  //   const { supertext, title } = approach[0];
 
-    return (
-      <section id="approach">
-        <ResponsiveContainer>
-          <div class="heading-group">
-            <p class="ui-heading-6">
-              <sup>{supertext}</sup>
-            </p>
-            <PrismicRichText richText={title} />
-          </div>
-          <div class="split">
-            <article class="traditional column">
-              <Heading>{approach_traditional[0]['title']}</Heading>
-              <Paragraph>{approach_traditional[0]['text']}</Paragraph>
-              <PrismicResponsiveImage
-                image={approach_traditional[0]['image']}
-              />
-              <div class="list">
-                <Heading level={4}>
-                  {approach_traditional[0]['subtitle']}
-                </Heading>
-                <ul>
-                  {approach_traditional__list.map(({ text, icon }) => (
-                    <li>
-                      <PrismicResponsiveImage image={icon} />
-                      <Paragraph>{text}</Paragraph>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-            <article class="web column">
-              <Heading>{approach_web[0]['title']}</Heading>
-              <Paragraph>{approach_web[0]['text']}</Paragraph>
-              <PrismicResponsiveImage image={approach_web[0]['image']} />
-              <div class="list">
-                <Heading level={4}>{approach_web[0]['subtitle']}</Heading>
-                <ul>
-                  {approach_web__list.map(({ text, icon }) => (
-                    <li>
-                      <PrismicResponsiveImage image={icon} />
-                      <Paragraph>{text}</Paragraph>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          </div>
-        </ResponsiveContainer>
-      </section>
-    );
-  };
+  //   return (
+  //     <section id="approach">
+  //       <ResponsiveContainer>
+  //         <div class="heading-group">
+  //           <p class="ui-heading-6">
+  //             <sup>{supertext}</sup>
+  //           </p>
+  //           <PrismicRichText richText={title} />
+  //         </div>
+  //         <div class="split">
+  //           <article class="traditional column">
+  //             <Heading>{approach_traditional[0]['title']}</Heading>
+  //             <Paragraph>{approach_traditional[0]['text']}</Paragraph>
+  //             <PrismicResponsiveImage
+  //               image={approach_traditional[0]['image']}
+  //             />
+  //             <div class="list">
+  //               <Heading level={4}>
+  //                 {approach_traditional[0]['subtitle']}
+  //               </Heading>
+  //               <ul>
+  //                 {approach_traditional__list.map(({ text, icon }) => (
+  //                   <li>
+  //                     <PrismicResponsiveImage image={icon} />
+  //                     <Paragraph>{text}</Paragraph>
+  //                   </li>
+  //                 ))}
+  //               </ul>
+  //             </div>
+  //           </article>
+  //           <article class="web column">
+  //             <Heading>{approach_web[0]['title']}</Heading>
+  //             <Paragraph>{approach_web[0]['text']}</Paragraph>
+  //             <PrismicResponsiveImage image={approach_web[0]['image']} />
+  //             <div class="list">
+  //               <Heading level={4}>{approach_web[0]['subtitle']}</Heading>
+  //               <ul>
+  //                 {approach_web__list.map(({ text, icon }) => (
+  //                   <li>
+  //                     <PrismicResponsiveImage image={icon} />
+  //                     <Paragraph>{text}</Paragraph>
+  //                   </li>
+  //                 ))}
+  //               </ul>
+  //             </div>
+  //           </article>
+  //         </div>
+  //       </ResponsiveContainer>
+  //     </section>
+  //   );
+  // };
 
   Plugins = () => {
     const { plugins } = this.data;
@@ -318,6 +319,30 @@ export class EnterprisePage {
               </p>
               <PrismicRichText richText={title} />
               <PrismicRichText richText={subtext} paragraphLevel={2} />
+            </div>
+          </div>
+        </ResponsiveContainer>
+      </section>
+    );
+  };
+
+  Delivery = () => {
+    const { delivery } = this.data;
+    const { supertext, title, subtext, image } = delivery[0];
+
+    return (
+      <section id="delivery">
+        <ResponsiveContainer>
+          <div class="wrapper">
+            <div class="heading-group">
+              <p class="ui-heading-6">
+                <sup>{supertext}</sup>
+              </p>
+              <PrismicRichText richText={title} />
+              <PrismicRichText richText={subtext} paragraphLevel={2} />
+            </div>
+            <div class="image-wrapper">
+              <PrismicResponsiveImage image={image} />
             </div>
           </div>
         </ResponsiveContainer>
@@ -383,14 +408,7 @@ export class EnterprisePage {
 
   Editions = () => {
     const { editions } = this.data;
-    const {
-      supertext,
-      title,
-      paragraph_1,
-      paragraph_2,
-      cta_1,
-      cta_2,
-    } = editions[0];
+    const { supertext, title, paragraph_1, paragraph_2, cta_1 } = editions[0];
 
     const images = [
       ['burger-king', '36x38'],
@@ -420,10 +438,10 @@ export class EnterprisePage {
                   {cta_1}
                   <span class="arrow"> -&gt;</span>
                 </Button>
-                <a href="https://ionic.io/contact/sales" class="link btn-link">
+                {/* <a href="https://ionic.io/contact/sales" class="link btn-link">
                   {cta_2}
                   <span class="arrow"> -&gt;</span>
-                </a>
+                </a> */}
               </div>
             </div>
             <div class="logos">
