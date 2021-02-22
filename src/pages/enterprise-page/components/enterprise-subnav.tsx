@@ -39,11 +39,8 @@ export class EnterpriseSubnav {
         <div class="wrapper heading-container">
           <span class="title">Enterprise</span>
           <div class="cta-row">
-            <a href="https://ionic.io/contact/sales" class="btn-secondary">
-              Talk to an expert
-            </a>
             <a href="#demo" class="btn-primary">
-              Get a demo
+              Talk to sales
             </a>
           </div>
         </div>
