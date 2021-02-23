@@ -12,8 +12,8 @@
 }
 
 .wrapper {
-  background: rgba(3, 6, 11, 0.86);
-  backdrop-filter: blur(64px);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(32px);
 
   display: flex;
   justify-content: space-between;

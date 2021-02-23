@@ -35,6 +35,7 @@ export class LandingPage {
       Native,
       Features,
       Framework,
+      Cta,
       Companies,
       GetStarted,
       WhitepaperAd,
@@ -49,6 +50,7 @@ export class LandingPage {
         <Native />
         <Features />
         <Framework />
+        <Cta />
         <Companies />
         <GetStarted />
         <pre-footer />
@@ -494,46 +496,108 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   };
 
-  Companies = () => {
-    const { companies, companies__list } = this.data;
+  // Companies = () => {
+  //   const { companies, companies__list } = this.data;
 
-    //array structure matches css div placement
+  //   //array structure matches css div placement
+  //   const dimensions = [
+  //     //groups of 4 (2 groups of 2)
+  //     [
+  //       //groups of 2
+  //       ['38x40', '62x32'],
+  //       ['102x30', '82x28'],
+  //     ],
+  //     [
+  //       ['41x40', '152x26'],
+  //       ['40x40', '79x32'],
+  //     ],
+  //   ];
+
+  //   return (
+  //     <ResponsiveContainer id="companies" as="section">
+  //       <div class="heading-group">
+  //         <Paragraph level={2}>{companies}</Paragraph>
+  //       </div>
+  //       <div class="images">
+  //         {dimensions.map((_, i1: number) => (
+  //           //row of 4 images (2 groups of 2)
+  //           <div class="image-row">
+  //             {dimensions[i1].map((_, i2: number) => (
+  //               //group of 2 images
+  //               <div class="image-group">
+  //                 {dimensions[i1][i2].map((dimensions, i3) => (
+  //                   <PrismicResponsiveImage
+  //                     image={companies__list[i1 * 4 + i2 * 2 + i3].logo}
+  //                     width={dimensions.split('x')[0]}
+  //                     height={dimensions.split('x')[1]}
+  //                   />
+  //                 ))}
+  //               </div>
+  //             ))}
+  //           </div>
+  //         ))}
+  //       </div>
+  //     </ResponsiveContainer>
+  //   );
+  // };
+
+  Cta = () => {
+    const { cta } = this.data;
+    const { image, title, text, cta1 } = cta[0];
+
+    return (
+      <ResponsiveContainer as="section" id="cta">
+        <PrismicRichText richText={title} />
+        <div class="wrapper">
+          <div class="card">
+            <PrismicResponsiveImage image={image} class="background" />
+            <div class="heading-group">
+              <PrismicRichText richText={text} paragraphLevel={1} />
+              <Button kind="round" {...href('/enterprise')}>
+                {cta1} <span class="arrow"> -&gt;</span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </ResponsiveContainer>
+    );
+  };
+
+  Companies = () => {
+    const { companies__list2 } = this.data;
+
     const dimensions = [
-      //groups of 4 (2 groups of 2)
-      [
-        //groups of 2
-        ['38x40', '62x32'],
-        ['102x30', '82x28'],
-      ],
-      [
-        ['41x40', '152x26'],
-        ['40x40', '79x32'],
-      ],
+      '33x42',
+      '31x42',
+      '32x36',
+      '34x34',
+      '51x30',
+      '35x35',
+      '58x25',
+      '35x35',
     ];
 
     return (
-      <ResponsiveContainer id="companies" as="section">
-        <div class="heading-group">
-          <Paragraph level={2}>{companies}</Paragraph>
-        </div>
-        <div class="images">
-          {dimensions.map((_, i1: number) => (
-            //row of 4 images (2 groups of 2)
-            <div class="image-row">
-              {dimensions[i1].map((_, i2: number) => (
-                //group of 2 images
-                <div class="image-group">
-                  {dimensions[i1][i2].map((dimensions, i3) => (
-                    <PrismicResponsiveImage
-                      image={companies__list[i1 * 4 + i2 * 2 + i3].logo}
-                      width={dimensions.split('x')[0]}
-                      height={dimensions.split('x')[1]}
-                    />
-                  ))}
-                </div>
-              ))}
-            </div>
-          ))}
+      <ResponsiveContainer as="section" id="companies">
+        <div class="wrapper">
+          <div class="image-group first">
+            {companies__list2.slice(0, 4).map(({ logo }, i) => (
+              <PrismicResponsiveImage
+                image={logo}
+                width={dimensions[i].split('x')[0]}
+                height={dimensions[i].split('x')[1]}
+              />
+            ))}
+          </div>
+          <div class="image-group second">
+            {companies__list2.slice(4, 8).map(({ logo }, i) => (
+              <PrismicResponsiveImage
+                image={logo}
+                width={dimensions[i + 4].split('x')[0]}
+                height={dimensions[i + 4].split('x')[1]}
+              />
+            ))}
+          </div>
         </div>
       </ResponsiveContainer>
     );
