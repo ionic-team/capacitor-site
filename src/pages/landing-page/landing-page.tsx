@@ -24,10 +24,6 @@ export class LandingPage {
   @State() showHubspotForm = false;
   @State() hubspotFormSubmitted = false;
 
-  componentWillLoad() {
-    console.log(this.data);
-  }
-
   render() {
     const {
       Top,
