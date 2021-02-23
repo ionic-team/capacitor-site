@@ -74,6 +74,17 @@ An empty Array can be provided if none of the previous options are desired. `pus
   }
 }
 ```
+## Silent Push Notifications / Data-only Notifications
+
+This plugin does not support iOS Silent Push or Android / FCM Data-only notifications.  We recommend using native code solutions for handling these types of notifications.
+
+## Common Issues
+
+On Android, there are various system and app states that can affect the delivery of push notifications:
+
+* If the device has entered [Doze](https://developer.android.com/training/monitoring-device-state/doze-standby) mode, your application may have restricted capabilities.  To increase the chance of your notification being received, consider using [FCM high priority messages](https://firebase.google.com/docs/cloud-messaging/concept-options#setting-the-priority-of-a-message).
+* Be sure you are not sending a data-only or silent push notification.
+* There are differences in behavior between development and production.  Try testing your app outside of being launched by Android Studio.  Read more [here](https://stackoverflow.com/questions/48642423/firebase-push-notification-issue-in-android-when-app-is-closed-killed).
 
 ---
 
