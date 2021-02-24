@@ -40,6 +40,7 @@ export class MetaTags {
         <meta name="twitter:description" content={this.description} />
         <meta name="twitter:image" content={this.image} />
         <meta name="twitter:creator" content={this.authorTwitter} />
+        <link rel="canonical" href={`${this.site}${location.pathname}`} />
       </Helmet>
     );
   }
