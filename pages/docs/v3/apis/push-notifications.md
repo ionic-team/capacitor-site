@@ -82,7 +82,7 @@ This plugin does not support iOS Silent Push or Android / FCM Data-only notifica
 See [Pushing Background Updates to Your App](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app).
 
 #### Android
-See [Hanndling FCM Messages](https://firebase.google.com/docs/cloud-messaging/android/receive#handling_messages). 
+See [Handling FCM Messages](https://firebase.google.com/docs/cloud-messaging/android/receive#handling_messages). 
 
 To handle data-only messages, install the Firebase Messaging libraries into your own app, and create a custom class that extends `FirebaseMessagingService` like below:
 
