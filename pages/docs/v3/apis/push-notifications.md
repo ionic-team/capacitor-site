@@ -78,6 +78,37 @@ An empty Array can be provided if none of the previous options are desired. `pus
 
 This plugin does not support iOS Silent Push or Android / FCM Data-only notifications.  We recommend using native code solutions for handling these types of notifications.
 
+#### iOS
+See [Pushing Background Updates to Your App](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app).
+
+#### Android
+See [Hanndling FCM Messages](https://firebase.google.com/docs/cloud-messaging/android/receive#handling_messages). 
+
+To handle data-only messages, install the Firebase Messaging libraries into your own app, and create a custom class that extends `FirebaseMessagingService` like below:
+
+```java
+public class AppMessagingService extends FirebaseMessagingService {
+    @Override
+    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
+        super.onMessageReceived(remoteMessage);
+        PushNotificationsPlugin.sendRemoteMessage(remoteMessage);
+
+        if (!remoteMessage.getData().isEmpty()) {
+            // your code here
+            Log.d("FCM Push Notification", "Received a data-only push notification");
+            Log.d("FCM Push Notification", remoteMessage.getData().get("key_1"));
+        }
+    }
+    
+    @Override
+    public void onNewToken(@NonNull String s) {
+        super.onNewToken(s);
+        PushNotificationsPlugin.onNewToken(s);
+    }
+}
+```
+
+
 ## Common Issues
 
 On Android, there are various system and app states that can affect the delivery of push notifications:
