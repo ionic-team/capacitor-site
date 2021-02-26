@@ -31,6 +31,7 @@ export class LandingPage {
       Native,
       Features,
       Framework,
+      Tweets,
       Cta,
       Companies,
       GetStarted,
@@ -46,6 +47,7 @@ export class LandingPage {
         <Native />
         <Features />
         <Framework />
+        <Tweets />
         <Cta />
         <Companies />
         <GetStarted />
@@ -489,6 +491,74 @@ public class MyAwesomePlugin: CAPPlugin {
           ))}
         </Grid>
       </ResponsiveContainer>
+    );
+  };
+
+  Tweets = () => {
+    const {
+      tweets,
+      tweets__list,
+      tweets__bottom,
+      tweets__bottom__list,
+    } = this.data;
+    const { title } = tweets[0];
+    const { emoji, text } = tweets__bottom[0];
+
+    return (
+      <section id="tweets">
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <PrismicRichText richText={title} />
+          </div>
+          <div class="tweets">
+            {tweets__list.map(({ name, handle, text, image }, i) => (
+              <article class="tweet" key={i}>
+                <div class="title-row">
+                  <PrismicResponsiveImage image={image} />
+                  <div class="title">
+                    <Heading level={5} as="h3">
+                      {name}
+                    </Heading>
+                    <Paragraph level={6}>{handle}</Paragraph>
+                  </div>
+                  <svg
+                    width="16"
+                    height="13"
+                    viewBox="0 0 16 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 1.54036C15.41 1.80104 14.7794 1.97708 14.1149 2.05833C14.793 1.65208 15.3151 1.00885 15.5592 0.24375C14.9252 0.619531 14.2234 0.89375 13.474 1.03932C12.8739 0.399479 12.0195 0 11.0769 0C9.26298 0 7.79487 1.46927 7.79487 3.28047C7.79487 3.53776 7.822 3.78828 7.87963 4.02865C5.15024 3.89323 2.72939 2.58646 1.1121 0.599219C0.830685 1.08333 0.667938 1.6487 0.667938 2.24792C0.667938 3.38542 1.25111 4.39089 2.13266 4.97995C1.59017 4.96641 1.08159 4.81745 0.640814 4.57031V4.61094C0.640814 6.20208 1.77326 7.52578 3.27527 7.82708C3.00064 7.90156 2.70905 7.94219 2.41068 7.94219C2.20047 7.94219 1.99364 7.92188 1.7936 7.88125C2.21064 9.18464 3.42445 10.1326 4.86205 10.1596C3.73978 11.0398 2.32253 11.5646 0.783217 11.5646C0.518754 11.5646 0.257682 11.5477 0 11.5172C1.44776 12.4583 3.17355 13 5.02479 13C11.0701 13 14.3725 7.99974 14.3725 3.66302C14.3725 3.52083 14.3691 3.37865 14.3624 3.23984C15.0032 2.77604 15.5592 2.20052 16 1.54036Z"
+                      fill="#1DA1F2"
+                    />
+                  </svg>
+                </div>
+
+                <PrismicRichText
+                  richText={text}
+                  paragraphLevel={4}
+                  className="content"
+                />
+              </article>
+            ))}
+          </div>
+          <div class="bottom">
+            <Paragraph class="emoji">{emoji}</Paragraph>
+            <PrismicRichText richText={text} paragraphLevel={1} />
+            <div class="links">
+              {tweets__bottom__list.map(({ icon, text, link }) => (
+                <a href={link.url} target={link.target}>
+                  <article>
+                    <PrismicResponsiveImage image={icon} />
+                    <Heading level={4}>{text}</Heading>
+                  </article>
+                </a>
+              ))}
+            </div>
+          </div>
+        </ResponsiveContainer>
+      </section>
     );
   };
 
