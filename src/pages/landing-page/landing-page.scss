@@ -1,7 +1,7 @@
 @use '../../global/vars' as *;
 
-//#region -------------------------------- VARIABLES ---------------------------------------
-$section-space: 200px;
+//#region ----------- VARIABLES ------------
+$section-space: 12.5rem;
 
 :host {
   --h1-color: var(--c-carbon-100);
@@ -22,23 +22,26 @@ $section-space: 200px;
   --p3-color: var(--c-indigo-80);
   --p3-size: clamp(14px, 2vw, 16px);
 }
-//#endregion ------------------------------------------------------------------------------
+//#endregion
 
-em {
-  position: relative;
-  font-style: normal !important;
-
-  &::after {
-    position: absolute;
-    content: '';
-    bottom: 5px;
-    right: 0px;
-    z-index: -1;
-    height: 20px;
-    width: 100%;
-    background: var(--c-cyan-30);
-  }
+//#region ----------- GENERAL STYLES -----------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--f-family-text);
 }
+
+.ui-heading-1 {
+}
+
+.ui-heading-2 em {
+  font-style: normal;
+  color: var(--c-carbon-50);
+}
+//#endregion
 
 :host {
   overflow: hidden;
@@ -83,7 +86,7 @@ em {
     position: relative;
 
     .ui-heading {
-      max-width: 480px;
+      max-width: 504px;
     }
     .ui-paragraph {
       margin-block-end: var(--space-6);
@@ -266,6 +269,7 @@ em {
       flex-grow: 1;
 
       .ui-heading {
+        font-weight: 600;
         max-width: 384px;
         margin-inline-end: 32px;
       }
@@ -299,74 +303,115 @@ em {
   }
 }
 
-#whitepaper {
-  .content-wrapper {
+#ebook {
+  site-modal {
+    h2 {
+      text-align: center;
+      color: var(--c-carbon-100);
+      margin-block-end: 2rem;
+    }
+  }
+  .background {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+    border-radius: 32px;
+  }
+
+  .wrapper {
+    position: relative;
+    margin-inline-start: -3rem;
+    margin-inline-end: -3rem;
+
+    @media (max-width: $screen-md-max) {
+      margin: 0;
+    }
+  }
+
+  .content {
     display: flex;
+    background: #011830;
+
+    border-radius: 32px;
+
+    @media (max-width: $screen-xs) {
+      flex-direction: column;
+    }
+
+    @media (max-width: $screen-xs) {
+      padding-inline-start: clamp(1rem, 8vw, 3rem);
+      padding-inline-end: clamp(1rem, 8vw, 3rem);
+    }
+  }
+
+  .heading-group {
+    flex-basis: 50%;
+    position: relative;
     z-index: 1;
-    margin-inline-start: -48px;
-    margin-inline-end: -48px;
+    align-self: center;
 
-    @media screen and (max-width: $screen-xs) {
-      flex-direction: column;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
+    max-width: 35rem;
+
+    padding: clamp(1rem, 2.5vw, 2rem);
+    padding-inline-end: 3rem;
+
+    @media (max-width: $screen-xs) {
+      padding: clamp(1rem, 8vw, 3rem) 0;
     }
 
-    > * {
-      flex-basis: 50%;
-    }
+    .ui-paragraph {
+      color: var(--c-carbon-20);
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.03em;
 
-    .image-wrapper {
-      background: linear-gradient(286.21deg, #b8e3ff 0%, #f1faff 89.79%);
-      display: flex;
-      justify-content: center;
-      position: relative;
-      border-radius: 16px 0px 0px 16px;
+      margin-block-end: 2rem;
 
-      @media screen and (max-width: $screen-xs) {
-        min-height: clamp(150px, 70vw, 200px);
-        border-radius: 16px 16px 0px 0px;
-      }
-
-      img {
-        position: absolute;
-        max-width: 90%;
-        bottom: 0;
-
-        @media screen and (max-width: $screen-xs) {
-          max-width: min(350px, 90%);
-        }
+      em {
+        font-style: normal;
+        color: #fff;
       }
     }
 
-    .info {
-      background: #f2f8fd;
-      padding: clamp(32px, 7vw, 76px) clamp(32px, 7vw, 64px);
-      border-radius: 0px 16px 16px 0px;
+    .ui-button {
+      color: #011830;
+      --c-background: rgba(255, 255, 255, 1);
+      --c-focus: rgba(255, 255, 255, 0.6);
+      --c-background--hover: rgba(255, 255, 255, 0.9);
+      --c-background--active: #f2f2f2;
+    }
+  }
 
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
+  .image-wrapper {
+    flex-basis: 50%;
+    position: relative;
+    z-index: 1;
 
-      @media screen and (max-width: $screen-xs) {
-        border-radius: 0px 0px 16px 16px;
+    align-self: flex-end;
+
+    @media (max-width: $screen-xs) {
+      align-self: center;
+    }
+
+    img {
+      margin-inline-start: clamp(2rem, 8vw, 10rem);
+      margin-inline-end: clamp(2rem, 8vw, 6rem);
+      margin-block-start: -3rem;
+      max-width: 100%;
+
+      @media (max-width: $screen-sm-max) {
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        padding-inline-start: 3rem;
+        width: 100%;
       }
 
-      .ui-heading {
-        max-width: 480px;
-        margin-block-end: 28px;
-
-        span {
-          display: inline;
-
-          &:first-of-type {
-            color: var(--c-carbon-100);
-          }
-          &:last-of-type {
-            color: var(--c-indigo-70);
-          }
-        }
+      @media (max-width: $screen-xs) {
+        padding: 0;
       }
     }
   }
@@ -638,6 +683,9 @@ em {
   }
 }
 
+#multisection {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
+}
 #cta {
   --h2-color: var(--c-carbon-50);
   --p1-color: var(--c-indigo-40);
@@ -708,6 +756,7 @@ em {
         margin-block-end: 2.5rem;
 
         em {
+          font-style: normal;
           color: #fff;
 
           &::after {
@@ -732,7 +781,7 @@ em {
 
 #companies {
   margin-block-start: 8rem;
-  margin-block-end: $section-space;
+  margin-block-end: 10.063rem;
 
   .wrapper {
     display: flex;
@@ -774,30 +823,17 @@ em {
 }
 
 #get-started {
-  overflow: hidden;
+  padding-block-end: 9.5rem;
 
-  padding-block-start: $section-space;
-  padding-block-end: $section-space;
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
 
-  --h2-color: #fff;
-  --p2-color: var(--c-cyan-20);
-
-  .ui-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .background {
-    z-index: -1;
-    position: absolute;
-    min-width: 100%;
-    top: 0;
-    left: min(calc((1800px - 100%) / -2), 0px);
-    right: 0;
-    height: 100%;
+  .heading-group {
+    .ui-heading {
+      margin-block-end: 0.688rem;
+    }
   }
 
   .ctas {
@@ -816,6 +852,11 @@ em {
 
     .primary {
       --c-text: var(--c-capacitor-blue);
+      --elevation: 0;
+
+      &:hover {
+        --elevation: var(--elevation-3);
+      }
     }
     .secondary {
       --c-background: #49b6ff;
