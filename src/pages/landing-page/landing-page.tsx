@@ -10,7 +10,6 @@ import {
   PrismicResponsiveImage,
   Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { Fragment, JSXBase } from '@stencil/core/internal';
 import { href } from '@stencil/router';
 
 @Component({
@@ -20,9 +19,9 @@ import { href } from '@stencil/router';
 })
 export class LandingPage {
   @Prop() data: any;
+
   @State() selectedCodeTab: string = 'notifications';
-  @State() showHubspotForm = false;
-  @State() hubspotFormSubmitted = false;
+  @State() ebookModalOpen = false;
 
   render() {
     const {
@@ -31,10 +30,9 @@ export class LandingPage {
       Native,
       Features,
       Framework,
+      Tweets,
       Cta,
-      Companies,
-      GetStarted,
-      WhitepaperAd,
+      Ebook,
     } = this;
 
     return (
@@ -42,13 +40,12 @@ export class LandingPage {
         <meta-tags />
         <Top />
         <Started />
-        <WhitepaperAd />
+        <Ebook />
         <Native />
         <Features />
         <Framework />
+        <Tweets />
         <Cta />
-        <Companies />
-        <GetStarted />
         <pre-footer />
         <capacitor-site-footer />
       </Host>
@@ -214,112 +211,6 @@ public class MyAwesomePlugin: CAPPlugin {
           ],
         }}
       />,
-      //       <Tabs>
-      //         <TabBar>
-      //           <TabBarButton
-      //             selected={this.selectedCodeTab === 'notifications'}
-      //             tabSelect={() => (this.selectedCodeTab = 'notifications')}
-      //           >
-      //             Notifications
-      //           </TabBarButton>
-      //           <TabBarButton
-      //             selected={this.selectedCodeTab === 'geolocation'}
-      //             tabSelect={() => (this.selectedCodeTab = 'geolocation')}
-      //           >
-      //             Geolocation
-      //           </TabBarButton>
-      //           <TabBarButton
-      //             selected={this.selectedCodeTab === 'camera'}
-      //             tabSelect={() => (this.selectedCodeTab = 'camera')}
-      //           >
-      //             Camera
-      //           </TabBarButton>
-      //           <TabBarButton
-      //             selected={this.selectedCodeTab === 'custom'}
-      //             tabSelect={() => (this.selectedCodeTab = 'custom')}
-      //           >
-      //             Custom
-      //           </TabBarButton>
-      //         </TabBar>
-      //         <Tab selected={this.selectedCodeTab === 'notifications'}>
-      //           <code-snippet
-      //             style={{ '--border-radius': '0 0 8px 8px' }}
-      //             language="typescript"
-      //             code={`
-      // import { Plugins } from '@capacitor/core';
-      // const { LocalNotifications } = Plugins;
-
-      // LocalNotifications.schedule({
-      //   notifications: [
-      //     {
-      //       title: "On sale",
-      //       body: "Widgets are 10% off. Act fast!",
-      //       id: 1,
-      //       schedule: { at: new Date(Date.now() + 1000 * 5) },
-      //       sound: null,
-      //       attachments: null,
-      //       actionTypeId: "",
-      //       extra: null
-      //     }
-      //   ]
-      // });
-      // `}
-      //           />
-      //         </Tab>
-      //         <Tab selected={this.selectedCodeTab === 'geolocation'}>
-      //           <code-snippet
-      //             style={{ '--border-radius': '0 0 8px 8px' }}
-      //             language="typescript"
-      //             code={`
-      // import { Plugins } from '@capacitor/core';
-      // const { Geolocation } = Plugins;
-      // // get the users current position
-      // const position = await Geolocation.getCurrentPosition();
-
-      // // grab latitude & longitude
-      // const latitude = position.coords.latitude;
-      // const longitude = position.coords.longitude;
-      // `}
-      //           />
-      //         </Tab>
-      //         <Tab selected={this.selectedCodeTab === 'camera'}>
-      //           <code-snippet
-      //             style={{ '--border-radius': '0 0 8px 8px' }}
-      //             language="typescript"
-      //             code={`
-      // import { Plugins } from '@capacitor/core';
-      // const { Camera } = Plugins;
-      // // Take a picture or video, or load from the library
-      // const picture = await Camera.getPicture({
-      //   encodingType: this.camera.EncodingType.JPEG
-      // });
-      // `}
-      //           />
-      //         </Tab>
-      //         <Tab selected={this.selectedCodeTab === 'custom'}>
-      //           <code-snippet
-      //             style={{ '--border-radius': '0 0 8px 8px' }}
-      //             language="typescript"
-      //             code={`
-      // import Foundation
-      // import Capacitor
-
-      // // Custom platform code, easily exposed to your web app
-      // // through Capacitor plugin APIs. Build APIs that work
-      // // across iOS, Android, and the web!
-      // @objc(MyAwesomePlugin)
-      // public class MyAwesomePlugin: CAPPlugin {
-
-      //   @objc public func doNative(_ call: CAPPluginCall) {
-      //   let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
-
-      //   // ....
-      //   }
-      // }
-      // `}
-      //           />
-      //         </Tab>
-      //       </Tabs>,
     ];
 
     const dimensions = ['22x26', '27x23'];
@@ -356,51 +247,42 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   };
 
-  WhitepaperAd = () => {
-    const { image, text, cta } = this.data.whitepaper_ad;
-    const { line1, line2 } = text[0];
+  Ebook = () => {
+    const { ebook } = this.data;
+    const { text, cta1: cta, background, book } = ebook[0];
 
     return (
-      <Fragment>
-        <ResponsiveContainer id="whitepaper" as="section">
-          <div class="content-wrapper">
-            <div class="image-wrapper">
-              <PrismicResponsiveImage image={image} />
-            </div>
-            <div class="info">
-              <Heading>
-                <span>{line1}</span> <span>{line2}</span>
-              </Heading>
-              <Button
-                kind="round"
-                anchor
-                onClick={() => {
-                  this.showHubspotForm = true;
-                }}
-              >
-                {cta}
-                <span class="arrow">-&gt;</span>
-              </Button>
+      <section id="ebook">
+        <ResponsiveContainer>
+          <site-modal
+            open={this.ebookModalOpen}
+            onModalClose={() => (this.ebookModalOpen = false)}
+          >
+            <Heading level={2}>
+              Building Cross-platform Apps with Capacitor
+            </Heading>
+            <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
+          </site-modal>
+          <div class="wrapper">
+            <PrismicResponsiveImage image={background} class="background" />
+            <div class="content">
+              <div class="image-wrapper">
+                <PrismicResponsiveImage image={book} />
+              </div>
+              <div class="heading-group">
+                <PrismicRichText paragraphLevel={1} richText={text} />
+                <Button
+                  kind="round"
+                  size="md"
+                  onClick={() => (this.ebookModalOpen = true)}
+                >
+                  {cta} <span class="arrow"> -&gt;</span>
+                </Button>
+              </div>
             </div>
           </div>
         </ResponsiveContainer>
-        <site-modal
-          open={this.showHubspotForm}
-          modalClose={() => (this.showHubspotForm = false)}
-        >
-          <hgroup>
-            <Heading level={2}>
-              Building Cross-Platform Apps with Capacitor
-            </Heading>
-            <p>Fill out the form below to download our free whitepaper</p>
-          </hgroup>
-          <capacitor-hubspot-form
-            formId={'9151dc0b-42d9-479f-b7b8-649e0e7bd1bc'}
-            ajax={false}
-            onFormSubmitted={() => this.hubspotFormSubmitted}
-          />
-        </site-modal>
-      </Fragment>
+      </section>
     );
   };
 
@@ -492,6 +374,85 @@ public class MyAwesomePlugin: CAPPlugin {
     );
   };
 
+  Tweets = () => {
+    const {
+      tweets,
+      tweets__list,
+      tweets__bottom,
+      tweets__bottom__list,
+    } = this.data;
+    const { title } = tweets[0];
+    const { emoji, text } = tweets__bottom[0];
+
+    return (
+      <section id="tweets">
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <PrismicRichText richText={title} />
+          </div>
+          <div class="tweets">
+            {tweets__list.map(({ name, handle, text, image, verified }, i) => (
+              <article class="tweet" key={i}>
+                <div class="title-row">
+                  <PrismicResponsiveImage image={image} />
+                  <div class="title">
+                    <Heading level={5} as="h3">
+                      {name}
+                      {verified && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            fill="#1DA1F2"
+                            d="M512 268c0 17.9-4.3 34.5-12.9 49.7a92 92 0 01-34.6 35.4c.4 2.7.6 6.9.6 12.6 0 27.1-9.1 50.1-27.1 69.1a86.8 86.8 0 01-65.4 28.6 85.6 85.6 0 01-32.6-6.3 99.2 99.2 0 01-34.6 39.7A86 86 0 01256 512a86.8 86.8 0 01-49.7-14.9 97 97 0 01-34.3-40 85.3 85.3 0 01-32.6 6.3 87.8 87.8 0 01-65.7-28.6 96 96 0 01-26.3-81.7 92.7 92.7 0 01-34.6-35.4A100.3 100.3 0 010 268c0-19 4.8-36.5 14.3-52.3a88.1 88.1 0 0138.3-35.1 98.9 98.9 0 01-6.3-34.3 96 96 0 0127.4-69.1A88.1 88.1 0 01172 54.9a99.2 99.2 0 0134.6-39.7A86.7 86.7 0 01256 0c17.9 0 34.4 5.1 49.4 15.1A100 100 0 01340 54.8a85.3 85.3 0 0132.6-6.3c25.5 0 47.3 9.5 65.4 28.6a96.7 96.7 0 0127.1 69.1c0 12.6-1.9 24-5.7 34.3a88.1 88.1 0 0138.3 35.1A100.4 100.4 0 01512 268zm-266.9 77.1l105.7-158.3c2.7-4.2 3.5-8.8 2.6-13.7-1-4.9-3.5-8.8-7.7-11.4a19.5 19.5 0 00-13.7-2.9c-5 .8-9 3.2-12 7.4l-93.1 140-42.9-42.8a17 17 0 00-13.1-5.4c-5 .2-9.3 2-13.1 5.4a17.5 17.5 0 00-5.1 12.9c0 5.1 1.7 9.4 5.1 12.9l58.9 58.9 2.9 2.3c3.4 2.3 6.9 3.4 10.3 3.4 6.7-.1 11.8-2.9 15.2-8.7z"
+                          />
+                        </svg>
+                      )}
+                    </Heading>
+                    <Paragraph level={6}>{handle}</Paragraph>
+                  </div>
+                  <svg
+                    width="16"
+                    height="13"
+                    viewBox="0 0 16 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 1.54036C15.41 1.80104 14.7794 1.97708 14.1149 2.05833C14.793 1.65208 15.3151 1.00885 15.5592 0.24375C14.9252 0.619531 14.2234 0.89375 13.474 1.03932C12.8739 0.399479 12.0195 0 11.0769 0C9.26298 0 7.79487 1.46927 7.79487 3.28047C7.79487 3.53776 7.822 3.78828 7.87963 4.02865C5.15024 3.89323 2.72939 2.58646 1.1121 0.599219C0.830685 1.08333 0.667938 1.6487 0.667938 2.24792C0.667938 3.38542 1.25111 4.39089 2.13266 4.97995C1.59017 4.96641 1.08159 4.81745 0.640814 4.57031V4.61094C0.640814 6.20208 1.77326 7.52578 3.27527 7.82708C3.00064 7.90156 2.70905 7.94219 2.41068 7.94219C2.20047 7.94219 1.99364 7.92188 1.7936 7.88125C2.21064 9.18464 3.42445 10.1326 4.86205 10.1596C3.73978 11.0398 2.32253 11.5646 0.783217 11.5646C0.518754 11.5646 0.257682 11.5477 0 11.5172C1.44776 12.4583 3.17355 13 5.02479 13C11.0701 13 14.3725 7.99974 14.3725 3.66302C14.3725 3.52083 14.3691 3.37865 14.3624 3.23984C15.0032 2.77604 15.5592 2.20052 16 1.54036Z"
+                      fill="#1DA1F2"
+                    />
+                  </svg>
+                </div>
+
+                <PrismicRichText
+                  richText={text}
+                  paragraphLevel={4}
+                  className="content"
+                />
+              </article>
+            ))}
+          </div>
+          <div class="bottom">
+            <Paragraph class="emoji">{emoji}</Paragraph>
+            <PrismicRichText richText={text} paragraphLevel={1} />
+            <div class="links">
+              {tweets__bottom__list.map(({ icon, text, link }) => (
+                <a href={link.url} target={link.target}>
+                  <article>
+                    <PrismicResponsiveImage image={icon} />
+                    <Heading level={4}>{text}</Heading>
+                  </article>
+                </a>
+              ))}
+            </div>
+          </div>
+        </ResponsiveContainer>
+      </section>
+    );
+  };
+
   // Companies = () => {
   //   const { companies, companies__list } = this.data;
 
@@ -541,26 +502,11 @@ public class MyAwesomePlugin: CAPPlugin {
     const { cta } = this.data;
     const { image, title, text, cta1 } = cta[0];
 
-    return (
-      <ResponsiveContainer as="section" id="cta">
-        <PrismicRichText richText={title} />
-        <div class="wrapper">
-          <div class="card">
-            <PrismicResponsiveImage image={image} class="background" />
-            <div class="heading-group">
-              <PrismicRichText richText={text} paragraphLevel={1} />
-              <Button kind="round" {...href('/enterprise')}>
-                {cta1} <span class="arrow"> -&gt;</span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </ResponsiveContainer>
-    );
-  };
-
-  Companies = () => {
     const { companies__list2 } = this.data;
+
+    const { get_started2: get_started, get_started__ctas } = this.data;
+    const { title: get_started_title, text: get_started_text } = get_started[0];
+    const { primary, secondary } = get_started__ctas[0];
 
     const dimensions = [
       '33x42',
@@ -574,153 +520,75 @@ public class MyAwesomePlugin: CAPPlugin {
     ];
 
     return (
-      <ResponsiveContainer as="section" id="companies">
-        <div class="wrapper">
-          <div class="image-group first">
-            {companies__list2.slice(0, 4).map(({ logo }, i) => (
-              <PrismicResponsiveImage
-                image={logo}
-                width={dimensions[i].split('x')[0]}
-                height={dimensions[i].split('x')[1]}
-              />
-            ))}
-          </div>
-          <div class="image-group second">
-            {companies__list2.slice(4, 8).map(({ logo }, i) => (
-              <PrismicResponsiveImage
-                image={logo}
-                width={dimensions[i + 4].split('x')[0]}
-                height={dimensions[i + 4].split('x')[1]}
-              />
-            ))}
-          </div>
-        </div>
-      </ResponsiveContainer>
-    );
-  };
-
-  GetStarted = () => {
-    const Background = this.getStartedBackground;
-    const { get_started, get_started__ctas } = this.data;
-    const { primary, secondary } = get_started__ctas[0];
-
-    return (
-      <section id="get-started">
-        <Background class="background" />
+      <section id="multisection">
         <ResponsiveContainer>
-          <div class="heading-group">
-            <PrismicRichText richText={get_started} paragraphLevel={2} />
+          <div id="cta">
+            <PrismicRichText richText={title} />
+            <div class="wrapper">
+              <div class="card">
+                <PrismicResponsiveImage image={image} class="background" />
+                <div class="heading-group">
+                  <PrismicRichText richText={text} paragraphLevel={1} />
+                  <Button kind="round" {...href('/enterprise')}>
+                    {cta1} <span class="arrow"> -&gt;</span>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="ctas">
-            <Button
-              {...href('/docs/getting-started')}
-              anchor
-              kind="round"
-              variation="light"
-              class="primary"
-              color="cyan"
-            >
-              {primary}
-              <span class="arrow"> -&gt;</span>
-            </Button>
-            <Button
-              {...href('/docs/plugins')}
-              kind="round"
-              anchor
-              class="secondary"
-              color="cyan"
-            >
-              {secondary}
-            </Button>
+          <div id="companies">
+            <div class="wrapper">
+              <div class="image-group first">
+                {companies__list2.slice(0, 4).map(({ logo }, i) => (
+                  <PrismicResponsiveImage
+                    image={logo}
+                    width={dimensions[i].split('x')[0]}
+                    height={dimensions[i].split('x')[1]}
+                  />
+                ))}
+              </div>
+              <div class="image-group second">
+                {companies__list2.slice(4, 8).map(({ logo }, i) => (
+                  <PrismicResponsiveImage
+                    image={logo}
+                    width={dimensions[i + 4].split('x')[0]}
+                    height={dimensions[i + 4].split('x')[1]}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div id="get-started">
+            <div class="heading-group">
+              <Heading level={2}>{get_started_title}</Heading>
+              <Paragraph level={2}>{get_started_text}</Paragraph>
+            </div>
+            <div class="ctas">
+              <Button
+                {...href('/docs/getting-started')}
+                kind="round"
+                anchor
+                class="secondary"
+                color="cyan"
+              >
+                {primary}
+                <span class="arrow"> -&gt;</span>
+              </Button>
+              <Button
+                {...href('/docs/plugins')}
+                anchor
+                kind="round"
+                variation="light"
+                class="primary"
+                color="cyan"
+              >
+                {secondary}
+                <span class="arrow"> -&gt;</span>
+              </Button>
+            </div>
           </div>
         </ResponsiveContainer>
       </section>
     );
   };
-
-  getStartedBackground = (props?: JSXBase.SVGAttributes) => (
-    <svg
-      viewBox="0 0 1800 492"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMinYMin slice"
-      {...props}
-    >
-      <mask
-        id="get_started_background_mask0"
-        mask-type="alpha"
-        maskUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        width="1800"
-        height="492"
-      >
-        <rect width="1800" height="492" fill="#119EFF" />
-      </mask>
-      <g mask="url(#get_started_background_mask0)">
-        <rect width="1800" height="492" fill="url(#paint0_linear)" />
-        <path
-          opacity="0.1"
-          d="M359 -288H1825V-155.138L985.613 338L359 -31.7071V-288Z"
-          fill="url(#paint1_linear)"
-        />
-        <path
-          opacity="0.1"
-          d="M-211 619H812V526.251L226.261 182L-211 440.086V619Z"
-          fill="url(#paint2_linear)"
-        />
-        <path
-          opacity="0.1"
-          d="M1192 686H2215V593.251L1629.26 249L1192 507.086V686Z"
-          fill="url(#paint3_linear)"
-        />
-      </g>
-      <defs>
-        <linearGradient
-          id="paint0_linear"
-          x1="-6.6919e-06"
-          y1="246"
-          x2="1809"
-          y2="246"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stop-color="#37B3FF" />
-          <stop offset="1" stop-color="#0097FF" />
-        </linearGradient>
-        <linearGradient
-          id="paint1_linear"
-          x1="1092"
-          y1="-288"
-          x2="1092"
-          y2="338"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="white" />
-        </linearGradient>
-        <linearGradient
-          id="paint2_linear"
-          x1="300.5"
-          y1="619"
-          x2="300.5"
-          y2="182"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="white" />
-        </linearGradient>
-        <linearGradient
-          id="paint3_linear"
-          x1="1703.5"
-          y1="686"
-          x2="1703.5"
-          y2="249"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="white" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
 }
