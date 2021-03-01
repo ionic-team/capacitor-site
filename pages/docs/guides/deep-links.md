@@ -236,7 +236,7 @@ Android configuration involves creating a site association file and configuring 
 
 ### Create Site Association File
 
-The Site Association file requires the SHA256 fingerprint of your Android certificate.  
+The Site Association file requires the SHA256 fingerprint of your Android certificate.
 
 If you have enabled automatic signing in the Google Play Store, you can get your SHA256 certificate by going to https://play.google.com/console, selecting your app, Setup, App Signing, and copying your SHA256 app signing certificate thumbprint.
 

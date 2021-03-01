@@ -7,7 +7,7 @@ $section-space: 12.5rem;
   --h1-color: var(--c-carbon-100);
   --h1-size: clamp(48px, 6vw, 64px);
 
-  --h2-color: var(--c-carbon-100);
+  --h2-color: var(--c-carbon-50);
   --h2-size: clamp(40px, 6vw, 48px);
 
   --h3-color: var(--c-carbon-100);
@@ -34,12 +34,9 @@ h6 {
   font-family: var(--f-family-text);
 }
 
-.ui-heading-1 {
-}
-
 .ui-heading-2 em {
   font-style: normal;
-  color: var(--c-carbon-50);
+  color: var(--c-carbon-100);
 }
 //#endregion
 
@@ -460,7 +457,7 @@ h6 {
     }
 
     .ui-heading {
-      max-width: 16ch;
+      max-width: 448px;
       margin-block-end: 0px;
     }
   }
@@ -499,10 +496,10 @@ h6 {
 
     .ui-heading {
       margin-block-end: 0px;
-      max-width: 15.5ch;
+      max-width: 400px;
     }
     .ui-paragraph {
-      max-width: 44ch;
+      max-width: 560px;
     }
   }
 

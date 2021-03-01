@@ -27,7 +27,7 @@ export const Routes = () => (
             productName="Capacitor"
           /> */}
           <announcement-bar prismicData={data.announcement_bar} />
-          <site-header class="heading-container" />
+          <site-header class="heading-container" sticky={true} />
           <landing-page data={data} />
         </Fragment>
       )}
