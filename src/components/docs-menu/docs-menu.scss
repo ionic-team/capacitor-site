@@ -82,8 +82,6 @@ span {
 }
 
 .menu-header__logo-link {
-  max-width: 125px;
-
   svg {
     display: block;
   }
@@ -94,13 +92,13 @@ span {
 
   text-transform: uppercase;
 
-  font-family: var(--f-family-display);
+  font-family: var(--f-family-text);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 17px;
 
   letter-spacing: -0.02em;
 
-  margin: 3px 7px 0 8px;
+  margin: 1px 7px 0 8px;
 }
 
 .menu-header__version-link {
