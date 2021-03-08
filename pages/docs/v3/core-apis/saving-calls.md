@@ -14,7 +14,7 @@ Two reasons you might need a plugin call (`CAPPluginCall` on iOS or `PluginCall`
 1. To perform an asynchronous action, such as a network request.
 2. To provide repeated updates back to the JavaScript environment, such as streaming live geolocation data.
 
-These two reasons can overlap but there is an important difference. Specifically, whether or not a call will need to complete (`resolve()` or `reject()`) more than once. The Capacitor bridge records each call that is made from JavaScript to native so that it can match the result to the correct code when the plugin returns it, and the default behavior is to erase this bookkeeping after a call completes once.
+These two reasons can overlap but there is an important distinction. Specifically, whether or not a call will need to return data more than once. The Capacitor bridge records each call that is made from JavaScript to native so that it can match the result to the correct code when the plugin returns it, and the default behavior is to erase this bookkeeping after `resolve()` or `reject()` is called once. But if your method is a callback that will `resolve()` multiple times, then there is an extra step involved.
 
 ---
 
@@ -44,9 +44,9 @@ void releaseCall(String callbackId)
 
 ### Saving a call for multiple completions
 
-Saving a call to be completed multiple times in the future means two things: saving the native call object itself (as above) and telling the bridge to preserve its bookkeeping so `resolve()` or `reject()` can be invoked more than once.
+Saving a call to be completed multiple times in the future means two things: saving the native call object itself (as above) and telling the bridge to preserve its bookkeeping so `resolve()` or `reject()` can be invoked repeatedly.
 
-To mark a call this way, set its `keepAlive` property (this was called `isSaved` prior to version 3.0 but has been renamed to make the behavior clearer).
+To mark a call this way, set its `keepAlive` property (this was called `isSaved` prior to version 3 but has been renamed to make the behavior clearer).
 
 **iOS**
 
