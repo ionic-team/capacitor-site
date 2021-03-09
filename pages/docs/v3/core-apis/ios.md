@@ -15,6 +15,12 @@ Notes on how to work with data that is passed between environments can be [found
 
 ---
 
+## Saving CAPPluginCall
+
+Notes on persisting plugin calls for asynchronous or repeated operations can be [found here](/docs/core-apis/saving-calls).
+
+---
+
 ## Bridge
 
 The iOS bridge is the heart of the Capacitor iOS library. There are several properties and methods available on the bridge which provide information or change behavior.

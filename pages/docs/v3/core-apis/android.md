@@ -9,6 +9,14 @@ Capacitor Android is the native runtime that powers Capacitor apps on Android.
 
 > 🚧 This guide is a work-in-progress. Thanks for your patience!
 
+---
+
+## Saving PluginCall
+
+Notes on persisting plugin calls for asynchronous or repeated operations can be [found here](/docs/core-apis/saving-calls).
+
+---
+
 ## Bridge
 
 The Android bridge is the heart of the Capacitor Android library. There are several methods available on the bridge which provide information or change behavior.

@@ -2,6 +2,10 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/3",
+      "destination": "https://ionicframework.com/blog/ionic-product-launch-event-recap/"
+    },
+    {
       "source": "/forum",
       "destination": "https://forum.ionicframework.com/c/capacitor/26"
     },
