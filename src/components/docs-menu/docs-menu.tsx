@@ -101,7 +101,7 @@ export class SiteMenu implements ComponentInterface {
                 {capacitorLogo()}
               </a>
               <a
-                {...href(docsVersionHref('/docs'))}
+                {...href(docsVersionHref('/docs/v3'))}
                 class="menu-header__docs-link"
               >
                 Docs
