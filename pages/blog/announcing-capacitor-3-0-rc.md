@@ -1,7 +1,7 @@
 ---
 title: Announcing Capacitor 3.0 Release Candidate
 slug: announcing-capacitor-3-0-rc
-date: 2021-03-03 08:00:00
+date: 2021-03-10 08:00:00
 author: Mike Hartington <mike@ionic.io>
 authorUrl: https://twitter.com/mhartington
 description: Announcing Capacitor 3.0 Release Candidate
