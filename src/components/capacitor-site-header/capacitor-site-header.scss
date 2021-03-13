@@ -121,10 +121,6 @@ app-menu-toggle {
         opacity: 0.7;
       }
     }
-
-    .capacitor-logo {
-      width: 105px;
-    }
   }
 }
 
@@ -244,11 +240,6 @@ more-button {
       a.logo-wrapper {
         padding: 0;
         display: flex;
-
-        .capacitor-logo {
-          margin-inline-start: 10px;
-          margin-inline-end: 20px;
-        }
 
         &:hover,
         &:active,
