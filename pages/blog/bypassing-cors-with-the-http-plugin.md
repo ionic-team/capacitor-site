@@ -2,7 +2,7 @@
 title: Bypassing CORS with the Capacitor Community HTTP Plugin
 slug: bypassing-cors-with-the-http-plugin
 date: 2021-03-18 08:00:00
-author: Tess Park <mike@ionic.io>
+author: Tessa Park <mike@ionic.io>
 authorUrl: https://twitter.com/halftes6
 description: How to bypass CORS with the Http Plugin
 featuredImage: /http/header-img.jpg
