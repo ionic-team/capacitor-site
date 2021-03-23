@@ -26,6 +26,8 @@ const config: CapacitorConfig = {
 export default config;
 ```
 
+If you are not using TypeScript in your project, you can use a `capacitor.config.json` file in the same way.
+
 ## Schema
 
 Here is the TypeScript interface for Capacitor configuration, complete with descriptions and defaults.
