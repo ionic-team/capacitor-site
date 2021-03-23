@@ -9,7 +9,7 @@ featuredImage: /http/header-img.jpg
 featuredImageAlt: Http Header image
 ---
 
-> This is a guest post from Tessa Park. Tessa enjoys drawing and eating snacks, and currently works as a developer experience engineer. She frequently speaks about Vuejs and is a host on the [Enjoy The Vue](https://enjoythevue.io) podcast.
+> This is a guest post from Tessa. Tessa enjoys drawing and eating snacks, and currently works as a developer experience engineer. She frequently speaks about Vuejs and is a host on the [Enjoy The Vue](https://enjoythevue.io) podcast.
 
 [CORS](https://www.codecademy.com/articles/what-is-cors), or Cross-Origin Resource Sharing, is not a popular word among developers working with front-end tech. A browser-enforced restriction mainly to protect users from a type of attack known as [cross-site request forgery](https://owasp.org/www-community/attacks/csrf), CORS is more well known for the headaches it causes web developers, and that’s before we even think about mentioning mobile applications! But what if there were another way?
 
