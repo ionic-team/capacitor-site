@@ -62,7 +62,7 @@ If, after running both commands, you see the error `Capacitor could not find the
 1. Open your project in your favorite code editor; I like to use [VSCode](https://code.visualstudio.com/).
 2. _Optional:_ Download [HovdenStitch](https://www.fontspace.com/hovden-stitch-font-f43700), a free cross-stitch font, and move the `otf` file to your `public/assets` folder as `HovdenStitchRegular.otf`. Then in `src/App.vue`, copy and paste the below style tag at the bottom of the file to allow this custom font to be used across your app.
 
-```css
+```html
 <style>
   @font-face {
     font-family: 'HovdenStitch';
@@ -122,7 +122,8 @@ In `src/views/Home.vue`, replace your `script` tag with the below starter code:
 
     // When we'll check if advice data needs to be changed
     async ionViewWillEnter() {
-      // For more on`ionViewWillEnter`, see: https://ionicframework.com/docs/vue/lifecycle#guidance-for-each-lifecycle-method
+      // For more on`ionViewWillEnter`
+      // see: https://ionicframework.com/docs/vue/lifecycle#guidance-for-each-lifecycle-method
     },
 
     methods: {},
@@ -156,10 +157,10 @@ async fetchAdvice() {
     // Save new advice
     this.advice = JSON.parse(data).slip.advice.toUpperCase()
       // In other words:
-        // const dataInJs = JSON.parse(data)
-        // const slip = dataInJs.slip
-        // this.advice = slip.advice
-        // this.advice = this.advice.toUpperCase() — // font supports upper case only
+      // const dataInJs = JSON.parse(data)
+      // const slip = dataInJs.slip
+      // this.advice = slip.advice
+      // this.advice = this.advice.toUpperCase() — // font supports upper case only
 
     // Update lastSaveDate
     this.lastSaveDate = this.currentDate
