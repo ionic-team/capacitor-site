@@ -78,3 +78,12 @@ npx cap copy
 Cordova and [Ionic Native](https://ionicframework.com/docs/native/) plugins are supported in Capacitor. See the [Using Cordova Plugins](/docs/cordova/using-cordova-plugins) guide for more information.
 
 Want to start using Capacitor in an Ionic app immediately? [Check out this guide](/docs/guides/ionic-framework-app).
+
+
+
+
+
+
+
+
+
