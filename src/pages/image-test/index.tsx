@@ -12,7 +12,7 @@ import { getPage } from '../../data.server/prismic';
 import IdealImage from 'react-ideal-image'
 
 import Image from '@theme/IdealImage';
-import TestImage from '../../../static/img/og.png';
+import TestImage from '../../../static/img/og.png?size=400';
 
 import '../landing-page.scss';
 
@@ -98,8 +98,8 @@ function ImageTestPage(props: Props): JSX.Element {
           width={1600}
           height={800}
         /> */}
-        <Image style={{ width: '100%' }} img={TestImage} size={400} />
-        <Image style={{ width: '100%' }} img={require('../../../static/img/og.png')} min={320} max={1200} />
+        <Image style={{ width: '100%' }} img={TestImage} />
+        <Image style={{ width: '100%' }} img={require('../../../static/img/og.png?min=320&max=1200')} />
       </>
     );
   }
