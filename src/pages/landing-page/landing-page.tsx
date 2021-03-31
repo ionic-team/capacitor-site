@@ -1,8 +1,8 @@
 import { Component, h, Host, Prop, State } from '@stencil/core';
 import {
   ResponsiveContainer,
-  Grid,
   Col,
+  Grid,
   Heading,
   Breakpoint,
   Button,
