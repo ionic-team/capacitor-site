@@ -40,9 +40,12 @@ Here is a full example of available configuration options for `capacitor.config.
   // Android Studio install path, but you may change it manually.
   windowsAndroidStudioPath: 'C:Program FilesAndroidAndroid Studio\binstudio64.exe',
 
-  // A Boolean value that determines whether to hide native logs for iOS and Android. The preference is ignored if it's also declared inside ios or android
-  // Default is false
-  hideLogs: true,
+  // The build configuration under which Capacitor will output log statements
+  // 'none' = logs are never produced
+  // 'debug' = logs are produced in debug builds but not production builds
+  // 'production' = logs are always produced
+  // Default is debug
+  loggingBehavior: 'debug',
 
   // Server object contains port and url configurations
   server: {
