@@ -143,7 +143,15 @@ module.exports = {
     },
   },
   plugins: [
-    '@docusaurus/plugin-ideal-image',
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 70,
+        max: 2048,
+        min: 320,
+        steps: 4,
+      },
+    ],
     [
       'docusaurus-plugin-sass',
       {
