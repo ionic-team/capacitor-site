@@ -44,7 +44,7 @@ const { Storage } = Plugins;
 
 
 // JSON "set" example
-async setObject() {
+async function setObject() {
   await Storage.set({
     key: 'user',
     value: JSON.stringify({
@@ -55,33 +55,33 @@ async setObject() {
 }
 
 // JSON "get" example
-async getObject() {
+async function getObject() {
   const ret = await Storage.get({ key: 'user' });
   const user = JSON.parse(ret.value);
 }
 
-async setItem() {
+async function setItem() {
   await Storage.set({
     key: 'name',
     value: 'Max'
   });
 }
 
-async getItem() {
+async function getItem() {
   const { value } = await Storage.get({ key: 'name' });
   console.log('Got item: ', value);
 }
 
-async removeItem() {
+async function removeItem() {
   await Storage.remove({ key: 'name' });
 }
 
-async keys() {
+async function keys() {
   const { keys } = await Storage.keys();
   console.log('Got keys: ', keys);
 }
 
-async clear() {
+async function clear() {
   await Storage.clear();
 }
 ```
