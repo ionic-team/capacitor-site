@@ -43,6 +43,10 @@ This API requires the following permissions be added to your `AndroidManifest.xm
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+<uses-permission android:name="android.permission.CAMERA"/>
+<uses-feature android:name="android.hardware.camera" />
+<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
 ```
 
 The storage permissions are for reading/saving photo files.
