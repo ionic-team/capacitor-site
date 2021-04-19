@@ -59,7 +59,7 @@ Once Xcode launches, you can build your app binary through the standard Xcode wo
 Android relies on Android Studio (or, optionally, the Android CLI tools) to build the app:
 
 ```bash
-npx cap copy android
+npx cap add android
 npx cap open android
 ```
 
