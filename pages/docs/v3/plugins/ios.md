@@ -196,7 +196,7 @@ var locationManager: CLLocationManager?
 @objc override func requestPermissions(_ call: CAPPluginCall) {
     if let manager = locationManager, CLLocationManager.locationServicesEnabled() {
         if CLLocationManager.authorizationStatus() == .notDetermined {
-            call.save()
+            bridge?.saveCall(call)
             permissionCallID = call.callbackId
             manager.requestWhenInUseAuthorization()
         } else {
