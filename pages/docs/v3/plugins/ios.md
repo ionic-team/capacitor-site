@@ -101,7 +101,7 @@ call.reject(error.localizedDescription, nil, error)
 To make sure Capacitor can see your plugin, you must do two things: export your Swift class to Objective-C, and register it
 using the provided Capacitor Objective-C Macros.
 
-To export your Swift class to Objective-C, make sure to add `@objc(YourPluginClass)` above your Swift class, and add `@objc` before any plugin method, as shown above.
+To export your Swift class to Objective-C, make sure to add `@objc(MyPlugin)` above your Swift class, and add `@objc` before any plugin method, as shown above.
 
 To register your plugin with Capacitor, you'll need to create a new Objective-C file (with a `.m` extension, _not_ `.h`!) corresponding to your plugin (such as `MyPlugin.m`) and use the Capacitor macros to register the plugin, and each method that you will use. Important: you _must_ use the New File dialog in Xcode to do this. You'll then be prompted by Xcode to create a Bridging Header, which you _must_ do.
 
@@ -247,6 +247,12 @@ let store = CNContactStore()
     }
 }
 ```
+
+### Persisting a Plugin Call
+
+In most cases, a plugin method will get invoked to perform a task and can finish immediately. But there are situations where you will need to keep the plugin call available so it can be accessed later. You might want to do this to periodically return data such as streaming live geolocation data, or to perform an asynchronous task.
+
+See [this guide on saving plugin calls](/docs/v3/core-apis/saving-calls) for more details on how to persist plugin calls.
 
 ## Error Handling
 
