@@ -35,8 +35,8 @@ data back to the caller:
 ```swift
 import Capacitor
 
-@objc(MyPlugin)
-public class MyPlugin: CAPPlugin {
+@objc(EchoPlugin)
+public class EchoPlugin: CAPPlugin {
   @objc func echo(_ call: CAPPluginCall) {
     let value = call.getString("value") ?? ""
     call.resolve([
@@ -103,19 +103,19 @@ using the provided Capacitor Objective-C Macros.
 
 To export your Swift class to Objective-C, make sure to add `@objc(MyPlugin)` above your Swift class, and add `@objc` before any plugin method, as shown above.
 
-To register your plugin with Capacitor, you'll need to create a new Objective-C file (with a `.m` extension, _not_ `.h`!) corresponding to your plugin (such as `MyPlugin.m`) and use the Capacitor macros to register the plugin, and each method that you will use. Important: you _must_ use the New File dialog in Xcode to do this. You'll then be prompted by Xcode to create a Bridging Header, which you _must_ do.
+To register your plugin with Capacitor, you'll need to create a new Objective-C file (with a `.m` extension, _not_ `.h`!) corresponding to your plugin (such as `EchoPlugin.m`) and use the Capacitor macros to register the plugin, and each method that you will use. Important: you _must_ use the New File dialog in Xcode to do this. You'll then be prompted by Xcode to create a Bridging Header, which you _must_ do.
 
 Finally, register the plugin by adding the required Capacitor plugin macros into your new `.m` file:
 
 ```objectivec
 #import <Capacitor/Capacitor.h>
 
-CAP_PLUGIN(MyPlugin, "MyPlugin",
+CAP_PLUGIN(EchoPlugin, "EchoPlugin",
   CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
 )
 ```
 
-This makes `MyPlugin`, and the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
+This makes `EchoPlugin`, and the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
 
 ## Permissions
 
