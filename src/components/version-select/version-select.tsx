@@ -50,7 +50,7 @@ export class VersionSelect {
             aria-label="Version 3.x Docs"
             class={{ selected: selectedVersion === 3 }}
           >
-            <span>v3 (beta)</span>
+            <span>v3 (RC)</span>
             {checkmark()}
           </a>
           <a
