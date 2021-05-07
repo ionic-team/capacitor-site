@@ -205,7 +205,7 @@ For a single alias `requestPermissionForAlias` may be used. Multiple aliases can
 
 ### Manifest
 
-Place any required [install-time](https://developer.android.com/guide/topics/permissions/overview#install-time) permissions in the `AndroidManifest.xml` of the plugin. Do not add runtime permissions (permissions that prompts users to accept). These should be added to the manifest of the Capacitor app instead, and your plugin should document any required runtime permissions.
+Place any required [install-time](https://developer.android.com/guide/topics/permissions/overview#install-time) permissions in the `AndroidManifest.xml` of the plugin. Do not add runtime permissions (permissions that prompts users to accept). These should be added to the manifest of a Capacitor app by the app developer. Make sure your plugin documents any required runtime permissions that should be added in the app.
 
 ```diff-xml
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
