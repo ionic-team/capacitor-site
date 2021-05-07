@@ -104,11 +104,11 @@ npx cap sync [android | ios]
 
 ## Set Permissions
 
-By default, the entire initial permissions requested for the latest version of Capacitor are set for you in the default native projects for both iOS and Android. However, you may need to apply additional permissions manually by mapping between `plugin.xml` and required settings on iOS and Android. Consult the [iOS](/docs/ios/configuration) and [Android](/docs/android/configuration) configuration guides for info on how to configure each platform.
+If the plugin declared the permissions or usage descriptions in the `plugin.xml`, Capacitor will automatically add them to your `AndroidManifest.xml` and `Info.plist`. However, you may need to apply additional permissions or usage descriptions manually by mapping between `plugin.xml` and required settings on iOS and Android. Consult the [iOS](/docs/ios/configuration) and [Android](/docs/android/configuration) configuration guides for info on how to configure each platform.
 
 ## Cordova Plugin preferences
 
-When `npx cap init` is run, Capacitor reads all the preferences in `config.xml` and port them to `capacitor.config.json` file. You can manually add more preferences to the `cordova.preferences` object too.
+When `npx cap init` is run, Capacitor reads all the preferences in `config.xml` and port them to `capacitor.config.json` or `capacitor.config.ts` file. You can manually add more preferences to the `cordova.preferences` object too.
 
 ```json
 {
@@ -119,6 +119,17 @@ When `npx cap init` is run, Capacitor reads all the preferences in `config.xml` 
     }
   }
 }
+```
+
+```ts
+const config: CapacitorConfig = {
+  cordova: {
+    preferences: {
+      DisableDeploy: 'false',
+      CameraUsesGeolocation: 'true',
+    },
+  },
+};
 ```
 
 ## Additional Config.xml Fields

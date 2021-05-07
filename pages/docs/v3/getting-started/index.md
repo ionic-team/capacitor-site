@@ -42,20 +42,11 @@ Then, initialize Capacitor using the CLI questionnaire:
 npx cap init
 ```
 
+The CLI will ask you a few questions, starting with your app name, and the package id you would like to use for your app.
+
+Last, it will ask what directory your web assets get built into. For Angular, this is `www`, React is `build`, and Vue is `dist`. If you don't know right now, you can update this value in the `capacitor.config.ts` file later.
+
 > The `npx cap` command is how Capacitor is executed locally on the command-line in your project. [Learn more about the Capacitor CLI](/docs/cli).
-
-Finally, add an import to `@capacitor/core` to the TypeScript or JavaScript file that bootstraps your app. This will include the Capacitor JavaScript bridge into your app.
-
-For example, in a React app, add the following import to `src/index.tsx`:
-
-```diff-typescript
-+import '@capacitor/core';
- import React from 'react';
- import ReactDOM from 'react-dom';
- import App from './App';
-
- ReactDOM.render(<App />, document.getElementById('root'));
-```
 
 ## Where to go next
 

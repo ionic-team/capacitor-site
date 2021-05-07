@@ -26,7 +26,7 @@ It could be as simple as updating a dependency, running clean, or removing Deriv
 
 ### Clean/Rebuild
 
-Cleaning and rebuilding can fix a number of build issues. Navigate to Product -> Clean in the Xcode menu to clean your current build.
+Cleaning and rebuilding can fix a number of build issues. Navigate to Product -> Clean Build Folder in the Xcode menu to clean your current build.
 
 ### Removing Derived Data
 
