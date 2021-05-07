@@ -111,6 +111,12 @@ To fail, or reject a call, use `call.reject`, passing an error string and option
 call.reject(exception.getLocalizedMessage(), null, exception);
 ```
 
+### Persisting a Plugin Call
+
+In most cases, a plugin method will get invoked to perform a task and can finish immediately. But there are situations where you will need to keep the plugin call available so it can be accessed later. You might want to do this to periodically return data such as streaming live geolocation data, or to perform an asynchronous task.
+
+See [this guide on saving plugin calls](/docs/v3/core-apis/saving-calls) for more details on how to persist plugin calls.
+
 ## Permissions
 
 If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern.
