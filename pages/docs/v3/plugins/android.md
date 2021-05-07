@@ -111,7 +111,7 @@ To fail, or reject a call, use `call.reject`, passing an error string and option
 call.reject(exception.getLocalizedMessage(), null, exception);
 ```
 
-### Persisting a Plugin Call
+#### Persisting a Plugin Call
 
 In most cases, a plugin method will get invoked to perform a task and can finish immediately. But there are situations where you will need to keep the plugin call available so it can be accessed later. You might want to do this to periodically return data such as streaming live geolocation data, or to perform an asynchronous task.
 
