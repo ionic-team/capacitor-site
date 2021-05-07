@@ -7,16 +7,6 @@ description: The API for Capacitor on Android
 
 Capacitor Android is the native runtime that powers Capacitor apps on Android.
 
-> 🚧 This guide is a work-in-progress. Thanks for your patience!
-
----
-
-## Saving PluginCall
-
-Notes on persisting plugin calls for asynchronous or repeated operations can be [found here](/docs/core-apis/saving-calls).
-
----
-
 ## Bridge
 
 The Android bridge is the heart of the Capacitor Android library. There are several methods available on the bridge which provide information or change behavior.
@@ -26,6 +16,8 @@ When registered with Capacitor, plugins have access to the bridge:
 ```java
 this.bridge
 ```
+
+---
 
 ### getConfig()
 
@@ -52,3 +44,15 @@ Examples:
 bridge.triggerJSEvent("myCustomEvent", "window");
 bridge.triggerJSEvent("myCustomEvent", "document", "{ 'dataKey': 'dataValue' }");
 ```
+
+---
+
+## Passing data
+
+Notes on how to work with data that is passed between environments can be [found here](/docs/core-apis/data-types#android).
+
+---
+
+## Saving CAPPluginCall
+
+Notes on persisting plugin calls for asynchronous or repeated operations can be [found here](/docs/core-apis/saving-calls).
