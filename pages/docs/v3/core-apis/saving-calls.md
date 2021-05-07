@@ -60,4 +60,14 @@ call.keepAlive = true
 call.setKeepAlive(true);
 ```
 
+Additionally for Android, use the `@PluginMethod` annotation `returnType` property to flag to inform the web app to keep the plugin call alive.
+
+```java
+@PluginMethod(returnType = PluginMethod.RETURN_CALLBACK)
+public void keepAliveExample(PluginCall call) {
+    savedCall = call;
+    call.setKeepAlive(true);
+}
+```
+
 If `keepAlive` is true, then `resolve()` can be called as many times as necessary and the result will be returned as expected. Setting this flag to true also means that the bridge will automatically call `saveCall()` for you during the first completion.
