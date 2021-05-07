@@ -12,7 +12,7 @@ Some Capacitor plugins, such as `Camera` or `Toast`, have web-based UI available
 
 <img src="/assets/img/docs/pwa-elements.png" style="height: 200px" />
 
-This UI is implemented using web components. Due to the magic of Shadow DOM, these components should not conflict
+This UI is implemented using web components. Due the elements being encapsulated by the [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM), these components should not conflict
 with your own UI.
 
 ## Installation
@@ -29,7 +29,7 @@ npm install @ionic/pwa-elements
 
 Then, depending on your framework of choice, import the element loader and call it at the correct time:
 
-_React_
+##### React
 
 `index.tsx` or `index.js`:
 
@@ -42,7 +42,31 @@ ReactDOM.render(<App />, document.getElementById('root'));
 defineCustomElements(window);
 ```
 
-_Angular_
+##### Vue
+
+`main.ts`
+
+```typescript
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+Vue.config.productionTip = false;
+
+new Vue({
+  el: '#app',
+  router,
+  template: '<App/>',
+  components: { App },
+});
+
+// Call the element loader after the platform has been bootstrapped
+defineCustomElements(window);
+```
+
+##### Angular
 
 `main.ts`:
 
