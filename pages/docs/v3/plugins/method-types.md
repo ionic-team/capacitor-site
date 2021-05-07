@@ -49,9 +49,9 @@ CAP_PLUGIN(MyPlugin, "MyPlugin",
 
 ## Value Return
 
-`method2()` is the most common case, a promise that resolves with some value.
+`method2()` is the most common case: A promise that resolves with some value.
 
-For Android, this type is the default and specifying the return type is optional:
+For Android, this method type is the default and specifying the return type is optional:
 
 ```java
 @PluginMethod()
@@ -69,7 +69,7 @@ CAP_PLUGIN(MyPlugin, "MyPlugin",
 
 ## Callback
 
-`method3()` is the most complex type but also the least common in practice. It is used when your plugin needs to return data repeatedly such as when monitoring the device's location via geolocation.
+`method3()` is the most complex type but also the least common in practice. It is used when your plugin needs to return data repeatedly, such as when monitoring the device's location via the geolocation API.
 
 For android, you would annotate the method like this:
 
@@ -89,4 +89,4 @@ CAP_PLUGIN(MyPlugin, "MyPlugin",
 
 Callback methods take a function that will be invoked (potentially many times) from the native code and return a promise that will resolve with an identifier.
 
-On the native side, implementing a callback means you need to save the call so it can be invoked at a later time. [The specifics of how to handle that are discussed here.](/docs/core-apis/saving-calls)
+On the native side, implementing a callback means you need to save the call so it can be invoked at a later time. The specifics of how to handle that [are discussed here.](/docs/core-apis/saving-calls)
