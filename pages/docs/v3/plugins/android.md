@@ -319,7 +319,7 @@ To remove a listener from the plugin object:
 ```typescript
 import { MyPlugin } from 'my-plugin';
 
-const myPluginEventListener = MyPlugin.addListener(
+const myPluginEventListener = await MyPlugin.addListener(
   'myPluginEvent',
   (info: any) => {
     console.log('myPluginEvent was fired');

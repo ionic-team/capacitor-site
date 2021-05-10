@@ -34,7 +34,7 @@ export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
 }
 ```
 
-The `MyPlugin` interface defines the method signatures of your plugin. In TypeScript, we can ensure the web implementation (the `MyPluginWeb` class) correctly implements the interface.
+The `EchoPlugin` interface defines the method signatures of your plugin. In TypeScript, we can ensure the web implementation (the `EchoPluginWeb` class) correctly implements the interface.
 
 ## Permissions
 
