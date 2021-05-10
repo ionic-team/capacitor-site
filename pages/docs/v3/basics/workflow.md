@@ -51,7 +51,7 @@ There are a few ways to deploy your project on native devices, depending on your
 
 After you build your web assets (e.g. with `npm run build`) and copy them into your native project(s) with `npx cap sync`, you are ready to build a native binary.
 
-Capacitor does not have a "build" command. After `sync`, you are encouraged to open your target platform's IDE for building, running, and debugging your native app.
+Capacitor does not have a "build" command. After `sync`, you are encouraged to open your target platform's IDE for building your native app.
 
 For building your app on the command-line or in CI environments, you are encouraged to use your target platform's tooling: Gradle for Android and `xcodebuild` for iOS. Third-party tools such as [Fastlane](https://fastlane.tools) may make this easier. Cloud builds and more are available when using [Appflow](https://useappflow.com).
 
