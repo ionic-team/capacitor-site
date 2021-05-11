@@ -3,31 +3,17 @@ import {
   getPageNavigation,
   parseMarkdown,
   parseTableOfContents,
-  PageNavigation,
-  MarkdownResults,
   TableOfContents,
 } from '@stencil/ssg/parse';
 import { join } from 'path';
 import { hookUpDesignSystem } from './blog';
 import { getGithubData } from './github';
+import { DocsData, DocsTemplate } from './models';
 import { queryPrismic } from './prismic';
 
 const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
 const docsDir = join(pagesDir, 'docs', 'v3');
-
-export interface DocsData extends MarkdownResults {
-  contributors?: string[];
-  lastUpdated?: string;
-  navigation?: PageNavigation;
-  editUrl?: string;
-  editApiUrl?: string;
-  tableOfContents?: TableOfContents;
-  template?: DocsTemplate;
-  announcement_bar?: any;
-}
-
-export type DocsTemplate = 'docs' | 'plugins' | 'cli';
 
 export const getDocsData: MapParamData = async ({ id }) => {
   if (!id) {
