@@ -24,7 +24,7 @@ export class VersionSelect {
   };
 
   render() {
-    const selectedVersion = Router.path.includes('/v3') ? 3 : 2;
+    const selectedVersion = Router.path.includes('/v2') ? 2 : 3;
     return (
       <Host role="navigation" aria-label="Documentation Version Selector">
         <a
