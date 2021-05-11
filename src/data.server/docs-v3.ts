@@ -74,6 +74,8 @@ const getTableOfContents = async (template: DocsTemplate) => {
       tocPath = join(docsDir, 'README.md');
     }
     toc = await parseTableOfContents(tocPath, pagesDir);
+    // strip out the /v3 from the urls
+    toc.root.forEach(root => root.children.forEach(child => child.url = child.url.replace('/v3', '')));
     cachedToc.set(template, toc);
   }
   return toc;
