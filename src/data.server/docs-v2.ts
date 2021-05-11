@@ -13,7 +13,7 @@ import { queryPrismic } from './prismic';
 
 const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
-const docsDir = join(pagesDir, 'docs');
+const docsDir = join(pagesDir, 'docs', 'v2');
 
 export type DocsTemplate = 'docs' | 'plugins' | 'cli';
 
