@@ -124,9 +124,20 @@ export const Routes = () => (
       )}
     />
 
-    <Route
+    {/* <Route
       path={matchAny(['/docs/v3/:id*', '/docs/v3'])}
       mapParams={staticState(getDocsData)}
+      render={(_, data) => (
+        <Fragment>
+          <announcement-bar prismicData={data.announcement_bar} />
+          <docs-component data={data} />
+        </Fragment>
+      )}
+    /> */}
+
+    <Route
+      path={matchAny(['/docs/v2/:id*', '/docs/v2'])}
+      mapParams={staticState(getDocsDataV2)}
       render={(_, data) => (
         <Fragment>
           <announcement-bar prismicData={data.announcement_bar} />
@@ -137,7 +148,7 @@ export const Routes = () => (
 
     <Route
       path={matchAny(['/docs/:id*', '/docs'])}
-      mapParams={staticState(getDocsDataV2)}
+      mapParams={staticState(getDocsData)}
       render={(_, data) => (
         <Fragment>
           <announcement-bar prismicData={data.announcement_bar} />
