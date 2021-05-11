@@ -7,15 +7,13 @@ import {
 } from '@stencil/ssg/parse';
 import { join } from 'path';
 import { getGithubData } from './github';
-import type { DocsData } from './docs';
 import { hookUpDesignSystem } from './blog';
 import { queryPrismic } from './prismic';
+import { DocsData, DocsTemplate } from './models';
 
 const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
 const docsDir = join(pagesDir, 'docs', 'v2');
-
-export type DocsTemplate = 'docs' | 'plugins' | 'cli';
 
 export const getDocsDataV2: MapParamData = async ({ id }) => {
   if (!id) {

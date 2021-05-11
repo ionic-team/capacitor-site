@@ -13,7 +13,7 @@ import {
 import { href } from '@stencil/router';
 import type { TableOfContents } from '@stencil/ssg';
 import { docsVersionHref } from '../../router';
-import type { DocsTemplate } from '../../data.server/docs';
+import type { DocsTemplate } from '../../data.server/models';
 
 @Component({
   tag: 'docs-menu',

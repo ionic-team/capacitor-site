@@ -6,9 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BlogData } from "src/data.server/blog";
-import { DocsData, DocsTemplate } from "./data.server/docs";
+import { DocsData, DocsTemplate } from "./data.server/models";
 import { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
 import { SiteHeader } from "./components/capacitor-site-header/capacitor-site-header";
+import { DocsTemplate as DocsTemplate1 } from "src/data.server/models";
 export namespace Components {
     interface AnchorLink {
         "to": string;

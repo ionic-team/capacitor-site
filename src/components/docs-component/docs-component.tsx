@@ -9,7 +9,7 @@ import {
   Fragment,
 } from '@stencil/core';
 import { RenderJsxAst } from '@stencil/ssg';
-import { DocsData } from '../../data.server/docs';
+import { DocsData } from '../../data.server/models';
 import Router, { docsVersionHref } from '../../router';
 import { href } from '@stencil/router';
 

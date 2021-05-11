@@ -7,7 +7,7 @@ import {
   matchAny,
 } from '@stencil/router';
 import { getPage } from './data.server/prismic';
-import { getDocsData } from './data.server/docs';
+import { getDocsData } from './data.server/docs-v3';
 import { getBlogData, getAllBlogData } from './data.server/blog';
 import { getDocsDataV2 } from './data.server/docs-v2';
 
