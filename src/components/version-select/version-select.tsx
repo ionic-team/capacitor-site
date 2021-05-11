@@ -38,7 +38,7 @@ export class VersionSelect {
         </a>
         <div class="version-selector" hidden={!this.expanded}>
           <a
-            {...href('/docs')}
+            {...href('/docs/v2')}
             aria-label="Version 2.x Docs"
             class={{ selected: selectedVersion === 2 }}
           >
@@ -46,7 +46,7 @@ export class VersionSelect {
             {checkmark()}
           </a>
           <a
-            {...href('/docs/v3')}
+            {...href('/docs')}
             aria-label="Version 3.x Docs"
             class={{ selected: selectedVersion === 3 }}
           >

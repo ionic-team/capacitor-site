@@ -113,7 +113,7 @@ export class SiteHeader implements ComponentInterface {
           </div>
 
           <a
-            {...href(docsVersionHref('/docs/v3'))}
+            {...href(docsVersionHref('/docs'))}
             class={{
               'ui-paragraph-4': true,
               'active': template === 'docs',
