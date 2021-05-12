@@ -136,7 +136,7 @@ export const Routes = () => (
     />
 
     <Route
-      path={matchAny(['/docs/:id*', '/docs'])}
+      path={matchAny(['/docs/v3/:id*', '/docs/v3', '/docs/:id*', '/docs'])}
       mapParams={staticState(getDocsDataV3)}
       render={(_, data) => (
         <Fragment>
