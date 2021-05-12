@@ -15,7 +15,7 @@ const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
 const docsDir = join(pagesDir, 'docs', 'v3');
 
-export const getDocsData: MapParamData = async ({ id }) => {
+export const getDocsDataV3: MapParamData = async ({ id }) => {
   if (!id) {
     id = 'index.md';
   }
