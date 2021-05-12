@@ -40,11 +40,11 @@ export class AnnouncementBar {
       <Host
         class={{
           'ui-announcement-bar': true,
-          [`ui-announcement-bar--${slugify(theme)}`]: true,
+          [`ui-announcement-bar--${slugify(theme)}`]: Boolean(theme),
         }}
         style={{
           '--asset-path': `url('${getAssetPath(
-            './assets-announcement-bar/bg-q1-event.png',
+            `./assets-announcement-bar/bg-${slugify(theme)}.png`,
           )}')`,
         }}
       >

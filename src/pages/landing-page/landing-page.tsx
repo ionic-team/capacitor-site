@@ -12,6 +12,8 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { href } from '@stencil/router';
 
+import { Capacitor3Rainbow } from './assets/capacitor-3-rainbow.svg';
+
 @Component({
   tag: 'landing-page',
   styleUrl: 'landing-page.scss',
@@ -53,56 +55,81 @@ export class LandingPage {
   }
 
   Top = () => {
-    const { Announcement } = this;
-    const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
-    const { primary, secondary } = top__ctas[0];
 
     return (
       <section id="top">
-        <div class="background"></div>
         <ResponsiveContainer>
-          <div class="heading-group">
-            <Announcement />
-            <PrismicRichText richText={top} paragraphLevel={2} />
-            <div class="buttons">
-              <Button
-                kind="round"
-                anchor
-                {...href('/docs/getting-started')}
-                class="primary"
-              >
-                {primary} <span class="arrow"> -&gt;</span>
-              </Button>
-              <Button
-                kind="round"
-                variation="light"
-                anchor
-                {...href('docs/plugins')}
-                class="secondary"
-              >
-                {secondary}
-              </Button>
-            </div>
-            <a class="link | ui-paragraph-4" {...href('/cordova')}>
-              {top__link}
-              <span class="arrow"> -&gt;</span>
-            </a>
-            <PrismicResponsiveImage
-              loading="eager"
-              image={top__icons}
-              params={{
-                w: '91',
-                h: '16',
-              }}
-            />
-          </div>
-          <div class="image-wrapper">
-            <PrismicResponsiveImage loading="eager" image={top__hero} />
+          <Capacitor3Rainbow/>
+          <h1>
+            <span>Faster.</span>
+            <span>Smaller.</span>
+            <span>Simpler.</span>
+          </h1>
+          <p>A brand new approach to building native apps with the Web — now even faster, more modular, and more enjoyable to build with than ever.</p>
+          <div class="btns">
+            <Button kind="round" color="indigo" variation="light" href="/docs/getting-started" anchor={true}>
+              Try Capacitor 3 <span>{'->'}</span>
+            </Button>
+            <Button kind="round" color="indigo" href="https://ionicframework.com/blog/announcing-capacitor-3-0/" anchor={true}>
+              Read the Blog post <span>{'->'}</span>
+            </Button>
           </div>
         </ResponsiveContainer>
       </section>
-    );
-  };
+    )
+  }
+
+  // Top = () => {
+  //   const { Announcement } = this;
+  //   const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
+  //   const { primary, secondary } = top__ctas[0];
+
+  //   return (
+  //     <section id="top">
+  //       <div class="background"></div>
+  //       <ResponsiveContainer>
+  //         <div class="heading-group">
+  //           <Announcement />
+  //           <PrismicRichText richText={top} paragraphLevel={2} />
+  //           <div class="buttons">
+  //             <Button
+  //               kind="round"
+  //               anchor
+  //               {...href('/docs/getting-started')}
+  //               class="primary"
+  //             >
+  //               {primary} <span class="arrow"> -&gt;</span>
+  //             </Button>
+  //             <Button
+  //               kind="round"
+  //               variation="light"
+  //               anchor
+  //               {...href('docs/plugins')}
+  //               class="secondary"
+  //             >
+  //               {secondary}
+  //             </Button>
+  //           </div>
+  //           <a class="link | ui-paragraph-4" {...href('/cordova')}>
+  //             {top__link}
+  //             <span class="arrow"> -&gt;</span>
+  //           </a>
+  //           <PrismicResponsiveImage
+  //             loading="eager"
+  //             image={top__icons}
+  //             params={{
+  //               w: '91',
+  //               h: '16',
+  //             }}
+  //           />
+  //         </div>
+  //         <div class="image-wrapper">
+  //           <PrismicResponsiveImage loading="eager" image={top__hero} />
+  //         </div>
+  //       </ResponsiveContainer>
+  //     </section>
+  //   );
+  // };
 
   Announcement = () => {
     const {
