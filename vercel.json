@@ -76,6 +76,10 @@
     {
       "source": "/docs/v3/basics/progressive-web-app",
       "destination": "/docs/v3/web/progressive-web-apps"
+    },
+    {
+      "source": "/docs/v3/(.*)",
+      "destination": "/docs/$1"
     }
   ],
   "headers": [
