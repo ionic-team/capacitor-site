@@ -21,7 +21,7 @@ export const SolutionVue = () => {
               language="shell-session"
               code={`
 npm install @capacitor/core @capacitor/cli
-npx cap init [name] [id] --web-dir=build
+npx cap init [name] [id] --web-dir=dist
 `}
             />
           </div>
@@ -78,6 +78,7 @@ npm run build
             <code-snippet
               language="shell-session"
               code={`
+npm i @capacitor/ios @capacitor/android
 npx cap add android
 npx cap add ios
 `}
@@ -102,8 +103,8 @@ npx cap add ios
 <div>
   <h1>Geolocation</h1>
   <p>Your location is:</p>
-  <p>Latitude: {{loc?.coords.latitude}}</p>
-  <p>Longitude: {{loc?.coords.longitude}}</p>
+  <p>Latitude: {{ loc.lat }}</p>
+  <p>Longitude: {{ loc.long }}</p>
 
   <button @click="getCurrentPosition">
     Get Current Location
@@ -112,20 +113,28 @@ npx cap add ios
 </template>
 
 <script>
-import { Plugins } from '@capacitor/core'
-export default {
-  name: 'App',
-  data() {
-    return{ loc: null }
+import { defineComponent, ref } from 'vue';
+import { Geolocation } from '@capacitor/geolocation';
+export default defineComponent({
+  setup() {
+    const loc = ref<{
+      lat: null | number;
+      long: null | number;
+    }>({
+      lat: null,
+      long: null,
+    });
+
+    const getCurrentPosition = async () => {
+      const pos = await Geolocation.getCurrentPosition();
+      loc.value = {
+        lat: pos.coords.latitude,
+        long: pos.coords.longitude,
+      };
+    };
+    return { getCurrentPosition, loc };
   },
-  methods: {
-    async getCurrentPosition(){
-      const { Geolocation } = Plugins;
-      const loc = await Geolocation.getCurrentPosition()
-      this.loc = loc
-    }
-  }
-}
+});
 </script>
 `}
             />

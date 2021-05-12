@@ -82,6 +82,7 @@ npm run build
             <code-snippet
               language="shell-session"
               code={`
+npm i @capacitor/ios @capacitor/android
 npx cap add android
 npx cap add ios
 `}
@@ -103,12 +104,11 @@ npx cap add ios
               language="typescript"
               code={`
 import React, {useState, useCallback} from 'react';
-import { Plugins } from '@capacitor/core';
+import { Geolocation } from '@capacitor/geolocation';
 
 export default function GeolocationPage() {
 
   const [loc, setLoc] = useState(null);
-  const { Geolocation } = Plugins;
 
   const getCurrentPosition = useCallback(async () => {
     const coordinates = await Geolocation.getCurrentPosition();
