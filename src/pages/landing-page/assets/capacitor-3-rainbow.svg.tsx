@@ -1,6 +1,6 @@
 import { h } from '@stencil/core';
 
-export const Capacitor3Rainbow = () => (
+export default () => (
   <svg
     width="154"
     height="52"
