@@ -7,7 +7,7 @@ import {
   matchAny,
 } from '@stencil/router';
 import { getPage } from './data.server/prismic';
-import { getDocsData } from './data.server/docs-v3';
+import { getDocsDataV3 } from './data.server/docs-v3';
 import { getBlogData, getAllBlogData } from './data.server/blog';
 import { getDocsDataV2 } from './data.server/docs-v2';
 
@@ -137,7 +137,7 @@ export const Routes = () => (
 
     <Route
       path={matchAny(['/docs/v3/:id*', '/docs/v3', '/docs/:id*', '/docs'])}
-      mapParams={staticState(getDocsData)}
+      mapParams={staticState(getDocsDataV3)}
       render={(_, data) => (
         <Fragment>
           <announcement-bar prismicData={data.announcement_bar} />
