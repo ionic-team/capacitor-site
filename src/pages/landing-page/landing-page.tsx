@@ -12,7 +12,8 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { href } from '@stencil/router';
 
-import { Capacitor3Rainbow } from './assets/capacitor-3-rainbow.svg';
+import Capacitor3Rainbow from './assets/capacitor-3-rainbow.svg';
+import BgBoxes from './assets/bg-boxes.svg';
 
 @Component({
   tag: 'landing-page',
@@ -58,6 +59,7 @@ export class LandingPage {
     return (
       <section id="top">
         <ResponsiveContainer>
+          <BgBoxes/>
           <Capacitor3Rainbow />
           <h1>
             <span class="reveal">Faster.</span>
