@@ -128,9 +128,15 @@
     white-space: nowrap;
     text-transform: uppercase;
 
-    background: linear-gradient(0deg, #ff8753, #ff8753),
-      linear-gradient(85.46deg, #4cc3ff 0%, #4172ff 100%), #51dddd;
+    background: linear-gradient(0deg, #ff8753, #ff8753);
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
+
+    span {
+      padding: 0;
+      margin: 0;
+      max-width: 15px;
+      overflow: hidden;
+    }
   }
 }
 //#endregion
