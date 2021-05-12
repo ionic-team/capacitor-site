@@ -47,7 +47,11 @@ h6 {
 
 #top {
   background: #0f1c45;
-  background-image: radial-gradient(128.98% 148.15% at 50% 50%, #10183F 11.21%, #004489 100%);
+  background-image: radial-gradient(
+    128.98% 148.15% at 50% 50%,
+    #10183f 11.21%,
+    #004489 100%
+  );
   background-size: 100%;
   color: white;
   text-align: center;
@@ -138,14 +142,26 @@ h6 {
   }
 
   h1 span.reveal {
-    &:nth-child(1) { animation-delay: 0.5s; }
-    &:nth-child(2) { animation-delay: 0.7s; }
-    &:nth-child(3) { animation-delay: 0.9s; }
+    &:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.7s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.9s;
+    }
   }
-  p.reveal { animation-delay: 1.2s; }
+  p.reveal {
+    animation-delay: 1.2s;
+  }
   .btns .ui-button.reveal {
-    &:nth-child(1) { animation-delay: 1.5s; }
-    &:nth-child(2) { animation-delay: 1.7s; }
+    &:nth-child(1) {
+      animation-delay: 1.5s;
+    }
+    &:nth-child(2) {
+      animation-delay: 1.7s;
+    }
   }
 }
 

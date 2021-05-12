@@ -69,19 +69,23 @@ export class LandingPage {
             faster, more modular, and more enjoyable to build with than ever.
           </p>
           <div class="btns">
-            <Button class="reveal"
-                    kind="round"
-                    color="indigo"
-                    variation="light"
-                    href="/docs/getting-started"
-                    anchor={true}>
+            <Button
+              class="reveal"
+              kind="round"
+              color="indigo"
+              variation="light"
+              href="/docs/getting-started"
+              anchor={true}
+            >
               Try Capacitor 3 <span>{'->'}</span>
             </Button>
-            <Button class="reveal"
-                    kind="round"
-                    color="indigo"
-                    href="https://ionicframework.com/blog/announcing-capacitor-3-0/"
-                    anchor={true}>
+            <Button
+              class="reveal"
+              kind="round"
+              color="indigo"
+              href="https://ionicframework.com/blog/announcing-capacitor-3-0/"
+              anchor={true}
+            >
               Read the Blog post <span>{'->'}</span>
             </Button>
           </div>
