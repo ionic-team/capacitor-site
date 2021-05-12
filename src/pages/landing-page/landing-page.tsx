@@ -67,8 +67,12 @@ export class LandingPage {
           </h1>
           <p>A brand new approach to building native apps with the Web — now even faster, more modular, and more enjoyable to build with than ever.</p>
           <div class="btns">
-            <Button kind="round" color="indigo" variation="light">Try Capacitor 3 {'->'}</Button>
-            <Button kind="round" color="indigo">Read the Blog post {'->'}</Button>
+            <Button kind="round" color="indigo" variation="light" href="/docs/getting-started" anchor={true}>
+              Try Capacitor 3 <span>{'->'}</span>
+            </Button>
+            <Button kind="round" color="indigo" href="https://ionicframework.com/blog/announcing-capacitor-3-0/" anchor={true}>
+              Read the Blog post <span>{'->'}</span>
+            </Button>
           </div>
         </ResponsiveContainer>
       </section>

@@ -46,13 +46,14 @@ h6 {
 }
 
 #top {
-  background: url('/assets/img/landing/bg-v3.svg');
+  background: #0f1c45 url('/assets/img/landing/bg-v3.svg');
   background-size: cover;
   background-position: 50% 50%;
   text-align: center;
   color: white;
   padding-block-start: 144px;
   padding-block-end: 196px;
+  margin-block-end: 200px;
 
   h1 {
     margin-block-start: 0;
@@ -72,6 +73,22 @@ h6 {
     font-size: 20px;
     line-height: 160%;
     letter-spacing: -0.02em;
+  }
+
+  .ui-button {
+    &:focus {
+      box-shadow: unset;
+    }
+
+    &:first-child {
+      margin-right: .75em;
+    }
+
+    span {
+      letter-spacing: 0;
+      font-weight: bold;
+      margin-inline-start: 0.5em;
+    }
   }
 }
 
