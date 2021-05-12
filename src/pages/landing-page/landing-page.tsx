@@ -148,7 +148,7 @@ export class LandingPage {
       />,
       <code-snippet
         language="shell-session"
-        code={`npm isntall @capacitor/ios @capacitor/android\nnpx cap add ios\nnpx cap add android`}
+        code={`npm install @capacitor/ios @capacitor/android\nnpx cap add ios\nnpx cap add android`}
       />,
       <code-tabs
         data={{
