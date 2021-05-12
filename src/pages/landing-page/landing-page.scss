@@ -46,14 +46,43 @@ h6 {
 }
 
 #top {
-  background: #0f1c45 url('/assets/img/landing/bg-v3.svg');
-  background-size: cover;
-  background-position: 50% 50%;
-  text-align: center;
+  background: #0f1c45;
+  background-image: radial-gradient(128.98% 148.15% at 50% 50%, #10183F 11.21%, #004489 100%);
+  background-size: 100%;
   color: white;
+  text-align: center;
   padding-block-start: 144px;
   padding-block-end: 196px;
   margin-block-end: 200px;
+  position: relative;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    background: url('/assets/img/landing/bg-v3-clear.svg');
+    background-size: cover;
+    background-position: 50% 50%;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in 2s forwards;
+  }
+
+  .ui-container > * {
+    position: relative;
+  }
 
   h1 {
     margin-block-start: 0;
@@ -89,6 +118,34 @@ h6 {
       font-weight: bold;
       margin-inline-start: 0.5em;
     }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  h1 span.reveal {
+    &:nth-child(1) { animation-delay: 0.5s; }
+    &:nth-child(2) { animation-delay: 0.7s; }
+    &:nth-child(3) { animation-delay: 0.9s; }
+  }
+  p.reveal { animation-delay: 1.2s; }
+  .btns .ui-button.reveal {
+    &:nth-child(1) { animation-delay: 1.5s; }
+    &:nth-child(2) { animation-delay: 1.7s; }
   }
 }
 
