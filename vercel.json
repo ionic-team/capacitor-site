@@ -30,54 +30,6 @@
       "destination": "/docs/web/pwa-elements"
     },
     {
-      "source": "/docs/v3/getting-started/dependencies",
-      "destination": "/docs/v3/getting-started/environment-setup"
-    },
-    {
-      "source": "/docs/v3/basics/opening-native-projects",
-      "destination": "/docs/v3/basics/workflow"
-    },
-    {
-      "source": "/docs/v3/basics/running-your-app",
-      "destination": "/docs/v3/basics/workflow"
-    },
-    {
-      "source": "/docs/v3/cordova/using-cordova-plugins",
-      "destination": "/docs/v3/plugins/cordova"
-    },
-    {
-      "source": "/docs/v3/cordova/known-incompatible-plugins",
-      "destination": "/docs/v3/plugins/cordova"
-    },
-    {
-      "source": "/docs/v3/apis/accessibility",
-      "destination": "/docs/v3/apis/screen-reader"
-    },
-    {
-      "source": "/docs/v3/basics/utilities",
-      "destination": "/docs/v3/core-apis/web"
-    },
-    {
-      "source": "/docs/v3/ios/updating",
-      "destination": "/docs/v3/updating/apps"
-    },
-    {
-      "source": "/docs/v3/android/updating",
-      "destination": "/docs/v3/updating/apps"
-    },
-    {
-      "source": "/docs/v3/plugins/js",
-      "destination": "/docs/v3/plugins/web"
-    },
-    {
-      "source": "/docs/v3/basics/building-your-app",
-      "destination": "/docs/v3/basics/workflow"
-    },
-    {
-      "source": "/docs/v3/basics/progressive-web-app",
-      "destination": "/docs/v3/web/progressive-web-apps"
-    },
-    {
       "source": "/docs/v3/(.*)",
       "destination": "/docs/$1"
     }
