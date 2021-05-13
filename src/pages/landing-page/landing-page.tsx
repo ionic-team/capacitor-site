@@ -53,8 +53,6 @@ export class LandingPage {
     );
   }
 
-
-
   // Top = () => {
   //   const { Announcement } = this;
   //   const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
