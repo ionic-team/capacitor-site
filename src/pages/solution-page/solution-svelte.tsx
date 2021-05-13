@@ -82,6 +82,7 @@ npm run build
             <code-snippet
               language="shell-session"
               code={`
+npm i @capacitor/ios @capacitor/android
 npx cap add android
 npx cap add ios
 `}
@@ -103,7 +104,7 @@ npx cap add ios
               language="markup"
               code={`
 <script>
-  import {Plugins} from '@capacitor/core';
+  import { Geolocation } from '@capacitor/geolocation';
 
   let loc = null;
   async function getCurrentPosition(){

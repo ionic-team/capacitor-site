@@ -149,7 +149,7 @@ export class LandingPage {
       />,
       <code-snippet
         language="shell-session"
-        code={`npx cap add ios\nnpx cap add android`}
+        code={`npm install @capacitor/ios @capacitor/android\nnpx cap add ios\nnpx cap add android`}
       />,
       <code-tabs
         data={{
@@ -157,8 +157,7 @@ export class LandingPage {
           languages: ['typescript'],
           code: [
             `
-import { Plugins } from '@capacitor/core';
-const { LocalNotifications } = Plugins;
+import { LocalNotifications } from '@capacitor/local-notifications';
 
 LocalNotifications.schedule({
   notifications: [
@@ -175,8 +174,8 @@ LocalNotifications.schedule({
   ]
 });`, //-----------------------------------
             `
-import { Plugins } from '@capacitor/core';
-const { Geolocation } = Plugins;
+import { Geolocation } from '@capacitor/geolocation';
+
 // get the users current position
 const position = await Geolocation.getCurrentPosition();
 
@@ -185,11 +184,11 @@ const latitude = position.coords.latitude;
 const longitude = position.coords.longitude;
 `,
             `
-import { Plugins } from '@capacitor/core';
-const { Camera } = Plugins;
+import { Camera, CameraResultType } from '@capacitor/camera';
+
 // Take a picture or video, or load from the library
 const picture = await Camera.getPicture({
-  encodingType: this.camera.EncodingType.JPEG
+  resultType: CameraResultType.Uri
 });
 `, //-----------------------------------
             `
