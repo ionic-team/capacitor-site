@@ -62,13 +62,13 @@ To check if there are any new updates to Capacitor itself, run `npx cap doctor` 
 To update Capacitor Core and CLI:
 
 ```bash
-npm install @capacitor/cli@ver2
-npm install @capacitor/core@ver2
+npm install @capacitor/cli@2
+npm install @capacitor/core@2
 ```
 
 To update any or all of the platforms you are using:
 
 ```bash
-npm install @capacitor/ios@ver2
-npm install @capacitor/android@ver2
+npm install @capacitor/ios@2
+npm install @capacitor/android@2
 ```

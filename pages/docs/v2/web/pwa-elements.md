@@ -98,10 +98,10 @@ PWA Elements can be included through a script tag in your `index.html`. However,
 ```html
 <script
   type="module"
-  src="https://unpkg.com/@ionic/pwa-elements@ver2/dist/ionicpwaelements/ionicpwaelements.esm.js"
+  src="https://unpkg.com/@ionic/pwa-elements@2/dist/ionicpwaelements/ionicpwaelements.esm.js"
 ></script>
 <script
   nomodule
-  src="https://unpkg.com/@ionic/pwa-elements@ver2/dist/ionicpwaelements/ionicpwaelements.js"
+  src="https://unpkg.com/@ionic/pwa-elements@2/dist/ionicpwaelements/ionicpwaelements.js"
 ></script>
 ```

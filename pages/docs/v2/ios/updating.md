@@ -14,7 +14,7 @@ Occasionally, you'll need to make Capacitor updates to your iOS app, including u
 To update the version of @capacitor/ios used in your app, just npm install latest version:
 
 ```bash
-npm install @capacitor/ios@ver2
+npm install @capacitor/ios@2
 ```
 
 Then sync the native project:

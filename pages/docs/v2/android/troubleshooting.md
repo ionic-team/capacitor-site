@@ -83,7 +83,7 @@ Capacitor lets you manage your own Android project. Like any IDE-backed project,
 To do this, follow these steps:
 
 1. Copy any source code you created (such as Java files in `app/android/src`, manifest files, or resource files) into a safe location outside of `app/android`.
-2. Next, make sure you are running an updated version of the Capacitor CLI: `npm install @capacitor/cli@ver2`
+2. Next, make sure you are running an updated version of the Capacitor CLI: `npm install @capacitor/cli@2`
 3. Remove the android directory: `rm -rf android/`
 4. Re-create the Android app from Capacitor: `npx cap add android`
 5. Copy your saved source files back into the project
