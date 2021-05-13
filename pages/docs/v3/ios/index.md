@@ -21,7 +21,7 @@ iOS 12+ is supported. Xcode 12+ is required (see [Environment Setup](/docs/getti
 First, install the `@capacitor/ios` package.
 
 ```bash
-npm install @capacitor/ios@next
+npm install @capacitor/ios
 ```
 
 Then, add the iOS platform.

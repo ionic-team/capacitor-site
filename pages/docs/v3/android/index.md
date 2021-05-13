@@ -21,7 +21,7 @@ API 21+ (Android 5 or later) is supported, which represents [over 95% of the And
 First, install the `@capacitor/android` package.
 
 ```bash
-npm install @capacitor/android@next
+npm install @capacitor/android
 ```
 
 Then, add the Android platform.
