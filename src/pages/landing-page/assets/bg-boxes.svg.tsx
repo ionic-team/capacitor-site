@@ -1,6 +1,6 @@
 import { h } from '@stencil/core';
 
-export default (props) => (
+export default () => (
 <svg id="bg" viewBox="0 0 1800 894" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
   <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1800" height="894">
     <rect width="1800" height="894" fill="#002585"/>
