@@ -143,6 +143,8 @@ export namespace Components {
     interface TelemetryPage {
         "data": any;
     }
+    interface TopParallax {
+    }
     interface VersionSelect {
     }
 }
@@ -369,6 +371,12 @@ declare global {
         prototype: HTMLTelemetryPageElement;
         new (): HTMLTelemetryPageElement;
     };
+    interface HTMLTopParallaxElement extends Components.TopParallax, HTMLStencilElement {
+    }
+    var HTMLTopParallaxElement: {
+        prototype: HTMLTopParallaxElement;
+        new (): HTMLTopParallaxElement;
+    };
     interface HTMLVersionSelectElement extends Components.VersionSelect, HTMLStencilElement {
     }
     var HTMLVersionSelectElement: {
@@ -413,6 +421,7 @@ declare global {
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
         "telemetry-page": HTMLTelemetryPageElement;
+        "top-parallax": HTMLTopParallaxElement;
         "version-select": HTMLVersionSelectElement;
     }
 }
@@ -551,6 +560,8 @@ declare namespace LocalJSX {
     interface TelemetryPage {
         "data"?: any;
     }
+    interface TopParallax {
+    }
     interface VersionSelect {
     }
     interface IntrinsicElements {
@@ -591,6 +602,7 @@ declare namespace LocalJSX {
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
         "telemetry-page": TelemetryPage;
+        "top-parallax": TopParallax;
         "version-select": VersionSelect;
     }
 }
@@ -635,6 +647,7 @@ declare module "@stencil/core" {
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
             "telemetry-page": LocalJSX.TelemetryPage & JSXBase.HTMLAttributes<HTMLTelemetryPageElement>;
+            "top-parallax": LocalJSX.TopParallax & JSXBase.HTMLAttributes<HTMLTopParallaxElement>;
             "version-select": LocalJSX.VersionSelect & JSXBase.HTMLAttributes<HTMLVersionSelectElement>;
         }
     }

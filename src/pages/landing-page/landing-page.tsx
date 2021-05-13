@@ -12,8 +12,6 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { href } from '@stencil/router';
 
-import { Capacitor3Rainbow } from './assets/capacitor-3-rainbow.svg';
-
 @Component({
   tag: 'landing-page',
   styleUrl: 'landing-page.scss',
@@ -27,7 +25,7 @@ export class LandingPage {
 
   render() {
     const {
-      Top,
+      // Top,
       Started,
       Native,
       Features,
@@ -40,7 +38,8 @@ export class LandingPage {
     return (
       <Host>
         <meta-tags />
-        <Top />
+        {/* <Top /> */}
+        <top-parallax />
         <Started />
         <Ebook />
         <Native />
@@ -54,45 +53,7 @@ export class LandingPage {
     );
   }
 
-  Top = () => {
-    return (
-      <section id="top">
-        <ResponsiveContainer>
-          <Capacitor3Rainbow />
-          <h1>
-            <span class="reveal">Faster.</span>
-            <span class="reveal">Smaller.</span>
-            <span class="reveal">Simpler.</span>
-          </h1>
-          <p class="reveal">
-            A brand new approach to building native apps with the Web — now even
-            faster, more modular, and more enjoyable to build with than ever.
-          </p>
-          <div class="btns">
-            <Button
-              class="reveal"
-              kind="round"
-              color="indigo"
-              variation="light"
-              href="/docs/getting-started"
-              anchor={true}
-            >
-              Try Capacitor 3 <span>{'->'}</span>
-            </Button>
-            <Button
-              class="reveal"
-              kind="round"
-              color="indigo"
-              href="https://ionicframework.com/blog/announcing-capacitor-3-0/"
-              anchor={true}
-            >
-              Read the Blog post <span>{'->'}</span>
-            </Button>
-          </div>
-        </ResponsiveContainer>
-      </section>
-    );
-  };
+
 
   // Top = () => {
   //   const { Announcement } = this;
