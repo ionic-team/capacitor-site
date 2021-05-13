@@ -1,8 +1,14 @@
 import { Component, h } from '@stencil/core';
-import { ResponsiveContainer, Button } from '@ionic-internal/ionic-ds';
+import {
+  ResponsiveContainer,
+  Button,
+} from '@ionic-internal/ionic-ds';
+
+import Parallax from 'parallax-js'
 
 import Capacitor3Rainbow from '../assets/capacitor-3-rainbow.svg';
-import BgBoxes from '../assets/bg-boxes.svg';
+import { Background } from '../assets/bg-3-only.svg';
+// import { Background } from '../assets/bg-boxes.svg';
 
 @Component({
   tag: 'top-parallax',
@@ -10,11 +16,41 @@ import BgBoxes from '../assets/bg-boxes.svg';
   scoped: true,
 })
 export class LandingPage {
+  $shapes!: HTMLDivElement;
+  libID = 'parallax-lib';
+  parallaxInstance: Parallax;
+
+  disconnectedCallback() {
+    this.parallaxInstance.distroy();
+  }
+
+  componentDidLoad() {
+    this.parallaxInstance = new Parallax(this.$shapes, {
+      invertX: false,
+      invertY: false,
+      scalarX: 1,
+      scalarY: 1,
+    });
+  }
+
   render() {
     return (
       <section id="top">
         <ResponsiveContainer>
-          <BgBoxes />
+          <div id="shapes" ref={(el) => this.$shapes = el as HTMLDivElement}>
+            <div id="circle-1" data-depth="0.8"/>
+            <div id="circle-2" data-depth="0.3"/>
+            <div id="circle-3" data-depth="0.6"/>
+            <div id="square-1" data-depth="0.7"/>
+            <div id="square-2" data-depth="0.7"/>
+            <div id="square-3" data-depth="0.6"/>
+            <div id="square-4" data-depth="0.3"/>
+            <div id="square-5" data-depth="0.1"/>
+            <div id="square-6" data-depth="0.2"/>
+            <div id="square-7" data-depth="0.3"/>
+            <div id="square-8" data-depth="0.5"/>
+            <Background id="bg" data-depth="0.3"/>
+          </div>
           <Capacitor3Rainbow />
           <h1>
             <span class="reveal">Faster.</span>
