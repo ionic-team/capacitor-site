@@ -33,7 +33,7 @@ Capacitor was designed to drop into any modern JavaScript web app. Projects must
 In the root of your app, install Capacitor:
 
 ```bash
-npm install @capacitor/core@next @capacitor/cli@next
+npm install @capacitor/core @capacitor/cli
 ```
 
 Then, initialize Capacitor using the CLI questionnaire:
