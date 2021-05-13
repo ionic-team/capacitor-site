@@ -15,7 +15,7 @@ Occasionally, you'll need to make Capacitor updates to your Android app, includi
 To update the version of @capacitor/android used in your app, just npm install latest version:
 
 ```bash
-npm install @capacitor/android@latest
+npm install @capacitor/android@ver2
 ```
 
 Then from Android Studio click the "Sync Project with Gradle Files" button.
