@@ -192,7 +192,6 @@
 
   .ui-container > * {
     position: relative;
-    pointer-events: none;
   }
 
   h1 {
@@ -228,6 +227,20 @@
       letter-spacing: 0;
       font-weight: bold;
       margin-inline-start: 0.5em;
+    }
+
+    &.ui-button-light {
+      --c-text: #11193F;
+
+      &:hover {
+        --c-text: #404b80;
+      }
+    }
+
+    &.ui-button-fill {
+      --c-background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
   }
 
