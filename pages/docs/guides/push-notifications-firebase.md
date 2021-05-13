@@ -385,7 +385,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 If you would like to receive the Firebase FCM token from iOS instead of the raw APNS token, you will also need to add two new imports at the top of the file:
 
 ```swift
-import FirebaseInstanceID // Add this line after import FirebaseCore
+import FirebaseInstallations // Add this line after import FirebaseCore
 import FirebaseMessaging
 ```
 
@@ -394,13 +394,14 @@ And change your `AppDelegate.didRegisterForRemoteNotificationsWithDeviceToken` c
 ```swift
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
-        InstanceID.instanceID().instanceID { (result, error) in
-            if let error = error {
-                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidFailToRegisterForRemoteNotificationsWithError.name()), object: error)
-            } else if let result = result {
-                NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidRegisterForRemoteNotificationsWithDeviceToken.name()), object: result.token)
-            }
-        }
+        
+        Messaging.messaging().token { (token, error) in
+          if let error = error {
+              NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidFailToRegisterForRemoteNotificationsWithError.name()), object: error)
+          } else if let id = id {
+              NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidRegisterForRemoteNotificationsWithDeviceToken.name()), object: token)
+          }
+      }
     }
 ```
 
