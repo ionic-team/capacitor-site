@@ -18,8 +18,8 @@ This article covers the basic modifications you'll need to make to your app. Rea
 
 To modify the bundle/app id for your app, edit the `applicationId` line in `android/app/build.gradle`:
 
-```xml
-applicationId "com.mycompany.myapp"
+```groovy
+applicationId "com.getcapacitor.myapp"
 ```
 
 ## Changing App Name
