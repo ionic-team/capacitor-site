@@ -1,6 +1,7 @@
 ---
 title: Capacitor Community Plugins
 description: Capacitor Community Plugins
+canonicalUrl: https://capacitorjs.com/docs/plugins/community
 ---
 
 # Capacitor Community Plugins

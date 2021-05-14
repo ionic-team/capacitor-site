@@ -4,6 +4,7 @@ description: iOS Troubleshooting Guide
 contributors:
   - dotNetkow
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/ios/troubleshooting
 ---
 
 # iOS Troubleshooting Guide

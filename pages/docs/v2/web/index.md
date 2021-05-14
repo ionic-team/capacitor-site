@@ -3,6 +3,7 @@ title: Capacitor Web Documentation
 description: Web Getting Started
 contributors:
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/web
 ---
 
 # Using Capacitor in a Web Project

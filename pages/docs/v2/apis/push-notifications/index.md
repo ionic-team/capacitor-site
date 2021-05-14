@@ -4,6 +4,7 @@ description: Push Notifications API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/push-notifications
 ---
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>

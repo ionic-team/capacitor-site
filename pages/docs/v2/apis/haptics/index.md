@@ -4,6 +4,7 @@ description: Haptics API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/haptics
 ---
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>

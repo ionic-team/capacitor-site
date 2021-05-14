@@ -4,6 +4,7 @@ description: Status Bar API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/status-bar
 ---
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>

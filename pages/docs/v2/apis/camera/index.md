@@ -4,6 +4,7 @@ description: Camera API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/camera
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

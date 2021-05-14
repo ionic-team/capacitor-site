@@ -4,6 +4,7 @@ description: Network API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/network
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

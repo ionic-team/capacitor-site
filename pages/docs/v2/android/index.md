@@ -4,6 +4,7 @@ description: Capacitor Android Documentation
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/android
 ---
 
 # Capacitor Android Documentation

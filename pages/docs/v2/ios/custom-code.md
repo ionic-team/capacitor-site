@@ -4,6 +4,7 @@ description: Custom Native iOS Code
 contributors:
   - dotNetkow
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/ios/custom-code
 ---
 
 # Custom Native iOS Code

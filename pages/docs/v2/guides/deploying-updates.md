@@ -3,6 +3,7 @@ title: Deploying Realtime Updates
 description: Update your Capacitor app remotely in realtime even through the app stores
 contributors:
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/guides/deploying-updates
 ---
 
 # App Deployment and Realtime Updates

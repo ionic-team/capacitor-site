@@ -3,6 +3,7 @@ title: Live Reload
 description: Use Live Reload to easily debug the web and native portions of an app on a device or simulator.
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/guides/live-reload
 ---
 
 # Live Reload

@@ -4,6 +4,7 @@ description: Capacitor iOS Plugin Guide
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/plugins/ios
 ---
 
 # Capacitor iOS Plugin Guide

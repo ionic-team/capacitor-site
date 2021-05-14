@@ -4,6 +4,7 @@ description: Storage API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/storage
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

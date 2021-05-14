@@ -4,6 +4,7 @@ description: Capacitor Android Plugin Guide
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/plugins/android
 ---
 
 # Capacitor Android Plugin Guide

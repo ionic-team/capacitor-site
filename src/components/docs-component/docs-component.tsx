@@ -56,6 +56,7 @@ export class DocsComponent implements ComponentInterface {
     return (
       <Fragment>
         <meta-tags
+          canonicalUrl={this.data.canonicalUrl}
           page-title={this.data.title}
           description={`${this.data.description} - Official Capacitor Documentation`}
         />

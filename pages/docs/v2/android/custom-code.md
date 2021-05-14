@@ -5,6 +5,7 @@ contributors:
   - mlynch
   - jcesarmobile
   - RoderickQiu
+canonicalUrl: https://capacitorjs.com/docs/android/custom-code
 ---
 
 # Custom Native Android Code

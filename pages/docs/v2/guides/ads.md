@@ -3,6 +3,7 @@ title: Ads in Capacitor Apps
 description: Adding Advertisements to your Capacitor app
 contributors:
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/guides/ads
 ---
 
 # Advertisements in Capacitor Apps

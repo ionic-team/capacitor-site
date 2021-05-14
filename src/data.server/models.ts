@@ -24,6 +24,7 @@ export interface DocsData extends MarkdownResults {
   tableOfContents?: TableOfContents;
   template?: DocsTemplate;
   announcement_bar?: any;
+  canonicalUrl?: string;
 }
 
 export type DocsTemplate = 'docs' | 'plugins' | 'cli';

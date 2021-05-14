@@ -3,6 +3,7 @@ title: React Hooks for Capacitor
 description: Use these React hooks to simplify native mobile API access with Capacitor
 contributors:
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/guides/react-hooks
 ---
 
 # React Hooks for Capacitor

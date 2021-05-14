@@ -4,6 +4,7 @@ description: Motion API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/motion
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

@@ -4,6 +4,7 @@ description: Configuring iOS
 contributors:
   - dotNetkow
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/ios/configuration
 ---
 
 # Configuring iOS

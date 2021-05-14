@@ -3,6 +3,7 @@ title: Migrating Strategy
 description: Migration Strategy
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cordova/migration-strategy
 ---
 
 # Migration Strategy

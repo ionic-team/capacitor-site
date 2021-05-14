@@ -3,6 +3,7 @@ title: Capacitor Plugin Generate
 description: Capacitor Plugin Generate
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cli/plugin-generate
 ---
 
 # Plugin Generate

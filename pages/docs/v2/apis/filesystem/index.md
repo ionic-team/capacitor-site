@@ -4,6 +4,7 @@ description: Filesystem API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/filesystem
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

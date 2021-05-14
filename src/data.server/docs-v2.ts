@@ -50,6 +50,7 @@ export const getDocsDataV2: MapParamData = async ({ id }) => {
   results.contributors = Array.from(new Set(results.contributors));
 
   results.announcement_bar = await queryPrismic('announcement_bar');
+  results.canonicalUrl = results.attributes.canonicalUrl;
 
   return results;
 };

@@ -4,6 +4,7 @@ description: Native Project Configuration
 contributors:
   - jcesarmobile
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/basics/configuring-your-app
 ---
 
 # Configuring Your App

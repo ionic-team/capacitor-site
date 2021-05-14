@@ -1,6 +1,7 @@
 ---
 title: Capacitor for Enterprises
 description: Capacitor offers powerful native features and support for enterprises
+canonicalUrl: https://capacitorjs.com/docs/plugins/enterprise
 ---
 
 # Capacitor for Enterprises

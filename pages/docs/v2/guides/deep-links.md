@@ -4,6 +4,7 @@ description: Implement deep linking functionality in an iOS and Android app
 contributors:
   - dotNetkow
   - jaydrogers
+canonicalUrl: https://capacitorjs.com/docs/guides/deep-links
 ---
 
 # Deep Linking with Universal and App Links

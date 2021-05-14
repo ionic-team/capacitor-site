@@ -4,6 +4,7 @@ description: Keyboard API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/keyboard
 ---
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>

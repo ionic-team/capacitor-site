@@ -3,6 +3,7 @@ title: Plugin Development Workflow
 description: Capacitor Plugin Development Workflow
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/plugins/workflow
 ---
 
 # Plugin Development Workflow

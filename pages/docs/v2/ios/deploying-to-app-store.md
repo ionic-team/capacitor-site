@@ -3,6 +3,7 @@ title: Deploying to App Store
 description: How to deploy iOS Capacitor apps to the Apple App Store
 contributors:
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/ios/deploying-to-app-store
 ---
 
 # Deploying your Capacitor iOS App to the App Store

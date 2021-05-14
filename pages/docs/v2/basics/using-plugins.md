@@ -4,6 +4,7 @@ description: How to use Capacitor Plugins
 contributors:
   - jcesarmobile
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/basics/using-plugins
 ---
 
 # Using Capacitor Plugins

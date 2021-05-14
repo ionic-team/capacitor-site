@@ -3,6 +3,7 @@ title: CLI Commands
 description: Capacitor CLI command reference list
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cli
 ---
 
 # Capacitor CLI Reference

@@ -4,6 +4,7 @@ description: Installing Capacitor
 contributors:
   - dotNetkow
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/getting-started
 ---
 
 # Installing Capacitor

@@ -4,6 +4,7 @@ description: Troubleshooting Android Issues
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/android/troubleshooting
 ---
 
 # Troubleshooting Android Issues

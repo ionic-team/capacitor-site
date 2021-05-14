@@ -4,6 +4,7 @@ description: Communicate between JavaScript and Native Swift or Objective-C code
 contributors:
   - dotNetkow
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/ios
 ---
 
 # Capacitor iOS Documentation

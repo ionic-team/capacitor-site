@@ -5,6 +5,7 @@ contributors:
   - mlynch
   - jcesarmobile
   - trancee
+canonicalUrl: https://capacitorjs.com/docs/apis/splash-screen
 ---
 
 <plugin-platforms platforms="ios,android"></plugin-platforms>

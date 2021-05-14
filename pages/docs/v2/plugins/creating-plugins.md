@@ -5,6 +5,7 @@ contributors:
   - mlynch
   - jcesarmobile
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/plugins/creating-plugins
 ---
 
 # Creating Capacitor Plugins

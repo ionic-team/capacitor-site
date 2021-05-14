@@ -3,6 +3,7 @@ title: Migrating from Cordova to Capacitor
 description: Migrating from Cordova to Capacitor
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cordova/migrating-from-cordova-to-capacitor
 ---
 
 # Migrating a Web App Using Cordova to Capacitor

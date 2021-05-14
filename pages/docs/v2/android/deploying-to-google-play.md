@@ -3,6 +3,7 @@ title: Deploying to Google Play
 description: How to deploy Android Capacitor apps to the Google Play Store
 contributors:
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/android/deploying-to-google-play
 ---
 
 # Deploying your Capacitor Android App to the Google Play Store

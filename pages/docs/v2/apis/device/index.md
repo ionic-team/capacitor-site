@@ -4,6 +4,7 @@ description: Device API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/device
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

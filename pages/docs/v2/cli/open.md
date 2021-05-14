@@ -3,6 +3,7 @@ title: CLI Command - cap open
 description: Capacitor CLI command - cap open
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cli/open
 ---
 
 # Capacitor CLI - cap open

@@ -115,6 +115,7 @@ export namespace Components {
     }
     interface MetaTags {
         "authorTwitter": string;
+        "canonicalUrl": string;
         "description": string;
         "image": string;
         "ogType": string;
@@ -532,6 +533,7 @@ declare namespace LocalJSX {
     }
     interface MetaTags {
         "authorTwitter"?: string;
+        "canonicalUrl"?: string;
         "description"?: string;
         "image"?: string;
         "ogType"?: string;

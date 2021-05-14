@@ -3,6 +3,7 @@ title: CLI Command - cap copy
 description: Capacitor CLI command - cap copy
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cli/copy
 ---
 
 # Capacitor CLI - cap copy

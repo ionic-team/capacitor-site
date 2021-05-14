@@ -3,6 +3,7 @@ title: CLI Command - cap update
 description: Capacitor - cap update
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cli/update
 ---
 
 # Capacitor CLI - cap update

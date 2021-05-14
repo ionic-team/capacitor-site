@@ -3,6 +3,7 @@ title: Using Capacitor with Ionic
 description: Using Capacitor with Ionic
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/getting-started/with-ionic
 ---
 
 # Using Capacitor with Ionic

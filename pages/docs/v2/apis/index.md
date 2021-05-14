@@ -5,6 +5,7 @@ contributors:
   - mlynch
   - jcesarmobile
   - ehorodyski-ionic
+canonicalUrl: https://capacitorjs.com/docs/apis
 ---
 
 # Capacitor Plugin APIs

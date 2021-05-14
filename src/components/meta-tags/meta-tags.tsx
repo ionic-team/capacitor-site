@@ -5,16 +5,16 @@ import Helmet from '@stencil/helmet';
   tag: 'meta-tags',
 })
 export class MetaTags {
+  site = 'https://capacitorjs.com';
   @Prop() pageTitle = 'Capacitor: Cross-platform native runtime for web apps';
   @Prop() description =
     'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript';
   @Prop() image = 'https://capacitorjs.com/assets/img/og.png';
   @Prop() authorTwitter = '@capacitorjs';
   @Prop() ogType = 'website';
+  @Prop() canonicalUrl = `${this.site}${location.pathname}`;
 
   @Element() el;
-
-  site = 'https://capacitorjs.com';
 
   render() {
     const prettyTitle =
@@ -40,7 +40,7 @@ export class MetaTags {
         <meta name="twitter:description" content={this.description} />
         <meta name="twitter:image" content={this.image} />
         <meta name="twitter:creator" content={this.authorTwitter} />
-        <link rel="canonical" href={`${this.site}${location.pathname}`} />
+        <link rel="canonical" href={this.canonicalUrl} />
       </Helmet>
     );
   }

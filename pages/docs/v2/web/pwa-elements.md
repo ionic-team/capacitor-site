@@ -4,6 +4,7 @@ description: Using PWA Elements
 contributors:
   - dotNetkow
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/web/pwa-elements
 ---
 
 # PWA Elements

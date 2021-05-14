@@ -3,6 +3,7 @@ title: CLI Command - cap sync
 description: Capacitor CLI command - cap sync
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cli/sync
 ---
 
 # Capacitor CLI - cap sync

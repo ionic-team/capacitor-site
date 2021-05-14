@@ -3,6 +3,7 @@ title: In App Purchases in Capacitor
 description: How to register and consume In App Purchases in your Capacitor app or game
 contributors:
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/guides/in-app-purchases
 ---
 
 # In App Purchases in Capacitor

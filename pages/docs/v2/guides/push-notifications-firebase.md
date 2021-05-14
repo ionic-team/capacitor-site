@@ -4,6 +4,7 @@ description: Learn how to get Firebase Cloud Messaging working on iOS and Androi
 contributors:
   - bryplano
   - javebratt
+canonicalUrl: https://capacitorjs.com/docs/guides/push-notifications-firebase
 ---
 
 # Using Push Notifications with Firebase in an Ionic + Angular App

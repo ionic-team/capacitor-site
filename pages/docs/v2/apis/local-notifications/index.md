@@ -4,6 +4,7 @@ description: Local Notifications API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/local-notifications
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

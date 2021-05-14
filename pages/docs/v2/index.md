@@ -6,6 +6,7 @@ contributors:
   - bensperry
   - jcesarmobile
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/
 ---
 
 # Capacitor: Cross-platform Native Runtime for Web Apps

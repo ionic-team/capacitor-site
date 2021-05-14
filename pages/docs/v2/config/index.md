@@ -4,6 +4,7 @@ description: Configuring Capacitor
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/config
 ---
 
 # Configuration File

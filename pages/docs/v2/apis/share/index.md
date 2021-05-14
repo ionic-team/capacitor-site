@@ -4,6 +4,7 @@ description: Share API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/share
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

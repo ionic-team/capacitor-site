@@ -3,6 +3,7 @@ title: Cordova and PhoneGap
 description: Cordova and PhoneGap
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cordova
 ---
 
 # Cordova and PhoneGap

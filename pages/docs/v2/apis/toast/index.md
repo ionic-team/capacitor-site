@@ -4,6 +4,7 @@ description: Toast API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/toast
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

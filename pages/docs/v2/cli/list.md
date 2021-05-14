@@ -3,6 +3,7 @@ title: CLI Command - cap ls
 description: Capacitor CLI - cap ls
 contributors:
   - dotNetkow
+canonicalUrl: https://capacitorjs.com/docs/cli/list
 ---
 
 # Capacitor CLI - cap ls

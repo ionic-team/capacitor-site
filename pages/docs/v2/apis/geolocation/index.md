@@ -4,6 +4,7 @@ description: Geolocation API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/geolocation
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

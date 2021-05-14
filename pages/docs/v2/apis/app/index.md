@@ -4,6 +4,7 @@ description: App API
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/apis/app
 ---
 
 <plugin-platforms platforms="pwa,ios,android"></plugin-platforms>

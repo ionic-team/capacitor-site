@@ -4,6 +4,7 @@ description: Configuring Android
 contributors:
   - mlynch
   - jcesarmobile
+canonicalUrl: https://capacitorjs.com/docs/android/configuration
 ---
 
 # Configuring Android

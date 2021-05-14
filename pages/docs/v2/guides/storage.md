@@ -3,6 +3,7 @@ title: Storage
 description: Storing small to large amounts of data in Capacitor
 contributors:
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/guides/storage
 ---
 
 # Data Storage in Capacitor

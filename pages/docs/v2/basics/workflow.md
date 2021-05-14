@@ -4,6 +4,7 @@ description: Capacitor Workflow
 contributors:
   - dotNetkow
   - mlynch
+canonicalUrl: https://capacitorjs.com/docs/basics/workflow
 ---
 
 # Capacitor Workflow
