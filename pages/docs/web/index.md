@@ -24,12 +24,13 @@ simply import Capacitor at the top of your app and you're set:
 import { Capacitor } from '@capacitor/core';
 ```
 
-To use a plugin, install from npm and import the plugin directly:
+To use a plugin, import `Plugins` and call it, noting that only plugins
+with web support will actually provide useful functionality:
 
 ```typescript
-import { Geolocation } from '@capacitor/geolocation';
+import { Plugins } from '@capacitor/core';
 
-const position = await Geolocation.getCurrentPosition();
+const position = await Plugins.Geolocation.getCurrentPosition();
 ```
 
 ### Using Capacitor as a Script Include
