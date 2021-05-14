@@ -28,8 +28,8 @@ export class LandingPage {
     this.parallaxInstance = new Parallax(this.$shapes, {
       invertX: false,
       invertY: false,
-      scalarX: 1,
-      scalarY: 1,
+      scalarX: 3,
+      scalarY: 3,
     });
   }
 
