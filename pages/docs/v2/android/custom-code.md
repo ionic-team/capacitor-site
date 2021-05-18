@@ -86,7 +86,7 @@ class CustomNativePlugin : Plugin() {
 
 ### Registering Plugin Code
 
-The final step is to register the plugin in your Activity. Registering a Kotlin plugin class in the Activity is the same as regi›stering a Java class:
+The final step is to register the plugin in your Activity. Registering a Kotlin plugin class in the Activity is the same as registering a Java class:
 
 ```java
 // Other imports...
