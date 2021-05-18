@@ -111,6 +111,12 @@ To fail, or reject a call, use `call.reject`, passing an error string and option
 call.reject(exception.getLocalizedMessage(), null, exception);
 ```
 
+#### Persisting a Plugin Call
+
+In most cases, a plugin method will get invoked to perform a task and can finish immediately. But there are situations where you will need to keep the plugin call available so it can be accessed later. You might want to do this to periodically return data such as streaming live geolocation data, or to perform an asynchronous task.
+
+See [this guide on saving plugin calls](/docs/v3/core-apis/saving-calls) for more details on how to persist plugin calls.
+
 ## Permissions
 
 If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern.
@@ -205,7 +211,7 @@ For a single alias `requestPermissionForAlias` may be used. Multiple aliases can
 
 ### Manifest
 
-Place any required [install-time](https://developer.android.com/guide/topics/permissions/overview#install-time) permissions in the `AndroidManifest.xml` of the plugin. Do not add runtime permissions (permissions that prompts users to accept). These should be added to the manifest of the Capacitor app instead, and your plugin should document any required runtime permissions.
+Place any required [install-time](https://developer.android.com/guide/topics/permissions/overview#install-time) permissions in the `AndroidManifest.xml` of the plugin. Do not add runtime permissions (permissions that prompts users to accept). These should be added to the manifest of a Capacitor app by the app developer. Make sure your plugin documents any required runtime permissions that should be added in the app.
 
 ```diff-xml
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -313,7 +319,7 @@ To remove a listener from the plugin object:
 ```typescript
 import { MyPlugin } from 'my-plugin';
 
-const myPluginEventListener = MyPlugin.addListener(
+const myPluginEventListener = await MyPlugin.addListener(
   'myPluginEvent',
   (info: any) => {
     console.log('myPluginEvent was fired');

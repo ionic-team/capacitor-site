@@ -38,6 +38,7 @@
   - [Configuration](ios/configuration.md)
   - [Custom Native Code](ios/custom-code.md)
   - [Deploying to App Store](ios/deploying-to-app-store.md)
+  - [Custom ViewController](ios/viewcontroller.md)
   - [Troubleshooting](ios/troubleshooting.md)
 - Android
   - [Getting Started](android/index.md)

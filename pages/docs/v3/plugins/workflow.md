@@ -9,11 +9,11 @@ contributors:
 
 With the new plugin created, you can begin implementing functionality across a variety of platforms.
 
-## Implementing a New Function
+## Implementing a New Method
 
-To implement new functionality in your plugin, begin by defining the function's signature in the exported TypeScript interface for your plugin in `src/definitions.ts`.
+To implement new functionality in your plugin, begin by defining the method's signature in the exported TypeScript interface for your plugin in `src/definitions.ts`.
 
-In the example below, the `openMap()` function is added which takes a `latitude` and `longitude`. It is good practice to define interfaces for method parameters that can be imported and used in apps.
+In the example below, the `openMap()` method is added which takes a `latitude` and `longitude`. It is good practice to define interfaces for method parameters that can be imported and used in apps.
 
 ```diff-typescript
  export interface EchoPlugin {
@@ -36,7 +36,7 @@ Implement the web implementation in `src/web.ts`:
  } from './definitions';
 
  export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
-   // other functions
+   // other methods
 
 +  async openMap(location: OpenMapOptions): Promise<void> {
 +    // logic here
@@ -79,6 +79,8 @@ Implement [iOS functionality](./ios) in `ios/Plugin/Plugin.swift`:
 
 > Remember to [register plugin methods](/docs/plugins/ios#export-to-capacitor) in your `.m` file.
 
+This example contains the most common type of method in plugins but details about all the supported types [can be found here.](/docs/plugins/method-types)
+
 ## Local Testing
 
 To test the plugin locally while developing it, link the plugin folder to your app using `npm install` with the path to your plugin.
@@ -120,11 +122,11 @@ The plugin template ships with a variety of scripts in `package.json`.
 
 ## Documentation
 
-To document plugin functionality, add [JSDoc](https://jsdoc.app) comment blocks to functions and properties.
+To document plugin functionality, add [JSDoc](https://jsdoc.app) comment blocks to methods and properties.
 
 > It is usually not necessary to include type information with the `@param` and `@returns` JSDoc tags in TypeScript files.
 
-Using our `openMap()` function as an example, open `src/definitions.ts` and start documenting!
+Using our `openMap()` method as an example, open `src/definitions.ts` and start documenting!
 
 ```diff-typescript
  export interface EchoPlugin {

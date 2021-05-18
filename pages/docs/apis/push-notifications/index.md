@@ -265,7 +265,7 @@ Event called when the device receives a push notification.
 addListener(eventName: 'pushNotificationActionPerformed', listenerFunc: (notification: PushNotificationActionPerformed) => void) => PluginListenerHandle
 ```
 
-Event called when an action is performed on a pusn notification.
+Event called when an action is performed on a push notification.
 
 | Param              | Type                                                                                                                   | Description                            |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |

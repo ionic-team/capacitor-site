@@ -34,7 +34,7 @@ export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
 }
 ```
 
-The `MyPlugin` interface defines the method signatures of your plugin. In TypeScript, we can ensure the web implementation (the `MyPluginWeb` class) correctly implements the interface.
+The `EchoPlugin` interface defines the method signatures of your plugin. In TypeScript, we can ensure the web implementation (the `EchoPluginWeb` class) correctly implements the interface.
 
 ## Permissions
 
@@ -87,18 +87,18 @@ Because these methods are added to your plugin interface, they must be implement
 In `src/web.ts`, add the `checkPermissions()` and `requestPermissions()` methods to your web implementation.
 
 ```diff-typescript
-+import { PermissionState } from './definitions';
++import { PermissionStatus } from './definitions';
 
  export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
    async echo(options: { value: string }) {
      ...
    }
 
-+  async checkPermissions(): Promise<PermissionState> {
++  async checkPermissions(): Promise<PermissionStatus> {
 +    // TODO
 +  }
 
-+  async requestPermissions(): Promise<PermissionState> {
++  async requestPermissions(): Promise<PermissionStatus> {
 +    // TODO
 +  }
  }
@@ -111,7 +111,7 @@ This method should return the current status of permissions in your plugin. This
 Remember, when working with web APIs with spotty browser adoption (such as the Permissions API), you should implement feature detection and throw an appropriate error when the end user's browser is not supported.
 
 ```diff-typescript
- async checkPermissions(): Promise<PermissionState> {
+ async checkPermissions(): Promise<PermissionStatus> {
 +  if (typeof navigator === 'undefined' || !navigator.permissions) {
 +    throw this.unavailable('Permissions API not available in this browser.');
 +  }
@@ -129,7 +129,7 @@ This method should prompt the end user for permission to use the platform APIs t
 On web, is it sometimes not possible to separate the requesting of permission from the actual call. For example, the Geolocation API only requests permission at the time a location is requested. For situations like this, we recommended throwing the unimplemented exception.
 
 ```typescript
-async requestPermissions(): Promise<PermissionState> {
+async requestPermissions(): Promise<PermissionStatus> {
   // TODO: does the web support requesting permissions for my plugin?
   throw this.unimplemented('Not implemented on web.');
 }
