@@ -398,7 +398,7 @@ And change your `AppDelegate.didRegisterForRemoteNotificationsWithDeviceToken` c
         Messaging.messaging().token { (token, error) in
           if let error = error {
               NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidFailToRegisterForRemoteNotificationsWithError.name()), object: error)
-          } else if let id = id {
+          } else if let token = token {
               NotificationCenter.default.post(name: Notification.Name(CAPNotifications.DidRegisterForRemoteNotificationsWithDeviceToken.name()), object: token)
           }
       }
