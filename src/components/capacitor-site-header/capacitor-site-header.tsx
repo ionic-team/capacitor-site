@@ -9,9 +9,9 @@ import {
 } from '@stencil/core';
 import { href } from '@stencil/router';
 import Router, { docsVersionHref } from '../../router';
-import { DocsTemplate } from '../../data.server/docs';
 import { Button } from '@ionic-internal/ionic-ds';
 import { JSXBase } from '@stencil/core/internal';
+import { DocsTemplate } from 'src/data.server/models';
 
 @Component({
   tag: 'site-header',
@@ -113,7 +113,7 @@ export class SiteHeader implements ComponentInterface {
           </div>
 
           <a
-            {...href(docsVersionHref('/docs/v3'))}
+            {...href(docsVersionHref('/docs'))}
             class={{
               'ui-paragraph-4': true,
               'active': template === 'docs',

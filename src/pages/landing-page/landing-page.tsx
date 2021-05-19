@@ -25,7 +25,7 @@ export class LandingPage {
 
   render() {
     const {
-      Top,
+      // Top,
       Started,
       Native,
       Features,
@@ -38,7 +38,8 @@ export class LandingPage {
     return (
       <Host>
         <meta-tags />
-        <Top />
+        {/* <Top /> */}
+        <top-parallax />
         <Started />
         <Ebook />
         <Native />
@@ -52,57 +53,57 @@ export class LandingPage {
     );
   }
 
-  Top = () => {
-    const { Announcement } = this;
-    const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
-    const { primary, secondary } = top__ctas[0];
+  // Top = () => {
+  //   const { Announcement } = this;
+  //   const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
+  //   const { primary, secondary } = top__ctas[0];
 
-    return (
-      <section id="top">
-        <div class="background"></div>
-        <ResponsiveContainer>
-          <div class="heading-group">
-            <Announcement />
-            <PrismicRichText richText={top} paragraphLevel={2} />
-            <div class="buttons">
-              <Button
-                kind="round"
-                anchor
-                {...href('/docs/getting-started')}
-                class="primary"
-              >
-                {primary} <span class="arrow"> -&gt;</span>
-              </Button>
-              <Button
-                kind="round"
-                variation="light"
-                anchor
-                {...href('docs/plugins')}
-                class="secondary"
-              >
-                {secondary}
-              </Button>
-            </div>
-            <a class="link | ui-paragraph-4" {...href('/cordova')}>
-              {top__link}
-              <span class="arrow"> -&gt;</span>
-            </a>
-            <PrismicResponsiveImage
-              loading="eager"
-              image={top__icons}
-              params={{
-                w: '91',
-                h: '16',
-              }}
-            />
-          </div>
-          <div class="image-wrapper">
-            <PrismicResponsiveImage loading="eager" image={top__hero} />
-          </div>
-        </ResponsiveContainer>
-      </section>
-    );
-  };
+  //   return (
+  //     <section id="top">
+  //       <div class="background"></div>
+  //       <ResponsiveContainer>
+  //         <div class="heading-group">
+  //           <Announcement />
+  //           <PrismicRichText richText={top} paragraphLevel={2} />
+  //           <div class="buttons">
+  //             <Button
+  //               kind="round"
+  //               anchor
+  //               {...href('/docs/getting-started')}
+  //               class="primary"
+  //             >
+  //               {primary} <span class="arrow"> -&gt;</span>
+  //             </Button>
+  //             <Button
+  //               kind="round"
+  //               variation="light"
+  //               anchor
+  //               {...href('docs/plugins')}
+  //               class="secondary"
+  //             >
+  //               {secondary}
+  //             </Button>
+  //           </div>
+  //           <a class="link | ui-paragraph-4" {...href('/cordova')}>
+  //             {top__link}
+  //             <span class="arrow"> -&gt;</span>
+  //           </a>
+  //           <PrismicResponsiveImage
+  //             loading="eager"
+  //             image={top__icons}
+  //             params={{
+  //               w: '91',
+  //               h: '16',
+  //             }}
+  //           />
+  //         </div>
+  //         <div class="image-wrapper">
+  //           <PrismicResponsiveImage loading="eager" image={top__hero} />
+  //         </div>
+  //       </ResponsiveContainer>
+  //     </section>
+  //   );
+  // };
 
   Announcement = () => {
     const {
@@ -148,7 +149,7 @@ export class LandingPage {
       />,
       <code-snippet
         language="shell-session"
-        code={`npx cap add ios\nnpx cap add android`}
+        code={`npm install @capacitor/ios @capacitor/android\nnpx cap add ios\nnpx cap add android`}
       />,
       <code-tabs
         data={{
@@ -156,8 +157,7 @@ export class LandingPage {
           languages: ['typescript'],
           code: [
             `
-import { Plugins } from '@capacitor/core';
-const { LocalNotifications } = Plugins;
+import { LocalNotifications } from '@capacitor/local-notifications';
 
 LocalNotifications.schedule({
   notifications: [
@@ -174,8 +174,8 @@ LocalNotifications.schedule({
   ]
 });`, //-----------------------------------
             `
-import { Plugins } from '@capacitor/core';
-const { Geolocation } = Plugins;
+import { Geolocation } from '@capacitor/geolocation';
+
 // get the users current position
 const position = await Geolocation.getCurrentPosition();
 
@@ -184,11 +184,11 @@ const latitude = position.coords.latitude;
 const longitude = position.coords.longitude;
 `,
             `
-import { Plugins } from '@capacitor/core';
-const { Camera } = Plugins;
+import { Camera, CameraResultType } from '@capacitor/camera';
+
 // Take a picture or video, or load from the library
 const picture = await Camera.getPicture({
-  encodingType: this.camera.EncodingType.JPEG
+  resultType: CameraResultType.Uri
 });
 `, //-----------------------------------
             `

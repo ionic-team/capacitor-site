@@ -24,7 +24,7 @@ export class VersionSelect {
   };
 
   render() {
-    const selectedVersion = Router.path.includes('/v3') ? 3 : 2;
+    const selectedVersion = Router.path.includes('/v2') ? 2 : 3;
     return (
       <Host role="navigation" aria-label="Documentation Version Selector">
         <a
@@ -38,7 +38,7 @@ export class VersionSelect {
         </a>
         <div class="version-selector" hidden={!this.expanded}>
           <a
-            {...href('/docs')}
+            {...href('/docs/v2')}
             aria-label="Version 2.x Docs"
             class={{ selected: selectedVersion === 2 }}
           >
@@ -46,11 +46,11 @@ export class VersionSelect {
             {checkmark()}
           </a>
           <a
-            {...href('/docs/v3')}
+            {...href('/docs')}
             aria-label="Version 3.x Docs"
             class={{ selected: selectedVersion === 3 }}
           >
-            <span>v3 (RC)</span>
+            <span>v3</span>
             {checkmark()}
           </a>
           <a

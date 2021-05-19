@@ -7,7 +7,7 @@ import {
   matchAny,
 } from '@stencil/router';
 import { getPage } from './data.server/prismic';
-import { getDocsData } from './data.server/docs';
+import { getDocsDataV3 } from './data.server/docs-v3';
 import { getBlogData, getAllBlogData } from './data.server/blog';
 import { getDocsDataV2 } from './data.server/docs-v2';
 
@@ -125,8 +125,8 @@ export const Routes = () => (
     />
 
     <Route
-      path={matchAny(['/docs/v3/:id*', '/docs/v3'])}
-      mapParams={staticState(getDocsData)}
+      path={matchAny(['/docs/v2/:id*', '/docs/v2'])}
+      mapParams={staticState(getDocsDataV2)}
       render={(_, data) => (
         <Fragment>
           <announcement-bar prismicData={data.announcement_bar} />
@@ -136,8 +136,8 @@ export const Routes = () => (
     />
 
     <Route
-      path={matchAny(['/docs/:id*', '/docs'])}
-      mapParams={staticState(getDocsDataV2)}
+      path={matchAny(['/docs/v3/:id*', '/docs/v3', '/docs/:id*', '/docs'])}
+      mapParams={staticState(getDocsDataV3)}
       render={(_, data) => (
         <Fragment>
           <announcement-bar prismicData={data.announcement_bar} />
@@ -184,7 +184,7 @@ Router.on('change', (_newUrl, _oldUrl) => {
 });
 
 const docsPath = '/docs';
-const versionedDocsPath = '/docs/v3';
+const versionedDocsPath = '/docs/v2';
 
 export const docsVersionHref = (path: string) => {
   if (

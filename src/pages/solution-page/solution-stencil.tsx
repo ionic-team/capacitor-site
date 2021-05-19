@@ -82,6 +82,7 @@ npm run build
             <code-snippet
               language="shell-session"
               code={`
+npm i @capacitor/ios @capacitor/android
 npx cap add android
 npx cap add ios
 `}
@@ -103,7 +104,7 @@ npx cap add ios
               language="typescript"
               code={`
 import { Component, Host, State, h } from '@stencil/core';
-import { Plugins } from '@capacitor/core';
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   tag: 'geolocation-page',
@@ -114,7 +115,6 @@ export class  GeolocationPage() {
   @State() loc = null;
 
   async getCurrentPosition() {
-    const { Geolocation } = Plugins;
     const loc = await Geolocation.getCurrentPosition();
     this.loc = loc;
   }

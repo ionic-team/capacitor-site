@@ -30,52 +30,84 @@
       "destination": "/docs/web/pwa-elements"
     },
     {
-      "source": "/docs/v3/getting-started/dependencies",
-      "destination": "/docs/v3/getting-started/environment-setup"
+      "source": "/docs/v3/(.*)",
+      "destination": "/docs/$1"
     },
     {
-      "source": "/docs/v3/basics/opening-native-projects",
-      "destination": "/docs/v3/basics/workflow"
+      "source": "/docs/basics/opening-native-projects",
+      "destination": "/docs/v2/basics/opening-native-projects"
     },
     {
-      "source": "/docs/v3/basics/running-your-app",
-      "destination": "/docs/v3/basics/workflow"
+      "source": "/docs/basics/building-your-app",
+      "destination": "/docs/v2/basics/building-your-app"
     },
     {
-      "source": "/docs/v3/cordova/using-cordova-plugins",
-      "destination": "/docs/v3/plugins/cordova"
+      "source": "/docs/basics/running-your-app",
+      "destination": "/docs/v2/basics/running-your-app"
     },
     {
-      "source": "/docs/v3/cordova/known-incompatible-plugins",
-      "destination": "/docs/v3/plugins/cordova"
+      "source": "/docs/basics/progressive-web-app",
+      "destination": "/docs/web/progressive-web-apps"
     },
     {
-      "source": "/docs/v3/apis/accessibility",
-      "destination": "/docs/v3/apis/screen-reader"
+      "source": "/docs/basics/utilities",
+      "destination": "/docs/v2/basics/utilities"
     },
     {
-      "source": "/docs/v3/basics/utilities",
-      "destination": "/docs/v3/core-apis/web"
+      "source": "/docs/cordova/using-cordova-plugins",
+      "destination": "/docs/v2/cordova/using-cordova-plugins"
     },
     {
-      "source": "/docs/v3/ios/updating",
-      "destination": "/docs/v3/updating/apps"
+      "source": "/docs/cordova/known-incompatible-plugins",
+      "destination": "/docs/v2/cordova/known-incompatible-plugins"
     },
     {
-      "source": "/docs/v3/android/updating",
-      "destination": "/docs/v3/updating/apps"
+      "source": "/docs/ios/updating",
+      "destination": "/docs/v2/ios/updating"
     },
     {
-      "source": "/docs/v3/plugins/js",
-      "destination": "/docs/v3/plugins/web"
+      "source": "/docs/android/updating",
+      "destination": "/docs/v2/android/updating"
     },
     {
-      "source": "/docs/v3/basics/building-your-app",
-      "destination": "/docs/v3/basics/workflow"
+      "source": "/docs/cli/cap",
+      "destination": "/docs/v2/cli/cap"
     },
     {
-      "source": "/docs/v3/basics/progressive-web-app",
-      "destination": "/docs/v3/web/progressive-web-apps"
+      "source": "/docs/cli/create",
+      "destination": "/docs/v2/cli/create"
+    },
+    {
+      "source": "/docs/cli/plugin-generate",
+      "destination": "/docs/v2/cli/plugin-generate"
+    },
+    {
+      "source": "/docs/cli/serve",
+      "destination": "/docs/v2/cli/serve"
+    },
+    {
+      "source": "/docs/plugins/js",
+      "destination": "/docs/v2/plugins/js"
+    },
+    {
+      "source": "/docs/apis/accessibility",
+      "destination": "/docs/v2/apis/accessibility"
+    },
+    {
+      "source": "/docs/apis/background-task",
+      "destination": "/docs/v2/apis/background-task"
+    },
+    {
+      "source": "/docs/apis/console",
+      "destination": "/docs/v2/apis/console"
+    },
+    {
+      "source": "/docs/apis/modals",
+      "destination": "/docs/v2/apis/modals"
+    },
+    {
+      "source": "/docs/apis/permissions",
+      "destination": "/docs/v2/apis/permissions"
     }
   ],
   "headers": [

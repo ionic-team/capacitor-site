@@ -82,6 +82,7 @@ npm run build
             <code-snippet
               language="shell-session"
               code={`
+npm i @capacitor/ios @capacitor/android
 npx cap add android
 npx cap add ios
 `}
@@ -105,13 +106,12 @@ npx cap add ios
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { Plugins } from '@capacitor/core'
+import { Geolocation } from '@capacitor/geolocation';
 export default class GeolocationComponent extends Component {
   @tracked loc = null;
 
   @action
   async getCurrentPosition(){
-    const { Geolocation } = Plugins;
     const loc = await Geolocation.getCurrentPosition()
     this.loc = loc
   }

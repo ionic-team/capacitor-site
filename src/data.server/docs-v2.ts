@@ -7,15 +7,13 @@ import {
 } from '@stencil/ssg/parse';
 import { join } from 'path';
 import { getGithubData } from './github';
-import type { DocsData } from './docs';
 import { hookUpDesignSystem } from './blog';
 import { queryPrismic } from './prismic';
+import { DocsData, DocsTemplate } from './models';
 
 const repoRootDir = join(__dirname, '..', '..');
 const pagesDir = join(repoRootDir, 'pages');
-const docsDir = join(pagesDir, 'docs');
-
-export type DocsTemplate = 'docs' | 'plugins' | 'cli';
+const docsDir = join(pagesDir, 'docs', 'v2');
 
 export const getDocsDataV2: MapParamData = async ({ id }) => {
   if (!id) {
@@ -52,6 +50,7 @@ export const getDocsDataV2: MapParamData = async ({ id }) => {
   results.contributors = Array.from(new Set(results.contributors));
 
   results.announcement_bar = await queryPrismic('announcement_bar');
+  results.canonicalUrl = results.attributes.canonicalUrl;
 
   return results;
 };

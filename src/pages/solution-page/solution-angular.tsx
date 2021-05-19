@@ -81,6 +81,7 @@ ng build --prod
             <code-snippet
               language="shell-session"
               code={`
+npm i @capacitor/ios @capacitor/android
 npx cap add android
 npx cap add ios
 `}
@@ -102,7 +103,7 @@ npx cap add ios
               language="typescript"
               code={`
 import { Component } from '@angular/core';
-import {  Plugins, GeolocationPosition } from '@capacitor/core';
+import { Geolocation, GeolocationPosition } from '@capacitor/geolocation';
 @Component({
   selector: 'app-geo-page',
   templateUrl: 'geo.page.html',
