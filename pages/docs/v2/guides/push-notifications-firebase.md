@@ -305,8 +305,8 @@ We need to add Firebase to the CocoaPods provided for our App target. To do that
 target 'App' do
 capacitor_pods
 # Add your Pods here
-pod 'FirebaseCore' # Add this line
-pod 'Firebase/Messaging' # Add this line
+pod 'FirebaseCore', '7.11.0' # Add this line
+pod 'Firebase/Messaging', '7.11.0' # Add this line
 end
 ```
 
@@ -332,8 +332,8 @@ end
 target 'App' do
   capacitor_pods
   # Add your Pods here
-  pod 'FirebaseCore'
-  pod 'Firebase/Messaging'
+  pod 'FirebaseCore', '7.11.0'
+  pod 'Firebase/Messaging', '7.11.0'
 end
 ```
 
