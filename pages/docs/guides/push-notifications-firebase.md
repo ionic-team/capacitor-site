@@ -385,7 +385,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 If you would like to receive the Firebase FCM token from iOS instead of the raw APNS token, you will also need to add two new imports at the top of the file:
 
 ```swift
-import FirebaseInstallations // Add this line after import FirebaseCore
 import FirebaseMessaging
 ```
 
