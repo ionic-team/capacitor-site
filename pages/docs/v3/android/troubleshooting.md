@@ -24,6 +24,12 @@ Capacitor uses the standard Android toolkit, so chances are if you run into some
 
 It could be as simple as updating a dependency, running Gradle sync, or invalidating caches.
 
+### Gradle Sync
+
+If you have installed a new Plugin from npm and are unable to use or see the plugins in your Android build, try using the "Sync Project with Gradle Files" button in the top right of Android Studio (the icon looks like an elephant). This will re-sync your native Android code to include the new plugin code and should allow use of your new plugin. For more info, see [this issue on Github](https://github.com/ionic-team/capacitor/issues/4012).
+
+It can also help with many other seemingly random issues, so running "Sync Project with Gradle Files" is always a good first step when running into most Android build issues.
+
 ### Clean/Rebuild
 
 Cleaning and rebuilding can fix a number of build issues:
