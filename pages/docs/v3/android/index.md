@@ -66,6 +66,10 @@ In Android Studio, first select the device or emulator and then click the run or
 
 If you encountered any issues while getting started, you can consult the [Android Troubleshooting Guide](/docs/android/troubleshooting). Feel free to [open a discussion](https://github.com/ionic-team/capacitor/discussions/) if you need help.
 
+### Gradle Sync when installing new plugins
+
+If you have installed a new Plugin from npm and are unable to use or see the plugins in your Android build, try using the "Sync Project with Gradle Files" button in the top right of Android Studio (the icon looks like an elephant). This will re-sync your native Android code to include the new plugin code and should allow use of your new plugin. For more info, see [this issue on Github](https://github.com/ionic-team/capacitor/issues/4012).
+
 ## Next Steps
 
 If your app ran you are now ready to continue developing and building your app. Use the various APIs available, Capacitor or Cordova plugins, or custom native code to build out the rest of your app.
