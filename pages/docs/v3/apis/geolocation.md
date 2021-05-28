@@ -51,7 +51,7 @@ This plugin will use the following project variables (defined in your app's `var
 ```typescript
 import { Geolocation } from '@capacitor/geolocation';
 
-const printCurrentPosition = async () {
+const printCurrentPosition = async () => {
   const coordinates = await Geolocation.getCurrentPosition();
 
   console.log('Current position:', coordinates);
@@ -97,7 +97,7 @@ Get the current GPS location of the device
 ### watchPosition(...)
 
 ```typescript
-watchPosition(options: PositionOptions, callback: WatchPositionCallback) => CallbackID
+watchPosition(options: PositionOptions, callback: WatchPositionCallback) => Promise<CallbackID>
 ```
 
 Set up a watch for location changes. Note that watching for location changes
@@ -108,7 +108,7 @@ can consume a large amount of energy. Be smart about listening only when you nee
 | **`options`**  | <code><a href="#positionoptions">PositionOptions</a></code>             |
 | **`callback`** | <code><a href="#watchpositioncallback">WatchPositionCallback</a></code> |
 
-**Returns:** <code>string</code>
+**Returns:** <code>Promise&lt;string&gt;</code>
 
 **Since:** 1.0.0
 
