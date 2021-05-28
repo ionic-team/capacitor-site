@@ -58,22 +58,61 @@ Android Studio has an icon generator you can use to create your Push Notificatio
 
 ## Push notifications appearance in foreground
 
-On iOS you can configure the way the push notifications are displayed when the app is in foreground by providing the `presentationOptions` in your `capacitor.config.json` as an Array of Strings you can combine.
+<docgen-config>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-Possible values are:
-* `badge`: badge count on the app icon is updated (default value)
-* `sound`: the device will ring/vibrate when the push notification is received
-* `alert`: the push notification is displayed in a native dialog
+On iOS you can configure the way the push notifications are displayed when the app is in foreground.
 
-An empty Array can be provided if none of the previous options are desired. `pushNotificationReceived` event will still be fired with the push notification information.
+| Prop                      | Type                              | Description                                                                                                                                                                                                                                                                                                                                                                                 | Since |
+| ------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`presentationOptions`** | <code>PresentationOption[]</code> | This is an array of strings you can combine. Possible values in the array are: - `badge`: badge count on the app icon is updated (default value) - `sound`: the device will ring/vibrate when the push notification is received - `alert`: the push notification is displayed in a native dialog An empty array can be provided if none of the options are desired. Only available for iOS. | 1.0.0 |
+
+### Examples
+
+In `capacitor.config.json`:
 
 ```json
-"plugins": {
-  "PushNotifications": {
-    "presentationOptions": ["badge", "sound", "alert"]
+{
+  "plugins": {
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    }
   }
 }
 ```
+
+In `capacitor.config.ts`:
+
+```ts
+/// <reference types="@capacitor/push-notifications" />
+
+import { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  plugins: {
+    PushNotifications: {
+      presentationOptions: ["badge", "sound", "alert"],
+    },
+  },
+};
+
+export = config;
+```
+
+</docgen-config>
+
+## Silent Push Notifications / Data-only Notifications
+#### iOS
+This plugin does not support iOS Silent Push (Remote Notifications). We recommend using native code solutions for handling these types of notifications, see [Pushing Background Updates to Your App](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app).
+
+#### Android
+This plugin does support data-only notifications, but will NOT call `pushNotificationReceived` if the app has been killed. To handle this scenario, you will need to create a service that extends `FirebaseMessagingService`, see [Handling FCM Messages](https://firebase.google.com/docs/cloud-messaging/android/receive). 
+
+## Common Issues
+On Android, there are various system and app states that can affect the delivery of push notifications:
+
+* If the device has entered [Doze](https://developer.android.com/training/monitoring-device-state/doze-standby) mode, your application may have restricted capabilities. To increase the chance of your notification being received, consider using [FCM high priority messages](https://firebase.google.com/docs/cloud-messaging/concept-options#setting-the-priority-of-a-message).
+* There are differences in behavior between development and production. Try testing your app outside of being launched by Android Studio. Read more [here](https://stackoverflow.com/a/50238790/1351469).
 
 ---
 
@@ -253,7 +292,7 @@ Request permission to receive push notifications.
 ### addListener('registration', ...)
 
 ```typescript
-addListener(eventName: 'registration', listenerFunc: (token: Token) => void) => PluginListenerHandle
+addListener(eventName: 'registration', listenerFunc: (token: Token) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Called when the push notification registration finishes without problems.
@@ -265,7 +304,7 @@ Provides the push notification token.
 | **`eventName`**    | <code>'registration'</code>                                 |
 | **`listenerFunc`** | <code>(token: <a href="#token">Token</a>) =&gt; void</code> |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -275,7 +314,7 @@ Provides the push notification token.
 ### addListener('registrationError', ...)
 
 ```typescript
-addListener(eventName: 'registrationError', listenerFunc: (error: any) => void) => PluginListenerHandle
+addListener(eventName: 'registrationError', listenerFunc: (error: any) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Called when the push notification registration finished with problems.
@@ -287,7 +326,7 @@ Provides an error with the registration problem.
 | **`eventName`**    | <code>'registrationError'</code>     |
 | **`listenerFunc`** | <code>(error: any) =&gt; void</code> |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -297,7 +336,7 @@ Provides an error with the registration problem.
 ### addListener('pushNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'pushNotificationReceived', listenerFunc: (notification: PushNotificationSchema) => void) => PluginListenerHandle
+addListener(eventName: 'pushNotificationReceived', listenerFunc: (notification: PushNotificationSchema) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Called when the device receives a push notification.
@@ -307,7 +346,7 @@ Called when the device receives a push notification.
 | **`eventName`**    | <code>'pushNotificationReceived'</code>                                                              |
 | **`listenerFunc`** | <code>(notification: <a href="#pushnotificationschema">PushNotificationSchema</a>) =&gt; void</code> |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -317,7 +356,7 @@ Called when the device receives a push notification.
 ### addListener('pushNotificationActionPerformed', ...)
 
 ```typescript
-addListener(eventName: 'pushNotificationActionPerformed', listenerFunc: (notification: ActionPerformed) => void) => PluginListenerHandle
+addListener(eventName: 'pushNotificationActionPerformed', listenerFunc: (notification: ActionPerformed) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Called when an action is performed on a push notification.
@@ -327,7 +366,7 @@ Called when an action is performed on a push notification.
 | **`eventName`**    | <code>'pushNotificationActionPerformed'</code>                                         |
 | **`listenerFunc`** | <code>(notification: <a href="#actionperformed">ActionPerformed</a>) =&gt; void</code> |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -337,7 +376,7 @@ Called when an action is performed on a push notification.
 ### removeAllListeners()
 
 ```typescript
-removeAllListeners() => void
+removeAllListeners() => Promise<void>
 ```
 
 Remove all native listeners for this plugin.
@@ -405,9 +444,9 @@ Remove all native listeners for this plugin.
 
 #### PluginListenerHandle
 
-| Prop         | Type                       |
-| ------------ | -------------------------- |
-| **`remove`** | <code>() =&gt; void</code> |
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 
 #### Token

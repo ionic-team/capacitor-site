@@ -16,6 +16,61 @@ npm install @capacitor/local-notifications
 npx cap sync
 ```
 
+## Configuration
+
+<docgen-config>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+On Android, the Local Notifications can be configured with the following options:
+
+| Prop            | Type                | Description                                                                                                                                                                                                                                          | Since |
+| --------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`smallIcon`** | <code>string</code> | Set the default status bar icon for notifications. Icons should be placed in your app's `res/drawable` folder. The value for this option should be the drawable resource ID, which is the filename without an extension. Only available for Android. | 1.0.0 |
+| **`iconColor`** | <code>string</code> | Set the default color of status bar icons for notifications. Only available for Android.                                                                                                                                                             | 1.0.0 |
+| **`sound`**     | <code>string</code> | Set the default notification sound for notifications. On Android 26+ it sets the default channel sound and can't be changed unless the app is uninstalled. Only available for Android.                                                               | 1.0.0 |
+
+### Examples
+
+In `capacitor.config.json`:
+
+```json
+{
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon_config_sample",
+      "iconColor": "#488AFF",
+      "sound": "beep.wav"
+    }
+  }
+}
+```
+
+In `capacitor.config.ts`:
+
+```ts
+/// <reference types="@capacitor/local-notifications" />
+
+import { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  plugins: {
+    LocalNotifications: {
+      smallIcon: "ic_stat_icon_config_sample",
+      iconColor: "#488AFF",
+      sound: "beep.wav",
+    },
+  },
+};
+
+export = config;
+```
+
+</docgen-config>
+
+## Doze
+
+If the device has entered [Doze](https://developer.android.com/training/monitoring-device-state/doze-standby) mode, your application may have restricted capabilities. If you need your notification to fire even during Doze, schedule your notification by using `allowWhileIdle: true`. Make use of `allowWhileIdle` judiciously, as these notifications [can only fire once per 9 minutes, per app.](https://developer.android.com/training/monitoring-device-state/doze-standby#assessing_your_app)
+
 ## API
 
 <docgen-index>
@@ -214,7 +269,7 @@ Request permission to display local notifications.
 ### addListener('localNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'localNotificationReceived', listenerFunc: (notification: LocalNotificationSchema) => void) => PluginListenerHandle
+addListener(eventName: 'localNotificationReceived', listenerFunc: (notification: LocalNotificationSchema) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when notifications are displayed.
@@ -224,7 +279,7 @@ Listen for when notifications are displayed.
 | **`eventName`**    | <code>'localNotificationReceived'</code>                                                               |
 | **`listenerFunc`** | <code>(notification: <a href="#localnotificationschema">LocalNotificationSchema</a>) =&gt; void</code> |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -234,7 +289,7 @@ Listen for when notifications are displayed.
 ### addListener('localNotificationActionPerformed', ...)
 
 ```typescript
-addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => PluginListenerHandle
+addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when an action is performed on a notification.
@@ -244,7 +299,7 @@ Listen for when an action is performed on a notification.
 | **`eventName`**    | <code>'localNotificationActionPerformed'</code>                                              |
 | **`listenerFunc`** | <code>(notificationAction: <a href="#actionperformed">ActionPerformed</a>) =&gt; void</code> |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -254,7 +309,7 @@ Listen for when an action is performed on a notification.
 ### removeAllListeners()
 
 ```typescript
-removeAllListeners() => void
+removeAllListeners() => Promise<void>
 ```
 
 Remove all listeners for this plugin.
@@ -280,7 +335,7 @@ The object that describes a local notification.
 
 | Prop     | Type                | Description                  | Since |
 | -------- | ------------------- | ---------------------------- | ----- |
-| **`id`** | <code>string</code> | The notification identifier. | 1.0.0 |
+| **`id`** | <code>number</code> | The notification identifier. | 1.0.0 |
 
 
 #### ScheduleOptions
@@ -296,10 +351,13 @@ The object that describes a local notification.
 | ---------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
 | **`title`**            | <code>string</code>                           | The title of the notification.                                                                                                                                                                                                                                                                                                                                                                              | 1.0.0 |
 | **`body`**             | <code>string</code>                           | The body of the notification, shown below the title.                                                                                                                                                                                                                                                                                                                                                        | 1.0.0 |
+| **`largeBody`**        | <code>string</code>                           | Sets a multiline text block for display in a big text notification style.                                                                                                                                                                                                                                                                                                                                   | 1.0.0 |
+| **`summaryText`**      | <code>string</code>                           | Used to set the summary text detail in inbox and big text notification styles. Only available for Android.                                                                                                                                                                                                                                                                                                  | 1.0.0 |
 | **`id`**               | <code>number</code>                           | The notification identifier.                                                                                                                                                                                                                                                                                                                                                                                | 1.0.0 |
 | **`schedule`**         | <code><a href="#schedule">Schedule</a></code> | <a href="#schedule">Schedule</a> this notification for a later time.                                                                                                                                                                                                                                                                                                                                        | 1.0.0 |
 | **`sound`**            | <code>string</code>                           | Name of the audio file to play when this notification is displayed. Include the file extension with the filename. On iOS, the file should be in the app bundle. On Android, the file should be in res/raw folder. Recommended format is `.wav` because is supported by both iOS and Android. Only available for iOS and Android 26+.                                                                        | 1.0.0 |
 | **`smallIcon`**        | <code>string</code>                           | Set a custom status bar icon. If set, this overrides the `smallIcon` option from Capacitor configuration. Icons should be placed in your app's `res/drawable` folder. The value for this option should be the drawable resource ID, which is the filename without an extension. Only available for Android.                                                                                                 | 1.0.0 |
+| **`largeIcon`**        | <code>string</code>                           | Set a large icon for notifications. Icons should be placed in your app's `res/drawable` folder. The value for this option should be the drawable resource ID, which is the filename without an extension. Only available for Android.                                                                                                                                                                       | 1.0.0 |
 | **`iconColor`**        | <code>string</code>                           | Set the color of the notification icon. Only available for Android.                                                                                                                                                                                                                                                                                                                                         | 1.0.0 |
 | **`attachments`**      | <code>Attachment[]</code>                     | Set attachments for this notification.                                                                                                                                                                                                                                                                                                                                                                      | 1.0.0 |
 | **`actionTypeId`**     | <code>string</code>                           | Associate an action type with this notification.                                                                                                                                                                                                                                                                                                                                                            | 1.0.0 |
@@ -311,6 +369,7 @@ The object that describes a local notification.
 | **`channelId`**        | <code>string</code>                           | Specifies the channel the notification should be delivered on. If channel with the given name does not exist then the notification will not fire. If not provided, it will use the default channel. Calls `setChannelId()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android 26+. | 1.0.0 |
 | **`ongoing`**          | <code>boolean</code>                          | If true, the notification can't be swiped away. Calls `setOngoing()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                                           | 1.0.0 |
 | **`autoCancel`**       | <code>boolean</code>                          | If true, the notification is canceled when the user clicks on it. Calls `setAutoCancel()` on [`NotificationCompat.Builder`](https://developer.android.com/reference/androidx/core/app/NotificationCompat.Builder) with the provided value. Only available for Android.                                                                                                                                      | 1.0.0 |
+| **`inboxList`**        | <code>string[]</code>                         | Sets a list of strings for display in an inbox style notification. Up to 5 strings are allowed. Only available for Android.                                                                                                                                                                                                                                                                                 | 1.0.0 |
 
 
 #### Schedule
@@ -319,13 +378,14 @@ Represents a schedule for a notification.
 
 Use either `at`, `on`, or `every` to schedule notifications.
 
-| Prop          | Type                                                    | Description                                                                                                                                                                                   | Since |
-| ------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`at`**      | <code><a href="#date">Date</a></code>                   | <a href="#schedule">Schedule</a> a notification at a specific date and time.                                                                                                                  | 1.0.0 |
-| **`repeats`** | <code>boolean</code>                                    | Repeat delivery of this notification at the date and time specified by `at`. Only available for iOS and Android.                                                                              | 1.0.0 |
-| **`on`**      | <code><a href="#scheduleon">ScheduleOn</a></code>       | <a href="#schedule">Schedule</a> a notification on particular interval(s). This is similar to scheduling [cron](https://en.wikipedia.org/wiki/Cron) jobs. Only available for iOS and Android. | 1.0.0 |
-| **`every`**   | <code><a href="#scheduleevery">ScheduleEvery</a></code> | <a href="#schedule">Schedule</a> a notification on a particular interval.                                                                                                                     | 1.0.0 |
-| **`count`**   | <code>number</code>                                     | Limit the number times a notification is delivered by the interval specified by `every`.                                                                                                      | 1.0.0 |
+| Prop                 | Type                                                    | Description                                                                                                                                                                                                                                                                                                                             | Since |
+| -------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`at`**             | <code><a href="#date">Date</a></code>                   | <a href="#schedule">Schedule</a> a notification at a specific date and time.                                                                                                                                                                                                                                                            | 1.0.0 |
+| **`repeats`**        | <code>boolean</code>                                    | Repeat delivery of this notification at the date and time specified by `at`. Only available for iOS and Android.                                                                                                                                                                                                                        | 1.0.0 |
+| **`allowWhileIdle`** | <code>boolean</code>                                    | Allow this notification to fire while in [Doze](https://developer.android.com/training/monitoring-device-state/doze-standby) Only available for Android 23+. Note that these notifications can only fire [once per 9 minutes, per app](https://developer.android.com/training/monitoring-device-state/doze-standby#assessing_your_app). | 1.0.0 |
+| **`on`**             | <code><a href="#scheduleon">ScheduleOn</a></code>       | <a href="#schedule">Schedule</a> a notification on particular interval(s). This is similar to scheduling [cron](https://en.wikipedia.org/wiki/Cron) jobs. Only available for iOS and Android.                                                                                                                                           | 1.0.0 |
+| **`every`**          | <code><a href="#scheduleevery">ScheduleEvery</a></code> | <a href="#schedule">Schedule</a> a notification on a particular interval.                                                                                                                                                                                                                                                               | 1.0.0 |
+| **`count`**          | <code>number</code>                                     | Limit the number times a notification is delivered by the interval specified by `every`.                                                                                                                                                                                                                                                | 1.0.0 |
 
 
 #### Date
@@ -388,6 +448,7 @@ Enables basic storage and retrieval of dates and times.
 | **`day`**    | <code>number</code> |
 | **`hour`**   | <code>number</code> |
 | **`minute`** | <code>number</code> |
+| **`second`** | <code>number</code> |
 
 
 #### Attachment
@@ -413,9 +474,20 @@ Represents a notification attachment.
 
 #### PendingResult
 
-| Prop                | Type                                       | Description                        | Since |
-| ------------------- | ------------------------------------------ | ---------------------------------- | ----- |
-| **`notifications`** | <code>LocalNotificationDescriptor[]</code> | The list of pending notifications. | 1.0.0 |
+| Prop                | Type                                          | Description                        | Since |
+| ------------------- | --------------------------------------------- | ---------------------------------- | ----- |
+| **`notifications`** | <code>PendingLocalNotificationSchema[]</code> | The list of pending notifications. | 1.0.0 |
+
+
+#### PendingLocalNotificationSchema
+
+| Prop           | Type                                          | Description                                                          | Since |
+| -------------- | --------------------------------------------- | -------------------------------------------------------------------- | ----- |
+| **`title`**    | <code>string</code>                           | The title of the notification.                                       | 1.0.0 |
+| **`body`**     | <code>string</code>                           | The body of the notification, shown below the title.                 | 1.0.0 |
+| **`id`**       | <code>number</code>                           | The notification identifier.                                         | 1.0.0 |
+| **`schedule`** | <code><a href="#schedule">Schedule</a></code> | <a href="#schedule">Schedule</a> this notification for a later time. | 1.0.0 |
+| **`extra`**    | <code>any</code>                              | Set extra data to store within this notification.                    | 1.0.0 |
 
 
 #### RegisterActionTypesOptions
@@ -501,9 +573,9 @@ An action that can be taken when a notification is displayed.
 
 #### PluginListenerHandle
 
-| Prop         | Type                       |
-| ------------ | -------------------------- |
-| **`remove`** | <code>() =&gt; void</code> |
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 
 #### ActionPerformed

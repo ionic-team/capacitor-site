@@ -62,7 +62,7 @@ API to understand the data supplied in the 'accel' event.
 ### addListener('accel', ...)
 
 ```typescript
-addListener(eventName: 'accel', listenerFunc: AccelListener) => PluginListenerHandle
+addListener(eventName: 'accel', listenerFunc: AccelListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Add a listener for accelerometer data
@@ -72,7 +72,7 @@ Add a listener for accelerometer data
 | **`eventName`**    | <code>'accel'</code>                                    |
 | **`listenerFunc`** | <code><a href="#accellistener">AccelListener</a></code> |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -82,7 +82,7 @@ Add a listener for accelerometer data
 ### addListener('orientation', ...)
 
 ```typescript
-addListener(eventName: 'orientation', listenerFunc: OrientationListener) => PluginListenerHandle
+addListener(eventName: 'orientation', listenerFunc: OrientationListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Add a listener for device orientation change (compass heading, etc.)
@@ -92,7 +92,7 @@ Add a listener for device orientation change (compass heading, etc.)
 | **`eventName`**    | <code>'orientation'</code>                                          |
 | **`listenerFunc`** | <code><a href="#orientationlistener">OrientationListener</a></code> |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 **Since:** 1.0.0
 
@@ -102,7 +102,7 @@ Add a listener for device orientation change (compass heading, etc.)
 ### removeAllListeners()
 
 ```typescript
-removeAllListeners() => void
+removeAllListeners() => Promise<void>
 ```
 
 Remove all the listeners that are attached to this plugin.
@@ -117,9 +117,9 @@ Remove all the listeners that are attached to this plugin.
 
 #### PluginListenerHandle
 
-| Prop         | Type                       |
-| ------------ | -------------------------- |
-| **`remove`** | <code>() =&gt; void</code> |
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 
 #### AccelListenerEvent

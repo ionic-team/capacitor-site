@@ -36,7 +36,7 @@ npx cap sync
 ```typescript
 import { Storage } from '@capacitor/storage';
 
-const setName = () => {
+const setName = async () => {
   await Storage.set({
     key: 'name',
     value: 'Max',
