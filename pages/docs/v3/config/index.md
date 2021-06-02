@@ -220,10 +220,10 @@ export interface CapacitorConfig {
     path?: string;
 
     /**
-     * Scheme to use for the iOS build.
+     * iOS build scheme to use.
      *
-     * Usually this matches your app's target in Xcode.
-     * You can use the following command to list schemes:
+     * Usually this matches your app's target in Xcode. You can use the
+     * following command to list schemes:
      *
      * `xcodebuild -workspace ios/App/App.xcworkspace -list`
      *
