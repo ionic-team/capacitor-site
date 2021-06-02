@@ -89,10 +89,10 @@ In your app, head to the `home.page.ts` file and add an `import` statement and a
 
 ```typescript
 import {
+  ActionPerformed,
   PushNotificationSchema,
   PushNotifications,
-  PushNotificationToken,
-  PushNotificationActionPerformed,
+  Token,
 } from '@capacitor/push-notifications';
 ```
 
@@ -118,7 +118,7 @@ ngOnInit() {
 
     // On success, we should be able to receive notifications
     PushNotifications.addListener('registration',
-      (token: PushNotificationToken) => {
+      (token: Token) => {
         alert('Push registration success, token: ' + token.value);
       }
     );
@@ -139,7 +139,7 @@ ngOnInit() {
 
     // Method called when tapping on a notification
     PushNotifications.addListener('pushNotificationActionPerformed',
-      (notification: PushNotificationActionPerformed) => {
+      (notification: ActionPerformed) => {
         alert('Push action performed: ' + JSON.stringify(notification));
       }
     );
@@ -152,10 +152,10 @@ Here is the full implementation of `home.page.ts`:
 import { Component, OnInit } from '@angular/core';
 
 import {
+  ActionPerformed,
   PushNotificationSchema,
   PushNotifications,
-  PushNotificationToken,
-  PushNotificationActionPerformed,
+  Token,
 } from '@capacitor/push-notifications';
 
 @Component({
@@ -181,7 +181,7 @@ export class HomePage implements OnInit {
 
     PushNotifications.addListener(
       'registration',
-      (token: PushNotificationToken) => {
+      (token: Token) => {
         alert('Push registration success, token: ' + token.value);
       },
     );
@@ -199,7 +199,7 @@ export class HomePage implements OnInit {
 
     PushNotifications.addListener(
       'pushNotificationActionPerformed',
-      (notification: PushNotificationActionPerformed) => {
+      (notification: ActionPerformed) => {
         alert('Push action performed: ' + JSON.stringify(notification));
       },
     );
