@@ -9,6 +9,7 @@
   - [Development Workflow](basics/workflow.md)
   - [Using Plugins](basics/using-plugins.md)
   - [Native Project Configuration](basics/configuring-your-app.md)
+  - [Utilities](basics/utilities.md)
 - Upgrade Guides
   - [Upgrading to 3.0](updating/3-0.md)
   - [Upgrading to 2.0](updating/2-0.md)
