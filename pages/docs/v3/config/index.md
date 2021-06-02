@@ -222,6 +222,9 @@ export interface CapacitorConfig {
     /**
      * Scheme to use for the iOS build.
      *
+     * Usually this matches your app's target in Xcode.
+     * You can use the following command to list schemes:
+     *
      * @since 3.0.0
      * @default App
      */
