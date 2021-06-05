@@ -66,6 +66,8 @@ CAP_PLUGIN(EchoPlugin, "Echo",
 
 In JS, we use `registerPlugin()` from `@capacitor/core` to create an object which is linked to our Swift plugin.
 
+> WHERE DOES THIS CODE GO? Into What File? In which Directory?
+
 ```typescript
 import { registerPlugin } from '@capacitor/core';
 
@@ -77,6 +79,8 @@ export default Echo;
 > The first parameter to `registerPlugin()` is the plugin name, which must match the second parameter to the `CAP_PLUGIN` macro in `EchoPlugin.m`.
 
 **TypeScript**
+
+> WHERE DOES THIS CODE GO? Into What File? In which Directory?
 
 We can define types on our linked object by defining an interface and using it in the call to `registerPlugin()`.
 
