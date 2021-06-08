@@ -209,13 +209,13 @@ export class SiteHeader implements ComponentInterface {
               class="label-sm-only"
             >
               <section>
-                <a href="https://capacitorjs.com/" target="_blank">
+                <a href="https://capacitorjs.com/" class="link-active">
                   English
                   <svg viewBox="0 0 512 512" width="14">
                     <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
                   </svg>
                 </a>
-                <a href="https://capacitorjs.jp/" class="link-active">
+                <a href="https://capacitorjs.jp/" target="_blank">
                   日本語
                 </a>
               </section>
