@@ -7,7 +7,7 @@ editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/app-launch
 
 # @capacitor/app-launcher
 
-The AppLauncher API allows to open other apps
+The AppLauncher API allows your app to open other apps
 
 ## Install
 
