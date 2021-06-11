@@ -341,9 +341,9 @@ Place the association files under `static/.well-known`. No additional steps are 
 
 Place the association files under `public/.well-known`. No additional steps are necessary; simply build then deploy the site.
 
-### Wordpress
+### WordPress
 
-See [here](https://devdactic.com/universal-links-ionic/) for Wordpress instructions.
+See [here](https://devdactic.com/universal-links-ionic/) for WordPress instructions.
 
 ## Verification
 
