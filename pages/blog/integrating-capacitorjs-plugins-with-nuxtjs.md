@@ -7,7 +7,7 @@ author: Dan Pastori <dan@521dimensions.com>
 authorUrl: https://twitter.com/danpastori
 ---
 
-> The following is a guest blog post from Dan Pastori of [Server Side Up](https://serversideup.net). Server Side Up is an online community that shares tutorials and resources about Vuejs, Laravel, Wordpress, and more recently have started creating resources on how to deliver native apps with Capacitor.
+> The following is a guest blog post from Dan Pastori of [Server Side Up](https://serversideup.net). Server Side Up is an online community that shares tutorials and resources about Vuejs, Laravel, WordPress, and more recently have started creating resources on how to deliver native apps with Capacitor.
 
 Using CapacitorJS with NuxtJS is a perfect combination. NuxtJS allows you to develop powerful, modern fronteneds using VueJS. Combined with CapacitorJS, you can take those modern frontends, compilie them to mobile, and deploy to the platform of your choice.
 
