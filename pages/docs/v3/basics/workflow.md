@@ -90,4 +90,4 @@ npm install @capacitor/android
 
 ## Hooks
 
-Need to tie into the capacitor cli command events? Check out the [hooks here](/cli/hooks).
+Need to tie into the capacitor cli command events? Check out the [hooks here](/docs/cli/hooks).
