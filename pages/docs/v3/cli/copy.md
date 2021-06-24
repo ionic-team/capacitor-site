@@ -24,4 +24,4 @@ The following hooks are available for copy command:
 - capacitor:copy:before
 - capacitor:copy:after
 
-[More information](hooks.md)
+[More information](hooks)

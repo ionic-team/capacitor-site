@@ -28,4 +28,4 @@ The following hooks are available for update command:
 - capacitor:update:before
 - capacitor:update:after
 
-[More information](hooks.md)
+[More information](hooks)
