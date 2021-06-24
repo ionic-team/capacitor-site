@@ -87,3 +87,7 @@ npm install @capacitor/android
 ```
 
 > You can subscribe to the [Capacitor repo](https://github.com/ionic-team/capacitor) to be notified of new releases. At the top of the repository index, click **Watch** -> **Releases only**.
+
+## Hooks
+
+Need to tie into the capacitor cli command events? Check out the [hooks here](/cli/hooks.md).

@@ -2,6 +2,7 @@
 
 - Overview
   - [Introduction](index.md)
+  - [Hooks](hooks.md)
 - Command List
   - [`add`](add.md)
   - [`copy`](copy.md)
