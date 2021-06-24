@@ -25,7 +25,7 @@ npx cap update [<platform>]
 
 The following hooks are available for update command:
 
-- capacitor:update:before
-- capacitor:update:after
+- `capacitor:update:before`
+- `capacitor:update:after`
 
 [More information](hooks)

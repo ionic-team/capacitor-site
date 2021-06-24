@@ -25,7 +25,7 @@ npx cap sync [options] [<platform>]
 
 The following hooks are available for sync command:
 
-- capacitor:sync:before
-- capacitor:sync:after
+- `capacitor:sync:before`
+- `capacitor:sync:after`
 
 [More information](hooks)
