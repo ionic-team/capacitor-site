@@ -9,12 +9,12 @@ contributors:
 
 Starting in Capacitor 3.1, the following events can be used to hook into Capacitor commands:
 
-- capacitor:copy:before
-- capacitor:copy:after
-- capacitor:update:before
-- capacitor:update:after
-- capacitor:sync:before
-- capacitor:sync:after
+- `capacitor:copy:before`
+- `capacitor:copy:after`
+- `capacitor:update:before`
+- `capacitor:update:after`
+- `capacitor:sync:before`
+- `capacitor:sync:after`
 
 To use them add the event name and the code you want to run in the scripts section of your app's `package.json`.
 
