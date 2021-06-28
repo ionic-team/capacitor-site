@@ -4,28 +4,20 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ],
+    "lib": ["dom", "es2015"],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2017",
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    // "noUnusedParameters": true,
     "resolveJsonModule": true,
     "jsx": "react",
     "jsxFactory": "h",
     "baseUrl": ".",
     "paths": {
-      "@stencil/core": [ "node_modules/@stencil/core"]
+      "@stencil/core": ["node_modules/@stencil/core"]
     }
   },
-  "include": [
-    "src",
-    "types/jsx.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "types/jsx.d.ts"],
+  "exclude": ["node_modules"]
 }
