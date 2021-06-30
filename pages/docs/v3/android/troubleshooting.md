@@ -87,3 +87,36 @@ To do this, follow these steps:
 3. Remove the android directory: `rm -rf android/`
 4. Re-create the Android app from Capacitor: `npx cap add android`
 5. Copy your saved source files back into the project
+
+## Minifying your project
+
+By default, the Android native code is not minified.
+To minify your native code, you need to write the following rules to `android/app/proguard-rules.pro`:
+
+```
+-keep @com.getcapacitor.annotation.CapacitorPlugin public class * {
+    @com.getcapacitor.annotation.PermissionCallback <methods>;
+    @com.getcapacitor.annotation.ActivityCallback <methods>;
+    @com.getcapacitor.PluginMethod public <methods>;
+}
+```
+
+If you use deprecated v2 plugins, add:
+
+```
+-keep @com.getcapacitor.NativePlugin public class * {
+    @com.getcapacitor.PluginMethod public <methods>;
+}
+```
+
+And if you use Cordova plugins:
+
+```
+-keep public class * extends org.apache.cordova.* {
+    public <methods>;
+    public <fields>;
+}
+```
+
+For best results (for example shrinking resources), check the Android guide:
+http://developer.android.com/guide/developing/tools/proguard.html
