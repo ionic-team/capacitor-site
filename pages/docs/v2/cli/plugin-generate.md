@@ -15,5 +15,5 @@ Create a new custom Capacitor plugin. This starts a wizard that prompts you for 
 npx cap plugin:generate
 
 # Capacitor CLI not installed
-npx @capacitor/cli plugin:generate
+npx @capacitor/cli@2.4.7 plugin:generate
 ```
