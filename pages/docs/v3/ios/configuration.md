@@ -56,6 +56,8 @@ Then, open `ios/App/Podfile` and rename the current target at the bottom of the 
  end
 ```
 
+Finally, add the `scheme` attribute inside the `ios` object in the [Capacitor configuration file](/docs/config#schema).
+
 ## Deeplinks (aka Universal Links)
 
 For a Deep Links guide, [see here](/docs/guides/deep-links).
