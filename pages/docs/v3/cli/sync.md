@@ -20,3 +20,12 @@ npx cap sync [options] [<platform>]
 <strong>Options:</strong>
 
 - `--deployment`: Podfile.lock won't be deleted and pod install will use `--deployment` option.
+
+## Hooks
+
+The following hooks are available for sync command:
+
+- `capacitor:sync:before`
+- `capacitor:sync:after`
+
+[More information](hooks)

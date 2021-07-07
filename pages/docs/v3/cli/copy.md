@@ -16,3 +16,12 @@ npx cap copy [<platform>]
 <strong>Inputs:</strong>
 
 - `platform` (optional): `android`, `ios`
+
+## Hooks
+
+The following hooks are available for copy command:
+
+- `capacitor:copy:before`
+- `capacitor:copy:after`
+
+[More information](hooks)
