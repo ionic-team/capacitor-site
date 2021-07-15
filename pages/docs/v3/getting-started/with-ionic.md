@@ -29,6 +29,19 @@ Install and initialize Capacitor with your app name and bundle ID:
 ionic integrations enable capacitor
 ```
 
+Ionic Framework makes use of the APIs in the following plugins:
+
+- [**App**](/docs/apis/app)
+- [**Haptics**](/docs/apis/haptics)
+- [**Keyboard**](/docs/apis/keyboard)
+- [**StatusBar**](/docs/apis/status-bar)
+
+For the best user experience, you should make sure these plugins are installed even if you don't import them in your app:
+
+```bash
+npm install @capacitor/app @capacitor/haptics @capacitor/keyboard @capacitor/status-bar
+```
+
 If your Ionic app uses Cordova, you will want to read the [Migrating from Cordova to Capacitor guide](/docs/cordova/migrating-from-cordova-to-capacitor) as well.
 
 ### Add Platforms
