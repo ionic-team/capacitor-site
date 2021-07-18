@@ -426,7 +426,7 @@ target 'NotificationServiceExtension' do
 end
 ```
 
-Once done, head to the root of your project and `cd ios && pod install` to install the correct pods to your extension. 
+Once done, head to the root of your project and `cd ios/app && pod install` to install the correct pods to your extension. 
 
 Head back to XCode and load your `NotificationService.swift` file which should be under a new folder named `NotificationServiceExtension` like the following:
 
@@ -453,6 +453,7 @@ class NotificationService: UNNotificationServiceExtension {
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         if let bestAttemptContent = bestAttemptContent {
             // Modify the notification content here...
+            bestAttemptContent.title = "\(bestAttemptContent.title)"
             Messaging.serviceExtension().populateNotificationContent(bestAttemptContent, withContentHandler: contentHandler)
         }
     }
