@@ -3,6 +3,7 @@ title: Ads in Capacitor Apps
 description: Adding Advertisements to your Capacitor app
 contributors:
   - mlynch
+  - ratson
 ---
 
 # Advertisements in Capacitor Apps
@@ -19,3 +20,7 @@ npx cap update
 Then, follow the [Capacitor Community Admob](https://github.com/capacitor-community/admob) documentation for configuration and usage.
 
 This [community article](https://medium.com/enappd/implement-admob-in-ionic-react-capacitor-apps-ebc7af360b41) is also a useful reference for practical applications of this plugin (though it is using an older version of the plugin).
+
+# Alternatives
+
+- [AdMob Plus](https://admob-plus.github.io/docs/capacitor)
