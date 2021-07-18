@@ -405,6 +405,71 @@ To upload your certificate or auth key, from the **Project Overview** page:
 2. On the Settings page, click on the **Cloud Messaging** tab.
 3. Under the **iOS app configuration** header, upload your Auth Key or Certificate(s) using the provided **Upload** button.
 
+### Supporting Rich Notifications [Images etc]
+
+By default your iOS app will [not be able to support rich push notifications](https://firebase.google.com/docs/cloud-messaging/ios/send-image) (with images etc). If you want to support these then you must create a [`NotificationServiceExtension`](https://firebase.google.com/docs/cloud-messaging/ios/send-image#set_up_the_notification_service_extension) within your iOS XCode Project.
+
+To get started, you must first load your application up in xcode (you can use `npx cap open ios` to do this). Followed by going to **File** > **New** > **Target** and selecting the `Notification Service Extension` template.
+
+Choose Next and for the product name, enter `NotificationServiceExtension` to be able to identify this later. Leaving all other options as their defaults.
+
+Now you should see a new target underneath your app that looks something like this:
+
+<img width="227" alt="image" src="https://user-images.githubusercontent.com/49694881/126063345-ab6e1310-18bc-4836-bf14-96247add5e42.png">
+
+Now we must add the `Firebase/Messaging` pod to your new Notification Service Extension by going back to your [`PodFile`](https://github.com/ionic-team/capacitor-site/blob/main/assets/img/docs/guides/firebase-push-notifications/podfile-location-ios.png) and adding the following code at the bottom:
+
+```ruby
+# ... other pods above here
+target 'NotificationServiceExtension' do
+  pod 'Firebase/Messaging'
+end
+```
+
+Once done, head to the root of your project and `cd ios && pod install` to install the correct pods to your extension. 
+
+Head back to XCode and load your `NotificationService.swift` file which should be under a new folder named `NotificationServiceExtension` like the following:
+
+<img width="358" alt="image" src="https://user-images.githubusercontent.com/49694881/126063567-0d824c01-ca25-4462-b263-ffbb996614d1.png">
+
+Replace the contents of your `NotificationService.swift` file to be the following:
+
+```swift
+//
+//  NotificationService.swift
+//  NotificationServiceExtension
+//  Used to handle rich notification support from Firebase
+
+import UserNotifications
+import Firebase
+
+class NotificationService: UNNotificationServiceExtension {
+
+    var contentHandler: ((UNNotificationContent) -> Void)?
+    var bestAttemptContent: UNMutableNotificationContent?
+
+    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+        self.contentHandler = contentHandler
+        bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+        if let bestAttemptContent = bestAttemptContent {
+            // Modify the notification content here...
+            Messaging.serviceExtension().populateNotificationContent(bestAttemptContent, withContentHandler: contentHandler)
+        }
+    }
+    
+    override func serviceExtensionTimeWillExpire() {
+        // Called just before the extension will be terminated by the system.
+        // Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.
+        if let contentHandler = contentHandler, let bestAttemptContent =  bestAttemptContent {
+            contentHandler(bestAttemptContent)
+        }
+    }
+
+}
+```
+
+Save and run the app on your device before sending a test notification to enable rich notification support within your application.
+
 ## Sending a Test Notification
 
 Now for the fun part - let's verify that push notifications from Firebase are working on Android and iOS!
