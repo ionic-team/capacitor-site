@@ -1,0 +1,60 @@
+capacitor-site-platform-bar {
+  display: block;
+  height: 44px;
+  background: var(--c-carbon-100);
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: var(--f-family-text);
+    padding-block-start: 0;
+    padding-block-end: 0;
+  }
+
+  .nowrap {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .platform-bar__logo {
+    margin-inline-end: var(--space-3);
+
+    svg {
+      height: 24px;
+      margin: 10px 0;
+      vertical-align: middle;
+    }
+  }
+
+  .platform-bar__desc {
+    align-content: flex-end;
+    color: #ccc;
+    font-size: var(--f-size-2);
+    line-height: 160%;
+    text-align: right;
+
+    letter-spacing: var(--f-tracking-tight);
+
+    margin: 0 -3px 0 0;
+
+    strong {
+      color: white;
+
+      font-weight: 400;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    ion-icon {
+      display: flex;
+      align-items: center;
+      margin-inline-start: var(--space-0);
+    }
+  }
+}

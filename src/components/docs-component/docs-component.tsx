@@ -60,7 +60,7 @@ export class DocsComponent implements ComponentInterface {
           page-title={this.data.title}
           description={`${this.data.description} - Official Capacitor Documentation`}
         />
-        {/* <platform-bar
+        {/* <capacitor-site-platform-bar
           containerClass="sc-docs-component docs-container"
           productName="Capacitor"
         /> */}

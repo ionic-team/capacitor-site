@@ -60,6 +60,10 @@ export namespace Components {
     }
     interface CapacitorSiteFooter {
     }
+    interface CapacitorSitePlatformBar {
+        "containerClass": string;
+        "productName"?: string;
+    }
     interface CodeSnippet {
         "code": string;
         "language": string;
@@ -240,6 +244,12 @@ declare global {
         prototype: HTMLCapacitorSiteFooterElement;
         new (): HTMLCapacitorSiteFooterElement;
     };
+    interface HTMLCapacitorSitePlatformBarElement extends Components.CapacitorSitePlatformBar, HTMLStencilElement {
+    }
+    var HTMLCapacitorSitePlatformBarElement: {
+        prototype: HTMLCapacitorSitePlatformBarElement;
+        new (): HTMLCapacitorSitePlatformBarElement;
+    };
     interface HTMLCodeSnippetElement extends Components.CodeSnippet, HTMLStencilElement {
     }
     var HTMLCodeSnippetElement: {
@@ -400,6 +410,7 @@ declare global {
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
+        "capacitor-site-platform-bar": HTMLCapacitorSitePlatformBarElement;
         "code-snippet": HTMLCodeSnippetElement;
         "code-tabs": HTMLCodeTabsElement;
         "community-page": HTMLCommunityPageElement;
@@ -477,6 +488,10 @@ declare namespace LocalJSX {
     interface CapacitorSite {
     }
     interface CapacitorSiteFooter {
+    }
+    interface CapacitorSitePlatformBar {
+        "containerClass"?: string;
+        "productName"?: string;
     }
     interface CodeSnippet {
         "code": string;
@@ -582,6 +597,7 @@ declare namespace LocalJSX {
         "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
+        "capacitor-site-platform-bar": CapacitorSitePlatformBar;
         "code-snippet": CodeSnippet;
         "code-tabs": CodeTabs;
         "community-page": CommunityPage;
@@ -627,6 +643,7 @@ declare module "@stencil/core" {
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
+            "capacitor-site-platform-bar": LocalJSX.CapacitorSitePlatformBar & JSXBase.HTMLAttributes<HTMLCapacitorSitePlatformBarElement>;
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
             "code-tabs": LocalJSX.CodeTabs & JSXBase.HTMLAttributes<HTMLCodeTabsElement>;
             "community-page": LocalJSX.CommunityPage & JSXBase.HTMLAttributes<HTMLCommunityPageElement>;
