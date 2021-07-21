@@ -24,6 +24,8 @@ Initialize your app with Capacitor. Some of the information you will be prompted
 npx cap init
 ```
 
+> NOTE: If you do not have `@capcitor/cli` installed globally- you will need to add (@capacitor/cli) `npm i -D @capacitor/cli` to your project before running the above command.
+
 ### Build your Web App
 
 You must build your web project at least once before adding any native platforms.
