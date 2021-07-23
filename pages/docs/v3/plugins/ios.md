@@ -96,7 +96,7 @@ To fail, or reject a call, call `reject()`, passing an error string and optional
 call.reject(error.localizedDescription, nil, error)
 ```
 
-### Running code on plugin load
+### Running Code on Plugin Load
 
 Occasionally, plugins may need to run some code when the plugin is first loaded. For example, this would be a good place to set up any Notification Center event handlers.
 
