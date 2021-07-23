@@ -117,7 +117,7 @@ In most cases, a plugin method will get invoked to perform a task and can finish
 
 See [this guide on saving plugin calls](/docs/v3/core-apis/saving-calls) for more details on how to persist plugin calls.
 
-### Running code on plugin load
+### Running Code on Plugin Load
 
 Occasionally, plugins may need to run some code when the plugin is first loaded.
 
