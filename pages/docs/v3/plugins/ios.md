@@ -96,6 +96,17 @@ To fail, or reject a call, call `reject()`, passing an error string and optional
 call.reject(error.localizedDescription, nil, error)
 ```
 
+### Running code on plugin load
+
+Occasionally, plugins may need to run some code when the plugin is first loaded. For example, this would be a good place to set up any Notification Center event handlers.
+
+To do this, provide an implementation for the `load()` method:
+
+```swift
+override public func load() {
+}
+```
+
 ### Export to Capacitor
 
 To make sure Capacitor can see your plugin, you must do two things: export your Swift class to Objective-C, and register it
