@@ -117,6 +117,18 @@ In most cases, a plugin method will get invoked to perform a task and can finish
 
 See [this guide on saving plugin calls](/docs/v3/core-apis/saving-calls) for more details on how to persist plugin calls.
 
+### Running code on plugin load
+
+Occasionally, plugins may need to run some code when the plugin is first loaded.
+
+To do this, provide an implementation for the `load()` method:
+
+```java
+@Override
+public void load() {
+}
+```
+
 ## Permissions
 
 If your plugin has functionality on Android that requires permissions from the end user, then you will need to implement the permissions pattern.
