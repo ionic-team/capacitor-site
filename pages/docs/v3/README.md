@@ -27,6 +27,7 @@
   - [Deploying and Updating](guides/deploying-updates.md)
   - [In App Purchases](guides/in-app-purchases.md)
   - [Live Reload](guides/live-reload.md)
+  - [Mocking Plugins](guides/mocking-plugins.md)
   - [Push Notifications - Firebase](guides/push-notifications-firebase.md)
   - [React Hooks](guides/react-hooks.md)
   - [Screen Orientation](guides/screen-orientation.md)
