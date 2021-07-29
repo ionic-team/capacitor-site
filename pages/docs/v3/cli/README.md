@@ -4,6 +4,7 @@
   - [Introduction](index.md)
   - [Hooks](hooks.md)
 - Command List
+  - [`init`](init.md)
   - [`add`](add.md)
   - [`copy`](copy.md)
   - [`list`](list.md)
