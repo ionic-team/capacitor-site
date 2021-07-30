@@ -13,7 +13,7 @@ Most mocking libraries create mocks by taking an object and wrapping it in a Jav
 
 ## Manual Mocks
 
-Manual mocks allow the user to easily stub the functionality of an entire JavaScript module. As a result, instead of loading the `Storage` JavaScript proxy object when doing `import { Storage } from '@capacitor/storage';`, the tests could load something like this:
+Manual mocks allow the user to easily stub the functionality of an entire JavaScript module. As a result, when the tests do an `import { Storage } from '@capacitor/storage'`, instead of loading the real `Storage` JavaScript proxy object, the tests would load something like this:
 
 ```TypeScript
 export const Storage = {
@@ -26,7 +26,7 @@ export const Storage = {
 };
 ```
 
-This is very easy to spy on, and does not try to make any native calls. This makes the use of manual mocks an ideal choice to use when testing code that uses Capacitor plugins.
+Since this is a plain JavaScript objecct and not a proxy object, it is very easy to spy on. Also, since it is a mock it does not try to make any native calls. This makes the use of manual mocks an ideal choice to use when testing code that uses Capacitor plugins.
 
 ### Jest
 
@@ -141,5 +141,5 @@ With the manual mocks in place, the tests can now be written to mock and spy on 
 
 ## Examples
 
-[Mocking Capacitor Plugins in Jasmine](https://github.com/ionic-team/cap-plugin-mock-jasmine)
-[Mocking Capacitor Plugins in Jest](https://github.com/ionic-team/cap-plugin-mock-jest)
+- [Mocking Capacitor Plugins in Jasmine](https://github.com/ionic-team/cap-plugin-mock-jasmine)
+- [Mocking Capacitor Plugins in Jest](https://github.com/ionic-team/cap-plugin-mock-jest)
