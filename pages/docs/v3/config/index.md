@@ -355,10 +355,10 @@ export interface CapacitorConfig {
     /**
      * Configure the local scheme on iOS.
      *
+     * [Can't be set to schemes that the WKWebView already handles, such as http or https](https://developer.apple.com/documentation/webkit/wkwebviewconfiguration/2875766-seturlschemehandler)
      * This can be useful when migrating from
      * [`cordova-plugin-ionic-webview`](https://github.com/ionic-team/cordova-plugin-ionic-webview),
      * where the default scheme on iOS is `ionic`.
-     * [Can't be set to http or https](https://github.com/ionic-team/capacitor/issues/2173#issuecomment-573820265)
      *
      * @since 1.2.0
      * @default capacitor
