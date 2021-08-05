@@ -45,8 +45,6 @@ npx cap init
 
 The CLI will ask you a few questions, starting with your app name, and the package id you would like to use for your app.
 
-Last, it will ask what directory your web assets get built into. For Angular, this is `www`, React is `build`, and Vue is `dist`. If you don't know right now, you can update this value in the `capacitor.config.ts` file later.
-
 > The `npx cap` command is how Capacitor is executed locally on the command-line in your project. [Learn more about the Capacitor CLI](/docs/cli).
 
 ## Where to go next
