@@ -35,7 +35,7 @@ Implement the web implementation in `src/web.ts`:
 +  OpenMapOptions,
  } from './definitions';
 
- export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
+ export class EchoWeb extends WebPlugin implements EchoPlugin {
    // other methods
 
 +  async openMap(location: OpenMapOptions): Promise<void> {
@@ -50,7 +50,7 @@ To compile the plugin, navigate into the plugin directory then run:
 npm run build
 ```
 
-Implement [Android functionality](./android) in `android/src/main/[nested folders]/PluginName.java`:
+Implement [Android functionality](./android) in `android/src/main/[nested folders]/EchoPlugin.java`:
 
 ```java
 @PluginMethod()
@@ -64,7 +64,7 @@ public void openMap(PluginCall call) {
 }
 ```
 
-Implement [iOS functionality](./ios) in `ios/Plugin/Plugin.swift`:
+Implement [iOS functionality](./ios) in `ios/Plugin/EchoPlugin.swift`:
 
 ```swift
 @objc func openMap(_ call: CAPPluginCall) {
@@ -86,20 +86,20 @@ This example contains the most common type of method in plugins but details abou
 To test the plugin locally while developing it, link the plugin folder to your app using `npm install` with the path to your plugin.
 
 ```bash
-npm install ../path/to/my-plugin
+npm install ../path/to/echo
 ```
 
 The project's `package.json` file now shows the plugin package link in the dependencies list:
 
 ```json
-"my-plugin": "file:../path/to/my-plugin",
+"echo": "file:../path/to/echo",
 ```
 
 Finally, run `npx cap sync` to make the native projects aware of your plugin. If it was detected correctly, it will print something like this:
 
 ```bash
 [info] Found 1 Capacitor plugin for android:
-    - my-plugin (0.0.1)
+    - echo (0.0.1)
 ```
 
 ### Unlinking the Plugin
@@ -107,7 +107,7 @@ Finally, run `npx cap sync` to make the native projects aware of your plugin. If
 To unlink the local plugin from your app, use `npm uninstall` with the package name of your plugin.
 
 ```bash
-npm uninstall my-plugin
+npm uninstall echo
 ```
 
 ## Package Scripts
@@ -169,4 +169,4 @@ npm publish
 
 This will build the JS portion of your plugin and publish the rest of your plugin files to npm.
 
-Your package can now be installed using `npm install my-plugin` in any Capacitor app.
+Your package can now be installed using `npm install echo` in any Capacitor app.
