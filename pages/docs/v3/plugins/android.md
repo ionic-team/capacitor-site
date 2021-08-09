@@ -14,9 +14,9 @@ Building Capacitor plugins for Android involves writing Java or [Kotlin](https:/
 
 To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins) section of the Plugin guide.
 
-Next, open `my-plugin/android/` in Android Studio. You then want to navigate to the `.java` file for your plugin, which changes depending on the Plugin ID and Plugin Class Name you used when creating the plugin.
+Next, open `echo/android/` in Android Studio. You then want to navigate to the `.java` file for your plugin, which changes depending on the Plugin ID and Plugin Class Name you used when creating the plugin.
 
-For example, for a plugin with the ID `com.domain.myplugin` and the Plugin Class Name `MyPlugin`, you would find the `.java` file at `android/src/main/java/com/domain/myplugin/MyPlugin.java`.
+For example, for a plugin with the ID `com.domain.echo` and the Plugin Class Name `Echo`, you would find the `.java` file at `android/src/main/java/com/domain/echo/EchoPlugin.java`.
 
 ## Using Kotlin
 

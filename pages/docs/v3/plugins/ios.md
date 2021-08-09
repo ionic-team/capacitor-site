@@ -14,14 +14,14 @@ Building Capacitor plugins for iOS involves writing Swift (or Objective-C) to in
 
 To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins/creating-plugins) section of the Plugin guide.
 
-Next, open `my-plugin/ios/Plugin.xcworkspace` in Xcode.
+Next, open `echo/ios/Plugin.xcworkspace` in Xcode. You then want to navigate to the .swift file for your plugin.
+
+For example, for a plugin with the Plugin Class Name `Echo`, you should open `EchoPlugin.swift`.
 
 ## Plugin Basics
 
 A Capacitor plugin for iOS is a simple Swift class that extends `CAPPlugin` and
 has some exported methods that will be callable from JavaScript.
-
-Once your plugin is generated, you can start editing it by opening `Plugin.swift`.
 
 ### Simple Example
 
@@ -30,7 +30,7 @@ In the generated example, there is a simple echo plugin with an `echo` function 
 This example demonstrates a few core components of Capacitor plugins: receiving data from a Plugin Call, and returning
 data back to the caller:
 
-`Plugin.swift`
+`EchoPlugin.swift`
 
 ```swift
 import Capacitor
@@ -109,24 +109,23 @@ override public func load() {
 
 ### Export to Capacitor
 
-To make sure Capacitor can see your plugin, you must do two things: export your Swift class to Objective-C, and register it
-using the provided Capacitor Objective-C Macros.
+To make sure Capacitor can see your plugin, the plugin generator do two things: export your Swift class to Objective-C, and register it using the provided Capacitor Objective-C Macros.
 
-To export your Swift class to Objective-C, make sure to add `@objc(EchoPlugin)` above your Swift class, and add `@objc` before any plugin method, as shown above.
+To export your Swift class to Objective-C, the plugin generator adds `@objc(EchoPlugin)` above your Swift class, and add `@objc` before the `echo` method.
 
-To register your plugin with Capacitor, you'll need to create a new Objective-C file (with a `.m` extension, _not_ `.h`!) corresponding to your plugin (such as `EchoPlugin.m`) and use the Capacitor macros to register the plugin, and each method that you will use. Important: you _must_ use the New File dialog in Xcode to do this. You'll then be prompted by Xcode to create a Bridging Header, which you _must_ do.
-
-Finally, register the plugin by adding the required Capacitor plugin macros into your new `.m` file:
+To register the plugin, the plugin generator creates a file with a `.m` extension corresponding to your plugin (such as `EchoPlugin.m`) and use the `CAP_PLUGIN` to register the plugin and the `CAP_PLUGIN_METHOD` macro to register the `echo` method.
 
 ```objectivec
 #import <Capacitor/Capacitor.h>
 
-CAP_PLUGIN(EchoPlugin, "EchoPlugin",
+CAP_PLUGIN(EchoPlugin, "Echo",
   CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
 )
 ```
 
-This makes `EchoPlugin`, and the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
+This makes `Echo` plugin, and the `echo` method available to the Capacitor web runtime, indicating to Capacitor that the echo method will return a Promise.
+
+To add more methods to your plugin, create them in the `.swift` plugin class with the `@objc` before the `func` keyword and add a new `CAP_PLUGIN_METHOD` entry in the `.m` file.
 
 ## Permissions
 
@@ -141,8 +140,8 @@ Add the `checkPermissions()` and `requestPermissions()` methods to your Swift pl
 ```diff-swift
  import Capacitor
 
- @objc(MyPlugin)
- public class MyPlugin: CAPPlugin {
+ @objc(EchoPlugin)
+ public class EchoPlugin: CAPPlugin {
      ...
 
 +    @objc override public func checkPermissions(_ call: CAPPluginCall) {
@@ -338,3 +337,7 @@ Capacitor plugins can override the webview navigation. For that the plugin can o
 Returning `true` causes the WebView to abort loading the URL.
 Returning `false` causes the WebView to continue loading the URL.
 Returning `nil` will defer to the default Capacitor policy.
+
+## Advanced configuration
+
+Capacitor iOS plugins are CocoaPods libraries, so to add dependencies, required frameworks or any other advanced configurations you have to edit the `.podspec` file created by the plugin generator, check the [podspec reference](https://guides.cocoapods.org/syntax/podspec.html) to see all possible options.

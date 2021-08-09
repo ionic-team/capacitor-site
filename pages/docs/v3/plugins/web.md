@@ -15,7 +15,7 @@ Capacitor utilizes a web/native compatibility layer, making it easy to build plu
 
 To get started, first generate a plugin as shown in the [Getting Started](/docs/plugins/creating-plugins#plugin-generator) section of the Plugin guide.
 
-Next, open `my-plugin/src/web.ts` in your editor of choice.
+Next, open `echo/src/web.ts` in your editor of choice.
 
 ## Example
 
@@ -26,7 +26,7 @@ import { WebPlugin } from '@capacitor/core';
 
 import type { EchoPlugin } from './definitions';
 
-export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
+export class EchoWeb extends WebPlugin implements EchoPlugin {
   async echo(options: { value: string }) {
     console.log('ECHO', options);
     return options;
@@ -34,7 +34,7 @@ export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
 }
 ```
 
-The `EchoPlugin` interface defines the method signatures of your plugin. In TypeScript, we can ensure the web implementation (the `EchoPluginWeb` class) correctly implements the interface.
+The `EchoPlugin` interface defines the method signatures of your plugin. In TypeScript, we can ensure the web implementation (the `EchoWeb` class) correctly implements the interface.
 
 ## Permissions
 
@@ -89,7 +89,7 @@ In `src/web.ts`, add the `checkPermissions()` and `requestPermissions()` methods
 ```diff-typescript
 +import { PermissionStatus } from './definitions';
 
- export class EchoPluginWeb extends WebPlugin implements EchoPlugin {
+ export class EchoWeb extends WebPlugin implements EchoPlugin {
    async echo(options: { value: string }) {
      ...
    }
