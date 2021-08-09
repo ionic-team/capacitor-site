@@ -46,8 +46,7 @@ Routing should be implemented in `app.component.ts`. Start by importing `NgZone`
 ```typescript
 import { Component, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { Plugins } from '@capacitor/core';
-const { App } = Plugins;
+import { App, URLOpenListenerEvent } from '@capacitor/app';
 ```
 
 Next, add `Router` and `NgZone` to the constructor:
@@ -62,11 +61,11 @@ Last, listen for the `appUrlOpen` event, and redirect when a deep link is found:
 
 ```typescript
 initializeApp() {
-    App.addListener('appUrlOpen', (data: any) => {
+    App.addListener('appUrlOpen', (event: URLOpenListenerEvent) => {
         this.zone.run(() => {
             // Example url: https://beerswift.app/tabs/tab2
             // slug = /tabs/tab2
-            const slug = data.url.split(".app").pop();
+            const slug = event.url.split(".app").pop();
             if (slug) {
                 this.router.navigateByUrl(slug);
             }
@@ -84,8 +83,7 @@ There's a variety of options for React. One approach is to wrap the App API list
 ```typescript
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Plugins } from '@capacitor/core';
-const { App: CapApp } = Plugins;
+import { App, URLOpenListenerEvent } from '@capacitor/app';
 ```
 
 Next, define the AppUrlListener component, listening for the `appUrlOpen` event then redirecting when a deep link is found:
@@ -94,10 +92,10 @@ Next, define the AppUrlListener component, listening for the `appUrlOpen` event 
 const AppUrlListener: React.FC<any> = () => {
   let history = useHistory();
   useEffect(() => {
-    CapApp.addListener('appUrlOpen', (data: any) => {
+    App.addListener('appUrlOpen', (event: URLOpenListenerEvent) => {
       // Example url: https://beerswift.app/tabs/tab2
       // slug = /tabs/tab2
-      const slug = data.url.split('.app').pop();
+      const slug = event.url.split('.app').pop();
       if (slug) {
         history.push(slug);
       }
@@ -143,8 +141,7 @@ VueJS offers a first party routing system that integrates natively with Vue call
 First we import the capacitor `App` from plugins along with `Vue` and `VueRouter`.
 
 ```typescript
-import { Plugins } from '@capacitor/core';
-const { App } = Plugins;
+import { App, URLOpenListenerEvent } from '@capacitor/app';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 ```
@@ -170,10 +167,10 @@ const VueApp = new Vue({
 Finally, we need to register our app for deep linking. To do that, we add an event listener to the `appUrlOpen` event on the Capacitor App. Capacitor will pick this up, then we hand it off to Vue Router to navigate to the page requested.
 
 ```typescript
-App.addListener('appUrlOpen', function (data) {
+App.addListener('appUrlOpen', function (event: URLOpenListenerEvent) {
   // Example url: https://beerswift.app/tabs/tabs2
   // slug = /tabs/tabs2
-  const slug = data.url.split('.app').pop();
+  const slug = event.url.split('.app').pop();
 
   // We only push to the route if there is a slug present
   if (slug) {
