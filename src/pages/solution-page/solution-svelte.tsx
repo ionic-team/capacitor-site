@@ -108,7 +108,6 @@ npx cap add ios
 
   let loc = null;
   async function getCurrentPosition(){
-    const { Geolocation } = Plugins;
     const res = await Geolocation.getCurrentPosition()
     loc = res
   }

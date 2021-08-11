@@ -113,7 +113,6 @@ export class GeolocationPage {
   loc: GeolocationPosition;
   constructor() {}
   async getCurrentPosition() {
-    const { Geolocation } = Plugins;
     this.loc = await Geolocation.getCurrentPosition();
   }
 }

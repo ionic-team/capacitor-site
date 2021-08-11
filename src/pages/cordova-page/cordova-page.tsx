@@ -219,9 +219,7 @@ const photo = await this.camera.getPicture({
 });
 `, //----------------------------------
                 `
-import { Plugins } from '@capacitor/core';
-
-const { Camera } = Plugins;
+import { Camera } from '@capacitor/camera';
 
 const photo = await Camera.getPhoto({
   quality: 100,
