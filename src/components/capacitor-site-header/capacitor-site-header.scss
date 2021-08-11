@@ -12,6 +12,7 @@
   background: var(--c-background);
   transform: translate(0px);
   z-index: 1000;
+  border-block-start: 1px solid rgba(0, 21, 58, 0.06);
   border-block-end: 1px solid rgba(0, 21, 58, 0.06);
 
   transition: box-shadow 0.2s ease-out;
