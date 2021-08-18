@@ -41,13 +41,13 @@ For example, let's say you have the following directory structure:
 | |
 | +- @capacitor
 |   |
-|   +- storeage.ts
+|   +- storage.ts
 |   +- toast.ts
 ...
 +- src
 ```
 
-Your tests will use the stubs defined in `stroage.ts` and `toast.ts` rather than the real `@capactor/storage` and `@capacitor/toast` plugins from `node_modules`.
+Your tests will use the stubs defined in `storage.ts` and `toast.ts` rather than the real `@capactor/storage` and `@capacitor/toast` plugins from `node_modules`.
 
 ### Jasmine
 
