@@ -101,3 +101,15 @@ brew link --overwrite ruby
 Finally, make sure your `PATH` environment variable does not put `/usr/local/bin` after `$PATH`, but rather _before_ it.
 
 See [this StackOverflow issue](https://stackoverflow.com/questions/38993527/cocoapods-failed-to-connect-to-github-to-update-the-cocoapods-specs-specs-repo/48996424#48996424) for other possible solutions to this problem.
+
+## Plugin Not Implemented
+
+On iOS, this can happen if Capacitor doesn't find the plugins or can't inject its code into the WebView.
+
+First of all, make sure the plugin is installed and appears in the `package.json`.
+
+Then, run `npx cap sync ios`.
+
+Finally, check that the plugin is in `ios/App/Podfile`. If the plugin is not listed, make sure your Podfile looks like [this one](https://github.com/ionic-team/capacitor/blob/main/ios-template/App/Podfile) and run `npx cap sync` again.
+
+If still getting the "Plugin not implemented" error, make sure you don't have `WKAppBoundDomains` key in `ios/App/App/Info.plist`, that prevents Capacitor's and Plugins code from injecting. Remove the key if not needed, or if it can't be removed, add `limitsNavigationsToAppBoundDomains` to your capacitor config file with `true` value inside the `ios` object.
