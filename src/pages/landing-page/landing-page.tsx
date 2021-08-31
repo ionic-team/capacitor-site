@@ -25,7 +25,7 @@ export class LandingPage {
 
   render() {
     const {
-      // Top,
+      Top,
       Started,
       Native,
       Features,
@@ -38,8 +38,8 @@ export class LandingPage {
     return (
       <Host>
         <meta-tags />
-        {/* <Top /> */}
-        <top-parallax />
+        <Top />
+        {/* <top-parallax /> */}
         <Started />
         <Ebook />
         <Native />
@@ -53,57 +53,57 @@ export class LandingPage {
     );
   }
 
-  // Top = () => {
-  //   const { Announcement } = this;
-  //   const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
-  //   const { primary, secondary } = top__ctas[0];
+  Top = () => {
+    const { Announcement } = this;
+    const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
+    const { primary, secondary } = top__ctas[0];
 
-  //   return (
-  //     <section id="top">
-  //       <div class="background"></div>
-  //       <ResponsiveContainer>
-  //         <div class="heading-group">
-  //           <Announcement />
-  //           <PrismicRichText richText={top} paragraphLevel={2} />
-  //           <div class="buttons">
-  //             <Button
-  //               kind="round"
-  //               anchor
-  //               {...href('/docs/getting-started')}
-  //               class="primary"
-  //             >
-  //               {primary} <span class="arrow"> -&gt;</span>
-  //             </Button>
-  //             <Button
-  //               kind="round"
-  //               variation="light"
-  //               anchor
-  //               {...href('docs/plugins')}
-  //               class="secondary"
-  //             >
-  //               {secondary}
-  //             </Button>
-  //           </div>
-  //           <a class="link | ui-paragraph-4" {...href('/cordova')}>
-  //             {top__link}
-  //             <span class="arrow"> -&gt;</span>
-  //           </a>
-  //           <PrismicResponsiveImage
-  //             loading="eager"
-  //             image={top__icons}
-  //             params={{
-  //               w: '91',
-  //               h: '16',
-  //             }}
-  //           />
-  //         </div>
-  //         <div class="image-wrapper">
-  //           <PrismicResponsiveImage loading="eager" image={top__hero} />
-  //         </div>
-  //       </ResponsiveContainer>
-  //     </section>
-  //   );
-  // };
+    return (
+      <section id="top">
+        <div class="background"></div>
+        <ResponsiveContainer>
+          <div class="heading-group">
+            <Announcement />
+            <PrismicRichText richText={top} paragraphLevel={2} />
+            <div class="buttons">
+              <Button
+                kind="round"
+                anchor
+                {...href('/docs/getting-started')}
+                class="primary"
+              >
+                {primary} <span class="arrow"> -&gt;</span>
+              </Button>
+              <Button
+                kind="round"
+                variation="light"
+                anchor
+                {...href('docs/plugins')}
+                class="secondary"
+              >
+                {secondary}
+              </Button>
+            </div>
+            <a class="link | ui-paragraph-4" {...href('/cordova')}>
+              {top__link}
+              <span class="arrow"> -&gt;</span>
+            </a>
+            <PrismicResponsiveImage
+              loading="eager"
+              image={top__icons}
+              params={{
+                w: '91',
+                h: '16',
+              }}
+            />
+          </div>
+          <div class="image-wrapper">
+            <PrismicResponsiveImage loading="eager" image={top__hero} />
+          </div>
+        </ResponsiveContainer>
+      </section>
+    );
+  };
 
   Announcement = () => {
     const {

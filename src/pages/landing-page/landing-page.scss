@@ -45,110 +45,110 @@ h6 {
   display: block;
 }
 
-// #top {
-//   overflow: hidden;
-//   position: relative;
-//   margin-bottom: 178px;
+#top {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 178px;
 
-//   .ui-container {
-//     display: flex;
-//     // flex-wrap: wrap;
-//     margin-block-start: clamp(64px, 17vh, 154px);
+  .ui-container {
+    display: flex;
+    // flex-wrap: wrap;
+    margin-block-start: clamp(64px, 17vh, 154px);
 
-//     @media screen and (max-width: $screen-xs) {
-//       margin-block-start: 240px;
-//       flex-direction: column-reverse;
-//     }
+    @media screen and (max-width: $screen-xs) {
+      margin-block-start: 240px;
+      flex-direction: column-reverse;
+    }
 
-//     > * {
-//       flex-grow: 1;
-//     }
-//   }
+    > * {
+      flex-grow: 1;
+    }
+  }
 
-//   .background {
-//     position: absolute;
-//     bottom: 100px;
+  .background {
+    position: absolute;
+    bottom: 100px;
 
-//     width: 1800px;
-//     height: 1800px;
-//     left: calc(calc((1800px - 100%) / -2) - 50px);
+    width: 1800px;
+    height: 1800px;
+    left: calc(calc((1800px - 100%) / -2) - 50px);
 
-//     background: #f6f9fc;
-//     transform: rotate(29deg) skewX(-30deg);
+    background: #f6f9fc;
+    transform: rotate(29deg) skewX(-30deg);
 
-//     z-index: -1;
-//   }
+    z-index: -1;
+  }
 
-//   .heading-group {
-//     position: relative;
+  .heading-group {
+    position: relative;
 
-//     .ui-heading {
-//       max-width: 504px;
-//     }
-//     .ui-paragraph {
-//       margin-block-end: var(--space-6);
-//       max-width: 448px;
-//     }
-//   }
+    .ui-heading {
+      max-width: 504px;
+    }
+    .ui-paragraph {
+      margin-block-end: var(--space-6);
+      max-width: 448px;
+    }
+  }
 
-//   .buttons {
-//     display: flex;
-//     flex-wrap: wrap;
-//     margin-inline-start: -15px;
-//     margin-block-start: -16px;
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline-start: -15px;
+    margin-block-start: -16px;
 
-//     .ui-button {
-//       margin-inline-start: 15px;
-//       margin-block-start: 16px;
+    .ui-button {
+      margin-inline-start: 15px;
+      margin-block-start: 16px;
 
-//       &.primary {
-//         --c-background: var(--c-capacitor-blue);
-//         --c-background--hover: #24a7ff;
-//         --c-background--active: #0090f0;
-//         --c-focus: #bde4ff;
-//       }
-//       &.secondary {
-//         --c-text: var(--c-capacitor-blue);
-//         --c-focus: #80caff;
-//       }
-//     }
-//   }
+      &.primary {
+        --c-background: var(--c-capacitor-blue);
+        --c-background--hover: #24a7ff;
+        --c-background--active: #0090f0;
+        --c-focus: #bde4ff;
+      }
+      &.secondary {
+        --c-text: var(--c-capacitor-blue);
+        --c-focus: #80caff;
+      }
+    }
+  }
 
-//   .link {
-//     margin-block-start: var(--space-2);
-//     margin-block-end: var(--space-4);
-//   }
+  .link {
+    margin-block-start: var(--space-2);
+    margin-block-end: var(--space-4);
+  }
 
-//   .image-wrapper {
-//     display: flex;
-//     justify-content: flex-end;
-//     align-items: center;
-//     position: relative;
-//     top: -64px;
-//     right: -32px;
+  .image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    top: -64px;
+    right: -32px;
 
-//     @media screen and (max-width: $screen-xs) {
-//       justify-content: center;
-//       right: initial;
-//       top: initial;
-//     }
+    @media screen and (max-width: $screen-xs) {
+      justify-content: center;
+      right: initial;
+      top: initial;
+    }
 
-//     img {
-//       width: 100%;
+    img {
+      width: 100%;
 
-//       @media screen and (max-width: $screen-xs) {
-//         --width: 200px;
-//         max-width: var(--width);
-//         left: min(
-//           calc(480px / 2 - var(--width) / 2),
-//           100% / 2 - var(--width) / 2
-//         );
-//         top: -220px;
-//         position: absolute;
-//       }
-//     }
-//   }
-// }
+      @media screen and (max-width: $screen-xs) {
+        --width: 200px;
+        max-width: var(--width);
+        left: min(
+          calc(480px / 2 - var(--width) / 2),
+          100% / 2 - var(--width) / 2
+        );
+        top: -220px;
+        position: absolute;
+      }
+    }
+  }
+}
 
 #announcement {
   position: absolute;
