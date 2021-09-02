@@ -79,7 +79,7 @@
 }
 //#endregion
 
-// #region ------------- IONICONF STYLES ------------------
+// #region ------------- Q3 EVENT 2021 STYLES ------------------
 :host(.ui-announcement-bar--ioniconf) {
   background: #000 var(--asset-path);
   background-size: 1800px;
@@ -140,3 +140,47 @@
   }
 }
 //#endregion
+
+:host(.ui-announcement-bar--q3-event-2021) {
+  background: #03060b var(--asset-path);
+  background-size: 1800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .ui-container {
+    min-height: 4.5rem;
+  }
+
+  .ui-paragraph {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #cad3e1;
+
+    strong,
+    b {
+      color: #fff;
+    }
+  }
+
+  .ui-button {
+    --c-background: #fff;
+    --c-focus: rgba(255, 255, 255, 0.03);
+    --c-background--hover: rgba(255, 255, 255, 0.9);
+    --c-background--active: rgba(255, 255, 255, 0.9);
+    --c-text: #03060b;
+
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    padding: 0.375rem 0.675rem;
+
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+}
