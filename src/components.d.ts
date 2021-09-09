@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BlogData } from "src/data.server/blog";
 import { DocsData, DocsTemplate } from "./data.server/models";
+import { JSX } from "@stencil/core";
 import { HeadingData, PageNavigation, TableOfContents } from "@stencil/ssg";
 import { SiteHeader } from "./components/capacitor-site-header/capacitor-site-header";
 import { DocsTemplate as DocsTemplate1 } from "src/data.server/models";
@@ -89,6 +90,13 @@ export namespace Components {
     }
     interface DocsComponent {
         "data": DocsData;
+    }
+    interface DocsDropdown {
+        "align": 'left' | 'right' | 'center';
+        "close": () => Promise<void>;
+        "icon"?: (props: any) => JSX.Element;
+        "open": () => Promise<void>;
+        "toggle": () => Promise<void>;
     }
     interface DocsMenu {
         "activePath": string;
@@ -292,6 +300,12 @@ declare global {
         prototype: HTMLDocsComponentElement;
         new (): HTMLDocsComponentElement;
     };
+    interface HTMLDocsDropdownElement extends Components.DocsDropdown, HTMLStencilElement {
+    }
+    var HTMLDocsDropdownElement: {
+        prototype: HTMLDocsDropdownElement;
+        new (): HTMLDocsDropdownElement;
+    };
     interface HTMLDocsMenuElement extends Components.DocsMenu, HTMLStencilElement {
     }
     var HTMLDocsMenuElement: {
@@ -418,6 +432,7 @@ declare global {
         "cordova-page": HTMLCordovaPageElement;
         "doc-snippet": HTMLDocSnippetElement;
         "docs-component": HTMLDocsComponentElement;
+        "docs-dropdown": HTMLDocsDropdownElement;
         "docs-menu": HTMLDocsMenuElement;
         "docs-search": HTMLDocsSearchElement;
         "enterprise-page": HTMLEnterprisePageElement;
@@ -519,6 +534,10 @@ declare namespace LocalJSX {
     interface DocsComponent {
         "data"?: DocsData;
     }
+    interface DocsDropdown {
+        "align"?: 'left' | 'right' | 'center';
+        "icon"?: (props: any) => JSX.Element;
+    }
     interface DocsMenu {
         "activePath"?: string;
         "onMenuToggled"?: (event: CustomEvent<any>) => void;
@@ -605,6 +624,7 @@ declare namespace LocalJSX {
         "cordova-page": CordovaPage;
         "doc-snippet": DocSnippet;
         "docs-component": DocsComponent;
+        "docs-dropdown": DocsDropdown;
         "docs-menu": DocsMenu;
         "docs-search": DocsSearch;
         "enterprise-page": EnterprisePage;
@@ -651,6 +671,7 @@ declare module "@stencil/core" {
             "cordova-page": LocalJSX.CordovaPage & JSXBase.HTMLAttributes<HTMLCordovaPageElement>;
             "doc-snippet": LocalJSX.DocSnippet & JSXBase.HTMLAttributes<HTMLDocSnippetElement>;
             "docs-component": LocalJSX.DocsComponent & JSXBase.HTMLAttributes<HTMLDocsComponentElement>;
+            "docs-dropdown": LocalJSX.DocsDropdown & JSXBase.HTMLAttributes<HTMLDocsDropdownElement>;
             "docs-menu": LocalJSX.DocsMenu & JSXBase.HTMLAttributes<HTMLDocsMenuElement>;
             "docs-search": LocalJSX.DocsSearch & JSXBase.HTMLAttributes<HTMLDocsSearchElement>;
             "enterprise-page": LocalJSX.EnterprisePage & JSXBase.HTMLAttributes<HTMLEnterprisePageElement>;

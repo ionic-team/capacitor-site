@@ -12,6 +12,7 @@ import Router, { docsVersionHref } from '../../router';
 import { Button } from '@ionic-internal/ionic-ds';
 import { JSXBase } from '@stencil/core/internal';
 import { DocsTemplate } from 'src/data.server/models';
+import { Translation } from '../../icons';
 
 @Component({
   tag: 'site-header',
@@ -202,6 +203,24 @@ export class SiteHeader implements ComponentInterface {
           <more-button onClick={() => this.toggleExpanded()} />
 
           <div class="ctas">
+            <docs-dropdown
+              icon={Translation}
+              align="right"
+              class="label-sm-only"
+            >
+              <section>
+                <a href="https://capacitorjs.com/" class="link-active">
+                  English
+                  <svg viewBox="0 0 512 512" width="14">
+                    <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
+                  </svg>
+                </a>
+                <a href="https://capacitorjs.jp/" target="_blank">
+                  日本語
+                </a>
+              </section>
+            </docs-dropdown>
+
             <a
               href="https://github.com/ionic-team/capacitor"
               target="_blank"

@@ -171,8 +171,12 @@ a.ui-paragraph-4 {
   white-space: nowrap;
   margin-inline-start: var(--space-1);
 
-  > * {
+  > a {
     margin-inline-start: var(--space-3);
+  }
+
+  docs-dropdown {
+    margin-inline-end: -1rem;
   }
 
   .ui-button.primary {
