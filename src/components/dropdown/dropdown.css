@@ -116,8 +116,6 @@
 }
 
 .Dropdown-button {
-  border: solid 1px #dee3ea;
-  border-radius: 6px;
   color: var(--c-indigo-80);
   padding: 10px;
   transition: border-color 100ms ease;
