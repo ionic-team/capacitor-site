@@ -172,6 +172,8 @@ a.ui-paragraph-4 {
   margin-inline-start: var(--space-1);
 
   > a {
+    display: flex;
+    align-items: center;
     margin-inline-start: var(--space-3);
   }
 
