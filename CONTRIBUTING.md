@@ -10,7 +10,7 @@ The Capacitor website (`capacitor-site/`) and documentation (`capacitor-site/pag
 1. Run `npm install`.
 1. Run `npm start` to build and deploy the website/docs to localhost.
 
-> Note: Content updated while the dev server is running won't be reflected locally. Stop the process, run `npm run site-structure`, then re-run `npm start`.
+> Note: Content updated while the dev server is running won't be reflected locally. Stop the process, then re-run `npm start`.
 
 ## Adding a new page to the sidebar
 
