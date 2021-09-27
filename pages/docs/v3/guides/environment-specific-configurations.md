@@ -26,13 +26,13 @@ The Capacitor app must use TypeScript for configuration. This guide uses `capaci
 Before adding any native platforms to the project, you must build the Capacitor App at least once.
 
 ```bash
-npx run build
+npm run build
 ```
 
 Once built, you can add the platforms.
 
 ```bash
-npm install @capacitor/{ios,android}
+npm install @capacitor/ios @capacitor/android
 npx cap add ios
 npx cap add android
 ```
@@ -57,7 +57,7 @@ You can find additional information on iOS targets [at this link](https://develo
 3. Find the "App copy-Info" file in the Project Navigator panel and press the `Enter` key to rename it. Set the file's name to "App QA-Info.plist".
 4. Return to the project's settings. Ensuring that the "App QA" target is selected, open the _Build Settings_ section. Scroll down to Packaging and change the **Info.plist File** entry to "App QA-Info.plist".
 
-The iOS project now has two runnable schemes: "App" and "App QA". Capacitor's configuration file allows you to supply which scheme to build during the `open` and `run` commands.
+The iOS project now has two runnable schemes: "App" and "App QA". Capacitor's configuration file allows you to supply which scheme to build during the `run` command.
 
 You can find additional information on iOS schemes [at this link](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/ManagingSchemes.html).
 
@@ -100,7 +100,7 @@ ios: {
 }
 ```
 
-The `scheme` property tells Capacitor which iOS scheme to use for the `open` and `run` commands. Test this out; run `npx cap run ios` and you'll see that the app name is different.
+The `scheme` property tells Capacitor which iOS scheme to use for the `run` command. Test this out; run `npx cap run ios` and you'll see that the app name is different.
 
 ## Setup Android product flavors
 
@@ -161,7 +161,7 @@ android: {
  },
 ```
 
-Test this out; run `npx cap run open` and you'll see that the app name is different.
+Test this out; run `npx cap run android` and you'll see that the app name is different.
 
 ## Dynamically build for different environments
 
