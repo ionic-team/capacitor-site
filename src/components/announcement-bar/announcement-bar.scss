@@ -166,11 +166,11 @@
   }
 
   .ui-button {
-    --c-background: #ef3442;
-    --c-focus: rgba(239, 52, 63, 0.03);
-    --c-background--hover: rgba(239, 52, 63, 0.9);
-    --c-background--active: rgba(239, 52, 63, 0.9);
-    --c-text: #fff;
+    --c-background: #fff;
+    --c-focus: rgba(255, 255, 255, 0.03);
+    --c-background--hover: rgba(255, 255, 255, 0.9);
+    --c-background--active: rgba(255, 255, 255, 0.9);
+    --c-text: #03060b;
 
     font-size: 12px;
     line-height: 14px;
