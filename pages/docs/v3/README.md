@@ -25,6 +25,7 @@
   - [CI/CD](guides/ci-cd.md)
   - [Deep Links](guides/deep-links.md)
   - [Deploying and Updating](guides/deploying-updates.md)
+  - [Environment Specific Configurations](guides/environment-specific-configurations.md)
   - [In App Purchases](guides/in-app-purchases.md)
   - [Live Reload](guides/live-reload.md)
   - [Mocking Plugins](guides/mocking-plugins.md)
