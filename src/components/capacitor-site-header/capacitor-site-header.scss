@@ -88,6 +88,60 @@ header {
     margin-inline-end: var(--container);
     display: block;
   }
+
+  .jobs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    background: linear-gradient(90deg, #62bdff 1.23%, #7489ff 99.18%);
+    border-radius: 100px;
+
+    padding: 5px 8px;
+  }
+
+  .jobs-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-inline-end: 2rem;
+
+    @media (max-width: 1439px) {
+      display: none;
+    }
+
+    .jobs {
+      font-size: 0.75rem;
+    }
+
+    .jobs .start {
+      display: flex;
+      align-items: center;
+
+      color: #f3faff;
+      font-weight: 400;
+
+      margin-inline-end: 8px;
+    }
+    .jobs .start svg {
+      margin-inline-end: 4px;
+    }
+
+    .jobs .end {
+      display: flex;
+      align-items: center;
+
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .jobs .end svg {
+      transition: transform 0.1s ease-out;
+    }
+    .jobs:hover .end svg {
+      transform: translateX(1px);
+    }
+  }
 }
 
 app-menu-toggle {
