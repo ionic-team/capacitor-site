@@ -56,6 +56,23 @@ Within `capacitor.config.json`, create a `server` entry then configure the `url`
 },
 ```
 
+> Using with Nuxt CLI, use `npm run dev`
+
+Copy the link Nuxt is listening on: 
+```bash
+ℹ Listening on: http://localhost:3000/
+```
+
+Within `capacitor.config.json`, create a `server` entry then configure the `url` field using the local web server's IP address and port Nuxt is Listening on:
+
+
+```json
+"server": {
+  "url": "http://localhost:3000/",
+  "cleartext": true
+},
+```
+
 Next, run `npx cap copy` to copy the updated Capacitor config into all native projects.
 
 Open the native IDE if it's not already open:
