@@ -1,8 +1,4 @@
-import {
-  Button,
-  PrismicRichText,
-  ResponsiveContainer,
-} from '@ionic-internal/ionic-ds';
+import { PrismicRichText, ResponsiveContainer } from '@ionic-internal/ionic-ds';
 import { h, Prop, Component, Host, getAssetPath } from '@stencil/core';
 import { slugify } from 'src/utils/common';
 
@@ -32,6 +28,7 @@ export class AnnouncementBar {
     const {
       link: { url },
       button_text,
+      button_arrow,
       text,
       theme,
     } = this.prismicData;
@@ -57,10 +54,10 @@ export class AnnouncementBar {
         >
           <ResponsiveContainer>
             <PrismicRichText richText={text} />
-            <Button size="sm" kind="round">
+            <button>
               {button_text}
-              <span class="arrow"> -&gt;</span>
-            </Button>
+              {button_arrow && <span class="arrow"> -&gt;</span>}
+            </button>
           </ResponsiveContainer>
         </a>
       </Host>
