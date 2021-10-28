@@ -92,6 +92,7 @@ header {
   .jobs {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 
     background: linear-gradient(90deg, #62bdff 1.23%, #7489ff 99.18%);
