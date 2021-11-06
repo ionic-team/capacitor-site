@@ -32,9 +32,9 @@ This means we need a service that can do native mobile builds and tests, and als
 
 ## Appflow: Mobile CI/CD for Capacitor apps
 
-One such service that provides end-to-end Mobile CI/CD is [Appflow](https://useappflow.com/), the official Mobile CI/CD and Mobile DevOps platform for Capacitor apps.
+One such service that provides end-to-end Mobile CI/CD is [Appflow](https://ionic.io/appflow), the official Mobile CI/CD and Mobile DevOps platform for Capacitor apps.
 
-Appflow provides frequently updated, managed iOS and Android build environments. Appflow integrates with popular git services like GitLab, GitHub, and Bitbucket, to support triggering JS and native mobile builds on each commit. Appflow also supports separating builds into different channels for stakeholders, beta testers, and production users.
+Appflow provides frequently updated, managed iOS and Android build environments. Appflow integrates with popular git services like Azure DevOps, GitLab, GitHub, and Bitbucket, to support triggering JS and native mobile builds on each commit. Appflow also supports separating builds into different channels for stakeholders, beta testers, and production users. Additionally, Appflow can automatically submit your app to app stores as part of an automated workflow, and removes the need for your team to manage complicated native iOS and Android build stacks.
 
 For Capacitor developers, Appflow also offers the ability to push real-time updates to apps without app store submission, as long as those updates are at the JS/HTML/CSS layer of an app.
 
@@ -48,4 +48,4 @@ To use it in this way, use webhooks to send built assets to Appflow on each comm
 
 ## Other Mobile CI/CD Options
 
-There are other services for Mobile CI/CD, though none focused on Capacitor. Some of those options include [Visual Studio App Center](https://appcenter.ms), [Bitrise](https://www.bitrise.io/), and [Buddybuild](https://www.buddybuild.com/) (iOS only). Keep in mind none of these services currently provide remote real-time app updates for Capacitor apps.
+There are other services for Mobile CI/CD, though none focused on Capacitor. Whichever CI/CD service you prefer, Capacitor can integrate with it as Capacitor apps are just native apps. However, for remote live updates of Capacitor apps, [Appflow](https://ionic.io/appflow) is the only service with this feature.
