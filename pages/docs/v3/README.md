@@ -22,6 +22,7 @@
 - Concepts
   - [Ads](guides/ads.md)
   - [Angular](guides/angular.md)
+  - [Automated Configuration](guides/automated-configuration.md)
   - [CI/CD](guides/ci-cd.md)
   - [Deep Links](guides/deep-links.md)
   - [Deploying and Updating](guides/deploying-updates.md)
