@@ -52,6 +52,12 @@ await project.android?.getVersionCode();
 await project.android?.incrementVersionCode();
 ```
 
+The API works on a virtual filesystem to buffer changes without modifying files on the filesystem. When finished, to make sure changes are reflected in your files, run:
+
+```typescript
+await project.commit();
+```
+
 There are many other options this library can perform. To see the full list, consult the [project documentation](https://github.com/ionic-team/capacitor-configure).
 
 ## Configuration Tool
