@@ -11,6 +11,8 @@ Many large-scale apps need to automate the configuration of their Capacitor proj
 
 Capacitor comes with a two useful packages that can be used for managing projects: `@capacitor/project` and `@capacitor/configure`. `@capacitor/project` is a lower-level project management library and `@capacitor/configure` is an automated tool that uses the library under the hood but presents a more convenient configuration option for certain use cases.
 
+Both projects and their documentation are available in the [Capacitor Configure repo](https://github.com/ionic-team/capacitor-configure).
+
 ## Project API
 
 The `@capacitor/project` library provides a typed JavaScript interface for Capacitor projects and the native iOS and Android projects that they contain.
