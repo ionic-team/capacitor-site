@@ -1,0 +1,31 @@
+{
+  "name": "capacitor-site-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@ionic-internal/ionic-ds": "^7.1.0",
+    "@svgr/webpack": "^5.5.0",
+    "@types/styled-components": "^5.1.15",
+    "clsx": "^1.1.1",
+    "next": "12.0.3",
+    "prismic-reactjs": "^1.3.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "@types/prismic-dom": "^2.1.1",
+    "@types/react": "^17.0.34",
+    "babel-plugin-prismjs": "^2.1.0",
+    "next-transpile-modules": "^9.0.0",
+    "prismic-javascript": "^3.0.2",
+    "sass": "^1.43.4",
+    "typescript": "^4.4.4"
+  }
+}
