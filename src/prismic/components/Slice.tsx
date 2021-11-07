@@ -1,5 +1,5 @@
-import { trackClick } from "../../../util/tracking-service";
-import Blockquote from "../../ui/Blockquote";
+import Blockquote from "../../components/ui/Blockquote";
+import { trackClick } from "../../util/tracking-service";
 import PrismicRichText, { htmlSerializer } from "./RichText";
 
 interface PrismicSlice {

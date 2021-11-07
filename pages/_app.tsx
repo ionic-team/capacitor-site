@@ -6,7 +6,7 @@ import paragraphPro from "../styles/themes/paragraphStyleMap--pro";
 
 import "@ionic-internal/ionic-ds/dist/reset.css";
 import "@ionic-internal/ionic-ds/dist/fonts.scss";
-import Breakpoints from "../components/ui/Breakpoints";
+import Breakpoints from "../src/components/ui/Breakpoints";
 
 const MyApp = ({ Component, pageProps }) => {
   return (

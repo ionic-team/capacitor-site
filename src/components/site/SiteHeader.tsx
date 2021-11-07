@@ -1,11 +1,12 @@
-import { Button } from "@ionic-internal/ionic-ds";
 // import { DocsTemplate } from "src/data.server/models";
-import { Translation } from "../../icons";
+import { Translation } from "../../../icons";
 import clsx from "clsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { docsVersionHref } from "../../routing";
 import { useRouter } from "next/router";
+
+import { docsVersionHref } from "../../../routing";
+import Button from "../ui/Button";
 
 const HEIGHT_ABOVE_BAR = 72;
 

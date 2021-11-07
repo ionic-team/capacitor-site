@@ -1,19 +1,20 @@
 import { ThemeProvider } from "styled-components";
-import { Button, Heading, Paragraph } from "@ionic-internal/ionic-ds";
+import { Heading, Paragraph } from "@ionic-internal/ionic-ds";
 import Link from "next/link";
 
-import SiteHeader from "../../components/site/SiteHeader";
+import SiteHeader from "../../src/components/site/SiteHeader";
 import Config from "../../config";
-import SiteMeta from "../../components/site/SiteMeta";
+import SiteMeta from "../../src/components/site/SiteMeta";
 import {
   PrismicResponsiveImage,
   PrismicRichText,
-} from "../../components/prismic";
-import ResponsiveContainer from "../../components/ui/ResponsiveContainer";
+} from "../../src/components/prismic";
+import ResponsiveContainer from "../../src/components/ui/ResponsiveContainer";
 import { useState } from "react";
-import Grid from "../../components/ui/Grid";
-import Col from "../../components/ui/Col";
-import Breakpoint from "../../components/ui/Breakpoint";
+import Button from "../../src/components/ui/Button";
+import Grid from "../../src/components/ui/Grid";
+import Col from "../../src/components/ui/Col";
+import Breakpoint from "../../src/components/ui/Breakpoint";
 
 export default function Index({ pageData }) {
   return (

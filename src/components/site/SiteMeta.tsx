@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import Config from "../../config";
+import Config from "../../../config";
 
 interface Props {
   title?: string;

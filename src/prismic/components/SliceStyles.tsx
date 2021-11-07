@@ -1,5 +1,5 @@
-import { css } from "styled-components";
-import Breakpoints from "../../ui/Breakpoints";
+import { css } from 'styled-components';
+import Breakpoints from '../../styles/breakpoints';
 
 const SliceStyles = css`
   .ui-blockquote {
@@ -58,19 +58,19 @@ const SliceStyles = css`
 
   .prismic-ad {
     display: block;
-    margin: ${({ theme }) => theme.space["64"]} 0
-      ${({ theme }) => theme.space["80"]};
+    margin: ${({ theme }) => theme.space['64']} 0
+      ${({ theme }) => theme.space['80']};
     clear: both;
 
     a {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: ${({ theme }) => theme.space["32"]} 368px
-        ${({ theme }) => theme.space["32"]} ${({ theme }) => theme.space["32"]};
+      padding: ${({ theme }) => theme.space['32']} 368px
+        ${({ theme }) => theme.space['32']} ${({ theme }) => theme.space['32']};
       border: ${({ theme }) => theme.borders.regular};
-      border-color: ${({ theme }) => theme.colors.indigo["30"]};
-      border-radius: ${({ theme }) => theme.radii["8"]};
+      border-color: ${({ theme }) => theme.colors.indigo['30']};
+      border-radius: ${({ theme }) => theme.radii['8']};
       overflow: hidden;
       position: relative;
       min-height: 225px;
@@ -92,18 +92,18 @@ const SliceStyles = css`
       }
 
       &:hover {
-        box-shadow: ${({ theme }) => theme.shadows["3"]};
+        box-shadow: ${({ theme }) => theme.shadows['3']};
       }
     }
 
     .ds-heading {
-      color: ${({ theme }) => theme.colors.indigo["100"]};
-      margin-bottom: ${({ theme }) => theme.space["12"]};
+      color: ${({ theme }) => theme.colors.indigo['100']};
+      margin-bottom: ${({ theme }) => theme.space['12']};
     }
 
     @media (max-width: ${Breakpoints.screenMdMax}) {
       a {
-        padding-right: ${({ theme }) => theme.space["32"]};
+        padding-right: ${({ theme }) => theme.space['32']};
 
         .prismic-ad__image {
           opacity: 0.25;

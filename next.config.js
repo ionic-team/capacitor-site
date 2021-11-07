@@ -1,3 +1,5 @@
+const path = require("path");
+
 const withTM = require("next-transpile-modules")(["@ionic-internal/ionic-ds"]);
 
 module.exports = withTM({

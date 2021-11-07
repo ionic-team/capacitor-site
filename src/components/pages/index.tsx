@@ -1,21 +1,18 @@
-import { ThemeProvider } from "styled-components";
-import { Button, Heading, Paragraph } from "@ionic-internal/ionic-ds";
+import { Heading, Paragraph } from "@ionic-internal/ionic-ds";
 import Link from "next/link";
 
-import SiteHeader from "../../components/site/SiteHeader";
-import Config from "../../config";
-import SiteMeta from "../../components/site/SiteMeta";
-import {
-  PrismicResponsiveImage,
-  PrismicRichText,
-} from "../../components/prismic";
-import ResponsiveContainer from "../../components/ui/ResponsiveContainer";
+import Config from "../../../config";
+import SiteHeader from "../site/SiteHeader";
+import SiteMeta from "../site/SiteMeta";
+import { PrismicResponsiveImage, PrismicRichText } from "../../prismic";
 import { useState } from "react";
-import Grid from "../../components/ui/Grid";
-import Col from "../../components/ui/Col";
-import Breakpoint from "../../components/ui/Breakpoint";
+import Button from "../ui/Button";
+import ResponsiveContainer from "../ui/ResponsiveContainer";
+import Grid from "../ui/Grid";
+import Col from "../ui/Col";
+import Breakpoint from "../ui/Breakpoint";
 
-export default function Index({ pageData }) {
+export default function Index(pageData) {
   return (
     <>
       <SiteMeta />
@@ -49,7 +46,7 @@ const Top = ({
       <div className="background"></div>
       <ResponsiveContainer>
         <div className="heading-group">
-          <Announcement {...pageData} />
+          <Announcement {...pageData.announcement} />
 
           <PrismicRichText render={top} paragraphLevel={2} />
           <div className="buttons">
@@ -97,7 +94,7 @@ const Top = ({
 const Announcement = ({ tag_text, desktop_text, mobile_text, link }) => {
   const { target, url } = link;
 
-  const newUrl = url.replace(window.location.origin, "");
+  const newUrl = url.replace(Config.BaseUrl, "");
 
   return (
     <Link href={newUrl}>
