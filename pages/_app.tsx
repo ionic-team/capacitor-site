@@ -8,8 +8,6 @@ import "@ionic-internal/ionic-ds/dist/reset.css";
 import "@ionic-internal/ionic-ds/dist/fonts.scss";
 import Breakpoints from "../components/ui/Breakpoints";
 
-console.log("Loaded tokens", tokens);
-
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>

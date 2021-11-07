@@ -133,7 +133,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g clip-path="url(#clip0)" fill="#D0FDFF">
+                <g clipPath="url(#clip0)" fill="#D0FDFF">
                   <path d="M4.4 2.9a.65.65 0 011.22 0l.8 2.25c.07.18.22.33.4.4l2.25.8a.65.65 0 010 1.22l-2.25.8a.65.65 0 00-.4.4l-.8 2.25a.65.65 0 01-1.22 0l-.8-2.25a.65.65 0 00-.4-.4l-2.25-.8a.65.65 0 010-1.22l2.25-.8c.18-.07.33-.22.4-.4l.8-2.25zM9.04 1.2c.15-.4.72-.4.87 0l.29.81c.04.13.14.23.27.28l.8.29c.41.14.41.72 0 .87l-.8.28a.46.46 0 00-.27.28l-.3.8c-.14.41-.71.41-.86 0l-.29-.8a.46.46 0 00-.28-.28l-.8-.28a.46.46 0 010-.87l.8-.3a.46.46 0 00.28-.27l.29-.8zM1.5.48c.1-.3.5-.3.6 0l.24.65c.03.1.1.16.2.2l.65.23c.29.1.29.5 0 .61l-.65.24c-.1.03-.17.1-.2.2l-.23.65c-.1.28-.51.28-.62 0l-.23-.66a.32.32 0 00-.2-.2l-.65-.23a.32.32 0 010-.6l.65-.24c.1-.04.17-.1.2-.2l.23-.65z" />
                 </g>
                 <defs>
@@ -157,9 +157,9 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
                 <path
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="48"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="48"
                   d="M268 112l144 144-144 144M392 256H100"
                 />
               </svg>
@@ -227,9 +227,9 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
                 <path
                   d="M9 9L1 1M9 1L1 9"
                   stroke="#B2BECD"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </button>
@@ -344,7 +344,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
               <path
                 fill="#fff"
                 d="M179.5 167.9l-.2 167.9-57.76-55.44-57.76-55.43-1.72 1.8L48.1 241.3c-6.73 7.03-12.13 13.03-12 13.34.41 1 163.29 157.08 163.92 157.08.62 0 163.46-156.09 163.88-157.09.13-.3-5.27-6.3-12-13.33l-13.96-14.58-1.72-1.8-57.76 55.44-57.76 55.44-.2-167.9L220.3 0h-40.6l-.2 167.9M0 479.69V500h400v-40.62H0v20.3"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               ></path>
             </svg>
             Install
@@ -369,8 +369,8 @@ const capacitorLogo = (props?: any) => (
       fill="#000"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M115.34 15.9a3.44 3.44 0 100-6.89 3.44 3.44 0 000 6.88zm0 3.26a6.71 6.71 0 100-13.42 6.71 6.71 0 000 13.42z"
       fill="#000"
     />
@@ -389,11 +389,11 @@ const capacitorLogo = (props?: any) => (
     <path
       d="M13.17 14.52l-3.71 3.71 1.43 1.43 2.28-5.14z"
       fill="#000"
-      fill-opacity=".2"
+      fillOpacity=".2"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M18.24 9.47L24 3.7 20.29 0l-5.76 5.75L8.8.03 5.1 3.74l15.15 15.18 3.7-3.72-5.7-5.73z"
       fill="#53B9FF"
     />
@@ -401,7 +401,7 @@ const capacitorLogo = (props?: any) => (
     <path
       d="M10.81 9.47l3.72-3.72-1.43-1.42-2.29 5.14z"
       fill="#000"
-      fill-opacity=".2"
+      fillOpacity=".2"
     />
   </svg>
 );
