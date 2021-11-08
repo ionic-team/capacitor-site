@@ -98,6 +98,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
     <SiteHeaderStyles
       ref={elm}
       className={clsx({
+        "heading-container": true,
         scrolled: scrolled,
         [`theme--${theme}`]: true,
         sticky: sticky,

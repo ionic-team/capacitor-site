@@ -1,7 +1,7 @@
 import { applyProps } from "./common";
 
 interface ButtonProps {
-  size?: "sm" | "md" | "lg" | "xl";
+  buttonSize?: "sm" | "md" | "lg" | "xl";
   kind?: "display" | "regular" | "round";
   color?:
     | "blue"
@@ -16,7 +16,7 @@ interface ButtonProps {
   anchor?: boolean;
 }
 const Button: React.FC<ButtonProps & React.HTMLProps<HTMLButtonElement>> = ({
-  size = "lg",
+  buttonSize = "lg",
   kind = "display",
   color = "blue",
   variation = "fill",
@@ -28,7 +28,7 @@ const Button: React.FC<ButtonProps & React.HTMLProps<HTMLButtonElement>> = ({
 
   let classes = [
     "ui-button",
-    `ui-button-${size}`,
+    `ui-button-${buttonSize}`,
     `ui-button-${kind}`,
     `ui-button-${color}`,
     `ui-button-${variation}`,

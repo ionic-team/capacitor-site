@@ -273,7 +273,7 @@ const Ebook = ({ ebook }: any) => {
               <PrismicRichText paragraphLevel={1} render={text} />
               <Button
                 kind="round"
-                size="md"
+                buttonSize="md"
                 onClick={() => setEbookModalOpen(true)}
               >
                 {cta} <span className="arrow"> -&gt;</span>
