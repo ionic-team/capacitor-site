@@ -1,35 +1,40 @@
-import { ThemeProvider } from "styled-components";
-import { Heading, Paragraph } from "@ionic-internal/ionic-ds";
 import Link from "next/link";
-
-import SiteHeader from "../../src/components/site/SiteHeader";
-import Config from "../../config";
-import SiteMeta from "../../src/components/site/SiteMeta";
-import {
-  PrismicResponsiveImage,
-  PrismicRichText,
-} from "../../src/components/prismic";
-import ResponsiveContainer from "../../src/components/ui/ResponsiveContainer";
 import { useState } from "react";
-import Button from "../../src/components/ui/Button";
-import Grid from "../../src/components/ui/Grid";
-import Col from "../../src/components/ui/Col";
-import Breakpoint from "../../src/components/ui/Breakpoint";
 
-export default function Index({ pageData }) {
+import { PrismicResponsiveImage, PrismicRichText } from "../prismic";
+
+import Config from "../../config";
+import SiteHeader from "../components/site/SiteHeader";
+import SiteMeta from "../components/site/SiteMeta";
+import Button from "../components/ui/Button";
+import ResponsiveContainer from "../components/ui/ResponsiveContainer";
+import Grid from "../components/ui/Grid";
+import Col from "../components/ui/Col";
+import Breakpoint from "../components/ui/Breakpoint";
+import Paragraph from "../components/ui/Paragraph";
+import Heading from "../components/ui/Heading";
+
+import AnnouncementBar from "../components/announcement-bar/AnnouncementBar";
+
+import IndexStyles from "./index.styles";
+
+export default function Index(pageData) {
   return (
     <>
-      <SiteMeta />
-      <SiteHeader />
-      <Top {...pageData} />
-      {/* <top-parallax /> */}
-      <Started {...pageData} />
-      <Ebook {...pageData} />
-      <Native {...pageData} />
-      <Features {...pageData} />
-      <Framework {...pageData} />
-      <Tweets {...pageData} />
-      <Cta {...pageData} />
+      <AnnouncementBar {...pageData.announcement_bar} />
+      <IndexStyles>
+        <SiteMeta />
+        <SiteHeader />
+        <Top {...pageData} />
+        {/* <top-parallax /> */}
+        <Started {...pageData} />
+        <Ebook {...pageData} />
+        <Native {...pageData} />
+        <Features {...pageData} />
+        <Framework {...pageData} />
+        <Tweets {...pageData} />
+        <Cta {...pageData} />
+      </IndexStyles>
     </>
   );
 }
@@ -50,7 +55,7 @@ const Top = ({
       <div className="background"></div>
       <ResponsiveContainer>
         <div className="heading-group">
-          <Announcement {...pageData} />
+          <Announcement {...pageData.announcement} />
 
           <PrismicRichText render={top} paragraphLevel={2} />
           <div className="buttons">
@@ -98,7 +103,7 @@ const Top = ({
 const Announcement = ({ tag_text, desktop_text, mobile_text, link }) => {
   const { target, url } = link;
 
-  const newUrl = url.replace(window.location.origin, "");
+  const newUrl = url.replace(Config.BaseUrl, "");
 
   return (
     <Link href={newUrl}>
@@ -213,7 +218,7 @@ public class MyAwesomePlugin: CAPPlugin {
         <PrismicRichText render={started} />
       </div>
       {started__list.map(({ number, title, text }, i) => (
-        <div className="step">
+        <div className="step" key={i}>
           <sup className="ui-heading-6">{number}</sup>
           <div className="heading-panel-wrapper">
             <div className="heading-wrapper">
@@ -222,6 +227,7 @@ public class MyAwesomePlugin: CAPPlugin {
                 <div className="platforms">
                   {started__icons.map(({ icon }, i) => (
                     <PrismicResponsiveImage
+                      key={i}
                       image={icon}
                       width={dimensions[i].split("x")[0]}
                       height={dimensions[i].split("x")[1]}
@@ -290,7 +296,7 @@ const Native = ({ native, native__list }) => {
       </div>
       <Grid>
         {native__list.map(({ icon, item }, i: number) => (
-          <Col xs={6} sm={4} cols={12}>
+          <Col xs={6} sm={4} cols={12} key={i}>
             <PrismicResponsiveImage
               image={icon}
               width={dimensions[i].split("x")[0]}
@@ -330,7 +336,7 @@ const Features = ({ features, features__list, features__link }) => {
         </div>
         <Grid>
           {features__list.map(({ icon, item }, i: number) => (
-            <Col xs={6} sm={4} md={3} cols={12}>
+            <Col xs={6} sm={4} md={3} cols={12} key={i}>
               <PrismicResponsiveImage
                 image={icon}
                 width={dimensions[i].split("x")[0]}
@@ -356,8 +362,8 @@ const Framework = ({ framework, framework__list }) => {
         <PrismicRichText render={framework} paragraphLevel={2} />
       </div>
       <Grid>
-        {framework__list.map(({ logo, link }) => (
-          <Col sm={3} cols={6}>
+        {framework__list.map(({ logo, link }, i) => (
+          <Col sm={3} cols={6} key={i}>
             {link ? (
               <Link href={link}>
                 <a>{logoTile(logo)}</a>
@@ -394,18 +400,20 @@ const Tweets = ({
                 <PrismicResponsiveImage image={image} />
                 <div className="title">
                   <Heading level={5} as="h3">
-                    {name}
-                    {verified && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                      >
-                        <path
-                          fill="#1DA1F2"
-                          d="M512 268c0 17.9-4.3 34.5-12.9 49.7a92 92 0 01-34.6 35.4c.4 2.7.6 6.9.6 12.6 0 27.1-9.1 50.1-27.1 69.1a86.8 86.8 0 01-65.4 28.6 85.6 85.6 0 01-32.6-6.3 99.2 99.2 0 01-34.6 39.7A86 86 0 01256 512a86.8 86.8 0 01-49.7-14.9 97 97 0 01-34.3-40 85.3 85.3 0 01-32.6 6.3 87.8 87.8 0 01-65.7-28.6 96 96 0 01-26.3-81.7 92.7 92.7 0 01-34.6-35.4A100.3 100.3 0 010 268c0-19 4.8-36.5 14.3-52.3a88.1 88.1 0 0138.3-35.1 98.9 98.9 0 01-6.3-34.3 96 96 0 0127.4-69.1A88.1 88.1 0 01172 54.9a99.2 99.2 0 0134.6-39.7A86.7 86.7 0 01256 0c17.9 0 34.4 5.1 49.4 15.1A100 100 0 01340 54.8a85.3 85.3 0 0132.6-6.3c25.5 0 47.3 9.5 65.4 28.6a96.7 96.7 0 0127.1 69.1c0 12.6-1.9 24-5.7 34.3a88.1 88.1 0 0138.3 35.1A100.4 100.4 0 01512 268zm-266.9 77.1l105.7-158.3c2.7-4.2 3.5-8.8 2.6-13.7-1-4.9-3.5-8.8-7.7-11.4a19.5 19.5 0 00-13.7-2.9c-5 .8-9 3.2-12 7.4l-93.1 140-42.9-42.8a17 17 0 00-13.1-5.4c-5 .2-9.3 2-13.1 5.4a17.5 17.5 0 00-5.1 12.9c0 5.1 1.7 9.4 5.1 12.9l58.9 58.9 2.9 2.3c3.4 2.3 6.9 3.4 10.3 3.4 6.7-.1 11.8-2.9 15.2-8.7z"
-                        />
-                      </svg>
-                    )}
+                    <>
+                      {name}
+                      {verified && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            fill="#1DA1F2"
+                            d="M512 268c0 17.9-4.3 34.5-12.9 49.7a92 92 0 01-34.6 35.4c.4 2.7.6 6.9.6 12.6 0 27.1-9.1 50.1-27.1 69.1a86.8 86.8 0 01-65.4 28.6 85.6 85.6 0 01-32.6-6.3 99.2 99.2 0 01-34.6 39.7A86 86 0 01256 512a86.8 86.8 0 01-49.7-14.9 97 97 0 01-34.3-40 85.3 85.3 0 01-32.6 6.3 87.8 87.8 0 01-65.7-28.6 96 96 0 01-26.3-81.7 92.7 92.7 0 01-34.6-35.4A100.3 100.3 0 010 268c0-19 4.8-36.5 14.3-52.3a88.1 88.1 0 0138.3-35.1 98.9 98.9 0 01-6.3-34.3 96 96 0 0127.4-69.1A88.1 88.1 0 01172 54.9a99.2 99.2 0 0134.6-39.7A86.7 86.7 0 01256 0c17.9 0 34.4 5.1 49.4 15.1A100 100 0 01340 54.8a85.3 85.3 0 0132.6-6.3c25.5 0 47.3 9.5 65.4 28.6a96.7 96.7 0 0127.1 69.1c0 12.6-1.9 24-5.7 34.3a88.1 88.1 0 0138.3 35.1A100.4 100.4 0 01512 268zm-266.9 77.1l105.7-158.3c2.7-4.2 3.5-8.8 2.6-13.7-1-4.9-3.5-8.8-7.7-11.4a19.5 19.5 0 00-13.7-2.9c-5 .8-9 3.2-12 7.4l-93.1 140-42.9-42.8a17 17 0 00-13.1-5.4c-5 .2-9.3 2-13.1 5.4a17.5 17.5 0 00-5.1 12.9c0 5.1 1.7 9.4 5.1 12.9l58.9 58.9 2.9 2.3c3.4 2.3 6.9 3.4 10.3 3.4 6.7-.1 11.8-2.9 15.2-8.7z"
+                          />
+                        </svg>
+                      )}
+                    </>
                   </Heading>
                   <Paragraph level={6}>{handle}</Paragraph>
                 </div>
@@ -435,8 +443,8 @@ const Tweets = ({
           <Paragraph className="emoji">{emoji}</Paragraph>
           <PrismicRichText render={text} paragraphLevel={1} />
           <div className="links">
-            {tweets__bottom__list.map(({ icon, text, link }) => (
-              <a href={link.url} target={link.target}>
+            {tweets__bottom__list.map(({ icon, text, link }, i) => (
+              <a href={link.url} target={link.target} key={i}>
                 <article>
                   <PrismicResponsiveImage image={icon} />
                   <Heading level={4}>{text}</Heading>
@@ -539,6 +547,7 @@ const Cta = ({
             <div className="image-group first">
               {companies__list2.slice(0, 4).map(({ logo }, i) => (
                 <PrismicResponsiveImage
+                  key={i}
                   image={logo}
                   width={dimensions[i].split("x")[0]}
                   height={dimensions[i].split("x")[1]}
@@ -548,6 +557,7 @@ const Cta = ({
             <div className="image-group second">
               {companies__list2.slice(4, 8).map(({ logo }, i) => (
                 <PrismicResponsiveImage
+                  key={i}
                   image={logo}
                   width={dimensions[i + 4].split("x")[0]}
                   height={dimensions[i + 4].split("x")[1]}

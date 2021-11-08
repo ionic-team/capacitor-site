@@ -1,0 +1,43 @@
+@mixin paragraph {
+  --p1-color: var(--c-indigo-90);
+  --p2-color: var(--c-indigo-90);
+  --p3-color: var(--c-indigo-90);
+  --p4-color: var(--c-indigo-90);
+  --p5-color: var(--c-indigo-90);
+  --p6-color: var(--c-indigo-90);
+
+  --p1-size: var(--f-size-7);
+  --p2-size: var(--f-size-6);
+  --p3-size: var(--f-size-5);
+  --p4-size: var(--f-size-4);
+  --p5-size: var(--f-size-3);
+  --p6-size: var(--f-size-2);
+
+  --p1-leading: var(--f-leading-body);
+  --p2-leading: var(--f-leading-body);
+  --p3-leading: var(--f-leading-body);
+  --p4-leading: var(--f-leading-body);
+  --p5-leading: var(--f-leading-body);
+  --p6-leading: var(--f-leading-body);
+
+  --p1-tracking: var(--f-tracking-tight);
+  --p2-tracking: var(--f-tracking-tight);
+  --p3-tracking: var(--f-tracking-tight);
+  --p4-tracking: var(--f-tracking-solid);
+  --p5-tracking: var(--f-tracking-solid);
+  --p6-tracking: var(--f-tracking-solid);
+
+  --p1-weight: var(--f-weight-regular);
+  --p2-weight: var(--f-weight-regular);
+  --p3-weight: var(--f-weight-regular);
+  --p4-weight: var(--f-weight-regular);
+  --p5-weight: var(--f-weight-regular);
+  --p6-weight: var(--f-weight-regular);
+
+  --p1-transform: none;
+  --p2-transform: none;
+  --p3-transform: none;
+  --p4-transform: none;
+  --p5-transform: none;
+  --p6-transform: none;
+}

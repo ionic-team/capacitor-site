@@ -1,8 +1,4 @@
-const path = require("path");
-
-const withTM = require("next-transpile-modules")(["@ionic-internal/ionic-ds"]);
-
-module.exports = withTM({
+module.exports = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -16,4 +12,4 @@ module.exports = withTM({
 
     return config;
   },
-});
+};

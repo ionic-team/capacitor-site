@@ -1,59 +1,78 @@
-import clsx from "clsx";
-import { forwardRef } from "react";
-import styled from "styled-components";
-import { Component } from "./typeHelpers";
-import { CustomGridProps } from "./Grid";
+import { applyProps } from "./common";
 
-export interface CustomColProps {
-  cols?: number | number[];
-  offsets?: number | number[];
+export interface ColProps {
+  /**
+   * The number of cols to take on xs breakpoint
+   */
+  xs?: number;
+  /**
+   * The number of cols to take on sm breakpoint
+   */
+  sm?: number;
+  /**
+   * The number of cols to take on md breakpoint
+   */
+  md?: number;
+  /**
+   * The number of cols to take on lg breakpoint
+   */
+  lg?: number;
+  /**
+   * The number of cols to take regardless of breakpoints (not responsive)
+   */
+  cols?: number;
+
+  class?:
+    | string
+    | {
+        [className: string]: boolean;
+      };
+
+  [key: string]: any;
 }
 
-export interface ColStylesProps {
-  $starts: number[];
-  $ends: number[];
-  $breakpoints: NonNullable<CustomGridProps["breakpoints"]>;
-}
+const applyClasses = (
+  cols: number | undefined,
+  xs: number | undefined,
+  sm: number | undefined,
+  md: number | undefined,
+  lg: number | undefined
+) => {
+  const classes = [];
 
-export type Col = Component<"div", CustomColProps>;
+  // General class, doesn't apply column behavior but
+  // can be useful for selectors
+  classes.push("ui-col");
 
-const Col = forwardRef(({ cols, offsets, ...props }, ref) => {
-  return (
-    <ColStyles
-      {...props}
-      cols={cols}
-      ref={ref}
-      className={clsx("col", props.className)}
-    />
-  );
-}) as Col;
+  if (cols) {
+    classes.push(`ui-col-${cols}`);
+  } else {
+    // If no "cols" is specified, add a default 12 to make content go full width
+    // in the smallest viewport sizes
+    classes.push(`ui-col-12`);
+  }
 
-const ColStyles: any = styled.div<ColStylesProps>`
-  ${({ $starts: starts, $ends: ends, $breakpoints: breakpoints }) => {
-    if (!starts || !ends) return null;
+  if (xs) {
+    classes.push(`ui-col-xs-${xs}`);
+  }
+  if (sm) {
+    classes.push(`ui-col-sm-${sm}`);
+  }
+  if (md) {
+    classes.push(`ui-col-md-${md}`);
+  }
+  if (lg) {
+    classes.push(`ui-col-lg-${lg}`);
+  }
+  return classes.join(" ");
+};
 
-    let prevStart: number | null = null;
-    let prevEnd: number | null = null;
-
-    const styles = breakpoints.map((breakpoint, i) => {
-      const start = starts[i];
-      const end = ends[i];
-      const isSame = prevStart === start && prevEnd === end;
-
-      const style =
-        !isSame &&
-        `@media(min-width: ${breakpoint}) {
-                grid-column-start: ${starts[i]};
-                grid-column-end: ${ends[i]};
-              }`;
-
-      prevStart = start;
-      prevEnd = end;
-      return style;
-    });
-
-    return styles;
-  }}}
-`;
+const Col = ({ cols, xs, sm, md, lg, children, ...props }: ColProps) => (
+  <div
+    {...applyProps(props, { className: applyClasses(cols, xs, sm, md, lg) })}
+  >
+    {children}
+  </div>
+);
 
 export default Col;

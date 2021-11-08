@@ -1,0 +1,222 @@
+$cdn: "https://code.ionicframework.com" !default;
+$fontsDir: "/assets/fonts/" !default;
+$einaDir: $fontsDir + "eina/" !default;
+$ioneinaDir: $fontsDir + "ion-eina/" !default;
+$interDir: $fontsDir + "inter/" !default;
+$interVariableUrl: $interDir + "Inter-variable-ASCII-subset.woff2" !default;
+
+@font-face {
+  font-family: "IonEina";
+  font-display: swap;
+  src: local("IonEina Bold"),
+    url($ioneinaDir + "ion-eina-01-bold.woff2") format("woff2"),
+    url($ioneinaDir + "ion-eina-01-bold.woff") format("woff"),
+    url($ioneinaDir + "ion-eina-01-bold.ttf") format("ttf"),
+    url($ioneinaDir + "ion-eina-01-bold.eot?#iefix") format("eot");
+  font-weight: 700;
+  unicode-range: U+000-5FF, U+2019;
+}
+@font-face {
+  font-family: "IonEina";
+  font-display: swap;
+  src: local("IonEina Semibold"),
+    url($ioneinaDir + "ion-eina-01-semibold.woff2") format("woff2"),
+    url($ioneinaDir + "ion-eina-01-semibold.woff") format("woff"),
+    url($ioneinaDir + "ion-eina-01-semibold.ttf") format("ttf"),
+    url($ioneinaDir + "ion-eina-01-semibold.eot?#iefix") format("eot");
+  font-weight: 600;
+  unicode-range: U+000-5FF, U+2019;
+}
+@font-face {
+  font-family: "IonEina";
+  font-display: swap;
+  src: local("IonEina Regular"),
+    url($ioneinaDir + "ion-eina-01-regular.woff2") format("woff2"),
+    url($ioneinaDir + "ion-eina-01-regular.woff") format("woff"),
+    url($ioneinaDir + "ion-eina-01-regular.ttf") format("ttf"),
+    url($ioneinaDir + "ion-eina-01-regular.eot?#iefix") format("eot");
+  font-weight: 400;
+  unicode-range: U+000-5FF, U+2019;
+}
+
+@font-face {
+  font-family: "Eina";
+  font-display: swap;
+  src: local("Eina Bold"), url($einaDir + "eina-01-bold.woff2") format("woff2"),
+    url($einaDir + "eina-01-bold.woff") format("woff"),
+    url($einaDir + "eina-01-bold.ttf") format("ttf"),
+    url($einaDir + "eina-01-bold.eot?#iefix") format("eot");
+  font-weight: 700;
+  unicode-range: U+000-5FF, U+2019;
+}
+@font-face {
+  font-family: "Eina";
+  font-display: swap;
+  src: local("Eina Semibold"),
+    url($einaDir + "eina-01-semibold.woff2") format("woff2"),
+    url($einaDir + "eina-01-semibold.woff") format("woff"),
+    url($einaDir + "eina-01-semibold.ttf") format("ttf"),
+    url($einaDir + "eina-01-semibold.eot?#iefix") format("eot");
+  font-weight: 600;
+  unicode-range: U+000-5FF, U+2019;
+}
+@font-face {
+  font-family: "Eina";
+  font-display: swap;
+  src: local("Eina Regular"),
+    url($einaDir + "eina-01-regular.woff2") format("woff2"),
+    url($einaDir + "eina-01-regular.woff") format("woff"),
+    url($einaDir + "eina-01-regular.ttf") format("ttf"),
+    url($einaDir + "eina-01-regular.eot?#iefix") format("eot");
+  font-weight: 400;
+  unicode-range: U+000-5FF, U+2019;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  unicode-range: U+000-5FF;
+  src: local("Inter Regular"), url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-Regular.woff2") format("woff2"),
+    url($interDir + "Inter-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+  unicode-range: U+000-5FF;
+  src: local("Inter Italic"), url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-Italic.woff2") format("woff2"),
+    url($interDir + "Inter-Italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  unicode-range: U+000-5FF;
+  src: local("Inter Medium"), url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-Medium.woff2") format("woff2"),
+    url($interDir + "Inter-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 500;
+  unicode-range: U+000-5FF;
+  src: local("Inter Medium Italic"),
+    url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-MediumItalic.woff2") format("woff2"),
+    url($interDir + "Inter-MediumItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  unicode-range: U+000-5FF;
+  src: local("Inter SemiBold"),
+    url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-SemiBold.woff2") format("woff2"),
+    url($interDir + "Inter-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 600;
+  unicode-range: U+000-5FF;
+  src: local("Inter SemiBoldItalic"),
+    url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-SemiBoldItalic.woff2") format("woff2"),
+    url($interDir + "Inter-SemiBoldItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  unicode-range: U+000-5FF;
+  src: local("Inter Bold"), url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-Bold.woff2") format("woff2"),
+    url($interDir + "Inter-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 700;
+  unicode-range: U+000-5FF;
+  src: local("Inter BoldItalic"),
+    url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-BoldItalic.woff2") format("woff2"),
+    url($interDir + "Inter-BoldItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 800;
+  unicode-range: U+000-5FF;
+  src: local("Inter ExtraBold"),
+    url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-ExtraBold.woff2") format("woff2"),
+    url($interDir + "Inter-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 800;
+  unicode-range: U+000-5FF;
+  src: local("Inter ExtraBoldItalic"),
+    url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-ExtraBoldItalic.woff2") format("woff2"),
+    url($interDir + "Inter-ExtraBoldItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+  unicode-range: U+000-5FF;
+  src: local("Inter Black"), url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-Black.woff2") format("woff2"),
+    url($interDir + "Inter-Black.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 900;
+  unicode-range: U+000-5FF;
+  src: local("Inter BlackItalic"),
+    url($interVariableUrl) format("woff2-variations"),
+    url($interDir + "Inter-BlackItalic.woff2") format("woff2"),
+    url($interDir + "Inter-BlackItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FreightTextPro";
+  font-display: swap;
+  font-weight: 400;
+  unicode-range: U+000-5FF;
+  src: url($fontsDir + "/29D26A_0_0.eot");
+  src: url($fontsDir + "/29D26A_0_0.eot?#iefix") format("embedded-opentype"),
+    url($fontsDir + "/29D26A_0_0.woff") format("woff"),
+    url($fontsDir + "29D26A_0_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FreightTextPro";
+  font-display: swap;
+  font-weight: 500;
+  unicode-range: U+000-5FF;
+  src: url($fontsDir + "29D26A_1_0.eot");
+  src: url($fontsDir + "29D26A_1_0.eot?#iefix") format("embedded-opentype"),
+    url($fontsDir + "29D26A_1_0.woff") format("woff"),
+    url($fontsDir + "29D26A_1_0.ttf") format("truetype");
+}

@@ -1,0 +1,67 @@
+:root {
+  --c-ionic-brand: var(--c-blue-80);
+  --f-size-root: 16px;
+
+  // Z-indexes
+  --z-subnav: 1000;
+  --z-header-dropdown: 1005;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/**
+ * Global styles only in here
+ */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  font-family: var(--f-family-text);
+  font-size: var(--f-size-root);
+  line-height: var(--f-leading-body);
+  letter-spacing: var(--f-tracking-tight);
+  color: var(--c-carbon-90);
+
+  position: relative;
+  overflow-x: hidden;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-ionic-brand);
+}
+
+stencil-route-link a {
+  // Fix link colors in route links
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: var(--c-indigo-30);
+  margin: var(--space-6) 0;
+}

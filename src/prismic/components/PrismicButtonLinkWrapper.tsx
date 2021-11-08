@@ -1,13 +1,13 @@
-import { Button } from '@ionic-internal/ionic-ds';
-import clsx from 'clsx';
-import Link from 'next/link';
-import { forwardRef } from 'react';
-import { BASE_URL } from '../../util/common';
-import { ExtendableProps } from '../../util/typeHelpers';
+import clsx from "clsx";
+import Link from "next/link";
+import { forwardRef } from "react";
+import Config from "../../../config";
+import Button from "../../components/ui/Button";
+import { ExtendableProps } from "../../components/ui/typeHelpers";
 
 interface CustomPrismicButtonLinkProps {
   data: any;
-  arrow?: 'ligature' | 'unicode';
+  arrow?: "ligature" | "unicode";
 }
 
 type PrismicButtonLinkProps = ExtendableProps<
@@ -25,31 +25,31 @@ const PrismicButtonLinkWrapper = forwardRef(
       data: { target, url },
     } = spans[0];
 
-    const sameSite = url.includes(`${BASE_URL}/`);
-    const ligature = arrow === 'ligature';
+    const sameSite = url.includes(`${Config.BaseUrl}/`);
+    const ligature = arrow === "ligature";
 
     const Core = forwardRef((props: any, ref) => (
       <Button
         {...props}
         ref={ref}
         className={clsx({
-          [props.className || '']: true,
-          'prismic-button-link': true,
+          [props.className || ""]: true,
+          "prismic-button-link": true,
         })}
         anchor={true}
         target={target}
       >
-        {text}{' '}
+        {text}{" "}
         {arrow && (
-          <span className={ligature ? 'inter-arrow' : 'soehne-arrow'}>
-            {ligature ? '->' : ' →'}
+          <span className={ligature ? "inter-arrow" : "soehne-arrow"}>
+            {ligature ? "->" : " →"}
           </span>
         )}
       </Button>
     ));
 
     if (sameSite) {
-      const relativeUrl = url.split(`${BASE_URL}/`)[1];
+      const relativeUrl = url.split(`${Config.BaseUrl}/`)[1];
 
       return (
         <Link passHref href={`/${relativeUrl}`}>
@@ -59,7 +59,7 @@ const PrismicButtonLinkWrapper = forwardRef(
     } else {
       return <Core {...props} href={url} ref={ref} />;
     }
-  },
+  }
 );
 
 export default PrismicButtonLinkWrapper;

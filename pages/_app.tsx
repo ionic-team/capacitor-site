@@ -1,57 +1,15 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-
-import tokens from "@ionic-internal/ionic-ds/dist/tokens/tokens.json";
-import headingPro from "../styles/themes/headingStyleMap--pro";
-import paragraphPro from "../styles/themes/paragraphStyleMap--pro";
-
-import "@ionic-internal/ionic-ds/dist/reset.css";
-import "@ionic-internal/ionic-ds/dist/fonts.scss";
-import Breakpoints from "../src/components/ui/Breakpoints";
+import "../styles/globals.scss";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>
-      <ThemeProvider
-        theme={{
-          ...tokens,
-          name: "pro",
-          heading: { pro: headingPro },
-          paragraph: { pro: paragraphPro },
-          dsContainer: {
-            gutter: "16px",
-            width: "70rem",
-          },
-          dsGrid: {
-            columns: 12,
-            breakpoints: [
-              Breakpoints.screenXs,
-              Breakpoints.screenSm,
-              Breakpoints.screenMd,
-              Breakpoints.screenLg,
-              Breakpoints.screenXl,
-            ],
-          },
-          dsCol: {
-            cols: [12, 6, 6, 4, 4],
-            offsets: 0,
-          },
-        }}
-      >
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      {/*<GlobalStyle />*/}
+      <Component {...pageProps} />
     </>
   );
 };
 
-declare module "styled-components" {
-  export interface DefaultTheme {
-    name?: "editorial" | "pro" | "base";
-    theme?: typeof tokens;
-    [key: string]: any;
-  }
-}
-
+/*
 const GlobalStyle = createGlobalStyle`
   :root {
     --h-announcement-bar: 4.625rem;
@@ -188,5 +146,6 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
   }
 `;
+*/
 
 export default MyApp;

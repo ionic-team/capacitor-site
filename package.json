@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@ionic-internal/ionic-ds": "^7.1.0",
     "@svgr/webpack": "^5.5.0",
     "@types/styled-components": "^5.1.15",
     "clsx": "^1.1.1",
@@ -24,7 +23,6 @@
     "@types/react": "^17.0.34",
     "babel-plugin-prismjs": "^2.1.0",
     "babel-plugin-styled-components": "^1.13.3",
-    "next-transpile-modules": "^9.0.0",
     "prismic-javascript": "^3.0.2",
     "sass": "^1.43.4",
     "typescript": "^4.4.4"

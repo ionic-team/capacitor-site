@@ -1,61 +1,64 @@
-import clsx from "clsx";
-import { forwardRef } from "react";
-import styled from "styled-components";
-import Breakpoints from "./Breakpoints";
+import { applyProps } from "./common";
 
-// TODO: Strongly typed
-type BreakpointProps = {
-  cols: number | number[];
-  offset: number | number[];
-  [key: string]: any;
+interface Props {
+  xs?: boolean;
+  sm?: boolean;
+  md?: boolean;
+  lg?: boolean;
+  xl?: boolean;
+  display?:
+    | "inline"
+    | "block"
+    | "inline-block"
+    | "flex"
+    | "inline-flex"
+    | "grid"
+    | "inline-grid"
+    | "table"
+    | "table-cell";
+}
+
+const Breakpoint: React.FC<Props & React.HTMLProps<HTMLDivElement>> = ({
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  display = "block",
+  children,
+  ...props
+}) => {
+  const Tag = display === "inline" ? "span" : "div";
+
+  //cascade values up breakpoints
+  xs = xs !== undefined ? xs : false;
+  sm = sm !== undefined ? sm : xs;
+  md = md !== undefined ? md : sm;
+  lg = lg !== undefined ? lg : md;
+  xl = xl !== undefined ? xl : lg;
+
+  const breakpoints = [
+    ["xs", xs],
+    ["sm", sm],
+    ["md", md],
+    ["lg", lg],
+    ["xl", xl],
+  ];
+
+  //Combine classes into string based on breakpoint values
+  const className = breakpoints.reduce(
+    (acc, cur) => `${acc} ${cur[1] ? `ui-breakpoint-${cur[0]}` : ``}`,
+    "ui-breakpoint"
+  );
+
+  return (
+    <Tag
+      {...applyProps(props, { className: className })}
+      style={{ "--display": display }}
+    >
+      {children}
+    </Tag>
+  );
 };
-
-const Breakpoint = forwardRef(
-  (
-    { visible = [1, 1, 0, 0, 0], displayContents, ...props }: BreakpointProps,
-    ref
-  ) => {
-    return (
-      <BreakpointStyles
-        {...props}
-        className={clsx(props.className, "breakpoint")}
-        $visible={visible}
-        $displayContents={displayContents}
-        ref={ref}
-      />
-    );
-  }
-);
-
-const BreakpointStyles: any = styled.div`
-  ${({ $displayContents: displayContents }: any) => {
-    return displayContents ? "display: contents;" : "";
-  }};
-
-  ${({ $visible: visible }: any) => {
-    const { screenXs, screenSm, screenMd, screenLg, screenXl } = Breakpoints;
-    const siteBreakpoints = [
-      { screenXs },
-      { screenSm },
-      { screenMd },
-      { screenLg },
-      { screenXl },
-    ];
-
-    return visible
-      .map((isVisible, i) => {
-        if (isVisible === 1) return;
-
-        const [[key, val]] = Object.entries(siteBreakpoints[i]);
-
-        return i !== visible.length - 1
-          ? `@media (min-width: ${val}) and (max-width: ${
-              Breakpoints[`${key}Max`]
-            }) { display: none !important; }`
-          : `@media (min-width: ${val}) { display: none !important; }`;
-      })
-      .filter((n) => n);
-  }}
-`;
 
 export default Breakpoint;

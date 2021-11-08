@@ -1,0 +1,1 @@
+These components and styles are from the v4 of the @ionic-internal/ionic-ds and ported to react. This was done for pixel-perfection of porting the site over. Eventually these should be moved to the latest of the ds system that supports react.

@@ -1,0 +1,29 @@
+@mixin heading {
+  --h6-color: var(--c-carbon-90);
+
+  --h1-size: var(--f-size-10);
+  --h2-size: var(--f-size-9);
+  --h3-size: var(--f-size-7);
+  --h6-size: var(--f-size-0);
+
+  --h1-leading: var(--f-leading-title);
+
+  --h1-font: var(--f-family-text);
+  --h2-font: var(--f-family-text);
+  --h3-font: var(--f-family-text);
+  --h6-font: var(--f-family-text);
+
+  --h1-tracking: var(--f-tracking-tight);
+  --h2-tracking: var(--f-tracking-tight);
+  --h3-tracking: var(--f-tracking-solid);
+  --h4-tracking: var(--f-tracking-solid);
+  --h6-tracking: var(--f-tracking-super);
+
+  --h1-leading: var(--f-leading-title);
+
+  --h1-weight: var(--f-weight-semibold);
+  --h2-weight: var(--f-weight-semibold);
+  --h4-weight: var(--f-weight-semibold);
+  --h5-weight: var(--f-weight-medium);
+  --h6-weight: var(--f-weight-medium);
+}

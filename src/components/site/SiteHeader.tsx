@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 import { docsVersionHref } from "../../../routing";
 import Button from "../ui/Button";
+import SiteHeaderStyles from "./SiteHeader.styles";
 
 const HEIGHT_ABOVE_BAR = 72;
 
@@ -94,7 +95,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
   // const { expanded, template, includeLogo, includeBurger } = this;
 
   return (
-    <div
+    <SiteHeaderStyles
       ref={elm}
       className={clsx({
         scrolled: scrolled,
@@ -352,7 +353,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
           </Button>
         </div>
       </header>
-    </div>
+    </SiteHeaderStyles>
   );
 };
 

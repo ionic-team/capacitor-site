@@ -1,0 +1,87 @@
+@mixin heading {
+  --h1-color: var(--c-carbon-90);
+  --h2-color: var(--c-carbon-90);
+  --h3-color: var(--c-carbon-90);
+  --h4-color: var(--c-carbon-90);
+  --h5-color: var(--c-carbon-90);
+  --h6-color: var(--c-indigo-70);
+
+  --h1-size: var(--f-size-13);
+  --h2-size: var(--f-size-11);
+  --h3-size: var(--f-size-8);
+  --h4-size: var(--f-size-6);
+  --h5-size: var(--f-size-5);
+  --h6-size: var(--f-size-2);
+
+  --h1-leading: var(--f-leading-solid);
+  --h2-leading: var(--f-leading-title);
+  --h3-leading: var(--f-leading-title);
+  --h4-leading: var(--f-leading-title);
+  --h5-leading: var(--f-leading-title);
+  --h6-leading: var(--f-leading-title);
+
+  --h1-tracking: var(--f-tracking-dense);
+  --h2-tracking: var(--f-tracking-dense);
+  --h3-tracking: var(--f-tracking-tight);
+  --h4-tracking: var(--f-tracking-tight);
+  --h5-tracking: var(--f-tracking-tight);
+  --h6-tracking: var(--f-tracking-extra);
+
+  --h1-font: var(--f-family-display);
+  --h2-font: var(--f-family-display);
+  --h3-font: var(--f-family-display);
+  --h4-font: var(--f-family-text);
+  --h5-font: var(--f-family-text);
+  --h6-font: var(--f-family-monospace);
+
+  --h1-weight: var(--f-weight-bold);
+  --h2-weight: var(--f-weight-bold);
+  --h3-weight: var(--f-weight-semibold);
+  --h4-weight: var(--f-weight-medium);
+  --h5-weight: var(--f-weight-semibold);
+  --h6-weight: var(--f-weight-bold);
+
+  --h1-transform: none;
+  --h2-transform: none;
+  --h3-transform: none;
+  --h4-transform: none;
+  --h5-transform: none;
+  --h6-transform: uppercase;
+}
+
+@mixin poster {
+  --poster1-color: var(--c-carbon-90);
+  --poster2-color: var(--c-carbon-90);
+  --poster3-color: var(--c-carbon-90);
+  --poster4-color: var(--c-carbon-90);
+
+  --poster1-size: var(--f-size-17);
+  --poster2-size: var(--f-size-16);
+  --poster3-size: var(--f-size-15);
+  --poster4-size: var(--f-size-14);
+
+  --poster1-leading: var(--f-leading-solid);
+  --poster2-leading: var(--f-leading-solid);
+  --poster3-leading: var(--f-leading-solid);
+  --poster4-leading: var(--f-leading-solid);
+
+  --poster1-tracking: var(--f-tracking-dense);
+  --poster2-tracking: var(--f-tracking-dense);
+  --poster3-tracking: var(--f-tracking-dense);
+  --poster4-tracking: var(--f-tracking-dense);
+
+  --poster1-font: var(--f-family-display);
+  --poster2-font: var(--f-family-display);
+  --poster3-font: var(--f-family-display);
+  --poster4-font: var(--f-family-text);
+
+  --poster1-weight: var(--f-weight-bold);
+  --poster2-weight: var(--f-weight-semibold);
+  --poster3-weight: var(--f-weight-bold);
+  --poster4-weight: var(--f-weight-semibold);
+
+  --poster1-transform: none;
+  --poster2-transform: none;
+  --poster3-transform: none;
+  --poster4-transform: none;
+}

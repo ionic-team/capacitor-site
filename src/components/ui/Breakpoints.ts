@@ -31,19 +31,19 @@ interface BreakpointType {
 }
 
 let Breakpoints: Partial<BreakpointType> = {
-  screenXs: '0px',
+  screenXs: '640px',
   screenXsMin: '0px',
-  screenPhone: '0px',
+  screenPhone: '480px',
 
-  screenSm: '576px',
-  screenSmMin: '576px',
+  screenSm: '768px',
+  screenSmMin: '768px',
   screenTablet: '576px',
 
-  screenMd: '768px',
-  screenMdMin: '768px',
+  screenMd: '1024px',
+  screenMdMin: '1024px',
   screenDesktop: '768px',
 
-  screenLg: '1024px',
+  screenLg: '1216px',
   screenLgMin: '1024px',
   screenLgDesktop: '1024px',
 
