@@ -8,7 +8,6 @@ code[class*="language-"],
 pre[class*="language-"] {
   color: black;
   background: #f5f7fa;
-  text-shadow: 0 1px white;
   font-family: "Roboto Mono", "Source Code Pro", monospace;
   font-size: 14px;
   text-align: left;
@@ -37,14 +36,12 @@ pre[class*="language-"]::selection,
 pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
-  text-shadow: none;
   background: #98d2ff;
 }
 
 @media print {
   code[class*="language-"],
   pre[class*="language-"] {
-    text-shadow: none;
   }
 }
 

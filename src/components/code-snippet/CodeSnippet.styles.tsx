@@ -6,6 +6,13 @@ const CodeSnippetStyles = styled.div`
  * Based on https://github.com/chriskempson/tomorrow-theme
  * @author Rose Pritchard
  */
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+
+  overflow-x: auto;
+  border-radius: 16px;
+  background: #00233a;
 
   code[class*="language-"],
   pre[class*="language-"] {
@@ -39,7 +46,6 @@ const CodeSnippetStyles = styled.div`
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    background: #2d2d2d;
   }
 
   /* Inline code */
@@ -122,14 +128,6 @@ const CodeSnippetStyles = styled.div`
   .token.inserted {
     color: green;
   }
-
-  display: block;
-  min-width: 0;
-  max-width: 100%;
-
-  overflow-x: auto;
-  border-radius: 16px;
-  background: #00233a;
 
   .dollar-sign::before {
     content: "$ ";

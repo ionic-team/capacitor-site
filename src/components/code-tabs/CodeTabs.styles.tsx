@@ -39,7 +39,6 @@ const CodeTabsStyles = styled.div`
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    background: #2d2d2d;
   }
 
   /* Inline code */
