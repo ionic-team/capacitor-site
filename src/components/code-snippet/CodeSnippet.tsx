@@ -33,8 +33,6 @@ const CodeSnippet: React.FC<Props> = ({ language, code }) => {
   };
 
   const highlightCode = async () => {
-    await customElements.whenDefined("code-snippet");
-
     window.Prism.hooks.add("before-insert", (env) => {
       switch (env.language) {
         case "shell-session":
