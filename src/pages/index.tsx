@@ -17,6 +17,8 @@ import Heading from "../components/ui/Heading";
 import AnnouncementBar from "../components/announcement-bar/AnnouncementBar";
 
 import IndexStyles from "./index.styles";
+import CodeSnippet from "../components/code-snippet/CodeSnippet";
+import CodeTabs from "../components/code-tabs/CodeTabs";
 
 export default function Index(pageData) {
   return (
@@ -135,17 +137,16 @@ const Announcement = ({ tag_text, desktop_text, mobile_text, link }) => {
 };
 
 const Started = ({ started, started__list, started__icons }) => {
-  /*
   const panels = [
-    <code-snippet
+    <CodeSnippet
       language="shell-session"
       code={`npm install @capacitor/cli @capacitor/core\nnpx cap init`}
     />,
-    <code-snippet
+    <CodeSnippet
       language="shell-session"
       code={`npm install @capacitor/ios @capacitor/android\nnpx cap add ios\nnpx cap add android`}
     />,
-    <code-tabs
+    <CodeTabs
       data={{
         tabs: ["Notifications", "Geolocation", "Camera", "Custom"],
         languages: ["typescript"],
@@ -206,9 +207,6 @@ public class MyAwesomePlugin: CAPPlugin {
       }}
     />,
   ];
-  */
-
-  const panels = [];
 
   const dimensions = ["22x26", "27x23"];
 

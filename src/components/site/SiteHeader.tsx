@@ -336,7 +336,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
             href="/docs/getting-started"
             kind="regular"
             color="cyan"
-            size="md"
+            buttonSize="md"
           >
             <svg
               width="10"
