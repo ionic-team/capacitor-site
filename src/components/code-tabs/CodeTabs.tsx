@@ -72,6 +72,7 @@ const CodeTabs = ({ data }) => {
         <div className="tabs-wrapper">
           {data.tabs.map((tab, i) => (
             <button
+              key={i}
               className={clsx({
                 active: activeTab.index === i,
               })}
@@ -89,7 +90,7 @@ const CodeTabs = ({ data }) => {
       <div className="background">
         <div className="code-wrapper">
           {data.code.map((code, i) => (
-            <article>
+            <article key={i}>
               <CodeSnippet
                 language={
                   data.languages.length === 1

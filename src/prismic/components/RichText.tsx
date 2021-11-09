@@ -43,7 +43,7 @@ export function htmlSerializer(
       );
     case "paragraph":
       return (
-        <Paragraph {...{ level: ParagraphLevel, lineHeight: LineHeight }}>
+        <Paragraph {...{ level: ParagraphLevel, lineheight: LineHeight }}>
           {children}
         </Paragraph>
       );

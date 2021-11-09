@@ -36,7 +36,7 @@ const Button: React.FC<ButtonProps & React.HTMLProps<HTMLButtonElement>> = ({
 
   return (
     <Tag
-      tabindex={anchor ? "0" : undefined}
+      tabIndex={anchor ? "0" : undefined}
       {...applyProps(props, { className: classes.join(" ") })}
     >
       {children}
