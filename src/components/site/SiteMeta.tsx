@@ -28,17 +28,17 @@ const SiteMeta: React.FC<Props> = ({
     metaImage = `https://${Config.Domain}${metaImage}`;
   }
 
-  const defaultTitle = "Ionic - The Cross-Platform App Development Leader";
+  const defaultTitle = "Capacitor - Cross-platform apps with web technology";
   const defaultDescription =
-    "Ionic empowers web developers to build leading cross-platform mobile apps and Progressive Web Apps (PWAs)";
-  const defaultMetaImage = `https://${Config.Domain}/img/ionic-io-og-img.png`;
+    "Build iOS, Android, Desktop, and Progressive Web Apps with HTML, CSS, and JavaScript.";
+  const defaultMetaImage = `https://capacitorjs.com/assets/img/og.png`;
 
   const fullTitle = title ? `${title} - ${defaultTitle}` : defaultTitle;
 
   return (
     <Head>
       <title key="title">{fullTitle}</title>
-      <link key="canonical" rel="canonical" href={ogUrl} />
+      <link key="canonical" rel="canonical" href={Config.BaseUrl} />
       <meta
         key="description"
         name="description"

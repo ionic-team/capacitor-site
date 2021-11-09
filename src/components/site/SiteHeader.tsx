@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { docsVersionHref } from "../../../routing";
 import Button from "../ui/Button";
 import SiteHeaderStyles from "./SiteHeader.styles";
+import SiteBackdrop from "./SiteBackdrop";
 
 const HEIGHT_ABOVE_BAR = 72;
 
@@ -104,14 +105,11 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
         sticky: sticky,
       })}
     >
-      {/*
-        TODO: Port this
-        <site-backdrop
-          visible={expanded}
-          onClick={() => this.toggleExpanded()}
-          mobileOnly
-        />
-        */}
+      <SiteBackdrop
+        visible={expanded}
+        onClick={toggleExpanded}
+        mobileOnly={true}
+      />
 
       <header>
         {/*includeBurger ? <SiteMenuToggle /> : null}*/}
