@@ -3,9 +3,7 @@ import Breakpoints from "../components/ui/Breakpoints";
 
 const IndexStyles = styled.div`
   //#region ----------- VARIABLES ------------
-  :root {
-    --section-space: 12.5rem;
-  }
+  --section-space: 12.5rem;
 
   :host {
     --h1-color: var(--c-carbon-100);
