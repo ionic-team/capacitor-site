@@ -20,7 +20,6 @@ const DocsSearch: React.FC<Props> = ({ theme = 'light', placeholder = 'Search' }
   }
 
   const [uniqueId, setUniqueId] = useState(() => Math.random().toString().replace('.', ''));
-  console.log('Looking for uniqye id', uniqueId);
   const router = useRouter();
   const el = useRef<HTMLDivElement | null>(null);
 
@@ -44,8 +43,6 @@ const DocsSearch: React.FC<Props> = ({ theme = 'light', placeholder = 'Search' }
     if (!el.current) {
       return;
     }
-
-    console.log('Initializing search on input', el.current);
 
     importResource({ propertyName: 'docsearch', link: algolia }, () => setupSearch());
 

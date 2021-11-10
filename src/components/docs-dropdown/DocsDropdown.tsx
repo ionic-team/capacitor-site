@@ -78,8 +78,8 @@ const DocsDropdown: React.FC<Props> = ({ align = 'left', icon, children }) => {
         aria-expanded={isOpen ? 'true' : 'false'}
         onClick={toggle}
       >
-        {Icon ? <Icon class="Dropdown-icon" /> : null}
-        <DownArrow class="Dropdown-arrow" />
+        {Icon ? <Icon className="Dropdown-icon" /> : null}
+        <DownArrow className="Dropdown-arrow" />
       </button>
 
       <div role="menu" className="Dropdown-panel">

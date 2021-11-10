@@ -1,15 +1,8 @@
-import clsx from "clsx";
-import {
-  ComponentPropsWithRef,
-  forwardRef,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import clsx from 'clsx';
+import { ComponentPropsWithRef, forwardRef, useCallback, useEffect, useRef, useState } from 'react';
 
-import styled from "styled-components";
-import Breakpoints from "../ui/Breakpoints";
+import styled from 'styled-components';
+import Breakpoints from '../ui/Breakpoints';
 
 declare var window: any;
 
@@ -20,14 +13,14 @@ interface CustomHubspotFormProps extends React.HTMLAttributes<HTMLDivElement> {
   ajax?: boolean;
   submitArrow?: boolean;
   submitText?: string;
-  buttonPosition?: "start" | "center" | "end";
+  buttonPosition?: 'start' | 'center' | 'end';
   onFormReady?: () => any;
 }
 
 const HubspotForm = (
   {
     formId,
-    portalId = "3776657",
+    portalId = '3776657',
     goToWebinarKey,
     ajax = false,
     submitArrow = false,
@@ -42,6 +35,11 @@ const HubspotForm = (
 
   const [error, setError] = useState<string | null>(null);
   const scriptRef = useRef<HTMLScriptElement | null>(null);
+
+  // Hates being SSR'ed
+  if (!process.browser) {
+    return null;
+  }
 
   useEffect(() => {
     // Need to trick hubspot to thinking jQuery is available
@@ -59,12 +57,12 @@ const HubspotForm = (
   const handleScriptLoad = useCallback(() => {
     requestAnimationFrame(() => {
       window.hbspt.forms.create({
-        portalId: "3776657",
+        portalId: '3776657',
         formId: formId,
 
         target: `#${getFormElementId()}`,
-        goToWebinarWebinarKey: goToWebinarKey || "",
-        css: "",
+        goToWebinarWebinarKey: goToWebinarKey || '',
+        css: '',
         onFormReady: handleFormReady,
         translations: {
           en: {
@@ -83,54 +81,50 @@ const HubspotForm = (
       return;
     }
 
-    const formEl = el.current?.querySelector(
-      `#${getFormElementId()} form`
-    ) as HTMLFormElement;
+    const formEl = el.current?.querySelector(`#${getFormElementId()} form`) as HTMLFormElement;
     if (!formEl) {
       return;
     }
 
-    formEl.addEventListener("submit", (e: Event) => {
+    formEl.addEventListener('submit', (e: Event) => {
       e.preventDefault();
       e.stopPropagation();
       return false;
     });
 
-    formEl
-      .querySelector('input[type="submit"]')
-      ?.addEventListener("click", (e) => {
-        submitForm(formEl);
-        e.preventDefault();
-      });
+    formEl.querySelector('input[type="submit"]')?.addEventListener('click', (e) => {
+      submitForm(formEl);
+      e.preventDefault();
+    });
   }, []);
 
   const submitForm = useCallback(async (form: HTMLFormElement) => {
     const data = new FormData(form);
 
     try {
-      const ret = await fetch(form.getAttribute("action")!, {
-        method: "POST",
+      const ret = await fetch(form.getAttribute('action')!, {
+        method: 'POST',
         body: data,
       });
 
       if (ret.status !== 200) {
-        setError("Error submitting form");
+        setError('Error submitting form');
       } else {
         // The response from hubspot is a script tag. I know, it's truly magnificent
-        const frame = document.createElement("iframe");
+        const frame = document.createElement('iframe');
         frame.srcdoc = await ret.text();
         document.body.appendChild(frame);
       }
     } catch (e) {
-      setError("Unable to submit form");
+      setError('Unable to submit form');
     }
   }, []);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "//js.hsforms.net/forms/v2.js";
-    script.addEventListener("load", handleScriptLoad);
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//js.hsforms.net/forms/v2.js';
+    script.addEventListener('load', handleScriptLoad);
     scriptRef.current = script;
     document.body.appendChild(script);
     return () => {
@@ -139,7 +133,7 @@ const HubspotForm = (
   }, []);
 
   useEffect(() => {
-    window.addEventListener("message", (e: MessageEvent<any>) => {
+    window.addEventListener('message', (e: MessageEvent<any>) => {
       if (e.data && e.data.formGuid && ajax) {
         // Don't let hubspot do anything
         e.preventDefault();
@@ -149,11 +143,9 @@ const HubspotForm = (
           // TODO: Probably emit a custom event on the ref for this element
           // this.formSubmitted?.emit();
         } else if (e.data.accepted === false) {
-          setError(
-            "Unable to submit. Please check your information and try again."
-          );
+          setError('Unable to submit. Please check your information and try again.');
         } else {
-          setError("");
+          setError('');
         }
       }
     });
@@ -162,16 +154,16 @@ const HubspotForm = (
     <HubspotFormStyles
       {...props}
       className={clsx({
-        "hubspot-form": true,
-        [props.className || ""]: true,
+        'hubspot-form': true,
+        [props.className || '']: true,
       })}
       ref={ref}
     >
       <div
         className={`
           hubspot-override
-          ${submitArrow ? "submit-arrow" : ""}
-          ${buttonPosition ? `button-position--${buttonPosition}` : ""}
+          ${submitArrow ? 'submit-arrow' : ''}
+          ${buttonPosition ? `button-position--${buttonPosition}` : ''}
         `}
       >
         <div id={getFormElementId()} />
@@ -293,9 +285,9 @@ const HubspotFormStyles: any = styled.div`
 
   .submitted-message {
     &:before {
-      content: "";
+      content: '';
       display: block;
-      background-image: url("/img/checkmark-light-green.svg");
+      background-image: url('/img/checkmark-light-green.svg');
       background-repeat: no-repeat;
       background-size: 100%;
       width: 42px;
@@ -372,13 +364,13 @@ const HubspotFormStyles: any = styled.div`
       letter-spacing: -0.01em;
     }
 
-    input.hs-input[type="number"] {
+    input.hs-input[type='number'] {
       float: none;
     }
 
-    input.hs-input[type="text"],
-    input.hs-input[type="email"],
-    input.hs-input[type="tel"] {
+    input.hs-input[type='text'],
+    input.hs-input[type='email'],
+    input.hs-input[type='tel'] {
       width: 100% !important;
       float: none;
 
@@ -387,8 +379,8 @@ const HubspotFormStyles: any = styled.div`
       }
     }
 
-    input.hs-input[type="radio"],
-    input.hs-input[type="checkbox"] {
+    input.hs-input[type='radio'],
+    input.hs-input[type='checkbox'] {
       height: auto;
       margin-right: 8px;
     }
@@ -407,13 +399,13 @@ const HubspotFormStyles: any = styled.div`
       -webkit-appearance: none;
       -moz-appearance: none;
 
-      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyB2aWV3Qm94PScwIDAgNTEyIDUxMic+PHBvbHlsaW5lIHBvaW50cz0nMTEyIDE4NCAyNTYgMzI4IDQwMCAxODQnIHN0eWxlPSdmaWxsOm5vbmU7c3Ryb2tlOiM0NDVCNzg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDo0OHB4Jy8+PC9zdmc+");
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyB2aWV3Qm94PScwIDAgNTEyIDUxMic+PHBvbHlsaW5lIHBvaW50cz0nMTEyIDE4NCAyNTYgMzI4IDQwMCAxODQnIHN0eWxlPSdmaWxsOm5vbmU7c3Ryb2tlOiM0NDVCNzg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDo0OHB4Jy8+PC9zdmc+');
       background-size: 1.2em;
       background-position: calc(100% - 0.9em) center;
       background-repeat: no-repeat;
 
       &:active {
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyB2aWV3Qm94PScwIDAgNTEyIDUxMic+PHRpdGxlPmlvbmljb25zLXY1LWE8L3RpdGxlPjxwb2x5bGluZSBwb2ludHM9JzExMiAzMjggMjU2IDE4NCA0MDAgMzI4JyBzdHlsZT0nZmlsbDpub25lO3N0cm9rZTojNDQ1Qjc4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NDhweCcvPjwvc3ZnPg==");
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyB2aWV3Qm94PScwIDAgNTEyIDUxMic+PHRpdGxlPmlvbmljb25zLXY1LWE8L3RpdGxlPjxwb2x5bGluZSBwb2ludHM9JzExMiAzMjggMjU2IDE4NCA0MDAgMzI4JyBzdHlsZT0nZmlsbDpub25lO3N0cm9rZTojNDQ1Qjc4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NDhweCcvPjwvc3ZnPg==');
       }
 
       &:hover {
@@ -466,7 +458,7 @@ const HubspotFormStyles: any = styled.div`
       display: flex;
     }
 
-    .hs-form-checkbox-display .hs-input[type="checkbox"] {
+    .hs-form-checkbox-display .hs-input[type='checkbox'] {
       margin-right: 10px;
     }
 
@@ -561,7 +553,7 @@ const HubspotFormStyles: any = styled.div`
     .hs_submit input.hs-button {
       padding: 19px 20px;
       padding-inline-end: calc(var(--arrow-size) + 24px);
-      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyB2aWV3Qm94PScwIDAgNTEyIDUxMic+PHBvbHlsaW5lIHBvaW50cz0nMjY4IDExMiA0MTIgMjU2IDI2OCA0MDAnIHN0eWxlPSdmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLWxpbmVjYXA6c3F1YXJlO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDo0OHB4Jy8+PGxpbmUgeDE9JzM5MicgeTE9JzI1NicgeDI9JzEwMCcgeTI9JzI1Nicgc3R5bGU9J2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2UtbGluZWNhcDpzcXVhcmU7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjQ4cHgnLz48L3N2Zz4=");
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyB2aWV3Qm94PScwIDAgNTEyIDUxMic+PHBvbHlsaW5lIHBvaW50cz0nMjY4IDExMiA0MTIgMjU2IDI2OCA0MDAnIHN0eWxlPSdmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLWxpbmVjYXA6c3F1YXJlO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDo0OHB4Jy8+PGxpbmUgeDE9JzM5MicgeTE9JzI1NicgeDI9JzEwMCcgeTI9JzI1Nicgc3R5bGU9J2ZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2UtbGluZWNhcDpzcXVhcmU7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjQ4cHgnLz48L3N2Zz4=');
       background-size: var(--arrow-size);
       background-position: calc(100% - 20px) center;
       background-repeat: no-repeat;
@@ -654,6 +646,4 @@ const HubspotFormStyles: any = styled.div`
   }
 `;
 
-export default forwardRef<HTMLDivElement, CustomHubspotFormProps>(
-  HubspotForm
-) as typeof HubspotForm;
+export default forwardRef<HTMLDivElement, CustomHubspotFormProps>(HubspotForm) as typeof HubspotForm;
