@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import AnnouncementBar from '../../components/announcement-bar/AnnouncementBar';
 import ContributorList from '../../components/docs/ContributorList';
 import InPageNavigtion from '../../components/docs/InPageNavigation';
 import LowerContentNav from '../../components/docs/LowerContentNav';
@@ -7,11 +8,13 @@ import SiteHeader from '../../components/site/SiteHeader';
 import SiteMeta from '../../components/site/SiteMeta';
 import { RenderJsxAst } from '../../markdown/render-ast';
 import { DocsData } from './data';
+import DocsStyles from './Docs.styles';
 
 interface Props {
   data: DocsData;
+  announcement_bar: any;
 }
-const Docs: React.FC<Props> = ({ data }) => {
+const Docs: React.FC<Props> = ({ data, announcement_bar }) => {
   // menuEl!: HTMLDocsMenuElement;
   const el = useRef<HTMLElement | null>(null);
   const [showBackdrop, setShowBackdrop] = useState(false);
@@ -50,39 +53,46 @@ const Docs: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      <SiteMeta canonicalUrl={data.canonicalUrl} title={data.title} description={makeDescription(data)} />
-      <div className="row">
-        <SiteBackdrop visible={showBackdrop} onClick={backdropClicked} />
+      <AnnouncementBar {...announcement_bar} />
+      <DocsStyles>
+        <SiteMeta canonicalUrl={data.canonicalUrl} title={data.title} description={makeDescription(data)} />
+        <div className="row">
+          <SiteBackdrop visible={showBackdrop} onClick={backdropClicked} />
 
-        {/*
-        <DocsMenu
-          ref={menuEl}
-          template={data.template}
-          toc={data.tableOfContents}
-          activePath={Router.path}
-        />
-        */}
+          {/*
+          <DocsMenu
+            ref={menuEl}
+            template={data.template}
+            toc={data.tableOfContents}
+            activePath={Router.path}
+          />
+          */}
 
-        <div className="content-wrapper">
-          <SiteHeader className="docs-container" template={data.template} includeLogo={false} includeBurger />
-          <div className="app-marked  docs-container">
-            <div className="doc-content">
-              <div className="measure-lg">
-                <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />
-                <LowerContentNav navigation={data.navigation} />
-                <ContributorList contributors={data.contributors} editUrl={data.editUrl} editApiUrl={data.editApiUrl} />
+          <div className="content-wrapper">
+            <SiteHeader className="docs-container" template={data.template} includeLogo={false} includeBurger />
+            <div className="app-marked  docs-container">
+              <div className="doc-content">
+                <div className="measure-lg">
+                  <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />
+                  <LowerContentNav navigation={data.navigation} />
+                  <ContributorList
+                    contributors={data.contributors}
+                    editUrl={data.editUrl}
+                    editApiUrl={data.editApiUrl}
+                  />
+                </div>
               </div>
-            </div>
 
-            <InPageNavigtion
-              headings={data.headings}
-              editUrl={data.editUrl}
-              editApiUrl={data.editApiUrl}
-              url={data.navigation.current.url}
-            />
+              <InPageNavigtion
+                headings={data.headings}
+                editUrl={data.editUrl}
+                editApiUrl={data.editApiUrl}
+                url={data.navigation.current.url}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </DocsStyles>
     </>
   );
 };

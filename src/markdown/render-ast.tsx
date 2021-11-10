@@ -1,5 +1,5 @@
-import React from "react";
-import { ElementPropsHook, JsxAstNode, RenderJsxProps } from "./types";
+import React from 'react';
+import { ElementPropsHook, JsxAstNode, RenderJsxProps } from './types';
 
 /**
  * Functional component that renders markdown and html content that
@@ -7,10 +7,9 @@ import { ElementPropsHook, JsxAstNode, RenderJsxProps } from "./types";
  */
 export const RenderJsxAst = (props: RenderJsxProps) => {
   if (props && Array.isArray(props.ast)) {
-    const elementProps =
-      typeof props.elementProps === 'function' ? props.elementProps : undefined;
+    const elementProps = typeof props.elementProps === 'function' ? props.elementProps : undefined;
 
-    return props.ast.map(node => toHypertext(elementProps, node));
+    return <>{props.ast.map((node) => toHypertext(elementProps, node))}</>;
   }
   return null;
 };
@@ -22,10 +21,7 @@ export const RenderJsxAst = (props: RenderJsxProps) => {
  * becomes
  * `h('div', { id: 'my-id' }, 'text')`
  */
-const toHypertext = (
-  elementProps: ElementPropsHook | undefined,
-  node: JsxAstNode[],
-) => {
+const toHypertext = (elementProps: ElementPropsHook | undefined, node: JsxAstNode[]) => {
   if (!Array.isArray(node) || node.length < 2) {
     return null;
   }
@@ -41,6 +37,12 @@ const toHypertext = (
     arg = node[i];
 
     if (i === 1) {
+      // Props arg
+      if (arg) {
+        arg['className'] = arg['class'];
+        delete arg['class'];
+        arg['key'] = i;
+      }
       if (elementProps && tagName) {
         arg = elementProps(tagName, arg);
       }
@@ -49,6 +51,7 @@ const toHypertext = (
         arg = toHypertext(elementProps, arg);
       }
     }
+
     args.push(arg);
   }
 

@@ -14,7 +14,7 @@ const ContributorList: React.FC<Props> = ({ contributors, editUrl, editApiUrl })
       {c?.length > 0 && (
         <ul className="img-list">
           {c.reverse().map((contributor) => (
-            <li>
+            <li key={contributor}>
               <a className="contributor-img" target="_blank" href={`https://github.com/${contributor}`}>
                 <img
                   src={`https://github.com/${contributor}.png?size=90`}
