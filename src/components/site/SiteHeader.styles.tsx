@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Breakpoints from "../ui/Breakpoints";
+import styled from 'styled-components';
+import Breakpoints from '../ui/Breakpoints';
 
 const SiteHeaderStyles = styled.div`
   --link-hover-opacity: 0.7;
@@ -61,7 +61,7 @@ const SiteHeaderStyles = styled.div`
       background: var(--c-carbon-70);
     }
 
-    more-button {
+    .more-button {
       --color: #fff;
     }
   }
@@ -152,8 +152,7 @@ const SiteHeaderStyles = styled.div`
   .routes {
     display: flex;
 
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out,
-      box-shadow 0.2s ease-out;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out, box-shadow 0.2s ease-out;
 
     &__header {
       display: none;
@@ -256,7 +255,7 @@ const SiteHeaderStyles = styled.div`
     }
   }
 
-  more-button {
+  .more-button {
     display: none;
     margin-inline-start: var(--container);
   }
@@ -356,7 +355,7 @@ const SiteHeaderStyles = styled.div`
       }
     }
 
-    more-button {
+    .more-button {
       display: block;
     }
   }
