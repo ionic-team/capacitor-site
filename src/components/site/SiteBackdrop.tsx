@@ -1,21 +1,18 @@
-import clsx from "clsx";
-import styled from "styled-components";
+import clsx from 'clsx';
+import styled from 'styled-components';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  visible: boolean;
-  mobileOnly: boolean;
+  visible?: boolean;
+  mobileOnly?: boolean;
 }
 
-const SiteBackdrop: React.FC<Props> = ({
-  visible = false,
-  mobileOnly = false,
-}) => {
+const SiteBackdrop: React.FC<Props> = ({ visible = false, mobileOnly = false }) => {
   return (
     <SiteBackdropStyles
       tabIndex={-1}
       className={clsx({
-        "site-backdrop--visible": visible,
-        "site-backdrop--mobile-only": mobileOnly,
+        'site-backdrop--visible': visible,
+        'site-backdrop--mobile-only': mobileOnly,
       })}
     />
   );

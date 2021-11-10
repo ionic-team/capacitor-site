@@ -16,7 +16,7 @@ import DocsDropdown from '../docs-dropdown/DocsDropdown';
 
 const HEIGHT_ABOVE_BAR = 72;
 
-interface SiteHeaderProps {
+interface SiteHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   theme?: 'light' | 'dark';
   sticky?: boolean;
   template?: any /* DocsTemplate */;
