@@ -1,9 +1,10 @@
-@use "./fonts";
-@use "./tokens";
-@use "./base";
+@use './fonts';
+@use './tokens';
+@use './base';
 
-@use "./ui/button/button";
-@use "./ui/heading/heading";
-@use "./ui/grid/grid";
-@use "./ui/paragraph/paragraph";
-@use "./ui/responsive-container/responsiveContainer";
+@use './ui/breakpoint/breakpoint';
+@use './ui/button/button';
+@use './ui/heading/heading';
+@use './ui/grid/grid';
+@use './ui/paragraph/paragraph';
+@use './ui/responsive-container/responsiveContainer';

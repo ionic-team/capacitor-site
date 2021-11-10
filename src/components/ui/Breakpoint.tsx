@@ -1,34 +1,25 @@
-import { applyProps } from "./common";
+import { applyProps } from './common';
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   xs?: boolean;
   sm?: boolean;
   md?: boolean;
   lg?: boolean;
   xl?: boolean;
   display?:
-    | "inline"
-    | "block"
-    | "inline-block"
-    | "flex"
-    | "inline-flex"
-    | "grid"
-    | "inline-grid"
-    | "table"
-    | "table-cell";
+    | 'inline'
+    | 'block'
+    | 'inline-block'
+    | 'flex'
+    | 'inline-flex'
+    | 'grid'
+    | 'inline-grid'
+    | 'table'
+    | 'table-cell';
 }
 
-const Breakpoint: React.FC<Props & React.HTMLProps<HTMLDivElement>> = ({
-  xs,
-  sm,
-  md,
-  lg,
-  xl,
-  display = "block",
-  children,
-  ...props
-}) => {
-  const Tag = display === "inline" ? "span" : "div";
+const Breakpoint = ({ xs, sm, md, lg, xl, display = 'block', children, ...props }: Props) => {
+  const Tag = display === 'inline' ? 'span' : 'div';
 
   //cascade values up breakpoints
   xs = xs !== undefined ? xs : false;
@@ -38,24 +29,21 @@ const Breakpoint: React.FC<Props & React.HTMLProps<HTMLDivElement>> = ({
   xl = xl !== undefined ? xl : lg;
 
   const breakpoints = [
-    ["xs", xs],
-    ["sm", sm],
-    ["md", md],
-    ["lg", lg],
-    ["xl", xl],
+    ['xs', xs],
+    ['sm', sm],
+    ['md', md],
+    ['lg', lg],
+    ['xl', xl],
   ];
 
   //Combine classes into string based on breakpoint values
   const className = breakpoints.reduce(
     (acc, cur) => `${acc} ${cur[1] ? `ui-breakpoint-${cur[0]}` : ``}`,
-    "ui-breakpoint"
+    'ui-breakpoint'
   );
 
   return (
-    <Tag
-      {...applyProps(props, { className: className })}
-      style={{ "--display": display }}
-    >
+    <Tag {...applyProps(props, { className })} style={{ '--display': display }}>
       {children}
     </Tag>
   );

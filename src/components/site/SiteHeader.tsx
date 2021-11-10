@@ -12,6 +12,7 @@ import SiteBackdrop from './SiteBackdrop';
 import DocsSearch from '../docs-search/DocsSearch';
 import SiteMenuToggle from './SiteMenuToggle';
 import styled from 'styled-components';
+import DocsDropdown from '../docs-dropdown/DocsDropdown';
 
 const HEIGHT_ABOVE_BAR = 72;
 
@@ -216,25 +217,19 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
         <MoreButton onClick={() => toggleExpanded()} />
 
         <div className="ctas">
-          {/*
-            <docs-dropdown
-              icon={Translation}
-              align="right"
-              className="label-sm-only"
-            >
-              <section>
-                <a href="https://capacitorjs.com/" className="link-active">
-                  English
-                  <svg viewBox="0 0 512 512" width="14">
-                    <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
-                  </svg>
-                </a>
-                <a href="https://capacitorjs.jp/" target="_blank">
-                  日本語
-                </a>
-              </section>
-            </docs-dropdown>
-            */}
+          <DocsDropdown icon={Translation} align="right" className="label-sm-only">
+            <section>
+              <a href="https://capacitorjs.com/" className="link-active">
+                English
+                <svg viewBox="0 0 512 512" width="14">
+                  <path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"></path>
+                </svg>
+              </a>
+              <a href="https://capacitorjs.jp/" target="_blank">
+                日本語
+              </a>
+            </section>
+          </DocsDropdown>
 
           <a href="https://github.com/ionic-team/capacitor" target="_blank" rel="noopener">
             <svg className="social" width="14" height="14" xmlns="http://www.w3.org/2000/svg">
@@ -312,7 +307,10 @@ const capacitorLogo = (props?: any) => (
   </svg>
 );
 
-const MoreButton = ({ icon = 'ellipsis-vertical' }) => (
+interface MoreButtonProps extends React.HTMLAttributes<HTMLDivElement> {
+  icon?: string;
+}
+const MoreButton: React.FC<MoreButtonProps> = ({ icon = 'ellipsis-vertical' }) => (
   <MoreButtonStyles className="more-button">
     <button>
       <ion-icon icon={icon} />
