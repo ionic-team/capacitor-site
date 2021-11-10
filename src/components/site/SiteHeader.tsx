@@ -9,6 +9,7 @@ import { docsVersionHref } from "../../../routing";
 import Button from "../ui/Button";
 import SiteHeaderStyles from "./SiteHeader.styles";
 import SiteBackdrop from "./SiteBackdrop";
+import DocsSearch from "../docs-search/DocsSearch";
 
 const HEIGHT_ABOVE_BAR = 72;
 
@@ -169,7 +170,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
         </div>
 
         <div className="docs-search-wrapper desktop-only">
-          {/*<docs-search theme={this.theme} />*/}
+          <DocsSearch theme={theme} />
         </div>
 
         <Link href={docsVersionHref(router.pathname, "/docs")}>
@@ -237,9 +238,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
           </div>
 
           <div className="docs-search-wrapper mobile-only">
-            {/*
-              <docs-search />
-              */}
+            <DocsSearch />
           </div>
           <Link href="/community">
             <a

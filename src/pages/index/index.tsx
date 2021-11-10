@@ -1,26 +1,28 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import { PrismicResponsiveImage, PrismicRichText } from "../prismic";
+import { PrismicResponsiveImage, PrismicRichText } from "../../prismic";
 
-import Config from "../../config";
-import SiteHeader from "../components/site/SiteHeader";
-import SiteMeta from "../components/site/SiteMeta";
-import Button from "../components/ui/Button";
-import ResponsiveContainer from "../components/ui/ResponsiveContainer";
-import Grid from "../components/ui/Grid";
-import Col from "../components/ui/Col";
-import Breakpoint from "../components/ui/Breakpoint";
-import Paragraph from "../components/ui/Paragraph";
-import Heading from "../components/ui/Heading";
+import Config from "../../../config";
+import SiteHeader from "../../components/site/SiteHeader";
+import SiteMeta from "../../components/site/SiteMeta";
+import Button from "../../components/ui/Button";
+import ResponsiveContainer from "../../components/ui/ResponsiveContainer";
+import Grid from "../../components/ui/Grid";
+import Col from "../../components/ui/Col";
+import Breakpoint from "../../components/ui/Breakpoint";
+import Paragraph from "../../components/ui/Paragraph";
+import Heading from "../../components/ui/Heading";
 
-import AnnouncementBar from "../components/announcement-bar/AnnouncementBar";
+import AnnouncementBar from "../../components/announcement-bar/AnnouncementBar";
 
 import IndexStyles from "./index.styles";
-import CodeSnippet from "../components/code-snippet/CodeSnippet";
-import CodeTabs from "../components/code-tabs/CodeTabs";
+import CodeSnippet from "../../components/code-snippet/CodeSnippet";
+import CodeTabs from "../../components/code-tabs/CodeTabs";
+import SitePreFooter from "../../components/site/SitePreFooter";
+import SiteFooter from "../../components/site/SiteFooter";
 
-export default function Index(pageData) {
+const Index = (pageData) => {
   return (
     <>
       <AnnouncementBar {...pageData.announcement_bar} />
@@ -36,10 +38,12 @@ export default function Index(pageData) {
         <Framework {...pageData} />
         <Tweets {...pageData} />
         <Cta {...pageData} />
+        <SitePreFooter />
+        <SiteFooter />
       </IndexStyles>
     </>
   );
-}
+};
 
 const Top = ({
   top,
@@ -597,3 +601,5 @@ const Cta = ({
     </section>
   );
 };
+
+export default Index;

@@ -8,6 +8,7 @@
   --elevation: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   --padding: 13.5px 16px;
   --f-size: 14px;
+  --f-family: var(--f-family-text);
 
   display: inline-flex;
   align-items: center;
@@ -29,6 +30,7 @@
   font-size: var(--f-size);
   height: var(--height);
   font-weight: bold;
+  font-family: var(--f-family);
 
   &:focus {
     outline: 1px solid rgba(0, 0, 0, 0);

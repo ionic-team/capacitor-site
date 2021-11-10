@@ -1,4 +1,4 @@
-import IndexPage from "../src/pages";
+import IndexPage from "../src/pages/index";
 
 import { GetStaticProps } from "next";
 import { getPage } from "../src/prismic";

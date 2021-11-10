@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Breakpoints from "../components/ui/Breakpoints";
+import Breakpoints from "../../components/ui/Breakpoints";
 
 const IndexStyles = styled.div`
   //#region ----------- VARIABLES ------------
