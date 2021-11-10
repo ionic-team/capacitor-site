@@ -1,6 +1,8 @@
+import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
 import AnnouncementBar from '../../components/announcement-bar/AnnouncementBar';
 import ContributorList from '../../components/docs/ContributorList';
+import DocsMenu from '../../components/docs/DocsMenu';
 import InPageNavigtion from '../../components/docs/InPageNavigation';
 import LowerContentNav from '../../components/docs/LowerContentNav';
 import SiteBackdrop from '../../components/site/SiteBackdrop';
@@ -15,9 +17,11 @@ interface Props {
   announcement_bar: any;
 }
 const Docs: React.FC<Props> = ({ data, announcement_bar }) => {
-  // menuEl!: HTMLDocsMenuElement;
+  const menuEl = useRef<HTMLElement | null>(null);
   const el = useRef<HTMLElement | null>(null);
   const [showBackdrop, setShowBackdrop] = useState(false);
+
+  const router = useRouter();
 
   console.log('Rendering data', data);
 
@@ -59,14 +63,7 @@ const Docs: React.FC<Props> = ({ data, announcement_bar }) => {
         <div className="row">
           <SiteBackdrop visible={showBackdrop} onClick={backdropClicked} />
 
-          {/*
-          <DocsMenu
-            ref={menuEl}
-            template={data.template}
-            toc={data.tableOfContents}
-            activePath={Router.path}
-          />
-          */}
+          <DocsMenu template={data.template} toc={data.tableOfContents} activePath={router.pathname} />
 
           <div className="content-wrapper">
             <SiteHeader className="docs-container" template={data.template} includeLogo={false} includeBurger />
