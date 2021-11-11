@@ -231,7 +231,7 @@ const SiteHeaderStyles = styled.div`
       margin-inline-start: var(--space-3);
     }
 
-    docs-dropdown {
+    .Dropdown {
       margin-inline-end: -1rem;
     }
 
