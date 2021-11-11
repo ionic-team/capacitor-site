@@ -33,7 +33,6 @@ const CodeTabs = ({ data }) => {
       if (!refEl || !tabs.current || !hasTabs) {
         return;
       }
-      console.log('Setting tab ref', tabs, tabIndex, refEl, refEl?.offsetLeft, refEl?.offsetWidth);
       tabs.current = tabs.current.map((t, i) => {
         if (i === tabIndex) {
           return {
@@ -47,40 +46,11 @@ const CodeTabs = ({ data }) => {
       });
 
       if (!activeTab && tabs.current[0]) {
-        //setActiveTab(tabs.current[0]);
         setActive(tabs.current[0].el, tabs.current[0], 0);
       }
     },
     [activeTab, tabs, hasTabs]
   );
-
-  /*
-  const tabsHandler = {
-    set: (obj: any, prop: string, value: HTMLElement) => {
-      if (prop === '0') {
-        value.offsetWidth === 0 ? setResizeObserver(value) : setActive(value, activeTab, activeTab.index);
-      }
-      obj[prop] = value;
-      return true;
-    },
-  };
-  const tabs: any = new Proxy({}, tabsHandler);
-  */
-
-  /*
-  const setResizeObserver = (el: HTMLElement) => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.contentRect.width > 0) {
-          setActive(el, activeTab, activeTab.index);
-          resizeObserver.disconnect();
-        }
-      }
-    });
-
-    resizeObserver.observe(el);
-  };
-  */
 
   const handleTabSelect = useCallback(
     (ev: Event, tabIndex: number) => {
@@ -125,7 +95,6 @@ const CodeTabs = ({ data }) => {
               className={clsx({
                 active: activeTab?.index === i,
               })}
-              //ref={(el) => !tabs.hasOwnProperty(i) && (tabs[i] = el)}
               ref={(el) => setTabRef(i, el)}
               onClick={(ev) => {
                 handleTabSelect(ev.nativeEvent, i);
