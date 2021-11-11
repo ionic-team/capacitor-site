@@ -80,6 +80,7 @@ const DocsMenu: React.FC<Props> = ({ template, toc, activePath }) => {
               const expanded = expands[template].includes(i);
 
               if (item.children && item.children.length > 0) {
+                console.log(item.children[0].url);
                 return (
                   <li className={clsx({ collapsed: !expanded })}>
                     <a

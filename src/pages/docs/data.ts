@@ -24,12 +24,10 @@ export type DocsTemplate = 'docs' | 'plugins' | 'cli';
 
 const repoRootDir = join(__dirname, '..', '..', '..');
 
-export const getDocsData = async (relDocsDir?: string, id?: string) => {
+export const getDocsData = async (pagesDir: string, docsDir: string, id?: string) => {
   if (!id) {
     id = 'index.md';
   }
-
-  const docsDir = resolve(relDocsDir);
 
   const results: DocsData = await parseMarkdown(join(docsDir, id), {
     headingAnchors: true,
@@ -41,16 +39,11 @@ export const getDocsData = async (relDocsDir?: string, id?: string) => {
   results.template = getTemplateFromPath(results.filePath);
 
 
-  results.tableOfContents = await getTableOfContents(docsDir, results.template);
+  results.tableOfContents = await getTableOfContents(docsDir, pagesDir, results.template);
 
-  // console.log('TOC', JSON.stringify(results.tableOfContents, null, 2));
-  // console.log(JSON.stringify(results.tableOfContents, null, 2));
-
-  results.navigation = await getPageNavigation(docsDir, results.filePath, {
+  results.navigation = await getPageNavigation(pagesDir, results.filePath, {
     tableOfContents: results.tableOfContents,
   });
-
-  console.log('Got navigation', results.navigation);
 
   const githubData = await getGithubData(repoRootDir, results.filePath);
 
@@ -82,7 +75,7 @@ export const getDocsData = async (relDocsDir?: string, id?: string) => {
 
 const cachedToc = new Map<string, TableOfContents>();
 
-const getTableOfContents = async (docsDir: string, template: DocsTemplate) => {
+const getTableOfContents = async (docsDir: string, pagesDir: string, template: DocsTemplate) => {
   let toc = cachedToc.get(template);
   if (!toc) {
     let tocPath: string;
@@ -91,7 +84,7 @@ const getTableOfContents = async (docsDir: string, template: DocsTemplate) => {
     } else {
       tocPath = join(docsDir, 'README.md');
     }
-    toc = await parseTableOfContents(tocPath, docsDir);
+    toc = await parseTableOfContents(tocPath, pagesDir);
     // strip out the /v3 from the urls
     toc.root.forEach((root) => root.children.forEach((child) => (child.url = child.url.replace('/v3', ''))));
     cachedToc.set(template, toc);

@@ -34,7 +34,6 @@ export const getPage = async (
 
     return response;
     /*
-    console.log(response);
 
     state.pageData = response.data;
 
@@ -141,44 +140,44 @@ export const getAuthorsForPrismicDoc = (doc: PrismicDoc): ResourceAuthor[] => {
 };
 
 export const prismicTypeToResourceType = (type: string) =>
-  ((
-    {
-      article: ResourceType.Article,
-      blog: ResourceType.Blog,
-      book: ResourceType.Book,
-      case_study: ResourceType.CaseStudy,
-      course: ResourceType.Course,
-      customer_story: ResourceType.CustomerInterview,
-      doc: ResourceType.Doc,
-      ebook: ResourceType.Ebook,
-      guide: ResourceType.Guide,
-      learning: ResourceType.Learning,
-      podcast: ResourceType.Podcast,
-      tutorial: ResourceType.Tutorial,
-      video: ResourceType.Video,
-      webinar: ResourceType.Webinar,
-      whitepaper: ResourceType.Whitepaper,
-    } as { [key: string]: ResourceType }
-  )[type]);
+((
+  {
+    article: ResourceType.Article,
+    blog: ResourceType.Blog,
+    book: ResourceType.Book,
+    case_study: ResourceType.CaseStudy,
+    course: ResourceType.Course,
+    customer_story: ResourceType.CustomerInterview,
+    doc: ResourceType.Doc,
+    ebook: ResourceType.Ebook,
+    guide: ResourceType.Guide,
+    learning: ResourceType.Learning,
+    podcast: ResourceType.Podcast,
+    tutorial: ResourceType.Tutorial,
+    video: ResourceType.Video,
+    webinar: ResourceType.Webinar,
+    whitepaper: ResourceType.Whitepaper,
+  } as { [key: string]: ResourceType }
+)[type]);
 
 export const resourceTypeToPrismicType = (type: ResourceType) =>
-  ({
-    [ResourceType.Article]: 'article',
-    [ResourceType.Blog]: 'blog',
-    [ResourceType.Book]: 'book',
-    [ResourceType.CaseStudy]: 'case_study',
-    [ResourceType.Course]: 'course',
-    [ResourceType.CustomerInterview]: 'customer_story',
-    [ResourceType.Doc]: 'doc',
-    [ResourceType.Ebook]: 'ebook',
-    [ResourceType.Guide]: 'guide',
-    [ResourceType.Learning]: 'learning',
-    [ResourceType.Podcast]: 'podcast',
-    [ResourceType.Tutorial]: 'tutorial',
-    [ResourceType.Video]: 'video',
-    [ResourceType.Webinar]: 'webinar',
-    [ResourceType.Whitepaper]: 'whitepaper',
-  }[type]);
+({
+  [ResourceType.Article]: 'article',
+  [ResourceType.Blog]: 'blog',
+  [ResourceType.Book]: 'book',
+  [ResourceType.CaseStudy]: 'case_study',
+  [ResourceType.Course]: 'course',
+  [ResourceType.CustomerInterview]: 'customer_story',
+  [ResourceType.Doc]: 'doc',
+  [ResourceType.Ebook]: 'ebook',
+  [ResourceType.Guide]: 'guide',
+  [ResourceType.Learning]: 'learning',
+  [ResourceType.Podcast]: 'podcast',
+  [ResourceType.Tutorial]: 'tutorial',
+  [ResourceType.Video]: 'video',
+  [ResourceType.Webinar]: 'webinar',
+  [ResourceType.Whitepaper]: 'whitepaper',
+}[type]);
 
 export function linkResolver(doc: any) {
   // Define the url depending on the document type

@@ -33,7 +33,6 @@ export async function parseHtmlContent(
   }
 
   const frag = JSDOM.fragment(html);
-  console.log(frag);
   const doc = frag.ownerDocument;
 
   if (typeof opts.beforeHtmlSerialize === 'function') {

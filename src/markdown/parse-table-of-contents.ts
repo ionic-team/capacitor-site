@@ -77,7 +77,6 @@ function parseTableOfContentsItem(
   tocs: TableOfContentsNode[],
   opts: ParseTableOfContentsOptions,
 ) {
-  console.log('Parsing TOC item', depth, tocDirPath, rootPagesDir, ulElm);
   if (ulElm) {
     const liElms = Array.from(ulElm.children).filter(n => n.nodeName === 'LI');
 
@@ -109,8 +108,6 @@ function parseTableOfContentsItem(
               if (!href.toLowerCase().startsWith('http')) {
                 const markdownFilePath = path.join(tocDirPath, href);
                 const ext = path.extname(markdownFilePath).toLowerCase();
-
-                console.log(markdownFilePath, ext);
 
                 if (path.isAbsolute(markdownFilePath) && ext === '.md') {
                   const url = getUrl(rootPagesDir, markdownFilePath, opts);

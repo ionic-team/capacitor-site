@@ -5,15 +5,12 @@ import { getDocsData } from '../../src/pages/docs/data';
 import DocsPage from '../../src/pages/docs/Docs';
 import { getPage } from '../../src/prismic';
 
-const repoRootDir = join(__dirname, '..', '..', '..');
-const pagesDir = join(repoRootDir, 'content');
-const docsDir = join(pagesDir, 'docs', 'v3');
-//const docsDir = join('docs', 'v3');
+const docsDir = join('docs', 'v3');
 
 const Docs = (props) => <DocsPage {...props} />;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const data = await getDocsData(pagesDir, docsDir);
+  const data = await getDocsData(docsDir, context.params.id as string);
   const announcementBarData = await getPage('announcement_bar');
 
   return {

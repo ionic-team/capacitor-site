@@ -19,7 +19,6 @@ export async function getPageNavigation(
   pageFilePath: string,
   opts?: PageNavigationOptions,
 ) {
-  console.log('Get page nav', rootPagesDir, pageFilePath);
   opts = opts || {};
 
   const results: PageNavigation = {
@@ -100,6 +99,8 @@ export function getUrl(
   }
 
   let url = path.relative(rootPagesDir, pageFilePath);
+
+  console.log('GET URL3', url);
 
   const basename = path.basename(url).toLowerCase();
   const ext = path.extname(basename);

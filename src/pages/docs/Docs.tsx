@@ -1,5 +1,7 @@
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 import { useRef, useState } from 'react';
+import Config from '../../../config';
+import { docsVersionHref } from '../../../routing';
 import AnnouncementBar from '../../components/announcement-bar/AnnouncementBar';
 import ContributorList from '../../components/docs/ContributorList';
 import DocsMenu from '../../components/docs/DocsMenu';
@@ -66,7 +68,12 @@ const Docs: React.FC<Props> = ({ data, announcement_bar }) => {
             <div className="app-marked  docs-container">
               <div className="doc-content">
                 <div className="measure-lg">
-                  <RenderJsxAst ast={data.ast} elementProps={elementRouterHref} />
+                  <RenderJsxAst
+                    ast={data.ast}
+                    elementProps={(tagName: string, props: any) => {
+                      return elementRouterHref(router, tagName, props);
+                    }}
+                  />
                   <LowerContentNav navigation={data.navigation} />
                   <ContributorList
                     contributors={data.contributors}
@@ -90,13 +97,15 @@ const Docs: React.FC<Props> = ({ data, announcement_bar }) => {
   );
 };
 
-const elementRouterHref = (tagName: string, props: any) => {
-  /*
+const elementRouterHref = (router: NextRouter, tagName: string, props: any) => {
   if (tagName === 'a' && typeof props.href === 'string') {
-    const currentHost = new URL(document.baseURI).host;
-    const gotoHost = new URL(props.href, document.baseURI).host;
+    // const currentHost = new URL(document.baseURI).host;
+    // const gotoHost = new URL(props.href, document.baseURI).host;
+    //if (currentHost !== gotoHost) {
 
-    if (currentHost !== gotoHost) {
+    const baseHost = new URL(Config.BaseUrl).host;
+    const gotoHost = new URL(props.href, Config.BaseUrl).host;
+    if (gotoHost != baseHost) {
       return {
         ...props,
         target: '_blank',
@@ -107,11 +116,9 @@ const elementRouterHref = (tagName: string, props: any) => {
 
     return {
       ...props,
-      //...href(docsVersionHref(props.href)),
-      href: props.href,
+      href: docsVersionHref(router.pathname, props.href),
     };
   }
-  */
   return props;
 };
 
