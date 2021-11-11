@@ -9,7 +9,7 @@ const InternalAd = () => {
     let timeout: ReturnType<typeof setTimeout> | null = null;
 
     async function load() {
-      setAd(await getPage('docs_ad'));
+      setAd((await getPage('docs_ad')).data);
       if (!ad) {
         return;
       }
@@ -19,10 +19,14 @@ const InternalAd = () => {
       }, 50);
     }
 
+    load();
+
     return () => {
       clearTimeout(timeout);
     };
   }, []);
+
+  console.log('Rendering ad', ad);
 
   if (!ad) {
     return null;
