@@ -100,8 +100,6 @@ export function getUrl(
 
   let url = path.relative(rootPagesDir, pageFilePath);
 
-  console.log('GET URL3', url);
-
   const basename = path.basename(url).toLowerCase();
   const ext = path.extname(basename);
 

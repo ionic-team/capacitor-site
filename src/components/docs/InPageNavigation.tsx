@@ -62,10 +62,10 @@ const InPageNavigtion: React.FC<Props> = ({ headings = [], editUrl = '', editApi
 
   if (hs.length === 0) {
     return (
-      <nav className={className}>
+      <InPageNavigationStyles className={className}>
         {isPluginPage ? submitEditLinks : submitEditLink}
         <InternalAd />
-      </nav>
+      </InPageNavigationStyles>
     );
   }
 

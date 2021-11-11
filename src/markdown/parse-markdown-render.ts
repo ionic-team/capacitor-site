@@ -1,6 +1,6 @@
 import type { ParseMarkdownOptions } from './types';
 import { marked, MarkedOptions, Renderer } from 'marked';
-import type PrismGlobal from 'prismjs';
+import Prism from 'prismjs';
 
 export function parseMarkdownRenderer(
   markdown: string,
@@ -149,5 +149,3 @@ function escape(html: string, encode: boolean) {
 
   return html;
 }
-
-declare const Prism: typeof PrismGlobal;
