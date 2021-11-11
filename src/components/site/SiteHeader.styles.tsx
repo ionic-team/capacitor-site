@@ -145,7 +145,7 @@ const SiteHeaderStyles = styled.div`
     }
   }
 
-  app-menu-toggle {
+  .site-menu-toggle {
     margin-inline-end: var(--space-3);
   }
 

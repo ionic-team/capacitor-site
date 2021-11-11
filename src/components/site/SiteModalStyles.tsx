@@ -1,24 +1,9 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components';
 
-const SiteModalStyles = styled.div`
-  --modal-z-index: 1100;
+export const GlobalSiteModalStyles = createGlobalStyle`
+:root {
   --modal-backdrop-z-index: 1090;
-  --modal-width: 768px;
-  --modal-padding: 48px;
-  --modal-border-radius: 24px;
-
-  site-modal {
-    display: block;
-    pointer-events: none;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: var(--modal-z-index);
-  }
-
+}
   .modal__backdrop {
     position: fixed;
     top: 0;
@@ -36,6 +21,31 @@ const SiteModalStyles = styled.div`
     &.out {
       opacity: 0;
     }
+  }
+`;
+
+const SiteModalStyles = styled.div`
+  --modal-z-index: 1100;
+  --modal-width: 768px;
+  --modal-padding: 48px;
+  --modal-border-radius: 24px;
+
+  h2 {
+    text-align: center;
+    color: var(--c-carbon-100);
+    margin-block-end: 2rem;
+  }
+
+  &.site-modal {
+    display: block;
+    pointer-events: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: var(--modal-z-index);
   }
 
   .modal__wrap {

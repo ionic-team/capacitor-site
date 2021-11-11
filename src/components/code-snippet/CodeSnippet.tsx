@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
-import { importResource } from "../../util/import-resource";
-import CodeSnippetStyles from "./CodeSnippet.styles";
+import { useEffect, useRef } from 'react';
+import { importResource } from '../../util/import-resource';
+import CodeSnippetStyles from './CodeSnippet.styles';
 
 interface Props {
   language: string;
@@ -16,10 +16,7 @@ const CodeSnippet: React.FC<Props> = ({ language, code }) => {
   const codeEl = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    importResource(
-      { propertyName: "Prism", link: `${prismCdn}/prism.min.js` },
-      loadInPrismLanguage
-    );
+    importResource({ propertyName: 'Prism', link: `${prismCdn}/prism.min.js` }, loadInPrismLanguage);
   }, []);
 
   const loadInPrismLanguage = () => {
@@ -33,17 +30,17 @@ const CodeSnippet: React.FC<Props> = ({ language, code }) => {
   };
 
   const highlightCode = async () => {
-    window.Prism.hooks.add("before-insert", (env) => {
+    window.Prism.hooks.add('before-insert', (env) => {
       switch (env.language) {
-        case "shell-session":
-          const lines = env.code.split("\n");
+        case 'shell-session':
+          const lines = env.code.split('\n');
 
           const code = lines.map((line) => {
-            return line.trim() === "" || line.trim()[0] === "#"
+            return line.trim() === '' || line.trim()[0] === '#'
               ? `<span class="token output">${line}</span>\n`
               : `<span class="dollar-sign token output">${line}</span>\n`;
           });
-          env.highlightedCode = code.join("");
+          env.highlightedCode = code.join('');
           break;
         default:
       }
@@ -57,7 +54,7 @@ const CodeSnippet: React.FC<Props> = ({ language, code }) => {
   }
 
   return (
-    <CodeSnippetStyles>
+    <CodeSnippetStyles className="code-snippet">
       <pre className={`language-${language}`}>
         <code ref={codeEl}>{code.trim()}</code>
       </pre>

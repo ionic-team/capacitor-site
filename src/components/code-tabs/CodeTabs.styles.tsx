@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const CodeTabsStyles = styled.div`
   /**
@@ -7,11 +7,11 @@ const CodeTabsStyles = styled.div`
  * @author Rose Pritchard
  */
 
-  code[class*="language-"],
-  pre[class*="language-"] {
+  code[class*='language-'],
+  pre[class*='language-'] {
     color: #ccc;
     background: none;
-    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 1em;
     text-align: left;
     white-space: pre;
@@ -31,18 +31,18 @@ const CodeTabsStyles = styled.div`
   }
 
   /* Code blocks */
-  pre[class*="language-"] {
+  pre[class*='language-'] {
     padding: 1em;
     margin: 0.5em 0;
     overflow: auto;
   }
 
-  :not(pre) > code[class*="language-"],
-  pre[class*="language-"] {
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
   }
 
   /* Inline code */
-  :not(pre) > code[class*="language-"] {
+  :not(pre) > code[class*='language-'] {
     padding: 0.1em;
     border-radius: 0.3em;
     white-space: normal;
@@ -130,7 +130,7 @@ const CodeTabsStyles = styled.div`
     padding: 16px;
   }
 
-  code-snippet {
+  .code-snippet {
     height: 100%;
   }
 
@@ -179,7 +179,7 @@ const CodeTabsStyles = styled.div`
     }
 
     &::after {
-      content: "";
+      content: '';
       z-index: -1;
       background: var(--c-capacitor-blue);
       position: absolute;
@@ -188,8 +188,7 @@ const CodeTabsStyles = styled.div`
       width: var(--tab-width);
       border-radius: 1000px;
 
-      transition: width 0.2s cubic-bezier(0.22, 0.62, 0.04, 0.93),
-        left 0.2s cubic-bezier(0.22, 0.62, 0.04, 0.93);
+      transition: width 0.2s cubic-bezier(0.22, 0.62, 0.04, 0.93), left 0.2s cubic-bezier(0.22, 0.62, 0.04, 0.93);
     }
   }
 

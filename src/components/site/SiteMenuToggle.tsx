@@ -6,7 +6,7 @@ interface Props {
 }
 const SiteMenuToggle: React.FC<Props> = ({ icon = 'menu-outline', onMenuToggleClick }) => {
   return (
-    <SiteMenuToggleStyles>
+    <SiteMenuToggleStyles className="site-menu-toggle">
       <button className="menu-toggle-button" onClick={() => onMenuToggleClick?.()}>
         <ion-icon icon={icon}></ion-icon>
       </button>
@@ -55,7 +55,7 @@ const SiteMenuToggleStyles = styled.div`
   }
 
   @media screen and (max-width: variables.$breakpoint-md) {
-    app-menu-toggle {
+    .site-menu-toggle {
       display: flex;
     }
   }

@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import Button from "../ui/Button";
-import SiteModalStyles from "./SiteModalStyles";
+import { useCallback, useEffect, useRef, useState } from 'react';
+import Button from '../ui/Button';
+import SiteModalStyles, { GlobalSiteModalStyles } from './SiteModalStyles';
 
 const OPEN_DELAY = 500;
 const CLOSE_DELAY = 500;
@@ -14,27 +14,27 @@ const SiteModal = ({ open, onModalClose, children }) => {
   }, []);
 
   useEffect(() => {
-    if (open && !backdropEl) {
+    if (open && !backdropEl.current) {
       openBackdrop();
-    } else if (!open && backdropEl) {
+    } else if (!open && backdropEl.current) {
       hideBackdrop();
     }
 
     requestAnimationFrame(() => {
       setVisible(open);
     });
-  }, [open]);
+  }, [open, backdropEl]);
 
   useEffect(() => {
     const handleKeyUp = (e: KeyboardEvent) => {
-      if (open && e.key === "Escape") {
+      if (open && e.key === 'Escape') {
         close();
       }
     };
-    window.addEventListener("keyup", handleKeyUp);
+    window.addEventListener('keyup', handleKeyUp);
 
     return () => {
-      window.removeEventListener("keyup", handleKeyUp);
+      window.removeEventListener('keyup', handleKeyUp);
     };
   }, [open]);
 
@@ -49,9 +49,9 @@ const SiteModal = ({ open, onModalClose, children }) => {
   }, []);
 
   const openBackdrop = useCallback(() => {
-    const backdrop = document.createElement("div");
+    const backdrop = document.createElement('div');
 
-    backdrop.className = "modal__backdrop";
+    backdrop.className = 'modal__backdrop';
     document.body.appendChild(backdrop);
 
     initBackdrop(backdrop);
@@ -59,7 +59,7 @@ const SiteModal = ({ open, onModalClose, children }) => {
     backdropEl.current = backdrop;
 
     requestAnimationFrame(() => {
-      backdrop.classList.add("in");
+      backdrop.classList.add('in');
     });
   }, []);
 
@@ -68,7 +68,7 @@ const SiteModal = ({ open, onModalClose, children }) => {
       return;
     }
 
-    backdropEl.current.classList.add("out");
+    backdropEl.current.classList.add('out');
 
     setTimeout(() => {
       document.body.removeChild(backdropEl.current!);
@@ -81,17 +81,19 @@ const SiteModal = ({ open, onModalClose, children }) => {
   const checkBackdrop = () => {};
 
   const initBackdrop = (el: HTMLDivElement) => {
-    el.addEventListener("click", (_e) => {
+    el.addEventListener('click', (_e) => {
       close();
     });
   };
 
   return (
     <SiteModalStyles
+      className="site-modal"
       style={{
-        display: open ? "block" : "none",
+        display: open ? 'block' : 'none',
       }}
     >
+      <GlobalSiteModalStyles />
       <div className={`modal__wrap${visible ? ` in` : ``}`}>
         <div className={`modal__content`}>
           <Button className="modal__close-button" onClick={close}>

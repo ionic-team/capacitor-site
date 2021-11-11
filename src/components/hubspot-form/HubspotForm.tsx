@@ -334,7 +334,6 @@ const HubspotFormStyles: any = styled.div`
     }
 
     label {
-      display: block;
       font-family: var(--f-family-text);
       margin-bottom: 8px;
       color: var(--c-label);
