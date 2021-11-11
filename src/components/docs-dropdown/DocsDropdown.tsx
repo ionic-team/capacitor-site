@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import { DownArrow } from '../../../icons';
 import DocsDropdownStyles from './DocsDropdown.styles';
@@ -9,9 +10,10 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const DocsDropdown: React.FC<Props> = ({ align = 'left', icon, children }) => {
   const [isOpen, setOpen] = useState(false);
-  const el = useRef<HTMLElement | null>(null);
+  const el = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    console.log('Dropdown', el);
     if (!el.current) {
       return;
     }
@@ -19,6 +21,7 @@ const DocsDropdown: React.FC<Props> = ({ align = 'left', icon, children }) => {
     const handleClick = (e) => {
       const isNode = e.target instanceof Node;
       const isOurs = isNode && el.current.contains(e.target as Node);
+      console.log(e.target, isNode, isOurs);
 
       if (!isOurs) {
         close();
@@ -32,7 +35,7 @@ const DocsDropdown: React.FC<Props> = ({ align = 'left', icon, children }) => {
     };
   }, [el]);
 
-  const handleKeyup = useCallback((event: KeyboardEvent) => {
+  const handleKeyup = useCallback((event) => {
     if (event.key === 'Enter') {
       toggle();
     }
@@ -51,6 +54,7 @@ const DocsDropdown: React.FC<Props> = ({ align = 'left', icon, children }) => {
   }, [isOpen]);
 
   const toggle = useCallback(() => {
+    console.log('Toggle', isOpen);
     setOpen(!isOpen);
   }, [isOpen]);
 
@@ -70,7 +74,16 @@ const DocsDropdown: React.FC<Props> = ({ align = 'left', icon, children }) => {
   const Icon = icon;
 
   return (
-    <DocsDropdownStyles>
+    <DocsDropdownStyles
+      tabIndex={0}
+      className={clsx({
+        Dropdown: true,
+        [`Dropdown--${align}`]: true,
+        'is-open': isOpen,
+      })}
+      ref={el}
+      onKeyUp={handleKeyup}
+    >
       <button
         tabIndex={-1}
         className="Dropdown-button"

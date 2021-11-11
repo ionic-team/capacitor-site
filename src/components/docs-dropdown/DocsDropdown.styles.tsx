@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const DocsDropdownStyles = styled.div`
-  .Dropdown {
+  &.Dropdown {
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -49,7 +49,7 @@ const DocsDropdownStyles = styled.div`
     margin-left: 0.8em;
   }
 
-  .Dropdown.is-open .Dropdown-arrow {
+  &.Dropdown.is-open .Dropdown-arrow {
     transform: rotate(180deg);
   }
 
@@ -67,21 +67,21 @@ const DocsDropdownStyles = styled.div`
     visibility: hidden;
   }
 
-  .Dropdown.is-open .Dropdown-panel {
+  &.Dropdown.is-open .Dropdown-panel {
     display: initial;
     pointer-events: auto;
     visibility: visible;
   }
 
-  .Dropdown--left .Dropdown-panel {
+  &.Dropdown--left .Dropdown-panel {
     left: 0;
   }
 
-  .Dropdown--right .Dropdown-panel {
+  &.Dropdown--right .Dropdown-panel {
     right: 0;
   }
 
-  .Dropdown--center .Dropdown-panel {
+  &.Dropdown--center .Dropdown-panel {
     left: 50%;
     transform: translateX(-50%);
   }
@@ -92,7 +92,7 @@ const DocsDropdownStyles = styled.div`
     padding: 0.5em 1em;
   }
 
-  .Dropdown-panel svg {
+  &.Dropdown-panel svg {
     height: 1em;
     width: 1em;
     margin-left: 4px;
@@ -112,7 +112,7 @@ const DocsDropdownStyles = styled.div`
     border-bottom: solid 1px var(--line-rule-color);
   }
 
-  .Dropdown {
+  &.Dropdown {
     align-self: center;
     color: var(--c-indigo-80);
   }
@@ -123,7 +123,7 @@ const DocsDropdownStyles = styled.div`
     transition: border-color 100ms ease;
   }
 
-  .Dropdown.is-open .Dropdown-button {
+  &.Dropdown.is-open .Dropdown-button {
     border-color: var(--line-rule-color);
   }
 

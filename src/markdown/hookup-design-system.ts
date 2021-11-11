@@ -1,5 +1,4 @@
 export const hookUpDesignSystem = (frag: DocumentFragment) => {
-  console.log('Hooking up', frag);
   const headings = frag.querySelectorAll('h1, h2, h3, h4, h5, h6');
   const paragraphs = frag.querySelectorAll(
     'p:not([class*="ui-paragraph"]):not([class*="ui-heading"])',
