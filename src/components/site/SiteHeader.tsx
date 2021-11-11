@@ -31,16 +31,15 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
   includeBurger = false,
 }) => {
   const router = useRouter();
-  const [collapsed, setCollapsed] = useState<boolean>(false);
   const [expanded, setExpanded] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
-  const elm = useRef<HTMLDivElement | null>(null);
+  const el = useRef<HTMLDivElement | null>(null);
 
   // Could be an announcement banner or platform bar
   // private heightAboveBar = 72;
 
   useEffect(() => {
-    if (!elm.current) {
+    if (!el.current) {
       return;
     }
 
@@ -50,18 +49,21 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
       threshold: 1.0,
     };
 
+    console.log('Observing', el);
+
     const observer = new IntersectionObserver((entries) => {
+      console.log('Intersectioned', entries[0].intersectionRatio);
       setScrolled(!(entries[0].intersectionRatio < 1));
     }, opts);
 
-    observer.observe(elm.current);
-  }, [elm.current]);
+    observer.observe(el.current);
+  }, [el]);
 
   const toggleExpanded = useCallback(() => setExpanded(!expanded), [expanded]);
 
   return (
     <SiteHeaderStyles
-      ref={elm}
+      ref={el}
       className={clsx({
         'heading-container': true,
         scrolled: scrolled,

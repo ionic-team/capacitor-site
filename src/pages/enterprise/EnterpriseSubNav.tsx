@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import { useEffect, useRef, useState } from "react";
-import EnterpriseSubNavStyles from "./EnterpriseSubNav.styles";
+import clsx from 'clsx';
+import { useEffect, useRef, useState } from 'react';
+import EnterpriseSubNavStyles from './EnterpriseSubNav.styles';
 
 const EnterpriseSubNav = () => {
   const el = useRef<HTMLDivElement | null>(null);
@@ -9,14 +9,12 @@ const EnterpriseSubNav = () => {
 
   useEffect(() => {
     let options = {
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: 1.0,
     };
 
     observer.current = new IntersectionObserver((entries) => {
-      setVisible(
-        entries[0].target.getBoundingClientRect().top < 0 ? true : false
-      );
+      setVisible(entries[0].target.getBoundingClientRect().top < 0 ? true : false);
     }, options);
 
     if (el.current) {
@@ -30,6 +28,7 @@ const EnterpriseSubNav = () => {
 
   return (
     <EnterpriseSubNavStyles
+      ref={el}
       className={clsx({
         visible,
       })}

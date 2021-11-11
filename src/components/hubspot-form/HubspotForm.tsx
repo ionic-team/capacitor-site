@@ -17,7 +17,7 @@ interface CustomHubspotFormProps extends React.HTMLAttributes<HTMLDivElement> {
   onFormReady?: () => any;
 }
 
-const HubspotForm = (
+const HubspotForm: React.FC<CustomHubspotFormProps> = (
   {
     formId,
     portalId = '3776657',

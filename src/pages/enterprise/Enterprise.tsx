@@ -20,7 +20,7 @@ const Enterprise = (data) => {
       <AnnouncementBar {...data.announcement_bar} />
       <EnterpriseStyles>
         <SiteMeta />
-        <SiteHeader theme="dark" />
+        <SiteHeader theme="dark" sticky={false} />
         <EnterpriseSubNav />
         <Top {...data} />
         <Companies {...data} />
