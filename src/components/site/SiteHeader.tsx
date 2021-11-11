@@ -57,6 +57,12 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
     }, opts);
 
     observer.observe(el.current);
+
+    return () => {
+      if (el.current) {
+        observer.unobserve(el.current);
+      }
+    };
   }, [el]);
 
   const toggleExpanded = useCallback(() => setExpanded(!expanded), [expanded]);

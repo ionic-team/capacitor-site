@@ -56,8 +56,8 @@ const Docs: React.FC<Props> = ({ data, announcement_bar }) => {
   return (
     <>
       <AnnouncementBar {...announcement_bar} />
+      <SiteMeta canonicalUrl={data.canonicalUrl} title={data.title} description={makeDescription(data)} />
       <DocsStyles>
-        <SiteMeta canonicalUrl={data.canonicalUrl} title={data.title} description={makeDescription(data)} />
         <div className="row">
           <SiteBackdrop visible={showBackdrop} onClick={backdropClicked} />
 

@@ -21,7 +21,9 @@ const EnterpriseSubNav = () => {
       observer.current?.observe(el.current);
 
       return () => {
-        observer.current?.unobserve(el.current);
+        if (el.current) {
+          observer.current?.unobserve(el.current);
+        }
       };
     }
   }, [el]);

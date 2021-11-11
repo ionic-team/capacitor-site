@@ -17,10 +17,10 @@ import EnterpriseSubNav from './EnterpriseSubNav';
 const Enterprise = (data) => {
   return (
     <>
+      <SiteMeta />
       <AnnouncementBar {...data.announcement_bar} />
+      <SiteHeader theme="dark" sticky={false} />
       <EnterpriseStyles>
-        <SiteMeta />
-        <SiteHeader theme="dark" sticky={false} />
         <EnterpriseSubNav />
         <Top {...data} />
         <Companies {...data} />
