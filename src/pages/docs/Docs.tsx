@@ -23,8 +23,6 @@ const Docs: React.FC<Props> = ({ data, announcement_bar }) => {
 
   const router = useRouter();
 
-  console.log('Rendering data', data);
-
   /*
   @Listen('menuToggleClick')
   toggleMenu() {
@@ -52,8 +50,6 @@ const Docs: React.FC<Props> = ({ data, announcement_bar }) => {
   }
 
   const DocsAst = data.ast as any;
-
-  console.log('Rendering docs ast', DocsAst);
 
   return (
     <>

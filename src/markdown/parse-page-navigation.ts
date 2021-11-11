@@ -19,6 +19,7 @@ export async function getPageNavigation(
   pageFilePath: string,
   opts?: PageNavigationOptions,
 ) {
+  console.log('Get page nav', rootPagesDir, pageFilePath);
   opts = opts || {};
 
   const results: PageNavigation = {

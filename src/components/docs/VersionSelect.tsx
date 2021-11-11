@@ -55,8 +55,8 @@ const VersionSelect = () => {
           <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M0.6875 7.5L7.25 0.5M7.25 0.5H2.98437M7.25 0.5V5.05"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </a>
@@ -67,7 +67,7 @@ const VersionSelect = () => {
 
 const checkmark = () => (
   <svg width="12" height="8" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M11 0.5L4 8.5L1 5.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M11 0.5L4 8.5L1 5.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 

@@ -154,8 +154,8 @@ const capacitorLogo = () => (
       fill="#000"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M115.34 15.9a3.44 3.44 0 100-6.89 3.44 3.44 0 000 6.88zm0 3.26a6.71 6.71 0 100-13.42 6.71 6.71 0 000 13.42z"
       fill="#000"
     />
@@ -165,15 +165,15 @@ const capacitorLogo = () => (
     />
     <path d="M3.74 5.07L.03 8.8l5.72 5.73L0 20.3 3.7 24l5.76-5.77 5.72 5.73 3.71-3.71L3.74 5.07z" fill="#53B9FF" />
     <path d="M13.17 14.52l-3.71 3.71 5.72 5.73 3.71-3.71-5.72-5.73z" fill="#119EFF" />
-    <path d="M13.17 14.52l-3.71 3.71 1.43 1.43 2.28-5.14z" fill="#000" fill-opacity=".2" />
+    <path d="M13.17 14.52l-3.71 3.71 1.43 1.43 2.28-5.14z" fill="#000" fillOpacity=".2" />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M18.24 9.47L24 3.7 20.29 0l-5.76 5.75L8.8.03 5.1 3.74l15.15 15.18 3.7-3.72-5.7-5.73z"
       fill="#53B9FF"
     />
     <path d="M10.81 9.47l3.72-3.72L8.8.03 5.1 3.74l5.71 5.73z" fill="#119EFF" />
-    <path d="M10.81 9.47l3.72-3.72-1.43-1.42-2.29 5.14z" fill="#000" fill-opacity=".2" />
+    <path d="M10.81 9.47l3.72-3.72-1.43-1.42-2.29 5.14z" fill="#000" fillOpacity=".2" />
   </svg>
 );
 
