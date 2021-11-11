@@ -70,7 +70,7 @@ const SiteHeaderStyles = styled.div`
   .docs-search-wrapper {
     margin-inline-start: var(--space-4);
 
-    docs-search {
+    .docs-search {
       max-width: clamp(100px, 40vw, 251px);
     }
 
@@ -350,7 +350,7 @@ const SiteHeaderStyles = styled.div`
       max-width: 100%;
       margin-block-end: var(--space-2);
 
-      docs-search {
+      .docs-search {
         max-width: 100%;
       }
     }

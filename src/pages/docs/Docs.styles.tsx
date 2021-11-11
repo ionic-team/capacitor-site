@@ -322,7 +322,7 @@ const DocsStyles = styled.div`
     }
   }
 
-  site-header {
+  .site-header {
     --spacing-x: var(--container);
 
     &.scrolled {
@@ -330,7 +330,7 @@ const DocsStyles = styled.div`
     }
   }
 
-  site-backdrop {
+  .site-backdrop {
     z-index: 1001;
   }
 

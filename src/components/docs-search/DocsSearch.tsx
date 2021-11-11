@@ -145,7 +145,7 @@ const DocsSearch: React.FC<Props> = ({ theme = 'light', placeholder = 'Search' }
           '--search-width': searchStats.width,
         } as any
       }
-      className={`theme--${theme}`}
+      className={`docs-search theme--${theme}`}
     >
       <svg className="search-icon" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

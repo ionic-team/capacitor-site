@@ -1,7 +1,7 @@
-@use "vars";
-@use "variables";
-@use "prism" as *;
-@use "./ds-v4";
+@use './ds-v4';
+@use 'vars';
+@use 'variables';
+@use 'prism' as *;
 
 span,
 a,
@@ -53,7 +53,7 @@ em {
 }
 
 code {
-  font-family: "Roboto Mono", "Source Code Pro", monospace;
+  font-family: 'Roboto Mono', 'Source Code Pro', monospace;
 }
 
 .no-scroll {
@@ -97,7 +97,7 @@ site-root {
   flex: 1;
 }
 
-site-header.scrolled {
+.site-header.scrolled {
   box-shadow: var(--elevation-2);
 }
 

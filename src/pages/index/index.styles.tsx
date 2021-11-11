@@ -1,29 +1,27 @@
-import styled from "styled-components";
-import Breakpoints from "../../components/ui/Breakpoints";
+import styled from 'styled-components';
+import Breakpoints from '../../components/ui/Breakpoints';
 
 const IndexStyles = styled.div`
   //#region ----------- VARIABLES ------------
   --section-space: 12.5rem;
 
-  :host {
-    --h1-color: var(--c-carbon-100);
-    --h1-size: clamp(48px, 6vw, 64px);
+  --h1-color: var(--c-carbon-100);
+  --h1-size: clamp(48px, 6vw, 64px);
 
-    --h2-color: var(--c-carbon-50);
-    --h2-size: clamp(40px, 6vw, 48px);
+  --h2-color: var(--c-carbon-50);
+  --h2-size: clamp(40px, 6vw, 48px);
 
-    --h3-color: var(--c-carbon-100);
-    --h3-size: clamp(22px, 3vw, 28px);
+  --h3-color: var(--c-carbon-100);
+  --h3-size: clamp(22px, 3vw, 28px);
 
-    --h4-color: #010610;
-    --h4-size: clamp(16px, 2.5vw, 20px);
+  --h4-color: #010610;
+  --h4-size: clamp(16px, 2.5vw, 20px);
 
-    --p2-color: var(--c-carbon-80);
-    --p2-size: clamp(16px, 2vw, 20px);
+  --p2-color: var(--c-carbon-80);
+  --p2-size: clamp(16px, 2vw, 20px);
 
-    --p3-color: var(--c-indigo-80);
-    --p3-size: clamp(14px, 2vw, 16px);
-  }
+  --p3-color: var(--c-indigo-80);
+  --p3-size: clamp(14px, 2vw, 16px);
   //#endregion
 
   //#region ----------- GENERAL STYLES -----------
@@ -42,10 +40,8 @@ const IndexStyles = styled.div`
   }
   //#endregion
 
-  :host {
-    overflow: hidden;
-    display: block;
-  }
+  overflow: hidden;
+  display: block;
 
   #top {
     overflow: hidden;
@@ -141,10 +137,7 @@ const IndexStyles = styled.div`
         @media screen and (max-width: ${Breakpoints.screenXs}) {
           --width: 200px;
           max-width: var(--width);
-          left: min(
-            calc(480px / 2 - var(--width) / 2),
-            100% / 2 - var(--width) / 2
-          );
+          left: min(calc(480px / 2 - var(--width) / 2), 100% / 2 - var(--width) / 2);
           top: -220px;
           position: absolute;
         }
@@ -231,7 +224,7 @@ const IndexStyles = styled.div`
       }
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 24px;
         left: 7px;
