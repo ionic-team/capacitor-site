@@ -202,6 +202,8 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
             </a>
           </Link>
           <a
+            href="https://ionicframework.com/blog/tag/capacitor"
+            target="_blank"
             className={clsx({
               'ui-paragraph-4': true,
               active: router.pathname === '/blog',
