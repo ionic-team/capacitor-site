@@ -29,7 +29,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export async function getStaticPaths() {
   const paths = await getPaths();
-  console.log('Got paths', paths[0]);
   return {
     paths,
     fallback: true,
@@ -53,7 +52,6 @@ async function getPaths() {
         if (base === 'index') {
           id = id.replace('index', '');
         }
-        console.log(id);
 
         const parts = id.split(sep);
 

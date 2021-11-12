@@ -54,8 +54,6 @@ const DocsSearch: React.FC<Props> = ({ theme = 'light', placeholder = 'Search' }
       getContentStats();
     };
 
-    console.log('Add listener');
-
     el.current.addEventListener('focus', listener, true);
 
     return () => {

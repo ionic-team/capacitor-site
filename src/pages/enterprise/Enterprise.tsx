@@ -42,7 +42,6 @@ const Enterprise = (data) => {
 };
 
 const Top = ({ top }) => {
-  console.log('Rendering top', top);
   const { title, text, cta_1, background } = top[0];
 
   return (

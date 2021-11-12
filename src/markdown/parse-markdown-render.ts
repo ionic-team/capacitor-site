@@ -1,6 +1,7 @@
 import type { ParseMarkdownOptions } from './types';
 import { marked, MarkedOptions, Renderer } from 'marked';
-import Prism from 'prismjs';
+
+import Prism from './prism';
 
 export function parseMarkdownRenderer(
   markdown: string,
@@ -51,6 +52,7 @@ class MarkedRenderer extends Renderer {
       return super.code(code, infostring, escaped);
     }
 
+    console.trace();
     const info = getCodeBlockInfo(infostring, this.opts.langPrefix);
     if (info) {
       const grammar = Prism.languages[info.grammar];
