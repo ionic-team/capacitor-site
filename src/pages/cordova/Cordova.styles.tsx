@@ -1,5 +1,6 @@
 import styled from 'styled-components';
+import SolutionStyles from '../solution/Solution.styles';
 
-const CordovaStyles = styled.div``;
+const CordovaStyles = styled(SolutionStyles)``;
 
 export default CordovaStyles;
