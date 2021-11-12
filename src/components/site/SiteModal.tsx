@@ -97,7 +97,7 @@ const SiteModal = ({ open, onModalClose, children }) => {
       <div className={`modal__wrap${visible ? ` in` : ``}`}>
         <div className={`modal__content`}>
           <Button className="modal__close-button" onClick={close}>
-            {/*<ion-icon name="close" />*/}
+            <ion-icon name="close" />
           </Button>
           <div className="modal__body">{children}</div>
         </div>

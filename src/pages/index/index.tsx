@@ -21,6 +21,8 @@ import CodeSnippet from '../../components/code-snippet/CodeSnippet';
 import CodeTabs from '../../components/code-tabs/CodeTabs';
 import SitePreFooter from '../../components/site/SitePreFooter';
 import SiteFooter from '../../components/site/SiteFooter';
+import SiteModal from '../../components/site/SiteModal';
+import HubspotForm from '../../components/hubspot-form/HubspotForm';
 
 const Index = (pageData) => {
   return (
@@ -223,17 +225,10 @@ const Ebook = ({ ebook }: any) => {
   return (
     <section id="ebook">
       <ResponsiveContainer>
-        {/*
-        <site-modal
-          open={this.ebookModalOpen}
-          onModalClose={() => (this.ebookModalOpen = false)}
-        >
-          <Heading level={2}>
-            Building Cross-platform Apps with Capacitor
-          </Heading>
-          <hubspot-form formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
-        </site-modal>
-        */}
+        <SiteModal open={ebookModalOpen} onModalClose={() => setEbookModalOpen(false)}>
+          <Heading level={2}>Building Cross-platform Apps with Capacitor</Heading>
+          <HubspotForm formId="9151dc0b-42d9-479f-b7b8-649e0e7bd1bc" />
+        </SiteModal>
         <div className="wrapper">
           <PrismicResponsiveImage image={background} className="background" />
           <div className="content">
