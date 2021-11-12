@@ -61,7 +61,7 @@ const Docs: React.FC<Props> = ({ data, announcement_bar }) => {
         <div className="row">
           <SiteBackdrop visible={showBackdrop} onClick={backdropClicked} />
 
-          <DocsMenu template={data.template} toc={data.tableOfContents} activePath={router.pathname} />
+          <DocsMenu template={data.template} toc={data.tableOfContents} activePath={router.asPath} />
 
           <div className="content-wrapper">
             <SiteHeader className="docs-container" template={data.template} includeLogo={false} includeBurger />
@@ -116,7 +116,7 @@ const elementRouterHref = (router: NextRouter, tagName: string, props: any) => {
 
     return {
       ...props,
-      href: docsVersionHref(router.pathname, props.href),
+      href: docsVersionHref(router.asPath, props.href),
     };
   }
   return props;

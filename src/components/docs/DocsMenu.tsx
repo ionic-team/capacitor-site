@@ -14,6 +14,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   activePath: string;
 }
 const DocsMenu: React.FC<Props> = ({ template, toc, activePath }) => {
+  console.log('Active path', activePath);
   const router = useRouter();
 
   const [expands, setExpands] = useState<{ [key: string]: number[] }>({
@@ -69,7 +70,7 @@ const DocsMenu: React.FC<Props> = ({ template, toc, activePath }) => {
             <Link href="/">
               <a className="menu-header__logo-link">{capacitorLogo()}</a>
             </Link>
-            <Link href={docsVersionHref(router.pathname, '/docs')}>
+            <Link href={docsVersionHref(router.asPath, '/docs')}>
               <a className="menu-header__docs-link">Docs</a>
             </Link>
             <VersionSelect />

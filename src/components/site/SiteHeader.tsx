@@ -130,7 +130,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
           <DocsSearch theme={theme} />
         </div>
 
-        <Link href={docsVersionHref(router.pathname, '/docs')}>
+        <Link href={docsVersionHref(router.asPath, '/docs')}>
           <a
             className={clsx({
               'ui-paragraph-4': true,
@@ -140,7 +140,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
             Docs
           </a>
         </Link>
-        <Link href={docsVersionHref(router.pathname, '/docs/plugins')}>
+        <Link href={docsVersionHref(router.asPath, '/docs/plugins')}>
           <a
             className={clsx({
               'ui-paragraph-4': true,
@@ -150,7 +150,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
             Plugins
           </a>
         </Link>
-        <Link href={docsVersionHref(router.pathname, '/docs/cli')}>
+        <Link href={docsVersionHref(router.asPath, '/docs/cli')}>
           <a
             className={clsx({
               'ui-paragraph-4': true,
@@ -195,7 +195,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
             <a
               className={clsx({
                 'ui-paragraph-4': true,
-                active: router.pathname === '/community',
+                active: router.asPath === '/community',
               })}
             >
               Community
@@ -206,7 +206,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
             target="_blank"
             className={clsx({
               'ui-paragraph-4': true,
-              active: router.pathname === '/blog',
+              active: router.asPath === '/blog',
             })}
           >
             Blog
@@ -215,7 +215,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({
             <a
               className={clsx({
                 'ui-paragraph-4': true,
-                active: router.pathname === '/enterprise',
+                active: router.asPath === '/enterprise',
               })}
             >
               Enterprise
