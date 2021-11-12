@@ -38,13 +38,19 @@ const toHypertext = (elementProps: ElementPropsHook | undefined, node: JsxAstNod
 
     if (i === 1) {
       // Props arg
-      if (arg) {
-        arg['className'] = arg['class'];
-        delete arg['class'];
-        arg['key'] = i;
-      }
       if (elementProps && tagName) {
         arg = elementProps(tagName, arg);
+      }
+      if (arg) {
+        if (arg['class']) {
+          arg['className'] = arg['class'];
+          delete arg['class'];
+        }
+        arg['key'] = '' + Math.floor(Math.random() * 1000000);
+      } else {
+        arg = {
+          key: '' + Math.floor(Math.random() * 1000000),
+        };
       }
     } else if (i > 1) {
       if (Array.isArray(arg)) {

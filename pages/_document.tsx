@@ -1,5 +1,5 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -9,8 +9,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App: any) => (props: any) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App: any) => (props: any) => sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -55,23 +54,10 @@ export default class MyDocument extends Document {
             as="font"
             type="font/woff2"
           />
-          <link
-            rel="preload"
-            href="/assets/fonts/eina/eina-01-bold.woff2"
-            as="font"
-            type="font/woff2"
-          />
-          <link
-            rel="preload"
-            href="/assets/fonts/eina/eina-01-semibold.woff2"
-            as="font"
-            type="font/woff2"
-          />
+          <link rel="preload" href="/assets/fonts/eina/eina-01-bold.woff2" as="font" type="font/woff2" />
+          <link rel="preload" href="/assets/fonts/eina/eina-01-semibold.woff2" as="font" type="font/woff2" />
 
-          <link
-            href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700"
-            rel="stylesheet"
-          />
+          <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
 
@@ -84,11 +70,13 @@ export default class MyDocument extends Document {
               src="https://www.googletagmanager.com/ns.html?id=GTM-TKMGCBC"
               height="0"
               width="0"
-              style={{ display: "none", visibility: "hidden" }}
+              style={{ display: 'none', visibility: 'hidden' }}
             ></iframe>
           </noscript>
           <Main />
           <NextScript />
+
+          <script src="/js/plugin-platforms.js"></script>
         </body>
       </Html>
     );

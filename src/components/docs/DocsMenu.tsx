@@ -45,7 +45,7 @@ const DocsMenu: React.FC<Props> = ({ template, toc, activePath }) => {
   };
 
   const toggleParent = (itemNumber: number) => {
-    return (e: MouseEvent) => {
+    return (e: React.MouseEvent) => {
       e.preventDefault();
 
       if (expands[template].includes(itemNumber)) {
@@ -88,7 +88,7 @@ const DocsMenu: React.FC<Props> = ({ template, toc, activePath }) => {
                         /* href only for no-js, otherwise it'll toggle w/out navigating */
                         item.children[0].url
                       }
-                      onClick={() => toggleParent(i)}
+                      onClick={toggleParent(i)}
                     >
                       <ion-icon name={expanded ? 'chevron-down' : 'chevron-forward'} />
                       <span className="section-label">{item.text}</span>
