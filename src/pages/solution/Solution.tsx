@@ -53,7 +53,7 @@ const SolutionPage = ({ solutionId, announcement_bar }) => {
         description={'Build iOS, Android, and Progressive Web Apps with ' + framework.name}
       />
       <AnnouncementBar {...announcement_bar} />
-      <SiteHeader theme="dark" sticky={false} />
+      <SiteHeader />
       <SolutionStyles>
         <ResponsiveContainer id="top" as="section">
           <div className="heading-group">

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { importResource } from '../../util/import-resource';
 import Heading from '../ui/Heading';
 import Paragraph from '../ui/Paragraph';
@@ -19,9 +19,10 @@ declare global {
   }
 }
 
+const hubspotCdn = '//js.hsforms.net/forms/v2.js';
+
 const NewsletterSignup = () => {
-  const uniqueFormId = `id-${Math.random().toString().replace('.', '')}`;
-  const hubspotCdn = '//js.hsforms.net/forms/v2.js';
+  const [uniqueFormId, _] = useState(() => `id-${Math.random().toString().replace('.', '')}`);
 
   useEffect(() => {
     importResource({ propertyName: 'hbspt', link: hubspotCdn }, createForm);
@@ -53,7 +54,7 @@ const NewsletterSignup = () => {
             articles, and news!
           </Paragraph>
         </div>
-        <div className="form-group" id={uniqueFormId}></div>
+        {process.browser && <div className="form-group" id={uniqueFormId}></div>}
       </div>
     </NewsletterSignupStyles>
   );
