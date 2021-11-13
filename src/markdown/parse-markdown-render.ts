@@ -52,7 +52,6 @@ class MarkedRenderer extends Renderer {
       return super.code(code, infostring, escaped);
     }
 
-    console.trace();
     const info = getCodeBlockInfo(infostring, this.opts.langPrefix);
     if (info) {
       const grammar = Prism.languages[info.grammar];
