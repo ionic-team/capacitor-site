@@ -18,7 +18,7 @@ export class MetaTags {
 
   render() {
     const prettyTitle =
-      this.pageTitle === 'Capacitor: Cross-platform native runtime for web apps'
+      this.pageTitle === 'Capacitor by Ionic - Cross-platform apps with web technology'
         ? this.pageTitle
         : `${this.pageTitle} - Capacitor`;
 
