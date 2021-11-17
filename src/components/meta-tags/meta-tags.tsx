@@ -6,7 +6,8 @@ import Helmet from '@stencil/helmet';
 })
 export class MetaTags {
   site = 'https://capacitorjs.com';
-  @Prop() pageTitle = 'Capacitor by Ionic - Cross-platform apps with web technology';
+  @Prop() pageTitle =
+    'Capacitor by Ionic - Cross-platform apps with web technology';
   @Prop() description =
     'Build iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript';
   @Prop() image = 'https://capacitorjs.com/assets/img/og.png';
@@ -18,7 +19,8 @@ export class MetaTags {
 
   render() {
     const prettyTitle =
-      this.pageTitle === 'Capacitor by Ionic - Cross-platform apps with web technology'
+      this.pageTitle ===
+      'Capacitor by Ionic - Cross-platform apps with web technology'
         ? this.pageTitle
         : `${this.pageTitle} - Capacitor`;
 
