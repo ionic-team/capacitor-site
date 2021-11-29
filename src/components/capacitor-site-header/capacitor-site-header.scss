@@ -113,34 +113,25 @@ header {
 
     .jobs {
       font-size: 0.75rem;
-    }
 
-    .jobs .start {
       display: flex;
       align-items: center;
 
-      color: #f3faff;
-      font-weight: 400;
+      color: #fff;
 
-      margin-inline-end: 8px;
-    }
-    .jobs .start svg {
-      margin-inline-end: 4px;
-    }
+      .sparkle {
+        margin-inline-end: 0.25rem;
+      }
 
-    .jobs .end {
-      display: flex;
-      align-items: center;
+      .arrow {
+        transform: translate(0px, 0.0625rem);
 
-      color: #ffffff;
-      font-weight: 600;
+        transition: transform 0.1s ease-out;
+      }
     }
 
-    .jobs .end svg {
-      transition: transform 0.1s ease-out;
-    }
-    .jobs:hover .end svg {
-      transform: translateX(1px);
+    .jobs:hover .arrow {
+      transform: translate(0.0625rem, 0.0625rem);
     }
   }
 }
