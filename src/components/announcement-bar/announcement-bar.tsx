@@ -1,4 +1,8 @@
-import { PrismicRichText, ResponsiveContainer } from '@ionic-internal/ionic-ds';
+import {
+  Paragraph,
+  PrismicRichText,
+  ResponsiveContainer,
+} from '@ionic-internal/ionic-ds';
 import { h, Prop, Component, Host, getAssetPath } from '@stencil/core';
 import { slugify } from 'src/utils/common';
 
@@ -54,9 +58,9 @@ export class AnnouncementBar {
           class="link-wrapper"
         >
           <ResponsiveContainer>
-            <PrismicRichText richText={text} />
+            <Paragraph>Enterprise App Summit. December 8th 2021.</Paragraph>
             <button>
-              {button_text}
+              • Watch Live NOW
               {button_arrow && <span class="arrow"> -&gt;</span>}
             </button>
           </ResponsiveContainer>
