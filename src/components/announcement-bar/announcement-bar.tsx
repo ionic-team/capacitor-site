@@ -1,8 +1,4 @@
-import {
-  Paragraph,
-  PrismicRichText,
-  ResponsiveContainer,
-} from '@ionic-internal/ionic-ds';
+import { PrismicRichText, ResponsiveContainer } from '@ionic-internal/ionic-ds';
 import { h, Prop, Component, Host, getAssetPath } from '@stencil/core';
 import { slugify } from 'src/utils/common';
 
@@ -41,7 +37,6 @@ export class AnnouncementBar {
       <Host
         class={{
           'ui-announcement-bar': true,
-          'live': true,
           [`ui-announcement-bar--${slugify(theme)}`]: Boolean(theme),
         }}
         style={{
@@ -58,9 +53,9 @@ export class AnnouncementBar {
           class="link-wrapper"
         >
           <ResponsiveContainer>
-            <Paragraph>Enterprise App Summit. December 8th 2021.</Paragraph>
+            <PrismicRichText richText={text} />
             <button>
-              • Watch Live NOW
+              {button_text}
               {button_arrow && <span class="arrow"> -&gt;</span>}
             </button>
           </ResponsiveContainer>
