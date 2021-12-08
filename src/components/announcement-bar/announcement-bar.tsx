@@ -1,6 +1,6 @@
 import {
   Paragraph,
-  // PrismicRichText,
+  PrismicRichText,
   ResponsiveContainer,
 } from '@ionic-internal/ionic-ds';
 import { h, Prop, Component, Host, getAssetPath } from '@stencil/core';
@@ -31,9 +31,9 @@ export class AnnouncementBar {
   render() {
     const {
       link: { url },
-      // button_text,
+      button_text,
       button_arrow,
-      // text,
+      text,
       theme,
     } = this.prismicData;
 
