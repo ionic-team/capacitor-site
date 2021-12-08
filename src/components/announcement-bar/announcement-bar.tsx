@@ -37,6 +37,7 @@ export class AnnouncementBar {
       <Host
         class={{
           'ui-announcement-bar': true,
+          'live': true,
           [`ui-announcement-bar--${slugify(theme)}`]: Boolean(theme),
         }}
         style={{
