@@ -25,8 +25,12 @@ The Splash Screen API provides methods for showing or hiding a Splash image.
 ## Example
 
 ```typescript
-import { Plugins } from '@capacitor/core';
-const { SplashScreen } = Plugins;
+//for capacitor v2
+//import { Plugins } from '@capacitor/core';
+//const { SplashScreen } = Plugins;
+
+//for capacitor v3 && v4
+import { SplashScreen } from '@capacitor/splash-screen';
 
 // Hide the splash (you should do this on app launch)
 SplashScreen.hide();
