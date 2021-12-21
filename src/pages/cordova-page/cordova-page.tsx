@@ -279,7 +279,7 @@ npm install cordova-plugin-name
 npx cap sync
 
 # Create a custom plugin
-npx @capacitor/cli plugin:generate
+npm init @capacitor/plugin
 `}
           />
         </div>
