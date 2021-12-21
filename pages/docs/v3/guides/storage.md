@@ -22,9 +22,8 @@ Capacitor comes with a native [Storage API](/docs/apis/storage) that avoids the 
 The Storage API provides a simple key/value API with no advanced query support:
 
 ```typescript
-import { Plugins } from '@capacitor/core';
+import { Storage } from '@capacitor/storage';
 
-const { Storage } = Plugins;
 // JSON "set" example
 async setObject() {
   await Storage.set({
