@@ -244,7 +244,7 @@ public void methodThatUsesNewAndroidAPI(PluginCall call) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
         // TODO implementation
     } else {
-        call.unavailable('Not available on Android API 25 or earlier.');
+        call.unavailable("Not available on Android API 25 or earlier.");
     }
 }
 ```
