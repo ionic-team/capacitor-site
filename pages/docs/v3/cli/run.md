@@ -5,7 +5,7 @@ description: Capacitor CLI - cap run
 
 # Capacitor CLI - cap run
 
-This command first runs [`copy`](/docs/cli/copy), then it builds and deploys the native app to a target device of your choice.
+This command first runs [`sync`](/docs/cli/sync), then it builds and deploys the native app to a target device of your choice.
 
 ```bash
 npx cap run [options] <platform>
