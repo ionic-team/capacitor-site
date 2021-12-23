@@ -112,7 +112,7 @@ export class SiteHeader implements ComponentInterface {
           <div class="jobs-wrapper">
             <a
               class="jobs"
-              href="https://jobs.lever.co/Ionic/58c0188a-0566-44bb-9de9-38c9fb731165"
+              href="https://ionic.io/about/jobs#positions"
               target="_blank"
               rel="noopener"
             >
