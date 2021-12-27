@@ -89,7 +89,8 @@ export class DocsSearch implements ComponentInterface {
 
   setupSearch() {
     window.docsearch({
-      apiKey: 'b3d47db9759a0a5884cf7807e23c77c5',
+      appId: '3IVALO5OU4',
+      apiKey: 'cc80cecc93b63d17938e3ebfaeca44a6',
       indexName: `capacitorjs`,
       inputSelector: `#input-${this.uniqueId}`,
       debug: false, // Set debug to true if you want to inspect the dropdown
