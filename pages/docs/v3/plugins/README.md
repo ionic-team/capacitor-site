@@ -37,3 +37,12 @@
   - [Android Guide](android.md)
   - [Web/PWA Guide](web.md)
   - [Method Types](method-types.md)
+- Plugin Tutorial
+  - [Getting Started](tutorial/introduction.md)
+  - [Designing the Plugin API](tutorial/designing-the-plugin-api.md)
+  - [Using the Plugin API](tutorial/using-the-plugin-api.md)
+  - [Implementing for Web/PWA](tutorial/web-implementation.md)
+  - [Code Abstraction Patterns](tutorial/code-abstraction-patterns.md)
+  - [Implementing for iOS](tutorial/ios-implementation.md)
+  - [Implementing for Android](tutorial/android-implementation.md)
+  - [Packaging the Plugin](tutorial/packaging-the-plugin.md)
