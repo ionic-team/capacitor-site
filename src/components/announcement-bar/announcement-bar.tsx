@@ -33,15 +33,17 @@ export class AnnouncementBar {
       theme,
     } = this.prismicData;
 
+    const themeSlug = slugify(theme);
+
     return (
       <Host
         class={{
           'ui-announcement-bar': true,
-          [`ui-announcement-bar--${slugify(theme)}`]: Boolean(theme),
+          [`ui-announcement-bar--${themeSlug}`]: Boolean(theme),
         }}
         style={{
           '--asset-path': `url('${getAssetPath(
-            `./assets-announcement-bar/bg-${slugify(theme)}.png`,
+            `./assets-announcement-bar/bg-${themeSlug}.png`,
           )}')`,
         }}
       >
