@@ -82,6 +82,7 @@ const checkAppLaunchUrl = async () => {
 * [`getInfo()`](#getinfo)
 * [`getState()`](#getstate)
 * [`getLaunchUrl()`](#getlaunchurl)
+* [`minimizeApp()`](#minimizeapp)
 * [`addListener('appStateChange', ...)`](#addlistenerappstatechange)
 * [`addListener('appUrlOpen', ...)`](#addlistenerappurlopen)
 * [`addListener('appRestoredResult', ...)`](#addlistenerapprestoredresult)
@@ -154,6 +155,21 @@ Get the URL the app was launched with, if any.
 **Returns:** <code>Promise&lt;<a href="#applaunchurl">AppLaunchUrl</a>&gt;</code>
 
 **Since:** 1.0.0
+
+--------------------
+
+
+### minimizeApp()
+
+```typescript
+minimizeApp() => Promise<void>
+```
+
+Minimizes the application.
+
+Only available for Android.
+
+**Since:** 1.1.0
 
 --------------------
 
