@@ -19,8 +19,12 @@ npm install -g cordova-res
 
 ```
 resources/
+├── android
+|   ├── icon-background.png
+|   └── icon-foreground.png
 ├── icon.png
 └── splash.png
+config.xml
 ```
 
 Next, run the following to generate all images then copy them into the native projects:
