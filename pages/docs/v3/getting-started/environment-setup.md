@@ -16,7 +16,7 @@ You will need at least [NodeJS 12 LTS](https://nodejs.org) or later to get start
 
 ## iOS Development
 
-To build iOS apps, you will need **macOS**. You will also need to download and set up [Xcode](https://developer.apple.com/xcode/).
+To build iOS apps, you will need **macOS**. You will also need to download and set up [Xcode](https://developer.apple.com/xcode/). If you are developing on Linux or Windows, you can skip this section.
 
 > [Ionic Appflow](http://ionicframework.com/appflow) can be used to perform iOS cloud builds if you don't have a Mac.
 
