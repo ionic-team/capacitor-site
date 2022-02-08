@@ -181,7 +181,7 @@ App.addListener('appUrlOpen', function (event: URLOpenListenerEvent) {
 });
 ```
 
-## Creating Site Association Files
+## Creating Site Association Files (iOS)
 
 In order for Apple and Google to permit deep links to open your app, a two-way association between your website and app must be created. One file for each must be created and placed within a `.well-known` folder on your website, like so: https://beerswift.app/.well-known/.
 
@@ -193,7 +193,7 @@ iOS configuration involves creating a site association file and configuring the 
 
 > You must be enrolled in the Apple Developer Program.
 
-### Create Site Association File
+### Create Site Association File (Android)
 
 First, log into the [Apple Developer site](https://developer.apple.com). Navigate to the "Certificates, Identifiers, & Profiles" section and select your app's identifier. Note the Team ID and Bundle ID, and under Capabilities, toggle "Associated Domains" then save:
 
