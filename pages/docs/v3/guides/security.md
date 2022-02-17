@@ -11,6 +11,8 @@ Every Capacitor developer is responsible for making sure their app is following 
 
 Security is a wide topic, but there are a number of areas that Capacitor developers should audit for security compliance, including Data, Authentication/Deep Linking, Network, and Web View security.
 
+> Ionic provides an out of the box security suite for Capacitor apps that includes Authentication, Biometrics, and Encryption. [Learn more](https://ionic.io/secure).
+
 ## Data Security
 
 Data Security deals with the security of data stored locally and also in app code.
