@@ -9,6 +9,8 @@ contributors:
 
 Most apps need to persist and read local data. Depending on the specific use case, there are a few approaches one can take.
 
+> Need your local data encrypted? Ionic provides an out of the box security suite for Capacitor apps that includes Authentication, Biometrics, and Secure Storage. [Learn more](https://ionic.io/secure).
+
 ## Why can't I just use LocalStorage or IndexedDB?
 
 Since Capacitor apps run primarily in a web view or browser, Web APIs for storage are available to Capacitor developers. However, there are some major caveats to keep in mind with these APIs.
