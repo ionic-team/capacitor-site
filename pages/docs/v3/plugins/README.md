@@ -37,6 +37,7 @@
   - [Android Guide](android.md)
   - [Web/PWA Guide](web.md)
   - [Method Types](method-types.md)
+  - [Configuration Values](configuration-values.md)
 - Plugin Tutorial
   - [Getting Started](tutorial/introduction.md)
   - [Designing the Plugin API](tutorial/designing-the-plugin-api.md)
