@@ -162,12 +162,6 @@ To use splash screen images named something other than `splash.png`, set `androi
 </style>
 ```
 
-When `useDialog` is enabled, you also need to update the `android/app/build.gradle` file. Under `dependencies` add:
-
-```gradle
-implementation 'com.android.support:design:27.1.1'
-```
-
 ## Example Guides
 
 [Adding Your Own Icons and Splash Screen Images &#8250;](https://www.joshmorony.com/adding-icons-splash-screens-launch-images-to-capacitor-projects/)
