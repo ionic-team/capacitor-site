@@ -25,7 +25,7 @@ To build iOS apps, you will need **macOS**. You will also need to download and s
 Install [CocoaPods](https://cocoapods.org/), which is used to manage Capacitor packages for iOS.
 
 ```bash
-sudo gem install cocoapods
+brew install cocoapods
 ```
 
 ### Xcode Command Line Tools
