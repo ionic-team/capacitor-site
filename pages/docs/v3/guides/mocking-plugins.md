@@ -77,7 +77,7 @@ Then update your `tsconfig.spec.json` file to include those paths plus any you w
     }
 ```
 
-Now when the unit tests are compiled, `import { Storage } from '@capacitor/storage';` will use the stub file under `__mocks__/@capactor` rather than the real one in `node_modules`.
+Now when the unit tests are compiled, `import { Storage } from '@capacitor/storage';` will use the stub file under `__mocks__/@capacitor` rather than the real one in `node_modules`.
 
 **Note:** the `paths` object is replaced entirely rather than being merged, so if you have any paths defined at in `tsconfig.json` they _must_ also be included in `tsconfig.spec.json`.
 
