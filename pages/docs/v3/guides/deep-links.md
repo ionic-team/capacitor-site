@@ -334,7 +334,7 @@ Build then deploy the site.
 
 Place the association files under `static/.well-known`. No additional steps are necessary; simply build then deploy the site.
 
-### React
+### React and Vue
 
 Place the association files under `public/.well-known`. No additional steps are necessary; simply build then deploy the site.
 
