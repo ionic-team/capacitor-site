@@ -62,8 +62,6 @@ export namespace Components {
     interface CapacitorSiteFooter {
     }
     interface CapacitorSitePlatformBar {
-        "containerClass": string;
-        "productName"?: string;
     }
     interface CodeSnippet {
         "code": string;
@@ -505,8 +503,6 @@ declare namespace LocalJSX {
     interface CapacitorSiteFooter {
     }
     interface CapacitorSitePlatformBar {
-        "containerClass"?: string;
-        "productName"?: string;
     }
     interface CodeSnippet {
         "code": string;

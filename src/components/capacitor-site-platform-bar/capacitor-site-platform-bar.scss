@@ -1,60 +1,62 @@
-capacitor-site-platform-bar {
-  display: block;
-  height: 44px;
-  background: var(--c-carbon-100);
+@use '../../global/vars' as *;
 
-  .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.platform-bar {
+  background: #03060b url('/assets/img/platform-bar/bg-announcement-bar.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
 
-    font-family: var(--f-family-text);
-    padding-block-start: 0;
-    padding-block-end: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 48px;
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
   }
 
-  .nowrap {
-    display: inline-block;
-    white-space: nowrap;
+  svg {
+    margin-block-end: -6px;
+    margin-inline-end: 16px;
   }
 
-  .platform-bar__logo {
-    margin-inline-end: var(--space-3);
+  .text {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
 
-    svg {
-      height: 24px;
-      margin: 10px 0;
-      vertical-align: middle;
+    letter-spacing: -0.01em;
+
+    color: #ced6e0;
+
+    em {
+      color: #fff;
+
+      font-style: normal;
+
+      font-weight: 500;
     }
   }
 
-  .platform-bar__desc {
-    align-content: flex-end;
-    color: #ccc;
-    font-size: var(--f-size-2);
-    line-height: 160%;
-    text-align: right;
+  button {
+    cursor: auto;
 
-    letter-spacing: var(--f-tracking-tight);
+    color: #ffffff;
 
-    margin: 0 -3px 0 0;
+    margin-inline-start: 16px;
 
-    strong {
-      color: white;
+    border-radius: 1000px;
+    border: none;
 
-      font-weight: 400;
-    }
+    padding: 4.5px 8px;
 
-    a {
-      color: white;
-      text-decoration: none;
-      white-space: nowrap;
-    }
+    background: #434f5e;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
 
-    ion-icon {
-      display: flex;
-      align-items: center;
-      margin-inline-start: var(--space-0);
-    }
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.02em;
   }
 }
