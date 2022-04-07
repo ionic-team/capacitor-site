@@ -1,7 +1,8 @@
 @use '../../global/vars' as *;
 
 .platform-bar {
-  background: #03060b url('/assets/img/platform-bar/bg-announcement-bar.png');
+  background: #03060b
+    url('/assets/img/components/platform-bar/bg-announcement-bar.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto;
@@ -58,5 +59,9 @@
     font-size: 11px;
     line-height: 13px;
     letter-spacing: 0.02em;
+
+    ion-icon {
+      margin-inline-start: 0.25rem;
+    }
   }
 }
