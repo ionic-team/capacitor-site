@@ -5,6 +5,7 @@
   - [Environment Setup](getting-started/environment-setup.md)
   - [Installation](getting-started/index.md)
   - [Using with Ionic Framework](getting-started/with-ionic.md)
+  - [Ionic VS Code Extension](getting-started/vs-code-extension.md)
 - Basics
   - [Development Workflow](basics/workflow.md)
   - [Using Plugins](basics/using-plugins.md)
