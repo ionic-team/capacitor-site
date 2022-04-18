@@ -25,6 +25,10 @@ With the release of Capacitor, Ionic now controls almost all of its technology s
 
 ## Migration Process Overview
 
+### Utilize the Ionic VS Code Extension
+
+The [Ionic VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ionic.ionic) provides tools to help assist your migration from Cordova to Capacitor by installing Capacitor's dependencies, replacing equivalent plugins, and more. It is a helpful tool that will automate much of the process of moving to Capacitor.
+
 ### Audit Then Migrate Existing Cordova Plugins
 
 Begin by auditing your existing Cordova plugins. It's possible that you may be able to remove ones that are no longer needed.
