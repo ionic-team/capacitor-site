@@ -17,6 +17,7 @@
   - [Dialog](../apis/dialog.md)
   - [Filesystem](../apis/filesystem.md)
   - [Geolocation](../apis/geolocation.md)
+  - [Google Maps](../apis/google-maps.md)
   - [Haptics](../apis/haptics.md)
   - [Keyboard](../apis/keyboard.md)
   - [Local Notifications](../apis/local-notifications.md)

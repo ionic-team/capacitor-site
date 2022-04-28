@@ -15,6 +15,7 @@ const pluginApis = [
   'dialog',
   'filesystem',
   'geolocation',
+  'google-maps',
   'haptics',
   'keyboard',
   'local-notifications',

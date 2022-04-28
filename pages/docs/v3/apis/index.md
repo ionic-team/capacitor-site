@@ -25,6 +25,7 @@ The API documentation for these plugins can be found below.
 - [Dialog](/docs/apis/dialog)
 - [Filesystem](/docs/apis/filesystem)
 - [Geolocation](/docs/apis/geolocation)
+- [Google Maps](/docs/apis/google-maps)
 - [Haptics](/docs/apis/haptics)
 - [Keyboard](/docs/apis/keyboard)
 - [Local Notifications](/docs/apis/local-notifications)
