@@ -58,7 +58,6 @@ export class LandingPage {
   Top = () => {
     return (
       <section id="top">
-        {/* TODO: implement srcset */}
         <img
           class="bg-map"
           src="/assets/img/landing/bg-maps-promo.png"
@@ -78,11 +77,22 @@ export class LandingPage {
               latest officially-supported Capacitor plugin
             </Paragraph>
             <div class="cta-row">
-              <Button class="primary" kind="round">
+              <Button
+                href="https://capacitorjs.com/docs/getting-started"
+                class="primary"
+                kind="round"
+              >
                 Start building today
                 <span style={{ letterSpacing: '0px' }}> -&gt;</span>
               </Button>
-              <Button class="secondary" kind="round" color="indigo">
+              <Button
+                href="https://ionicframework.com/blog/announcing-the-capacitor-google-maps-plugin/"
+                target="_blank"
+                rel="noopener"
+                class="secondary"
+                kind="round"
+                color="indigo"
+              >
                 Read the Blog post
                 <span style={{ letterSpacing: '0px' }}> -&gt;</span>
               </Button>
