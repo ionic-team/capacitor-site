@@ -12,6 +12,8 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { href } from '@stencil/router';
 
+import { Background } from './assets/bg-maps-promo';
+
 @Component({
   tag: 'landing-page',
   styleUrl: 'landing-page.scss',
@@ -54,52 +56,50 @@ export class LandingPage {
   }
 
   Top = () => {
-    const { Announcement } = this;
-    const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
-    const { primary, secondary } = top__ctas[0];
-
     return (
       <section id="top">
-        <div class="background"></div>
+        <img
+          class="bg-map"
+          src="/assets/img/landing/bg-maps-promo.png"
+          width="828"
+          height="894"
+          alt="map on phone"
+        />
+        <Background />
         <ResponsiveContainer>
-          <div class="heading-group">
-            <Announcement />
-            <PrismicRichText richText={top} paragraphLevel={2} />
-            <div class="buttons">
+          <header>
+            <div class="overline">Capacitor × Google Maps</div>
+            <Heading poster={true} level={1}>
+              Get a map in your app.
+            </Heading>
+            <Paragraph level={2}>
+              Integrate Google Maps into all of your applications with our
+              latest officially-supported Capacitor plugin
+            </Paragraph>
+            <div class="cta-row">
               <Button
-                kind="round"
-                anchor
-                {...href('/docs/getting-started')}
+                anchor={true}
+                href="https://capacitorjs.com/docs/getting-started"
                 class="primary"
+                kind="round"
               >
-                {primary} <span class="arrow"> -&gt;</span>
+                Start building today
+                <span style={{ letterSpacing: '0px' }}> -&gt;</span>
               </Button>
               <Button
-                kind="round"
-                variation="light"
-                anchor
-                {...href('docs/plugins')}
+                anchor={true}
+                href="https://ionicframework.com/blog/announcing-the-capacitor-google-maps-plugin/"
+                target="_blank"
+                rel="noopener"
                 class="secondary"
+                kind="round"
+                color="indigo"
               >
-                {secondary}
+                Read the Blog post
+                <span style={{ letterSpacing: '0px' }}> -&gt;</span>
               </Button>
             </div>
-            <a class="link | ui-paragraph-4" {...href('/cordova')}>
-              {top__link}
-              <span class="arrow"> -&gt;</span>
-            </a>
-            <PrismicResponsiveImage
-              loading="eager"
-              image={top__icons}
-              params={{
-                w: '91',
-                h: '16',
-              }}
-            />
-          </div>
-          <div class="image-wrapper">
-            <PrismicResponsiveImage loading="eager" image={top__hero} />
-          </div>
+          </header>
         </ResponsiveContainer>
       </section>
     );
