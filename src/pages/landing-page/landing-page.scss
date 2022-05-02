@@ -203,6 +203,89 @@ h6 {
 }
 
 #ioniconf-cta {
+  margin-block-start: 9rem;
+  margin-block-end: 11.75rem;
+
+  .section-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 2rem;
+    row-gap: 2rem;
+
+    background-image: url('/assets/img/landing/bg-ioniconf-cta.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    min-height: 22.5rem;
+
+    margin-inline-start: -3rem;
+    margin-inline-end: -3rem;
+
+    padding: 3rem;
+
+    > * {
+      flex-basis: 50%;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .start {
+    display: flex;
+    justify-content: center;
+
+    .logo {
+      max-width: 100%;
+    }
+  }
+
+  header {
+    > * {
+      max-width: 32rem;
+    }
+
+    .overline {
+      color: var(--c-blue-20);
+      font-family: var(--f-family-monospace);
+
+      font-weight: 500;
+      font-size: 0.75rem;
+      line-height: 112%;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+
+      margin-block-end: 0.75rem;
+    }
+
+    .ui-heading {
+      color: var(--c-indigo-10);
+
+      margin-block-end: 1rem;
+    }
+
+    .ui-paragraph {
+      color: var(--c-blue-10);
+
+      a {
+        color: #35e2e9;
+      }
+    }
+
+    .ui-button {
+      --c-background: #fff;
+      --c-background--hover: rgba(255, 255, 255, 0.8);
+      --c-background--active: #fff;
+      --c-focus: rgba(255, 255, 255, 0.3);
+      --c-text: #11193f;
+    }
+  }
 }
 
 #started {
