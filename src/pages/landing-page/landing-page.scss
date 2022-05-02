@@ -140,6 +140,7 @@ h6 {
       }
 
       .secondary {
+        -webkit-backdrop-filter: blur(24px);
         backdrop-filter: blur(24px);
 
         --c-background: rgba(255, 255, 255, 0.15);
