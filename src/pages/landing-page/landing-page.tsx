@@ -35,12 +35,14 @@ export class LandingPage {
       Tweets,
       Cta,
       Ebook,
+      IoniconfCta,
     } = this;
 
     return (
       <Host>
         <meta-tags />
         <Top />
+        <IoniconfCta />
         {/* <top-parallax /> */}
         <Started />
         <Ebook />
@@ -136,6 +138,22 @@ export class LandingPage {
           </span>
         </Breakpoint>
       </a>
+    );
+  };
+
+  IoniconfCta = () => {
+    return (
+      <section id="ioniconf-cta">
+        <ResponsiveContainer>
+          <img
+            class="background"
+            src="/assets/img/landing/bg-ioniconf-cta.png"
+            width="1216"
+            height="360"
+            alt="grid background"
+          />
+        </ResponsiveContainer>
+      </section>
     );
   };
 
