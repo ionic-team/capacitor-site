@@ -81,7 +81,7 @@ export class LandingPage {
             <div class="cta-row">
               <Button
                 anchor={true}
-                href="https://capacitorjs.com/docs/getting-started"
+                href="https://capacitorjs.com/docs/apis/google-maps"
                 class="primary"
                 kind="round"
               >
