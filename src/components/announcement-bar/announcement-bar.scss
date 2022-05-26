@@ -1,7 +1,8 @@
 @use '../../global/vars' as *;
 
 :host {
-  display: block;
+  // display: block;
+  display: none;
 
   overflow: hidden;
 
