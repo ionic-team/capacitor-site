@@ -26,7 +26,7 @@ export const Storage = {
 };
 ```
 
-Since this is a plain JavaScript objecct and not a proxy object, it is very easy to spy on. Also, since it is a mock it does not try to make any native calls. This makes the use of manual mocks an ideal choice to use when testing code that uses Capacitor plugins.
+Since this is a plain JavaScript object and not a proxy object, it is very easy to spy on. Also, since it is a mock it does not try to make any native calls. This makes the use of manual mocks an ideal choice to use when testing code that uses Capacitor plugins.
 
 ### Jest
 
@@ -47,7 +47,7 @@ For example, let's say you have the following directory structure:
 +- src
 ```
 
-Your tests will use the stubs defined in `storage.ts` and `toast.ts` rather than the real `@capactor/storage` and `@capacitor/toast` plugins from `node_modules`.
+Your tests will use the stubs defined in `storage.ts` and `toast.ts` rather than the real `@capacitor/storage` and `@capacitor/toast` plugins from `node_modules`.
 
 ### Jasmine
 
@@ -77,7 +77,7 @@ Then update your `tsconfig.spec.json` file to include those paths plus any you w
     }
 ```
 
-Now when the unit tests are compiled, `import { Storage } from '@capacitor/storage';` will use the stub file under `__mocks__/@capactor` rather than the real one in `node_modules`.
+Now when the unit tests are compiled, `import { Storage } from '@capacitor/storage';` will use the stub file under `__mocks__/@capacitor` rather than the real one in `node_modules`.
 
 **Note:** the `paths` object is replaced entirely rather than being merged, so if you have any paths defined at in `tsconfig.json` they _must_ also be included in `tsconfig.spec.json`.
 
