@@ -42,7 +42,7 @@ export class LandingPage {
       <Host>
         <meta-tags />
         <Top />
-        <IoniconfCta />
+        {/* <IoniconfCta /> */}
         {/* <top-parallax /> */}
         <Started />
         <Ebook />
