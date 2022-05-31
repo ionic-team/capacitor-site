@@ -35,14 +35,14 @@ export class LandingPage {
       Tweets,
       Cta,
       Ebook,
-      IoniconfCta,
+      // IoniconfCta,
     } = this;
 
     return (
       <Host>
         <meta-tags />
         <Top />
-        <IoniconfCta />
+        {/* <IoniconfCta /> */}
         {/* <top-parallax /> */}
         <Started />
         <Ebook />
@@ -141,52 +141,52 @@ export class LandingPage {
     );
   };
 
-  IoniconfCta = () => {
-    return (
-      <section id="ioniconf-cta">
-        <ResponsiveContainer>
-          <div class="section-wrapper">
-            <div class="start">
-              <img
-                class="logo"
-                src="/assets/img/landing/logo-ioniconf.png"
-                width="359.38"
-                height="147.54"
-                alt="ioniconf logo"
-              />
-            </div>
-            <header>
-              <div class="overline">May 25 / 100% online / 100% Free</div>
-              <Heading>Join us at Ioniconf 2022</Heading>
-              <Paragraph>
-                Ioniconf is Ionic's annual conference celebrating the future of
-                cross-platform, the Web, and the makers behind it.&nbsp;
-                <a
-                  href="https://ionic.io/ioniconf"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Register today,
-                </a>
-                for free.
-              </Paragraph>
-              <Button
-                anchor={true}
-                href="https://ionic.io/ioniconf"
-                rel="noopener"
-                target="_blank"
-                kind="round"
-                size="md"
-              >
-                Register Free&nbsp;
-                <span style={{ letterSpacing: '0px' }}> -&gt;</span>
-              </Button>
-            </header>
-          </div>
-        </ResponsiveContainer>
-      </section>
-    );
-  };
+  // IoniconfCta = () => {
+  //   return (
+  //     <section id="ioniconf-cta">
+  //       <ResponsiveContainer>
+  //         <div class="section-wrapper">
+  //           <div class="start">
+  //             <img
+  //               class="logo"
+  //               src="/assets/img/landing/logo-ioniconf.png"
+  //               width="359.38"
+  //               height="147.54"
+  //               alt="ioniconf logo"
+  //             />
+  //           </div>
+  //           <header>
+  //             <div class="overline">May 25 / 100% online / 100% Free</div>
+  //             <Heading>Join us at Ioniconf 2022</Heading>
+  //             <Paragraph>
+  //               Ioniconf is Ionic's annual conference celebrating the future of
+  //               cross-platform, the Web, and the makers behind it.&nbsp;
+  //               <a
+  //                 href="https://ionic.io/ioniconf"
+  //                 target="_blank"
+  //                 rel="noopener"
+  //               >
+  //                 Register today,
+  //               </a>
+  //               for free.
+  //             </Paragraph>
+  //             <Button
+  //               anchor={true}
+  //               href="https://ionic.io/ioniconf"
+  //               rel="noopener"
+  //               target="_blank"
+  //               kind="round"
+  //               size="md"
+  //             >
+  //               Register Free&nbsp;
+  //               <span style={{ letterSpacing: '0px' }}> -&gt;</span>
+  //             </Button>
+  //           </header>
+  //         </div>
+  //       </ResponsiveContainer>
+  //     </section>
+  //   );
+  // };
 
   Started = () => {
     const { started, started__list, started__icons } = this.data;
