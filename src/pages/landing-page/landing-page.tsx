@@ -35,7 +35,7 @@ export class LandingPage {
       Tweets,
       Cta,
       Ebook,
-      IoniconfCta,
+      // IoniconfCta,
     } = this;
 
     return (
