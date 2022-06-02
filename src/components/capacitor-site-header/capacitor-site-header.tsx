@@ -109,7 +109,7 @@ export class SiteHeader implements ComponentInterface {
             </a>
           ) : null}
 
-          <div class="jobs-wrapper">
+          {/* <div class="jobs-wrapper">
             <a
               class="jobs"
               href="https://ionic.io/about/jobs#positions"
@@ -151,7 +151,7 @@ export class SiteHeader implements ComponentInterface {
                 />
               </svg>
             </a>
-          </div>
+          </div> */}
 
           <div class="docs-search-wrapper desktop-only">
             <docs-search theme={this.theme} />
