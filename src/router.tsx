@@ -10,6 +10,7 @@ import { getPage } from './data.server/prismic';
 import { getDocsDataV3 } from './data.server/docs-v3';
 import { getBlogData, getAllBlogData } from './data.server/blog';
 import { getDocsDataV2 } from './data.server/docs-v2';
+import { getDocsDataV4 } from './data.server/docs-v4';
 
 export const Router = createStaticRouter();
 
@@ -110,6 +111,18 @@ export const Routes = () => (
     <Route
       path={matchAny(['/docs/v2/:id*', '/docs/v2'])}
       mapParams={staticState(getDocsDataV2)}
+      render={(_, data) => (
+        <Fragment>
+          {/* <capacitor-site-platform-bar /> */}
+          <announcement-bar prismicData={data.announcement_bar} />
+          <docs-component data={data} />
+        </Fragment>
+      )}
+    />
+
+    <Route
+      path={matchAny(['/docs/v4/:id*', '/docs/v4'])}
+      mapParams={staticState(getDocsDataV4)}
       render={(_, data) => (
         <Fragment>
           {/* <capacitor-site-platform-bar /> */}
