@@ -57,6 +57,8 @@ We must register custom plugins on both Android and web so that Capacitor can br
 In your app's `MainActivity.java`, use `registerPlugin()` or `registerPlugins()` to register your custom plugin(s).
 
 ```diff-java
+ import android.os.Bundle;
+ import com.getcapacitor.BridgeActivity;
  public class MainActivity extends BridgeActivity {
      @Override
      public void onCreate(Bundle savedInstanceState) {
