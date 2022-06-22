@@ -80,7 +80,7 @@ package="com.getcapacitor.myapp">
     <!-- Your permissions -->
 
     <!-- Network API -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
 ```
 
