@@ -1,5 +1,5 @@
 ---
-title: Google Maps Plugin API
+title: Google Maps Capacitor Plugin API
 description: Google maps on Capacitor
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/src/definitions.ts
@@ -183,6 +183,7 @@ export class MyMap {
 
 ```jsx
 import { GoogleMap } from '@capacitor/google-maps';
+import { useRef } from 'react';
 
 const MyMap: React.FC = () => {
   const mapRef = useRef<HTMLElement>();
@@ -206,7 +207,7 @@ const MyMap: React.FC = () => {
   }
 
   return (
-    <div class="component-wrapper">
+    <div className="component-wrapper">
       <capacitor-google-map ref={mapRef} style={{
         display: 'inline-block',
         width: 275,
@@ -277,6 +278,7 @@ export default MyMap;
 * [`enableAccessibilityElements(...)`](#enableaccessibilityelements)
 * [`enableCurrentLocation(...)`](#enablecurrentlocation)
 * [`setPadding(...)`](#setpadding)
+* [`setOnBoundsChangedListener(...)`](#setonboundschangedlistener)
 * [`setOnCameraIdleListener(...)`](#setoncameraidlelistener)
 * [`setOnCameraMoveStartedListener(...)`](#setoncameramovestartedlistener)
 * [`setOnClusterClickListener(...)`](#setonclusterclicklistener)
@@ -298,13 +300,13 @@ export default MyMap;
 ### create(...)
 
 ```typescript
-create(options: CreateMapArgs, callback?: MapListenerCallback | undefined) => Promise<GoogleMap>
+create(options: CreateMapArgs, callback?: MapListenerCallback<MapReadyCallbackData> | undefined) => Promise<GoogleMap>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`options`**  | <code><a href="#createmapargs">CreateMapArgs</a></code>             |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **`options`**  | <code><a href="#createmapargs">CreateMapArgs</a></code>                                                                             |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mapreadycallbackdata">MapReadyCallbackData</a>&gt;</code> |
 
 **Returns:** <code>Promise&lt;GoogleMap&gt;</code>
 
@@ -485,15 +487,28 @@ setPadding(padding: MapPadding) => Promise<void>
 --------------------
 
 
+### setOnBoundsChangedListener(...)
+
+```typescript
+setOnBoundsChangedListener(callback?: MapListenerCallback<CameraIdleCallbackData> | undefined) => Promise<void>
+```
+
+| Param          | Type                                                                                                                                    |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#cameraidlecallbackdata">CameraIdleCallbackData</a>&gt;</code> |
+
+--------------------
+
+
 ### setOnCameraIdleListener(...)
 
 ```typescript
-setOnCameraIdleListener(callback?: MapListenerCallback | undefined) => Promise<void>
+setOnCameraIdleListener(callback?: MapListenerCallback<CameraIdleCallbackData> | undefined) => Promise<void>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                    |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#cameraidlecallbackdata">CameraIdleCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -501,12 +516,12 @@ setOnCameraIdleListener(callback?: MapListenerCallback | undefined) => Promise<v
 ### setOnCameraMoveStartedListener(...)
 
 ```typescript
-setOnCameraMoveStartedListener(callback?: MapListenerCallback | undefined) => Promise<void>
+setOnCameraMoveStartedListener(callback?: MapListenerCallback<CameraMoveStartedCallbackData> | undefined) => Promise<void>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                                  |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#cameramovestartedcallbackdata">CameraMoveStartedCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -514,12 +529,12 @@ setOnCameraMoveStartedListener(callback?: MapListenerCallback | undefined) => Pr
 ### setOnClusterClickListener(...)
 
 ```typescript
-setOnClusterClickListener(callback?: MapListenerCallback | undefined) => Promise<void>
+setOnClusterClickListener(callback?: MapListenerCallback<ClusterClickCallbackData> | undefined) => Promise<void>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                        |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#clusterclickcallbackdata">ClusterClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -527,12 +542,12 @@ setOnClusterClickListener(callback?: MapListenerCallback | undefined) => Promise
 ### setOnClusterInfoWindowClickListener(...)
 
 ```typescript
-setOnClusterInfoWindowClickListener(callback?: MapListenerCallback | undefined) => Promise<void>
+setOnClusterInfoWindowClickListener(callback?: MapListenerCallback<ClusterClickCallbackData> | undefined) => Promise<void>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                        |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#clusterclickcallbackdata">ClusterClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -540,12 +555,12 @@ setOnClusterInfoWindowClickListener(callback?: MapListenerCallback | undefined) 
 ### setOnInfoWindowClickListener(...)
 
 ```typescript
-setOnInfoWindowClickListener(callback?: MapListenerCallback | undefined) => Promise<void>
+setOnInfoWindowClickListener(callback?: MapListenerCallback<MarkerClickCallbackData> | undefined) => Promise<void>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                      |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -553,12 +568,12 @@ setOnInfoWindowClickListener(callback?: MapListenerCallback | undefined) => Prom
 ### setOnMapClickListener(...)
 
 ```typescript
-setOnMapClickListener(callback?: MapListenerCallback | undefined) => Promise<void>
+setOnMapClickListener(callback?: MapListenerCallback<MapClickCallbackData> | undefined) => Promise<void>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mapclickcallbackdata">MapClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -566,12 +581,12 @@ setOnMapClickListener(callback?: MapListenerCallback | undefined) => Promise<voi
 ### setOnMarkerClickListener(...)
 
 ```typescript
-setOnMarkerClickListener(callback?: MapListenerCallback | undefined) => Promise<void>
+setOnMarkerClickListener(callback?: MapListenerCallback<MarkerClickCallbackData> | undefined) => Promise<void>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                      |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#markerclickcallbackdata">MarkerClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -579,12 +594,12 @@ setOnMarkerClickListener(callback?: MapListenerCallback | undefined) => Promise<
 ### setOnMyLocationButtonClickListener(...)
 
 ```typescript
-setOnMyLocationButtonClickListener(callback?: MapListenerCallback | undefined) => Promise<void>
+setOnMyLocationButtonClickListener(callback?: MapListenerCallback<MyLocationButtonClickCallbackData> | undefined) => Promise<void>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                                          |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mylocationbuttonclickcallbackdata">MyLocationButtonClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -592,12 +607,12 @@ setOnMyLocationButtonClickListener(callback?: MapListenerCallback | undefined) =
 ### setOnMyLocationClickListener(...)
 
 ```typescript
-setOnMyLocationClickListener(callback?: MapListenerCallback | undefined) => Promise<void>
+setOnMyLocationClickListener(callback?: MapListenerCallback<MapClickCallbackData> | undefined) => Promise<void>
 ```
 
-| Param          | Type                                                                |
-| -------------- | ------------------------------------------------------------------- |
-| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a></code> |
+| Param          | Type                                                                                                                                |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **`callback`** | <code><a href="#maplistenercallback">MapListenerCallback</a>&lt;<a href="#mapclickcallbackdata">MapClickCallbackData</a>&gt;</code> |
 
 --------------------
 
@@ -607,26 +622,29 @@ setOnMyLocationClickListener(callback?: MapListenerCallback | undefined) => Prom
 
 #### CreateMapArgs
 
-| Prop              | Type                                                        |
-| ----------------- | ----------------------------------------------------------- |
-| **`id`**          | <code>string</code>                                         |
-| **`apiKey`**      | <code>string</code>                                         |
-| **`config`**      | <code><a href="#googlemapconfig">GoogleMapConfig</a></code> |
-| **`element`**     | <code>HTMLElement</code>                                    |
-| **`forceCreate`** | <code>boolean</code>                                        |
+An interface containing the options used when creating a map.
+
+| Prop              | Type                                                        | Description                                                                                        | Default            |
+| ----------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------ |
+| **`id`**          | <code>string</code>                                         | A unique identifier for the map instance.                                                          |                    |
+| **`apiKey`**      | <code>string</code>                                         | The Google Maps SDK API Key.                                                                       |                    |
+| **`config`**      | <code><a href="#googlemapconfig">GoogleMapConfig</a></code> | The initial configuration settings for the map.                                                    |                    |
+| **`element`**     | <code>HTMLElement</code>                                    | The DOM element that the Google Map View will be mounted on which determines size and positioning. |                    |
+| **`forceCreate`** | <code>boolean</code>                                        | Destroy and re-create the map instance if a map with the supplied id already exists                | <code>false</code> |
 
 
 #### GoogleMapConfig
 
-| Prop                  | Type                                      | Description                                                    | Default            |
-| --------------------- | ----------------------------------------- | -------------------------------------------------------------- | ------------------ |
-| **`width`**           | <code>number</code>                       | Override width for native map                                  |                    |
-| **`height`**          | <code>number</code>                       | Override height for native map                                 |                    |
-| **`x`**               | <code>number</code>                       | Override absolute x coordinate position for native map         |                    |
-| **`y`**               | <code>number</code>                       | Override absolute y coordinate position for native map         |                    |
-| **`center`**          | <code><a href="#latlng">LatLng</a></code> | Default location on the Earth towards which the camera points. |                    |
-| **`zoom`**            | <code>number</code>                       | Sets the zoom of the map.                                      |                    |
-| **`androidLiteMode`** | <code>boolean</code>                      | Enables image-based lite mode on Android.                      | <code>false</code> |
+| Prop                   | Type                                      | Description                                                    | Default            |
+| ---------------------- | ----------------------------------------- | -------------------------------------------------------------- | ------------------ |
+| **`width`**            | <code>number</code>                       | Override width for native map.                                 |                    |
+| **`height`**           | <code>number</code>                       | Override height for native map.                                |                    |
+| **`x`**                | <code>number</code>                       | Override absolute x coordinate position for native map.        |                    |
+| **`y`**                | <code>number</code>                       | Override absolute y coordinate position for native map.        |                    |
+| **`center`**           | <code><a href="#latlng">LatLng</a></code> | Default location on the Earth towards which the camera points. |                    |
+| **`zoom`**             | <code>number</code>                       | Sets the zoom of the map.                                      |                    |
+| **`androidLiteMode`**  | <code>boolean</code>                      | Enables image-based lite mode on Android.                      | <code>false</code> |
+| **`devicePixelRatio`** | <code>number</code>                       | Override pixel ratio for native map.                           |                    |
 
 
 #### LatLng
@@ -637,6 +655,13 @@ An interface representing a pair of latitude and longitude coordinates.
 | --------- | ------------------- | ------------------------------------------------------------------------- |
 | **`lat`** | <code>number</code> | Coordinate latitude, in degrees. This value is in the range [-90, 90].    |
 | **`lng`** | <code>number</code> | Coordinate longitude, in degrees. This value is in the range [-180, 180]. |
+
+
+#### MapReadyCallbackData
+
+| Prop        | Type                |
+| ----------- | ------------------- |
+| **`mapId`** | <code>string</code> |
 
 
 #### Marker
@@ -680,12 +705,91 @@ Controls for setting padding on the 'visible' region of the view.
 | **`bottom`** | <code>number</code> |
 
 
+#### CameraIdleCallbackData
+
+| Prop            | Type                                                  |
+| --------------- | ----------------------------------------------------- |
+| **`mapId`**     | <code>string</code>                                   |
+| **`bounds`**    | <code><a href="#latlngbounds">LatLngBounds</a></code> |
+| **`bearing`**   | <code>number</code>                                   |
+| **`latitude`**  | <code>number</code>                                   |
+| **`longitude`** | <code>number</code>                                   |
+| **`tilt`**      | <code>number</code>                                   |
+| **`zoom`**      | <code>number</code>                                   |
+
+
+#### LatLngBounds
+
+An interface representing the viewports latitude and longitude bounds.
+
+| Prop            | Type                                      |
+| --------------- | ----------------------------------------- |
+| **`southwest`** | <code><a href="#latlng">LatLng</a></code> |
+| **`center`**    | <code><a href="#latlng">LatLng</a></code> |
+| **`northeast`** | <code><a href="#latlng">LatLng</a></code> |
+
+
+#### CameraMoveStartedCallbackData
+
+| Prop            | Type                 |
+| --------------- | -------------------- |
+| **`mapId`**     | <code>string</code>  |
+| **`isGesture`** | <code>boolean</code> |
+
+
+#### ClusterClickCallbackData
+
+| Prop            | Type                              |
+| --------------- | --------------------------------- |
+| **`mapId`**     | <code>string</code>               |
+| **`latitude`**  | <code>number</code>               |
+| **`longitude`** | <code>number</code>               |
+| **`size`**      | <code>number</code>               |
+| **`items`**     | <code>MarkerCallbackData[]</code> |
+
+
+#### MarkerCallbackData
+
+| Prop            | Type                |
+| --------------- | ------------------- |
+| **`markerId`**  | <code>string</code> |
+| **`latitude`**  | <code>number</code> |
+| **`longitude`** | <code>number</code> |
+| **`title`**     | <code>string</code> |
+| **`snippet`**   | <code>string</code> |
+
+
+#### MarkerClickCallbackData
+
+| Prop        | Type                |
+| ----------- | ------------------- |
+| **`mapId`** | <code>string</code> |
+
+
+#### MapClickCallbackData
+
+| Prop            | Type                |
+| --------------- | ------------------- |
+| **`mapId`**     | <code>string</code> |
+| **`latitude`**  | <code>number</code> |
+| **`longitude`** | <code>number</code> |
+
+
+#### MyLocationButtonClickCallbackData
+
+| Prop        | Type                |
+| ----------- | ------------------- |
+| **`mapId`** | <code>string</code> |
+
+
 ### Type Aliases
 
 
 #### MapListenerCallback
 
-<code>(data: any): void</code>
+The callback function to be called when map events are emitted.
+
+<code>(data: T): void</code>
 
 
 ### Enums
