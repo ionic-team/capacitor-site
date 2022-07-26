@@ -7,21 +7,15 @@ export const config: PrerenderConfig = {
     };
   },
   filterUrl(url) {
-    if (url.pathname === '/docs/pwa-elements' || url.pathname === '/docs/v3/pwa-elements' || url.pathname === '/docs/v2/pwa-elements') {
-      // gets a redirect in prod  
+    if (url.pathname.includes('/docs')) {
       return false;
     }
     return true;
   },
-  entryUrls: [
-    '/',
-
-    // v3 docs not crawlable for now, manually add it as an entry url
-    '/docs/v3'
-  ],
-  normalizeUrl(href, base) {
-    // temp fix for absolute paths with /docs/v3
-    href = href.replace('v3/v3', 'v3');
-    return new URL(href, base);
-  }
+  entryUrls: ['/'],
+  // normalizeUrl(href, base) {
+  //   // temp fix for absolute paths with /docs/v3
+  //   href = href.replace('v3/v3', 'v3');
+  //   return new URL(href, base);
+  // },
 };
