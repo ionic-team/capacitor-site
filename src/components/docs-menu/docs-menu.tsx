@@ -10,7 +10,7 @@ import {
   Watch,
   h,
 } from '@stencil/core';
-import { href } from '@stencil/router';
+import { href } from '@utils/common';
 import type { TableOfContents } from '@stencil/ssg';
 import { docsVersionHref } from '../../router';
 import type { DocsTemplate } from '../../data.server/models';

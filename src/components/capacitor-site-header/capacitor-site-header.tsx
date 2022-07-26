@@ -7,7 +7,7 @@ import {
   State,
   h,
 } from '@stencil/core';
-import { href } from '@stencil/router';
+import { href } from '@utils/common';
 import Router, { docsVersionHref } from '../../router';
 import { Button } from '@ionic-internal/ionic-ds';
 import { JSXBase } from '@stencil/core/internal';

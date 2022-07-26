@@ -7,7 +7,7 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { Components as DS } from '@ionic-internal/ionic-ds/dist/types/components';
 
-import { href } from '@stencil/router';
+import { href } from '@utils/common';
 
 import parseISO from 'date-fns/parseISO';
 
