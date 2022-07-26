@@ -1,8 +1,14 @@
 {
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/docs", "destination": "https://next.capacitorjs.com/docs" },
-    { "source": "/docs/:match*", "destination": "https://next.capacitorjs.com/docs/:match*" }
+    {
+      "source": "/docs",
+      "destination": "https://capacitor-docs.vercel.app/docs"
+    },
+    {
+      "source": "/docs/:path*",
+      "destination": "https://capacitor-docs.vercel.app/docs/:path*"
+    }
   ],
   "redirects": [
     {
