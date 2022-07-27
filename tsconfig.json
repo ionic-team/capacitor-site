@@ -15,7 +15,8 @@
     "jsxFactory": "h",
     "baseUrl": ".",
     "paths": {
-      "@stencil/core": ["node_modules/@stencil/core"]
+      "@stencil/core": ["node_modules/@stencil/core"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "include": ["src", "types/jsx.d.ts"],

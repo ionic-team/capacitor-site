@@ -1,5 +1,15 @@
 {
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/docs",
+      "destination": "https://capacitor-docs.vercel.app/docs"
+    },
+    {
+      "source": "/docs/:path*",
+      "destination": "https://capacitor-docs.vercel.app/docs/:path*"
+    }
+  ],
   "redirects": [
     {
       "source": "/3",
@@ -8,106 +18,6 @@
     {
       "source": "/forum",
       "destination": "https://forum.ionicframework.com/c/capacitor/26"
-    },
-    {
-      "source": "/docs/reference/cli",
-      "destination": "/docs/cli"
-    },
-    {
-      "source": "/docs/basics/cli-commands",
-      "destination": "/docs/cli"
-    },
-    {
-      "source": "/docs/community/plugins",
-      "destination": "/docs/plugins/community"
-    },
-    {
-      "source": "/docs/community",
-      "destination": "/docs/plugins/community"
-    },
-    {
-      "source": "/docs/pwa-elements",
-      "destination": "/docs/web/pwa-elements"
-    },
-    {
-      "source": "/docs/v3/(.*)",
-      "destination": "/docs/$1"
-    },
-    {
-      "source": "/docs/basics/opening-native-projects",
-      "destination": "/docs/v2/basics/opening-native-projects"
-    },
-    {
-      "source": "/docs/basics/building-your-app",
-      "destination": "/docs/v2/basics/building-your-app"
-    },
-    {
-      "source": "/docs/basics/running-your-app",
-      "destination": "/docs/v2/basics/running-your-app"
-    },
-    {
-      "source": "/docs/basics/progressive-web-app",
-      "destination": "/docs/web/progressive-web-apps"
-    },
-    {
-      "source": "/docs/basics/utilities",
-      "destination": "/docs/v2/basics/utilities"
-    },
-    {
-      "source": "/docs/cordova/using-cordova-plugins",
-      "destination": "/docs/v2/cordova/using-cordova-plugins"
-    },
-    {
-      "source": "/docs/cordova/known-incompatible-plugins",
-      "destination": "/docs/v2/cordova/known-incompatible-plugins"
-    },
-    {
-      "source": "/docs/ios/updating",
-      "destination": "/docs/v2/ios/updating"
-    },
-    {
-      "source": "/docs/android/updating",
-      "destination": "/docs/v2/android/updating"
-    },
-    {
-      "source": "/docs/cli/cap",
-      "destination": "/docs/v2/cli/cap"
-    },
-    {
-      "source": "/docs/cli/create",
-      "destination": "/docs/v2/cli/create"
-    },
-    {
-      "source": "/docs/cli/plugin-generate",
-      "destination": "/docs/v2/cli/plugin-generate"
-    },
-    {
-      "source": "/docs/cli/serve",
-      "destination": "/docs/v2/cli/serve"
-    },
-    {
-      "source": "/docs/plugins/js",
-      "destination": "/docs/v2/plugins/js"
-    },
-    {
-      "source": "/docs/apis/accessibility",
-      "destination": "/docs/v2/apis/accessibility"
-    },
-    {
-      "source": "/docs/apis/background-task",
-      "destination": "/docs/v2/apis/background-task"
-    },
-    {
-      "source": "/docs/apis/console",
-      "destination": "/docs/v2/apis/console"
-    },
-    {
-      "source": "/docs/apis/modals",
-      "destination": "/docs/v2/apis/modals"
-    },
-    {
-      "source": "/docs/apis/permissions",
-      "destination": "/docs/v2/apis/permissions"
     }
   ],
   "headers": [
