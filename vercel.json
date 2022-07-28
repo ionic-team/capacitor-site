@@ -18,18 +18,6 @@
     {
       "source": "/forum",
       "destination": "https://forum.ionicframework.com/c/capacitor/26"
-    },
-    {
-      "source": "/docs/apis/:path*",
-      "destination": "/docs/plugins/apis/:path*"
-    },
-    {
-      "source": "/v3/apis/:path*",
-      "destination": "/v3/plugins/apis/:path*"
-    },
-    {
-      "source": "/v2/apis/:path*",
-      "destination": "/v2/plugins/apis/:path*"
     }
   ],
   "headers": [
