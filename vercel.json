@@ -26,6 +26,10 @@
     {
       "source": "/v3/apis/:path*",
       "destination": "/v3/plugins/apis/:path*"
+    },
+    {
+      "source": "/v2/apis/:path*",
+      "destination": "/v2/plugins/apis/:path*"
     }
   ],
   "headers": [
