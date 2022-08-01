@@ -61,13 +61,6 @@ h6 {
 
   .squiggly-bg {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    height: 100%;
-    width: 100%;
   }
 
   .bg-map {
@@ -75,10 +68,6 @@ h6 {
     top: 0;
     bottom: 0;
     z-index: 1;
-
-    height: 100%;
-    width: auto;
-    object-fit: cover;
   }
 
   header {
@@ -288,7 +277,6 @@ h6 {
 }
 
 #started {
-  margin-block-start: 12.5rem;
   margin-block-end: 223px;
 
   .heading-group {
