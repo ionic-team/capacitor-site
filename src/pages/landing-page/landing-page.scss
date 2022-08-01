@@ -47,112 +47,105 @@ h6 {
 
 #top {
   overflow: hidden;
-
   position: relative;
+  margin-bottom: 178px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: var(--c-indigo-100);
-
-  // full height minus header and announcement bar
-  min-height: calc(100vh - 7rem);
-
-  .squiggly-bg {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    height: 100%;
-    width: 100%;
-  }
-
-  .bg-map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-
-    height: 100%;
-    width: auto;
-    object-fit: cover;
-  }
-
-  header {
-    position: relative;
-    z-index: 2;
-
-    padding-block-start: 4rem;
-    padding-block-end: 4rem;
-
-    text-align: center;
-
+  .ui-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    // flex-wrap: wrap;
+    margin-block-start: clamp(64px, 17vh, 154px);
 
-    .overline {
-      font-weight: 700;
-      font-size: 1.5rem;
-      line-height: 120%;
-      letter-spacing: -0.02em;
-
-      background: linear-gradient(90.25deg, #72ddff 26.71%, #86f197 118.77%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-
-      margin-block-end: 1.313rem;
+    @media screen and (max-width: $screen-xs) {
+      margin-block-start: 240px;
+      flex-direction: column-reverse;
     }
+
+    > * {
+      flex-grow: 1;
+    }
+  }
+
+  .background {
+    position: absolute;
+    bottom: 100px;
+
+    width: 1800px;
+    height: 1800px;
+    left: calc(calc((1800px - 100%) / -2) - 50px);
+
+    background: #f6f9fc;
+    transform: rotate(29deg) skewX(-30deg);
+
+    z-index: -1;
+  }
+
+  .heading-group {
+    position: relative;
 
     .ui-heading {
-      max-width: 36rem;
-      color: #fff;
+      max-width: 504px;
     }
-
     .ui-paragraph {
-      max-width: 26.625rem;
-      color: #fff;
-      font-weight: 600;
-
-      margin-block-end: 2.5rem;
+      margin-block-end: var(--space-6);
+      max-width: 448px;
     }
+  }
 
-    .cta-row {
-      margin-inline-start: -1rem;
-      margin-block-start: -1rem;
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline-start: -15px;
+    margin-block-start: -16px;
 
-      > * {
-        margin-inline-start: 1rem;
-        margin-block-start: 1rem;
+    .ui-button {
+      margin-inline-start: 15px;
+      margin-block-start: 16px;
+
+      &.primary {
+        --c-background: var(--c-capacitor-blue);
+        --c-background--hover: #24a7ff;
+        --c-background--active: #0090f0;
+        --c-focus: #bde4ff;
       }
-
-      .primary {
-        --c-background: #fff;
-        --c-background--hover: rgba(255, 255, 255, 0.8);
-        --c-background--active: #fff;
-        --c-focus: rgba(255, 255, 255, 0.3);
-        --c-text: #11193f;
-      }
-
-      .secondary {
-        -webkit-backdrop-filter: blur(24px);
-        backdrop-filter: blur(24px);
-
-        --c-background: rgba(255, 255, 255, 0.15);
-        --c-background--hover: rgba(255, 255, 255, 0.1);
-        --c-background--active: rgba(255, 255, 255, 0.2);
-        --c-focus: rgba(255, 255, 255, 0.3);
-        --c-text: #fff;
+      &.secondary {
+        --c-text: var(--c-capacitor-blue);
+        --c-focus: #80caff;
       }
     }
+  }
 
-    .ui-button span {
-      margin-inline-start: 0.25rem;
+  .link {
+    margin-block-start: var(--space-2);
+    margin-block-end: var(--space-4);
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    top: -64px;
+    right: -32px;
+
+    @media screen and (max-width: $screen-xs) {
+      justify-content: center;
+      right: initial;
+      top: initial;
+    }
+
+    img {
+      width: 100%;
+
+      @media screen and (max-width: $screen-xs) {
+        --width: 200px;
+        max-width: var(--width);
+        left: min(
+          calc(480px / 2 - var(--width) / 2),
+          100% / 2 - var(--width) / 2
+        );
+        top: -220px;
+        position: absolute;
+      }
     }
   }
 }
@@ -289,7 +282,6 @@ h6 {
 }
 
 #started {
-  margin-block-start: 12.5rem;
   margin-block-end: 223px;
 
   .heading-group {
