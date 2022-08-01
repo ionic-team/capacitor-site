@@ -10,7 +10,7 @@ import {
   PrismicResponsiveImage,
   Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { href } from '@stencil/router';
+import { href } from '@utils/common';
 
 import { Background } from './assets/bg-maps-promo';
 
@@ -80,8 +80,7 @@ export class LandingPage {
             </Paragraph>
             <div class="cta-row">
               <Button
-                anchor={true}
-                href="https://capacitorjs.com/docs/apis/google-maps"
+                href="https://capacitorjs.com/docs/getting-started"
                 class="primary"
                 kind="round"
               >
@@ -89,7 +88,6 @@ export class LandingPage {
                 <span style={{ letterSpacing: '0px' }}> -&gt;</span>
               </Button>
               <Button
-                anchor={true}
                 href="https://ionicframework.com/blog/announcing-the-capacitor-google-maps-plugin/"
                 target="_blank"
                 rel="noopener"
