@@ -12,8 +12,6 @@ import {
 } from '@ionic-internal/ionic-ds';
 import { href } from '@utils/common';
 
-import { Background } from './assets/bg-maps-promo';
-
 @Component({
   tag: 'landing-page',
   styleUrl: 'landing-page.scss',
@@ -58,38 +56,52 @@ export class LandingPage {
   }
 
   Top = () => {
+    const { Announcement } = this;
+    const { top, top__ctas, top__link, top__hero, top__icons } = this.data;
+    const { primary, secondary } = top__ctas[0];
+
     return (
       <section id="top">
-        {/* TODO: implement srcset */}
-        <img
-          class="bg-map"
-          src="/assets/img/landing/bg-maps-promo.png"
-          width="828"
-          height="894"
-          alt="map on phone"
-        />
-        <Background />
+        <div class="background"></div>
         <ResponsiveContainer>
-          <header>
-            <div class="overline">Capacitor × Google Maps</div>
-            <Heading poster={true} level={1}>
-              Get a map in your app.
-            </Heading>
-            <Paragraph level={2}>
-              Integrate Google Maps into all of your applications with our
-              latest officially-supported Capacitor plugin
-            </Paragraph>
-            <div class="cta-row">
-              <Button class="primary" kind="round">
-                Start building today
-                <span style={{ letterSpacing: '0px' }}> -&gt;</span>
+          <div class="heading-group">
+            <Announcement />
+            <PrismicRichText richText={top} paragraphLevel={2} />
+            <div class="buttons">
+              <Button
+                kind="round"
+                anchor
+                {...href('/docs/getting-started')}
+                class="primary"
+              >
+                {primary} <span class="arrow"> -&gt;</span>
               </Button>
-              <Button class="secondary" kind="round" color="indigo">
-                Read the Blog post
-                <span style={{ letterSpacing: '0px' }}> -&gt;</span>
+              <Button
+                kind="round"
+                variation="light"
+                anchor
+                {...href('docs/plugins')}
+                class="secondary"
+              >
+                {secondary}
               </Button>
             </div>
-          </header>
+            <a class="link | ui-paragraph-4" {...href('/cordova')}>
+              {top__link}
+              <span class="arrow"> -&gt;</span>
+            </a>
+            <PrismicResponsiveImage
+              loading="eager"
+              image={top__icons}
+              params={{
+                w: '91',
+                h: '16',
+              }}
+            />
+          </div>
+          <div class="image-wrapper">
+            <PrismicResponsiveImage loading="eager" image={top__hero} />
+          </div>
         </ResponsiveContainer>
       </section>
     );
