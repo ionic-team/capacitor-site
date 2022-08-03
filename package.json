@@ -15,9 +15,7 @@
     "fmt": "npm run prettier -- --write",
     "prettier": "prettier \"{src,pages}/**/*.{css,scss,html,ts,tsx,md}\"",
     "test": "stencil test --spec",
-    "test.watch": "stencil test --spec --watch",
-    "docs.plugins": "ts-node --project scripts/tsconfig.json scripts/plugin-api.ts",
-    "docs.plugins.v2": "ts-node --project scripts/tsconfig.json scripts/plugin-api-v2.ts"
+    "test.watch": "stencil test --spec --watch"
   },
   "husky": {
     "hooks": {
