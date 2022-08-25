@@ -3,6 +3,7 @@ title: Migrating from Cordova to Capacitor
 description: Migrating from Cordova to Capacitor
 contributors:
   - dotNetkow
+  - u01jmg3
 ---
 
 # Migrating a Web App Using Cordova to Capacitor
@@ -21,6 +22,7 @@ Initialize your app with Capacitor. Some of the information you will be prompted
 - The Bundle ID can be found in the `id` attribute of the root `<widget>` element.
 
 ```bash
+npm install @capacitor/cli @capacitor/core
 npx cap init
 ```
 
@@ -28,17 +30,22 @@ npx cap init
 
 You must build your web project at least once before adding any native platforms.
 
+> Sometimes this command may be called something different such as `npm run prod` or `npm run production`.
+
 ```bash
 npm run build
 ```
 
-This ensures that the `www` folder that Capacitor has been [automatically configured](/docs/basics/configuring-your-app) to use as the `webDir` in the Capacitor configuration file.
+This ensures that the `www` folder, which Capacitor has been [automatically configured](/docs/basics/configuring-your-app) to use as the `webDir` in the Capacitor configuration file, is correctly configured.
 
 ### Add Platforms
 
 Capacitor native platforms exist in their own top-level folders. Cordova's are located under `platforms/ios` or `platforms/android`.
 
+> If you previously installed Cordova's [`browser`](https://www.npmjs.com/package/cordova-browser) platform, note this is no longer required by Capacitor.
+
 ```bash
+npm install @capacitor/ios @capacitor/android
 npx cap add ios
 npx cap add android
 ```
@@ -59,13 +66,26 @@ Both android and ios folders at the root of the project are created. These are e
 
 ## Splash Screens and Icons
 
-If you've previously created icon and splash screen images, they can be found in the top-level `resources` folder of your project. With those images in place, you can use the `cordova-res` tool to generate icons and splash screens for Capacitor-based iOS and Android projects.
+If you've previously created icon and splash screen images, they can be found in the top-level `resources` folder of your project. With those images in place, you can use the [`cordova-res`](https://www.npmjs.com/package/cordova-res) tool to generate icons and splash screens for Capacitor-based iOS and Android projects.
 
 First, install `cordova-res`:
 
 ```bash
 npm install -g cordova-res
 ```
+
+`cordova-res` expects the following project structure:
+
+```bash
+resources/
+├── icon.png
+└── splash.png
+```
+
+- `resources/icon.(png|jpg)` must be at least 1024×1024px
+- `resources/splash.(png|jpg)` must be at least 2732×2732px
+
+If this folder structure is not in place, for the tool to work, you will need to create this structure yourself.
 
 Next, run the following to regenerate the images and copy them into the native projects:
 
@@ -91,7 +111,7 @@ Note that any plugins that are [incompatible or cause build issues](/docs/plugin
 After replacing a Cordova plugin with a Capacitor one (or simply removing it entirely), uninstall the plugin then run the `sync` command to remove the plugin code from a native project:
 
 ```bash
-npm uninstall cordova-plugin-name
+npm uninstall cordova-plugin-1 cordova-plugin-2 cordova-plugin-3
 npx cap sync
 ```
 
@@ -121,7 +141,7 @@ You may be curious about how other elements from `config.xml` work in Capacitor 
 The Author element can be configured in `package.json`, but is not used by Capacitor or within your app:
 
 ```xml
-<author email="email@test.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+<author email="email@test.com" href="https://ionicframework.com/">Ionic Framework Team</author>
 ```
 
 Most of the `allow-intent` values are either not used or there are [configurable alternatives](/docs/basics/configuring-your-app/).
