@@ -22,10 +22,24 @@ resources/
 ├── icon.png
 └── splash.png
 ```
+In order to fix the errors reported in this StackOverFlow thread: https://stackoverflow.com/questions/66026629/error-occurred-while-copying-resources-android-icon-mdpi-foreground-png, add the following in `resources/android` folder:
+
+```
+resources/
+|--android/
+|----icon-foreground.png
+|----icon-background.png
+```
 
 Next, run the following to generate all images then copy them into the native projects:
 
 ```bash
 cordova-res ios --skip-config --copy
 cordova-res android --skip-config --copy
+```
+
+The above command should result in something like the following (without errors):
+```
+Generated 24 resources for Android
+Copied 31 resource items to Android
 ```
