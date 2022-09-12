@@ -10,7 +10,7 @@ import {
   PrismicResponsiveImage,
   Paragraph,
 } from '@ionic-internal/ionic-ds';
-import { href } from '@utils/common';
+import { href } from '@stencil/router';
 
 @Component({
   tag: 'landing-page',
@@ -71,7 +71,7 @@ export class LandingPage {
               <Button
                 kind="round"
                 anchor
-                {...href('/docs/getting-started')}
+                href="/docs/getting-started"
                 class="primary"
               >
                 {primary} <span class="arrow"> -&gt;</span>
@@ -80,7 +80,7 @@ export class LandingPage {
                 kind="round"
                 variation="light"
                 anchor
-                {...href('docs/plugins')}
+                href="/docs/plugins"
                 class="secondary"
               >
                 {secondary}
@@ -122,7 +122,7 @@ export class LandingPage {
       <a
         id="announcement"
         class="feature__register"
-        {...href(newUrl)}
+        href={newUrl}
         target={target}
         rel={target ? 'noopener' : undefined}
       >
@@ -378,7 +378,7 @@ public class MyAwesomePlugin: CAPPlugin {
         <ResponsiveContainer>
           <div class="heading-group">
             <PrismicRichText richText={features} />
-            <a {...href('/docs/apis')} class="link | ui-heading-4">
+            <a href="/docs/apis" class="link | ui-heading-4">
               {features__link}
               <span class="arrow">-&gt;</span>
             </a>
@@ -614,7 +614,7 @@ public class MyAwesomePlugin: CAPPlugin {
             </div>
             <div class="ctas">
               <Button
-                {...href('/docs/getting-started')}
+                href="/docs/getting-started"
                 kind="round"
                 anchor
                 class="secondary"
@@ -624,7 +624,7 @@ public class MyAwesomePlugin: CAPPlugin {
                 <span class="arrow"> -&gt;</span>
               </Button>
               <Button
-                {...href('/docs/plugins')}
+                href="/docs/plugins"
                 anchor
                 kind="round"
                 variation="light"
