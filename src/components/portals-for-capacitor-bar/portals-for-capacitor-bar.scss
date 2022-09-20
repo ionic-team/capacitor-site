@@ -1,16 +1,26 @@
 @use '../../global/vars' as *;
 
-nav {
-  background-image: url('assets-portals-for-capacitor-bar/bg-portals-for-capacitor.png');
-  background-size: 1800px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+:host {
+  position: relative;
 
+  .bg-container {
+    background-color: #017ed8;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+nav {
   display: flex;
   justify-content: center;
   align-items: center;
 
+  position: relative;
   h6 {
     font-size: 1rem;
     margin-block: 0;
