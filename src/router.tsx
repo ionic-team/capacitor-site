@@ -24,7 +24,7 @@ export const Routes = () => (
         <Fragment>
           {/* <capacitor-site-platform-bar /> */}
           {/* <announcement-bar prismicData={data.announcement_bar} /> */}
-          <portals-for-capacitor-bar />
+          {/* <portals-for-capacitor-bar /> */}
           <site-header class="heading-container" sticky={true} />
           <landing-page data={data} />
         </Fragment>
