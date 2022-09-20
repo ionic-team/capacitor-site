@@ -12,6 +12,11 @@
 
     display: flex;
     align-items: center;
+
+    svg {
+      object-fit: cover;
+      object-position: 0;
+    }
   }
 }
 
@@ -62,6 +67,7 @@ nav {
       font-family: 'Inter';
       display: flex;
       align-items: center;
+      color: #017ed8;
       .arrow {
         margin-inline-start: 0.25rem;
       }
