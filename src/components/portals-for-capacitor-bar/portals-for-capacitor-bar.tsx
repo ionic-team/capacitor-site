@@ -11,11 +11,12 @@ export class PortalsForCapacitorBar implements ComponentInterface {
       <Host>
         <div class="bg-container">
           <svg
+            height="100%"
             width="100%"
             viewBox="0 0 1800 48"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="XMidYMid"
+            preserveAspectRatio="none"
           >
             <g clip-path="url(#clip0_1_45)">
               <rect width="1800" height="48" fill="url(#paint0_linear_1_45)" />
