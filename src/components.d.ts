@@ -139,6 +139,8 @@ export namespace Components {
     interface PluginPlatforms {
         "platforms": string;
     }
+    interface PortalsForCapacitorBar {
+    }
     interface PreFooter {
     }
     interface SiteHeader {
@@ -370,6 +372,12 @@ declare global {
         prototype: HTMLPluginPlatformsElement;
         new (): HTMLPluginPlatformsElement;
     };
+    interface HTMLPortalsForCapacitorBarElement extends Components.PortalsForCapacitorBar, HTMLStencilElement {
+    }
+    var HTMLPortalsForCapacitorBarElement: {
+        prototype: HTMLPortalsForCapacitorBarElement;
+        new (): HTMLPortalsForCapacitorBarElement;
+    };
     interface HTMLPreFooterElement extends Components.PreFooter, HTMLStencilElement {
     }
     var HTMLPreFooterElement: {
@@ -442,6 +450,7 @@ declare global {
         "more-button": HTMLMoreButtonElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
+        "portals-for-capacitor-bar": HTMLPortalsForCapacitorBarElement;
         "pre-footer": HTMLPreFooterElement;
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
@@ -577,6 +586,8 @@ declare namespace LocalJSX {
     interface PluginPlatforms {
         "platforms"?: string;
     }
+    interface PortalsForCapacitorBar {
+    }
     interface PreFooter {
     }
     interface SiteHeader {
@@ -632,6 +643,7 @@ declare namespace LocalJSX {
         "more-button": MoreButton;
         "newsletter-signup": NewsletterSignup;
         "plugin-platforms": PluginPlatforms;
+        "portals-for-capacitor-bar": PortalsForCapacitorBar;
         "pre-footer": PreFooter;
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
@@ -679,6 +691,7 @@ declare module "@stencil/core" {
             "more-button": LocalJSX.MoreButton & JSXBase.HTMLAttributes<HTMLMoreButtonElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
+            "portals-for-capacitor-bar": LocalJSX.PortalsForCapacitorBar & JSXBase.HTMLAttributes<HTMLPortalsForCapacitorBarElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;

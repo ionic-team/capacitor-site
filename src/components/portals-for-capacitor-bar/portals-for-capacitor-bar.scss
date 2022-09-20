@@ -1,0 +1,61 @@
+@use '../../global/vars' as *;
+
+nav {
+  background-color: #017ed8;
+  background-image: url('assets-portals-for-capacitor-bar/bg-portals-for-capacitor.png');
+  background-size: 1800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h6 {
+    font-size: 1rem;
+    margin-block: 0;
+    margin-inline-end: 1rem;
+    color: #ffffff;
+  }
+  p {
+    font-size: 14px;
+
+    margin-inline-end: 1rem;
+    color: #e3edff;
+  }
+
+  button {
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.01em;
+
+    padding: 4px 12px;
+
+    font-weight: 600;
+
+    background: #ffffff;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+
+    color: #017ed8;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    a {
+      font-family: 'Inter';
+      display: flex;
+      align-items: center;
+      .arrow {
+        margin-inline-start: 0.25rem;
+      }
+    }
+  }
+}
