@@ -1,17 +1,26 @@
 @use '../../global/vars' as *;
 
-nav {
-  background-color: #017ed8;
-  background-image: url('assets-portals-for-capacitor-bar/bg-portals-for-capacitor.png');
-  background-size: 1800px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+:host {
+  position: relative;
 
+  height: 48px;
+}
+
+.bg-container {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+nav {
   display: flex;
   justify-content: center;
   align-items: center;
 
+  position: relative;
   h6 {
     font-size: 1rem;
     margin-block: 0;
@@ -53,6 +62,7 @@ nav {
       font-family: 'Inter';
       display: flex;
       align-items: center;
+      color: #017ed8;
       .arrow {
         margin-inline-start: 0.25rem;
       }
