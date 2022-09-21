@@ -25,6 +25,7 @@ export class EnterprisePage {
       Companies,
       Native,
       Ebook,
+      MicroFrontends,
       Plugins,
       Security,
       Delivery,
@@ -43,6 +44,7 @@ export class EnterprisePage {
         <Native />
         <Ebook />
         {/* <Approach /> */}
+        <MicroFrontends />
         <Plugins />
         <Security />
         <Delivery />
@@ -277,6 +279,30 @@ export class EnterprisePage {
   //     </section>
   //   );
   // };
+
+  MicroFrontends = () => {
+    const { micro_frontends } = this.data;
+    const { supertext, title, subtext, image } = micro_frontends[0];
+
+    return (
+      <section id="micro-frontends">
+        <ResponsiveContainer>
+          <div class="wrapper">
+            <div class="image-wrapper">
+              <PrismicResponsiveImage image={image} />
+            </div>
+            <div class="heading-group">
+              <p class="ui-heading-6">
+                <sup>{supertext}</sup>
+              </p>
+              <PrismicRichText richText={title} />
+              <PrismicRichText richText={subtext} paragraphLevel={2} />
+            </div>
+          </div>
+        </ResponsiveContainer>
+      </section>
+    );
+  };
 
   Plugins = () => {
     const { plugins } = this.data;

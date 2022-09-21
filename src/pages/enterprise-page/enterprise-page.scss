@@ -410,6 +410,61 @@ ul {
   }
 }
 
+#micro-frontends {
+  padding-block-start: $section-space;
+  overflow: hidden;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $screen-xs) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    margin-inline-start: -3rem;
+    margin-block-start: -2rem;
+
+    > * {
+      flex-basis: 50%;
+      margin-inline-start: 3rem;
+      margin-block-start: 2rem;
+
+      width: calc(100% - 3rem);
+    }
+  }
+
+  .heading-group {
+    max-width: 29rem;
+
+    .ui-heading-6 {
+      margin-block-end: 1.5rem;
+    }
+
+    .ui-paragraph {
+      max-width: 28rem;
+    }
+  }
+
+  .image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      margin-inline-start: -3rem;
+      max-width: 100%;
+
+      @media (max-width: $screen-xs) {
+        max-width: 75vw;
+        margin: 0;
+      }
+    }
+  }
+}
+
 #plugins {
   padding-block-start: $section-space;
   overflow: hidden;
