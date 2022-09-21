@@ -16,7 +16,7 @@ export class PortalsForCapacitorBar implements ComponentInterface {
             viewBox="0 0 1800 48"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMid slice"
           >
             <g clip-path="url(#clip0_1_45)">
               <rect width="1800" height="48" fill="url(#paint0_linear_1_45)" />
