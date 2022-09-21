@@ -1,9 +1,14 @@
 @use '../../global/vars' as *;
 
 :host {
+  display: block;
   position: relative;
 
   height: 48px;
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
 }
 
 .bg-container {
