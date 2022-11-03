@@ -227,7 +227,8 @@ export class SiteHeader implements ComponentInterface {
               Community
             </a>
             <a
-              {...href('/blog')}
+              {...href('https://ionic.io/blog/tag/capacitor')}
+              target="_blank"
               class="ui-paragraph-4"
               ref={el => (this.links.blog = el)}
             >
