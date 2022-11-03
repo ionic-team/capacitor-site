@@ -39,7 +39,7 @@ This simply isn’t possible with React Native. Most popular React UI libraries 
 
 One additional bonus feature of Capacitor is that it works on the web for Progressive Web Apps. That means an app using Capacitor can access many of the same APIs on native mobile but on the web instead. For example, the [Camera](https://capacitorjs.com/docs/apis/camera) and [Share](https://capacitorjs.com/docs/apis/share) APIs work across iOS, Android, and the web with the same code.
 
-With this capability, teams often can build and ship on three platforms on day one, or even embrace [Progressive Web App First Development](https://ionicframework.com/blog/forget-mobile-first-progressive-web-app-first-is-the-future/), by using Capacitor.
+With this capability, teams often can build and ship on three platforms on day one, or even embrace [Progressive Web App First Development](https://ionic.io/blog/forget-mobile-first-progressive-web-app-first-is-the-future/), by using Capacitor.
 
 ## Transform your React Web App into Native with Capacitor
 

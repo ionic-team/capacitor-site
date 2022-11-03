@@ -435,7 +435,7 @@ We covered a lot of concepts from the Capacitor Community HTTP Plugin today incl
 
 What’s next in the exciting world of cross-platform Vue apps? If you’re short on ideas, here’s a few suggestions for next steps
 
-- [Offline first](https://ionicframework.com/blog/best-practices-for-building-offline-apps): Try persisting state using another method, such as service-worker caching
+- [Offline first](https://ionic.io/blog/best-practices-for-building-offline-apps): Try persisting state using another method, such as service-worker caching
 - PWA/mobile: Try deploying the app to your phone as a [Progressive Web App](https://ionicframework.com/docs/vue/your-first-app/6-deploying-mobile) or a native [Android/iOS one](https://ionicframework.com/docs/vue/your-first-app/6-deploying-mobile)
   - Note: If you opted to generate your own project for this tutorial instead of cloning from the repo, you may need to follow some [additional installation steps](https://github.com/capacitor-community/http#installation) to get the HTTP Plugin working on Android
 - Loading state: How might you save the state of the app such that if the user exits while advice is fading in or out, the transition will resume at the same spot tnext time they reopen the app?

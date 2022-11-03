@@ -20,4 +20,4 @@ We documented the whole update and talked about what's next for Capacitor over o
 
 Check it out:
 
-[https://ionicframework.com/blog/announcing-capacitor-2-0/](https://ionicframework.com/blog/announcing-capacitor-2-0/)
+[https://ionic.io/blog/announcing-capacitor-2-0/](https://ionic.io/blog/announcing-capacitor-2-0/)

@@ -11,4 +11,4 @@ Today I’m thrilled to announce the 1.0 release of [Capacitor](/), Ionic’s ne
 
 We documented this momentous occasion over on the Ionic blog, complete with a comparison to Cordova and where Capacitor is headed from here.
 
-Take a look: [https://ionicframework.com/blog/announcing-capacitor-1-0/](https://ionicframework.com/blog/announcing-capacitor-1-0/).
+Take a look: [https://ionic.io/blog/announcing-capacitor-1-0/](https://ionic.io/blog/announcing-capacitor-1-0/).

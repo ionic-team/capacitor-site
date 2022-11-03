@@ -118,7 +118,6 @@ export class CapacitorSiteFooter {
                         <a
                           class="ui-paragraph-4"
                           href="https://ionic.io/blog/tag/capacitor"
-                          target="_blank"
                         >
                           Blog
                         </a>

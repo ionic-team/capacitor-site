@@ -73,7 +73,7 @@ export class LandingPage {
               class="reveal"
               kind="round"
               color="indigo"
-              href="https://ionicframework.com/blog/announcing-capacitor-3-0/"
+              href="https://ionic.io/blog/announcing-capacitor-3-0/"
               anchor={true}
             >
               Read the Blog post <span>{'->'}</span>
