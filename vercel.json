@@ -13,7 +13,7 @@
   "redirects": [
     {
       "source": "/3",
-      "destination": "https://ionicframework.com/blog/announcing-capacitor-3-0/"
+      "destination": "https://ionic.io/blog/announcing-capacitor-3-0/"
     },
     {
       "source": "/forum",

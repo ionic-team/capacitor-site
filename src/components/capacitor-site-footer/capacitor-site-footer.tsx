@@ -115,7 +115,10 @@ export class CapacitorSiteFooter {
                         </a>
                       </li>
                       <li>
-                        <a class="ui-paragraph-4" href="/blog">
+                        <a
+                          class="ui-paragraph-4"
+                          href="https://ionic.io/blog/tag/capacitor"
+                        >
                           Blog
                         </a>
                       </li>

@@ -20,7 +20,7 @@ If you're curious how to migrate to Capacitor 3.0, check out the [migration guid
 - TypeScript config file
 - Autoloading of Android plugins
 
-In addition to the [Beta release post](https://capacitorjs.com/blog/announcing-capacitor-3-0-beta), which includes more details on these changes, we've also written about the [plugin upgrade process here](https://ionicframework.com/blog/understanding-changes-to-capacitor-3-core-plugins/). Long story short, install the plugins you need and change your import statements
+In addition to the [Beta release post](https://capacitorjs.com/blog/announcing-capacitor-3-0-beta), which includes more details on these changes, we've also written about the [plugin upgrade process here](https://ionic.io/blog/understanding-changes-to-capacitor-3-core-plugins/). Long story short, install the plugins you need and change your import statements
 
 ```bash
 npm install @capacitor/<plugin>
