@@ -23,7 +23,6 @@ export const Routes = () => (
       render={(_, data) => (
         <Fragment>
           {/* <capacitor-site-platform-bar /> */}
-          {/* <announcement-bar prismicData={data.announcement_bar} /> */}
           <portals-for-capacitor-bar />
           <site-header class="heading-container" sticky={true} />
           <landing-page data={data} />
@@ -37,7 +36,7 @@ export const Routes = () => (
       render={(_, data) => (
         <Fragment>
           {/* <capacitor-site-platform-bar /> */}
-          <announcement-bar prismicData={data[0].announcement_bar} />
+          <portals-for-capacitor-bar />
           <site-header class="heading-container" sticky={true} />
           <blog-page data={data} />
         </Fragment>
@@ -49,7 +48,7 @@ export const Routes = () => (
       mapParams={staticState(getBlogData)}
       render={(_, data) => (
         <Fragment>
-          <announcement-bar prismicData={data.announcement_bar} />
+          <portals-for-capacitor-bar />
           {/* <capacitor-site-platform-bar /> */}
           <site-header class="heading-container" sticky={true} />
           <blog-post data={data} />
@@ -62,8 +61,8 @@ export const Routes = () => (
       mapParams={staticState(getPage)}
       render={(_, data) => (
         <Fragment>
-          <announcement-bar prismicData={data.announcement_bar} />
           {/* <capacitor-site-platform-bar /> */}
+          <portals-for-capacitor-bar />
           <site-header class="heading-container" sticky={true} />
           <community-page data={data} />
         </Fragment>
@@ -75,8 +74,8 @@ export const Routes = () => (
       mapParams={staticState(getPage)}
       render={(_, data) => (
         <Fragment>
-          <announcement-bar prismicData={data.announcement_bar} />
           {/* <capacitor-site-platform-bar /> */}
+          <portals-for-capacitor-bar />
           <site-header class="heading-container" sticky={true} />
           <telemetry-page />
         </Fragment>
@@ -89,7 +88,7 @@ export const Routes = () => (
       render={(_, data) => (
         <Fragment>
           {/* <capacitor-site-platform-bar /> */}
-          <announcement-bar prismicData={data.announcement_bar} />
+          <portals-for-capacitor-bar />
           <cordova-page />
         </Fragment>
       )}
@@ -100,8 +99,8 @@ export const Routes = () => (
       mapParams={staticState(getPage)}
       render={(_, data) => (
         <Fragment>
-          <announcement-bar prismicData={data.announcement_bar} />
           {/* <capacitor-site-platform-bar /> */}
+          <portals-for-capacitor-bar />
           <site-header class="heading-container" theme="dark" sticky={false} />
           <enterprise-page data={data} />
         </Fragment>
@@ -114,7 +113,7 @@ export const Routes = () => (
       render={(_, data) => (
         <Fragment>
           {/* <capacitor-site-platform-bar /> */}
-          <announcement-bar prismicData={data.announcement_bar} />
+          <portals-for-capacitor-bar />
           <docs-component data={data} />
         </Fragment>
       )}
@@ -126,7 +125,7 @@ export const Routes = () => (
       render={(_, data) => (
         <Fragment>
           {/* <capacitor-site-platform-bar /> */}
-          <announcement-bar prismicData={data.announcement_bar} />
+          <portals-for-capacitor-bar />
           <docs-component data={data} />
         </Fragment>
       )}
@@ -137,8 +136,8 @@ export const Routes = () => (
       mapParams={staticState(getPage)}
       render={(params, data) => (
         <Fragment>
-          <announcement-bar prismicData={data.announcement_bar} />
           {/* <capacitor-site-platform-bar /> */}
+          <portals-for-capacitor-bar />
           <site-header class="heading-container" />
           <solution-page solutionId={params.solutionId} />
         </Fragment>
