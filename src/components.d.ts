@@ -58,8 +58,6 @@ export namespace Components {
     }
     interface CapacitorSiteFooter {
     }
-    interface CapacitorSitePlatformBar {
-    }
     interface CodeSnippet {
         "code": string;
         "language": string;
@@ -135,8 +133,6 @@ export namespace Components {
     }
     interface PluginPlatforms {
         "platforms": string;
-    }
-    interface PortalsForCapacitorBar {
     }
     interface PreFooter {
     }
@@ -242,12 +238,6 @@ declare global {
     var HTMLCapacitorSiteFooterElement: {
         prototype: HTMLCapacitorSiteFooterElement;
         new (): HTMLCapacitorSiteFooterElement;
-    };
-    interface HTMLCapacitorSitePlatformBarElement extends Components.CapacitorSitePlatformBar, HTMLStencilElement {
-    }
-    var HTMLCapacitorSitePlatformBarElement: {
-        prototype: HTMLCapacitorSitePlatformBarElement;
-        new (): HTMLCapacitorSitePlatformBarElement;
     };
     interface HTMLCodeSnippetElement extends Components.CodeSnippet, HTMLStencilElement {
     }
@@ -363,12 +353,6 @@ declare global {
         prototype: HTMLPluginPlatformsElement;
         new (): HTMLPluginPlatformsElement;
     };
-    interface HTMLPortalsForCapacitorBarElement extends Components.PortalsForCapacitorBar, HTMLStencilElement {
-    }
-    var HTMLPortalsForCapacitorBarElement: {
-        prototype: HTMLPortalsForCapacitorBarElement;
-        new (): HTMLPortalsForCapacitorBarElement;
-    };
     interface HTMLPreFooterElement extends Components.PreFooter, HTMLStencilElement {
     }
     var HTMLPreFooterElement: {
@@ -420,7 +404,6 @@ declare global {
         "capacitor-hubspot-form": HTMLCapacitorHubspotFormElement;
         "capacitor-site": HTMLCapacitorSiteElement;
         "capacitor-site-footer": HTMLCapacitorSiteFooterElement;
-        "capacitor-site-platform-bar": HTMLCapacitorSitePlatformBarElement;
         "code-snippet": HTMLCodeSnippetElement;
         "code-tabs": HTMLCodeTabsElement;
         "community-page": HTMLCommunityPageElement;
@@ -440,7 +423,6 @@ declare global {
         "more-button": HTMLMoreButtonElement;
         "newsletter-signup": HTMLNewsletterSignupElement;
         "plugin-platforms": HTMLPluginPlatformsElement;
-        "portals-for-capacitor-bar": HTMLPortalsForCapacitorBarElement;
         "pre-footer": HTMLPreFooterElement;
         "site-header": HTMLSiteHeaderElement;
         "solution-page": HTMLSolutionPageElement;
@@ -497,8 +479,6 @@ declare namespace LocalJSX {
     interface CapacitorSite {
     }
     interface CapacitorSiteFooter {
-    }
-    interface CapacitorSitePlatformBar {
     }
     interface CodeSnippet {
         "code": string;
@@ -573,8 +553,6 @@ declare namespace LocalJSX {
     interface PluginPlatforms {
         "platforms"?: string;
     }
-    interface PortalsForCapacitorBar {
-    }
     interface PreFooter {
     }
     interface SiteHeader {
@@ -609,7 +587,6 @@ declare namespace LocalJSX {
         "capacitor-hubspot-form": CapacitorHubspotForm;
         "capacitor-site": CapacitorSite;
         "capacitor-site-footer": CapacitorSiteFooter;
-        "capacitor-site-platform-bar": CapacitorSitePlatformBar;
         "code-snippet": CodeSnippet;
         "code-tabs": CodeTabs;
         "community-page": CommunityPage;
@@ -629,7 +606,6 @@ declare namespace LocalJSX {
         "more-button": MoreButton;
         "newsletter-signup": NewsletterSignup;
         "plugin-platforms": PluginPlatforms;
-        "portals-for-capacitor-bar": PortalsForCapacitorBar;
         "pre-footer": PreFooter;
         "site-header": SiteHeader;
         "solution-page": SolutionPage;
@@ -656,7 +632,6 @@ declare module "@stencil/core" {
             "capacitor-hubspot-form": LocalJSX.CapacitorHubspotForm & JSXBase.HTMLAttributes<HTMLCapacitorHubspotFormElement>;
             "capacitor-site": LocalJSX.CapacitorSite & JSXBase.HTMLAttributes<HTMLCapacitorSiteElement>;
             "capacitor-site-footer": LocalJSX.CapacitorSiteFooter & JSXBase.HTMLAttributes<HTMLCapacitorSiteFooterElement>;
-            "capacitor-site-platform-bar": LocalJSX.CapacitorSitePlatformBar & JSXBase.HTMLAttributes<HTMLCapacitorSitePlatformBarElement>;
             "code-snippet": LocalJSX.CodeSnippet & JSXBase.HTMLAttributes<HTMLCodeSnippetElement>;
             "code-tabs": LocalJSX.CodeTabs & JSXBase.HTMLAttributes<HTMLCodeTabsElement>;
             "community-page": LocalJSX.CommunityPage & JSXBase.HTMLAttributes<HTMLCommunityPageElement>;
@@ -676,7 +651,6 @@ declare module "@stencil/core" {
             "more-button": LocalJSX.MoreButton & JSXBase.HTMLAttributes<HTMLMoreButtonElement>;
             "newsletter-signup": LocalJSX.NewsletterSignup & JSXBase.HTMLAttributes<HTMLNewsletterSignupElement>;
             "plugin-platforms": LocalJSX.PluginPlatforms & JSXBase.HTMLAttributes<HTMLPluginPlatformsElement>;
-            "portals-for-capacitor-bar": LocalJSX.PortalsForCapacitorBar & JSXBase.HTMLAttributes<HTMLPortalsForCapacitorBarElement>;
             "pre-footer": LocalJSX.PreFooter & JSXBase.HTMLAttributes<HTMLPreFooterElement>;
             "site-header": LocalJSX.SiteHeader & JSXBase.HTMLAttributes<HTMLSiteHeaderElement>;
             "solution-page": LocalJSX.SolutionPage & JSXBase.HTMLAttributes<HTMLSolutionPageElement>;
