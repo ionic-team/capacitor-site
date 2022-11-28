@@ -15,11 +15,6 @@ declare global {
         create: ({}) => any;
       };
     };
-    jQuery: () => {
-      // these are methods required by HubSpot
-      change: () => void;
-      trigger: () => void;
-    };
   }
 }
 
