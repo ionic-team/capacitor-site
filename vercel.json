@@ -16,6 +16,10 @@
       "destination": "https://ionic.io/blog/announcing-capacitor-3-0/"
     },
     {
+      "source": "/blog/:match*",
+      "destination": "https://ionic.io/blog/tag/capacitor"
+    },
+    {
       "source": "/forum",
       "destination": "https://forum.ionicframework.com/c/capacitor/26"
     }
