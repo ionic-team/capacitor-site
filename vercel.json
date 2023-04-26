@@ -2,6 +2,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/directoty/:path*",
+      "destination": "https://capacitor-plugin-registry.vercel.app/:path*"
+    },
+    {
       "source": "/docs",
       "destination": "https://capacitor-docs.vercel.app/docs"
     },
