@@ -2,7 +2,7 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/directoty/:path*",
+      "source": "/directory/:path*",
       "destination": "https://capacitor-plugin-registry.vercel.app/:path*"
     },
     {
